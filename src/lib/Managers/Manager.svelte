@@ -232,8 +232,12 @@
         
         <div class="basicInfo">
             <span class="infoChild">{viewManager.location || 'Undisclosed Location'}</span>
-            {#if viewManager.managerID && datesActive.start}
-                <span class="seperator">|</span>
+ 			{#if viewManager.school}
+        			<span class="seperator">|</span>
+        			<span class="infoChild">{viewManager.school}</span>
+    		{/if}            
+				{#if viewManager.managerID && datesActive.start}
+                	<span class="seperator">|</span>
                 {#if datesActive.end}
                     <span class="infoChild">In the league from '{datesActive.start.toString().substr(2)} to '{datesActive.end.toString().substr(2)}</span>
                 {:else}
