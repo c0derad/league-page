@@ -58,7 +58,7 @@ export const managers = [
     "school": "Alabama",
     "bio": "The Bear",
     "photo": null,
-    "favoriteTeam": null,
+    "favoriteTeam": "sea",
   },
   {
     "managerID": "1132151539948347392",
