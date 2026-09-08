@@ -28,8 +28,8 @@ export const managers = [
        "roster": 1,  // ID of the roster that the manager manages (look at the order of the power rankings graph)
        "name": "Conrad J. Bailey III",
     //   "tookOver": 2020, // (optional) used if a manager took over a team, delete this line or change to null otherwise
-       "Location": "Dallas, TX", // (optional)
-       "School": "Alabama",
+       "location": "Dallas, TX", // (optional)
+       "school": "Alabama",
        "bio": "THE CZAR",
        "photo": "/managers/CB (Custom).png", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
