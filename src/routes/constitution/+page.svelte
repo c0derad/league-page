@@ -1,305 +1,789 @@
 <script>
-    import { dues } from '$lib/utils/helper';
-    let one, oneOne, oneOneOne, oneTwo, oneTwoOne, oneTwoTwo, oneTwoThree, oneTwoFour, oneTwoFive, oneThree;
-    let two, twoOne, twoTwo, twoThree;
-    let three, threeOne;
-    let four, fourOne, fourTwo;
-    let five, fiveOne;
-    let six, sixOne, sixTwo, sixThree;
-    let seven, sevenOne, sevenTwo, sevenThree;
+    import { dues, leagueName } from '$lib/utils/leagueInfo';
 
-    const goToSection = (section) => {
-        const top = section.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({left: 0, top, behavior: 'smooth'});
-    }
+    const scrollToSection = (id) => {
+        document.getElementById(id)?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    };
 </script>
+
+<svelte:head>
+    <title>Constitution | {leagueName}</title>
+</svelte:head>
 
 <style>
     .constitution {
-        position: relative;
-        z-index: 1;
         width: 92%;
-        max-width: 800px;
-        margin: 8em auto 10em;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3em 0 6em;
+        color: var(--g555);
     }
 
-    h1 {
-        font-size: 2em;
-        line-height: 1.2em;
+    .title {
         text-align: center;
-        margin: 2em 0 1.5em;
+        margin-bottom: 0.5em;
+        font-size: 2.8em;
+        line-height: 1.05em;
     }
 
-    h2 {
-        font-size: 1.5em;
-        line-height: 1.2em;
+    .subtitle {
+        text-align: center;
+        color: #888;
+        font-style: italic;
+        margin-bottom: 3em;
     }
 
-    h3 {
-        text-decoration: underline;
-        font-size: 1.3em;
-        line-height: 1.2em;
+    .toc {
+        border: 1px solid var(--ccc);
+        border-radius: 1em;
+        padding: 1.5em 2em;
+        margin: 0 auto 4em;
+        background: var(--fff);
+        box-shadow: 0 0 6px 0 var(--bbb);
     }
 
-    h4 {
-        text-decoration: underline;
-        margin-left: 2em;
-        font-size: 1.2em;
-        line-height: 1.2em;
+    .toc h2 {
+        margin-top: 0;
+        text-align: center;
     }
 
-    h5 {
-        margin-left: 6em;
-        font-size: 0.8em;
-        line-height: 1.1em;
+    .tocGrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5em 2em;
     }
 
-    .subBlock {
-        margin-left: 2.4em;
-    }
-
-    .sectionHeading {
-        margin: 4em 0 1.5em;
-    }
-
-    .subSectionHeading {
-        margin: 1.5em 0 1.5em;
-    }
-
-    .underscore {
-        text-decoration: underline;
-    }
-
-    .right {
-        text-align: right;
-    }
-
-    .positionMaximums td {
-        min-width: 3em;
-    }
-
-    .noUnderscore {
-        text-decoration: none;
-    }
-
-    .clickable {
+    .tocButton {
+        display: block;
+        width: 100%;
+        border: 0;
+        background: none;
+        color: var(--g555);
+        font: inherit;
+        text-align: left;
         cursor: pointer;
+        padding: 0.35em 0;
     }
 
-    .clickable:hover {
-        color: #00316b;
+    .tocButton:hover {
+        text-decoration: underline;
+    }
+
+    .article {
+        scroll-margin-top: 5em;
+        margin: 4em 0;
+    }
+
+    .article h2 {
+        border-bottom: 2px solid var(--ccc);
+        padding-bottom: 0.35em;
+        margin-bottom: 1.5em;
+    }
+
+    .section {
+        scroll-margin-top: 5em;
+        margin: 2em 0;
+    }
+
+    .section h3 {
+        margin-bottom: 0.6em;
     }
 
     p {
-        color: #777;
+        line-height: 1.6em;
+    }
+
+    ul,
+    ol {
+        line-height: 1.7em;
+        padding-left: 2em;
+    }
+
+    li {
+        margin: 0.35em 0;
+    }
+
+    .payoutTable {
+        width: 100%;
+        max-width: 500px;
+        margin: 1.5em auto;
+        border-collapse: collapse;
+    }
+
+    .payoutTable th,
+    .payoutTable td {
+        border: 1px solid var(--ccc);
+        padding: 0.8em 1em;
+        text-align: left;
+    }
+
+    .payoutTable th {
+        font-weight: 700;
+    }
+
+    .payoutTable td:last-child,
+    .payoutTable th:last-child {
+        text-align: right;
+    }
+
+    .ruleBox {
+        border-left: 4px solid var(--blueTwo);
+        padding: 0.8em 1.2em;
+        margin: 1.5em 0;
+        background-color: var(--eee);
+    }
+
+    .warningBox {
+        border: 1px solid var(--ccc);
+        border-radius: 0.75em;
+        padding: 1em 1.25em;
+        margin: 1.5em 0;
+    }
+
+    .czar {
+        text-align: center;
+        margin-top: 5em;
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    @media (max-width: 650px) {
+        .constitution {
+            width: 94%;
+            padding-top: 2em;
+        }
+
+        .title {
+            font-size: 2.2em;
+        }
+
+        .tocGrid {
+            grid-template-columns: 1fr;
+        }
+
+        .toc {
+            padding: 1.25em;
+        }
     }
 </style>
 
 <div class="constitution">
-    <h1 class="noUnderscore">LEGENDS LEAGUE CONSTITUTION</h1>
-    
-    <h2 class="noUnderscore">TABLE OF CONTENTS</h2>
-    
-    <h3 class="noUnderscore clickable" onclick={() => goToSection(one)}>Section 1: Roster</h3>
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(oneOne)}>1.1 Positional Breakdown</h4>
-            <h5 class="noUnderscore clickable" onclick={() => goToSection(oneOneOne)}>1.1.1 Position Maximums</h5>
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(oneTwo)}>1.2 Trading</h4>
-            <h5 class="noUnderscore clickable" onclick={() => goToSection(oneTwoOne)}>1.2.1 Trade Collusion</h5>
-            <h5 class="noUnderscore clickable" onclick={() => goToSection(oneTwoTwo)}>1.2.2 Lending Players Prohibition</h5>
-            <h5 class="noUnderscore clickable" onclick={() => goToSection(oneTwoThree)}>1.2.3 Trade Deadline</h5>
-            <h5 class="noUnderscore clickable" onclick={() => goToSection(oneTwoFour)}>1.2.4 Trade Restrictions</h5>
-            <h5 class="noUnderscore clickable" onclick={() => goToSection(oneTwoFive)}>1.2.5 Veto/Trade Process</h5>
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(oneThree)}>1.3 Waiver Wire</h4>
-    
-    <h3 class="noUnderscore clickable" onclick={() => goToSection(two)}>Section 2: Drafting</h3>
-    
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(twoOne)}>2.1 Draft Order</h4>
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(twoTwo)}>2.2 Rookie Drafts</h4>
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(twoThree)}>2.3 Draft Day Trades</h4>
-    
-    <h3 class="noUnderscore clickable" onclick={() => goToSection(three)}>Section 3: Scoring System</h3>
-    
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(threeOne)}>3.1 Voting on Scoring System</h4>
-    
-    <h3 class="noUnderscore clickable" onclick={() => goToSection(four)}>Section 4: Postseason</h3>
-    
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(fourOne)}>4.1 Playoffs</h4>
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(fourTwo)}>4.2 Playoff Tiebreakers</h4>
+    <h1 class="title">{leagueName} Constitution</h1>
 
-    <h3 class="noUnderscore clickable" onclick={() => goToSection(five)}>Section 5: Tanking Policy</h3>
-    
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(fiveOne)}>5.1 League Tanking Policy</h4>
+    <div class="subtitle">
+        The laws of the land, subject to enforcement by the Roster Czar.
+    </div>
 
-    <h3 class="noUnderscore clickable" onclick={() => goToSection(six)}>Section 6: Replacing Managers</h3>
-    
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(sixOne)}>6.1 Removing Managers</h4>
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(sixTwo)}>6.2 Replacing Managers</h4>
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(sixThree)}>6.3 Replacement Incentive</h4>
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+        <h2>Table of Contents</h2>
 
-    <h3 class="noUnderscore clickable" onclick={() => goToSection(seven)}>Section 7: League Finances</h3>
-    
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(sevenOne)}>7.1 League Dues</h4>
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(sixTwo)}>7.2 Payout</h4>
-        <h4 class="noUnderscore clickable" onclick={() => goToSection(sixThree)}>7.3 Raising Dues</h4>
-    
-    
-    <hr />
-    
-    <h2 class="sectionHeading" bind:this={one}>Section 1 Roster Breakdown</h2>
-    
-    <h3 class="subSectionHeading" bind:this={oneOne}>1.1 Positional Breakdown</h3>
-    
-    <p>28 Total Players</p>
-    
-    <p class="underscore">Starters</p>
-    <ul>
-        <li>QB</li>
-        <li>RB</li>
-        <li>RB</li>
-        <li>WR</li>
-        <li>WR</li>
-        <li>TE</li>
-        <li>FLEX (RB/WR/TE)</li>
-        <li>FLEX (RB/WR)</li>
-        <li>D/ST</li>
-        <li>K</li>
-    </ul>
-    
-    <p>18 Bench (Expanded by 5 between the keague draft and start of regular season)</p>
+        <div class="tocGrid">
+            <div>
+                <button
+                    type="button"
+                    class="tocButton"
+                    onclick={() => scrollToSection('article-one')}
+                >
+                    Article I — League Structure
+                </button>
 
-    <p>1 IR Spots (Player must be labeled as IR, Out, or Covid in the Sleeper App)</p>
-    
-        <h4 bind:this={oneOneOne}>1.1.1 Position Maximums</h4>
-        
-        <div class="subBlock">
-            <table class="positionMaximums">
+                <button
+                    type="button"
+                    class="tocButton"
+                    onclick={() => scrollToSection('article-two')}
+                >
+                    Article II — Rosters & Lineups
+                </button>
+
+                <button
+                    type="button"
+                    class="tocButton"
+                    onclick={() => scrollToSection('article-three')}
+                >
+                    Article III — Competition
+                </button>
+
+                <button
+                    type="button"
+                    class="tocButton"
+                    onclick={() => scrollToSection('article-four')}
+                >
+                    Article IV — Trades & Transactions
+                </button>
+
+                <button
+                    type="button"
+                    class="tocButton"
+                    onclick={() => scrollToSection('article-five')}
+                >
+                    Article V — Low Man
+                </button>
+            </div>
+
+            <div>
+                <button
+                    type="button"
+                    class="tocButton"
+                    onclick={() => scrollToSection('article-six')}
+                >
+                    Article VI — Co-Managers
+                </button>
+
+                <button
+                    type="button"
+                    class="tocButton"
+                    onclick={() => scrollToSection('article-seven')}
+                >
+                    Article VII — Dues & Payouts
+                </button>
+
+                <button
+                    type="button"
+                    class="tocButton"
+                    onclick={() => scrollToSection('article-eight')}
+                >
+                    Article VIII — Last Place
+                </button>
+
+                <button
+                    type="button"
+                    class="tocButton"
+                    onclick={() => scrollToSection('article-nine')}
+                >
+                    Article IX — Roster Czar
+                </button>
+
+                <button
+                    type="button"
+                    class="tocButton"
+                    onclick={() => scrollToSection('article-ten')}
+                >
+                    Article X — Rule Changes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ARTICLE I -->
+    <section class="article" id="article-one">
+        <h2>Article I — League Structure</h2>
+
+        <div class="section">
+            <h3>1.1 League Format</h3>
+
+            <p>
+                TouchDown Syndrome is a 12-roster, season-long redraft fantasy
+                football league hosted on Sleeper.
+            </p>
+
+            <p>
+                Sleeper shall serve as the official source of truth for the
+                league's active scoring settings, roster positions, schedule,
+                standings, playoff configuration, waiver settings, and other
+                platform-controlled league settings.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>1.2 League Membership</h3>
+
+            <p>
+                A roster may be managed by one manager or by approved
+                co-managers. Co-managed teams remain a single fantasy roster,
+                but each co-manager is treated as an individual league member
+                for dues and punishment purposes.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>1.3 Good-Faith Competition</h3>
+
+            <p>
+                Every manager is expected to make a good-faith effort to field
+                a competitive lineup and participate throughout the season.
+                Deliberate conduct intended to compromise competitive integrity
+                may be addressed by the Roster Czar under Article IX.
+            </p>
+        </div>
+    </section>
+
+    <!-- ARTICLE II -->
+    <section class="article" id="article-two">
+        <h2>Article II — Rosters & Lineups</h2>
+
+        <div class="section">
+            <h3>2.1 Official Lineups</h3>
+
+            <p>
+                Starting lineups and roster eligibility shall follow the
+                settings displayed in Sleeper for the current season.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>2.2 Manager Responsibility</h3>
+
+            <p>
+                Each manager is responsible for maintaining his own roster,
+                setting his lineup, monitoring player availability, and
+                accounting for injuries, suspensions, bye weeks, and other
+                relevant circumstances.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>2.3 Locked Players</h3>
+
+            <p>
+                Once a player's applicable NFL game has begun, that player's
+                lineup status is governed by Sleeper's normal lock rules unless
+                a separate league punishment has resulted in a broader roster
+                lock.
+            </p>
+        </div>
+    </section>
+
+    <!-- ARTICLE III -->
+    <section class="article" id="article-three">
+        <h2>Article III — Competition</h2>
+
+        <div class="section">
+            <h3>3.1 Regular Season</h3>
+
+            <p>
+                Regular-season standings, matchup results, points scored,
+                tiebreakers, and playoff qualification shall be determined
+                according to the active Sleeper league settings.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>3.2 Playoffs</h3>
+
+            <p>
+                Playoff seeding, qualification, matchup structure, and scoring
+                shall follow the league settings established in Sleeper for the
+                applicable season.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>3.3 Lineup Integrity</h3>
+
+            <p>
+                Managers may make poor decisions. Managers may make catastrophically
+                poor decisions. Stupidity alone is not a rules violation.
+            </p>
+
+            <p>
+                Deliberately submitting an illegitimate lineup for the purpose
+                of manipulating another team's standings, playoff position, or
+                competitive outcome may constitute a competitive-integrity
+                violation.
+            </p>
+        </div>
+    </section>
+
+    <!-- ARTICLE IV -->
+    <section class="article" id="article-four">
+        <h2>Article IV — Trades & Transactions</h2>
+
+        <div class="section">
+            <h3>4.1 Managerial Freedom</h3>
+
+            <p>
+                Managers are free to value players however they choose. A trade
+                will not be overturned merely because members of the league
+                believe that it is uneven, reckless, stupid, shortsighted, or
+                otherwise offensive to basic football intelligence.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>4.2 Trade Review</h3>
+
+            <p>
+                There shall be no routine league vote to veto trades.
+            </p>
+
+            <p>
+                The Roster Czar may investigate and, where necessary, reverse or
+                block a transaction when credible evidence exists of:
+            </p>
+
+            <ul>
+                <li>Collusion between managers;</li>
+                <li>Intentional roster dumping;</li>
+                <li>
+                    Payment, compensation, favors, or other consideration
+                    outside the fantasy league;
+                </li>
+                <li>
+                    An agreement primarily designed to manipulate standings,
+                    playoff qualification, or competitive integrity;
+                </li>
+                <li>
+                    A genuine accidental transaction promptly acknowledged by
+                    all managers involved.
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>4.3 Waivers and Free Agency</h3>
+
+            <p>
+                Waivers, free-agent acquisitions, FAAB procedures, waiver
+                priority, and transaction deadlines shall follow the current
+                Sleeper league settings.
+            </p>
+        </div>
+    </section>
+
+    <!-- ARTICLE V -->
+    <section class="article" id="article-five">
+        <h2>Article V — The Low Man</h2>
+
+        <div class="section">
+            <h3>5.1 Designation</h3>
+
+            <p>
+                Following each completed fantasy week, the manager whose
+                starting lineup records the fewest fantasy points shall be
+                designated the <strong>Low Man</strong>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>5.2 Press Conference</h3>
+
+            <p>
+                The Low Man must record and submit a video press conference to
+                the league group chat.
+            </p>
+
+            <p>The press conference must address, at minimum:</p>
+
+            <ul>
+                <li>The team's performance during the previous week;</li>
+                <li>What went wrong;</li>
+                <li>
+                    Relevant managerial decisions, player performances, or
+                    failures;
+                </li>
+                <li>The outlook for the roster moving forward.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>5.3 Mandatory Finish</h3>
+
+            <p>
+                The press conference must conclude with the Low Man chugging or
+                shotgunning one full beer.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>5.4 Deadline</h3>
+
+            <div class="ruleBox">
+                The completed Low Man press conference must be sent to the
+                league group chat before kickoff of the following Thursday
+                Night Football game.
+            </div>
+
+            <p>
+                If there is no Thursday Night Football game during the following
+                scoring week, the deadline shall be kickoff of the first NFL
+                game of that scoring week.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>5.5 Failure to Complete</h3>
+
+            <p>
+                If the Low Man fails to submit the required press conference by
+                the applicable deadline, his roster and lineup shall be locked.
+            </p>
+
+            <p>
+                The lock may prevent lineup changes, adds, drops, waivers,
+                trades, or other roster management as necessary to enforce the
+                punishment.
+            </p>
+
+            <p>
+                The roster shall remain subject to enforcement until the
+                required Low Man punishment has been completed.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>5.6 Co-Managed Low Man</h3>
+
+            <p>
+                If a co-managed roster finishes as Low Man, each co-manager
+                must independently complete the full punishment.
+            </p>
+
+            <div class="ruleBox">
+                Two managers means two press conferences and two beer
+                chugs/shotguns. One manager may not complete the punishment on
+                behalf of the other.
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTICLE VI -->
+    <section class="article" id="article-six">
+        <h2>Article VI — Co-Managed Teams</h2>
+
+        <div class="section">
+            <h3>6.1 Co-Management</h3>
+
+            <p>
+                Co-managed teams are permitted with league approval.
+            </p>
+
+            <p>
+                Co-managers jointly control one Sleeper roster but remain
+                individually responsible for their financial and punishment
+                obligations to the league.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>6.2 Dues</h3>
+
+            <p>
+                Each co-manager owes the full league buy-in. The buy-in is not
+                divided between co-managers.
+            </p>
+
+            <p>
+                At the current annual rate of ${dues}, a two-person co-managed
+                roster therefore contributes ${dues * 2} to the league prize
+                pool.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>6.3 Punishments</h3>
+
+            <p>
+                Punishments apply independently to each co-manager.
+            </p>
+
+            <p>
+                Any weekly or season-long punishment earned by a co-managed
+                roster must be performed in full by every manager of that
+                roster.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>6.4 Responsibility</h3>
+
+            <p>
+                Internal disagreement between co-managers does not excuse a
+                missed lineup, transaction error, punishment, payment, or other
+                league obligation.
+            </p>
+        </div>
+    </section>
+
+    <!-- ARTICLE VII -->
+    <section class="article" id="article-seven">
+        <h2>Article VII — League Dues & Payouts</h2>
+
+        <div class="section">
+            <h3>7.1 League Dues</h3>
+
+            <p>
+                The annual league buy-in is <strong>${dues} per manager</strong>.
+            </p>
+
+            <p>
+                With 12 rosters and one two-person co-managed team, the current
+                league consists of 13 paying managers, producing a total annual
+                prize pool of <strong>$1,300</strong>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>7.2 Payout</h3>
+
+            <table class="payoutTable">
+                <thead>
+                    <tr>
+                        <th>Finish</th>
+                        <th>Payout</th>
+                    </tr>
+                </thead>
+
                 <tbody>
-                <tr><td>QB</td><td class="right">3 active, 5 total</td></tr>
-                <tr><td>RB</td><td class="right">20</td></tr>
-                <tr><td>WR</td><td class="right">20</td></tr>
-                <tr><td>TE</td><td class="right">10</td></tr>
-                <tr><td>D/ST</td><td class="right">3</td></tr>
-                <tr><td>K</td><td class="right">3</td></tr>
+                    <tr>
+                        <td>League Champion</td>
+                        <td><strong>$800</strong></td>
+                    </tr>
+
+                    <tr>
+                        <td>2nd Place</td>
+                        <td><strong>$350</strong></td>
+                    </tr>
+
+                    <tr>
+                        <td>3rd Place</td>
+                        <td><strong>$150</strong></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>$1,300</strong></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
 
+        <div class="section">
+            <h3>7.3 Raising Dues</h3>
 
-    <h3 class="subSectionHeading" bind:this={oneTwo}>1.2 Trading</h3>
-    
-    <p>Trading of players and draft picks (up to 3 drafts away) are allowed. Trades will process immediately and will be reversed if vetoed or under investigation for collusion. Tradable assets include players, draft picks, and FAAB $.</p>
-    
-    <h4 bind:this={oneTwoOne}>1.2.1 Trade Collusion</h4>
-    <div class="subBlock">
-        <p>If any owners are suspected of accepting bribes/offering bribes to enhance their/another owners team via trade, trading any assets other than fantasy players, draft picks, FAAB $, or otherwise found guilty of engaging in any form of collusion*, all parties involved in the trade will be susceptible to punishment. The punishments will go as followed:</p>
-        
-        <ul>
-            <li>First Offense – Immediate reduction of FAAB budget by 80%</li>
-            <li>Second Offense – Immediate freeze on all transaction types for the next 18 weeks of regular season and playoff fantasy football games, including trades and waiver wire bids</li>
-            <li>Third Offense – A league meeting of all members not involved in any of the improper trades/activity in question will take place to discuss next steps.</li>
-        </ul>
+            <p>
+                Any change to league dues must be announced before the season
+                in which the new amount will take effect.
+            </p>
 
-        <p>All trades that are found guilty of collusion, will be reversed/denied. If the trade had affected the outcome of previous games, the results of those games will be revised.  </p>
+            <p>
+                Co-manager dues shall continue to be assessed on a per-manager
+                basis unless the league expressly adopts a different rule.
+            </p>
+        </div>
+    </section>
 
-        <p>*Collusion includes the organizing of veto votes against an acceptable trade.</p>
+    <!-- ARTICLE VIII -->
+    <section class="article" id="article-eight">
+        <h2>Article VIII — Last-Place Punishment</h2>
 
-        <p>The commissioner will err on the side of letting owners manage their teams the way they see fit. Any collusion will need to be clear. The commissioner reserves the right to step in and at the very least assess the thinking of any team involved in a heavily lop-sided trade. </p>
+        <div class="section">
+            <h3>8.1 Annual Punishment</h3>
+
+            <p>
+                TouchDown Syndrome shall maintain an annual end-of-season
+                punishment for last place.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>8.2 2026 Punishment</h3>
+
+            <div class="warningBox">
+                <strong>TBD.</strong> The specific 2026 last-place punishment
+                has not yet been finalized.
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>8.3 Co-Managers</h3>
+
+            <p>
+                Unless the league expressly determines otherwise when adopting
+                the specific punishment, a last-place punishment earned by a
+                co-managed roster shall apply independently and in full to each
+                co-manager.
+            </p>
+        </div>
+    </section>
+
+    <!-- ARTICLE IX -->
+    <section class="article" id="article-nine">
+        <h2>Article IX — The Roster Czar</h2>
+
+        <div class="section">
+            <h3>9.1 Administration</h3>
+
+            <p>
+                The Roster Czar serves as commissioner and is responsible for
+                administering the league, maintaining league settings,
+                enforcing written rules, and resolving technical or procedural
+                issues.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>9.2 Competitive Integrity</h3>
+
+            <p>
+                The Roster Czar may take reasonable action necessary to enforce
+                this Constitution and preserve competitive integrity,
+                including enforcement of Low Man roster locks and review of
+                potentially collusive transactions.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>9.3 Limits of Authority</h3>
+
+            <p>
+                Commissioner status does not authorize the Roster Czar to alter
+                scoring, matchup results, rosters, waiver outcomes, or league
+                rules for personal competitive advantage.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>9.4 Unanticipated Issues</h3>
+
+            <p>
+                Where a situation is not addressed by this Constitution or the
+                Sleeper settings, the Roster Czar may issue a reasonable ruling
+                consistent with past league practice, competitive integrity,
+                and the spirit of the league.
+            </p>
+        </div>
+    </section>
+
+    <!-- ARTICLE X -->
+    <section class="article" id="article-ten">
+        <h2>Article X — Rule Changes</h2>
+
+        <div class="section">
+            <h3>10.1 Material Rule Changes</h3>
+
+            <p>
+                Material changes to dues, payouts, scoring, roster construction,
+                playoff qualification, or season-long punishments should be
+                announced before taking effect.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>10.2 Administrative Changes</h3>
+
+            <p>
+                The Roster Czar may make non-material administrative,
+                technical, formatting, or clarification changes when necessary
+                to operate the league or maintain this Constitution.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>10.3 Sleeper Settings</h3>
+
+            <p>
+                Where this Constitution references a configurable football
+                setting without specifying a separate league rule, the current
+                Sleeper configuration shall control.
+            </p>
+        </div>
+    </section>
+
+    <div class="czar">
+        Long live the Czar.
     </div>
-
-    <h4 bind:this={oneTwoTwo}>1.2.2 Lending Players Prohibition</h4>
-    <div class="subBlock">
-        <p>Any player traded from a team may not be re-acquired via trade within 6 weeks of the original trade. Any teams involved in this behavior will be subject to the aforementioned collusion punishments.</p>
-    </div>
-    
-    <h4 bind:this={oneTwoThree}>1.2.3 Trade Deadline</h4>
-    <div class="subBlock">
-        <p>The trade deadline will be set for the Saturday of the week 11 games of the NFL season.</p>
-    </div>
-    
-    <h4 bind:this={oneTwoFour}>1.2.4 Trade Restrictions</h4>
-    <div class="subBlock">
-        <p>You will not be able to trade draft picks that are more than 3 drafts away. For example, during the 2021 season you cannot trade any picks in or after the 2025 draft. You may only trade FAAB $ from the current season.</p>
-    </div>
-    
-    <h4 bind:this={oneTwoFive}>1.2.5 Veto/Trade Process</h4>
-    <div class="subBlock">
-        <p>A total of 7 veto votes are required to veto a trade. Vetoes are only appropriate in instances of collusion or an egregious mismatch of value (i.e. CMC for a backup kicker). Not liking a trade does not warrant a veto.</p>
-    </div>
-    
-    
-    
-    <h3 bind:this={oneThree}>1.3 Waiver Wire</h3>
-    
-    <p>FAAB Waiver wire system. Each team will begin the season with $100. $0 bids are allowed. Bids will process Thursdays and Sundays at 9AM EST.</p>
-
-    <p>FAAB budgets will reset each season in January.</p>
-    
-    
-    <h2 class="sectionHeading" bind:this={two}>Section 2 Drafting</h2>
-    
-    <h3 bind:this={twoOne}>2.1 Draft Order</h3>
-    <p>The draft order each year will be a linear draft in reverse order of the previous year’s regular season standings.</p>
-
-    <h3 bind:this={twoTwo}>2.2 Rookie Drafts</h3>
-    <p>Rokkie drafts will consist of 3 round of drafting, with 5 minutes alotted for each pick. To make room for the incoming players, benches will be expanded by (5) spots. These spots will be removed in mid-August, at which point you will need to have cut the necessary players.</p>
-    <p>Any spots not filled during the draft, can be filled immediately afterwards from the waiver wire.</p>
-    
-    <h3 bind:this={twoThree}>2.3 Draft Day Trades</h3>
-    <p>If a trade is being made during the draft, one or both parties can alert the commissioner to pause the draft to allow for extra time to negotiate the trade.</p>
-    
-    <h2 class="sectionHeading" bind:this={three}>Section 3 Scoring System</h2>
-
-    <h3 bind:this={threeOne}>3.1 Scoring System</h3>
-    <p>The league scoring system breakdown is listed on the Sleeper fantasy app (for the most part, it follows typical .5PPR Scoring). The scoring system will never change without a majority league vote.</p>
-    
-    <h2 class="sectionHeading" bind:this={four}>Section 4 Postseason</h2>
-    
-    <h3 bind:this={fourOne}>4.1 Playoffs</h3>
-    <p>At the end of the season 6 teams will make the playoffs. The first round of playoffs will commence in week 15. Each team that wins their division and the 4 wild card teams that finish with the best records, will receive a playoff berth. The 2 teams that win their division will receive a bye week in the first round of the playoffs. Each playoff matchup will only last one week and the winner will advance. Week 18 will not be used.</p>
-    
-    <h3 bind:this={fourTwo}>4.2 Seeding Tiebreakers</h3>
-    <p>If two teams finish with the same record the tiebreakers will go as followed:</p>
-
-    <ol>
-        <li>Points For</li>
-        <li>Head 2 Head Record</li>
-        <li>Division Record</li>
-        <li>Total Points Against</li>
-        <li>Coin Flip</li>
-        <li>Duel to the death</li>
-    </ol>
-
-    <h2 class="sectionHeading" bind:this={five}>Section 5 Tanking Policy</h2>
-    
-    <h3 bind:this={fiveOne}>5.1 League Tanking Policy</h3>
-    <p>No team may intentionally leave starting roster spots empty. Any evidence of intentionally leaving roster spots empty in order to improve your draft position may be subject to punishment, including but not limited to the forfeiture of draft selections.</p>
-
-    <h2 class="sectionHeading" bind:this={six}>Section 6 Replacing Managers</h2>
-    
-    <h3 bind:this={sixOne}>6.1 Removing Managers</h3>
-    <p>Short of continuously failing to set a valid lineup, or confirmed collusion, no manager can be removed against their will. Participation, through the league chat, trade offers, and the waiver wire, is strongly encouraged but generally grounds for removal.</p>
-    
-    <h3 bind:this={sixTwo}>6.2 Replacing Managers</h3>
-    <p>When a manager needs to be replaced, the commisiooners will try to find a suitable candidate with some connection to at least a portion of the existing managers. Priority will be placed on managers who are eager to take on a dynasty commitment and will be very active within the league.</p>
-    
-    <h3 bind:this={sixThree}>6.3 Replacement Incentive</h3>
-    <p>In the event that a manager chooses to quit the league or is removed by a comissioner, an incoming manager is offered a 50% reductioon on their first year buy-in.</p>
-
-    <h2 class="sectionHeading" bind:this={seven}>Section 7 League Finances</h2>
-    
-    <h3 bind:this={sevenOne}>7.1 League Dues</h3>
-    <p>League dues are set at {dues}$. Dues are collected through <a href="https://www.leaguesafe.com/league/3949641">LeagueSafe</a> and collection will be sent out no later than the first of August. All managers must be fully paid up before the start of regular season. In the event that a manager fails to pay before the deadline, a 10% penalty will be addd to their payment and will go towards the payouts at the end of the year.</p>
-    
-    <h3 bind:this={sevenTwo}>7.2 Payout</h3>
-    <p>League payout is structured as follows:</p>
-    <ul>
-        <li>1st place: {dues * 8}$</li>
-        <li>2nd place: {dues * 3}$</li>
-        <li>3rd place: {dues}$</li>
-    </ul>
-    <p>In the event that a manager was fined due to late payment, their extra fee will be added to the winner's payout. Similarly, if new managers come into the league and the payout is smaller, the difference will come out of the winner's prize.</p>
-    
-    <h3 bind:this={sevenThree}>7.3 Raising Dues</h3>
-    <p>A ⅔ majority vote is required in order to raise league dues. In the event that a manager is no longer financially comfortable with the buyin, finding a co-manager to split the cost is reccomended.</p>
-
 </div>
