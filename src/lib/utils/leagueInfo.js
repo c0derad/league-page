@@ -63,7 +63,10 @@ export const managers = [
   {
     "managerID": "1132151539948347392",
     "name": "Rhodes x Pags",
-    "coManagerID": "1263967779644518400",
+    "coManager": {
+      "managerID": "1263967779644518400",
+      "name": "Pags"
+    },
     "location": "Dallas, TX",
     "school": "Villanova x Northwestern",
     "bio": null,
@@ -118,7 +121,7 @@ export const managers = [
   {
     "managerID": "773337849662889984",
     "name": "JQ",
-    "location": "Cincinatti, OH",
+    "location": "Cincinnatti, OH",
     "school": "Alabama",
     "bio": null,
     "photo": null,
