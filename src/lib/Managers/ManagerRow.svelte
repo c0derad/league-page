@@ -269,29 +269,17 @@
             {/if}
         </div>
 
-        <!-- Preferred contact -->
-        <div class="infoSlot">
-            {#if manager.preferredContact}
-                <div class="infoIcon">
-                    <img
-                        class="infoImg"
-                        src="/{manager.preferredContact}.png"
-                        alt="{manager.preferredContact}"
-                    />
-                </div>
-
-                <div class="infoAnswer">
-                    {manager.preferredContact}
-                </div>
-            {:else}
-                <div class="infoIcon question">
-                    <img
-                        class="infoImg"
-                        src="/managers/question.jpg"
-                        alt="preferred contact unknown"
-                    />
-                </div>
-            {/if}
+        <!-- School -->
+        <div class="schoolSlot">
+        {#if manager.school}
+            <div class="schoolName">
+                {manager.school}
+            </div>
+        {:else}
+            <div class="schoolName unknown">
+                —
+            </div>
+        {/if}
         </div>
 
         <!-- Rebuild mode -->
