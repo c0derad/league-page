@@ -18,20 +18,76 @@
             if (!starter || starter == 0) continue;
 
             const player = players[starter];
-
             if (!player) continue;
 
             const projection =
-                player.wi &&
-                player.wi[week] &&
-                player.wi[week].p
-                    ? parseFloat(player.wi[week].p)
+                player.wi?.[week]?.p
+                    ? Number(player.wi[week].p)
                     : 0;
 
             total += projection;
         }
 
         return Number(round(total));
+    };
+
+    const getTopProjectedPlayers = (
+        starters,
+        players,
+        week,
+        count = 3
+    ) => {
+        return (starters || [])
+            .map((playerID) => {
+                if (!playerID || playerID == 0) return null;
+
+                const player = players[playerID];
+                if (!player) return null;
+
+                const projection =
+                    player.wi?.[week]?.p
+                        ? Number(player.wi[week].p)
+                        : 0;
+
+                const name =
+                    player.full_name ||
+                    player.name ||
+                    `${player.first_name || ''} ${player.last_name || ''}`.trim() ||
+                    `Player ${playerID}`;
+
+                return {
+                    playerID,
+                    name,
+                    position: player.position || '',
+                    nflTeam: player.team || '',
+                    projection: Number(round(projection))
+                };
+            })
+            .filter(Boolean)
+            .sort((a, b) => b.projection - a.projection)
+            .slice(0, count);
+    };
+
+    const getTeamAvatar = (team) => {
+        if (!team) return null;
+
+        const avatar =
+            team.avatar ||
+            team.metadata?.avatar ||
+            team.user?.avatar ||
+            team.manager?.avatar ||
+            null;
+
+        if (!avatar) return null;
+
+        if (
+            avatar.startsWith('http://') ||
+            avatar.startsWith('https://')
+        ) {
+            return avatar;
+        }
+
+        return `https://sleepercdn.com/avatars/thumbs/${avatar}`;
     };
 
     const buildPreview = (
@@ -42,8 +98,8 @@
         const players = playersData.players;
 
         const requestedWeek =
-            data.queryWeek ||
-            matchupsData.week ||
+            Number(data.queryWeek) ||
+            Number(matchupsData.week) ||
             1;
 
         const editorial =
@@ -51,7 +107,7 @@
 
         const matchupWeek =
             matchupsData.matchupWeeks.find(
-                (m) => m.week == requestedWeek
+                (m) => Number(m.week) === requestedWeek
             );
 
         if (!matchupWeek) {
@@ -128,6 +184,20 @@
                     ? homeTeam
                     : null;
 
+            const homeTopPlayers =
+                getTopProjectedPlayers(
+                    home.starters,
+                    players,
+                    requestedWeek
+                );
+
+            const awayTopPlayers =
+                getTopProjectedPlayers(
+                    away.starters,
+                    players,
+                    requestedWeek
+                );
+
             const commentary =
                 editorial?.matchups?.[matchupID] || null;
 
@@ -139,6 +209,10 @@
                 awayTeam,
                 homeProjection,
                 awayProjection,
+                homeTopPlayers,
+                awayTopPlayers,
+                homeAvatar: getTeamAvatar(homeTeam),
+                awayAvatar: getTeamAvatar(awayTeam),
                 margin: Number(round(margin)),
                 total: Number(round(total)),
                 favorite,
@@ -202,7 +276,7 @@
 <style>
     .page {
         width: 94%;
-        max-width: 950px;
+        max-width: 1000px;
         margin: 0 auto;
         padding: 3em 0 6em;
     }
@@ -221,7 +295,7 @@
     }
 
     .intro {
-        max-width: 760px;
+        max-width: 780px;
         margin: 0 auto 3em;
         line-height: 1.65em;
         text-align: center;
@@ -267,7 +341,7 @@
     .game {
         border: 1px solid var(--ccc);
         border-radius: 1em;
-        margin: 1.25em 0;
+        margin: 1.5em 0;
         overflow: hidden;
         box-shadow: 0 0 6px 0 var(--bbb);
         background: var(--fff);
@@ -279,10 +353,27 @@
             1fr auto 1fr;
         align-items: center;
         padding: 1.5em;
+        gap: 1em;
     }
 
     .team {
         text-align: center;
+    }
+
+    .teamIdentity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7em;
+        min-height: 54px;
+    }
+
+    .teamAvatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid var(--ccc);
     }
 
     .teamName {
@@ -293,13 +384,13 @@
     .projection {
         font-size: 2em;
         font-weight: 700;
-        margin-top: 0.25em;
+        margin-top: 0.35em;
     }
 
     .vs {
         color: #999;
         font-weight: 700;
-        padding: 0 1.5em;
+        padding: 0 1em;
     }
 
     .line {
@@ -307,6 +398,53 @@
         background: var(--eee);
         padding: 0.75em;
         font-size: 0.9em;
+    }
+
+    .keyPlayers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        padding: 1.2em 1.5em;
+        border-top: 1px solid var(--ccc);
+        border-bottom: 1px solid var(--ccc);
+    }
+
+    .playerSide {
+        min-width: 0;
+    }
+
+    .playerSideTitle {
+        font-size: 0.75em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #888;
+        margin-bottom: 0.6em;
+    }
+
+    .playerRow {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.75em;
+        align-items: center;
+        padding: 0.35em 0;
+    }
+
+    .playerName {
+        font-weight: 600;
+        color: var(--g555);
+    }
+
+    .playerMeta {
+        display: block;
+        font-size: 0.75em;
+        color: #888;
+        margin-top: 0.1em;
+    }
+
+    .playerProjection {
+        font-weight: 700;
+        color: var(--g555);
+        white-space: nowrap;
     }
 
     .previewCopy {
@@ -328,7 +466,7 @@
 
     .commentaryText {
         margin: 0;
-        line-height: 1.6em;
+        line-height: 1.65em;
         color: var(--g555);
     }
 
@@ -346,15 +484,10 @@
         font-style: italic;
     }
 
-    .loading {
-        text-align: center;
-        padding: 6em 0;
-        color: #888;
-    }
-
+    .loading,
     .noGames {
         text-align: center;
-        padding: 4em 0;
+        padding: 5em 0;
         color: #888;
     }
 
@@ -372,7 +505,7 @@
         }
 
         .vs {
-            padding: 0 0.75em;
+            padding: 0 0.4em;
         }
 
         .title {
@@ -381,6 +514,19 @@
 
         .intro {
             text-align: left;
+        }
+
+        .keyPlayers {
+            grid-template-columns: 1fr;
+        }
+
+        .teamIdentity {
+            flex-direction: column;
+        }
+
+        .teamAvatar {
+            width: 40px;
+            height: 40px;
         }
     }
 </style>
@@ -414,7 +560,6 @@
 
                 {#if previewData.gameOfWeek}
                     <div class="feature">
-
                         <div class="featureLabel">
                             GAME OF THE WEEK
                         </div>
@@ -429,13 +574,11 @@
                             Projected margin:
                             {previewData.gameOfWeek.margin}
                         </div>
-
                     </div>
                 {/if}
 
                 {#if previewData.shootout}
                     <div class="feature">
-
                         <div class="featureLabel">
                             PROJECTED SHOOTOUT
                         </div>
@@ -450,13 +593,11 @@
                             Projected total:
                             {previewData.shootout.total}
                         </div>
-
                     </div>
                 {/if}
 
                 {#if previewData.blowout}
                     <div class="feature">
-
                         <div class="featureLabel">
                             ASS BEATING OF THE WEEK
                         </div>
@@ -471,7 +612,6 @@
                             Projected margin:
                             {previewData.blowout.margin}
                         </div>
-
                     </div>
                 {/if}
 
@@ -485,8 +625,18 @@
 
                         <div class="team">
 
-                            <div class="teamName">
-                                {game.homeTeam.name}
+                            <div class="teamIdentity">
+                                {#if game.homeAvatar}
+                                    <img
+                                        class="teamAvatar"
+                                        src={game.homeAvatar}
+                                        alt={game.homeTeam.name}
+                                    />
+                                {/if}
+
+                                <div class="teamName">
+                                    {game.homeTeam.name}
+                                </div>
                             </div>
 
                             <div class="projection">
@@ -501,8 +651,18 @@
 
                         <div class="team">
 
-                            <div class="teamName">
-                                {game.awayTeam.name}
+                            <div class="teamIdentity">
+                                {#if game.awayAvatar}
+                                    <img
+                                        class="teamAvatar"
+                                        src={game.awayAvatar}
+                                        alt={game.awayTeam.name}
+                                    />
+                                {/if}
+
+                                <div class="teamName">
+                                    {game.awayTeam.name}
+                                </div>
                             </div>
 
                             <div class="projection">
@@ -514,17 +674,72 @@
                     </div>
 
                     <div class="line">
-
                         {#if game.favorite}
                             Projected Line:
                             {game.favorite.name}
                             -{game.margin}
-
                             &nbsp; | &nbsp;
                         {/if}
 
                         Projected Total:
                         {game.total}
+                    </div>
+
+                    <div class="keyPlayers">
+
+                        <div class="playerSide">
+                            <div class="playerSideTitle">
+                                {game.homeTeam.name} — KEY PLAYERS
+                            </div>
+
+                            {#each game.homeTopPlayers as player}
+                                <div class="playerRow">
+                                    <div>
+                                        <span class="playerName">
+                                            {player.name}
+                                        </span>
+
+                                        <span class="playerMeta">
+                                            {player.position}
+                                            {#if player.nflTeam}
+                                                · {player.nflTeam}
+                                            {/if}
+                                        </span>
+                                    </div>
+
+                                    <div class="playerProjection">
+                                        {player.projection}
+                                    </div>
+                                </div>
+                            {/each}
+                        </div>
+
+                        <div class="playerSide">
+                            <div class="playerSideTitle">
+                                {game.awayTeam.name} — KEY PLAYERS
+                            </div>
+
+                            {#each game.awayTopPlayers as player}
+                                <div class="playerRow">
+                                    <div>
+                                        <span class="playerName">
+                                            {player.name}
+                                        </span>
+
+                                        <span class="playerMeta">
+                                            {player.position}
+                                            {#if player.nflTeam}
+                                                · {player.nflTeam}
+                                            {/if}
+                                        </span>
+                                    </div>
+
+                                    <div class="playerProjection">
+                                        {player.projection}
+                                    </div>
+                                </div>
+                            {/each}
+                        </div>
 
                     </div>
 
