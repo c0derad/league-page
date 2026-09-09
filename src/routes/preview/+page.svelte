@@ -4,6 +4,8 @@
         round
     } from '$lib/utils/helperFunctions/universalFunctions';
 
+    import { weeklyPreviews } from '$lib/utils/weeklyPreviews';
+
     export let data;
 
     let loading = true;
@@ -29,7 +31,7 @@
             total += projection;
         }
 
-        return Number(round(total));;
+        return Number(round(total));
     };
 
     const buildPreview = (
@@ -44,6 +46,9 @@
             matchupsData.week ||
             1;
 
+        const editorial =
+            weeklyPreviews[requestedWeek] || null;
+
         const matchupWeek =
             matchupsData.matchupWeeks.find(
                 (m) => m.week == requestedWeek
@@ -52,6 +57,7 @@
         if (!matchupWeek) {
             return {
                 week: requestedWeek,
+                intro: editorial?.intro || null,
                 games: [],
                 gameOfWeek: null,
                 shootout: null,
@@ -122,6 +128,9 @@
                     ? homeTeam
                     : null;
 
+            const commentary =
+                editorial?.matchups?.[matchupID] || null;
+
             games.push({
                 matchupID,
                 home,
@@ -130,23 +139,27 @@
                 awayTeam,
                 homeProjection,
                 awayProjection,
-                margin: round(margin),
-                total: round(total),
+                margin: Number(round(margin)),
+                total: Number(round(total)),
                 favorite,
-                underdog
+                underdog,
+                commentary
             });
         }
 
-        const sortedByMargin = [...games].sort(
-            (a, b) => a.margin - b.margin
-        );
+        const sortedByMargin =
+            [...games].sort(
+                (a, b) => a.margin - b.margin
+            );
 
-        const sortedByTotal = [...games].sort(
-            (a, b) => b.total - a.total
-        );
+        const sortedByTotal =
+            [...games].sort(
+                (a, b) => b.total - a.total
+            );
 
         return {
             week: requestedWeek,
+            intro: editorial?.intro || null,
             games,
             gameOfWeek:
                 sortedByMargin[0] || null,
@@ -204,7 +217,15 @@
         text-align: center;
         color: #888;
         font-style: italic;
-        margin-bottom: 3em;
+        margin-bottom: 2em;
+    }
+
+    .intro {
+        max-width: 760px;
+        margin: 0 auto 3em;
+        line-height: 1.65em;
+        text-align: center;
+        color: var(--g555);
     }
 
     .featureGrid {
@@ -254,7 +275,8 @@
 
     .matchupHeader {
         display: grid;
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-columns:
+            1fr auto 1fr;
         align-items: center;
         padding: 1.5em;
     }
@@ -288,7 +310,7 @@
     }
 
     .previewCopy {
-        padding: 1.25em 1.5em 1.5em;
+        padding: 1.4em 1.6em 1.6em;
     }
 
     .czarTitle {
@@ -299,6 +321,26 @@
         margin-bottom: 0.5em;
     }
 
+    .commentaryHeadline {
+        margin: 0 0 0.75em;
+        font-size: 1.25em;
+    }
+
+    .commentaryText {
+        margin: 0;
+        line-height: 1.6em;
+        color: var(--g555);
+    }
+
+    .pick {
+        margin-top: 1.25em;
+        font-size: 0.95em;
+    }
+
+    .pickLabel {
+        font-weight: 700;
+    }
+
     .placeholder {
         color: #888;
         font-style: italic;
@@ -307,6 +349,12 @@
     .loading {
         text-align: center;
         padding: 6em 0;
+        color: #888;
+    }
+
+    .noGames {
+        text-align: center;
+        padding: 4em 0;
         color: #888;
     }
 
@@ -330,6 +378,10 @@
         .title {
             font-size: 2.2em;
         }
+
+        .intro {
+            text-align: left;
+        }
     }
 </style>
 
@@ -350,124 +402,184 @@
             The official word from the Roster Czar
         </div>
 
-        <div class="featureGrid">
+        {#if previewData.intro}
+            <div class="intro">
+                {previewData.intro}
+            </div>
+        {/if}
 
-            {#if previewData.gameOfWeek}
-                <div class="feature">
-                    <div class="featureLabel">
-                        GAME OF THE WEEK
-                    </div>
+        {#if previewData.games.length > 0}
 
-                    <div class="featureTeams">
-                        {previewData.gameOfWeek.homeTeam.name}
-                        vs
-                        {previewData.gameOfWeek.awayTeam.name}
-                    </div>
+            <div class="featureGrid">
 
-                    <div class="featureStat">
-                        Projected margin:
-                        {previewData.gameOfWeek.margin}
-                    </div>
-                </div>
-            {/if}
+                {#if previewData.gameOfWeek}
+                    <div class="feature">
 
-            {#if previewData.shootout}
-                <div class="feature">
-                    <div class="featureLabel">
-                        PROJECTED SHOOTOUT
-                    </div>
-
-                    <div class="featureTeams">
-                        {previewData.shootout.homeTeam.name}
-                        vs
-                        {previewData.shootout.awayTeam.name}
-                    </div>
-
-                    <div class="featureStat">
-                        Projected total:
-                        {previewData.shootout.total}
-                    </div>
-                </div>
-            {/if}
-
-            {#if previewData.blowout}
-                <div class="feature">
-                    <div class="featureLabel">
-                        ASS BEATING OF THE WEEK
-                    </div>
-
-                    <div class="featureTeams">
-                        {previewData.blowout.favorite?.name}
-                        over
-                        {previewData.blowout.underdog?.name}
-                    </div>
-
-                    <div class="featureStat">
-                        Projected margin:
-                        {previewData.blowout.margin}
-                    </div>
-                </div>
-            {/if}
-
-        </div>
-
-        {#each previewData.games as game}
-
-            <div class="game">
-
-                <div class="matchupHeader">
-
-                    <div class="team">
-                        <div class="teamName">
-                            {game.homeTeam.name}
+                        <div class="featureLabel">
+                            GAME OF THE WEEK
                         </div>
 
-                        <div class="projection">
-                            {game.homeProjection}
-                        </div>
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="team">
-                        <div class="teamName">
-                            {game.awayTeam.name}
+                        <div class="featureTeams">
+                            {previewData.gameOfWeek.homeTeam.name}
+                            vs
+                            {previewData.gameOfWeek.awayTeam.name}
                         </div>
 
-                        <div class="projection">
-                            {game.awayProjection}
+                        <div class="featureStat">
+                            Projected margin:
+                            {previewData.gameOfWeek.margin}
                         </div>
+
                     </div>
+                {/if}
 
-                </div>
+                {#if previewData.shootout}
+                    <div class="feature">
 
-                <div class="line">
-                    {#if game.favorite}
-                        Projected Line:
-                        {game.favorite.name}
-                        -{game.margin}
-                        &nbsp; | &nbsp;
-                    {/if}
+                        <div class="featureLabel">
+                            PROJECTED SHOOTOUT
+                        </div>
 
-                    Projected Total:
-                    {game.total}
-                </div>
+                        <div class="featureTeams">
+                            {previewData.shootout.homeTeam.name}
+                            vs
+                            {previewData.shootout.awayTeam.name}
+                        </div>
 
-                <div class="previewCopy">
-                    <div class="czarTitle">
-                        THE CZAR'S READ
+                        <div class="featureStat">
+                            Projected total:
+                            {previewData.shootout.total}
+                        </div>
+
                     </div>
+                {/if}
 
-                    <div class="placeholder">
-                        Weekly matchup commentary goes here.
+                {#if previewData.blowout}
+                    <div class="feature">
+
+                        <div class="featureLabel">
+                            ASS BEATING OF THE WEEK
+                        </div>
+
+                        <div class="featureTeams">
+                            {previewData.blowout.favorite?.name}
+                            over
+                            {previewData.blowout.underdog?.name}
+                        </div>
+
+                        <div class="featureStat">
+                            Projected margin:
+                            {previewData.blowout.margin}
+                        </div>
+
                     </div>
-                </div>
+                {/if}
 
             </div>
 
-        {/each}
+            {#each previewData.games as game}
+
+                <div class="game">
+
+                    <div class="matchupHeader">
+
+                        <div class="team">
+
+                            <div class="teamName">
+                                {game.homeTeam.name}
+                            </div>
+
+                            <div class="projection">
+                                {game.homeProjection}
+                            </div>
+
+                        </div>
+
+                        <div class="vs">
+                            VS
+                        </div>
+
+                        <div class="team">
+
+                            <div class="teamName">
+                                {game.awayTeam.name}
+                            </div>
+
+                            <div class="projection">
+                                {game.awayProjection}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="line">
+
+                        {#if game.favorite}
+                            Projected Line:
+                            {game.favorite.name}
+                            -{game.margin}
+
+                            &nbsp; | &nbsp;
+                        {/if}
+
+                        Projected Total:
+                        {game.total}
+
+                    </div>
+
+                    <div class="previewCopy">
+
+                        <div class="czarTitle">
+                            THE CZAR'S READ
+                        </div>
+
+                        {#if game.commentary}
+
+                            {#if game.commentary.headline}
+                                <h3 class="commentaryHeadline">
+                                    {game.commentary.headline}
+                                </h3>
+                            {/if}
+
+                            {#if game.commentary.preview}
+                                <p class="commentaryText">
+                                    {game.commentary.preview}
+                                </p>
+                            {/if}
+
+                            {#if game.commentary.pick}
+                                <div class="pick">
+                                    <span class="pickLabel">
+                                        CZAR PICK:
+                                    </span>
+
+                                    {game.commentary.pick}
+                                </div>
+                            {/if}
+
+                        {:else}
+
+                            <div class="placeholder">
+                                No Czar commentary yet.
+                            </div>
+
+                        {/if}
+
+                    </div>
+
+                </div>
+
+            {/each}
+
+        {:else}
+
+            <div class="noGames">
+                No matchups found for Week
+                {previewData.week}.
+            </div>
+
+        {/if}
 
     {/if}
 
