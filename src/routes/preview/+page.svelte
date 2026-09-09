@@ -42,6 +42,7 @@
                 if (!playerID || playerID == 0) return null;
 
                 const player = players[playerID];
+                console.log('PLAYER DEBUG', playerID, player);
                 if (!player) return null;
 
                 const projection =
