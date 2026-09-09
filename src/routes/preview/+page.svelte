@@ -29,7 +29,7 @@
             total += projection;
         }
 
-        return round(total);
+        return Number(round(total));;
     };
 
     const buildPreview = (
@@ -105,8 +105,8 @@
                 );
 
             const total =
-                homeProjection +
-                awayProjection;
+                Number(homeProjection) +
+                Number(awayProjection);
 
             const favorite =
                 homeProjection > awayProjection
