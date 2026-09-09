@@ -1,103 +1,117 @@
 export const weeklyPreviews = {
   1: {
     intro: `
-      Week 1 is here. Twelve managers enter undefeated, overconfident,
-      and convinced the draft board vindicated every bad decision they made.
-      By Tuesday, at least half of them will be blaming projections.
+      Week 1 is here. Twelve managers enter undefeated, irrationally confident,
+      and fully prepared to discover that the team they loved on draft night may
+      actually be dogshit. The projections have spoken. The Czar is under no legal
+      obligation to agree with them.
     `,
 
     matchups: {
       1: {
-        headline: "JV Has the Biggest Hammer on the Board",
+        headline: "JV Has Gibbs. Trevor Has Problems.",
         preview: `
-          PeterPanthers enters Week 1 with the largest projected edge, and Jahmyr Gibbs
-          is doing a lot of the heavy lifting at 23.66 projected points. Jayden Daniels
-          gives JV another 19-point ceiling piece, while Chris Olave rounds out a strong
-          top three. Trevor's side is flatter: Trevor Lawrence, James Cook and Omarion
-          Hampton are all projected between roughly 15 and 18 points, but nobody is
-          currently projected to match Gibbs' impact. If Gibbs does what the model expects,
-          Trevor probably needs either Lawrence to substantially outperform his number or
-          Cook/Hampton to find the end zone multiple times. JV should win this game.
-          Which, naturally, makes losing it considerably funnier.
+          JV gets the best individual weapon in this matchup in Gibbs, and Detroit
+          should have every reason to feed him early and often. Jayden Daniels adds
+          the kind of chaos that can turn a normal afternoon into a 30-point fantasy
+          day if Washington starts using his legs near the goal line. Trevor's best
+          counter is James Cook, who can absolutely control a game if Buffalo gets
+          ahead and leans on the run. But Trevor Lawrence and Hampton are asking a
+          lot more of their real offenses than Gibbs and Daniels are. Sleeper likes
+          JV by more than a touchdown, and for once I do too.
         `,
         pick: "PeterPanthers"
       },
 
       2: {
-        headline: "Burrow and Puka vs. Josh Allen",
+        headline: "Burrow vs. Allen: Someone Is Getting Screwed",
         preview: `
-          This is the actual coin flip of Week 1. Chaney gets 20-plus projections from
-          both Puka Nacua and Joe Burrow, with Nico Collins sitting right behind them at
-          17.40. Josh answers with the single best quarterback projection in the matchup:
-          Josh Allen at 21.08, plus Jaxon Smith-Njigba at 19.67. The interesting gap is
-          the third option. Nico currently carries a little more projected weight than
-          Kenneth Walker, which is basically the entire 1.10-point difference between
-          these teams. This matchup is thin enough that one Burrow touchdown to the wrong
-          Bengal or one Allen rushing score probably swings the whole thing.
+          This is the best actual football matchup of the week. Chaney has Burrow
+          throwing to one of the best offenses in football, plus Puka and Nico
+          capable of taking over games on volume alone. Josh answers with Allen,
+          which is basically cheating because Buffalo can call a broken play and
+          still get six points out of him. JSN gives Josh another legitimate
+          matchup-winner if Seattle funnels targets his way.
+
+          Sleeper has The Oilers by about a point. I don't buy it. In a game this
+          close, I trust Allen's legs and chaos factor more than I trust a projection
+          model pretending it knows where every touchdown is going.
         `,
-        pick: "The Oilers"
+        pick: "ConsiderMeOiled"
       },
 
       3: {
-        headline: "The Czar's Reign Begins",
+        headline: "Drake 'Drake Maye' Maye Takes the Throne",
         preview: `
-          Critical Chase Theory enters Week 1 behind a clean three-headed core:
-          Ja'Marr Chase at 19.76, Drake Maye at 19.67 and Drake London at 15.83.
-          Ryan counters with Jonathan Taylor and Brock Purdy both around 19 points,
-          but the drop to Tetairoa McMillan at 13.95 creates the projected separation.
-          The matchup may come down to Maye. If he performs like a legitimate top-tier
-          fantasy quarterback, the Czar should control this one. If he faceplants while
-          Purdy and Taylor deliver, there will be an extremely inconvenient press cycle
-          for league leadership after Week 1.
+          The Czar gets Ja'Marr, which means one busted coverage can erase an entire
+          quarter of Ryan's good work. London gives this roster another alpha receiver
+          who can win on volume, but this one comes down to Drake "Drake Maye" Maye.
+          If Maye looks like the MVP-level quarterback people think he can be, this
+          matchup gets ugly fast. Ryan's answer is Taylor controlling the game on the
+          ground and Purdy staying ruthlessly efficient.
+
+          Ryan absolutely has a path here, especially if Taylor owns the red zone,
+          but I refuse to begin the season by picking against my own regime.
         `,
         pick: "Critical Chase Theory"
       },
 
       4: {
-        headline: "Two Managers, One Ten-Point Problem",
+        headline: "Two Managers, Still Not Enough Managers",
         preview: `
-          Rhodes and Pags have Bijan Robinson, which is a very good place to start.
-          The problem is what comes after him. Bijan projects for 21.47, but Matthew
-          Stafford sits at 16.94 and Rashee Rice at 14.46. Across the table, JQ rolls
-          out Christian McCaffrey at 21.04, Patrick Mahomes at 17.12 and George Pickens
-          at 16.59. Campus Legends doesn't have a dramatically better superstar; it has
-          more projected strength throughout the lineup. That's why this spread has
-          ballooned to nearly ten points. Rhodes x Pags need Bijan to be the best player
-          in this matchup and probably need Stafford to beat his projection as well.
-          A Week 1 Low Man appearance would be particularly expensive for a team with
-          two separate press conferences to produce.
+          Rhodes and Pags have Bijan, which is the kind of player who can make a
+          coaching staff look smart by simply existing. If Atlanta gets him into
+          space, he can carry this matchup by himself. Stafford and Rashee Rice give
+          them enough passing-game upside to make this interesting.
+
+          The problem is JQ has CMC and Mahomes. CMC can ruin a fantasy matchup without
+          even needing 25 carries, and Mahomes is Mahomes. Pickens is the wild card:
+          if Dallas uses him aggressively downfield, JQ suddenly has three players who
+          can produce explosive plays instead of merely accumulating touches.
+
+          Sleeper sees a near double-digit gap. That feels harsh, but not insane.
+          Rhodes and Pags need Bijan to go full superhero mode.
         `,
         pick: "Campus Legends"
       },
 
       5: {
-        headline: "The Week 1 Track Meet",
+        headline: "The Sun God Demands Sacrifice",
         preview: `
-          At 251.71 projected points, this is the highest-total matchup on the board.
-          Vigo leads with Caleb Williams at 19.57, followed by A.J. Brown and Chase Brown.
-          Charles answers with arguably the stronger trio: Jalen Hurts at 19.94,
-          Amon-Ra St. Brown at 19.79 and Rhamondre Stevenson at 16.44. Hurts and Amon-Ra
-          give Charles two legitimate 20-point threats, while Vigo is more dependent on
-          Caleb delivering immediately. This game has the best chance to turn into a
-          Sunday afternoon scoreboard fight. If Caleb goes nuclear, the six-point line
-          disappears quickly. If he doesn't, Charles has the safer high-end profile.
+          This is the projected shootout, and it actually looks like one. Charles has
+          Hurts, which means every Eagles drive inside the five-yard line is a personal
+          attack on Vigo. He also has The Sun God, who can spend three quarters quietly
+          stacking catches and then suddenly have 120 yards and a touchdown.
+
+          Vigo's path is Caleb Williams. If Caleb is dealing and Chicago lets him attack
+          instead of babysitting him, this matchup gets very uncomfortable for Charles.
+          A.J. Brown gives Vigo the exact kind of player who can flip this with two deep
+          balls, and Chase Brown can grind out the ugly points if Cincinnati controls
+          game script.
+
+          Sleeper likes Charles. I’m flipping it. Give me the volatility.
         `,
-        pick: "Charles"
+        pick: "Retardinals"
       },
 
       6: {
-        headline: "J-Bone Brings the Stars",
+        headline: "Lamar vs. The Avengers",
         preview: `
-          J-Bone's top end is exactly what you want in Week 1: Lamar Jackson at 20.83,
-          De'Von Achane at 17.49 and CeeDee Lamb at 17.15. T2 isn't exactly showing up
-          empty-handed — Dak Prescott, Justin Jefferson and Saquon Barkley is a ridiculous
-          collection of names — but the projections currently favor Lamar's quarterback
-          ceiling and the #FreeTony lineup as a whole. The fun subplot is Dak: if he
-          outperforms Lamar, T2 has enough firepower around him to flip this immediately.
-          If Lamar does Lamar things, J-Bone should spend most of Sunday playing from
-          ahead.
+          J-Bone has Lamar, Achane and CeeDee, which is a disgusting trio because all
+          three can break a game without warning. Lamar can create points with his legs
+          when the play is dead, Achane can turn one crease into 70 yards, and CeeDee
+          can get force-fed targets regardless of coverage.
+
+          T2 counters with Dak, Jefferson and Saquon, which sounds less like a fantasy
+          roster and more like someone turned the salary cap off. Jefferson can still
+          wreck a secondary even when everyone in the stadium knows the ball is coming
+          to him, and Saquon behind Philadelphia's line remains one of the nastiest
+          touchdown environments in football.
+
+          Sleeper likes J-Bone by five. I think this is much closer than that. T2 has
+          enough actual superstar talent to steal it.
         `,
-        pick: "#FreeTony"
+        pick: "Big frydown"
       }
     }
   }
