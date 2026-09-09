@@ -42,7 +42,6 @@
                 if (!playerID || playerID == 0) return null;
 
                 const player = players[playerID];
-                console.log('PLAYER DEBUG', playerID, player);
                 if (!player) return null;
 
                 const projection =
@@ -51,16 +50,14 @@
                         : 0;
 
                 const name =
-                    player.full_name ||
-                    player.name ||
-                    `${player.first_name || ''} ${player.last_name || ''}`.trim() ||
+                    `${player.fn || ''} ${player.ln || ''}`.trim() ||
                     `Player ${playerID}`;
 
                 return {
                     playerID,
                     name,
-                    position: player.position || '',
-                    nflTeam: player.team || '',
+                    position: player.pos || '',
+                    nflTeam: player.t || '',
                     projection: Number(round(projection))
                 };
             })
