@@ -14,6 +14,12 @@ export const tabs = [
         key: 'matchups',
     },
     {
+        icon: 'preview',
+        label: 'Weekly Preview',
+        dest: '/preview',
+        key: 'preview',
+    },
+    {
         icon: 'swap_horiz',
         label: 'Trades & Waivers',
         dest: '/transactions',
