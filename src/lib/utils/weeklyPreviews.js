@@ -9,19 +9,27 @@ export const weeklyPreviews = {
 
     matchups: {
       1: {
-        headline: "JV Has Gibbs. Trevor Has Problems.",
+        headline: "JV Favored. Trevor Not Dead Yet.",
         preview: `
-          JV gets the best individual weapon in this matchup in Gibbs, and Detroit
-          should have every reason to feed him early and often. Jayden Daniels adds
-          the kind of chaos that can turn a normal afternoon into a 30-point fantasy
-          day if Washington starts using his legs near the goal line. Trevor's best
-          counter is James Cook, who can absolutely control a game if Buffalo gets
-          ahead and leans on the run. But Trevor Lawrence and Hampton are asking a
-          lot more of their real offenses than Gibbs and Daniels are. Sleeper likes
-          JV by more than a touchdown, and for once I do too.
+          Sleeper has JV laying more than eight, and I think that's a little aggressive.
+
+          Gibbs is still the best weapon in this matchup and the easiest path to JV winning.
+          If Detroit gets him rolling early, Trevor could spend the afternoon chasing the game.
+          Olave also gives JV a receiver who can quietly pile up catches all day.
+
+          I'm less sold on Daniels being the guy who blows this matchup open. He's got the potential 
+          to be dangerous, but I'm not treating him like a guaranteed weekly nuke yet. Trevor has
+          enough on the other side to keep this close. James Cook can completely take over a
+          game if Buffalo gets the right script, and Hampton has the kind of workload upside
+          that can erase a projection pretty quickly. Even Trevor Lawrence only needs to be
+          competent here, not Superman.
+
+          JV is the better bet, but eight points feels rich. I expect this to be one of those
+          games where JV is still staring at Sleeper on Sunday night wondering why Trevor
+          hasn't gone away yet — Don't rule out a week 1 upset by THE BEAR.
         `,
         pick: "PeterPanthers"
-      },
+},
 
       2: {
         headline: "Burrow vs. Allen: Someone Is Getting Screwed",
