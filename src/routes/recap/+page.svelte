@@ -1136,7 +1136,7 @@
         border: 1px solid var(--ccc);
         border-radius: 0.5em;
         background: var(--fff);
-        color: var(--g999);
+        color: var(--000);
         font: inherit;
         font-weight: 600;
         cursor: pointer;
@@ -1144,7 +1144,12 @@
     
     .weekSelector select option {
         background: var(--fff);
-        color: var(--g999);
+        color: var(--000);
+    }
+
+    .weekSelector select:focus {
+        outline: 2px solid var(--ccc);
+        outline-offset: 2px;
     }
 
     .czarTitle {
