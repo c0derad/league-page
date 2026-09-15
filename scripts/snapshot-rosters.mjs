@@ -7,12 +7,8 @@ const HISTORY_PATH = path.resolve(
     'src/lib/data/rosterHistory.json'
 );
 
-const requestedWeek =
-    Number(process.env.SNAPSHOT_WEEK);
-
 async function getJSON(url) {
-    const response =
-        await fetch(url);
+    const response = await fetch(url);
 
     if (!response.ok) {
         throw new Error(
@@ -24,9 +20,14 @@ async function getJSON(url) {
 }
 
 const [
+    nflState,
     rosters,
     users
 ] = await Promise.all([
+    getJSON(
+        'https://api.sleeper.app/v1/state/nfl'
+    ),
+
     getJSON(
         `https://api.sleeper.app/v1/league/${LEAGUE_ID}/rosters`
     ),
@@ -36,25 +37,18 @@ const [
     )
 ]);
 
-let week = requestedWeek;
-
-if (!week) {
-    const nflState =
-        await getJSON(
-            'https://api.sleeper.app/v1/state/nfl'
-        );
-
-    week =
-        Number(
-            nflState.week
-        );
-}
+const week =
+    Number(nflState.week);
 
 if (!week) {
     throw new Error(
-        'Unable to determine snapshot week.'
+        'Unable to determine current Sleeper week.'
     );
 }
+
+console.log(
+    `Sleeper current week: ${week}`
+);
 
 const usersByID =
     Object.fromEntries(
@@ -84,10 +78,7 @@ if (
 
 const rosterSnapshot = {};
 
-for (
-    const roster
-    of rosters
-) {
+for (const roster of rosters) {
     const user =
         usersByID[
             roster.owner_id
@@ -141,6 +132,12 @@ for (
     };
 }
 
+/*
+ * If this week's snapshot already exists,
+ * replace it with the latest Thursday snapshot.
+ *
+ * Previous weeks remain untouched.
+ */
 history[
     String(week)
 ] = {
