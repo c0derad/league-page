@@ -21,6 +21,127 @@
         );
     };
 
+    const getFootballStatLine = (player) => {
+        const stats = player?.actual;
+
+        if (!stats) {
+            return '';
+        }
+
+        const position = player.position;
+        const parts = [];
+
+        if (position === 'QB') {
+            if (stats.passing?.attempts > 0) {
+                parts.push(
+                    `${stats.passing.completions}/${stats.passing.attempts} PASS`
+                );
+
+                parts.push(
+                    `${stats.passing.yards} YDS`
+                );
+
+                if (stats.passing.touchdowns > 0) {
+                    parts.push(
+                        `${stats.passing.touchdowns} PASS TD`
+                    );
+                }
+
+                if (stats.passing.interceptions > 0) {
+                    parts.push(
+                        `${stats.passing.interceptions} INT`
+                    );
+                }
+            }
+
+            if (stats.rushing?.attempts > 0) {
+                parts.push(
+                    `${stats.rushing.attempts} CAR`
+                );
+
+                parts.push(
+                    `${stats.rushing.yards} RUSH YDS`
+                );
+
+                if (stats.rushing.touchdowns > 0) {
+                    parts.push(
+                        `${stats.rushing.touchdowns} RUSH TD`
+                    );
+                }
+            }
+        }
+
+        if (['RB', 'FB'].includes(position)) {
+            if (stats.rushing?.attempts > 0) {
+                parts.push(
+                    `${stats.rushing.attempts} CAR`
+                );
+
+                parts.push(
+                    `${stats.rushing.yards} RUSH YDS`
+                );
+
+                if (stats.rushing.touchdowns > 0) {
+                    parts.push(
+                        `${stats.rushing.touchdowns} RUSH TD`
+                    );
+                }
+            }
+
+            if (stats.receiving?.targets > 0) {
+                parts.push(
+                    `${stats.receiving.receptions}/${stats.receiving.targets} REC`
+                );
+
+                parts.push(
+                    `${stats.receiving.yards} REC YDS`
+                );
+
+                if (stats.receiving.touchdowns > 0) {
+                    parts.push(
+                        `${stats.receiving.touchdowns} REC TD`
+                    );
+                }
+            }
+        }
+
+        if (['WR', 'TE'].includes(position)) {
+            if (stats.receiving?.targets > 0) {
+                parts.push(
+                    `${stats.receiving.receptions}/${stats.receiving.targets} REC`
+                );
+
+                parts.push(
+                    `${stats.receiving.yards} YDS`
+                );
+
+                if (stats.receiving.touchdowns > 0) {
+                    parts.push(
+                        `${stats.receiving.touchdowns} TD`
+                    );
+                }
+            }
+
+            if (stats.rushing?.attempts > 0) {
+                parts.push(
+                    `${stats.rushing.attempts} CAR`
+                );
+
+                parts.push(
+                    `${stats.rushing.yards} RUSH YDS`
+                );
+
+                if (stats.rushing.touchdowns > 0) {
+                    parts.push(
+                        `${stats.rushing.touchdowns} RUSH TD`
+                    );
+                }
+            }
+        }
+
+        return parts.join(' · ');
+    };
+
     const getPlayerPerformances = (
         matchup,
         players,
@@ -32,21 +153,40 @@
 
         return ids
             .map((playerID) => {
-                if (!playerID || playerID === '0') return null;
+                if (!playerID || playerID === '0') {
+                    return null;
+                }
 
                 const player = players[playerID];
 
-                const points =
-                    Number(
-                        matchup.players_points?.[playerID] ?? 0
-                    );
+                const points = Number(
+                    matchup.players_points?.[playerID] ?? 0
+                );
+
+                const actual =
+                    data.nflStats?.[playerID] || null;
 
                 return {
                     playerID,
-                    name: playerName(player, playerID),
-                    position: player?.pos || '',
-                    nflTeam: player?.t || '',
-                    points: Number(round(points))
+
+                    name:
+                        actual?.name ||
+                        playerName(player, playerID),
+
+                    position:
+                        actual?.position ||
+                        player?.pos ||
+                        '',
+
+                    nflTeam:
+                        actual?.team ||
+                        player?.t ||
+                        '',
+
+                    points:
+                        Number(round(points)),
+
+                    actual
                 };
             })
             .filter(Boolean)
@@ -70,11 +210,26 @@
             .map((playerID) => {
                 const player = players[playerID];
 
+                const actual =
+                    data.nflStats?.[playerID] || null;
+
                 return {
                     playerID,
-                    name: playerName(player, playerID),
-                    position: player?.pos || '',
-                    nflTeam: player?.t || '',
+
+                    name:
+                        actual?.name ||
+                        playerName(player, playerID),
+
+                    position:
+                        actual?.position ||
+                        player?.pos ||
+                        '',
+
+                    nflTeam:
+                        actual?.team ||
+                        player?.t ||
+                        '',
+
                     points: Number(
                         round(
                             Number(
@@ -83,7 +238,9 @@
                                 ] ?? 0
                             )
                         )
-                    )
+                    ),
+
+                    actual
                 };
             })
             .sort((a, b) => b.points - a.points);
@@ -99,7 +256,9 @@
             team.manager?.avatar ||
             null;
 
-        if (!avatar) return null;
+        if (!avatar) {
+            return null;
+        }
 
         if (
             avatar.startsWith('http://') ||
@@ -142,10 +301,12 @@
         for (const matchupID in grouped) {
             const teams = grouped[matchupID];
 
-            if (teams.length < 2) continue;
+            if (teams.length < 2) {
+                continue;
+            }
 
-            let teamA = teams[0];
-            let teamB = teams[1];
+            const teamA = teams[0];
+            const teamB = teams[1];
 
             const teamAInfo =
                 getTeamFromTeamManagers(
@@ -317,18 +478,19 @@
 
         const picks =
             games.filter(
-                (g) =>
-                    g.previewPick !== null
+                (game) =>
+                    game.previewPick !== null
             );
 
         const correctPicks =
             picks.filter(
-                (g) =>
-                    g.pickCorrect
+                (game) =>
+                    game.pickCorrect
             ).length;
 
         return {
             week,
+
             intro:
                 editorial?.intro || null,
 
@@ -396,6 +558,7 @@
         margin: 0 auto 3em;
         text-align: center;
         line-height: 1.65em;
+        white-space: pre-line;
     }
 
     .featureGrid {
@@ -514,28 +677,53 @@
         font-weight: 700;
         color: #888;
         letter-spacing: 0.06em;
-        margin-bottom: 0.5em;
+        margin-bottom: 0.7em;
     }
 
     .playerRow {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         gap: 1em;
-        padding: 0.3em 0;
+        padding: 0.5em 0;
+    }
+
+    .playerInfo {
+        min-width: 0;
     }
 
     .playerName {
-        font-weight: 600;
+        font-weight: 700;
     }
 
     .playerMeta {
         display: block;
+        margin-top: 0.1em;
         font-size: 0.75em;
         color: #888;
     }
 
+    .footballStats {
+        display: block;
+        margin-top: 0.22em;
+        font-size: 0.78em;
+        line-height: 1.35em;
+        color: #666;
+    }
+
     .playerPoints {
+        flex-shrink: 0;
         font-weight: 700;
+        font-size: 1.05em;
+    }
+
+    .fantasyLabel {
+        display: block;
+        margin-top: 0.1em;
+        font-size: 0.62em;
+        font-weight: 500;
+        color: #999;
+        text-align: right;
     }
 
     .recapCopy {
@@ -600,6 +788,11 @@
 
         .title {
             font-size: 2.2em;
+        }
+
+        .teamIdentity {
+            flex-direction: column;
+            gap: 0.35em;
         }
     }
 </style>
@@ -772,61 +965,103 @@
                 <div class="players">
 
                     <div>
+
                         <div class="playerHeader">
                             {game.teamAInfo.name} — TOP PERFORMERS
                         </div>
 
                         {#each game.teamATopPlayers as player}
+
                             <div class="playerRow">
 
-                                <div>
+                                <div class="playerInfo">
+
                                     <span class="playerName">
                                         {player.name}
                                     </span>
 
                                     <span class="playerMeta">
                                         {player.position}
+
                                         {#if player.nflTeam}
                                             · {player.nflTeam}
                                         {/if}
                                     </span>
+
+                                    {#if getFootballStatLine(player)}
+
+                                        <span class="footballStats">
+                                            {getFootballStatLine(player)}
+                                        </span>
+
+                                    {/if}
+
                                 </div>
 
                                 <div class="playerPoints">
+
                                     {player.points}
+
+                                    <span class="fantasyLabel">
+                                        FPTS
+                                    </span>
+
                                 </div>
 
                             </div>
+
                         {/each}
+
                     </div>
 
                     <div>
+
                         <div class="playerHeader">
                             {game.teamBInfo.name} — TOP PERFORMERS
                         </div>
 
                         {#each game.teamBTopPlayers as player}
+
                             <div class="playerRow">
 
-                                <div>
+                                <div class="playerInfo">
+
                                     <span class="playerName">
                                         {player.name}
                                     </span>
 
                                     <span class="playerMeta">
                                         {player.position}
+
                                         {#if player.nflTeam}
                                             · {player.nflTeam}
                                         {/if}
                                     </span>
+
+                                    {#if getFootballStatLine(player)}
+
+                                        <span class="footballStats">
+                                            {getFootballStatLine(player)}
+                                        </span>
+
+                                    {/if}
+
                                 </div>
 
                                 <div class="playerPoints">
+
                                     {player.points}
+
+                                    <span class="fantasyLabel">
+                                        FPTS
+                                    </span>
+
                                 </div>
 
                             </div>
+
                         {/each}
+
                     </div>
 
                 </div>
@@ -852,6 +1087,7 @@
                     {#if game.previewPick}
 
                         <div class="pickResult">
+
                             CZAR PICK:
                             {game.previewPick}
 
@@ -859,6 +1095,7 @@
                             {game.pickCorrect
                                 ? 'CORRECT'
                                 : 'WRONG'}
+
                         </div>
 
                     {/if}
