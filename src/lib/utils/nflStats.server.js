@@ -1,9 +1,6 @@
 const NFLVERSE_STATS_URL =
     'https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv';
 
-const NFLVERSE_SCHEDULE_URL =
-    'https://github.com/nflverse/nflverse-data/releases/download/schedules/schedules.csv';
-
 const PLAYER_IDS_URL =
     'https://raw.githubusercontent.com/dynastyprocess/data/master/files/db_playerids.csv';
 
@@ -95,81 +92,16 @@ function number(value) {
         : 0;
 }
 
-function getTeamGame(scheduleRows, team, week) {
-    const game = scheduleRows.find(
-        (row) =>
-            Number(row.week) === Number(week) &&
-            (
-                row.home_team === team ||
-                row.away_team === team
-            )
-    );
-
-    if (!game) {
-        return null;
-    }
-
-    const isHome =
-        game.home_team === team;
-
-    const opponent =
-        isHome
-            ? game.away_team
-            : game.home_team;
-
-    const teamScore =
-        isHome
-            ? number(game.home_score)
-            : number(game.away_score);
-
-    const opponentScore =
-        isHome
-            ? number(game.away_score)
-            : number(game.home_score);
-
-    const completed =
-        game.home_score !== '' &&
-        game.away_score !== '' &&
-        game.home_score !== 'NA' &&
-        game.away_score !== 'NA';
-
-    let result = null;
-
-    if (completed) {
-        if (teamScore > opponentScore) {
-            result = 'W';
-        } else if (teamScore < opponentScore) {
-            result = 'L';
-        } else {
-            result = 'T';
-        }
-    }
-
-    return {
-        opponent,
-        location:
-            isHome
-                ? 'vs'
-                : '@',
-        teamScore,
-        opponentScore,
-        result,
-        completed
-    };
-}
-
 export async function getWeeklyNFLStats(
     fetch,
     week
 ) {
     const [
         statsResponse,
-        idsResponse,
-        scheduleResponse
+        idsResponse
     ] = await Promise.all([
         fetch(NFLVERSE_STATS_URL),
-        fetch(PLAYER_IDS_URL),
-        fetch(NFLVERSE_SCHEDULE_URL)
+        fetch(PLAYER_IDS_URL)
     ]);
 
     if (!statsResponse.ok) {
@@ -184,20 +116,12 @@ export async function getWeeklyNFLStats(
         );
     }
 
-    if (!scheduleResponse.ok) {
-        throw new Error(
-            `Unable to load nflverse schedule: ${scheduleResponse.status}`
-        );
-    }
-
     const [
         statsText,
-        idsText,
-        scheduleText
+        idsText
     ] = await Promise.all([
         statsResponse.text(),
-        idsResponse.text(),
-        scheduleResponse.text()
+        idsResponse.text()
     ]);
 
     const statsRows =
@@ -205,13 +129,6 @@ export async function getWeeklyNFLStats(
 
     const idRows =
         parseCSV(idsText);
-
-    const scheduleRows =
-        parseCSV(scheduleText)
-            .filter(
-                (row) =>
-                    Number(row.season) === 2026
-            );
 
     const sleeperByGsis =
         new Map();
@@ -265,25 +182,6 @@ export async function getWeeklyNFLStats(
             continue;
         }
 
-        const team =
-            row.team ||
-            row.recent_team ||
-            '';
-
-        const currentGame =
-            getTeamGame(
-                scheduleRows,
-                team,
-                week
-            );
-
-        const nextGame =
-            getTeamGame(
-                scheduleRows,
-                team,
-                Number(week) + 1
-            );
-
         weeklyStats[sleeperID] = {
             sleeperID,
             gsisID,
@@ -298,16 +196,14 @@ export async function getWeeklyNFLStats(
                 row.position_group ||
                 '',
 
-            team,
+            team:
+                row.team ||
+                row.recent_team ||
+                '',
 
             opponent:
                 row.opponent_team ||
-                currentGame?.opponent ||
                 '',
-
-            game: currentGame,
-
-            nextGame,
 
             passing: {
                 completions:
