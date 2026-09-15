@@ -199,6 +199,26 @@
         return parts.join(' · ');
     };
 
+    const getGameResultLine = (
+        player
+    ) => {
+        const game =
+            player?.actual?.game;
+
+        if (
+            !game ||
+            !game.completed
+        ) {
+            return '';
+        }
+
+        return (
+            `${game.result} ` +
+            `${game.teamScore}-${game.opponentScore} ` +
+            `${game.location} ${game.opponent}`
+        );
+    };
+
     const getPlayerPerformances = (
         matchup,
         players,
@@ -374,6 +394,61 @@
         return `https://sleepercdn.com/avatars/thumbs/${avatar}`;
     };
 
+    const getNextFantasyOpponent = (
+        rosterID,
+        nextRawMatchups,
+        leagueTeamManagers
+    ) => {
+        if (
+            !Array.isArray(
+                nextRawMatchups
+            )
+        ) {
+            return null;
+        }
+
+        const currentTeam =
+            nextRawMatchups.find(
+                (matchup) =>
+                    Number(
+                        matchup.roster_id
+                    ) ===
+                    Number(rosterID)
+            );
+
+        if (
+            !currentTeam ||
+            currentTeam.matchup_id === null ||
+            currentTeam.matchup_id === undefined
+        ) {
+            return null;
+        }
+
+        const opponent =
+            nextRawMatchups.find(
+                (matchup) =>
+                    Number(
+                        matchup.matchup_id
+                    ) ===
+                        Number(
+                            currentTeam.matchup_id
+                        ) &&
+                    Number(
+                        matchup.roster_id
+                    ) !==
+                        Number(rosterID)
+            );
+
+        if (!opponent) {
+            return null;
+        }
+
+        return getTeamFromTeamManagers(
+            leagueTeamManagers,
+            opponent.roster_id
+        );
+    };
+
     const buildRecap = (
         rawMatchups,
         leagueTeamManagers,
@@ -444,6 +519,20 @@
                 getTeamFromTeamManagers(
                     leagueTeamManagers,
                     teamB.roster_id
+                );
+
+            const teamANextOpponent =
+                getNextFantasyOpponent(
+                    teamA.roster_id,
+                    data.nextRawMatchups,
+                    leagueTeamManagers
+                );
+
+            const teamBNextOpponent =
+                getNextFantasyOpponent(
+                    teamB.roster_id,
+                    data.nextRawMatchups,
+                    leagueTeamManagers
                 );
 
             const teamAPoints =
@@ -539,6 +628,9 @@
 
                 teamAInfo,
                 teamBInfo,
+
+                teamANextOpponent,
+                teamBNextOpponent,
 
                 teamAPoints,
                 teamBPoints,
@@ -829,6 +921,13 @@
         font-weight: 900;
     }
 
+    .nextFantasy {
+        margin-top: 0.45em;
+        font-size: 0.78em;
+        font-weight: 600;
+        color: #888;
+    }
+
     .vs {
         color: #999;
         font-weight: 700;
@@ -888,6 +987,14 @@
         margin-top: 0.1em;
         font-size: 0.75em;
         color: #888;
+    }
+
+    .gameResult {
+        display: block;
+        margin-top: 0.22em;
+        font-size: 0.74em;
+        font-weight: 700;
+        color: #555;
     }
 
     .footballStats {
@@ -1132,6 +1239,13 @@
                             {game.teamAPoints}
                         </div>
 
+                        {#if game.teamANextOpponent}
+                            <div class="nextFantasy">
+                                NEXT UP:
+                                {game.teamANextOpponent.name}
+                            </div>
+                        {/if}
+
                     </div>
 
                     <div class="vs">
@@ -1164,6 +1278,13 @@
                         <div class="score">
                             {game.teamBPoints}
                         </div>
+
+                        {#if game.teamBNextOpponent}
+                            <div class="nextFantasy">
+                                NEXT UP:
+                                {game.teamBNextOpponent.name}
+                            </div>
+                        {/if}
 
                     </div>
 
@@ -1201,18 +1322,19 @@
                                             · {player.nflTeam}
                                         {/if}
 
-                                        {#if player.actual?.opponent}
-                                            · vs {player.actual.opponent}
-                                        {/if}
-
                                     </span>
 
-                                    {#if getFootballStatLine(player)}
+                                    {#if getGameResultLine(player)}
+                                        <span class="gameResult">
+                                            FINAL:
+                                            {getGameResultLine(player)}
+                                        </span>
+                                    {/if}
 
+                                    {#if getFootballStatLine(player)}
                                         <span class="footballStats">
                                             {getFootballStatLine(player)}
                                         </span>
-
                                     {/if}
 
                                 </div>
@@ -1257,18 +1379,19 @@
                                             · {player.nflTeam}
                                         {/if}
 
-                                        {#if player.actual?.opponent}
-                                            · vs {player.actual.opponent}
-                                        {/if}
-
                                     </span>
 
-                                    {#if getFootballStatLine(player)}
+                                    {#if getGameResultLine(player)}
+                                        <span class="gameResult">
+                                            FINAL:
+                                            {getGameResultLine(player)}
+                                        </span>
+                                    {/if}
 
+                                    {#if getFootballStatLine(player)}
                                         <span class="footballStats">
                                             {getFootballStatLine(player)}
                                         </span>
-
                                     {/if}
 
                                 </div>
