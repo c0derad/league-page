@@ -1,13 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 
-const LEAGUE_ID =
-    '1366455175438409728';
+const LEAGUE_ID = '1366455175438409728';
 
-const HISTORY_PATH =
-    path.resolve(
-        'src/lib/data/rosterHistory.json'
-    );
+const HISTORY_PATH = path.resolve(
+    'src/lib/data/rosterHistory.json'
+);
+
+const requestedWeek =
+    Number(process.env.SNAPSHOT_WEEK);
 
 async function getJSON(url) {
     const response =
@@ -15,7 +16,7 @@ async function getJSON(url) {
 
     if (!response.ok) {
         throw new Error(
-            `Request failed: ${response.status} ${url}`
+            `Sleeper request failed: ${response.status} ${url}`
         );
     }
 
@@ -23,26 +24,47 @@ async function getJSON(url) {
 }
 
 const [
-    nflState,
-    rosters
+    rosters,
+    users
 ] = await Promise.all([
     getJSON(
-        'https://api.sleeper.app/v1/state/nfl'
+        `https://api.sleeper.app/v1/league/${LEAGUE_ID}/rosters`
     ),
 
     getJSON(
-        `https://api.sleeper.app/v1/league/${LEAGUE_ID}/rosters`
+        `https://api.sleeper.app/v1/league/${LEAGUE_ID}/users`
     )
 ]);
 
-const week =
-    Number(nflState.week);
+let week = requestedWeek;
+
+if (!week) {
+    const nflState =
+        await getJSON(
+            'https://api.sleeper.app/v1/state/nfl'
+        );
+
+    week =
+        Number(
+            nflState.week
+        );
+}
 
 if (!week) {
     throw new Error(
-        'Unable to determine current Sleeper week.'
+        'Unable to determine snapshot week.'
     );
 }
+
+const usersByID =
+    Object.fromEntries(
+        users.map(
+            (user) => [
+                user.user_id,
+                user
+            ]
+        )
+    );
 
 let history = {};
 
@@ -66,20 +88,50 @@ for (
     const roster
     of rosters
 ) {
+    const user =
+        usersByID[
+            roster.owner_id
+        ];
+
+    const players =
+        roster.players || [];
+
+    const starters =
+        roster.starters || [];
+
+    const starterSet =
+        new Set(starters);
+
+    const bench =
+        players.filter(
+            (playerID) =>
+                !starterSet.has(
+                    playerID
+                )
+        );
+
     rosterSnapshot[
         roster.roster_id
     ] = {
-        roster_id:
+        rosterID:
             roster.roster_id,
 
-        owner_id:
+        ownerID:
             roster.owner_id,
 
-        players:
-            roster.players || [],
+        sleeperUsername:
+            user?.display_name ||
+            null,
 
-        starters:
-            roster.starters || [],
+        teamName:
+            user?.metadata?.team_name ||
+            null,
+
+        players,
+
+        starters,
+
+        bench,
 
         reserve:
             roster.reserve || [],
@@ -89,9 +141,14 @@ for (
     };
 }
 
-history[week] = {
+history[
+    String(week)
+] = {
     capturedAt:
         new Date().toISOString(),
+
+    leagueID:
+        LEAGUE_ID,
 
     rosters:
         rosterSnapshot
@@ -108,6 +165,7 @@ fs.mkdirSync(
 
 fs.writeFileSync(
     HISTORY_PATH,
+
     JSON.stringify(
         history,
         null,
@@ -116,5 +174,9 @@ fs.writeFileSync(
 );
 
 console.log(
-    `Saved roster snapshot for Week ${week}`
+    `Saved fantasy roster snapshot for Week ${week}.`
+);
+
+console.log(
+    `${rosters.length} fantasy rosters captured.`
 );
