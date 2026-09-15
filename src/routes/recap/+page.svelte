@@ -672,8 +672,8 @@
 
             const pickCorrect =
                 previewPick
-                    ? previewPick ===
-                      winner?.name
+                    ? previewPick.trim() ===
+                      winner?.name?.trim()
                     : null;
 
             games.push({
