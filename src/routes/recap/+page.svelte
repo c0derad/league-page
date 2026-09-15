@@ -32,8 +32,16 @@
     };
 
     const availableWeeks = Array.from(
-        { length: Math.max(Number(data.week), 1) },
-        (_, index) => index + 1
+        {
+            length:
+                Number(
+                    data.maxRecapWeek ||
+                    data.week ||
+                    1
+                )
+        },
+        (_, index) =>
+            index + 1
     );
     
     const changeWeek = (event) => {
@@ -1128,9 +1136,15 @@
         border: 1px solid var(--ccc);
         border-radius: 0.5em;
         background: var(--fff);
+        color: var(--g999);
         font: inherit;
         font-weight: 600;
         cursor: pointer;
+    }
+    
+    .weekSelector select option {
+        background: var(--fff);
+        color: var(--g999);
     }
 
     .czarTitle {
