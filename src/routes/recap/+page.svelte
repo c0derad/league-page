@@ -20,7 +20,6 @@
             `Player ${playerID}`
         );
     };
-
     const getFootballStatLine = (player) => {
         const stats = player?.actual;
 
@@ -38,9 +37,9 @@
                 );
 
                 parts.push(
-                    `${stats.passing.yards} YDS`
+                    `${stats.passing.yards} PASS YDS`
                 );
-
+    
                 if (stats.passing.touchdowns > 0) {
                     parts.push(
                         `${stats.passing.touchdowns} PASS TD`
@@ -53,16 +52,16 @@
                     );
                 }
             }
-
+    
             if (stats.rushing?.attempts > 0) {
                 parts.push(
                     `${stats.rushing.attempts} CAR`
                 );
-
+    
                 parts.push(
                     `${stats.rushing.yards} RUSH YDS`
                 );
-
+    
                 if (stats.rushing.touchdowns > 0) {
                     parts.push(
                         `${stats.rushing.touchdowns} RUSH TD`
@@ -70,33 +69,33 @@
                 }
             }
         }
-
+    
         if (['RB', 'FB'].includes(position)) {
             if (stats.rushing?.attempts > 0) {
                 parts.push(
                     `${stats.rushing.attempts} CAR`
                 );
-
+    
                 parts.push(
                     `${stats.rushing.yards} RUSH YDS`
                 );
-
+    
                 if (stats.rushing.touchdowns > 0) {
                     parts.push(
                         `${stats.rushing.touchdowns} RUSH TD`
                     );
                 }
             }
-
+    
             if (stats.receiving?.targets > 0) {
                 parts.push(
                     `${stats.receiving.receptions}/${stats.receiving.targets} REC`
                 );
-
+    
                 parts.push(
                     `${stats.receiving.yards} REC YDS`
                 );
-
+    
                 if (stats.receiving.touchdowns > 0) {
                     parts.push(
                         `${stats.receiving.touchdowns} REC TD`
@@ -104,33 +103,33 @@
                 }
             }
         }
-
+    
         if (['WR', 'TE'].includes(position)) {
             if (stats.receiving?.targets > 0) {
                 parts.push(
                     `${stats.receiving.receptions}/${stats.receiving.targets} REC`
                 );
-
+    
                 parts.push(
-                    `${stats.receiving.yards} YDS`
+                    `${stats.receiving.yards} REC YDS`
                 );
-
+    
                 if (stats.receiving.touchdowns > 0) {
                     parts.push(
-                        `${stats.receiving.touchdowns} TD`
+                        `${stats.receiving.touchdowns} REC TD`
                     );
                 }
             }
-
+    
             if (stats.rushing?.attempts > 0) {
                 parts.push(
                     `${stats.rushing.attempts} CAR`
                 );
-
+    
                 parts.push(
                     `${stats.rushing.yards} RUSH YDS`
                 );
-
+    
                 if (stats.rushing.touchdowns > 0) {
                     parts.push(
                         `${stats.rushing.touchdowns} RUSH TD`
@@ -138,7 +137,13 @@
                 }
             }
         }
-
+    
+        if (stats.fumbles?.lost > 0) {
+            parts.push(
+                `${stats.fumbles.lost} FUM LOST`
+            );
+        }
+    
         return parts.join(' · ');
     };
 
