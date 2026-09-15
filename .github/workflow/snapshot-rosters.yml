@@ -1,0 +1,40 @@
+name: Snapshot Weekly Rosters
+
+on:
+  schedule:
+    - cron: '0 17 * * 4'
+
+  workflow_dispatch:
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Snapshot Sleeper rosters
+        run: node scripts/snapshot-rosters.mjs
+
+      - name: Commit roster history
+        run: |
+          git config user.name "Roster Czar Bot"
+          git config user.email "actions@github.com"
+
+          git add src/lib/data/rosterHistory.json
+
+          if git diff --cached --quiet; then
+            echo "No roster changes to commit."
+          else
+            git commit -m "Snapshot weekly rosters"
+            git push
+          fi
