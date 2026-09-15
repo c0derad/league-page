@@ -1627,55 +1627,6 @@
 
         {/each}
 
-        <details style="margin-top: 3em;">
-            <summary style="cursor: pointer; font-weight: 700;">
-                DEBUG: COPY WEEK DATA
-            </summary>
-        
-            <pre
-                style="
-                    white-space: pre-wrap;
-                    word-break: break-word;
-                    margin-top: 1em;
-                    padding: 1em;
-                    border: 1px solid var(--ccc);
-                    border-radius: 0.5em;
-                    font-size: 0.75em;
-                    overflow-x: auto;
-                "
-            >
-        {JSON.stringify({
-            week: recapData.week,
-            games: recapData.games.map((game) => ({
-                matchupID: game.matchupID,
-        
-                teamA: {
-                    name: game.teamAInfo?.name,
-                    points: game.teamAPoints,
-                    benchPoints: game.teamABenchPoints,
-                    nextOpponent: game.teamANextOpponent?.name || null,
-                    topPlayers: game.teamATopPlayers
-                },
-        
-                teamB: {
-                    name: game.teamBInfo?.name,
-                    points: game.teamBPoints,
-                    benchPoints: game.teamBBenchPoints,
-                    nextOpponent: game.teamBNextOpponent?.name || null,
-                    topPlayers: game.teamBTopPlayers
-                },
-        
-                winner: game.winner?.name,
-                loser: game.loser?.name,
-                margin: game.margin,
-        
-                previewPick: game.previewPick,
-                pickCorrect: game.pickCorrect
-            }))
-        }, null, 2)}
-            </pre>
-        </details>
-
     {/if}
 
 </div>
