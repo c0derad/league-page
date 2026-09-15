@@ -161,7 +161,7 @@ export async function getWeeklyNFLStats(fetch, week) {
         const gsisID =
             row.player_id ||
             row.gsis_id;
-
+    
         if (!gsisID) continue;
 
         const sleeperID =
