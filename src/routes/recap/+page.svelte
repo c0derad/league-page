@@ -4,34 +4,52 @@
         round
     } from '$lib/utils/helperFunctions/universalFunctions';
 
-    import { weeklyRecaps } from '$lib/utils/weeklyRecaps';
-    import { weeklyPreviews } from '$lib/utils/weeklyPreviews';
+    import {
+        weeklyRecaps
+    } from '$lib/utils/weeklyRecaps';
+
+    import {
+        weeklyPreviews
+    } from '$lib/utils/weeklyPreviews';
 
     export let data;
 
     let loading = true;
     let recapData = null;
 
-    const playerName = (player, playerID) => {
-        if (!player) return `Player ${playerID}`;
+    const playerName = (
+        player,
+        playerID
+    ) => {
+        if (!player) {
+            return `Player ${playerID}`;
+        }
 
         return (
             `${player.fn || ''} ${player.ln || ''}`.trim() ||
             `Player ${playerID}`
         );
     };
-    const getFootballStatLine = (player) => {
-        const stats = player?.actual;
+
+    const getFootballStatLine = (
+        player
+    ) => {
+        const stats =
+            player?.actual;
 
         if (!stats) {
             return '';
         }
 
-        const position = player.position;
+        const position =
+            player.position;
+
         const parts = [];
 
         if (position === 'QB') {
-            if (stats.passing?.attempts > 0) {
+            if (
+                stats.passing?.attempts > 0
+            ) {
                 parts.push(
                     `${stats.passing.completions}/${stats.passing.attempts} PASS`
                 );
@@ -39,112 +57,171 @@
                 parts.push(
                     `${stats.passing.yards} PASS YDS`
                 );
-    
-                if (stats.passing.touchdowns > 0) {
+
+                if (
+                    stats.passing.touchdowns > 0
+                ) {
                     parts.push(
                         `${stats.passing.touchdowns} PASS TD`
                     );
                 }
 
-                if (stats.passing.interceptions > 0) {
+                if (
+                    stats.passing.interceptions > 0
+                ) {
                     parts.push(
                         `${stats.passing.interceptions} INT`
                     );
                 }
             }
-    
-            if (stats.rushing?.attempts > 0) {
+
+            if (
+                stats.rushing?.attempts > 0
+            ) {
                 parts.push(
                     `${stats.rushing.attempts} CAR`
                 );
-    
+
                 parts.push(
                     `${stats.rushing.yards} RUSH YDS`
                 );
-    
-                if (stats.rushing.touchdowns > 0) {
+
+                if (
+                    stats.rushing.touchdowns > 0
+                ) {
                     parts.push(
                         `${stats.rushing.touchdowns} RUSH TD`
                     );
                 }
             }
         }
-    
-        if (['RB', 'FB'].includes(position)) {
-            if (stats.rushing?.attempts > 0) {
+
+        if (
+            ['RB', 'FB'].includes(
+                position
+            )
+        ) {
+            if (
+                stats.rushing?.attempts > 0
+            ) {
                 parts.push(
                     `${stats.rushing.attempts} CAR`
                 );
-    
+
                 parts.push(
                     `${stats.rushing.yards} RUSH YDS`
                 );
-    
-                if (stats.rushing.touchdowns > 0) {
+
+                if (
+                    stats.rushing.touchdowns > 0
+                ) {
                     parts.push(
                         `${stats.rushing.touchdowns} RUSH TD`
                     );
                 }
             }
-    
-            if (stats.receiving?.targets > 0) {
+
+            if (
+                stats.receiving?.targets > 0
+            ) {
                 parts.push(
                     `${stats.receiving.receptions}/${stats.receiving.targets} REC`
                 );
-    
+
                 parts.push(
                     `${stats.receiving.yards} REC YDS`
                 );
-    
-                if (stats.receiving.touchdowns > 0) {
+
+                if (
+                    stats.receiving.touchdowns > 0
+                ) {
                     parts.push(
                         `${stats.receiving.touchdowns} REC TD`
                     );
                 }
             }
         }
-    
-        if (['WR', 'TE'].includes(position)) {
-            if (stats.receiving?.targets > 0) {
+
+        if (
+            ['WR', 'TE'].includes(
+                position
+            )
+        ) {
+            if (
+                stats.receiving?.targets > 0
+            ) {
                 parts.push(
                     `${stats.receiving.receptions}/${stats.receiving.targets} REC`
                 );
-    
+
                 parts.push(
                     `${stats.receiving.yards} REC YDS`
                 );
-    
-                if (stats.receiving.touchdowns > 0) {
+
+                if (
+                    stats.receiving.touchdowns > 0
+                ) {
                     parts.push(
                         `${stats.receiving.touchdowns} REC TD`
                     );
                 }
             }
-    
-            if (stats.rushing?.attempts > 0) {
+
+            if (
+                stats.rushing?.attempts > 0
+            ) {
                 parts.push(
                     `${stats.rushing.attempts} CAR`
                 );
-    
+
                 parts.push(
                     `${stats.rushing.yards} RUSH YDS`
                 );
-    
-                if (stats.rushing.touchdowns > 0) {
+
+                if (
+                    stats.rushing.touchdowns > 0
+                ) {
                     parts.push(
                         `${stats.rushing.touchdowns} RUSH TD`
                     );
                 }
             }
         }
-    
-        if (stats.fumbles?.lost > 0) {
+
+        if (
+            stats.fumbles?.lost > 0
+        ) {
             parts.push(
                 `${stats.fumbles.lost} FUM LOST`
             );
         }
-    
+
         return parts.join(' · ');
+    };
+
+    const getFumbleDebug = (
+        player
+    ) => {
+        const debug =
+            player?.actual?.debugFumbles;
+
+        if (!debug) {
+            return 'NO DEBUG DATA';
+        }
+
+        const entries =
+            Object.entries(debug);
+
+        if (!entries.length) {
+            return 'NO FUMBLE COLUMNS FOUND';
+        }
+
+        return entries
+            .map(
+                ([key, value]) =>
+                    `${key}=${value}`
+            )
+            .join(' | ');
     };
 
     const getPlayerPerformances = (
@@ -152,107 +229,150 @@
         players,
         startersOnly = true
     ) => {
-        const ids = startersOnly
-            ? matchup.starters || []
-            : matchup.players || [];
+        const ids =
+            startersOnly
+                ? matchup.starters || []
+                : matchup.players || [];
 
         return ids
-            .map((playerID) => {
-                if (!playerID || playerID === '0') {
-                    return null;
+            .map(
+                (playerID) => {
+                    if (
+                        !playerID ||
+                        playerID === '0'
+                    ) {
+                        return null;
+                    }
+
+                    const player =
+                        players[playerID];
+
+                    const points =
+                        Number(
+                            matchup.players_points?.[
+                                playerID
+                            ] ?? 0
+                        );
+
+                    const actual =
+                        data.nflStats?.[
+                            playerID
+                        ] || null;
+
+                    return {
+                        playerID,
+
+                        name:
+                            actual?.name ||
+                            playerName(
+                                player,
+                                playerID
+                            ),
+
+                        position:
+                            actual?.position ||
+                            player?.pos ||
+                            '',
+
+                        nflTeam:
+                            actual?.team ||
+                            player?.t ||
+                            '',
+
+                        points:
+                            Number(
+                                round(points)
+                            ),
+
+                        actual
+                    };
                 }
-
-                const player = players[playerID];
-
-                const points = Number(
-                    matchup.players_points?.[playerID] ?? 0
-                );
-
-                const actual =
-                    data.nflStats?.[playerID] || null;
-
-                return {
-                    playerID,
-
-                    name:
-                        actual?.name ||
-                        playerName(player, playerID),
-
-                    position:
-                        actual?.position ||
-                        player?.pos ||
-                        '',
-
-                    nflTeam:
-                        actual?.team ||
-                        player?.t ||
-                        '',
-
-                    points:
-                        Number(round(points)),
-
-                    actual
-                };
-            })
+            )
             .filter(Boolean)
-            .sort((a, b) => b.points - a.points);
+            .sort(
+                (a, b) =>
+                    b.points -
+                    a.points
+            );
     };
 
     const getBenchPerformances = (
         matchup,
         players
     ) => {
-        const starters = new Set(
-            matchup.starters || []
-        );
+        const starters =
+            new Set(
+                matchup.starters || []
+            );
 
-        return (matchup.players || [])
+        return (
+            matchup.players || []
+        )
             .filter(
                 (playerID) =>
                     playerID &&
-                    !starters.has(playerID)
+                    !starters.has(
+                        playerID
+                    )
             )
-            .map((playerID) => {
-                const player = players[playerID];
+            .map(
+                (playerID) => {
+                    const player =
+                        players[playerID];
 
-                const actual =
-                    data.nflStats?.[playerID] || null;
+                    const actual =
+                        data.nflStats?.[
+                            playerID
+                        ] || null;
 
-                return {
-                    playerID,
+                    return {
+                        playerID,
 
-                    name:
-                        actual?.name ||
-                        playerName(player, playerID),
+                        name:
+                            actual?.name ||
+                            playerName(
+                                player,
+                                playerID
+                            ),
 
-                    position:
-                        actual?.position ||
-                        player?.pos ||
-                        '',
+                        position:
+                            actual?.position ||
+                            player?.pos ||
+                            '',
 
-                    nflTeam:
-                        actual?.team ||
-                        player?.t ||
-                        '',
+                        nflTeam:
+                            actual?.team ||
+                            player?.t ||
+                            '',
 
-                    points: Number(
-                        round(
+                        points:
                             Number(
-                                matchup.players_points?.[
-                                    playerID
-                                ] ?? 0
-                            )
-                        )
-                    ),
+                                round(
+                                    Number(
+                                        matchup.players_points?.[
+                                            playerID
+                                        ] ?? 0
+                                    )
+                                )
+                            ),
 
-                    actual
-                };
-            })
-            .sort((a, b) => b.points - a.points);
+                        actual
+                    };
+                }
+            )
+            .sort(
+                (a, b) =>
+                    b.points -
+                    a.points
+            );
     };
 
-    const getTeamAvatar = (team) => {
-        if (!team) return null;
+    const getTeamAvatar = (
+        team
+    ) => {
+        if (!team) {
+            return null;
+        }
 
         const avatar =
             team.avatar ||
@@ -266,8 +386,12 @@
         }
 
         if (
-            avatar.startsWith('http://') ||
-            avatar.startsWith('https://')
+            avatar.startsWith(
+                'http://'
+            ) ||
+            avatar.startsWith(
+                'https://'
+            )
         ) {
             return avatar;
         }
@@ -280,38 +404,60 @@
         leagueTeamManagers,
         playersData
     ) => {
-        const players = playersData.players;
-        const week = Number(data.week);
+        const players =
+            playersData.players;
+
+        const week =
+            Number(data.week);
 
         const editorial =
-            weeklyRecaps[week] || null;
+            weeklyRecaps[week] ||
+            null;
 
         const preview =
-            weeklyPreviews[week] || null;
+            weeklyPreviews[week] ||
+            null;
 
         const grouped = {};
 
-        for (const matchup of rawMatchups) {
-            if (!grouped[matchup.matchup_id]) {
-                grouped[matchup.matchup_id] = [];
+        for (
+            const matchup of rawMatchups
+        ) {
+            if (
+                !grouped[
+                    matchup.matchup_id
+                ]
+            ) {
+                grouped[
+                    matchup.matchup_id
+                ] = [];
             }
 
-            grouped[matchup.matchup_id].push(
-                matchup
-            );
+            grouped[
+                matchup.matchup_id
+            ].push(matchup);
         }
 
         const games = [];
 
-        for (const matchupID in grouped) {
-            const teams = grouped[matchupID];
+        for (
+            const matchupID
+            in grouped
+        ) {
+            const teams =
+                grouped[matchupID];
 
-            if (teams.length < 2) {
+            if (
+                teams.length < 2
+            ) {
                 continue;
             }
 
-            const teamA = teams[0];
-            const teamB = teams[1];
+            const teamA =
+                teams[0];
+
+            const teamB =
+                teams[1];
 
             const teamAInfo =
                 getTeamFromTeamManagers(
@@ -326,18 +472,24 @@
                 );
 
             const teamAPoints =
-                Number(teamA.points || 0);
+                Number(
+                    teamA.points || 0
+                );
 
             const teamBPoints =
-                Number(teamB.points || 0);
+                Number(
+                    teamB.points || 0
+                );
 
             const winner =
-                teamAPoints >= teamBPoints
+                teamAPoints >=
+                teamBPoints
                     ? teamAInfo
                     : teamBInfo;
 
             const loser =
-                teamAPoints >= teamBPoints
+                teamAPoints >=
+                teamBPoints
                     ? teamBInfo
                     : teamAInfo;
 
@@ -386,18 +538,22 @@
                 ).slice(0, 3);
 
             const commentary =
-                editorial?.matchups?.[
-                    matchupID
-                ] || null;
+                editorial
+                    ?.matchups
+                    ?.[matchupID] ||
+                null;
 
             const previewPick =
-                preview?.matchups?.[
-                    matchupID
-                ]?.pick || null;
+                preview
+                    ?.matchups
+                    ?.[matchupID]
+                    ?.pick ||
+                null;
 
             const pickCorrect =
                 previewPick
-                    ? previewPick === winner?.name
+                    ? previewPick ===
+                      winner?.name
                     : null;
 
             games.push({
@@ -413,10 +569,14 @@
                 teamBPoints,
 
                 teamAAvatar:
-                    getTeamAvatar(teamAInfo),
+                    getTeamAvatar(
+                        teamAInfo
+                    ),
 
                 teamBAvatar:
-                    getTeamAvatar(teamBInfo),
+                    getTeamAvatar(
+                        teamBInfo
+                    ),
 
                 teamATopPlayers,
                 teamBTopPlayers,
@@ -441,21 +601,30 @@
 
         const sortedScores = [];
 
-        for (const game of games) {
+        for (
+            const game of games
+        ) {
             sortedScores.push({
-                team: game.teamAInfo,
-                points: game.teamAPoints
+                team:
+                    game.teamAInfo,
+
+                points:
+                    game.teamAPoints
             });
 
             sortedScores.push({
-                team: game.teamBInfo,
-                points: game.teamBPoints
+                team:
+                    game.teamBInfo,
+
+                points:
+                    game.teamBPoints
             });
         }
 
         sortedScores.sort(
             (a, b) =>
-                b.points - a.points
+                b.points -
+                a.points
         );
 
         const highMan =
@@ -463,13 +632,15 @@
 
         const lowMan =
             sortedScores[
-                sortedScores.length - 1
+                sortedScores.length -
+                    1
             ];
 
         const byMargin =
             [...games].sort(
                 (a, b) =>
-                    b.margin - a.margin
+                    b.margin -
+                    a.margin
             );
 
         const biggestBlowout =
@@ -478,13 +649,15 @@
         const closestGame =
             [...games].sort(
                 (a, b) =>
-                    a.margin - b.margin
+                    a.margin -
+                    b.margin
             )[0];
 
         const picks =
             games.filter(
                 (game) =>
-                    game.previewPick !== null
+                    game.previewPick !==
+                    null
             );
 
         const correctPicks =
@@ -497,7 +670,8 @@
             week,
 
             intro:
-                editorial?.intro || null,
+                editorial?.intro ||
+                null,
 
             games,
 
@@ -508,7 +682,9 @@
             closestGame,
 
             correctPicks,
-            totalPicks: picks.length
+
+            totalPicks:
+                picks.length
         };
     };
 
@@ -520,11 +696,12 @@
             leagueTeamManagers,
             playersData
         ]) => {
-            recapData = buildRecap(
-                data.rawMatchups,
-                leagueTeamManagers,
-                playersData
-            );
+            recapData =
+                buildRecap(
+                    data.rawMatchups,
+                    leagueTeamManagers,
+                    playersData
+                );
 
             loading = false;
         }
@@ -569,18 +746,27 @@
     .featureGrid {
         display: grid;
         grid-template-columns:
-            repeat(4, minmax(0, 1fr));
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
         gap: 1em;
         margin-bottom: 2em;
     }
 
     .feature {
-        border: 1px solid var(--ccc);
+        border:
+            1px solid
+            var(--ccc);
+
         border-radius: 1em;
         padding: 1.1em;
         text-align: center;
         background: var(--fff);
-        box-shadow: 0 0 6px var(--bbb);
+
+        box-shadow:
+            0 0 6px
+            var(--bbb);
     }
 
     .featureLabel {
@@ -603,23 +789,34 @@
 
     .czarRecord {
         text-align: center;
-        margin: 0 auto 3em;
+        margin:
+            0 auto 3em;
         font-weight: 700;
     }
 
     .game {
-        border: 1px solid var(--ccc);
+        border:
+            1px solid
+            var(--ccc);
+
         border-radius: 1em;
         margin: 1.5em 0;
         overflow: hidden;
-        box-shadow: 0 0 6px var(--bbb);
-        background: var(--fff);
+
+        box-shadow:
+            0 0 6px
+            var(--bbb);
+
+        background:
+            var(--fff);
     }
 
     .scoreboard {
         display: grid;
+
         grid-template-columns:
             1fr auto 1fr;
+
         align-items: center;
         gap: 1em;
         padding: 1.5em;
@@ -663,7 +860,9 @@
     }
 
     .resultBar {
-        background: var(--eee);
+        background:
+            var(--eee);
+
         text-align: center;
         padding: 0.7em;
         font-size: 0.9em;
@@ -671,10 +870,18 @@
 
     .players {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
+
         gap: 1.5em;
-        padding: 1.3em 1.5em;
-        border-bottom: 1px solid var(--ccc);
+
+        padding:
+            1.3em 1.5em;
+
+        border-bottom:
+            1px solid
+            var(--ccc);
     }
 
     .playerHeader {
@@ -716,6 +923,34 @@
         color: #666;
     }
 
+    .debugFumbles {
+        display: block;
+
+        margin-top:
+            0.4em;
+
+        padding:
+            0.4em 0.55em;
+
+        font-size:
+            0.65em;
+
+        line-height:
+            1.4em;
+
+        word-break:
+            break-word;
+
+        background:
+            #fff3cd;
+
+        color:
+            #6b5600;
+
+        border-radius:
+            0.35em;
+    }
+
     .playerPoints {
         flex-shrink: 0;
         font-weight: 700;
@@ -732,7 +967,9 @@
     }
 
     .recapCopy {
-        padding: 1.4em 1.6em 1.6em;
+        padding:
+            1.4em 1.6em
+            1.6em;
     }
 
     .czarTitle {
@@ -743,7 +980,9 @@
     }
 
     .recapHeadline {
-        margin: 0.45em 0 0.75em;
+        margin:
+            0.45em 0
+            0.75em;
     }
 
     .recapText {
@@ -762,20 +1001,26 @@
         padding: 6em 0;
     }
 
-    @media (max-width: 760px) {
+    @media (
+        max-width: 760px
+    ) {
         .featureGrid {
             grid-template-columns:
                 1fr 1fr;
         }
 
         .players {
-            grid-template-columns: 1fr;
+            grid-template-columns:
+                1fr;
         }
     }
 
-    @media (max-width: 500px) {
+    @media (
+        max-width: 500px
+    ) {
         .featureGrid {
-            grid-template-columns: 1fr;
+            grid-template-columns:
+                1fr;
         }
 
         .scoreboard {
@@ -796,7 +1041,9 @@
         }
 
         .teamIdentity {
-            flex-direction: column;
+            flex-direction:
+                column;
+
             gap: 0.35em;
         }
     }
@@ -821,14 +1068,17 @@
         </div>
 
         {#if recapData.intro}
+
             <div class="intro">
                 {recapData.intro}
             </div>
+
         {/if}
 
         <div class="featureGrid">
 
             <div class="feature">
+
                 <div class="featureLabel">
                     HIGH MAN
                 </div>
@@ -840,9 +1090,11 @@
                 <div class="featureScore">
                     {recapData.highMan.points}
                 </div>
+
             </div>
 
             <div class="feature">
+
                 <div class="featureLabel">
                     LOW MAN
                 </div>
@@ -854,9 +1106,11 @@
                 <div class="featureScore">
                     {recapData.lowMan.points}
                 </div>
+
             </div>
 
             <div class="feature">
+
                 <div class="featureLabel">
                     BIGGEST ASS BEATING
                 </div>
@@ -870,9 +1124,11 @@
                 <div class="featureScore">
                     {recapData.biggestBlowout.margin}
                 </div>
+
             </div>
 
             <div class="feature">
+
                 <div class="featureLabel">
                     CLOSEST GAME
                 </div>
@@ -886,13 +1142,16 @@
                 <div class="featureScore">
                     {recapData.closestGame.margin}
                 </div>
+
             </div>
 
         </div>
 
         <div class="czarRecord">
+
             CZAR PICKS:
             {recapData.correctPicks}-{recapData.totalPicks - recapData.correctPicks}
+
         </div>
 
         {#each recapData.games as game}
@@ -909,11 +1168,13 @@
                         <div class="teamIdentity">
 
                             {#if game.teamAAvatar}
+
                                 <img
                                     class="avatar"
                                     src={game.teamAAvatar}
                                     alt={game.teamAInfo.name}
                                 />
+
                             {/if}
 
                             <div class="teamName">
@@ -940,11 +1201,13 @@
                         <div class="teamIdentity">
 
                             {#if game.teamBAvatar}
+
                                 <img
                                     class="avatar"
                                     src={game.teamBAvatar}
                                     alt={game.teamBInfo.name}
                                 />
+
                             {/if}
 
                             <div class="teamName">
@@ -962,9 +1225,11 @@
                 </div>
 
                 <div class="resultBar">
+
                     {game.winner.name}
                     wins by
                     {game.margin}
+
                 </div>
 
                 <div class="players">
@@ -986,11 +1251,17 @@
                                     </span>
 
                                     <span class="playerMeta">
+
                                         {player.position}
 
                                         {#if player.nflTeam}
                                             · {player.nflTeam}
                                         {/if}
+
+                                        {#if player.actual?.opponent}
+                                            · vs {player.actual.opponent}
+                                        {/if}
+
                                     </span>
 
                                     {#if getFootballStatLine(player)}
@@ -1000,6 +1271,11 @@
                                         </span>
 
                                     {/if}
+
+                                    <span class="debugFumbles">
+                                        FUMBLE DEBUG:
+                                        {getFumbleDebug(player)}
+                                    </span>
 
                                 </div>
 
@@ -1036,11 +1312,17 @@
                                     </span>
 
                                     <span class="playerMeta">
+
                                         {player.position}
 
                                         {#if player.nflTeam}
                                             · {player.nflTeam}
                                         {/if}
+
+                                        {#if player.actual?.opponent}
+                                            · vs {player.actual.opponent}
+                                        {/if}
+
                                     </span>
 
                                     {#if getFootballStatLine(player)}
@@ -1050,6 +1332,11 @@
                                         </span>
 
                                     {/if}
+
+                                    <span class="debugFumbles">
+                                        FUMBLE DEBUG:
+                                        {getFumbleDebug(player)}
+                                    </span>
 
                                 </div>
 
