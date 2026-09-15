@@ -142,7 +142,22 @@ export async function getWeeklyNFLStats(fetch, week) {
         if (Number(row.week) !== Number(week)) {
             continue;
         }
-
+    
+        if (
+            row.player_display_name === 'Jahmyr Gibbs' ||
+            row.player_name === 'J.Gibbs'
+        ) {
+            console.log(
+                'GIBBS FUMBLE DEBUG',
+                Object.fromEntries(
+                    Object.entries(row).filter(
+                        ([key]) =>
+                            key.toLowerCase().includes('fumble')
+                    )
+                )
+            );
+        }
+    
         const gsisID =
             row.player_id ||
             row.gsis_id;
