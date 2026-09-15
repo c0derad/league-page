@@ -217,7 +217,8 @@ export async function getWeeklyNFLStats(fetch, week) {
                 lost:
                     number(row.rushing_fumbles_lost) +
                     number(row.receiving_fumbles_lost) +
-                    number(row.sack_fumbles_lost)
+                    number(row.sack_fumbles_lost) +
+                    number(row.special_teams_fumbles_lost)
             }
         };
     }
