@@ -66,12 +66,10 @@ function parseCSV(text) {
     return rows.slice(1).map((values) => {
         const object = {};
 
-        headers.forEach(
-            (header, index) => {
-                object[header] =
-                    values[index] ?? '';
-            }
-        );
+        headers.forEach((header, index) => {
+            object[header] =
+                values[index] ?? '';
+        });
 
         return object;
     });
@@ -183,16 +181,6 @@ export async function getWeeklyNFLStats(
         if (!sleeperID) {
             continue;
         }
-
-        const debugFumbles =
-            Object.fromEntries(
-                Object.entries(row).filter(
-                    ([key]) =>
-                        key
-                            .toLowerCase()
-                            .includes('fumble')
-                )
-            );
 
         weeklyStats[sleeperID] = {
             sleeperID,
@@ -311,20 +299,9 @@ export async function getWeeklyNFLStats(
             fumbles: {
                 lost:
                     number(
-                        row.rushing_fumbles_lost
-                    ) +
-                    number(
-                        row.receiving_fumbles_lost
-                    ) +
-                    number(
-                        row.sack_fumbles_lost
-                    ) +
-                    number(
-                        row.special_teams_fumbles_lost
+                        row.fumbles_lost_total
                     )
-            },
-
-            debugFumbles
+            }
         };
     }
 
