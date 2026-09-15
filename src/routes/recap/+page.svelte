@@ -31,6 +31,18 @@
         );
     };
 
+    const availableWeeks = Array.from(
+        { length: Math.max(Number(data.week), 1) },
+        (_, index) => index + 1
+    );
+    
+    const changeWeek = (event) => {
+        const week = Number(event.currentTarget.value);
+    
+        window.location.href =
+            `/recap?week=${week}`;
+    };
+
     const getFootballStatLine = (
         player
     ) => {
@@ -1096,6 +1108,31 @@
             1.6em;
     }
 
+    .weekSelector {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7em;
+        margin: 0 auto 2.5em;
+    }
+    
+    .weekSelector label {
+        font-size: 0.72em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #888;
+    }
+    
+    .weekSelector select {
+        padding: 0.55em 0.8em;
+        border: 1px solid var(--ccc);
+        border-radius: 0.5em;
+        background: var(--fff);
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
     .czarTitle {
         font-size: 0.75em;
         font-weight: 700;
@@ -1189,6 +1226,26 @@
 
         <div class="subtitle">
             Judgment has been rendered.
+        </div>
+
+        <div class="weekSelector">
+        
+            <label for="week-select">
+                WEEK
+            </label>
+        
+            <select
+                id="week-select"
+                value={recapData.week}
+                on:change={changeWeek}
+            >
+                {#each availableWeeks as week}
+                    <option value={week}>
+                        Week {week}
+                    </option>
+                {/each}
+            </select>
+        
         </div>
 
         {#if recapData.intro}
