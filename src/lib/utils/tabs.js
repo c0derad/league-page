@@ -20,6 +20,18 @@ export const tabs = [
         key: 'preview',
     },
     {
+    icon: 'preview',
+    label: 'Weekly Preview',
+    dest: '/preview',
+    key: 'preview',
+    },
+    {
+    icon: 'summarize',
+    label: 'Weekly Recap',
+    dest: '/recap',
+    key: 'recap',
+    },
+    {
         icon: 'swap_horiz',
         label: 'Trades & Waivers',
         dest: '/transactions',
