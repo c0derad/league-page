@@ -199,31 +199,6 @@
         return parts.join(' · ');
     };
 
-    const getFumbleDebug = (
-        player
-    ) => {
-        const debug =
-            player?.actual?.debugFumbles;
-
-        if (!debug) {
-            return 'NO DEBUG DATA';
-        }
-
-        const entries =
-            Object.entries(debug);
-
-        if (!entries.length) {
-            return 'NO FUMBLE COLUMNS FOUND';
-        }
-
-        return entries
-            .map(
-                ([key, value]) =>
-                    `${key}=${value}`
-            )
-            .join(' | ');
-    };
-
     const getPlayerPerformances = (
         matchup,
         players,
@@ -923,34 +898,6 @@
         color: #666;
     }
 
-    .debugFumbles {
-        display: block;
-
-        margin-top:
-            0.4em;
-
-        padding:
-            0.4em 0.55em;
-
-        font-size:
-            0.65em;
-
-        line-height:
-            1.4em;
-
-        word-break:
-            break-word;
-
-        background:
-            #fff3cd;
-
-        color:
-            #6b5600;
-
-        border-radius:
-            0.35em;
-    }
-
     .playerPoints {
         flex-shrink: 0;
         font-weight: 700;
@@ -1062,9 +1009,6 @@
         <h1 class="title">
             Week {recapData.week} Recap
         </h1>
-        <div style="background: yellow; color: black; padding: 10px;">
-            DEBUG VERSION ACTIVE
-        </div>
 
         <div class="subtitle">
             Judgment has been rendered.
@@ -1151,10 +1095,8 @@
         </div>
 
         <div class="czarRecord">
-
             CZAR PICKS:
             {recapData.correctPicks}-{recapData.totalPicks - recapData.correctPicks}
-
         </div>
 
         {#each recapData.games as game}
@@ -1228,11 +1170,9 @@
                 </div>
 
                 <div class="resultBar">
-
                     {game.winner.name}
                     wins by
                     {game.margin}
-
                 </div>
 
                 <div class="players">
@@ -1274,11 +1214,6 @@
                                         </span>
 
                                     {/if}
-
-                                    <span class="debugFumbles">
-                                        FUMBLE DEBUG:
-                                        {getFumbleDebug(player)}
-                                    </span>
 
                                 </div>
 
@@ -1335,11 +1270,6 @@
                                         </span>
 
                                     {/if}
-
-                                    <span class="debugFumbles">
-                                        FUMBLE DEBUG:
-                                        {getFumbleDebug(player)}
-                                    </span>
 
                                 </div>
 
