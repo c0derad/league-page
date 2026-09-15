@@ -219,6 +219,36 @@
         );
     };
 
+    const getBenchPoints = (
+        matchup
+    ) => {
+        const starters =
+            new Set(
+                matchup.starters || []
+            );
+    
+        return Number(
+            round(
+                (matchup.players || [])
+                    .filter(
+                        (playerID) =>
+                            playerID &&
+                            !starters.has(playerID)
+                    )
+                    .reduce(
+                        (total, playerID) =>
+                            total +
+                            Number(
+                                matchup.players_points?.[
+                                    playerID
+                                ] ?? 0
+                            ),
+                        0
+                    )
+            )
+        );
+    };
+
     const getPlayerPerformances = (
         matchup,
         players,
@@ -545,6 +575,12 @@
                     teamB.points || 0
                 );
 
+            const teamABenchPoints =
+                getBenchPoints(teamA);
+            
+            const teamBBenchPoints =
+                getBenchPoints(teamB);
+
             const winner =
                 teamAPoints >=
                 teamBPoints
@@ -634,6 +670,9 @@
 
                 teamAPoints,
                 teamBPoints,
+
+                teamABenchPoints,
+                teamBBenchPoints,
 
                 teamAAvatar:
                     getTeamAvatar(
@@ -733,6 +772,28 @@
                     game.pickCorrect
             ).length;
 
+        const benchScores = [];
+        
+        for (const game of games) {
+            benchScores.push({
+                team: game.teamAInfo,
+                points: game.teamABenchPoints
+            });
+        
+            benchScores.push({
+                team: game.teamBInfo,
+                points: game.teamBBenchPoints
+            });
+        }
+        
+        benchScores.sort(
+            (a, b) =>
+                b.points - a.points
+        );
+        
+        const mostBenchPoints =
+            benchScores[0];
+
         return {
             week,
 
@@ -747,6 +808,8 @@
 
             biggestBlowout,
             closestGame,
+
+            mostBenchPoints,
 
             correctPicks,
 
@@ -814,7 +877,7 @@
         display: grid;
         grid-template-columns:
             repeat(
-                4,
+                5,
                 minmax(0, 1fr)
             );
         gap: 1em;
@@ -915,6 +978,13 @@
         font-size: 2.1em;
         font-weight: 700;
         margin-top: 0.35em;
+    }
+
+    .benchPoints {
+        margin-top: 0.3em;
+        font-size: 0.72em;
+        font-weight: 600;
+        color: #999;
     }
 
     .winner .score {
@@ -1199,6 +1269,23 @@
 
             </div>
 
+            <div class="feature">
+            
+                <div class="featureLabel">
+                    MOST POINTS LEFT ON THE BENCH
+                </div>
+            
+                <div class="featureTeam">
+                    {recapData.mostBenchPoints.team.name}
+                </div>
+            
+                <div class="featureScore">
+                    {recapData.mostBenchPoints.points}
+                </div>
+            
+            </div>
+
+
         </div>
 
         <div class="czarRecord">
@@ -1239,6 +1326,11 @@
                             {game.teamAPoints}
                         </div>
 
+                        <div class="benchPoints">
+                            BENCH:
+                            {game.teamABenchPoints}
+                        </div>
+
                         {#if game.teamANextOpponent}
                             <div class="nextFantasy">
                                 NEXT UP:
@@ -1277,6 +1369,11 @@
 
                         <div class="score">
                             {game.teamBPoints}
+                        </div>
+
+                        <div class="benchPoints">
+                            BENCH:
+                            {game.teamBBenchPoints}
                         </div>
 
                         {#if game.teamBNextOpponent}
