@@ -1,10 +1,12 @@
-name: Snapshot Weekly Rosters
+name: Snapshot Fantasy Rosters
 
 on:
-  schedule:
-    - cron: '0 17 * * 4'
-
   workflow_dispatch:
+    inputs:
+      week:
+        description: "Fantasy week to save"
+        required: true
+        default: "1"
 
 jobs:
   snapshot:
@@ -22,7 +24,9 @@ jobs:
         with:
           node-version: 20
 
-      - name: Snapshot Sleeper rosters
+      - name: Snapshot Sleeper fantasy rosters
+        env:
+          SNAPSHOT_WEEK: ${{ inputs.week }}
         run: node scripts/snapshot-rosters.mjs
 
       - name: Commit roster history
@@ -35,6 +39,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No roster changes to commit."
           else
-            git commit -m "Snapshot weekly rosters"
+            git commit -m "Save Week ${{ inputs.week }} fantasy rosters"
             git push
           fi
