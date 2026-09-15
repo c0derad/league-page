@@ -55,16 +55,23 @@ function parseCSV(text) {
         rows.push(row);
     }
 
-    if (!rows.length) return [];
+    if (!rows.length) {
+        return [];
+    }
 
-    const headers = rows[0].map((header) => header.trim());
+    const headers = rows[0].map(
+        (header) => header.trim()
+    );
 
     return rows.slice(1).map((values) => {
         const object = {};
 
-        headers.forEach((header, index) => {
-            object[header] = values[index] ?? '';
-        });
+        headers.forEach(
+            (header, index) => {
+                object[header] =
+                    values[index] ?? '';
+            }
+        );
 
         return object;
     });
@@ -82,11 +89,19 @@ function number(value) {
 
     const result = Number(value);
 
-    return Number.isFinite(result) ? result : 0;
+    return Number.isFinite(result)
+        ? result
+        : 0;
 }
 
-export async function getWeeklyNFLStats(fetch, week) {
-    const [statsResponse, idsResponse] = await Promise.all([
+export async function getWeeklyNFLStats(
+    fetch,
+    week
+) {
+    const [
+        statsResponse,
+        idsResponse
+    ] = await Promise.all([
         fetch(NFLVERSE_STATS_URL),
         fetch(PLAYER_IDS_URL)
     ]);
@@ -103,19 +118,22 @@ export async function getWeeklyNFLStats(fetch, week) {
         );
     }
 
-    const [statsText, idsText] = await Promise.all([
+    const [
+        statsText,
+        idsText
+    ] = await Promise.all([
         statsResponse.text(),
         idsResponse.text()
     ]);
 
-    const statsRows = parseCSV(statsText);
-    const idRows = parseCSV(idsText);
+    const statsRows =
+        parseCSV(statsText);
 
-    /*
-     * DynastyProcess column naming has historically used
-     * sleeper_id and gsis_id.
-     */
-    const sleeperByGsis = new Map();
+    const idRows =
+        parseCSV(idsText);
+
+    const sleeperByGsis =
+        new Map();
 
     for (const row of idRows) {
         const sleeperID =
@@ -128,7 +146,10 @@ export async function getWeeklyNFLStats(fetch, week) {
             row.gsisId ||
             row.gsis;
 
-        if (sleeperID && gsisID) {
+        if (
+            sleeperID &&
+            gsisID
+        ) {
             sleeperByGsis.set(
                 String(gsisID),
                 String(sleeperID)
@@ -139,35 +160,39 @@ export async function getWeeklyNFLStats(fetch, week) {
     const weeklyStats = {};
 
     for (const row of statsRows) {
-        if (Number(row.week) !== Number(week)) {
+        if (
+            Number(row.week) !==
+            Number(week)
+        ) {
             continue;
         }
-    
-        if (
-            row.player_display_name === 'Jahmyr Gibbs' ||
-            row.player_name === 'J.Gibbs'
-        ) {
-            console.log(
-                'GIBBS FUMBLE DEBUG',
-                Object.fromEntries(
-                    Object.entries(row).filter(
-                        ([key]) =>
-                            key.toLowerCase().includes('fumble')
-                    )
-                )
-            );
-        }
-    
+
         const gsisID =
             row.player_id ||
             row.gsis_id;
-    
-        if (!gsisID) continue;
+
+        if (!gsisID) {
+            continue;
+        }
 
         const sleeperID =
-            sleeperByGsis.get(String(gsisID));
+            sleeperByGsis.get(
+                String(gsisID)
+            );
 
-        if (!sleeperID) continue;
+        if (!sleeperID) {
+            continue;
+        }
+
+        const debugFumbles =
+            Object.fromEntries(
+                Object.entries(row).filter(
+                    ([key]) =>
+                        key
+                            .toLowerCase()
+                            .includes('fumble')
+                )
+            );
 
         weeklyStats[sleeperID] = {
             sleeperID,
@@ -193,48 +218,113 @@ export async function getWeeklyNFLStats(fetch, week) {
                 '',
 
             passing: {
-                completions: number(row.completions),
-                attempts: number(row.attempts),
-                yards: number(row.passing_yards),
-                touchdowns: number(row.passing_tds),
-                interceptions: number(
-                    row.passing_interceptions
-                ),
-                sacks: number(row.sacks_suffered)
+                completions:
+                    number(
+                        row.completions
+                    ),
+
+                attempts:
+                    number(
+                        row.attempts
+                    ),
+
+                yards:
+                    number(
+                        row.passing_yards
+                    ),
+
+                touchdowns:
+                    number(
+                        row.passing_tds
+                    ),
+
+                interceptions:
+                    number(
+                        row.passing_interceptions
+                    ),
+
+                sacks:
+                    number(
+                        row.sacks_suffered
+                    )
             },
 
             rushing: {
-                attempts: number(row.carries),
-                yards: number(row.rushing_yards),
-                touchdowns: number(row.rushing_tds),
-                firstDowns: number(
-                    row.rushing_first_downs
-                )
+                attempts:
+                    number(
+                        row.carries
+                    ),
+
+                yards:
+                    number(
+                        row.rushing_yards
+                    ),
+
+                touchdowns:
+                    number(
+                        row.rushing_tds
+                    ),
+
+                firstDowns:
+                    number(
+                        row.rushing_first_downs
+                    )
             },
 
             receiving: {
-                targets: number(row.targets),
-                receptions: number(row.receptions),
-                yards: number(row.receiving_yards),
-                touchdowns: number(row.receiving_tds),
-                airYards: number(
-                    row.receiving_air_yards
-                ),
-                yardsAfterCatch: number(
-                    row.receiving_yards_after_catch
-                ),
-                firstDowns: number(
-                    row.receiving_first_downs
-                )
+                targets:
+                    number(
+                        row.targets
+                    ),
+
+                receptions:
+                    number(
+                        row.receptions
+                    ),
+
+                yards:
+                    number(
+                        row.receiving_yards
+                    ),
+
+                touchdowns:
+                    number(
+                        row.receiving_tds
+                    ),
+
+                airYards:
+                    number(
+                        row.receiving_air_yards
+                    ),
+
+                yardsAfterCatch:
+                    number(
+                        row.receiving_yards_after_catch
+                    ),
+
+                firstDowns:
+                    number(
+                        row.receiving_first_downs
+                    )
             },
 
             fumbles: {
                 lost:
-                    number(row.rushing_fumbles_lost) +
-                    number(row.receiving_fumbles_lost) +
-                    number(row.sack_fumbles_lost) +
-                    number(row.special_teams_fumbles_lost)
-            }
+                    number(
+                        row.rushing_fumbles_lost
+                    ) +
+                    number(
+                        row.receiving_fumbles_lost
+                    ) +
+                    number(
+                        row.sack_fumbles_lost
+                    ) +
+                    number(
+                        row.special_teams_fumbles_lost
+                    )
+            },
+
+            debugFumbles
         };
     }
 
