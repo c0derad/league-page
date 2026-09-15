@@ -1062,6 +1062,9 @@
         <h1 class="title">
             Week {recapData.week} Recap
         </h1>
+        <div style="background: yellow; color: black; padding: 10px;">
+            DEBUG VERSION ACTIVE
+        </div>
 
         <div class="subtitle">
             Judgment has been rendered.
