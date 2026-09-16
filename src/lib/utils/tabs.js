@@ -14,16 +14,24 @@ export const tabs = [
         key: 'matchups',
     },
     {
-    icon: 'preview',
-    label: 'Weekly Preview',
-    dest: '/preview',
-    key: 'preview',
+        icon: 'preview',
+        label: 'Weekly Preview',
+        dest: '/preview',
+        key: 'preview'
     },
+    
     {
-    icon: 'summarize',
-    label: 'Weekly Recap',
-    dest: '/recap',
-    key: 'recap',
+        icon: 'summarize',
+        label: 'Weekly Recap',
+        dest: '/recap',
+        key: 'recap'
+    },
+    
+    {
+        icon: 'leaderboard',
+        label: 'Power Rankings',
+        dest: '/power-rankings',
+        key: 'power_rankings'
     },
     {
         icon: 'swap_horiz',
