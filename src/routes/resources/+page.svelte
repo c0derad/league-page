@@ -1,12 +1,33 @@
 <script>
     export let data;
 
-    const round = (value) =>
-        Math.round(Number(value || 0) * 100) / 100;
+    const TEAM_NAMES = {
+        1: "Critical Chase Theory",
+        2: "PeterPanthers",
+        3: "The Oilers",
+        4: "Show Me Your TDs",
+        5: "Rhodes x Pags",
+        6: "#FreeTony",
+        7: "Retardinals",
+        8: "Naberhood Sex Offender",
+        9: "Charles",
+        10: "ConsiderMeOiled",
+        11: "Campus Legends",
+        12: "Big frydown"
+    };
 
-    const getPlayerName = (playerID) => {
+    const round = (value) =>
+        Math.round(
+            Number(value || 0) * 100
+        ) / 100;
+
+    const getPlayerName = (
+        playerID
+    ) => {
         const player =
-            data.players?.[playerID];
+            data.players?.[
+                playerID
+            ];
 
         if (!player) {
             return playerID;
@@ -21,39 +42,47 @@
         return `${first} ${last}`.trim();
     };
 
-    const getTeamName = (rosterID) => {
-        const manager =
-            data.teamManagers?.find?.(
-                (team) =>
-                    Number(team.roster_id) ===
-                    Number(rosterID)
-            );
+    const getTeamName = (
+        rosterID
+    ) =>
+        TEAM_NAMES[
+            Number(rosterID)
+        ] ||
+        `Roster ${rosterID}`;
 
-        return (
-            manager?.team_name ||
-            manager?.name ||
-            manager?.display_name ||
-            `Roster ${rosterID}`
-        );
-    };
-
-    const getWeek1Matchup = (rosterID) =>
+    const getWeek1Matchup = (
+        rosterID
+    ) =>
         data.week1Matchups.find(
             (item) =>
-                Number(item.roster_id) ===
-                Number(rosterID)
+                Number(
+                    item.roster_id
+                ) ===
+                Number(
+                    rosterID
+                )
         );
 
-    const getWeek2Matchup = (rosterID) =>
+    const getWeek2Matchup = (
+        rosterID
+    ) =>
         data.week2Matchups.find(
             (item) =>
-                Number(item.roster_id) ===
-                Number(rosterID)
+                Number(
+                    item.roster_id
+                ) ===
+                Number(
+                    rosterID
+                )
         );
 
-    const getWeek2Opponent = (rosterID) => {
+    const getWeek2Opponent = (
+        rosterID
+    ) => {
         const team =
-            getWeek2Matchup(rosterID);
+            getWeek2Matchup(
+                rosterID
+            );
 
         if (!team) {
             return null;
@@ -64,8 +93,12 @@
                 (item) =>
                     item.matchup_id ===
                         team.matchup_id &&
-                    Number(item.roster_id) !==
-                        Number(rosterID)
+                    Number(
+                        item.roster_id
+                    ) !==
+                        Number(
+                            rosterID
+                        )
             );
 
         if (!opponent) {
@@ -88,15 +121,24 @@
         week
     ) => {
         return round(
-            (roster.starters || []).reduce(
-                (total, playerID) => {
+            (
+                roster.starters || []
+            ).reduce(
+                (
+                    total,
+                    playerID
+                ) => {
                     const player =
-                        data.players?.[playerID];
+                        data.players?.[
+                            playerID
+                        ];
 
                     return (
                         total +
                         Number(
-                            player?.wi?.[week]?.p ||
+                            player?.wi?.[
+                                week
+                            ]?.p ||
                             0
                         )
                     );
@@ -113,32 +155,39 @@
         return (
             roster.starters || []
         )
-            .map((playerID) => {
-                const player =
-                    data.players?.[playerID];
-
-                return {
-                    playerID,
-                    name:
-                        getPlayerName(
+            .map(
+                (playerID) => {
+                    const player =
+                        data.players?.[
                             playerID
-                        ),
+                        ];
 
-                    position:
-                        player?.pos ||
-                        null,
+                    return {
+                        playerID,
 
-                    nflTeam:
-                        player?.t ||
-                        null,
+                        name:
+                            getPlayerName(
+                                playerID
+                            ),
 
-                    projection:
-                        round(
-                            player?.wi?.[week]?.p ||
-                            0
-                        )
-                };
-            })
+                        position:
+                            player?.pos ||
+                            null,
+
+                        nflTeam:
+                            player?.t ||
+                            null,
+
+                        projection:
+                            round(
+                                player?.wi?.[
+                                    week
+                                ]?.p ||
+                                0
+                            )
+                    };
+                }
+            )
             .sort(
                 (a, b) =>
                     b.projection -
@@ -162,21 +211,25 @@
         return (
             matchup.starters || []
         )
-            .map((playerID) => ({
-                playerID,
-                name:
-                    getPlayerName(
-                        playerID
-                    ),
+            .map(
+                (playerID) => ({
+                    playerID,
 
-                points:
-                    round(
-                        matchup
-                            .players_points?.[
-                                playerID
-                            ] || 0
-                    )
-            }))
+                    name:
+                        getPlayerName(
+                            playerID
+                        ),
+
+                    points:
+                        round(
+                            matchup
+                                .players_points?.[
+                                    playerID
+                                ] ||
+                            0
+                        )
+                })
+            )
             .sort(
                 (a, b) =>
                     b.points -
@@ -199,11 +252,15 @@
 
         const starters =
             new Set(
-                matchup.starters || []
+                matchup.starters ||
+                []
             );
 
         return round(
-            (matchup.players || [])
+            (
+                matchup.players ||
+                []
+            )
                 .filter(
                     (playerID) =>
                         !starters.has(
@@ -211,13 +268,17 @@
                         )
                 )
                 .reduce(
-                    (total, playerID) =>
+                    (
+                        total,
+                        playerID
+                    ) =>
                         total +
                         Number(
                             matchup
                                 .players_points?.[
                                     playerID
-                                ] || 0
+                                ] ||
+                            0
                         ),
                     0
                 )
@@ -242,47 +303,69 @@
 
         const oldPlayers =
             new Set(
-                previous.players || []
+                previous.players ||
+                []
             );
 
         const currentPlayers =
             new Set(
-                roster.players || []
+                roster.players ||
+                []
             );
 
-        const added =
-            [...currentPlayers]
-                .filter(
-                    (id) =>
-                        !oldPlayers.has(id)
-                )
-                .map((id) => ({
-                    playerID: id,
-                    name:
-                        getPlayerName(id)
-                }));
-
-        const dropped =
-            [...oldPlayers]
-                .filter(
-                    (id) =>
-                        !currentPlayers.has(id)
-                )
-                .map((id) => ({
-                    playerID: id,
-                    name:
-                        getPlayerName(id)
-                }));
-
         return {
-            added,
-            dropped
+            added:
+                [
+                    ...currentPlayers
+                ]
+                    .filter(
+                        (id) =>
+                            !oldPlayers.has(
+                                id
+                            )
+                    )
+                    .map(
+                        (id) => ({
+                            playerID:
+                                id,
+
+                            name:
+                                getPlayerName(
+                                    id
+                                )
+                        })
+                    ),
+
+            dropped:
+                [
+                    ...oldPlayers
+                ]
+                    .filter(
+                        (id) =>
+                            !currentPlayers.has(
+                                id
+                            )
+                    )
+                    .map(
+                        (id) => ({
+                            playerID:
+                                id,
+
+                            name:
+                                getPlayerName(
+                                    id
+                                )
+                        })
+                    )
         };
     };
 
     const powerData =
-        (data.currentRosters || [])
-            .map((roster) => {
+        (
+            data.currentRosters ||
+            []
+        ).map(
+            (roster) => {
                 const week1 =
                     getWeek1Matchup(
                         roster.roster_id
@@ -340,25 +423,31 @@
                         ),
 
                     currentRoster:
-                        (roster.players || [])
-                            .map(
-                                (playerID) => ({
-                                    playerID,
-                                    name:
-                                        getPlayerName(
-                                            playerID
-                                        )
-                                })
-                            )
+                        (
+                            roster.players ||
+                            []
+                        ).map(
+                            (
+                                playerID
+                            ) => ({
+                                playerID,
+
+                                name:
+                                    getPlayerName(
+                                        playerID
+                                    )
+                            })
+                        )
                 };
-            });
+            }
+        );
 
     const output = {
         generatedAt:
-            new Date().toISOString(),
+            new Date()
+                .toISOString(),
 
-        week:
-            2,
+        week: 2,
 
         teams:
             powerData
@@ -397,5 +486,9 @@
             font-size: 0.75em;
             overflow-x: auto;
         "
-    >{JSON.stringify(output, null, 2)}</pre>
+    >{JSON.stringify(
+        output,
+        null,
+        2
+    )}</pre>
 </div>
