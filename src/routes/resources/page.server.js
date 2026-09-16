@@ -1,6 +1,5 @@
 import {
     getLeagueRosters,
-    getLeagueTeamManagers,
     loadPlayers
 } from '$lib/utils/helper';
 
@@ -12,14 +11,13 @@ import rosterHistory from '$lib/data/rosterHistory.json';
 
 export async function load({ fetch }) {
     const [
-        currentRosters,
-        teamManagers,
-        players,
+        rosterInfo,
+        playersInfo,
         week1Matchups,
         week2Matchups
     ] = await Promise.all([
         getLeagueRosters(),
-        getLeagueTeamManagers(),
+
         loadPlayers(fetch),
 
         fetch(
@@ -32,11 +30,18 @@ export async function load({ fetch }) {
     ]);
 
     return {
-        currentRosters,
-        teamManagers,
-        players,
+        currentRosters:
+            Object.values(
+                rosterInfo?.rosters || {}
+            ),
+
+        players:
+            playersInfo?.players || {},
+
         week1Matchups,
+
         week2Matchups,
+
         week1Snapshot:
             rosterHistory?.["1"] || null
     };
