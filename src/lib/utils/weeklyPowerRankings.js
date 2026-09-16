@@ -28,25 +28,30 @@ export const weeklyPowerRankings = {
                 record: "1-0",
                 week1Score: 172.16,
                 week2Projection: 124.99,
-                headline: "Unfortunately, JV May Have Built a Wagon",
+                headline: "JV Has Found His Motivation",
                 commentary: `
                     It pains the Czar to do this, but 172.16 earns the top spot.
-
+            
                     More importantly, JV's explosion wasn't one player dragging eight corpses across
                     the finish line. Gibbs went nuclear, Swift scored three times, Olave went for 182
                     yards, McBride smashed, and even Pittsburgh's defense joined the party. PeterPanthers
                     had 186.66 potential points, so somehow the league's highest scorer actually left
                     production on the table.
-
+            
                     The roster still looks good entering Week 2. Gibbs is an elite anchor, Olave and
                     McBride give JV legitimate weekly advantages, and Diggs, Addison and Brian Thomas
                     provide actual bench depth.
-
-                    We are not yet willing to concede that JV knows football. But the evidence is
-                    becoming inconvenient.
+            
+                    There may also be a very simple explanation for the sudden competence: JV has made
+                    it known that beer bubbles hurt his tummy, and in a league where Low Man means drinking
+                    one on camera, self-preservation can be a powerful motivator. 
+                    
+                    Is it domination, or merely fear of carbonation? 
+            
+                    Whatever the reason, PeterPanthers earned No. 1.
                 `,
                 transactions: `
-                    No changes. After scoring 172.16, JV understandably decided not to touch anything.
+                    No changes. After scoring 172.16, JV understandably left the roster alone.
                 `
             },
 
@@ -360,26 +365,40 @@ export const weeklyPowerRankings = {
                 status: "🔒 ROSTER JAIL",
                 commentary: `
                     There was never really a debate about No. 12.
-
+            
                     Rhodes x Pags scored 77.30.
-
+            
                     Worse, their potential points were 82.30. This was not a tragic case of brilliant
                     players being left on the bench. The entire available roster was bad.
-
+            
                     Bijan scored 31.3 by himself and still couldn't drag this team within shouting
                     distance of respectability. Stafford gave them almost nothing, Davante disappointed,
                     and the remaining lineup mostly wandered around the facility unsupervised.
-
+            
                     Drew Rhodes spent years establishing a reputation for fantasy incompetence.
                     The league added Pags.
-
+            
                     The result was 77 points.
-
-                    Effective immediately and until further notice: ROSTER JAIL.
+            
+                    And now the punishment phase continues.
+            
+                    Neither Rhodes nor Pags has completed his required Low Man press conference, and
+                    neither has finished the corresponding beer punishment. Under league rules, the roster
+                    remains locked until both obligations are completed.
+            
+                    So while the rest of the league is already tinkering with waivers and setting up for
+                    Week 2, Rhodes x Pags have apparently decided there is no particular urgency to regain
+                    access to roster management.
+            
+                    That is a bold strategy for a team that just scored 77.
+            
+                    Until the press conferences are delivered and the beers are finished:
+            
+                    ROSTER JAIL.
                 `,
                 transactions: `
-                    None. They scored 77.30, entered ROSTER JAIL, and responded by making absolutely
-                    zero roster changes. Bail has been denied.
+                    None permitted. The roster remains locked because both Low Man press conferences
+                    and beer punishments are still outstanding.
                 `
             }
         ]
