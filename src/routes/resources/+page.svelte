@@ -3,25 +3,40 @@
 </script>
 
 <svelte:head>
-    <title>Roster Debug</title>
+    <title>
+        Power Rankings Data
+    </title>
 </svelte:head>
 
 <div
     style="
         width: 95%;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 2em auto;
     "
 >
-    <h1>Roster Debug</h1>
+    <h1>
+        Power Rankings Data
+    </h1>
+
+    <p>
+        Temporary internal data export.
+    </p>
 
     <pre
         style="
             white-space: pre-wrap;
             word-break: break-word;
+            margin-top: 2em;
             padding: 1em;
             border: 1px solid var(--ccc);
             border-radius: 0.5em;
+            font-size: 0.75em;
+            overflow-x: auto;
         "
-    >{JSON.stringify(data, null, 2)}</pre>
+    >{JSON.stringify(
+        data.powerRankingsData,
+        null,
+        2
+    )}</pre>
 </div>
