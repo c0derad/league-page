@@ -147,34 +147,34 @@ export const weeklyPreviews = {
     `,
 
     matchups: {
-      1: {
-        headline: "The Tummy Protection Program Meets Its First Real Test",
-        preview: `
-          JV enters Week 2 in unfamiliar territory: undefeated, No. 1 in the power
-          rankings, and currently nowhere near the beer that comes with finishing Low Man.
-          Given that beer bubbles apparently hurt his tummy, perhaps we have finally
-          discovered the motivational system PeterPanthers needed.
-
-          The annoying part is that the roster may actually be good.
-
-          Gibbs is the biggest individual weapon in this matchup, Daniels adds rushing
-          upside at quarterback, and Olave and McBride give JV two high-volume targets
-          who don't need touchdowns to pile up fantasy points. Swift just scored three
-          times in Week 1, although asking for that again would be ambitious.
-
-          Chaney has the more balanced counterattack. Puka and Nico can both dominate
-          targets, Kyren and Montgomery provide dependable touchdown opportunities, and
-          Burrow gives The Oilers considerably more ceiling than his Week 1 score showed.
-          There really isn't an obvious weak point in Chaney's starting lineup.
-
-          Sleeper has these teams separated by barely two points, and that feels right.
-          JV's Week 1 deserves respect. I'm just not ready to assume 172-point JV is the
-          permanent version.
-
-          Give me the deeper lineup in the Game of the Week.
-        `,
-        pick: "The Oilers"
-      },
+        1: {
+          headline: "JV Gets His First Real Test",
+          preview: `
+            JV enters Week 2 undefeated and sitting at No. 1 in the power rankings after
+            absolutely detonating in the opener.
+        
+            Gibbs is still the biggest individual weapon in this matchup, Daniels adds rushing
+            upside at quarterback, and Olave and McBride give PeterPanthers two high-volume
+            options who can score without needing touchdowns. Swift just scored three times in
+            Week 1, although asking for that again would be ambitious.
+        
+            There may also be some self-preservation involved here. JV has made it very clear
+            that beer bubbles hurt his tummy, and avoiding Low Man is a fairly effective way to
+            avoid having to drink one on camera.
+        
+            Chaney has the more balanced counterattack. Puka and Nico can both dominate targets,
+            Kyren and Montgomery provide dependable touchdown opportunities, and Burrow gives
+            The Oilers considerably more ceiling than his Week 1 score showed. There really
+            isn't an obvious weak point in Chaney's starting lineup.
+        
+            Sleeper has these teams separated by barely two points, and that feels right.
+            JV's Week 1 deserves respect. I'm just not ready to assume 172-point JV is the
+            permanent version.
+        
+            Give me the deeper lineup in the Game of the Week.
+          `,
+          pick: "The Oilers"
+        },
 
       2: {
         headline: "The Czar Begins the Reputation Repair Tour",
@@ -211,59 +211,67 @@ export const weeklyPreviews = {
         headline: "ROSTER JAIL Has a Week 2 Schedule",
         preview: `
           Rhodes x Pags enter Week 2 under unique roster-management conditions.
-
+      
           Neither manager has completed his required Low Man press conference. Neither
           has completed the corresponding beer punishment. Accordingly, the roster
           remains locked.
-
+      
           There appears to be very little urgency to change that.
-
+      
           The inmates do at least have Bijan, who is capable of making almost any fantasy
           matchup competitive by himself. Stafford, Rashee Rice and Davante Adams give
           them some additional upside, and Brock Bowers is sitting on the bench with one
           of the stronger projections on the entire roster.
-
+      
           Across the yard is a considerably more dangerous operation.
-
+      
           Josh Allen can manufacture fantasy points when Buffalo's actual offense breaks
           down, JSN looked every bit like a centerpiece in Week 1, and Kenneth Walker
-          arrives after a 34-point eruption. Josh also has legitimate bench options if
-          the bottom of the lineup needs adjustment.
-
+          arrives after a 34-point eruption. Moore Oil Coming also has legitimate bench
+          options if the bottom of the lineup needs adjustment.
+      
           Sleeper only sees about four points between these teams, which is surprisingly
           charitable to the prison population.
-
+      
           The Czar is not.
         `,
-        pick: "ConsiderMeOiled"
+        pick: "Moore Oil Coming"
       },
 
       4: {
-        headline: "Caleb Williams Cannot Keep Doing Everyone's Job",
+        headline: "Brother vs. Brother: The Vigo Blood Battle",
         preview: `
-          Vigo received 37.26 fantasy points from Caleb Williams in Week 1.
-
-          Retardinals scored 99.76.
-
-          That remains an extraordinary achievement.
-
-          Caleb gives Vigo enough quarterback upside to keep almost any matchup alive,
-          and Chase Brown remains a legitimate volume play. Jameson Williams can erase
-          a deficit on one deep ball, while Waddle, Deebo and Etienne at least give Vigo
-          recognizable names throughout the lineup.
-
-          The issue is that Ryan doesn't need nearly as much to go right.
-
-          Jonathan Taylor and Ashton Jeanty combined for nearly 58 points last week,
-          Malik Nabers and Tetairoa McMillan give him upside at receiver, and Kittle
-          provides another weekly advantage at tight end. Even Parker Washington's Week
-          1 performance gives Ryan another usable path to points.
-
-          Sleeper sees the largest projected margin of the week here.
-
-          If Caleb has another 35-point game, Vigo can make this uncomfortable.
-
-          The concern is that he may need to.
+          Forget the projections for a second.
+      
+          This is a family matter.
+      
+          Vigo and Ryan meet in Week 2 in the first true blood battle of the season, which
+          means somebody is going to spend the next several months hearing about this at
+          every family gathering.
+      
+          Vigo enters needing considerably more support than he got in Week 1. Caleb Williams
+          gave him 37.26 points and somehow Retardinals still finished under 100. Chase Brown
+          remains a legitimate volume play, Jameson Williams can flip a matchup on one deep
+          ball, and Waddle, Deebo and Etienne give Vigo enough upside that this is not dead
+          on arrival.
+      
+          Ryan has the more stable lineup. Jonathan Taylor and Ashton Jeanty combined for
+          nearly 58 points last week, Malik Nabers and Tetairoa McMillan give him high-end
+          receiving talent, and Kittle adds another weekly advantage. Parker Washington
+          also gives Ryan another path to useful production without needing a miracle.
+      
+          Sleeper sees this as the biggest projected ass beating of the week.
+      
+          The Czar sees something more important:
+      
+          Brother vs. brother.
+      
+          Blood on the field.
+      
+          Bragging rights at stake.
+      
+          Vigo can absolutely make this ugly if Caleb goes nuclear again, but Ryan has more
+          ways to survive if one player disappoints.
         `,
         pick: "Naberhood Sex Offender"
       },
