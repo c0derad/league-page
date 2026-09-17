@@ -2,10 +2,10 @@ name: Snapshot Fantasy Rosters
 
 on:
   schedule:
-    # Every Thursday at 16:00 UTC.
-    # This is 11:00 AM Dallas during CDT
-    # and 10:00 AM Dallas during CST.
-    - cron: '0 16 * * 4'
+    # Every Thursday at 14:00 UTC.
+    # This is 9:00 AM Dallas during CDT
+    # and 8:00 AM Dallas during CST.
+    - cron: '0 14 * * 4'
 
   workflow_dispatch:
 
