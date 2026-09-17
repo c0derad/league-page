@@ -4,7 +4,7 @@
 
 <svelte:head>
     <title>
-        Power Rankings Data
+        Week 2 Preview Data
     </title>
 </svelte:head>
 
@@ -16,11 +16,11 @@
     "
 >
     <h1>
-        Power Rankings Data
+        Week 2 Preview Data
     </h1>
 
     <p>
-        Temporary internal data export.
+        Temporary export for Czar preview.
     </p>
 
     <pre
@@ -35,7 +35,7 @@
             overflow-x: auto;
         "
     >{JSON.stringify(
-        data.powerRankingsData,
+        data.previewData,
         null,
         2
     )}</pre>
