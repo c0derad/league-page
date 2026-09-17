@@ -11,6 +11,27 @@
     let loading = true;
     let previewData = null;
 
+    const availableWeeks =
+        Object.keys(weeklyPreviews)
+            .map(Number)
+            .sort((a, b) => a - b);
+    
+    const latestPublishedWeek =
+        availableWeeks[
+            availableWeeks.length - 1
+        ] || 1;
+    
+    const changeWeek = (event) => {
+        const week =
+            Number(
+                event.currentTarget.value
+            );
+    
+        window.location.href =
+            `/preview?week=${week}`;
+    };
+
+
     const getProjection = (starters, players, week) => {
         let total = 0;
 
@@ -95,10 +116,15 @@
     ) => {
         const players = playersData.players;
 
+        const queryWeek =
+            Number(data.queryWeek);
+        
         const requestedWeek =
-            Number(data.queryWeek) ||
-            Number(matchupsData.week) ||
-            1;
+            availableWeeks.includes(
+                queryWeek
+            )
+                ? queryWeek
+                : latestPublishedWeek;
 
         const editorial =
             weeklyPreviews[requestedWeek] || null;
@@ -290,6 +316,42 @@
         color: #888;
         font-style: italic;
         margin-bottom: 2em;
+    }
+
+    .weekSelector {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7em;
+        margin: 0 auto 2.5em;
+    }
+    
+    .weekSelector label {
+        font-size: 0.72em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #888;
+    }
+    
+    .weekSelector select {
+        padding: 0.55em 0.8em;
+        border: 1px solid var(--ccc);
+        border-radius: 0.5em;
+        background: var(--fff);
+        color: var(--000);
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    
+    .weekSelector select option {
+        background: var(--fff);
+        color: var(--000);
+    }
+    
+    .weekSelector select:focus {
+        outline: 2px solid var(--ccc);
+        outline-offset: 2px;
     }
 
     .intro {
@@ -544,6 +606,26 @@
 
         <div class="subtitle">
             The official word from the Roster Czar
+        </div>
+
+        <div class="weekSelector">
+        
+            <label for="week-select">
+                WEEK
+            </label>
+        
+            <select
+                id="week-select"
+                value={previewData.week}
+                on:change={changeWeek}
+            >
+                {#each availableWeeks as week}
+                    <option value={week}>
+                        Week {week}
+                    </option>
+                {/each}
+            </select>
+        
         </div>
 
         {#if previewData.intro}
