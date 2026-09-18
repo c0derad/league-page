@@ -63,8 +63,8 @@ export const weeklyBestBets = {
       {
           rank: 5,
       
-          team: "USC",
-          teamSlug: "usc",
+          team: "Southern California",
+          teamSlug: "southern-california",
       
           pick: "USC -21.5",
       
@@ -89,7 +89,7 @@ export const weeklyBestBets = {
           rank: 7,
       
           team: "Louisiana Tech",
-          teamSlug: "louisiana tech",
+          teamSlug: "louisiana-tech",
       
           pick: "LA Tech +19.5",
       
@@ -101,7 +101,7 @@ export const weeklyBestBets = {
           rank: 8,
       
           team: "New Mexico",
-          teamSlug: "new mexico",
+          teamSlug: "new-mexico",
       
           pick: "New Mexico +21.5",
       
@@ -113,8 +113,8 @@ export const weeklyBestBets = {
       {
           rank: 9,
       
-          team: "JMU",
-          teamSlug: "jmu",
+          team: "James Madison",
+          teamSlug: "james-madison",
       
           pick: "JMU +1.5",
       
