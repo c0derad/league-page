@@ -118,10 +118,21 @@
                                 />
                             {/if}
 
-                            <div class="teamName">
-                                {bet.team}
-                            </div>
-
+                            <div>
+                                <div class="teamName">
+                                    {bet.team}
+                                </div>
+                            
+                                <div
+                                    style="
+                                        font-size: 0.65em;
+                                        color: #888;
+                                        word-break: break-all;
+                                    "
+                                >
+                                    {collegeLogo(bet.teamSlug)}
+                                </div>
+                            
                         </div>
 
                         <div class="vsBlock">
