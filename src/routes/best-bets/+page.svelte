@@ -97,13 +97,15 @@
                         </div>
 
                         <div class="teamBlock">
-                            <img
-                                class="logo"
-                                src={collegeLogo(
-                                    bet.opponentSlug
-                                )}
-                                alt={`${bet.opponent} logo`}
-                            />
+                            {#if bet.opponentSlug}
+                                <img
+                                    class="logo"
+                                    src={collegeLogo(
+                                        bet.opponentSlug
+                                    )}
+                                    alt={`${bet.opponent} logo`}
+                                />
+                            {/if}
 
                             <div class="teamName">
                                 {bet.opponent}
