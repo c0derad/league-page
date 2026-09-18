@@ -8,7 +8,7 @@ export const tabs = [
         key: 'home',
     },
     {
-    icon: 'locked',
+    icon: 'casino',
     label: 'Best Bets',
     dest: '/best-bets',
     key: 'best_bets'
