@@ -1,10 +1,190 @@
 <script>
     import {
+        onMount
+    } from 'svelte';
+
+    import {
         collegeLogo,
         collegeLogoFallback
     } from '$lib/utils/collegeLogos';
 
     export let data;
+
+    let bets =
+        data.bestBetsData.bets.map(
+            (bet) => ({
+                ...bet,
+                opponent: 'Loading...',
+                opponentSlug: null
+            })
+        );
+
+    const normalize = (value) =>
+        String(value || '')
+            .toLowerCase()
+            .replace(/[^a-z0-9]/g, '');
+
+    const getTeamName = (team) =>
+        team?.names?.short ||
+        team?.names?.full ||
+        '';
+
+    const getTeamSlug = (team) =>
+        team?.names?.seo ||
+        null;
+
+    const enrichBet = (
+        bet,
+        games
+    ) => {
+        const searchValues = [
+            normalize(bet.team),
+            normalize(bet.teamSlug)
+        ].filter(Boolean);
+
+        for (const wrapper of games) {
+            const game =
+                wrapper?.game;
+
+            if (!game) continue;
+
+            const away =
+                game.away;
+
+            const home =
+                game.home;
+
+            const awayValues = [
+                normalize(
+                    getTeamName(away)
+                ),
+                normalize(
+                    getTeamSlug(away)
+                )
+            ];
+
+            const homeValues = [
+                normalize(
+                    getTeamName(home)
+                ),
+                normalize(
+                    getTeamSlug(home)
+                )
+            ];
+
+            const selectedIsAway =
+                searchValues.some(
+                    (value) =>
+                        awayValues.includes(
+                            value
+                        )
+                );
+
+            const selectedIsHome =
+                searchValues.some(
+                    (value) =>
+                        homeValues.includes(
+                            value
+                        )
+                );
+
+            if (
+                !selectedIsAway &&
+                !selectedIsHome
+            ) {
+                continue;
+            }
+
+            const opponent =
+                selectedIsAway
+                    ? home
+                    : away;
+
+            return {
+                ...bet,
+
+                opponent:
+                    getTeamName(
+                        opponent
+                    ),
+
+                opponentSlug:
+                    getTeamSlug(
+                        opponent
+                    ),
+
+                matchupFound: true
+            };
+        }
+
+        return {
+            ...bet,
+            opponent: 'Opponent TBD',
+            opponentSlug: null,
+            matchupFound: false
+        };
+    };
+
+    const loadMatchups =
+        async () => {
+            const year =
+                data.bestBetsData.year ||
+                2026;
+
+            const ncaaWeek =
+                data.bestBetsData.ncaaWeek ||
+                data.week;
+
+            try {
+                const response =
+                    await fetch(
+                        `https://ncaa-api.henrygd.me/scoreboard/football/fbs/${year}/${ncaaWeek}/all-conf`
+                    );
+
+                if (!response.ok) {
+                    throw new Error(
+                        `NCAA API returned ${response.status}`
+                    );
+                }
+
+                const scoreboard =
+                    await response.json();
+
+                const games =
+                    Array.isArray(
+                        scoreboard?.games
+                    )
+                        ? scoreboard.games
+                        : [];
+
+                bets =
+                    data.bestBetsData.bets.map(
+                        (bet) =>
+                            enrichBet(
+                                bet,
+                                games
+                            )
+                    );
+            } catch (error) {
+                console.error(
+                    'Failed to load NCAA matchups',
+                    error
+                );
+
+                bets =
+                    data.bestBetsData.bets.map(
+                        (bet) => ({
+                            ...bet,
+                            opponent:
+                                'Opponent TBD',
+                            opponentSlug:
+                                null,
+                            matchupFound:
+                                false
+                        })
+                    );
+            }
+        };
 
     const changeWeek = (event) => {
         const week =
@@ -21,11 +201,14 @@
         slug
     ) => {
         const fallback =
-            collegeLogoFallback(slug);
+            collegeLogoFallback(
+                slug
+            );
 
         if (
             fallback &&
-            event.currentTarget.src !== fallback
+            event.currentTarget.src !==
+                fallback
         ) {
             event.currentTarget.src =
                 fallback;
@@ -36,6 +219,10 @@
         event.currentTarget.style.display =
             'none';
     };
+
+    onMount(() => {
+        loadMatchups();
+    });
 </script>
 
 <svelte:head>
@@ -82,7 +269,7 @@
 
     <div class="bets">
 
-        {#each data.bestBetsData.bets as bet}
+        {#each bets as bet}
 
             <article class="betCard">
 
