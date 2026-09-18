@@ -8,6 +8,13 @@ export const tabs = [
         key: 'home',
     },
     {
+    icon: 'locked',
+    label: 'Best Bets',
+    dest: '/best-bets',
+    key: 'best_bets'
+    },
+    
+    {
         icon: 'sports',
         label: 'Matchups',
         dest: '/matchups',
@@ -38,12 +45,6 @@ export const tabs = [
         label: 'Trades & Waivers',
         dest: '/transactions',
         key: 'transactions',
-    },
-    {
-        icon: 'article',
-        label: 'Blog',
-        dest: '/blog',
-        key: 'blog',
     },
     {
         icon: 'view_comfy',
