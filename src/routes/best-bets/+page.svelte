@@ -179,13 +179,14 @@
                 data.bestBetsData.ncaaWeek ||
                 data.week;
 
-            try {
+            try {                
                 const url =
                     `https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard` +
                     `?dates=${year}` +
                     `&seasontype=2` +
                     `&week=${week}` +
-                    `&limit=100`;
+                    `&groups=80` +
+                    `&limit=200`;
 
                 const response =
                     await fetch(url);
@@ -360,16 +361,6 @@
                             <div>
                                 <div class="teamName">
                                     {bet.team}
-                                </div>
-                            
-                                <div
-                                    style="
-                                        font-size: 0.65em;
-                                        color: #888;
-                                        word-break: break-all;
-                                    "
-                                >
-                                    {collegeLogo(bet.teamSlug)}
                                 </div>
                             
                         </div>
