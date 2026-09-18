@@ -24,96 +24,139 @@
             .toLowerCase()
             .replace(/[^a-z0-9]/g, '');
 
-    const getTeamName = (team) =>
-        team?.names?.short ||
-        team?.names?.full ||
-        '';
+    const teamAliases = {
+        'southerncalifornia': [
+            'southerncalifornia',
+            'usc'
+        ],
 
-    const getTeamSlug = (team) =>
-        team?.names?.seo ||
-        null;
+        'jamesmadison': [
+            'jamesmadison',
+            'jmu'
+        ],
+
+        'louisianatech': [
+            'louisianatech',
+            'latech'
+        ]
+    };
+
+    const matchesTeam = (
+        bet,
+        espnTeam
+    ) => {
+        const betValues = [
+            normalize(bet.team),
+            normalize(bet.teamSlug)
+        ];
+
+        const espnValues = [
+            normalize(
+                espnTeam?.displayName
+            ),
+            normalize(
+                espnTeam?.shortDisplayName
+            ),
+            normalize(
+                espnTeam?.name
+            ),
+            normalize(
+                espnTeam?.abbreviation
+            ),
+            normalize(
+                espnTeam?.location
+            )
+        ].filter(Boolean);
+
+        const aliases =
+            teamAliases[
+                normalize(bet.team)
+            ] || [];
+
+        const searchValues = [
+            ...betValues,
+            ...aliases
+        ].filter(Boolean);
+
+        return searchValues.some(
+            (value) =>
+                espnValues.includes(value)
+        );
+    };
+
+    const getSlugFromTeamName = (
+        teamName
+    ) => {
+        return String(teamName || '')
+            .trim()
+            .toLowerCase()
+            .replace(/&/g, 'and')
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+    };
 
     const enrichBet = (
         bet,
-        games
+        events
     ) => {
-        const searchValues = [
-            normalize(bet.team),
-            normalize(bet.teamSlug)
-        ].filter(Boolean);
-
-        for (const wrapper of games) {
-            const game =
-                wrapper?.game;
-
-            if (!game) continue;
-
-            const away =
-                game.away;
-
-            const home =
-                game.home;
-
-            const awayValues = [
-                normalize(
-                    getTeamName(away)
-                ),
-                normalize(
-                    getTeamSlug(away)
-                )
-            ];
-
-            const homeValues = [
-                normalize(
-                    getTeamName(home)
-                ),
-                normalize(
-                    getTeamSlug(home)
-                )
-            ];
-
-            const selectedIsAway =
-                searchValues.some(
-                    (value) =>
-                        awayValues.includes(
-                            value
-                        )
-                );
-
-            const selectedIsHome =
-                searchValues.some(
-                    (value) =>
-                        homeValues.includes(
-                            value
-                        )
-                );
+        for (const event of events) {
+            const competitors =
+                event?.competitions?.[0]
+                    ?.competitors || [];
 
             if (
-                !selectedIsAway &&
-                !selectedIsHome
+                competitors.length < 2
             ) {
                 continue;
             }
 
+            const selected =
+                competitors.find(
+                    (competitor) =>
+                        matchesTeam(
+                            bet,
+                            competitor.team
+                        )
+                );
+
+            if (!selected) {
+                continue;
+            }
+
             const opponent =
-                selectedIsAway
-                    ? home
-                    : away;
+                competitors.find(
+                    (competitor) =>
+                        competitor !== selected
+                );
+
+            if (!opponent?.team) {
+                continue;
+            }
+
+            const opponentName =
+                opponent.team
+                    .shortDisplayName ||
+                opponent.team
+                    .displayName ||
+                opponent.team.name;
 
             return {
                 ...bet,
 
                 opponent:
-                    getTeamName(
-                        opponent
-                    ),
+                    opponentName,
 
                 opponentSlug:
-                    getTeamSlug(
-                        opponent
+                    getSlugFromTeamName(
+                        opponentName
                     ),
 
-                matchupFound: true
+                matchupFound:
+                    true,
+
+                espnOpponentLogo:
+                    opponent.team.logo ||
+                    null
             };
         }
 
@@ -121,7 +164,8 @@
             ...bet,
             opponent: 'Opponent TBD',
             opponentSlug: null,
-            matchupFound: false
+            matchupFound: false,
+            espnOpponentLogo: null
         };
     };
 
@@ -131,30 +175,35 @@
                 data.bestBetsData.year ||
                 2026;
 
-            const ncaaWeek =
+            const week =
                 data.bestBetsData.ncaaWeek ||
                 data.week;
 
             try {
+                const url =
+                    `https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard` +
+                    `?dates=${year}` +
+                    `&seasontype=2` +
+                    `&week=${week}` +
+                    `&limit=100`;
+
                 const response =
-                    await fetch(
-                        `https://ncaa-api.henrygd.me/scoreboard/football/fbs/${year}/${ncaaWeek}/all-conf`
-                    );
+                    await fetch(url);
 
                 if (!response.ok) {
                     throw new Error(
-                        `NCAA API returned ${response.status}`
+                        `ESPN returned ${response.status}`
                     );
                 }
 
                 const scoreboard =
                     await response.json();
 
-                const games =
+                const events =
                     Array.isArray(
-                        scoreboard?.games
+                        scoreboard?.events
                     )
-                        ? scoreboard.games
+                        ? scoreboard.events
                         : [];
 
                 bets =
@@ -162,12 +211,13 @@
                         (bet) =>
                             enrichBet(
                                 bet,
-                                games
+                                events
                             )
                     );
+
             } catch (error) {
                 console.error(
-                    'Failed to load NCAA matchups',
+                    'Failed to load ESPN matchups',
                     error
                 );
 
@@ -180,7 +230,9 @@
                             opponentSlug:
                                 null,
                             matchupFound:
-                                false
+                                false,
+                            espnOpponentLogo:
+                                null
                         })
                     );
             }
@@ -328,7 +380,13 @@
 
                         <div class="teamBlock">
 
-                            {#if bet.opponentSlug}
+                            {#if bet.espnOpponentLogo}
+                                <img
+                                    class="logo"
+                                    src={bet.espnOpponentLogo}
+                                    alt={`${bet.opponent} logo`}
+                                />
+                            {:else if bet.opponentSlug}
                                 <img
                                     class="logo"
                                     src={collegeLogo(
