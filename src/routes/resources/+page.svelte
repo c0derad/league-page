@@ -4,7 +4,7 @@
 
 <svelte:head>
     <title>
-        Week 2 Preview Data
+        NCAA Week 3 Debug
     </title>
 </svelte:head>
 
@@ -16,18 +16,13 @@
     "
 >
     <h1>
-        Week 2 Preview Data
+        NCAA Week 3 Debug
     </h1>
-
-    <p>
-        Temporary export for Czar preview.
-    </p>
 
     <pre
         style="
             white-space: pre-wrap;
             word-break: break-word;
-            margin-top: 2em;
             padding: 1em;
             border: 1px solid var(--ccc);
             border-radius: 0.5em;
@@ -35,7 +30,7 @@
             overflow-x: auto;
         "
     >{JSON.stringify(
-        data.previewData,
+        data.debugData,
         null,
         2
     )}</pre>
