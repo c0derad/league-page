@@ -1,6 +1,7 @@
 <script>
     import {
-        collegeLogo
+        collegeLogo,
+        collegeLogoFallback
     } from '$lib/utils/collegeLogos';
 
     export let data;
