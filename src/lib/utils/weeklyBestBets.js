@@ -1,6 +1,7 @@
 export const weeklyBestBets = {
     3: {
         year: 2026,
+        ncaaWeek: 3,
     
         title: "Week 3 Best Bets",
     
