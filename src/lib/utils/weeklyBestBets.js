@@ -1,36 +1,138 @@
 export const weeklyBestBets = {
-  3: {
-    title: "Week 3 Best Bets",
-    intro: `
-      The Czar is taking his talents to the sportsbook.
-
-      These are the college football bets worth watching this week.
-    `,
+    3: {
+        year: 2026,
+    
+        title: "Week 3 Best Bets",
+    
+        intro: `
+            The Czar is taking his talents to the sportsbook.
+        `,
 
     bets: [
       {
-        rank: 1,
-        team: "Alabama",
-        teamSlug: "alabama",
-        opponent: "Georgia",
-        opponentSlug: "georgia",
-        pick: "Alabama -3.5",
-        commentary: `
-          Example write-up goes here.
-        `
+          rank: 1,
+      
+          team: "Alabama",
+          teamSlug: "alabama",
+      
+          pick: "Alabama -19.5",
+      
+          commentary: `
+              Example write-up.
+          `
+      },
+      {
+          rank: 2,
+      
+          team: "Georgia",
+          teamSlug: "georgia",
+      
+          pick: "Georgia -24.5",
+      
+          commentary: `
+              Example write-up.
+          `
+      },
+      
+      {
+          rank: 3,
+      
+          team: "Houston",
+          teamSlug: "houston",
+      
+          pick: "Houston +7.5",
+      
+          commentary: `
+              Example write-up.
+          `
+      },
+      {
+          rank: 4,
+      
+          team: "Louisville",
+          teamSlug: "louisville",
+      
+          pick: "Louisville -1.5",
+      
+          commentary: `
+              Example write-up.
+          `
+      },
+      
+      {
+          rank: 5,
+      
+          team: "USC",
+          teamSlug: "usc",
+      
+          pick: "USC -21.5",
+      
+          commentary: `
+              Example write-up.
+          `
+      },
+      {
+          rank: 6,
+      
+          team: "Kentucky",
+          teamSlug: "kentucky",
+      
+          pick: "Kentucky +16.5",
+      
+          commentary: `
+              Example write-up.
+          `
       },
 
       {
-        rank: 2,
-        team: "Texas",
-        teamSlug: "texas",
-        opponent: "Florida",
-        opponentSlug: "florida",
-        pick: "Texas ML",
-        commentary: `
-          Example write-up goes here.
-        `
-      }
+          rank: 7,
+      
+          team: "Louisiana Tech",
+          teamSlug: "louisiana tech",
+      
+          pick: "LA Tech +19.5",
+      
+          commentary: `
+              Example write-up.
+          `
+      },
+      {
+          rank: 8,
+      
+          team: "New Mexico",
+          teamSlug: "new mexico",
+      
+          pick: "New Mexico +21.5",
+      
+          commentary: `
+              Example write-up.
+          `
+      },
+      
+      {
+          rank: 9,
+      
+          team: "JMU",
+          teamSlug: "jmu",
+      
+          pick: "JMU +1.5",
+      
+          commentary: `
+              Example write-up.
+          `
+      },
+      {
+          rank: 10,
+      
+          team: "Utah",
+          teamSlug: "utah",
+      
+          pick: "Utah -27.5",
+      
+          commentary: `
+              Example write-up.
+          `
+      }      
     ]
   }
 };
