@@ -12,7 +12,7 @@ export async function getCollegeFootballWeek(
 
     if (!response.ok) {
         throw new Error(
-            `Failed to load NCAA Week ${week}`
+            `Failed to load NCAA football Week ${week}`
         );
     }
 
