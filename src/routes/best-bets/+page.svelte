@@ -15,6 +15,27 @@
         window.location.href =
             `/best-bets?week=${week}`;
     };
+
+    const handleLogoError = (
+        event,
+        slug
+    ) => {
+        const fallback =
+            collegeLogoFallback(slug);
+
+        if (
+            fallback &&
+            event.currentTarget.src !== fallback
+        ) {
+            event.currentTarget.src =
+                fallback;
+
+            return;
+        }
+
+        event.currentTarget.style.display =
+            'none';
+    };
 </script>
 
 <svelte:head>
@@ -80,17 +101,27 @@
                     <div class="matchupRow">
 
                         <div class="teamBlock">
-                            <img
-                                class="logo"
-                                src={collegeLogo(
-                                    bet.teamSlug
-                                )}
-                                alt={`${bet.team} logo`}
-                            />
+
+                            {#if bet.teamSlug}
+                                <img
+                                    class="logo"
+                                    src={collegeLogo(
+                                        bet.teamSlug
+                                    )}
+                                    alt={`${bet.team} logo`}
+                                    on:error={(event) =>
+                                        handleLogoError(
+                                            event,
+                                            bet.teamSlug
+                                        )
+                                    }
+                                />
+                            {/if}
 
                             <div class="teamName">
                                 {bet.team}
                             </div>
+
                         </div>
 
                         <div class="vsBlock">
@@ -98,6 +129,7 @@
                         </div>
 
                         <div class="teamBlock">
+
                             {#if bet.opponentSlug}
                                 <img
                                     class="logo"
@@ -105,12 +137,19 @@
                                         bet.opponentSlug
                                     )}
                                     alt={`${bet.opponent} logo`}
+                                    on:error={(event) =>
+                                        handleLogoError(
+                                            event,
+                                            bet.opponentSlug
+                                        )
+                                    }
                                 />
                             {/if}
 
                             <div class="teamName">
                                 {bet.opponent}
                             </div>
+
                         </div>
 
                     </div>
