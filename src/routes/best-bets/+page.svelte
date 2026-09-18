@@ -15,7 +15,8 @@
             (bet) => ({
                 ...bet,
                 opponent: 'Loading...',
-                opponentSlug: null
+                opponentSlug: null,
+                espnOpponentLogo: null
             })
         );
 
@@ -25,17 +26,17 @@
             .replace(/[^a-z0-9]/g, '');
 
     const teamAliases = {
-        'southerncalifornia': [
+        southerncalifornia: [
             'southerncalifornia',
             'usc'
         ],
 
-        'jamesmadison': [
+        jamesmadison: [
             'jamesmadison',
             'jmu'
         ],
 
-        'louisianatech': [
+        louisianatech: [
             'louisianatech',
             'latech'
         ]
@@ -100,9 +101,11 @@
         events
     ) => {
         for (const event of events) {
+            const competition =
+                event?.competitions?.[0];
+
             const competitors =
-                event?.competitions?.[0]
-                    ?.competitors || [];
+                competition?.competitors || [];
 
             if (
                 competitors.length < 2
@@ -140,6 +143,11 @@
                     .displayName ||
                 opponent.team.name;
 
+            const matchupSeparator =
+                selected.homeAway === 'away'
+                    ? '@'
+                    : 'vs';
+
             return {
                 ...bet,
 
@@ -154,6 +162,8 @@
                 matchupFound:
                     true,
 
+                matchupSeparator,
+
                 espnOpponentLogo:
                     opponent.team.logo ||
                     null
@@ -165,6 +175,7 @@
             opponent: 'Opponent TBD',
             opponentSlug: null,
             matchupFound: false,
+            matchupSeparator: 'vs',
             espnOpponentLogo: null
         };
     };
@@ -179,7 +190,7 @@
                 data.bestBetsData.ncaaWeek ||
                 data.week;
 
-            try {                
+            try {
                 const url =
                     `https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard` +
                     `?dates=${year}` +
@@ -232,6 +243,8 @@
                                 null,
                             matchupFound:
                                 false,
+                            matchupSeparator:
+                                'vs',
                             espnOpponentLogo:
                                 null
                         })
@@ -287,6 +300,7 @@
 <div class="page">
 
     <div class="header">
+
         <div class="eyebrow">
             THE CZAR PRESENTS
         </div>
@@ -314,6 +328,7 @@
             </select>
 
         </div>
+
     </div>
 
     <div class="intro">
@@ -327,6 +342,7 @@
             <article class="betCard">
 
                 <div class="rankColumn">
+
                     <div class="rankLabel">
                         BET
                     </div>
@@ -334,13 +350,14 @@
                     <div class="rankNumber">
                         {bet.rank}
                     </div>
+
                 </div>
 
                 <div class="content">
 
-                    <div class="matchupRow">
+                    <div class="matchup">
 
-                        <div class="teamBlock">
+                        <div class="team">
 
                             {#if bet.teamSlug}
                                 <img
@@ -358,18 +375,17 @@
                                 />
                             {/if}
 
-                            <div>
-                                <div class="teamName">
-                                    {bet.team}
-                                </div>
-                            
+                            <div class="teamName">
+                                {bet.team}
+                            </div>
+
                         </div>
 
-                        <div class="vsBlock">
-                            vs
+                        <div class="separator">
+                            {bet.matchupSeparator || 'vs'}
                         </div>
 
-                        <div class="teamBlock">
+                        <div class="team opponent">
 
                             {#if bet.espnOpponentLogo}
                                 <img
@@ -401,15 +417,19 @@
 
                     </div>
 
-                    <div class="pickRow">
+                    <div class="betSection">
+
                         <div class="pickLabel">
-                            BEST BET
+                            THE PLAY
                         </div>
 
                         <div class="pickValue">
                             {bet.pick}
                         </div>
+
                     </div>
+
+                    <div class="divider"></div>
 
                     <div class="commentary">
                         {bet.commentary}
@@ -428,7 +448,7 @@
 <style>
     .page {
         width: 94%;
-        max-width: 1050px;
+        max-width: 1000px;
         margin: 0 auto;
         padding: 3em 0 6em;
     }
@@ -439,7 +459,7 @@
     }
 
     .eyebrow {
-        margin-bottom: 0.6em;
+        margin-bottom: 0.7em;
         font-size: 0.72em;
         font-weight: 800;
         letter-spacing: 0.14em;
@@ -447,7 +467,7 @@
     }
 
     h1 {
-        margin: 0 0 0.9em;
+        margin: 0 0 1em;
         font-size: 2.8em;
     }
 
@@ -456,12 +476,12 @@
         justify-content: center;
         align-items: center;
         gap: 0.7em;
-        margin: 0 auto 2.5em;
+        margin-bottom: 2.5em;
     }
 
     .weekSelector label {
         font-size: 0.72em;
-        font-weight: 700;
+        font-weight: 800;
         letter-spacing: 0.08em;
         color: #888;
     }
@@ -473,12 +493,12 @@
         background: var(--fff);
         color: var(--000);
         font: inherit;
-        font-weight: 600;
+        font-weight: 700;
         cursor: pointer;
     }
 
     .intro {
-        max-width: 820px;
+        max-width: 760px;
         margin: 0 auto 3em;
         text-align: center;
         white-space: pre-line;
@@ -494,10 +514,10 @@
     .betCard {
         display: grid;
         grid-template-columns:
-            90px minmax(0, 1fr);
+            84px minmax(0, 1fr);
 
         border: 1px solid var(--ccc);
-        border-radius: 0.8em;
+        border-radius: 0.9em;
         overflow: hidden;
     }
 
@@ -505,12 +525,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 1.5em 0.8em;
+        padding: 1.6em 0.7em;
         border-right: 1px solid var(--ccc);
     }
 
     .rankLabel {
-        font-size: 0.62em;
+        font-size: 0.6em;
         font-weight: 800;
         letter-spacing: 0.12em;
         color: #888;
@@ -520,31 +540,34 @@
         margin-top: 0.2em;
         font-size: 2.5em;
         font-weight: 900;
+        line-height: 1;
     }
 
     .content {
-        padding: 1.5em;
+        min-width: 0;
+        padding: 1.6em 1.8em 1.8em;
     }
 
-    .matchupRow {
+    .matchup {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 1.25em;
-        margin-bottom: 1.4em;
+        justify-content: flex-start;
+        gap: 1em;
         flex-wrap: wrap;
     }
 
-    .teamBlock {
+    .team {
         display: flex;
         align-items: center;
         gap: 0.7em;
+        min-width: 0;
     }
 
     .logo {
-        width: 52px;
-        height: 52px;
+        width: 48px;
+        height: 48px;
         object-fit: contain;
+        flex: 0 0 auto;
     }
 
     .teamName {
@@ -552,46 +575,87 @@
         font-weight: 800;
     }
 
-    .vsBlock {
+    .separator {
         color: #888;
-        font-weight: 800;
+        font-size: 0.8em;
+        font-weight: 900;
+        text-transform: uppercase;
     }
 
-    .pickRow {
-        margin-bottom: 1em;
+    .betSection {
+        margin-top: 1.3em;
     }
 
     .pickLabel {
-        margin-bottom: 0.2em;
-        font-size: 0.68em;
-        font-weight: 800;
-        letter-spacing: 0.09em;
+        margin-bottom: 0.25em;
+        font-size: 0.65em;
+        font-weight: 900;
+        letter-spacing: 0.12em;
         color: #888;
     }
 
     .pickValue {
-        font-size: 1.4em;
+        font-size: 1.55em;
         font-weight: 900;
+        line-height: 1.15;
+    }
+
+    .divider {
+        height: 1px;
+        margin: 1.3em 0 1.15em;
+        background: var(--ccc);
     }
 
     .commentary {
+        max-width: 760px;
         white-space: pre-line;
         line-height: 1.65em;
     }
 
     @media (max-width: 650px) {
+
+        .page {
+            width: 95%;
+        }
+
         .betCard {
             grid-template-columns:
-                62px minmax(0, 1fr);
+                58px minmax(0, 1fr);
+        }
+
+        .rankColumn {
+            padding:
+                1.3em 0.35em;
         }
 
         .rankNumber {
-            font-size: 2em;
+            font-size: 1.9em;
+        }
+
+        .content {
+            padding:
+                1.25em 1.1em 1.4em;
+        }
+
+        .matchup {
+            gap: 0.7em;
         }
 
         .logo {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
+        }
+
+        .teamName {
+            font-size: 0.92em;
+        }
+
+        .separator {
+            font-size: 0.7em;
+        }
+
+        .pickValue {
+            font-size: 1.35em;
         }
 
         h1 {
