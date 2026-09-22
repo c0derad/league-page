@@ -210,7 +210,7 @@ export const weeklyRecaps = {
           If T2 wins that one too, we may have to start taking this seriously.
         `
       }
-    }
+    },
   2: {
     intro: `
         Week 2 is officially in the books, and the league has already developed
@@ -547,6 +547,4 @@ export const weeklyRecaps = {
             `
         }
     }
-}
-}
 };
