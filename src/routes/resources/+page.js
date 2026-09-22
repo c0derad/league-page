@@ -1,30 +1,14 @@
 import {
-    getCollegeFootballWeek
-} from '$lib/utils/collegeFootball';
+    getLeagueMatchups,
+    getLeagueTeamManagers,
+    loadPlayers
+} from '$lib/utils/helper';
 
 export async function load({ fetch }) {
-    let scoreboard = null;
-    let error = null;
-
-    try {
-        scoreboard =
-            await getCollegeFootballWeek(
-                fetch,
-                2026,
-                3
-            );
-    } catch (err) {
-        error =
-            err?.message ||
-            String(err);
-    }
-
     return {
-        debugData: {
-            year: 2026,
-            week: 3,
-            error,
-            scoreboard
-        }
+        queryWeek: 2,
+        matchupsData: getLeagueMatchups(),
+        leagueTeamManagersData: getLeagueTeamManagers(),
+        playersData: loadPlayers(fetch)
     };
 }
