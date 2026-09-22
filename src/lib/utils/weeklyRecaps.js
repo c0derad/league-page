@@ -211,5 +211,342 @@ export const weeklyRecaps = {
         `
       }
     }
-  }
+  2: {
+    intro: `
+        Week 2 is officially in the books, and the league has already developed
+        several deeply concerning trends.
+
+        JV did it again.
+
+        After hanging 172 in Week 1, PeterPanthers followed it with 137.34 and
+        turned what was supposed to be the Game of the Week into the largest
+        beating on the board.
+
+        The Czar responded to a humiliating 91-point opener by scoring 89.32,
+        proving that technically things can always get worse.
+
+        Rhodes x Pags finally looked competent, scored 136.08, and still lost.
+
+        Ryan handled the first Vigo Brother Blood Battle with absolutely no regard
+        for family relationships.
+
+        JQ escaped Jansen by 1.38 despite leaving 25.1 points from Travis Kelce
+        on the bench.
+
+        And after briefly convincing us that Big frydown had become a serious
+        fantasy football team, T2 immediately crashed back to earth and claimed
+        Low Man.
+
+        Moore Oil Coming takes High Man at 141.02.
+
+        Big frydown takes Low Man at 81.66.
+
+        JV delivered the week's biggest ass beating.
+
+        JQ survived the week's closest game.
+
+        The Czar went 3-3 on his Week 2 picks and now sits at 7-5 on the season.
+
+        Two weeks down.
+
+        The league remains compromised.
+    `,
+
+    matchups: {
+        1: {
+            headline: "JV Is Officially Becoming a Problem",
+            recap: `
+                At some point we have to stop calling this an accident.
+
+                PeterPanthers followed a 172-point Week 1 with another 137.34 and
+                absolutely dismantled The Oilers, 137.34 to 83.58.
+
+                Jahmyr Gibbs wasn't spectacular on the ground — 16 carries for
+                52 yards — but he added six catches for 61 yards and a touchdown.
+
+                Chris Olave caught eight of 10 targets for 86 yards and a score.
+
+                Stefon Diggs only caught five balls, but two of them went for touchdowns.
+
+                Trey McBride added eight catches and another score.
+
+                That's four starters producing legitimate NFL stat lines, not just
+                fantasy nonsense.
+
+                Chaney got a strong game from Dalton Kincaid, who caught seven balls
+                for 95 yards and a touchdown, and Joe Burrow threw two scores.
+
+                But the lineup collapsed around them.
+
+                David Montgomery managed 10 rushing yards on six carries.
+
+                Marvin Harrison Jr. saw one target and caught zero passes.
+
+                Puka Nacua finished with zero fantasy points and no recorded Week 2
+                stat line in the data.
+
+                Final margin: 53.76.
+
+                Biggest ass beating of the week.
+
+                The Czar picked The Oilers.
+
+                That was incorrect.
+
+                JV remains 2-0, and we are now being forced to confront the possibility
+                that the man who admits he does not know football may actually have
+                one of the best teams in the league.
+
+                Troubling.
+            `
+        },
+
+        2: {
+            headline: "The Czar's Reputation Repair Has Been Delayed",
+            recap: `
+                Week 1: 91.62.
+
+                Week 2: 89.32.
+
+                Excellent progress.
+
+                Ja'Marr Chase did his job, catching seven of nine targets for 75 yards
+                and two touchdowns.
+
+                Unfortunately, almost nobody else did.
+
+                Drake "Drake Maye" Maye completed 14 of 22 passes for 208 yards,
+                threw zero touchdowns and one interception, and finished with 9.02.
+
+                Drake London caught four balls for 51 yards.
+
+                Javonte Williams managed 30 rushing yards.
+
+                Tampa Bay's defense contributed two points.
+
+                Meanwhile Trevor did not even need his quarterback to be good.
+
+                Trevor Lawrence threw for 189 yards, zero touchdowns and one interception
+                and scored only 7.16.
+
+                Show Me Your TDs still scored 132.86.
+
+                DeVonta Smith caught 10 of 13 targets for 117 yards and a touchdown.
+
+                James Cook ran for 135 yards and a score.
+
+                Omarion Hampton added 94 rushing yards and a touchdown.
+
+                Sam LaPorta caught six balls for 52 yards and another score.
+
+                Trevor beat the Czar by 43.54 despite getting almost nothing from his QB.
+
+                The Czar is now 0-2.
+
+                Executive privilege has been extended indefinitely.
+            `
+        },
+
+        3: {
+            headline: "ROSTER JAIL Nearly Pulled Off the Heist",
+            recap: `
+                Rhodes x Pags finally played good fantasy football.
+
+                Naturally, they lost anyway.
+
+                Davante Adams caught eight of 10 targets for 195 yards and two touchdowns.
+
+                Matthew Stafford threw for 327 yards and four scores.
+
+                Brandon Aubrey added 17 points from the kicker spot.
+
+                Rhodes x Pags finished with 136.08 — nearly 59 points better than
+                their Week 1 disaster.
+
+                Unfortunately, Josh decided to deploy two nuclear weapons.
+
+                Jaxon Smith-Njigba caught nine of 11 targets for 155 yards and
+                three touchdowns.
+
+                Josh Allen threw for 248 yards and three touchdowns, then added
+                69 rushing yards and two more scores.
+
+                Kenneth Walker somehow quietly added 178 total yards of his own.
+
+                JSN and Allen alone combined for 83.32 fantasy points.
+
+                Moore Oil Coming finished at 141.02, the highest score in the league.
+
+                Final margin: 4.94.
+
+                Rhodes x Pags finally looked competent.
+
+                They simply chose the exact week that Josh Allen and JSN decided
+                to become a two-man natural disaster.
+
+                ROSTER JAIL remains undefeated.
+            `
+        },
+
+        4: {
+            headline: "The Vigo Blood Battle Ends in a Public Execution",
+            recap: `
+                Brother against brother.
+
+                Family pride on the line.
+
+                Ryan won by 44.06.
+
+                Naberhood Sex Offender finished with 133.98 and thoroughly destroyed
+                Retardinals.
+
+                Jonathan Taylor handled 24 carries for 92 yards and two touchdowns,
+                then added four catches for another 40 yards.
+
+                Brock Purdy completed 20 of 22 passes for 287 yards and two touchdowns,
+                then rushed for 30 yards and another score.
+
+                George Kittle caught all four of his targets for 80 yards and a touchdown.
+
+                Parker Washington added seven catches for 98.
+
+                Vigo actually got 138 receiving yards from Jaylen Waddle and two
+                touchdowns from Jake Ferguson.
+
+                The problem was basically everything else.
+
+                Caleb Williams threw for only 138 yards, no touchdowns and an interception.
+
+                Deebo Samuel caught three passes for 31 yards.
+
+                Jameson Williams caught two for 33.
+
+                Kansas City's defense scored one point.
+
+                And then there is Dalton Schultz.
+
+                Schultz caught 12 of 14 targets for 140 yards.
+
+                Twenty-six fantasy points.
+
+                On Vigo's bench.
+
+                It would not have changed the winner.
+
+                It does make the loss significantly funnier.
+
+                Ryan takes the first Vigo Brother Blood Battle.
+
+                Thanksgiving has already been ruined.
+            `
+        },
+
+        5: {
+            headline: "JQ Commits Lineup Malpractice and Wins Anyway",
+            recap: `
+                This was the closest game of the week, and JQ survived by 1.38.
+
+                #FreeTony got an enormous performance from CeeDee Lamb, who caught
+                eight of nine targets for 153 yards and two touchdowns.
+
+                The Patriots defense somehow added 23 points.
+
+                But Lamar Jackson was merely human: 235 passing yards, one touchdown,
+                one interception and 34 rushing yards.
+
+                De'Von Achane had 93 total yards but never found the end zone.
+
+                Jansen finished at 118.50.
+
+                Campus Legends answered with Patrick Mahomes throwing for 382 yards
+                and three touchdowns.
+
+                Christian McCaffrey only rushed for 23 yards but scored twice and added
+                four catches for 43 yards.
+
+                Garrett Wilson caught five passes for 57 yards and a touchdown.
+
+                That was enough to get JQ to 119.88.
+
+                Barely.
+
+                And now we address the crime.
+
+                Travis Kelce caught nine of 11 targets for 101 yards and a touchdown.
+
+                Twenty-five point one fantasy points.
+
+                On the bench.
+
+                Jalen Coker added another 14.6 there.
+
+                JQ left a mountain of points on the sideline and still won by 1.38.
+
+                That is not good management.
+
+                That is getting away with something.
+            `
+        },
+
+        6: {
+            headline: "T2 Has Remembered Who He Is",
+            recap: `
+                Last week, Big frydown scored 145.50.
+
+                There was concern.
+
+                There were questions.
+
+                There was even a brief discussion about whether T2 might actually
+                know what he is doing.
+
+                We can now close the investigation.
+
+                Big frydown scored 81.66 and takes Week 2 Low Man.
+
+                Dak Prescott tried to save the operation, completing 26 of 31 passes
+                for 279 yards and four touchdowns.
+
+                He scored 29.76.
+
+                The rest of the lineup responded by dying.
+
+                Saquon Barkley had four carries for nine yards and one catch for 11.
+
+                Tucker Kraft caught two passes for 15 yards.
+
+                Justin Jefferson finished with three catches for 55 yards.
+
+                Mike Evans caught three for 54.
+
+                Ladd McConkey had three catches for 35.
+
+                Bucky Irving was the only other player to reach double digits.
+
+                Charles, meanwhile, simply handed the ball to The Sun God.
+
+                Amon-Ra St. Brown caught nine of 13 targets for 142 yards and two touchdowns.
+
+                Jalen Hurts threw for 264 yards and two scores.
+
+                Derrick Henry added 87 total yards and a touchdown.
+
+                Tee Higgins chipped in five catches for 95 yards.
+
+                Charles cruised to a 122.76 to 81.66 win.
+
+                Final margin: 41.10.
+
+                Week 1 T2 looked dangerous.
+
+                Week 2 T2 looked familiar.
+
+                And now Low Man T2 owes the league a press conference and a beer.
+
+                Welcome home.
+            `
+        }
+    }
+}
+}
 };
