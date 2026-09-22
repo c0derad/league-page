@@ -10,6 +10,8 @@ import {
     getWeeklyNFLStats
 } from '$lib/utils/nflStats.server.js';
 
+const WEEK = 2;
+
 const TEAM_NAMES = {
     1: 'Critical Chase Theory',
     2: 'PeterPanthers',
@@ -32,7 +34,7 @@ const round = (value) =>
 
 export async function load({
     fetch
-}) 
+}) {
     const [
         matchupResponse,
         playersData,
@@ -40,26 +42,28 @@ export async function load({
         rawPlayersResponse
     ] = await Promise.all([
         fetch(
-            `https://api.sleeper.app/v1/league/${leagueID}/matchups/2`
+            `https://api.sleeper.app/v1/league/${leagueID}/matchups/${WEEK}`
         ),
-        loadPlayers(fetch),
+
+        loadPlayers(
+            fetch
+        ),
+
         getWeeklyNFLStats(
             fetch,
-            2
-    ),
+            WEEK
+        ),
+
         fetch(
             'https://api.sleeper.app/v1/players/nfl'
-    )
-]);
+        )
+    ]);
 
     if (!matchupResponse.ok) {
         throw new Error(
-            `Failed to load Week 2 matchups: ${matchupResponse.status}`
+            `Failed to load Week ${WEEK} matchups: ${matchupResponse.status}`
         );
     }
-
-    const rawMatchups =
-        await matchupResponse.json();
 
     if (!rawPlayersResponse.ok) {
         throw new Error(
@@ -67,8 +71,11 @@ export async function load({
         );
     }
 
-const rawPlayers =
-    await rawPlayersResponse.json();
+    const rawMatchups =
+        await matchupResponse.json();
+
+    const rawPlayers =
+        await rawPlayersResponse.json();
 
     const players =
         playersData?.players ??
@@ -81,13 +88,30 @@ const rawPlayers =
         const player =
             players?.[playerID];
 
-        if (!player) {
-            return playerID;
+        const rawPlayer =
+            rawPlayers?.[playerID];
+
+        if (player) {
+            const name =
+                `${player.fn || ''} ${player.ln || ''}`
+                    .trim();
+
+            if (name) {
+                return name;
+            }
         }
 
-        return (
-            `${player.fn || ''} ${player.ln || ''}`
-        ).trim() || playerID;
+        if (rawPlayer) {
+            return (
+                rawPlayer.full_name ||
+                rawPlayer.first_name &&
+                    rawPlayer.last_name
+                    ? `${rawPlayer.first_name || ''} ${rawPlayer.last_name || ''}`.trim()
+                    : playerID
+            );
+        }
+
+        return playerID;
     };
 
     const getInjuryInfo = (
@@ -95,35 +119,35 @@ const rawPlayers =
     ) => {
         const player =
             rawPlayers?.[playerID];
-    
+
         if (!player) {
             return null;
         }
-    
+
         const injuryStatus =
             player.injury_status ??
             null;
-    
+
         const status =
             player.status ??
             null;
-    
+
         const bodyPart =
             player.injury_body_part ??
             null;
-    
+
         const notes =
             player.injury_notes ??
             null;
-    
+
         const practiceParticipation =
             player.practice_participation ??
             null;
-    
+
         const practiceDescription =
             player.practice_description ??
             null;
-    
+
         const hasInjuryContext =
             Boolean(
                 injuryStatus ||
@@ -132,11 +156,11 @@ const rawPlayers =
                 practiceParticipation ||
                 practiceDescription
             );
-    
+
         if (!hasInjuryContext) {
             return null;
         }
-    
+
         return {
             status,
             injuryStatus,
@@ -155,6 +179,9 @@ const rawPlayers =
         const player =
             players?.[playerID];
 
+        const rawPlayer =
+            rawPlayers?.[playerID];
+
         return {
             playerID,
 
@@ -165,10 +192,12 @@ const rawPlayers =
 
             position:
                 player?.pos ||
+                rawPlayer?.position ||
                 null,
 
             nflTeam:
                 player?.t ||
+                rawPlayer?.team ||
                 null,
 
             starter,
@@ -188,7 +217,7 @@ const rawPlayers =
             injury:
                 getInjuryInfo(
                     playerID
-                ),
+                )
         };
     };
 
@@ -412,7 +441,8 @@ const rawPlayers =
 
     return {
         recapExport: {
-            week: 2,
+            week:
+                WEEK,
 
             highMan: {
                 team:
