@@ -32,11 +32,12 @@ const round = (value) =>
 
 export async function load({
     fetch
-}) {
+}) 
     const [
         matchupResponse,
         playersData,
-        nflStats
+        nflStats,
+        rawPlayersResponse
     ] = await Promise.all([
         fetch(
             `https://api.sleeper.app/v1/league/${leagueID}/matchups/2`
@@ -45,8 +46,11 @@ export async function load({
         getWeeklyNFLStats(
             fetch,
             2
-        )
-    ]);
+    ),
+        fetch(
+            'https://api.sleeper.app/v1/players/nfl'
+    )
+]);
 
     if (!matchupResponse.ok) {
         throw new Error(
@@ -56,6 +60,15 @@ export async function load({
 
     const rawMatchups =
         await matchupResponse.json();
+
+    if (!rawPlayersResponse.ok) {
+        throw new Error(
+            `Failed to load raw Sleeper players: ${rawPlayersResponse.status}`
+        );
+    }
+
+const rawPlayers =
+    await rawPlayersResponse.json();
 
     const players =
         playersData?.players ??
@@ -78,41 +91,39 @@ export async function load({
     };
 
     const getInjuryInfo = (
-        player
+        playerID
     ) => {
+        const player =
+            rawPlayers?.[playerID];
+    
         if (!player) {
             return null;
         }
-
+    
         const injuryStatus =
             player.injury_status ??
-            player.injuryStatus ??
             null;
-
+    
         const status =
             player.status ??
             null;
-
+    
         const bodyPart =
             player.injury_body_part ??
-            player.injuryBodyPart ??
             null;
-
+    
         const notes =
             player.injury_notes ??
-            player.injuryNotes ??
             null;
-
+    
         const practiceParticipation =
             player.practice_participation ??
-            player.practiceParticipation ??
             null;
-
+    
         const practiceDescription =
             player.practice_description ??
-            player.practiceDescription ??
             null;
-
+    
         const hasInjuryContext =
             Boolean(
                 injuryStatus ||
@@ -121,11 +132,11 @@ export async function load({
                 practiceParticipation ||
                 practiceDescription
             );
-
+    
         if (!hasInjuryContext) {
             return null;
         }
-
+    
         return {
             status,
             injuryStatus,
@@ -176,8 +187,8 @@ export async function load({
 
             injury:
                 getInjuryInfo(
-                    player
-                )
+                    playerID
+                ),
         };
     };
 
