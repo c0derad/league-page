@@ -6,6 +6,10 @@ import {
     leagueID
 } from '$lib/utils/leagueInfo';
 
+import {
+    getWeeklyNFLStats
+} from '$lib/utils/nflStats.server';
+
 const TEAM_NAMES = {
     1: 'Critical Chase Theory',
     2: 'PeterPanthers',
@@ -31,12 +35,17 @@ export async function load({
 }) {
     const [
         matchupResponse,
-        playersData
+        playersData,
+        nflStats
     ] = await Promise.all([
         fetch(
             `https://api.sleeper.app/v1/league/${leagueID}/matchups/2`
         ),
-        loadPlayers(fetch)
+        loadPlayers(fetch),
+        getWeeklyNFLStats(
+            fetch,
+            2
+        )
     ]);
 
     if (!matchupResponse.ok) {
@@ -100,7 +109,11 @@ export async function load({
                         ?.players_points
                         ?.[playerID] ??
                     0
-                )
+                ),
+
+            actual:
+                nflStats?.[playerID] ||
+                null
         };
     };
 
