@@ -8,7 +8,7 @@ import {
 
 import {
     getWeeklyNFLStats
-} from '$lib/utils/nflStats.server';
+} from '$lib/utils/nflStats.server.js';
 
 const TEAM_NAMES = {
     1: 'Critical Chase Theory',
@@ -77,6 +77,65 @@ export async function load({
         ).trim() || playerID;
     };
 
+    const getInjuryInfo = (
+        player
+    ) => {
+        if (!player) {
+            return null;
+        }
+
+        const injuryStatus =
+            player.injury_status ??
+            player.injuryStatus ??
+            null;
+
+        const status =
+            player.status ??
+            null;
+
+        const bodyPart =
+            player.injury_body_part ??
+            player.injuryBodyPart ??
+            null;
+
+        const notes =
+            player.injury_notes ??
+            player.injuryNotes ??
+            null;
+
+        const practiceParticipation =
+            player.practice_participation ??
+            player.practiceParticipation ??
+            null;
+
+        const practiceDescription =
+            player.practice_description ??
+            player.practiceDescription ??
+            null;
+
+        const hasInjuryContext =
+            Boolean(
+                injuryStatus ||
+                bodyPart ||
+                notes ||
+                practiceParticipation ||
+                practiceDescription
+            );
+
+        if (!hasInjuryContext) {
+            return null;
+        }
+
+        return {
+            status,
+            injuryStatus,
+            bodyPart,
+            notes,
+            practiceParticipation,
+            practiceDescription
+        };
+    };
+
     const getPlayerInfo = (
         playerID,
         matchup,
@@ -113,7 +172,12 @@ export async function load({
 
             actual:
                 nflStats?.[playerID] ||
-                null
+                null,
+
+            injury:
+                getInjuryInfo(
+                    player
+                )
         };
     };
 
@@ -180,6 +244,18 @@ export async function load({
                                     a.points
                             );
 
+                    const injuredStarters =
+                        starters.filter(
+                            (player) =>
+                                player.injury
+                        );
+
+                    const zeroPointStarters =
+                        starters.filter(
+                            (player) =>
+                                player.points === 0
+                        );
+
                     return {
                         matchupID:
                             matchup.matchup_id,
@@ -211,7 +287,11 @@ export async function load({
                                         player.points,
                                     0
                                 )
-                            )
+                            ),
+
+                        injuredStarters,
+
+                        zeroPointStarters
                     };
                 }
             )
