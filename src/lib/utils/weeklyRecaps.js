@@ -215,11 +215,11 @@ export const weeklyRecaps = {
 
   2: {
     intro: `
-      Week 2 is officially in the books, and the league has already developed several deeply concerning trends.
+      Week 2 is officially in the books, and apparently scoring points was only one of the challenges this week.
 
       JV did it again.
 
-      After hanging 172 in Week 1, PeterPanthers followed it with 137.34 and turned what was supposed to be the Game of the Week into the largest beating on the board.
+      After hanging 172 in Week 1, PeterPanthers followed it with 137.34 and turned what was supposed to be the Game of the Week into the largest ass beating on the board.
 
       The Czar responded to a humiliating 91-point opener by scoring 89.32, proving that technically things can always get worse.
 
@@ -230,6 +230,22 @@ export const weeklyRecaps = {
       JQ escaped Jansen by 1.38 despite leaving 25.1 points from Travis Kelce on the bench.
 
       And after briefly convincing us that Big frydown had become a serious fantasy football team, T2 immediately crashed back to earth and claimed Low Man.
+
+      There was also carnage everywhere.
+
+      Jayden Daniels lost half a game to a dislocated elbow.
+
+      Puka Nacua never played.
+
+      DJ Moore left early.
+
+      Caleb Williams finished his afternoon with a hamstring injury.
+
+      Malik Nabers dislocated his shoulder and somehow kept playing.
+
+      Saquon Barkley got hurt on Philadelphia's first offensive play.
+
+      Fantasy football remains a deeply stupid hobby.
 
       Moore Oil Coming takes High Man at 141.02.
 
@@ -262,17 +278,33 @@ export const weeklyRecaps = {
 
           Trey McBride added eight catches and another score.
 
-          That's four starters producing legitimate NFL stat lines, not just fantasy nonsense.
+          And JV did all of this while Jayden Daniels only played one half.
 
-          Chaney got a strong game from Dalton Kincaid, who caught seven balls for 95 yards and a touchdown, and Joe Burrow threw two scores.
+          Daniels was 11-of-17 for 96 yards and a touchdown, added 69 rushing yards, and then dislocated his left elbow on the final play before halftime.
 
-          But the lineup collapsed around them.
+          He never came back.
+
+          So the 14.74 from Daniels was not simply a mediocre quarterback day. JV lost his QB halfway through the game and still beat Chaney by 53.76.
+
+          The Oilers, meanwhile, had problems of their own.
+
+          Dalton Kincaid caught seven balls for 95 yards and a touchdown.
+
+          Joe Burrow threw two scores.
+
+          Kyren Williams produced 97 total yards and a receiving touchdown.
+
+          And then the lineup fell off a cliff.
 
           David Montgomery managed 10 rushing yards on six carries.
 
           Marvin Harrison Jr. saw one target and caught zero passes.
 
-          Puka Nacua finished with zero fantasy points and no recorded Week 2 stat line in the data.
+          And most importantly, Puka Nacua did not play.
+
+          Puka was officially inactive Monday night because of the hip/groin issue that kept him out of practice late in the week.
+
+          So that zero in Chaney's starting lineup was a real, full-fat zero.
 
           Final margin: 53.76.
 
@@ -282,7 +314,9 @@ export const weeklyRecaps = {
 
           That was incorrect.
 
-          JV remains 2-0, and we are now being forced to confront the possibility that the man who admits he does not know football may actually have one of the best teams in the league.
+          JV is now 2-0 after scoring 309.50 points across two weeks.
+
+          We are being forced to confront the possibility that the man who admits he does not know football may actually have one of the best teams in the league.
 
           Troubling.
         `
@@ -305,13 +339,19 @@ export const weeklyRecaps = {
 
           Drake London caught four balls for 51 yards.
 
-          Javonte Williams managed 30 rushing yards.
+          Javonte Williams managed 30 rushing yards on 12 carries.
+
+          Cam Skattebo needed 16 touches to generate 55 total yards.
 
           Tampa Bay's defense contributed two points.
 
-          Meanwhile Trevor did not even need his quarterback to be good.
+          The Czar did leave 14.3 from Rachaad White on the bench, but even perfect hindsight lineup management was not fixing this disaster.
 
-          Trevor Lawrence threw for 189 yards, zero touchdowns and one interception and scored only 7.16.
+          Trevor, meanwhile, did not even need his quarterback to be good.
+
+          Trevor Lawrence threw for 189 yards, zero touchdowns and one interception.
+
+          Seven point one six.
 
           Show Me Your TDs still scored 132.86.
 
@@ -323,9 +363,9 @@ export const weeklyRecaps = {
 
           Sam LaPorta caught six balls for 52 yards and another score.
 
-          Trevor beat the Czar by 43.54 despite getting almost nothing from his QB.
+          Trevor beat the Czar by 43.54 while getting almost nothing from his quarterback.
 
-          The Czar is now 0-2.
+          Critical Chase Theory is now 0-2.
 
           Executive privilege has been extended indefinitely.
         `
@@ -346,25 +386,39 @@ export const weeklyRecaps = {
 
           Rhodes x Pags finished with 136.08 — nearly 59 points better than their Week 1 disaster.
 
+          That should have been enough.
+
           Unfortunately, Josh decided to deploy two nuclear weapons.
 
           Jaxon Smith-Njigba caught nine of 11 targets for 155 yards and three touchdowns.
 
           Josh Allen threw for 248 yards and three touchdowns, then added 69 rushing yards and two more scores.
 
-          Kenneth Walker somehow quietly added 178 total yards of his own.
+          Kenneth Walker somehow quietly added 178 total yards.
 
           JSN and Allen alone combined for 83.32 fantasy points.
 
-          Moore Oil Coming finished at 141.02, the highest score in the league.
+          And somehow Moore Oil Coming did all of that while getting negative production from DJ Moore.
+
+          Moore recorded one carry for minus-one yard and zero catches before leaving Buffalo's game in the second quarter with a shoulder/stinger injury.
+
+          He was ruled out shortly afterward.
+
+          Final fantasy contribution:
+
+          Minus 0.1.
+
+          Josh essentially played this matchup with one starter actively subtracting points and still posted the highest score in the league.
+
+          Moore Oil Coming finishes at 141.02.
 
           Final margin: 4.94.
 
           Rhodes x Pags finally looked competent.
 
-          They simply chose the exact week that Josh Allen and JSN decided to become a two-man natural disaster.
+          They simply chose the exact week Josh Allen and JSN decided to become a two-man natural disaster.
 
-          ROSTER JAIL remains undefeated.
+          They entered Week 2 in ROSTER JAIL and nearly stole this one anyway.
         `
       },
 
@@ -387,11 +441,25 @@ export const weeklyRecaps = {
 
           Parker Washington added seven catches for 98.
 
-          Vigo actually got 138 receiving yards from Jaylen Waddle and two touchdowns from Jake Ferguson.
+          Ryan even survived his own injury disaster.
 
-          The problem was basically everything else.
+          Malik Nabers dislocated his shoulder in the first quarter, reportedly popped it back into place, stayed in the game, and still managed only one catch for one yard.
 
-          Caleb Williams threw for only 138 yards, no touchdowns and an interception.
+          That's 1.1 fantasy points from a starting receiver.
+
+          It did not matter.
+
+          Vigo got 138 receiving yards from Jaylen Waddle and two touchdowns from Jake Ferguson.
+
+          Then everything else went to hell.
+
+          Caleb Williams threw for only 138 yards with no touchdowns and an interception.
+
+          He did add 42 rushing yards, but his afternoon ended when he injured his right hamstring during the fourth quarter.
+
+          So yes, the 8.72 was bad before the injury.
+
+          The injury just added insult to it.
 
           Deebo Samuel caught three passes for 31 yards.
 
@@ -454,9 +522,13 @@ export const weeklyRecaps = {
 
           JQ left a mountain of points on the sideline and still won by 1.38.
 
-          That is not good management.
+          Jansen now falls to 0-2 despite scoring 136.56 in Week 1 and 118.50 in Week 2.
 
-          That is getting away with something.
+          That is a particularly disgusting way to start a season.
+
+          JQ's lineup management was not good.
+
+          Winning anyway is significantly worse for everyone else.
         `
       },
 
@@ -481,17 +553,33 @@ export const weeklyRecaps = {
 
           The rest of the lineup responded by dying.
 
-          Saquon Barkley had four carries for nine yards and one catch for 11.
+          Although, in Saquon Barkley's defense, he basically did.
 
-          Tucker Kraft caught two passes for 15 yards.
+          Barkley suffered a stinger on Philadelphia's first offensive play and immediately left the game.
+
+          He spent much of the first half out, returned briefly later, and finished with only four carries for nine yards plus one catch for 11.
+
+          Three fantasy points.
+
+          That was not a normal Saquon dud.
+
+          T2 also had Ladd McConkey playing through a rib injury that had kept him out of practice Wednesday and Thursday.
+
+          McConkey was active, but managed only three catches for 35 yards.
+
+          Tucker Kraft caught two passes for 15.
 
           Justin Jefferson finished with three catches for 55 yards.
 
           Mike Evans caught three for 54.
 
-          Ladd McConkey had three catches for 35.
+          Bucky Irving was the only non-Dak player in the lineup to reach double digits.
 
-          Bucky Irving was the only other player to reach double digits.
+          So yes, there was legitimate injury damage here.
+
+          T2 also still scored 81.66.
+
+          Both things can be true.
 
           Charles, meanwhile, simply handed the ball to The Sun God.
 
