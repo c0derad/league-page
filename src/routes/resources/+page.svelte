@@ -1,36 +1,5 @@
 <script>
     export let data;
-
-    let output = null;
-    let loading = true;
-
-    Promise.all([
-        data.matchupsData,
-        data.leagueTeamManagersData,
-        data.playersData
-    ]).then(([
-        matchupsData,
-        leagueTeamManagers,
-        playersData
-    ]) => {
-
-        const week =
-            2;
-
-        const rawMatchups =
-            matchupsData?.matchups?.[week] ||
-            matchupsData?.[week] ||
-            matchupsData;
-
-        output = {
-            week,
-            rawMatchups,
-            leagueTeamManagers,
-            playersData
-        };
-
-        loading = false;
-    });
 </script>
 
 <svelte:head>
@@ -50,25 +19,19 @@
         Week 2 Recap Export
     </h1>
 
-    {#if loading}
-        <p>
-            Loading...
-        </p>
-    {:else}
-        <pre
-            style="
-                white-space: pre-wrap;
-                word-break: break-word;
-                padding: 1em;
-                border: 1px solid var(--ccc);
-                border-radius: 0.5em;
-                font-size: 0.72em;
-                overflow-x: auto;
-            "
-        >{JSON.stringify(
-            output,
-            null,
-            2
-        )}</pre>
-    {/if}
+    <pre
+        style="
+            white-space: pre-wrap;
+            word-break: break-word;
+            padding: 1em;
+            border: 1px solid var(--ccc);
+            border-radius: 0.5em;
+            font-size: 0.75em;
+            overflow-x: auto;
+        "
+    >{JSON.stringify(
+        data.recapExport,
+        null,
+        2
+    )}</pre>
 </div>
