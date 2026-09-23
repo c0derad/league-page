@@ -13,7 +13,7 @@ import rosterHistory from '$lib/data/rosterHistory.json';
 export async function load({ fetch }) {
     const [
         rosterData,
-        teamManagers,
+        managerData,
         players,
         week1Matchups,
         week2Matchups,
@@ -36,8 +36,26 @@ export async function load({ fetch }) {
         ).then((r) => r.json())
     ]);
 
+    const rawRosters =
+        rosterData?.rosters ??
+        rosterData ??
+        [];
+
     const currentRosters =
-        rosterData?.rosters || [];
+        Array.isArray(rawRosters)
+            ? rawRosters
+            : Object.values(rawRosters);
+
+    const rawManagers =
+        managerData?.teamManagers ??
+        managerData?.managers ??
+        managerData ??
+        [];
+
+    const teamManagers =
+        Array.isArray(rawManagers)
+            ? rawManagers
+            : Object.values(rawManagers);
 
     return {
         currentRosters,
