@@ -12,7 +12,7 @@ import rosterHistory from '$lib/data/rosterHistory.json';
 
 export async function load({ fetch }) {
     const [
-        currentRosters,
+        rosterData,
         teamManagers,
         players,
         week1Matchups,
@@ -35,6 +35,9 @@ export async function load({ fetch }) {
             `https://api.sleeper.app/v1/league/${leagueID}/matchups/3`
         ).then((r) => r.json())
     ]);
+
+    const currentRosters =
+        rosterData?.rosters || [];
 
     return {
         currentRosters,
