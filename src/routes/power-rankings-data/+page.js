@@ -14,7 +14,7 @@ export async function load({ fetch }) {
     const [
         rosterData,
         managerData,
-        players,
+        playersData,
         week1Matchups,
         week2Matchups,
         week3Matchups
@@ -46,8 +46,14 @@ export async function load({ fetch }) {
             ? rawRosters
             : Object.values(rawRosters);
 
+    const players =
+        playersData?.players ??
+        playersData ??
+        {};
+
     const rawManagers =
         managerData?.teamManagers ??
+        managerData?.leagueTeamManagers ??
         managerData?.managers ??
         managerData ??
         [];
