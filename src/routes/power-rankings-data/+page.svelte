@@ -1,3 +1,4 @@
+<!-- Week 3 power rankings data -->
 <script>
     export let data;
 
