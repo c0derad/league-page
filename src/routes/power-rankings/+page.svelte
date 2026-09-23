@@ -12,6 +12,20 @@
         window.location.href =
             `/power-rankings?week=${week}`;
     };
+
+    const getMovementText = (
+        movement
+    ) => {
+        if (movement > 0) {
+            return `▲ ${movement}`;
+        }
+
+        if (movement < 0) {
+            return `▼ ${Math.abs(movement)}`;
+        }
+
+        return '—';
+    };
 </script>
 
 <svelte:head>
@@ -81,6 +95,21 @@
                         {team.rank}
                     </div>
 
+                    {#if team.movement !== undefined}
+
+                        <div
+                            class:movementUp={team.movement > 0}
+                            class:movementDown={team.movement < 0}
+                            class:movementSame={team.movement === 0}
+                            class="movement"
+                        >
+                            {getMovementText(
+                                team.movement
+                            )}
+                        </div>
+
+                    {/if}
+
                 </div>
 
                 <div class="content">
@@ -109,25 +138,51 @@
 
                     <div class="metrics">
 
-                        <div class="metric">
-                            <span class="metricLabel">
-                                WEEK 1
-                            </span>
+                        {#if team.week1Score !== undefined}
+                            <div class="metric">
+                                <span class="metricLabel">
+                                    WEEK 1
+                                </span>
 
-                            <span class="metricValue">
-                                {team.week1Score}
-                            </span>
-                        </div>
+                                <span class="metricValue">
+                                    {team.week1Score}
+                                </span>
+                            </div>
+                        {/if}
 
-                        <div class="metric">
-                            <span class="metricLabel">
-                                WEEK 2 PROJ.
-                            </span>
+                        {#if team.week2Score !== undefined}
+                            <div class="metric">
+                                <span class="metricLabel">
+                                    WEEK 2
+                                </span>
 
-                            <span class="metricValue">
-                                {team.week2Projection}
-                            </span>
-                        </div>
+                                <span class="metricValue">
+                                    {team.week2Score}
+                                </span>
+                            </div>
+                        {/if}
+
+                        {#if team.week3Projection !== undefined}
+                            <div class="metric">
+                                <span class="metricLabel">
+                                    WEEK 3 PROJ.
+                                </span>
+
+                                <span class="metricValue">
+                                    {team.week3Projection}
+                                </span>
+                            </div>
+                        {:else if team.week2Projection !== undefined}
+                            <div class="metric">
+                                <span class="metricLabel">
+                                    WEEK 2 PROJ.
+                                </span>
+
+                                <span class="metricValue">
+                                    {team.week2Projection}
+                                </span>
+                            </div>
+                        {/if}
 
                     </div>
 
@@ -241,7 +296,7 @@
     .rankingCard {
         display: grid;
         grid-template-columns:
-            90px minmax(0, 1fr);
+            100px minmax(0, 1fr);
         border: 1px solid var(--ccc);
         border-radius: 0.8em;
         overflow: hidden;
@@ -269,6 +324,48 @@
         font-size: 2.7em;
         font-weight: 900;
         line-height: 1;
+    }
+
+    .movement {
+        margin-top: 0.55em;
+        padding: 0.25em 0.45em;
+        border-radius: 999px;
+        font-size: 0.78em;
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    .movementUp {
+        color: #22c55e;
+        background:
+            rgba(
+                34,
+                197,
+                94,
+                0.12
+            );
+    }
+
+    .movementDown {
+        color: #ef4444;
+        background:
+            rgba(
+                239,
+                68,
+                68,
+                0.12
+            );
+    }
+
+    .movementSame {
+        color: #888;
+        background:
+            rgba(
+                136,
+                136,
+                136,
+                0.10
+            );
     }
 
     .content {
@@ -305,9 +402,13 @@
     }
 
     .metrics {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5em;
+        display: grid;
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, max-content)
+            );
+        gap: 2.3em;
         margin: 1.1em 0 1.3em;
     }
 
@@ -371,7 +472,7 @@
 
         .rankingCard {
             grid-template-columns:
-                62px minmax(0, 1fr);
+                68px minmax(0, 1fr);
         }
 
         .rankNumber {
@@ -381,6 +482,10 @@
         .rankColumn {
             padding:
                 1.3em 0.4em;
+        }
+
+        .movement {
+            font-size: 0.68em;
         }
 
         .content {
@@ -393,6 +498,15 @@
 
         .status {
             margin-top: 0.25em;
+        }
+
+        .metrics {
+            grid-template-columns:
+                repeat(
+                    2,
+                    minmax(0, 1fr)
+                );
+            gap: 1em 1.5em;
         }
     }
 </style>
