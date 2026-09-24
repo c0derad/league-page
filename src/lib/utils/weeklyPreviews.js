@@ -371,7 +371,7 @@ export const weeklyPreviews = {
 
     matchups: {
       1: {
-        headline: "0-2 Czar vs. 2-0 JV: The Regime Is on the Brink",
+        headline: "0-2 Czar vs. 2-0 JV: The Regime Strikes Back",
         preview: `
           This is humiliating.
 
@@ -379,21 +379,18 @@ export const weeklyPreviews = {
 
           PeterPanthers enters Week 3 at 2-0.
 
-          And Sleeper still has JV favored, 120.64 to 114.93. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}
+          And Sleeper has JV favored, 120.64 to 114.93.
 
-          The Czar at least has the better quarterback situation this week.
+          The Czar does at least have the better quarterback situation this week.
 
           Drake "Drake Maye" Maye projects for 17.97, while JV has been forced to turn
-          to Bryce Young after Jayden Daniels dislocated his left elbow in Week 2.
-          Daniels did not practice Wednesday, and Washington is preparing Marcus Mariota
-          to start while Daniels is sidelined. :contentReference[oaicite:2]{index=2}
+          to Bryce Young after losing Jayden Daniels.
 
           Unfortunately, JV still has Jahmyr Gibbs.
 
-          Gibbs is currently projected for 25.33, the highest individual projection
-          in this matchup by a mile. Trey McBride and Chris Olave remain high-floor
-          weapons, and even with the quarterback downgrade PeterPanthers still projects
-          above 120. :contentReference[oaicite:3]{index=3}
+          Gibbs is projected for 25.33, the highest individual projection in this matchup
+          by a mile. Trey McBride and Chris Olave remain high-floor weapons, and even with
+          the quarterback downgrade PeterPanthers still projects above 120.
 
           The Czar's path is obvious.
 
@@ -410,11 +407,16 @@ export const weeklyPreviews = {
 
           Those are not particularly similar numbers.
 
-          At some point executive authority has limits.
+          But power projections do not possess executive authority.
 
-          Unfortunately, that point may be Sunday.
+          This regime did not survive two weeks of public humiliation just to bend the knee
+          to a man who selected Bryce Young off waivers.
+
+          The Czar is calling his shot.
+
+          Critical Chase Theory gets off the mat in Week 3.
         `,
-        pick: "PeterPanthers"
+        pick: "Critical Chase Theory"
       },
 
       2: {
@@ -424,7 +426,7 @@ export const weeklyPreviews = {
 
           Somebody else is going to 0-3.
 
-          The Oilers are currently favored 115.77 to 111.58, which feels about right. :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}
+          The Oilers are currently favored 115.77 to 111.58, which feels about right.
 
           Chaney's Week 2 was a disaster, but the underlying roster still has real talent.
 
@@ -434,10 +436,10 @@ export const weeklyPreviews = {
 
           Nico Collins sits at 16.94.
 
-          David Montgomery and Kyren give Chaney two more respectable options. :contentReference[oaicite:6]{index=6}
+          David Montgomery and Kyren give Chaney two more respectable options.
 
           Chaney also made another move since the last data pull, adding Rashod Bateman
-          and dropping Jerry Jeudy on top of the Jonah Coleman pickup. :contentReference[oaicite:7]{index=7}
+          and dropping Jerry Jeudy on top of the Jonah Coleman pickup. 
 
           Rhodes x Pags, meanwhile, is trying to prove Week 2 was real.
 
@@ -467,8 +469,8 @@ export const weeklyPreviews = {
 
           Retardinals sits at 103.95.
 
-          That is a 17.12-point gap. :contentReference[oaicite:8]{index=8} :contentReference[oaicite:9]{index=9}
-
+          That is a 17.12-point gap.
+          
           This is the largest projected margin on the board.
 
           Trevor's roster has quietly become extremely balanced.
@@ -481,16 +483,16 @@ export const weeklyPreviews = {
 
           DeVonta Smith for 15.59.
 
-          Christian Watson for 14.13. :contentReference[oaicite:10]{index=10}
+          Christian Watson for 14.13.
 
           There is no single player Trevor needs to go nuclear.
 
           Vigo has the opposite problem.
 
           Caleb Williams is week-to-week with a right hamstring injury, and Chicago did
-          not expect him to practice early this week. :contentReference[oaicite:11]{index=11}
+          not expect him to practice early this week.
 
-          Vigo reacted correctly by adding C.J. Stroud, who is now projected as the starter. :contentReference[oaicite:12]{index=12}
+          Vigo reacted correctly by adding C.J. Stroud, who is now projected as the starter.
 
           Chase Brown, Waddle and Jameson Williams give Vigo some upside, and Jake Ferguson
           showed last week that he can absolutely matter.
@@ -516,8 +518,8 @@ export const weeklyPreviews = {
 
           Moore Oil Coming is 2-0.
 
-          Sleeper currently prefers Jansen, 119.62 to 115.74. :contentReference[oaicite:13]{index=13} :contentReference[oaicite:14]{index=14}
-
+          Sleeper currently prefers Jansen, 119.62 to 115.74. 
+          
           Jansen has Lamar, CeeDee, Zay Flowers and Achane.
 
           That is four players capable of turning a normal fantasy matchup into an emergency
@@ -529,7 +531,7 @@ export const weeklyPreviews = {
 
           Zay for 16.84.
 
-          Achane for 16.17. :contentReference[oaicite:15]{index=15}
+          Achane for 16.17.
 
           Josh answers with the most terrifying two-man combination in the league right now.
 
@@ -539,11 +541,11 @@ export const weeklyPreviews = {
 
           Allen projects for 19.62.
 
-          Kenneth Walker gives Josh another legitimate matchup-winner behind them. :contentReference[oaicite:16]{index=16}
+          Kenneth Walker gives Josh another legitimate matchup-winner behind them.
 
           There is one thing to watch.
 
-          Tony Pollard did not practice Wednesday because of an ankle injury. :contentReference[oaicite:17]{index=17}
+          Tony Pollard did not practice Wednesday because of an ankle injury. 
 
           Josh does have alternatives, but losing Pollard would thin out the lower half
           of the starting lineup.
@@ -566,8 +568,8 @@ export const weeklyPreviews = {
 
           T2 scored 145.50 in Week 1 and then immediately responded with 81.66 and Low Man.
 
-          Sleeper has Ryan ahead 118.25 to 113.68. :contentReference[oaicite:18]{index=18} :contentReference[oaicite:19]{index=19}
-
+          Sleeper has Ryan ahead 118.25 to 113.68. 
+          
           Ryan's lineup is annoyingly stable.
 
           Purdy projects for 19.07.
@@ -578,11 +580,11 @@ export const weeklyPreviews = {
 
           Tet for 14.19.
 
-          Jeanty for 13.72. :contentReference[oaicite:20]{index=20}
-
+          Jeanty for 13.72.
+          
           Nabers is worth monitoring after being limited Wednesday with a shoulder injury,
-          but he was at least on the field rather than sitting out practice entirely. :contentReference[oaicite:21]{index=21}
-
+          but he was at least on the field rather than sitting out practice entirely. 
+          
           T2 still has enough star power to make this dangerous.
 
           Jefferson.
@@ -619,8 +621,8 @@ export const weeklyPreviews = {
 
           Campus Legends at 123.16.
 
-          The difference is 0.67 points. :contentReference[oaicite:22]{index=22} :contentReference[oaicite:23]{index=23}
-
+          The difference is 0.67 points.
+          
           Charles brings one of the cleanest cores in the league.
 
           Hurts projects for 20.56.
@@ -631,8 +633,8 @@ export const weeklyPreviews = {
 
           Tee Higgins for 14.98.
 
-          Breece Hall for 14.26. :contentReference[oaicite:24]{index=24}
-
+          Breece Hall for 14.26.
+          
           JQ counters with Mahomes and CMC.
 
           Mahomes projects for 20.36.
@@ -643,8 +645,8 @@ export const weeklyPreviews = {
 
           Pickens sits at 15.06.
 
-          Garrett Wilson at 13.77. :contentReference[oaicite:25]{index=25}
-
+          Garrett Wilson at 13.77.
+          
           On paper, there is almost nothing between them.
 
           The difference for me is trust.
