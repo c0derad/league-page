@@ -337,5 +337,334 @@ export const weeklyPreviews = {
         pick: "Charles"
       }
     }
+  },
+  3: {
+    intro: `
+      Week 3 is here.
+
+      We now have enough evidence to start separating bad luck from bad management.
+
+      JV is 2-0 and still No. 1 in the power rankings despite losing Jayden Daniels.
+
+      Josh is 2-0 and coming off High Man.
+
+      Ryan and Charles are both undefeated.
+
+      JQ is somehow also undefeated despite occasionally treating his bench like a starting lineup.
+
+      Jansen has scored like a playoff team and has been rewarded with an 0-2 record.
+
+      The Czar is 0-2 and has scored fewer total points through two weeks than JV scored in Week 1.
+
+      Vigo has reached the basement.
+
+      And T2 has already gone from possible contender to Low Man in the span of seven days.
+
+      The projections have been refreshed.
+
+      The injury reports have been checked.
+
+      The Czar has reviewed the evidence.
+
+      Week 3 begins now.
+    `,
+
+    matchups: {
+      1: {
+        headline: "0-2 Czar vs. 2-0 JV: The Regime Is on the Brink",
+        preview: `
+          This is humiliating.
+
+          Critical Chase Theory enters Week 3 at 0-2.
+
+          PeterPanthers enters Week 3 at 2-0.
+
+          And Sleeper still has JV favored, 120.64 to 114.93. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}
+
+          The Czar at least has the better quarterback situation this week.
+
+          Drake "Drake Maye" Maye projects for 17.97, while JV has been forced to turn
+          to Bryce Young after Jayden Daniels dislocated his left elbow in Week 2.
+          Daniels did not practice Wednesday, and Washington is preparing Marcus Mariota
+          to start while Daniels is sidelined. :contentReference[oaicite:2]{index=2}
+
+          Unfortunately, JV still has Jahmyr Gibbs.
+
+          Gibbs is currently projected for 25.33, the highest individual projection
+          in this matchup by a mile. Trey McBride and Chris Olave remain high-floor
+          weapons, and even with the quarterback downgrade PeterPanthers still projects
+          above 120. :contentReference[oaicite:3]{index=3}
+
+          The Czar's path is obvious.
+
+          Ja'Marr Chase needs to do Ja'Marr Chase things again.
+
+          Drake London needs to finally produce like the player his name suggests.
+
+          Javonte and Skattebo need to provide enough floor that Maye doesn't have to
+          personally rescue the administration.
+
+          JV has already scored 309.50 points in two weeks.
+
+          The Czar has scored 180.94.
+
+          Those are not particularly similar numbers.
+
+          At some point executive authority has limits.
+
+          Unfortunately, that point may be Sunday.
+        `,
+        pick: "PeterPanthers"
+      },
+
+      2: {
+        headline: "The 0-2 Desperation Bowl",
+        preview: `
+          Somebody is leaving this matchup 1-2.
+
+          Somebody else is going to 0-3.
+
+          The Oilers are currently favored 115.77 to 111.58, which feels about right. :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}
+
+          Chaney's Week 2 was a disaster, but the underlying roster still has real talent.
+
+          Burrow projects for 18.56.
+
+          Puka is back in the projection at 18.06.
+
+          Nico Collins sits at 16.94.
+
+          David Montgomery and Kyren give Chaney two more respectable options. :contentReference[oaicite:6]{index=6}
+
+          Chaney also made another move since the last data pull, adding Rashod Bateman
+          and dropping Jerry Jeudy on top of the Jonah Coleman pickup. :contentReference[oaicite:7]{index=7}
+
+          Rhodes x Pags, meanwhile, is trying to prove Week 2 was real.
+
+          Davante Adams scored 39.5.
+
+          Stafford scored 27.98.
+
+          The team finished at 136.08 and still managed to lose.
+
+          Bijan remains the centerpiece, and Rashee Rice gives them another legitimate
+          ceiling player, but the overall Week 3 projection is still only 111.58.
+
+          This is the first real test of whether Rhodes x Pags actually escaped the basement
+          or simply experienced one brief moment of competence.
+
+          I trust Chaney's roster more.
+
+          Barely.
+        `,
+        pick: "The Oilers"
+      },
+
+      3: {
+        headline: "Projected Ass Beating of the Week",
+        preview: `
+          Sleeper has Show Me Your TDs at 121.07.
+
+          Retardinals sits at 103.95.
+
+          That is a 17.12-point gap. :contentReference[oaicite:8]{index=8} :contentReference[oaicite:9]{index=9}
+
+          This is the largest projected margin on the board.
+
+          Trevor's roster has quietly become extremely balanced.
+
+          Trevor Lawrence projects for 20.08.
+
+          James Cook for 17.18.
+
+          Omarion Hampton for 16.32.
+
+          DeVonta Smith for 15.59.
+
+          Christian Watson for 14.13. :contentReference[oaicite:10]{index=10}
+
+          There is no single player Trevor needs to go nuclear.
+
+          Vigo has the opposite problem.
+
+          Caleb Williams is week-to-week with a right hamstring injury, and Chicago did
+          not expect him to practice early this week. :contentReference[oaicite:11]{index=11}
+
+          Vigo reacted correctly by adding C.J. Stroud, who is now projected as the starter. :contentReference[oaicite:12]{index=12}
+
+          Chase Brown, Waddle and Jameson Williams give Vigo some upside, and Jake Ferguson
+          showed last week that he can absolutely matter.
+
+          But this lineup has scored 99.76 and 89.92.
+
+          At some point we have to stop describing that as variance.
+
+          Trevor should win this comfortably.
+
+          Which means this is exactly the sort of game where fantasy football traditionally
+          decides to ruin someone's Sunday.
+        `,
+        pick: "Show Me Your TDs"
+      },
+
+      4: {
+        headline: "The Best 0-2 Team vs. Week 2 High Man",
+        preview: `
+          This matchup is why standings are stupid.
+
+          #FreeTony is 0-2.
+
+          Moore Oil Coming is 2-0.
+
+          Sleeper currently prefers Jansen, 119.62 to 115.74. :contentReference[oaicite:13]{index=13} :contentReference[oaicite:14]{index=14}
+
+          Jansen has Lamar, CeeDee, Zay Flowers and Achane.
+
+          That is four players capable of turning a normal fantasy matchup into an emergency
+          in about six minutes.
+
+          Lamar projects for 22.3.
+
+          CeeDee for 17.04.
+
+          Zay for 16.84.
+
+          Achane for 16.17. :contentReference[oaicite:15]{index=15}
+
+          Josh answers with the most terrifying two-man combination in the league right now.
+
+          Josh Allen and JSN combined for 83.32 last week.
+
+          JSN currently projects for 22.94.
+
+          Allen projects for 19.62.
+
+          Kenneth Walker gives Josh another legitimate matchup-winner behind them. :contentReference[oaicite:16]{index=16}
+
+          There is one thing to watch.
+
+          Tony Pollard did not practice Wednesday because of an ankle injury. :contentReference[oaicite:17]{index=17}
+
+          Josh does have alternatives, but losing Pollard would thin out the lower half
+          of the starting lineup.
+
+          Jansen has lost twice while scoring 136.56 and 118.50.
+
+          I'm done pretending the record means this team is bad.
+
+          Give me #FreeTony to finally get paid for scoring points.
+        `,
+        pick: "#FreeTony"
+      },
+
+      5: {
+        headline: "Ryan vs. T2: Prove It Again",
+        preview: `
+          This is a credibility game for both sides.
+
+          Ryan is 2-0 and has scored 128.80 and 133.98.
+
+          T2 scored 145.50 in Week 1 and then immediately responded with 81.66 and Low Man.
+
+          Sleeper has Ryan ahead 118.25 to 113.68. :contentReference[oaicite:18]{index=18} :contentReference[oaicite:19]{index=19}
+
+          Ryan's lineup is annoyingly stable.
+
+          Purdy projects for 19.07.
+
+          Jonathan Taylor for 18.27.
+
+          Malik Nabers for 15.43.
+
+          Tet for 14.19.
+
+          Jeanty for 13.72. :contentReference[oaicite:20]{index=20}
+
+          Nabers is worth monitoring after being limited Wednesday with a shoulder injury,
+          but he was at least on the field rather than sitting out practice entirely. :contentReference[oaicite:21]{index=21}
+
+          T2 still has enough star power to make this dangerous.
+
+          Jefferson.
+
+          Dak.
+
+          Saquon.
+
+          Evans.
+
+          Tucker Kraft.
+
+          Saquon is coming off an injury-shortened Week 2, and T2 desperately needs that
+          3-point performance to be an outlier rather than the start of another collapse.
+
+          This is the exact matchup that tells us whether Ryan is genuinely one of the league's
+          best teams and whether T2's Week 1 was anything more than a temporary software glitch.
+
+          I trust Ryan more right now.
+        `,
+        pick: "Naberhood Sex Offender"
+      },
+
+      6: {
+        headline: "GAME OF THE WEEK: Charles vs. Campus Legends",
+        preview: `
+          This is the one.
+
+          Two undefeated teams.
+
+          Two top-five power-ranked rosters.
+
+          Sleeper has Charles at 123.83.
+
+          Campus Legends at 123.16.
+
+          The difference is 0.67 points. :contentReference[oaicite:22]{index=22} :contentReference[oaicite:23]{index=23}
+
+          Charles brings one of the cleanest cores in the league.
+
+          Hurts projects for 20.56.
+
+          The Sun God for 19.98.
+
+          Derrick Henry for 17.11.
+
+          Tee Higgins for 14.98.
+
+          Breece Hall for 14.26. :contentReference[oaicite:24]{index=24}
+
+          JQ counters with Mahomes and CMC.
+
+          Mahomes projects for 20.36.
+
+          CMC for 20.06.
+
+          Jeremiyah Love is up to 16.05.
+
+          Pickens sits at 15.06.
+
+          Garrett Wilson at 13.77. :contentReference[oaicite:25]{index=25}
+
+          On paper, there is almost nothing between them.
+
+          The difference for me is trust.
+
+          Charles has already scored 151.02 and 122.76.
+
+          JQ has scored 101.46 and 119.88, and last week he left 25.1 points from Travis Kelce
+          on the bench before escaping by 1.38.
+
+          Campus Legends has the roster to win this.
+
+          JQ also has the ability to personally sabotage Campus Legends.
+
+          In a game projected this close, that matters.
+
+          Give me Charles in the Game of the Week.
+        `,
+        pick: "Charles"
+      }
+    }
   }
+
 };
