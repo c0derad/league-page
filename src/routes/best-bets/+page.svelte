@@ -16,6 +16,7 @@
                 ...bet,
                 opponent: 'Loading...',
                 opponentSlug: null,
+                espnTeamLogo: null,
                 espnOpponentLogo: null
             })
         );
@@ -164,6 +165,10 @@
 
                 matchupSeparator,
 
+                espnTeamLogo:
+                    selected.team.logo ||
+                    null,
+
                 espnOpponentLogo:
                     opponent.team.logo ||
                     null
@@ -176,6 +181,7 @@
             opponentSlug: null,
             matchupFound: false,
             matchupSeparator: 'vs',
+            espnTeamLogo: null,
             espnOpponentLogo: null
         };
     };
@@ -245,6 +251,8 @@
                                 false,
                             matchupSeparator:
                                 'vs',
+                            espnTeamLogo:
+                                null,
                             espnOpponentLogo:
                                 null
                         })
@@ -359,7 +367,13 @@
 
                         <div class="team">
 
-                            {#if bet.teamSlug}
+                            {#if bet.espnTeamLogo}
+                                <img
+                                    class="logo"
+                                    src={bet.espnTeamLogo}
+                                    alt={`${bet.team} logo`}
+                                />
+                            {:else if bet.teamSlug}
                                 <img
                                     class="logo"
                                     src={collegeLogo(
