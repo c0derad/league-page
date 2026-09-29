@@ -565,7 +565,7 @@ export const weeklyRecaps = {
 
       Elsewhere, Rhodes x Pags emerged from two weeks of humiliation and committed the largest act of violence we've seen all season, beating The Oilers by 64.62.
 
-      Chaney, a years-long powerhouse in te league, responded by taking Low Man at 83.18.
+      Chaney, a years-long powerhouse in the league, responded by taking Low Man at 83.18.
 
       Trevor quietly moved to 2-1 while Vigo fell to 0-3.
 
@@ -610,31 +610,31 @@ export const weeklyRecaps = {
 
           This was not JV finally having a bad week either.
 
-          JV scored 142.
+          JV scored 142.04.
 
-          Jahmyr Gibbs went completely insane for 41.4 fantasy points.
+          Jahmyr Gibbs went completely insane for 41.4 fantasy points, carrying 20 times for 99 yards and two touchdowns while also catching seven of eight targets for 65 yards and another score.
 
-          Terry McLaurin scored 19.7.
+          Chris Olave caught nine of 13 targets for 107 yards.
 
-          Chris Olave scored 19.7.
+          Terry McLaurin caught six of nine for 77 yards and a touchdown.
 
-          Trey McBride added 16.5.
+          Trey McBride added nine catches for 75 yards.
 
           JV put together a lineup that would have beaten almost everybody in the league.
 
           Unfortunately for him, he had been selected as the first target of the newly operational Car Bombs.
 
-          Drake London started the demolition on Thursday night with 28.4.
+          Drake London started the demolition on Thursday night by catching nine of 10 targets for 194 yards and finishing with 28.4.
 
-          Ja'Marr Chase added 24.8.
+          Ja'Marr Chase caught nine of 12 targets for 98 yards and a touchdown for 24.8.
 
-          Juwan Johnson scored 23.3.
+          Juwan Johnson caught all eight of his targets for 53 yards and two touchdowns. He even lost a fumble and still finished with 23.3.
 
-          Matthew Golden added 21.
+          Matthew Golden turned 12 targets into five catches, exactly 100 yards and a touchdown for 21.
 
-          Javonte Williams chipped in 18.3.
+          Javonte Williams ran 19 times for 98 yards and a touchdown, added two catches, and scored 18.3.
 
-          Five different starters scored at least 18 points.
+          Five different Car Bombs starters scored at least 18 points.
 
           And the funniest part is that Drake Maye was fucking terrible.
 
@@ -679,19 +679,19 @@ export const weeklyRecaps = {
 
           It was not particularly close to being close.
 
-          Bijan Robinson led the way with 35.3.
+          Bijan Robinson carried 29 times for 194 yards and two touchdowns, then added two catches for 19 more yards. He finished with 35.3.
 
-          Brock Bowers returned to action and immediately dropped 27.6.
+          Brock Bowers caught 10 of 13 targets for 116 yards and a touchdown for 27.6.
 
-          Matthew Stafford threw for 390 yards and two touchdowns on his way to 22.9.
+          Matthew Stafford threw the ball 55 times, completing 30 for 390 yards and two touchdowns. Even with two interceptions, that was good for 22.9.
 
-          Davante Adams added 20.7.
+          Davante Adams saw 13 targets and turned them into seven catches for 137 yards and 20.7.
 
-          That is four starters over 20 points.
+          That is four starters over 20 points, and three of them cleared 100 yards from scrimmage.
 
-          Chaney got 22.58 from Joe Burrow.
+          Chaney at least got 22.58 from Joe Burrow, who completed 28 of 37 for 282 yards and three touchdowns despite losing a fumble.
 
-          Kyren Williams added 21.8.
+          Kyren Williams added 158 total yards — 88 rushing and 70 receiving — on his way to 21.8.
 
           And then the rest of the operation largely ceased producing useful fantasy points.
 
@@ -730,11 +730,13 @@ export const weeklyRecaps = {
 
           Trevor wins by 43.
 
-          Christian Watson led Trevor with 22.6.
+          Christian Watson led Trevor with 22.6, catching seven of 10 targets for 96 yards and a touchdown.
 
-          Trevor Lawrence finally contributed a respectable quarterback performance too, throwing three touchdowns and finishing with 20.78.
+          Trevor Lawrence finally gave Trevor a real quarterback performance too: 19 of 29 for 182 yards, three touchdowns and one interception, plus 25 yards on the ground. He finished with 20.78.
 
-          The rest of the lineup did enough around them to make this completely uncompetitive.
+          James Cook handled 24 carries for 154 yards and a touchdown. He lost a fumble and still scored 19.4.
+
+          That gave Trevor three different starters with at least 19 fantasy points and made this matchup basically noncompetitive.
 
           Vigo's leading scorer was the Minnesota defense.
 
@@ -743,6 +745,8 @@ export const weeklyRecaps = {
           His defense.
 
           Deebo Samuel was next at 15.4.
+
+          C.J. Stroud completed 16 of 27 passes for 167 yards and one touchdown and managed only 11.68.
 
           When your DST is carrying the offense, things have generally gone wrong.
 
@@ -756,7 +760,7 @@ export const weeklyRecaps = {
 
           Eighty-four.
 
-          Vigo is now 0-3. T2 had the record low last year at 1-13, but Vigo is tracking to take the crown. 
+          Vigo is now 0-3. T2 had the record low last year at 1-13, but Vigo is tracking to take the crown.
 
           Trevor is 2-1.
 
@@ -791,7 +795,15 @@ export const weeklyRecaps = {
 
           The 11.08-point margin somehow qualifies as the closest matchup of the week.
 
-          Jansen got 20.6 from Jaylen Warren, but the lineup took an enormous hit when De'Von Achane went down almost immediately.
+          Jansen actually got strong football performances from several starters.
+
+          Jaylen Warren ran 17 times for 127 yards and added three catches for 49 more, giving him 176 yards from scrimmage and 20.6 fantasy points.
+
+          Lamar Jackson completed 15 of 20 passes for 186 yards and two touchdowns, then added 50 rushing yards for 20.44.
+
+          CeeDee Lamb caught seven of eight targets for 112 yards and scored 20.2.
+
+          But the lineup took an enormous hit when De'Von Achane went down almost immediately.
 
           Achane suffered a torn ACL in his left knee on his third rushing attempt against Kansas City.
 
@@ -813,9 +825,13 @@ export const weeklyRecaps = {
 
           Again.
 
-          JSN caught 10 passes for 128 yards and two touchdowns and finished with 35.36.
+          JSN caught 10 of 14 targets for 128 yards and two touchdowns and finished with 35.36.
 
-          Josh Allen had a messy passing day with two interceptions, but two rushing touchdowns dragged him to 19.46.
+          Kenneth Walker ran 18 times for 70 yards and a touchdown and caught both of his targets, including another touchdown, for 21.3.
+
+          Josh Allen had a messy passing day: 16 of 26 for 204 yards, no passing touchdowns and two interceptions.
+
+          Of course, he then ran for two touchdowns anyway and dragged himself to 19.46.
 
           That was enough.
 
@@ -842,23 +858,27 @@ export const weeklyRecaps = {
 
           Brock Purdy was the engine this time.
 
-          Purdy threw for 297 yards and four touchdowns, added 34 rushing yards, and finished with 31.28.
+          Purdy completed 15 of 27 passes for 297 yards and four touchdowns, added 34 rushing yards, and finished with 31.28.
 
-          George Kittle caught six passes for 82 yards and two touchdowns.
+          George Kittle caught six of seven targets for 82 yards and two touchdowns.
 
           Twenty-six point two.
 
-          Purdy and Kittle combined for 57.48 points.
+          Purdy and Kittle combined for 57.48 points and accounted for six touchdowns between Purdy's arm and Kittle's receiving line.
 
-          Harrison Mevis somehow chipped in another 16 from the kicker spot.
+          Parker Washington chipped in three catches for 40 yards and a touchdown, and Harrison Mevis somehow added another 16 from the kicker spot.
 
           Ryan did not even need big games from Jonathan Taylor, Malik Nabers, Tet McMillan or Ashton Jeanty.
 
+          In fact, Michael Wilson scored 25.9 on Ryan's bench after catching 11 of 17 targets for 89 yards and a touchdown.
+
+          Ryan still won by more than 30.
+
           T2, meanwhile, had another miserable week.
 
-          Dak Prescott led the lineup with 18.94.
+          Dak Prescott completed 25 of 40 for 276 yards and one touchdown and led the lineup with 18.94.
 
-          Mike Evans gave him 12.4 before leaving San Francisco's game in the second quarter with a rib injury.
+          Mike Evans caught three of six targets for 34 yards and a touchdown, giving T2 12.4 before leaving San Francisco's game in the second quarter with a rib injury.
 
           Justin Jefferson suffered a left ankle injury on Minnesota's opening drive, tried to stay available, and ultimately could not return.
 
@@ -901,19 +921,19 @@ export const weeklyRecaps = {
 
           We may have to begin treating this seriously.
 
-          Garrett Wilson led Campus with 26.7 after catching 10 passes for 107 yards and a touchdown.
+          Garrett Wilson led Campus by catching 10 of 13 targets for 107 yards and a touchdown. He finished with 26.7.
 
-          Jeremiyah Love added 21.9.
+          Jeremiyah Love carried 21 times for 90 yards, caught all five of his targets for another 19 yards and scored through the air for 21.9.
 
-          Christian McCaffrey added 21.6.
+          Christian McCaffrey ran 15 times for 75 yards and a touchdown, added four catches for 41 yards, and scored 21.6.
 
-          Patrick Mahomes scored 16.94.
+          Patrick Mahomes completed 20 of 24 passes for 246 yards and two touchdowns despite throwing an interception. He finished with 16.94.
+
+          George Pickens added seven catches for 82 yards.
+
+          Travis Kelce only caught two passes, but one went for a touchdown and the two receptions produced 59 yards.
 
           Will Reichard contributed 16 from the kicker spot.
-
-          George Pickens scored 15.2.
-
-          Travis Kelce added 13.9.
 
           It was not one absurd nuclear performance.
 
@@ -921,13 +941,17 @@ export const weeklyRecaps = {
 
           Charles actually got plenty of production himself.
 
-          Harold Fannin scored 24.1 with two receiving touchdowns.
+          Harold Fannin caught seven of nine targets for 51 yards and two touchdowns for 24.1.
 
-          Derrick Henry scored 21.9.
+          Derrick Henry ran 26 times for 89 yards and two touchdowns for 21.9.
 
-          Tee Higgins added 21.
+          Tee Higgins caught six of seven for 90 yards and a touchdown for 21.
 
-          But Jalen Hurts managed only 13.62, The Sun God finished at 11.9, and Breece Hall was held to 8.5 before suffering a thigh injury late in the Jets game.
+          But Jalen Hurts completed only 16 of 25 passes for 153 yards, zero passing touchdowns and one interception. A rushing touchdown salvaged 13.62.
+
+          The Sun God was held to four catches for 19 yards, although one went for a touchdown, and finished at 11.9.
+
+          Breece Hall managed 55 total yards and 8.5 before suffering a thigh injury late in the Jets game.
 
           Charles scored 122.82.
 
