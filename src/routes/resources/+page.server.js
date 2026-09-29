@@ -10,10 +10,10 @@ import {
     getWeeklyNFLStats
 } from '$lib/utils/nflStats.server.js';
 
-const WEEK = 2;
+const WEEK = 3;
 
 const TEAM_NAMES = {
-    1: 'Critical Chase Theory',
+    1: 'The Car Bombs',
     2: 'PeterPanthers',
     3: 'The Oilers',
     4: 'Show Me Your TDs',
@@ -65,14 +65,14 @@ export async function load({
         );
     }
 
+    const rawMatchups =
+        await matchupResponse.json();
+
     if (!rawPlayersResponse.ok) {
         throw new Error(
             `Failed to load raw Sleeper players: ${rawPlayersResponse.status}`
         );
     }
-
-    const rawMatchups =
-        await matchupResponse.json();
 
     const rawPlayers =
         await rawPlayersResponse.json();
@@ -88,30 +88,13 @@ export async function load({
         const player =
             players?.[playerID];
 
-        const rawPlayer =
-            rawPlayers?.[playerID];
-
-        if (player) {
-            const name =
-                `${player.fn || ''} ${player.ln || ''}`
-                    .trim();
-
-            if (name) {
-                return name;
-            }
+        if (!player) {
+            return playerID;
         }
 
-        if (rawPlayer) {
-            return (
-                rawPlayer.full_name ||
-                rawPlayer.first_name &&
-                    rawPlayer.last_name
-                    ? `${rawPlayer.first_name || ''} ${rawPlayer.last_name || ''}`.trim()
-                    : playerID
-            );
-        }
-
-        return playerID;
+        return (
+            `${player.fn || ''} ${player.ln || ''}`
+        ).trim() || playerID;
     };
 
     const getInjuryInfo = (
@@ -179,9 +162,6 @@ export async function load({
         const player =
             players?.[playerID];
 
-        const rawPlayer =
-            rawPlayers?.[playerID];
-
         return {
             playerID,
 
@@ -192,12 +172,10 @@ export async function load({
 
             position:
                 player?.pos ||
-                rawPlayer?.position ||
                 null,
 
             nflTeam:
                 player?.t ||
-                rawPlayer?.team ||
                 null,
 
             starter,
@@ -441,8 +419,7 @@ export async function load({
 
     return {
         recapExport: {
-            week:
-                WEEK,
+            week: WEEK,
 
             highMan: {
                 team:
