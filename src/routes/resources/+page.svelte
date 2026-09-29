@@ -4,34 +4,45 @@
 
 <svelte:head>
     <title>
-        Week 2 Recap Export
+        Week {data.recapExport.week} Recap Export
     </title>
 </svelte:head>
 
-<div
-    style="
-        width: 95%;
-        max-width: 1400px;
-        margin: 2em auto;
-    "
->
+<div class="page">
+
     <h1>
-        Week 2 Recap Export
+        Week {data.recapExport.week} Recap Export
     </h1>
 
-    <pre
-        style="
-            white-space: pre-wrap;
-            word-break: break-word;
-            padding: 1em;
-            border: 1px solid var(--ccc);
-            border-radius: 0.5em;
-            font-size: 0.75em;
-            overflow-x: auto;
-        "
-    >{JSON.stringify(
-        data.recapExport,
-        null,
-        2
-    )}</pre>
+    <p>
+        Temporary internal recap data export.
+    </p>
+
+    <pre>
+{JSON.stringify(
+    data.recapExport,
+    null,
+    2
+)}
+    </pre>
+
 </div>
+
+<style>
+    .page {
+        width: 96%;
+        max-width: 1200px;
+        margin: 2em auto 5em;
+    }
+
+    pre {
+        padding: 1.5em;
+        border: 1px solid var(--ccc);
+        border-radius: 0.75em;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 0.8em;
+        line-height: 1.45;
+    }
+</style>
