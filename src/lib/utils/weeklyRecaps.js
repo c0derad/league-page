@@ -9,7 +9,7 @@ export const weeklyRecaps = {
 
       It also created several much worse ones.
 
-      Is PeterPanthers actually good, or did JV accidentally stumble into a nuclear reactor? Is Big frydown suddenly competent? Is Charles already one of the teams to beat? Is ConsiderMeOiled as dangerous as that Josh Allen-Kenneth Walker-JSN combo looked? And most importantly, can adding a second manager somehow make Drew Rhodes worse?
+      Is PeterPanthers actually good, or did JV accidentally stumble into a nuclear reactor? Is Big frydown suddenly competent? Is Charles already one of the teams to beat? Is Moore Oil Coming as dangerous as that Josh Allen-Kenneth Walker-JSN combo looked? And most importantly, can adding a second manager somehow make Drew Rhodes worse?
 
       Early evidence suggests yes.
 
@@ -63,11 +63,11 @@ export const weeklyRecaps = {
 
           That would have beaten multiple teams in this league.
 
-          It just wasn't enough against a ConsiderMeOiled lineup that finished at 147.16.
+          It just wasn't enough against a Moore Oil Coming lineup that finished at 147.16.
 
           This one also matters because it gives us the first real data point on Josh. If Allen is going to keep producing quarterback cheat-code weeks while Walker and JSN provide that kind of ceiling, this team is going to be a problem.
 
-          ConsiderMeOiled moves to 1-0 and now gets Rhodes x Pags in Week 2, which feels less like a matchup and more like a scheduled continuation of the offense.
+          Moore Oil Coming moves to 1-0 and now gets Rhodes x Pags in Week 2, which feels less like a matchup and more like a scheduled continuation of the offense.
         `
       },
 
@@ -139,7 +139,7 @@ export const weeklyRecaps = {
 
           Visitation rights are suspended. Appeals will not be heard. Bail has been denied.
 
-          And now they get ConsiderMeOiled in Week 2.
+          And now they get Moore Oil Coming in Week 2.
 
           Good luck, inmates.
         `
@@ -215,37 +215,29 @@ export const weeklyRecaps = {
 
   2: {
     intro: `
-      Week 2 is officially in the books, and apparently scoring points was only one of the challenges this week.
+      Week 2 is officially in the books, and the league has already developed
+      several deeply concerning trends.
 
       JV did it again.
 
-      After hanging 172 in Week 1, PeterPanthers followed it with 137.34 and turned what was supposed to be the Game of the Week into the largest ass beating on the board.
+      After hanging 172 in Week 1, PeterPanthers followed it with 137.34 and
+      turned what was supposed to be the Game of the Week into the largest
+      beating on the board.
 
-      The Czar responded to a humiliating 91-point opener by scoring 89.32, proving that technically things can always get worse.
+      The Czar responded to a humiliating 91-point opener by scoring 89.32,
+      proving that technically things can always get worse.
 
       Rhodes x Pags finally looked competent, scored 136.08, and still lost.
 
-      Ryan handled the first Vigo Brother Blood Battle with absolutely no regard for family relationships.
+      Ryan handled the first Vigo Brother Blood Battle with absolutely no regard
+      for family relationships.
 
-      JQ escaped Jansen by 1.38 despite leaving 25.1 points from Travis Kelce on the bench.
+      JQ escaped Jansen by 1.38 despite leaving 25.1 points from Travis Kelce
+      on the bench.
 
-      And after briefly convincing us that Big frydown had become a serious fantasy football team, T2 immediately crashed back to earth and claimed Low Man.
-
-      There was also carnage everywhere.
-
-      Jayden Daniels lost half a game to a dislocated elbow.
-
-      Puka Nacua never played.
-
-      DJ Moore left early.
-
-      Caleb Williams finished his afternoon with a hamstring injury.
-
-      Malik Nabers dislocated his shoulder and somehow kept playing.
-
-      Saquon Barkley got hurt on Philadelphia's first offensive play.
-
-      Fantasy football remains a deeply stupid hobby.
+      And after briefly convincing us that Big frydown had become a serious
+      fantasy football team, T2 immediately crashed back to earth and claimed
+      Low Man.
 
       Moore Oil Coming takes High Man at 141.02.
 
@@ -268,9 +260,11 @@ export const weeklyRecaps = {
         recap: `
           At some point we have to stop calling this an accident.
 
-          PeterPanthers followed a 172-point Week 1 with another 137.34 and absolutely dismantled The Oilers, 137.34 to 83.58.
+          PeterPanthers followed a 172-point Week 1 with another 137.34 and
+          absolutely dismantled The Oilers, 137.34 to 83.58.
 
-          Jahmyr Gibbs wasn't spectacular on the ground — 16 carries for 52 yards — but he added six catches for 61 yards and a touchdown.
+          Jahmyr Gibbs wasn't spectacular on the ground — 16 carries for
+          52 yards — but he added six catches for 61 yards and a touchdown.
 
           Chris Olave caught eight of 10 targets for 86 yards and a score.
 
@@ -278,33 +272,20 @@ export const weeklyRecaps = {
 
           Trey McBride added eight catches and another score.
 
-          And JV did all of this while Jayden Daniels only played one half.
+          That's four starters producing legitimate NFL stat lines, not just
+          fantasy nonsense.
 
-          Daniels was 11-of-17 for 96 yards and a touchdown, added 69 rushing yards, and then dislocated his left elbow on the final play before halftime.
+          Chaney got a strong game from Dalton Kincaid, who caught seven balls
+          for 95 yards and a touchdown, and Joe Burrow threw two scores.
 
-          He never came back.
-
-          So the 14.74 from Daniels was not simply a mediocre quarterback day. JV lost his QB halfway through the game and still beat Chaney by 53.76.
-
-          The Oilers, meanwhile, had problems of their own.
-
-          Dalton Kincaid caught seven balls for 95 yards and a touchdown.
-
-          Joe Burrow threw two scores.
-
-          Kyren Williams produced 97 total yards and a receiving touchdown.
-
-          And then the lineup fell off a cliff.
+          But the lineup collapsed around them.
 
           David Montgomery managed 10 rushing yards on six carries.
 
           Marvin Harrison Jr. saw one target and caught zero passes.
 
-          And most importantly, Puka Nacua did not play.
-
-          Puka was officially inactive Monday night because of the hip/groin issue that kept him out of practice late in the week.
-
-          So that zero in Chaney's starting lineup was a real, full-fat zero.
+          Puka Nacua finished with zero fantasy points and no recorded Week 2
+          stat line in the data.
 
           Final margin: 53.76.
 
@@ -314,9 +295,9 @@ export const weeklyRecaps = {
 
           That was incorrect.
 
-          JV is now 2-0 after scoring 309.50 points across two weeks.
-
-          We are being forced to confront the possibility that the man who admits he does not know football may actually have one of the best teams in the league.
+          JV remains 2-0, and we are now being forced to confront the possibility
+          that the man who admits he does not know football may actually have
+          one of the best teams in the league.
 
           Troubling.
         `
@@ -331,27 +312,24 @@ export const weeklyRecaps = {
 
           Excellent progress.
 
-          Ja'Marr Chase did his job, catching seven of nine targets for 75 yards and two touchdowns.
+          Ja'Marr Chase did his job, catching seven of nine targets for 75 yards
+          and two touchdowns.
 
           Unfortunately, almost nobody else did.
 
-          Drake "Drake Maye" Maye completed 14 of 22 passes for 208 yards, threw zero touchdowns and one interception, and finished with 9.02.
+          Drake "Drake Maye" Maye completed 14 of 22 passes for 208 yards,
+          threw zero touchdowns and one interception, and finished with 9.02.
 
           Drake London caught four balls for 51 yards.
 
-          Javonte Williams managed 30 rushing yards on 12 carries.
-
-          Cam Skattebo needed 16 touches to generate 55 total yards.
+          Javonte Williams managed 30 rushing yards.
 
           Tampa Bay's defense contributed two points.
 
-          The Czar did leave 14.3 from Rachaad White on the bench, but even perfect hindsight lineup management was not fixing this disaster.
+          Meanwhile Trevor did not even need his quarterback to be good.
 
-          Trevor, meanwhile, did not even need his quarterback to be good.
-
-          Trevor Lawrence threw for 189 yards, zero touchdowns and one interception.
-
-          Seven point one six.
+          Trevor Lawrence threw for 189 yards, zero touchdowns and one interception
+          and scored only 7.16.
 
           Show Me Your TDs still scored 132.86.
 
@@ -363,9 +341,9 @@ export const weeklyRecaps = {
 
           Sam LaPorta caught six balls for 52 yards and another score.
 
-          Trevor beat the Czar by 43.54 while getting almost nothing from his quarterback.
+          Trevor beat the Czar by 43.54 despite getting almost nothing from his QB.
 
-          Critical Chase Theory is now 0-2.
+          The Czar is now 0-2.
 
           Executive privilege has been extended indefinitely.
         `
@@ -384,41 +362,29 @@ export const weeklyRecaps = {
 
           Brandon Aubrey added 17 points from the kicker spot.
 
-          Rhodes x Pags finished with 136.08 — nearly 59 points better than their Week 1 disaster.
-
-          That should have been enough.
+          Rhodes x Pags finished with 136.08 — nearly 59 points better than
+          their Week 1 disaster.
 
           Unfortunately, Josh decided to deploy two nuclear weapons.
 
-          Jaxon Smith-Njigba caught nine of 11 targets for 155 yards and three touchdowns.
+          Jaxon Smith-Njigba caught nine of 11 targets for 155 yards and
+          three touchdowns.
 
-          Josh Allen threw for 248 yards and three touchdowns, then added 69 rushing yards and two more scores.
+          Josh Allen threw for 248 yards and three touchdowns, then added
+          69 rushing yards and two more scores.
 
-          Kenneth Walker somehow quietly added 178 total yards.
+          Kenneth Walker somehow quietly added 178 total yards of his own.
 
           JSN and Allen alone combined for 83.32 fantasy points.
 
-          And somehow Moore Oil Coming did all of that while getting negative production from DJ Moore.
-
-          Moore recorded one carry for minus-one yard and zero catches before leaving Buffalo's game in the second quarter with a shoulder/stinger injury.
-
-          He was ruled out shortly afterward.
-
-          Final fantasy contribution:
-
-          Minus 0.1.
-
-          Josh essentially played this matchup with one starter actively subtracting points and still posted the highest score in the league.
-
-          Moore Oil Coming finishes at 141.02.
+          Moore Oil Coming finished at 141.02, the highest score in the league.
 
           Final margin: 4.94.
 
           Rhodes x Pags finally looked competent.
 
-          They simply chose the exact week Josh Allen and JSN decided to become a two-man natural disaster.
-
-          They entered Week 2 in ROSTER JAIL and nearly stole this one anyway.
+          They simply chose the exact week that Josh Allen and JSN decided
+          to become a two-man natural disaster.
         `
       },
 
@@ -431,35 +397,25 @@ export const weeklyRecaps = {
 
           Ryan won by 44.06.
 
-          Naberhood Sex Offender finished with 133.98 and thoroughly destroyed Retardinals.
+          Naberhood Sex Offender finished with 133.98 and thoroughly destroyed
+          Retardinals.
 
-          Jonathan Taylor handled 24 carries for 92 yards and two touchdowns, then added four catches for another 40 yards.
+          Jonathan Taylor handled 24 carries for 92 yards and two touchdowns,
+          then added four catches for another 40 yards.
 
-          Brock Purdy completed 20 of 22 passes for 287 yards and two touchdowns, then rushed for 30 yards and another score.
+          Brock Purdy completed 20 of 22 passes for 287 yards and two touchdowns,
+          then rushed for 30 yards and another score.
 
           George Kittle caught all four of his targets for 80 yards and a touchdown.
 
           Parker Washington added seven catches for 98.
 
-          Ryan even survived his own injury disaster.
+          Vigo actually got 138 receiving yards from Jaylen Waddle and two
+          touchdowns from Jake Ferguson.
 
-          Malik Nabers dislocated his shoulder in the first quarter, reportedly popped it back into place, stayed in the game, and still managed only one catch for one yard.
+          The problem was basically everything else.
 
-          That's 1.1 fantasy points from a starting receiver.
-
-          It did not matter.
-
-          Vigo got 138 receiving yards from Jaylen Waddle and two touchdowns from Jake Ferguson.
-
-          Then everything else went to hell.
-
-          Caleb Williams threw for only 138 yards with no touchdowns and an interception.
-
-          He did add 42 rushing yards, but his afternoon ended when he injured his right hamstring during the fourth quarter.
-
-          So yes, the 8.72 was bad before the injury.
-
-          The injury just added insult to it.
+          Caleb Williams threw for only 138 yards, no touchdowns and an interception.
 
           Deebo Samuel caught three passes for 31 yards.
 
@@ -490,19 +446,23 @@ export const weeklyRecaps = {
         recap: `
           This was the closest game of the week, and JQ survived by 1.38.
 
-          #FreeTony got an enormous performance from CeeDee Lamb, who caught eight of nine targets for 153 yards and two touchdowns.
+          #FreeTony got an enormous performance from CeeDee Lamb, who caught
+          eight of nine targets for 153 yards and two touchdowns.
 
           The Patriots defense somehow added 23 points.
 
-          But Lamar Jackson was merely human: 235 passing yards, one touchdown, one interception and 34 rushing yards.
+          But Lamar Jackson was merely human: 235 passing yards, one touchdown,
+          one interception and 34 rushing yards.
 
           De'Von Achane had 93 total yards but never found the end zone.
 
           Jansen finished at 118.50.
 
-          Campus Legends answered with Patrick Mahomes throwing for 382 yards and three touchdowns.
+          Campus Legends answered with Patrick Mahomes throwing for 382 yards
+          and three touchdowns.
 
-          Christian McCaffrey only rushed for 23 yards but scored twice and added four catches for 43 yards.
+          Christian McCaffrey only rushed for 23 yards but scored twice and added
+          four catches for 43 yards.
 
           Garrett Wilson caught five passes for 57 yards and a touchdown.
 
@@ -522,13 +482,9 @@ export const weeklyRecaps = {
 
           JQ left a mountain of points on the sideline and still won by 1.38.
 
-          Jansen now falls to 0-2 despite scoring 136.56 in Week 1 and 118.50 in Week 2.
+          That is not good management.
 
-          That is a particularly disgusting way to start a season.
-
-          JQ's lineup management was not good.
-
-          Winning anyway is significantly worse for everyone else.
+          That is getting away with something.
         `
       },
 
@@ -541,45 +497,31 @@ export const weeklyRecaps = {
 
           There were questions.
 
-          There was even a brief discussion about whether T2 might actually know what he is doing.
+          There was even a brief discussion about whether T2 might actually
+          know what he is doing.
 
           We can now close the investigation.
 
           Big frydown scored 81.66 and takes Week 2 Low Man.
 
-          Dak Prescott tried to save the operation, completing 26 of 31 passes for 279 yards and four touchdowns.
+          Dak Prescott tried to save the operation, completing 26 of 31 passes
+          for 279 yards and four touchdowns.
 
           He scored 29.76.
 
           The rest of the lineup responded by dying.
 
-          Although, in Saquon Barkley's defense, he basically did.
+          Saquon Barkley had four carries for nine yards and one catch for 11.
 
-          Barkley suffered a stinger on Philadelphia's first offensive play and immediately left the game.
-
-          He spent much of the first half out, returned briefly later, and finished with only four carries for nine yards plus one catch for 11.
-
-          Three fantasy points.
-
-          That was not a normal Saquon dud.
-
-          T2 also had Ladd McConkey playing through a rib injury that had kept him out of practice Wednesday and Thursday.
-
-          McConkey was active, but managed only three catches for 35 yards.
-
-          Tucker Kraft caught two passes for 15.
+          Tucker Kraft caught two passes for 15 yards.
 
           Justin Jefferson finished with three catches for 55 yards.
 
           Mike Evans caught three for 54.
 
-          Bucky Irving was the only non-Dak player in the lineup to reach double digits.
+          Ladd McConkey had three catches for 35.
 
-          So yes, there was legitimate injury damage here.
-
-          T2 also still scored 81.66.
-
-          Both things can be true.
+          Bucky Irving was the only other player to reach double digits.
 
           Charles, meanwhile, simply handed the ball to The Sun God.
 
@@ -602,6 +544,408 @@ export const weeklyRecaps = {
           And now Low Man T2 owes the league a press conference and a beer.
 
           Welcome home.
+        `
+      }
+    }
+  },
+
+  3: {
+    intro: `
+      Week 3 is officially in the books.
+
+      And apparently all the Czar needed was a rebrand.
+
+      Critical Chase Theory entered the week 0-2 with scores of 91.62 and 89.32.
+
+      Critical Chase Theory no longer exists.
+
+      The Car Bombs debuted by dropping 154.56 on JV, taking High Man, and handing PeterPanthers its first loss of the season.
+
+      This is obviously conclusive evidence that fantasy football is approximately 90 percent branding.
+
+      Elsewhere, Rhodes x Pags emerged from two weeks of humiliation and committed the largest act of violence we've seen all season, beating The Oilers by 64.62.
+
+      Chaney, a years-long powerhouse in te league, responded by taking Low Man at 83.18.
+
+      Trevor quietly moved to 2-1 while Vigo fell to 0-3.
+
+      Jansen also fell to 0-3, although his week became considerably less funny when De'Von Achane suffered a season-ending knee injury.
+
+      Ryan is 3-0.
+
+      Josh is 3-0.
+
+      JQ is 3-0.
+
+      Three undefeated teams remain, and none of them are JV.
+
+      The Car Bombs take High Man at 154.56.
+
+      The Oilers take Low Man at 83.18.
+
+      Rhodes x Pags delivered the biggest ass beating of the week.
+
+      Moore Oil Coming and #FreeTony somehow produced the closest game despite being separated by 11.08.
+
+      The Czar went 3-3 on his Week 3 picks and now sits at 10-8 on the season.
+
+      The regime has its first victory.
+
+      More importantly, The Car Bombs are undefeated in franchise history.
+    `,
+
+    matchups: {
+      1: {
+        headline: "THE CAR BOMBS HAVE DETONATED",
+        recap: `
+          The rebrand is undefeated.
+
+          That is the story.
+
+          Critical Chase Theory started the season 0-2.
+
+          The team changed its name to The Car Bombs.
+
+          The Car Bombs immediately scored 154.56 points, took Week 3 High Man, and beat the previously undefeated PeterPanthers 154.56 to 142.04.
+
+          This was not JV finally having a bad week either.
+
+          JV scored 142.
+
+          Jahmyr Gibbs went completely insane for 41.4 fantasy points.
+
+          Terry McLaurin scored 19.7.
+
+          Chris Olave scored 19.7.
+
+          Trey McBride added 16.5.
+
+          JV put together a lineup that would have beaten almost everybody in the league.
+
+          Unfortunately for him, he had been selected as the first target of the newly operational Car Bombs.
+
+          Drake London started the demolition on Thursday night with 28.4.
+
+          Ja'Marr Chase added 24.8.
+
+          Juwan Johnson scored 23.3.
+
+          Matthew Golden added 21.
+
+          Javonte Williams chipped in 18.3.
+
+          Five different starters scored at least 18 points.
+
+          And the funniest part is that Drake Maye was fucking terrible.
+
+          Maye completed 14 of 25 passes for 199 yards, zero touchdowns and two interceptions.
+
+          He scored 5.76.
+
+          The Car Bombs still put up 154.56.
+
+          The rest of the lineup scored 148.80 without him.
+
+          JV spent two weeks convincing us PeterPanthers might be an unstoppable force.
+
+          Then the Czar changed the team name, put on the sunglasses, and dropped High Man directly on his forehead.
+
+          Final margin: 12.52.
+
+          The Czar is finally 1-2.
+
+          JV is finally 2-1.
+
+          And until further notice, changing the team name has been recognized as a legitimate form of roster management.
+        `
+      },
+
+      2: {
+        headline: "Two Managers Have Finally Become an Advantage",
+        recap: `
+          We need to issue a correction.
+
+          Apparently Rhodes x Pags can play fantasy football.
+
+          After opening the season with 77.30 and following it with a heartbreaking 136.08 loss, the two-man front office finally put everything together.
+
+          Rhodes x Pags scored 147.80.
+
+          The Oilers scored 83.18.
+
+          Final margin: 64.62.
+
+          This was the biggest ass beating of Week 3.
+
+          It was not particularly close to being close.
+
+          Bijan Robinson led the way with 35.3.
+
+          Brock Bowers returned to action and immediately dropped 27.6.
+
+          Matthew Stafford threw for 390 yards and two touchdowns on his way to 22.9.
+
+          Davante Adams added 20.7.
+
+          That is four starters over 20 points.
+
+          Chaney got 22.58 from Joe Burrow.
+
+          Kyren Williams added 21.8.
+
+          And then the rest of the operation largely ceased producing useful fantasy points.
+
+          The Oilers finished at 83.18, the lowest score in the league.
+
+          Which means Chaney now inherits the sacred responsibility of Week 3 Low Man.
+
+          Press conference.
+
+          Beer.
+
+          Public accountability.
+
+          Rhodes x Pags, meanwhile, moves to 1-2 and escapes the bottom of the league with the most violent win of the season.
+
+          Turns out two managers may actually be better than one.
+
+          It just took three weeks to discover how.
+        `
+      },
+
+      3: {
+        headline: "Trevor Quietly Became 2-1 While Vigo Quietly Died",
+        recap: `
+          There was nothing subtle about the projection.
+
+          Show Me Your TDs was expected to beat Retardinals comfortably.
+
+          For once, the computer did not overthink it.
+
+          Final score:
+
+          Show Me Your TDs 127.28.
+
+          Retardinals 84.28.
+
+          Trevor wins by 43.
+
+          Christian Watson led Trevor with 22.6.
+
+          Trevor Lawrence finally contributed a respectable quarterback performance too, throwing three touchdowns and finishing with 20.78.
+
+          The rest of the lineup did enough around them to make this completely uncompetitive.
+
+          Vigo's leading scorer was the Minnesota defense.
+
+          Seventeen points.
+
+          His defense.
+
+          Deebo Samuel was next at 15.4.
+
+          When your DST is carrying the offense, things have generally gone wrong.
+
+          Retardinals has now scored 99.76, 89.92 and 84.28.
+
+          That is not an encouraging trend line.
+
+          Ninety-nine.
+
+          Eighty-nine.
+
+          Eighty-four.
+
+          Vigo is now 0-3. T2 had the record low last year at 1-13, but Vigo is tracking to take the crown. 
+
+          Trevor is 2-1.
+
+          At this point Show Me Your TDs does not need to be flashy.
+
+          Trevor keeps winning football games while Vigo appears to be slowly descending through the Earth's crust.
+        `
+      },
+
+      4: {
+        headline: "Jansen Lost the Game and His Running Back",
+        recap: `
+          At some point, #FreeTony is going to need to catch a break.
+
+          Week 1:
+
+          136.56 points.
+
+          Loss.
+
+          Week 2:
+
+          118.50 points.
+
+          Loss by 1.38.
+
+          Week 3:
+
+          Another loss.
+
+          Moore Oil Coming beat #FreeTony 109.42 to 98.34.
+
+          The 11.08-point margin somehow qualifies as the closest matchup of the week.
+
+          Jansen got 20.6 from Jaylen Warren, but the lineup took an enormous hit when De'Von Achane went down almost immediately.
+
+          Achane suffered a torn ACL in his left knee on his third rushing attempt against Kansas City.
+
+          His day ended with 17 rushing yards and 1.7 fantasy points.
+
+          His season is over.
+
+          That is a brutal real-life injury and an enormous fantasy loss for J-Bone.
+
+          The Patriots defense then contributed negative one point just to make the afternoon slightly more hostile, after being dismantled in Jacksonville.
+
+          For what it's worth, that performance ruined my Sunday too.
+
+          Meanwhile, Luther Burden scored 19.8 on the bench.
+
+          Josh did not exactly receive a masterpiece from the rest of his roster either.
+
+          He simply had Jaxon Smith-Njigba.
+
+          Again.
+
+          JSN caught 10 passes for 128 yards and two touchdowns and finished with 35.36.
+
+          Josh Allen had a messy passing day with two interceptions, but two rushing touchdowns dragged him to 19.46.
+
+          That was enough.
+
+          Moore Oil Coming is 3-0.
+
+          #FreeTony is 0-3.
+
+          Those records look completely different.
+
+          The underlying teams are probably not nearly as far apart as the standings suggest.
+
+          Unfortunately, the standings have never cared about fairness.
+        `
+      },
+
+      5: {
+        headline: "Ryan Is 3-0 and This Is No Longer a Bit",
+        recap: `
+          Three weeks ago, Ryan's roster looked good on paper.
+
+          Three weeks later, Ryan is simply undefeated.
+
+          Naberhood Sex Offender beat Big frydown 123.28 to 92.54.
+
+          Brock Purdy was the engine this time.
+
+          Purdy threw for 297 yards and four touchdowns, added 34 rushing yards, and finished with 31.28.
+
+          George Kittle caught six passes for 82 yards and two touchdowns.
+
+          Twenty-six point two.
+
+          Purdy and Kittle combined for 57.48 points.
+
+          Harrison Mevis somehow chipped in another 16 from the kicker spot.
+
+          Ryan did not even need big games from Jonathan Taylor, Malik Nabers, Tet McMillan or Ashton Jeanty.
+
+          T2, meanwhile, had another miserable week.
+
+          Dak Prescott led the lineup with 18.94.
+
+          Mike Evans gave him 12.4 before leaving San Francisco's game in the second quarter with a rib injury.
+
+          Justin Jefferson suffered a left ankle injury on Minnesota's opening drive, tried to stay available, and ultimately could not return.
+
+          He finished with two catches for 32 yards and only 5.2 fantasy points.
+
+          That is brutal injury luck.
+
+          It is also the second straight week Big frydown has failed to reach 100 after opening the season at 145.50.
+
+          Week 1: 145.50.
+
+          Week 2: 81.66.
+
+          Week 3: 92.54.
+
+          The investigation into T2's competence has now produced wildly conflicting evidence.
+
+          Ryan's case is much simpler.
+
+          3-0.
+
+          Three wins.
+
+          No explanations required.
+        `
+      },
+
+      6: {
+        headline: "JQ Is 3-0, Which Is Becoming Difficult to Explain Away",
+        recap: `
+          The Game of the Week lived up to the billing.
+
+          Not because it was especially close.
+
+          Because one of these teams had to leave undefeated.
+
+          Campus Legends beat Charles 142.04 to 122.82.
+
+          JQ is now 3-0.
+
+          We may have to begin treating this seriously.
+
+          Garrett Wilson led Campus with 26.7 after catching 10 passes for 107 yards and a touchdown.
+
+          Jeremiyah Love added 21.9.
+
+          Christian McCaffrey added 21.6.
+
+          Patrick Mahomes scored 16.94.
+
+          Will Reichard contributed 16 from the kicker spot.
+
+          George Pickens scored 15.2.
+
+          Travis Kelce added 13.9.
+
+          It was not one absurd nuclear performance.
+
+          It was everybody contributing.
+
+          Charles actually got plenty of production himself.
+
+          Harold Fannin scored 24.1 with two receiving touchdowns.
+
+          Derrick Henry scored 21.9.
+
+          Tee Higgins added 21.
+
+          But Jalen Hurts managed only 13.62, The Sun God finished at 11.9, and Breece Hall was held to 8.5 before suffering a thigh injury late in the Jets game.
+
+          Charles scored 122.82.
+
+          That's a perfectly respectable fantasy score.
+
+          JQ simply scored 19.22 more.
+
+          Campus Legends is now 3-0.
+
+          Moore Oil Coming is 3-0.
+
+          Naberhood Sex Offender is 3-0.
+
+          Those are the last three undefeated teams in TouchDown Syndrome.
+
+          JV is not one of them.
+
+          The Czar considers this progress.
         `
       }
     }
