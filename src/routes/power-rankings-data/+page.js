@@ -19,6 +19,7 @@ export async function load({ fetch }) {
         week2Matchups,
         week3Matchups,
         week4Matchups,
+        week3Transactions,
         week4Transactions
     ] = await Promise.all([
         getLeagueRosters(),
@@ -39,6 +40,10 @@ export async function load({ fetch }) {
 
         fetch(
             `https://api.sleeper.app/v1/league/${leagueID}/matchups/4`
+        ).then((r) => r.json()),
+
+        fetch(
+            `https://api.sleeper.app/v1/league/${leagueID}/transactions/3`
         ).then((r) => r.json()),
 
         fetch(
@@ -73,6 +78,31 @@ export async function load({ fetch }) {
             ? rawManagers
             : Object.values(rawManagers);
 
+    const transactions3 =
+        Array.isArray(week3Transactions)
+            ? week3Transactions
+            : [];
+
+    const transactions4 =
+        Array.isArray(week4Transactions)
+            ? week4Transactions
+            : [];
+
+    /*
+        We intentionally combine Sleeper transaction legs 3 and 4.
+
+        The Week 3 roster snapshot was taken before all of the post-snapshot
+        roster movement occurred, and Sleeper can classify transactions
+        completed later in the NFL week under transaction leg 3.
+
+        The Svelte export will show transaction.leg for every item, so we can
+        distinguish which Sleeper week each transaction belongs to.
+    */
+    const rankingTransactions = [
+        ...transactions3,
+        ...transactions4
+    ];
+
     return {
         currentRosters,
         teamManagers,
@@ -83,10 +113,15 @@ export async function load({ fetch }) {
         week3Matchups,
         week4Matchups,
 
+        /*
+            Keep this property name because the current +page.svelte already
+            reads data.week4Transactions.
+
+            It now contains the transaction window relevant to the Week 4
+            rankings: Sleeper transaction legs 3 + 4.
+        */
         week4Transactions:
-            Array.isArray(week4Transactions)
-                ? week4Transactions
-                : [],
+            rankingTransactions,
 
         week1Snapshot:
             rosterHistory?.["1"] || null,
