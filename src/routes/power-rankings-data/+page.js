@@ -18,7 +18,8 @@ export async function load({ fetch }) {
         week1Matchups,
         week2Matchups,
         week3Matchups,
-        week4Matchups
+        week4Matchups,
+        week4Transactions
     ] = await Promise.all([
         getLeagueRosters(),
         getLeagueTeamManagers(),
@@ -38,6 +39,10 @@ export async function load({ fetch }) {
 
         fetch(
             `https://api.sleeper.app/v1/league/${leagueID}/matchups/4`
+        ).then((r) => r.json()),
+
+        fetch(
+            `https://api.sleeper.app/v1/league/${leagueID}/transactions/4`
         ).then((r) => r.json())
     ]);
 
@@ -77,6 +82,11 @@ export async function load({ fetch }) {
         week2Matchups,
         week3Matchups,
         week4Matchups,
+
+        week4Transactions:
+            Array.isArray(week4Transactions)
+                ? week4Transactions
+                : [],
 
         week1Snapshot:
             rosterHistory?.["1"] || null,
