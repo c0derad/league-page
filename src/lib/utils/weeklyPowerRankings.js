@@ -402,7 +402,9 @@ export const weeklyPowerRankings = {
                 `
             }
         ]
-    },    3: {
+    },
+
+    3: {
         title: "Week 3 Czar Power Rankings",
 
         intro: `
@@ -460,7 +462,7 @@ export const weeklyPowerRankings = {
                     That injury is the first real threat to this roster. Daniels will not play in Week 3,
                     meaning Bryce Young enters the lineup after being added this week. Washington has
                     already confirmed Marcus Mariota will start while Daniels recovers from the dislocated
-                    elbow. :contentReference[oaicite:0]{index=0}
+                    elbow.
 
                     Sleeper still projects PeterPanthers for 119.82, because Gibbs, Olave and McBride
                     give this roster enough weekly firepower to survive a quarterback downgrade.
@@ -509,7 +511,7 @@ export const weeklyPowerRankings = {
                     a shoulder injury, and Josh still led the league in scoring.
 
                     Moore suffered an AC joint sprain and his Week 3 status remains uncertain, so there
-                    is legitimate short-term risk at receiver. :contentReference[oaicite:1]{index=1}
+                    is legitimate short-term risk at receiver.
 
                     The Week 3 projection has dropped to 112.77, but that number matters less when Allen,
                     JSN and Walker have already demonstrated what the ceiling looks like.
@@ -979,7 +981,7 @@ export const weeklyPowerRankings = {
 
                     Caleb Williams finished with 8.72 before injuring his hamstring in the fourth quarter.
                     Chicago currently considers him week-to-week, and the team does not expect him to
-                    practice early this week. :contentReference[oaicite:2]{index=2}
+                    practice early this week.
 
                     That explains the C.J. Stroud pickup.
 
@@ -999,6 +1001,641 @@ export const weeklyPowerRankings = {
                     Vigo needed quarterback insurance immediately.
 
                     For once, the waiver wire was used for an actual emergency.
+                `
+            }
+        ]
+    },
+
+    4: {
+        title: "Week 4 Czar Power Rankings",
+
+        intro: `
+            Three weeks in, the excuses are getting harder to defend.
+
+            JV finally lost and somehow strengthened his case for No. 1 by scoring 142.04 anyway.
+
+            Ryan and JQ are both 3-0 and now look less like early-season accidents and more like actual problems.
+
+            Josh is also 3-0, although his first sub-120 week finally proved Moore Oil Coming is technically mortal.
+
+            Trevor has quietly produced three straight strong weeks.
+
+            The Czar changed the team name, immediately dropped 154.56, and is now attempting to convince everyone
+            that the first two weeks should be removed from the historical record.
+
+            Jansen is 0-3 and responded by essentially rebuilding his roster in 24 hours.
+
+            Chaney is also 0-3 and did the same thing from the other side of the negotiating table.
+
+            Vigo and T2 made the first true blockbuster of the season, with Justin Jefferson changing hands.
+
+            These are not the standings. Record matters, but so do weekly scoring, roster construction, depth,
+            injuries, Week 4 projection, and what each manager did after Week 3.
+
+            Movement is measured against last week's rankings.
+
+            Welcome to Week 4.
+        `,
+
+        rankings: [
+            {
+                rank: 1,
+                previousRank: 1,
+                movement: 0,
+                rosterID: 2,
+                team: "PeterPanthers",
+                record: "2-1",
+                week1Score: 172.16,
+                week2Score: 137.34,
+                week3Score: 142.04,
+                week4Projection: 134.55,
+                headline: "The Loss Changes Nothing",
+                commentary: `
+                    JV finally lost.
+
+                    He remains No. 1.
+
+                    PeterPanthers has scored 172.16, 137.34 and 142.04 through three weeks.
+
+                    That is 451.54 total points and 150.51 per game.
+
+                    The loss required The Car Bombs to score 154.56 and take High Man. JV still would have beaten
+                    eight other teams in the league with his 142.04 and tied Campus Legends.
+
+                    Jahmyr Gibbs was absurd again in Week 3, scoring 41.4 after piling up 99 rushing yards,
+                    65 receiving yards and three total touchdowns.
+
+                    Chris Olave and Terry McLaurin both scored 19.7. Trey McBride added 16.5.
+
+                    Jayden Daniels remains unavailable for Week 4, but JV already has Bryce Young in the lineup and
+                    Sleeper still projects PeterPanthers for a league-high 134.55.
+
+                    Gibbs, Olave and McBride remain the foundation, and the depth is still good enough to absorb
+                    a temporary quarterback downgrade.
+
+                    The undefeated season is over.
+
+                    The No. 1 ranking is not.
+                `,
+                transactions: `
+                    No changes.
+
+                    After three straight scores above 137, JV has correctly concluded that the roster is not the
+                    part of the operation requiring intervention.
+                `
+            },
+
+            {
+                rank: 2,
+                previousRank: 3,
+                movement: 1,
+                rosterID: 8,
+                team: "Naberhood Sex Offender",
+                record: "3-0",
+                week1Score: 128.80,
+                week2Score: 133.98,
+                week3Score: 123.28,
+                week4Projection: 127.76,
+                headline: "3-0 Without Needing a Miracle",
+                commentary: `
+                    Ryan moves to No. 2 because the consistency is becoming impossible to ignore.
+
+                    128.80.
+
+                    133.98.
+
+                    123.28.
+
+                    Three weeks. Three wins. No collapse.
+
+                    Brock Purdy threw for 297 yards and four touchdowns in Week 3 and scored 31.28.
+
+                    George Kittle caught six passes for 82 yards and two touchdowns for 26.2.
+
+                    The funniest part is that Ryan left 52.96 points on the bench and still won by more than 30.
+
+                    Michael Wilson alone scored 25.9 from the sideline.
+
+                    The current roster still has Jonathan Taylor, Ashton Jeanty, Malik Nabers, Tetairoa McMillan,
+                    Kittle and multiple usable quarterbacks.
+
+                    Sleeper projects 127.76 for Week 4, fourth-highest on the board.
+
+                    Ryan has stopped being the quiet 3-0 team.
+
+                    He is just one of the best teams in the league now.
+                `,
+                transactions: `
+                    Added Kenyon Sadiq and dropped MarShawn Lloyd.
+
+                    A small depth move after leaving nearly 53 points on the bench. Ryan did not need to perform
+                    surgery on a roster that is already 3-0.
+                `
+            },
+
+            {
+                rank: 3,
+                previousRank: 5,
+                movement: 2,
+                rosterID: 11,
+                team: "Campus Legends",
+                record: "3-0",
+                week1Score: 101.46,
+                week2Score: 119.88,
+                week3Score: 142.04,
+                week4Projection: 130.85,
+                headline: "JQ Is Getting Louder",
+                commentary: `
+                    Campus Legends jumps two more spots.
+
+                    The weekly progression tells the story.
+
+                    101.46.
+
+                    119.88.
+
+                    142.04.
+
+                    JQ started the year winning ugly and has now turned the roster into one of the strongest
+                    scoring profiles in the league.
+
+                    Garrett Wilson scored 26.7 in Week 3. Jeremiyah Love scored 21.9. Christian McCaffrey scored
+                    21.6. Mahomes, Reichard, Pickens and Kelce all contributed double digits.
+
+                    This was not one player dragging the lineup. It was seven different useful performances.
+
+                    Sleeper now projects Campus Legends for 130.85 in Week 4, second-highest in the league.
+
+                    Mahomes, CMC, Garrett Wilson, Pickens, Kelce, Love and the rest of this roster has enough depth
+                    that JQ no longer needs to get away with lineup crimes to win.
+
+                    He is 3-0.
+
+                    Unfortunately, the evidence is becoming persuasive.
+                `,
+                transactions: `
+                    No changes.
+
+                    JQ watched the roster score 142.04 and elected not to interfere.
+
+                    Growth.
+                `
+            },
+
+            {
+                rank: 4,
+                previousRank: 2,
+                movement: -2,
+                rosterID: 10,
+                team: "Moore Oil Coming",
+                record: "3-0",
+                week1Score: 147.16,
+                week2Score: 141.02,
+                week3Score: 109.42,
+                week4Projection: 120.22,
+                headline: "Still Undefeated, Slightly Less Terrifying",
+                commentary: `
+                    Josh falls two spots despite remaining undefeated.
+
+                    That is less an indictment of Moore Oil Coming than a reflection of what Ryan and JQ have done.
+
+                    Josh opened the year with 147.16 and 141.02.
+
+                    Week 3 finally produced something resembling a normal fantasy score: 109.42.
+
+                    Even then, Jaxon Smith-Njigba caught 10 passes for 128 yards and two touchdowns and scored 35.36.
+
+                    Kenneth Walker added two total touchdowns and 21.3.
+
+                    Josh Allen threw two interceptions and zero passing touchdowns, then simply ran for two scores
+                    because apparently normal quarterback rules do not apply to him.
+
+                    The core is still elite.
+
+                    Allen, JSN and Walker can erase a bad week from almost anybody else in the lineup.
+
+                    Sleeper projects 120.22 for Week 4.
+
+                    The first three weeks say contender.
+
+                    Week 3 simply proved the floor is not infinite.
+                `,
+                transactions: `
+                    Added Chicago and Indianapolis D/ST; dropped Philadelphia D/ST and Khalil Shakir.
+
+                    Mostly streaming and bench maintenance. Josh left the offensive core untouched.
+                `
+            },
+
+            {
+                rank: 5,
+                previousRank: 7,
+                movement: 2,
+                rosterID: 4,
+                team: "Show Me Your TDs",
+                record: "2-1",
+                week1Score: 124.40,
+                week2Score: 132.86,
+                week3Score: 127.28,
+                week4Projection: 119.30,
+                headline: "Trevor Has Been Sneakily Excellent",
+                commentary: `
+                    Trevor jumps two spots because there is now a three-week sample of the same basic thing.
+
+                    124.40.
+
+                    132.86.
+
+                    127.28.
+
+                    That is 128.18 points per game without a single ridiculous 170-point outlier inflating the average.
+
+                    Christian Watson led the way in Week 3 with 22.6.
+
+                    Trevor Lawrence finally helped his own fantasy team by throwing three touchdowns and scoring 20.78.
+
+                    James Cook added 154 rushing yards and a touchdown for 19.4.
+
+                    The roster then got more interesting.
+
+                    Trevor traded Omarion Hampton to Jansen for Luther Burden, added Darren Waller, and grabbed
+                    Ollie Gordon off waivers.
+
+                    Losing Hampton removes some RB upside, but James Cook and Chuba Hubbard still give Trevor two
+                    usable backs, while Burden adds another high-upside receiver to Watson, DeVonta Smith and Egbuka.
+
+                    Sleeper has the current lineup at 119.30.
+
+                    Trevor is not winning with smoke and mirrors.
+
+                    He has simply been good every week.
+                `,
+                transactions: `
+                    Traded Omarion Hampton to #FreeTony for Luther Burden.
+
+                    Added Darren Waller and Ollie Gordon; dropped Brenton Strange.
+
+                    Trevor turned one running back asset into receiver upside and then added more depth behind it.
+                `
+            },
+
+            {
+                rank: 6,
+                previousRank: 6,
+                movement: 0,
+                rosterID: 6,
+                team: "#FreeTony",
+                record: "0-3",
+                week1Score: 136.56,
+                week2Score: 118.50,
+                week3Score: 98.34,
+                week4Projection: 128.29,
+                headline: "The Best 0-3 Team Just Rebuilt Itself",
+                commentary: `
+                    Jansen remains No. 6 because the record is ugly and the roster is not.
+
+                    #FreeTony has scored 136.56, 118.50 and 98.34.
+
+                    The trend is bad.
+
+                    The context is stranger.
+
+                    Jansen lost De'Von Achane for the season in Week 3, then spent the next 24 hours behaving like
+                    a general manager with the trade deadline six minutes away.
+
+                    First, Luther Burden went to Trevor for Omarion Hampton.
+
+                    Then Hampton was immediately packaged with CeeDee Lamb and sent to Chaney for Puka Nacua and
+                    Kyren Williams.
+
+                    The practical result is that Jansen turned CeeDee and Burden into Puka and Kyren while replacing
+                    Achane's lost RB production with another established back.
+
+                    The current core is Lamar Jackson, Puka, Zay Flowers, Kyren, Josh Jacobs and Jaylen Warren.
+
+                    Sleeper now projects #FreeTony for 128.29 in Week 4, one of the highest totals in the league.
+
+                    Puka's health is the obvious risk after missing the last two games, but the roster ceiling is
+                    substantially different than the 0-3 record suggests.
+
+                    J-Bone may have no wins.
+
+                    Nobody should be volunteering to play him.
+                `,
+                transactions: `
+                    Traded Luther Burden to Show Me Your TDs for Omarion Hampton.
+
+                    Then traded CeeDee Lamb and Hampton to The Oilers for Puka Nacua and Kyren Williams.
+
+                    Also added Braelon Allen, Emmett Johnson, Kalif Raymond, Harrison Butker and Cleveland D/ST;
+                    dropped De'Von Achane, Tre Tucker, Devin Singletary, Cairo Santos and New England D/ST.
+
+                    This was not roster maintenance.
+
+                    This was a reconstruction.
+                `
+            },
+
+            {
+                rank: 7,
+                previousRank: 9,
+                movement: 2,
+                rosterID: 5,
+                team: "Rhodes x Pags",
+                record: "1-2",
+                week1Score: 77.30,
+                week2Score: 136.08,
+                week3Score: 147.80,
+                week4Projection: 117.62,
+                headline: "ROSTER JAIL Apparently Built Character",
+                commentary: `
+                    Rhodes x Pags climbs another two spots.
+
+                    Week 1 remains one of the worst performances we have seen this season.
+
+                    77.30.
+
+                    Then 136.08.
+
+                    Then 147.80.
+
+                    That is a 70.5-point improvement from Week 1 to Week 3.
+
+                    Bijan Robinson ran for 194 yards and two touchdowns last week and scored 35.3.
+
+                    Brock Bowers caught 10 balls for 116 yards and a touchdown for 27.6.
+
+                    Stafford threw for 390 yards. Davante Adams went for 137 receiving yards. Rashee Rice added 15.8.
+
+                    For two consecutive weeks, this has looked like a legitimately dangerous roster.
+
+                    Sleeper projects only 117.62 for Week 4, which keeps the parole hearing from becoming a full pardon.
+
+                    But the question has changed.
+
+                    We are no longer asking whether this team can be competent.
+
+                    We are asking whether Week 1 was the real outlier.
+                `,
+                transactions: `
+                    No changes.
+
+                    After scoring 136.08 and 147.80 in consecutive weeks, Rhodes x Pags have finally earned the
+                    right to leave the roster alone without being mocked for it.
+                `
+            },
+
+            {
+                rank: 8,
+                previousRank: 4,
+                movement: -4,
+                rosterID: 9,
+                team: "Charles",
+                record: "2-1",
+                week1Score: 151.02,
+                week2Score: 122.76,
+                week3Score: 122.82,
+                week4Projection: 110.94,
+                headline: "Still Good, Suddenly Thinner",
+                commentary: `
+                    Charles takes the largest fall of the week.
+
+                    This is not because the team suddenly became bad.
+
+                    Charles scored 122.82 in Week 3 and is averaging 132.20 through three games.
+
+                    Harold Fannin scored 24.1 last week. Derrick Henry scored 21.9. Tee Higgins scored 21.
+
+                    The foundation is still excellent: Jalen Hurts, Henry, The Sun God and Higgins can carry a lineup.
+
+                    The problem is Week 4.
+
+                    Breece Hall is dealing with a quad injury and is considered week-to-week, which removes or at
+                    least threatens one of the most important pieces of the roster.
+
+                    Sleeper has Charles projected for only 110.94 this week.
+
+                    That is a meaningful drop from the top tier and one of the lower projections on the board.
+
+                    Charles is still dangerous.
+
+                    Right now he is simply less complete than the teams above him.
+                `,
+                transactions: `
+                    No changes.
+
+                    Charles kept the roster intact. The current issue is health, not roster churn.
+                `
+            },
+
+            {
+                rank: 9,
+                previousRank: 11,
+                movement: 2,
+                rosterID: 1,
+                team: "The Car Bombs",
+                record: "1-2",
+                week1Score: 91.62,
+                week2Score: 89.32,
+                week3Score: 154.56,
+                week4Projection: 122.07,
+                headline: "One Detonation Does Not Erase the Crime Scene",
+                commentary: `
+                    The Czar finally has evidence for the defense.
+
+                    Unfortunately, the prosecution still has Weeks 1 and 2.
+
+                    91.62.
+
+                    89.32.
+
+                    Then the team changed its name to The Car Bombs and immediately scored 154.56.
+
+                    High Man.
+
+                    Drake London caught nine passes for 194 yards and scored 28.4.
+
+                    Ja'Marr Chase scored 24.8. Juwan Johnson scored 23.3. Matthew Golden scored 21.
+                    Javonte Williams scored 18.3.
+
+                    Five starters cleared 18 points while Drake Maye contributed only 5.76.
+
+                    That is the encouraging part.
+
+                    The explosion did not require the quarterback to carry anything.
+
+                    Sleeper now projects The Car Bombs for 122.07 in Week 4, and Tyler Shough has been added as
+                    another quarterback option after Maye's disaster.
+
+                    The Czar climbs two spots.
+
+                    One more good week and we can begin discussing rehabilitation.
+
+                    One bad week and this immediately becomes the funniest ranking on the page.
+                `,
+                transactions: `
+                    Added Tyler Shough.
+
+                    The quarterback room received an immediate response after Drake Maye's 5.76-point Week 3.
+                `
+            },
+
+            {
+                rank: 10,
+                previousRank: 10,
+                movement: 0,
+                rosterID: 3,
+                team: "The Oilers",
+                record: "0-3",
+                week1Score: 129.46,
+                week2Score: 83.58,
+                week3Score: 83.18,
+                week4Projection: 114.38,
+                headline: "Chaney Hit the Emergency Trade Button",
+                commentary: `
+                    Chaney stays at No. 10 because the roster has changed dramatically, but the results have not yet.
+
+                    The Oilers opened with 129.46.
+
+                    Then 83.58.
+
+                    Then 83.18 and Low Man.
+
+                    Two straight weeks around 83 points is enough to erase a lot of goodwill from Week 1.
+
+                    So Chaney performed surgery.
+
+                    Puka Nacua and Kyren Williams went to Jansen.
+
+                    CeeDee Lamb and Omarion Hampton came back.
+
+                    Alvin Kamara was also added before the trade, giving The Oilers a new-look group around Joe Burrow,
+                    Nico Collins, David Montgomery, Marvin Harrison and Dalton Kincaid.
+
+                    This roster is different enough that the last two weeks are no longer a perfect description of
+                    what Chaney is bringing into Week 4.
+
+                    Sleeper projects 114.38, which is still only middle-to-lower tier.
+
+                    So there is no promotion yet.
+
+                    Chaney has rebuilt the case.
+
+                    Now he needs evidence.
+                `,
+                transactions: `
+                    Traded Puka Nacua and Kyren Williams to #FreeTony for CeeDee Lamb and Omarion Hampton.
+
+                    Added Alvin Kamara and Rashod Bateman; dropped Jonah Coleman and Jerry Jeudy.
+
+                    After consecutive 83-point weeks, Chaney finally treated the situation like an emergency.
+                `
+            },
+
+            {
+                rank: 11,
+                previousRank: 8,
+                movement: -3,
+                rosterID: 12,
+                team: "Big frydown",
+                record: "1-2",
+                week1Score: 145.50,
+                week2Score: 81.66,
+                week3Score: 92.54,
+                week4Projection: 107.01,
+                headline: "T2 Sold the Best Player in the Trade",
+                commentary: `
+                    Week 1 is beginning to look like a hallucination.
+
+                    145.50.
+
+                    Then 81.66.
+
+                    Then 92.54.
+
+                    Two straight weeks below 100 have erased most of the goodwill from the opener.
+
+                    T2 then made the biggest trade of the week, sending Justin Jefferson to Vigo for Aaron Jones
+                    and Deebo Samuel.
+
+                    There is a reasonable roster-construction argument for turning one elite receiver into two
+                    startable pieces.
+
+                    There is also the much simpler sentence:
+
+                    T2 traded Justin Jefferson.
+
+                    The current roster still has Dak, Saquon, Bucky Irving, Ladd McConkey, Mike Evans, Deebo,
+                    Aaron Jones and useful depth.
+
+                    Evans is also dealing with the rib injury that knocked him out of Week 3, adding another layer
+                    of uncertainty.
+
+                    Sleeper projects only 107.01 for Week 4, second-lowest in the league.
+
+                    The T2 renaissance lasted one week.
+
+                    The sequel has been considerably worse.
+                `,
+                transactions: `
+                    Traded Justin Jefferson to Retardinals for Aaron Jones and Deebo Samuel.
+
+                    Dropped Justin Herbert after the deal.
+
+                    T2 chose depth over the best individual asset in the trade.
+                `
+            },
+
+            {
+                rank: 12,
+                previousRank: 12,
+                movement: 0,
+                rosterID: 7,
+                team: "Retardinals",
+                record: "0-3",
+                week1Score: 99.76,
+                week2Score: 89.92,
+                week3Score: 84.28,
+                week4Projection: 102.63,
+                headline: "The Roster Improved. The Situation Did Not.",
+                commentary: `
+                    Vigo remains in the basement.
+
+                    99.76.
+
+                    89.92.
+
+                    84.28.
+
+                    The trend line looks like a controlled demolition.
+
+                    Week 3 was especially ugly. Minnesota D/ST led the entire lineup with 17 points.
+
+                    When the defense is your best fantasy player, the power rankings do not require advanced math.
+
+                    To Vigo's credit, he responded aggressively.
+
+                    Aaron Jones and Deebo Samuel were sent to T2 for Justin Jefferson.
+
+                    That is exactly the kind of consolidation move an 0-3 team should be willing to make: turn two
+                    good pieces into one player capable of changing a matchup by himself.
+
+                    Vigo also added Tyreek Hill and Eddy Pineiro off waivers while dropping Jake Ferguson and
+                    Trey Smack.
+
+                    The problem is that Jefferson is now dealing with an ankle sprain, and Sleeper still projects
+                    Retardinals for only 102.63 — lowest in the league.
+
+                    The roster looks better than it did three days ago.
+
+                    It still has to prove it can score 100 points consistently.
+                `,
+                transactions: `
+                    Traded Aaron Jones and Deebo Samuel to Big frydown for Justin Jefferson.
+
+                    Added Tyreek Hill and Eddy Pineiro; dropped Jake Ferguson and Trey Smack.
+
+                    Vigo finally made the kind of aggressive move expected from a team staring at 0-3.
                 `
             }
         ]
