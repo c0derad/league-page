@@ -162,7 +162,30 @@
                             </div>
                         {/if}
 
-                        {#if team.week3Projection !== undefined}
+                        {#if team.week3Score !== undefined}
+                            <div class="metric">
+                                <span class="metricLabel">
+                                    WEEK 3
+                                </span>
+
+                                <span class="metricValue">
+                                    {team.week3Score}
+                                </span>
+                            </div>
+                        {/if}
+
+                        {#if team.week4Projection !== undefined}
+                            <div class="metric">
+                                <span class="metricLabel">
+                                    WEEK 4 PROJ.
+                                </span>
+
+                                <span class="metricValue">
+                                    {team.week4Projection}
+                                </span>
+                            </div>
+
+                        {:else if team.week3Projection !== undefined}
                             <div class="metric">
                                 <span class="metricLabel">
                                     WEEK 3 PROJ.
@@ -172,6 +195,7 @@
                                     {team.week3Projection}
                                 </span>
                             </div>
+
                         {:else if team.week2Projection !== undefined}
                             <div class="metric">
                                 <span class="metricLabel">
@@ -405,7 +429,7 @@
         display: grid;
         grid-template-columns:
             repeat(
-                3,
+                4,
                 minmax(0, max-content)
             );
         gap: 2.3em;
