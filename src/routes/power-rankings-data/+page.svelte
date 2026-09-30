@@ -1,4 +1,4 @@
-<!-- Week 3 power rankings data -->
+<!-- Week 4 power rankings data -->
 <script>
     export let data;
 
@@ -39,36 +39,43 @@
     };
 
     const getWeek1Matchup = (rosterID) =>
-        data.week1Matchups.find(
+        data.week1Matchups?.find(
             (item) =>
                 Number(item.roster_id) ===
                 Number(rosterID)
         );
 
     const getWeek2Matchup = (rosterID) =>
-        data.week2Matchups.find(
+        data.week2Matchups?.find(
             (item) =>
                 Number(item.roster_id) ===
                 Number(rosterID)
         );
 
     const getWeek3Matchup = (rosterID) =>
-        data.week3Matchups.find(
+        data.week3Matchups?.find(
             (item) =>
                 Number(item.roster_id) ===
                 Number(rosterID)
         );
 
-    const getWeek3Opponent = (rosterID) => {
+    const getWeek4Matchup = (rosterID) =>
+        data.week4Matchups?.find(
+            (item) =>
+                Number(item.roster_id) ===
+                Number(rosterID)
+        );
+
+    const getWeek4Opponent = (rosterID) => {
         const team =
-            getWeek3Matchup(rosterID);
+            getWeek4Matchup(rosterID);
 
         if (!team) {
             return null;
         }
 
         const opponent =
-            data.week3Matchups.find(
+            data.week4Matchups?.find(
                 (item) =>
                     item.matchup_id ===
                         team.matchup_id &&
@@ -127,6 +134,7 @@
 
                 return {
                     playerID,
+
                     name:
                         getPlayerName(
                             playerID
@@ -155,11 +163,11 @@
             .slice(0, 5);
     };
 
-    const getWeek2TopPerformers = (
+    const getWeek3TopPerformers = (
         rosterID
     ) => {
         const matchup =
-            getWeek2Matchup(
+            getWeek3Matchup(
                 rosterID
             );
 
@@ -194,11 +202,11 @@
             .slice(0, 5);
     };
 
-    const getWeek2BenchPoints = (
+    const getWeek3BenchPoints = (
         rosterID
     ) => {
         const matchup =
-            getWeek2Matchup(
+            getWeek3Matchup(
                 rosterID
             );
 
@@ -237,7 +245,7 @@
         roster
     ) => {
         const previous =
-            data.week2Snapshot
+            data.week3Snapshot
                 ?.rosters?.[
                     roster.roster_id
                 ];
@@ -291,7 +299,7 @@
         };
     };
 
-    const getRecordThroughWeek2 = (
+    const getRecordThroughWeek3 = (
         rosterID
     ) => {
         let wins = 0;
@@ -299,8 +307,9 @@
         let ties = 0;
 
         const weeks = [
-            data.week1Matchups,
-            data.week2Matchups
+            data.week1Matchups || [],
+            data.week2Matchups || [],
+            data.week3Matchups || []
         ];
 
         for (const weekMatchups of weeks) {
@@ -365,8 +374,13 @@
                         roster.roster_id
                     );
 
+                const week3 =
+                    getWeek3Matchup(
+                        roster.roster_id
+                    );
+
                 const opponent =
-                    getWeek3Opponent(
+                    getWeek4Opponent(
                         roster.roster_id
                     );
 
@@ -380,7 +394,7 @@
                         ),
 
                     record:
-                        getRecordThroughWeek2(
+                        getRecordThroughWeek3(
                             roster.roster_id
                         ),
 
@@ -396,29 +410,35 @@
                             0
                         ),
 
-                    week2BenchPoints:
-                        getWeek2BenchPoints(
+                    week3Score:
+                        round(
+                            week3?.points ||
+                            0
+                        ),
+
+                    week3BenchPoints:
+                        getWeek3BenchPoints(
                             roster.roster_id
                         ),
 
-                    week3Opponent:
+                    week4Opponent:
                         opponent?.name ||
                         null,
 
-                    week3Projection:
+                    week4Projection:
                         getProjectedPoints(
                             roster,
-                            3
+                            4
                         ),
 
-                    week3TopProjected:
+                    week4TopProjected:
                         getTopProjectedStarters(
                             roster,
-                            3
+                            4
                         ),
 
-                    week2TopPerformers:
-                        getWeek2TopPerformers(
+                    week3TopPerformers:
+                        getWeek3TopPerformers(
                             roster.roster_id
                         ),
 
@@ -447,7 +467,7 @@
             new Date().toISOString(),
 
         week:
-            3,
+            4,
 
         teams:
             powerData
