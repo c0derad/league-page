@@ -543,30 +543,29 @@ export const weeklyBestBets = {
 
         intro: `
             Week 3: 8-2.
-
+        
             Week 4: 7-3.
-
+        
             Overall: 15-5.
-
-            At standard -110 pricing and one unit risked per play, the board is sitting
-            at approximately +8.6 units through 20 bets.
-
-            This was supposed to be a fun little model page.
-
-            It is becoming increasingly difficult to treat it that way.
-
-            Week 5 starts Thursday night with North Texas at Tulsa, so there will be no
-            waiting around until Saturday to discover whether the heater continues.
-
-            Ten more plays.
-
-            No parlays.
-
-            No teasers.
-
-            No emotional hedging.
-
-            Just the computer continuing to make accusations.
+        
+            Approximately +8.6 units through 20 plays.
+        
+            At some point, a hot start stops being a hot start and becomes evidence.
+        
+            We are not quite there yet.
+        
+            But 15-5 is beginning to make the Czar uncomfortable in a very specific way:
+            expectations now exist.
+        
+            Week 5 starts tonight with North Texas at Tulsa, so there will be no easing into
+            the weekend and no waiting until Saturday to find out whether the model still
+            knows ball.
+        
+            Ten more plays are on the board.
+        
+            The heater continues until proven otherwise.
+        
+            Week 5.
         `,
 
         bets: [
