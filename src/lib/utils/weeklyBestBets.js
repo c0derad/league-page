@@ -533,5 +533,327 @@ export const weeklyBestBets = {
                 `
             }
         ]
+    },
+
+    5: {
+        year: 2026,
+        ncaaWeek: 5,
+
+        title: "Week 5 Best Bets",
+
+        intro: `
+            Week 3: 8-2.
+
+            Week 4: 7-3.
+
+            Overall: 15-5.
+
+            At standard -110 pricing and one unit risked per play, the board is sitting
+            at approximately +8.6 units through 20 bets.
+
+            This was supposed to be a fun little model page.
+
+            It is becoming increasingly difficult to treat it that way.
+
+            Week 5 starts Thursday night with North Texas at Tulsa, so there will be no
+            waiting around until Saturday to discover whether the heater continues.
+
+            Ten more plays.
+
+            No parlays.
+
+            No teasers.
+
+            No emotional hedging.
+
+            Just the computer continuing to make accusations.
+        `,
+
+        bets: [
+            {
+                rank: 1,
+
+                team: "North Texas",
+                teamSlug: "north-texas",
+
+                pick: "North Texas -1.5",
+
+                commentary: `
+                    We begin immediately.
+
+                    North Texas enters Thursday night with one of the most productive
+                    offenses in the country.
+
+                    Tayven Jackson has been brutally efficient, and North Texas has shown
+                    the ability to put pressure on an opponent quickly when the offense
+                    gets rolling.
+
+                    Tulsa's defense is legitimate.
+
+                    The problem is asking the Tulsa offense to keep pace if North Texas
+                    turns this into anything resembling a track meet.
+
+                    The market has been volatile here.
+
+                    The model landed on the Mean Green.
+
+                    No easing into Week 5.
+
+                    North Texas -1.5.
+                `
+            },
+
+            {
+                rank: 2,
+
+                team: "Arizona State",
+                teamSlug: "arizona-state",
+
+                pick: "Arizona State -3.5",
+
+                commentary: `
+                    Baylor is capable of making this annoying.
+
+                    Arizona State gets the game in Tempe and has already shown it can win
+                    a close conference game away from home.
+
+                    Baylor's defensive front has been disruptive, so this is not a spot
+                    where I want to lay a massive number.
+
+                    Fortunately, we are not.
+
+                    Three and a half keeps this within a range where Arizona State can
+                    win a normal football game and still get us there.
+
+                    Trust the Sun Devils at home.
+
+                    Arizona State -3.5.
+                `
+            },
+
+            {
+                rank: 3,
+
+                team: "Kentucky",
+                teamSlug: "kentucky",
+
+                pick: "Kentucky +3.5",
+
+                commentary: `
+                    This is exactly the kind of dog I want.
+
+                    More than a field goal.
+
+                    Kentucky does not need to control this game for four quarters.
+
+                    South Carolina can win the game and we can still cash.
+
+                    The Wildcats simply need to keep this inside one possession and avoid
+                    giving the Gamecocks cheap points.
+
+                    Having the hook matters.
+
+                    Give me Kentucky +3.5.
+                `
+            },
+
+            {
+                rank: 4,
+
+                team: "Miami",
+                teamSlug: "miami",
+
+                pick: "Miami -16.5",
+
+                commentary: `
+                    Clemson has stabilized after the ugly start.
+
+                    Congratulations.
+
+                    Miami is a different assignment.
+
+                    The Hurricanes have the kind of offensive ceiling Clemson has not shown
+                    it can consistently match.
+
+                    Clemson's defense is capable of keeping this respectable for a while.
+
+                    The question is what happens if Miami gets ahead and forces the Tigers
+                    to chase points.
+
+                    That is where this can separate quickly.
+
+                    Big number on the road.
+
+                    The model does not care.
+
+                    Miami -16.5.
+                `
+            },
+
+            {
+                rank: 5,
+
+                team: "Southern California",
+                teamSlug: "southern-california",
+
+                pick: "USC -9.5",
+
+                commentary: `
+                    USC's offense remains the reason to play this.
+
+                    Jayden Maiava and the Trojans have enough firepower to force Washington
+                    into a game where simply playing conservatively will not be enough.
+
+                    The concern is USC's defense.
+
+                    It has been shaky enough that laying nearly ten will never feel completely
+                    comfortable.
+
+                    But if the Trojans create the game script they want, Washington eventually
+                    has to start answering touchdowns with touchdowns.
+
+                    I trust USC's offense more.
+
+                    USC -9.5.
+                `
+            },
+
+            {
+                rank: 6,
+
+                team: "Tennessee",
+                teamSlug: "tennessee",
+
+                pick: "Tennessee -7.5",
+
+                commentary: `
+                    This one comes with a warning label.
+
+                    Tennessee's offensive line has had problems, and laying more than a
+                    touchdown is not exactly a relaxing experience.
+
+                    Auburn now walks into Neyland against a Tennessee team that should have
+                    very little difficulty finding motivation.
+
+                    The Vols have the higher offensive ceiling and the home environment.
+
+                    Seven and a half is uncomfortable.
+
+                    The model still wants Tennessee.
+
+                    We follow the model.
+
+                    Tennessee -7.5.
+                `
+            },
+
+            {
+                rank: 7,
+
+                team: "BYU",
+                teamSlug: "byu",
+
+                pick: "BYU -6.5",
+
+                commentary: `
+                    BYU has been one of the cleaner teams on the board so far.
+
+                    TCU gets this at home, which is the main reason the number stays below
+                    a touchdown.
+
+                    That matters.
+
+                    So does getting BYU at 6.5 rather than crossing through seven.
+
+                    TCU has enough offensive talent to turn this into a real game.
+
+                    I still trust the Cougars to create enough separation.
+
+                    BYU -6.5.
+                `
+            },
+
+            {
+                rank: 8,
+
+                team: "California",
+                teamSlug: "california",
+
+                pick: "Cal +2.5",
+
+                commentary: `
+                    Two inconsistent teams.
+
+                    Essentially a field goal.
+
+                    Give me the dog.
+
+                    Neither Cal nor UNLV has earned the right to be trusted with a meaningful
+                    spread here.
+
+                    Cal does not need to prove it is substantially better.
+
+                    It needs to keep this game within one score deep into the fourth quarter.
+
+                    At +2.5, I'll take that bet.
+
+                    Cal +2.5.
+                `
+            },
+
+            {
+                rank: 9,
+
+                team: "Nebraska",
+                teamSlug: "nebraska",
+
+                pick: "Nebraska -14.5",
+
+                commentary: `
+                    Maryland just got demolished.
+
+                    Now the Terps travel to Lincoln.
+
+                    Nebraska's defense has the ability to create pressure, and this is the
+                    kind of matchup where Maryland cannot afford to spend the afternoon
+                    playing behind the chains.
+
+                    Two touchdowns and the hook is a significant number.
+
+                    After what Maryland just put on film, I am willing to lay it.
+
+                    Nebraska -14.5.
+                `
+            },
+
+            {
+                rank: 10,
+
+                team: "Louisville",
+                teamSlug: "louisville",
+
+                pick: "Louisville -3.5",
+
+                commentary: `
+                    Louisville is coming off a loss.
+
+                    That is the bad news.
+
+                    The good news is the number.
+
+                    At -3.5, we are asking Louisville to win by more than a field goal against
+                    an NC State team that has shown enough defensive vulnerability to make
+                    that very possible.
+
+                    Quarterback availability is the variable worth monitoring.
+
+                    But the pick is already on the board.
+
+                    The model wants Louisville.
+
+                    Louisville -3.5.
+                `
+            }
+        ]
     }
 };
