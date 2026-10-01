@@ -790,65 +790,104 @@ export const weeklyPreviews = {
         pick: "The Car Bombs"
       },
 
-      3: {
-        headline: "THE TRADE BOWL",
-        preview: `
-          This is tremendous scheduling.
+          3: {
+      headline: "THE TRADE BOWL: Somebody Has to Win",
+      preview: `
+        This is tremendous scheduling.
 
-          Chaney and Jansen spent the beginning of the week swapping major pieces
-          of their rosters.
+        The Oilers are 0-3.
 
-          Now they immediately play each other.
+        #FreeTony is 0-3.
 
-          Jansen's side of the final blockbuster:
+        Chaney and Jansen just completed the biggest roster swap of the week.
 
-          Puka Nacua.
+        And now they immediately play each other.
 
-          Kyren Williams.
+        One of these teams is probably leaving Week 4 with its first win.
 
-          Chaney's side:
+        The other is staring directly at 0-4.
 
-          CeeDee Lamb.
+        Jansen's side of the blockbuster:
 
-          Omarion Hampton.
+        Puka Nacua.
 
-          No waiting period.
+        Kyren Williams.
 
-          No time to emotionally process the transaction.
+        Chaney's side:
 
-          We grade the trade immediately.
+        CeeDee Lamb.
 
-          The Oilers badly needed something to change. Chaney followed an 83.58
-          in Week 2 with an 83.18 in Week 3 and earned Low Man.
+        Omarion Hampton.
 
-          The new-look roster now gives him CeeDee alongside Nico Collins, Joe
-          Burrow, David Montgomery, Alvin Kamara, Hampton and Dalton Kincaid.
+        No waiting period.
 
-          Nico is working his way back from the hamstring injury and returned to
-          practice in a limited capacity Wednesday.
+        No time to emotionally process the transaction.
 
-          Jansen enters from the opposite direction.
+        We grade the trade immediately.
 
-          #FreeTony is somehow 0-3 despite opening the season with 136.56 and
-          spending most of September looking considerably better than the record.
+        The funny part is that these two teams arrived at 0-3 in completely
+        different ways.
 
-          Lamar Jackson remains the centerpiece, Zay Flowers gives him another
-          weekly ceiling play, Jaylen Warren is projected for 18.57, and the
-          newly acquired Rams stack of Puka and Kyren gets its first audition.
+        Chaney opened with a respectable 129.46, then the entire operation
+        collapsed.
 
-          More importantly, Sean McVay now expects Puka to return this week after
-          he missed the last two games.
+        83.58.
 
-          Sleeper currently projects #FreeTony for 128.02 and The Oilers for 114.26.
+        83.18.
 
-          Chaney may eventually win this trade.
+        Low Man.
 
-          I do not think he wins the first game after it.
+        The Oilers needed a roster shock, and Chaney finally delivered one.
 
-          J-Bone finally gets on the board.
-        `,
-        pick: "#FreeTony"
-      },
+        The new-look lineup now gives him CeeDee alongside Nico Collins, Joe
+        Burrow, David Montgomery, Alvin Kamara, Hampton and Dalton Kincaid.
+
+        Nico is also working his way back from the hamstring injury and returned
+        to practice in a limited capacity Wednesday.
+
+        Jansen's 0-3 has been considerably more cruel.
+
+        #FreeTony opened with 136.56.
+
+        Then 118.50.
+
+        Then 98.34.
+
+        He has spent most of September looking better than his record while
+        somehow continuing to collect losses.
+
+        Then De'Von Achane went down for the season and J-Bone responded by
+        rebuilding the roster in about 24 hours.
+
+        Lamar Jackson remains the centerpiece.
+
+        Zay Flowers gives him another weekly ceiling play.
+
+        Jaylen Warren is projected for 18.57.
+
+        And the newly acquired Rams combination of Puka and Kyren gets its first
+        audition against the manager who just traded them away.
+
+        Better yet, Sean McVay now expects Puka to return after missing the last
+        two games.
+
+        Sleeper currently projects #FreeTony for 128.02 and The Oilers for 114.26.
+
+        This is not just the Trade Bowl.
+
+        This is two desperate 0-3 teams attempting to prove that the moves they
+        just made actually fixed something.
+
+        Somebody gets validation.
+
+        Somebody gets 0-4.
+
+        I think Jansen finally gets off the mat.
+
+        J-Bone gets his first win.
+      `,
+      pick: "#FreeTony"
+    },
 
       4: {
         headline: "Trevor Gets a Chance to Bury the T2 Renaissance",
