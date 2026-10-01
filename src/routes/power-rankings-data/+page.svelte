@@ -869,10 +869,15 @@
                                 roster.roster_id
                             ),
 
+                        week4MatchupID:
+                            getWeek4Matchup(
+                                roster.roster_id
+                            )?.matchup_id ?? null,
+                        
                         week4Opponent:
                             opponent?.name ||
                             null,
-
+                        
                         week4Projection:
                             getProjectedPoints(
                                 roster,
