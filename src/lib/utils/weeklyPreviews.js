@@ -667,6 +667,358 @@ export const weeklyPreviews = {
         pick: "Charles"
       }
     }
+  },
+    4: {
+    intro: `
+      Week 4 is here, and apparently the league spent the last 72 hours treating
+      the trade button like cocaine.
+
+      JV has finally been removed from both the undefeated list and the top of
+      the Power Rankings.
+
+      Ryan and JQ are both 3-0, ranked first and third, and now get to settle
+      the argument directly.
+
+      Jansen and Chaney completed a blockbuster trade and were immediately
+      scheduled against each other because fantasy football occasionally has
+      a sense of humor.
+
+      T2 traded Justin Jefferson after scoring below 100 in consecutive weeks.
+
+      Vigo acquired Justin Jefferson while sitting 0-3 and currently averaging
+      fewer points every single week.
+
+      Rhodes x Pags have somehow gone from 77 points and ROSTER JAIL to one of
+      the hottest teams in the league.
+
+      And The Car Bombs are attempting to establish that 154.56 was not merely
+      an elaborate rebranding stunt.
+
+      The Czar enters Week 4 at 10-8 on picks.
+
+      Six more judgments are below.
+    `,
+
+    matchups: {
+      1: {
+        headline: "JV vs. The League's Hottest Parolees",
+        preview: `
+          Sleeper has PeterPanthers favored by more than 17 points.
+
+          That would normally make this the easiest pick on the board.
+
+          There is one problem.
+
+          Rhodes x Pags have apparently learned how to play fantasy football.
+
+          After scoring 77.30 in Week 1, the two-man front office followed with
+          136.08 and then 147.80. Bijan Robinson just scored 35.3. Brock Bowers
+          scored 27.6. Matthew Stafford threw for 390 yards. Davante Adams went
+          for 137 receiving yards.
+
+          This is no longer the same team JV would have been thrilled to see on
+          the schedule two weeks ago.
+
+          Unfortunately for Rhodes and Pags, JV did not exactly collapse when
+          The Car Bombs handed him his first loss.
+
+          PeterPanthers still scored 142.04.
+
+          Jahmyr Gibbs scored 41.4 by himself, and the Week 4 lineup still has
+          Gibbs, Chris Olave, Trey McBride and D'Andre Swift carrying some of
+          the strongest projections on the board.
+
+          Sleeper currently has JV at 134.70 and Rhodes x Pags at 117.66.
+
+          I think 17 points is disrespectful to what Rhodes x Pags have done
+          over the last two weeks.
+
+          I also think JV is still better.
+
+          The parolees make this uncomfortable.
+
+          PeterPanthers survives.
+        `,
+        pick: "PeterPanthers"
+      },
+
+      2: {
+        headline: "The Rebrand Gets Its First Cupcake",
+        preview: `
+          The Car Bombs are undefeated.
+
+          Please ignore all league records created before the name change.
+
+          The newly operational franchise debuted by scoring 154.56, taking
+          High Man and handing JV his first loss of the season.
+
+          Now comes Vigo.
+
+          Retardinals has gone from 99.76 to 89.92 to 84.28.
+
+          That is not a scoring trend.
+
+          That is a controlled descent into the earth.
+
+          To Vigo's credit, he finally responded aggressively. Aaron Jones and
+          Deebo Samuel were shipped to T2 for Justin Jefferson, and Brian Robinson
+          was added afterward.
+
+          Jefferson immediately gives Retardinals the kind of player capable of
+          changing an entire matchup.
+
+          There is just one slight issue.
+
+          He is currently dealing with an ankle sprain after leaving Minnesota's
+          Week 3 game and did not practice Wednesday.
+
+          Meanwhile, The Car Bombs have Ja'Marr Chase, Drake London, Cam Skattebo
+          and Javonte Williams all carrying solid Week 4 projections after the
+          offense finally exploded last week.
+
+          Tyler Shough is currently sitting in the QB spot after Drake "Drake Maye"
+          Maye's Week 3 act of football terrorism.
+
+          Sleeper currently sees this 121.74 to 106.89.
+
+          I have a sacred obligation to always pick the regime.
+
+          Fortunately, this week I do not need to lie to accomplish it.
+
+          The Car Bombs move to 2-2.
+        `,
+        pick: "The Car Bombs"
+      },
+
+      3: {
+        headline: "THE TRADE BOWL",
+        preview: `
+          This is tremendous scheduling.
+
+          Chaney and Jansen spent the beginning of the week swapping major pieces
+          of their rosters.
+
+          Now they immediately play each other.
+
+          Jansen's side of the final blockbuster:
+
+          Puka Nacua.
+
+          Kyren Williams.
+
+          Chaney's side:
+
+          CeeDee Lamb.
+
+          Omarion Hampton.
+
+          No waiting period.
+
+          No time to emotionally process the transaction.
+
+          We grade the trade immediately.
+
+          The Oilers badly needed something to change. Chaney followed an 83.58
+          in Week 2 with an 83.18 in Week 3 and earned Low Man.
+
+          The new-look roster now gives him CeeDee alongside Nico Collins, Joe
+          Burrow, David Montgomery, Alvin Kamara, Hampton and Dalton Kincaid.
+
+          Nico is working his way back from the hamstring injury and returned to
+          practice in a limited capacity Wednesday.
+
+          Jansen enters from the opposite direction.
+
+          #FreeTony is somehow 0-3 despite opening the season with 136.56 and
+          spending most of September looking considerably better than the record.
+
+          Lamar Jackson remains the centerpiece, Zay Flowers gives him another
+          weekly ceiling play, Jaylen Warren is projected for 18.57, and the
+          newly acquired Rams stack of Puka and Kyren gets its first audition.
+
+          More importantly, Sean McVay now expects Puka to return this week after
+          he missed the last two games.
+
+          Sleeper currently projects #FreeTony for 128.02 and The Oilers for 114.26.
+
+          Chaney may eventually win this trade.
+
+          I do not think he wins the first game after it.
+
+          J-Bone finally gets on the board.
+        `,
+        pick: "#FreeTony"
+      },
+
+      4: {
+        headline: "Trevor Gets a Chance to Bury the T2 Renaissance",
+        preview: `
+          Remember Week 1?
+
+          T2 scored 145.50 and briefly forced the league to consider the possibility
+          that last year's 1-13 disaster had been left in the past.
+
+          Then Big frydown scored 81.66.
+
+          Then 92.54.
+
+          Investigation closed.
+
+          T2 responded by trading away Justin Jefferson for Aaron Jones and
+          Deebo Samuel, turning one elite asset into two potential starters.
+
+          There is a coherent roster-building argument there.
+
+          There is also the unavoidable reality that the sentence "T2 traded
+          Justin Jefferson" is extremely funny.
+
+          Trevor enters from the opposite direction.
+
+          Show Me Your TDs has scored 124.40, 132.86 and 127.28.
+
+          Three weeks.
+
+          Three competent performances.
+
+          James Cook, Chuba Hubbard, Christian Watson and DeVonta Smith give Trevor
+          a balanced group around Trevor Lawrence, and Luther Burden is now on the
+          roster after the Hampton trade.
+
+          Sleeper sees Trevor ahead 119.07 to 106.85.
+
+          Dak, Saquon, Bucky, Aaron Jones, Deebo and Ladd give T2 enough recognizable
+          names that an upset would not be shocking.
+
+          But at some point we have to stop treating Week 1 like evidence.
+
+          Trevor has been better for three straight weeks.
+
+          Give me The Bear.
+        `,
+        pick: "Show Me Your TDs"
+      },
+
+      5: {
+        headline: "3-0 Meets the Sun God",
+        preview: `
+          This matchup is better than it looked yesterday.
+
+          Moore Oil Coming is 3-0 and now carries a 128.90 projection.
+
+          Charles is 2-1 and has climbed back to 120.19.
+
+          Josh still possesses one of the most disgusting top-end combinations
+          in the league.
+
+          Josh Allen.
+
+          JSN.
+
+          Kenneth Walker.
+
+          Those three have already shown they can win an entire fantasy matchup
+          without asking permission from the rest of the lineup.
+
+          JSN scored 35.36 last week.
+
+          Walker scored 21.3.
+
+          Allen had what qualifies as a mediocre Josh Allen game and still scored 19.46.
+
+          Charles has the kind of stars necessary to answer.
+
+          Derrick Henry.
+
+          Jalen Hurts.
+
+          Tee Higgins.
+
+          And The Sun God.
+
+          Amon-Ra can take a normal-looking receiving line and turn it into 30
+          fantasy points before anyone notices what happened.
+
+          The issue is underneath that group.
+
+          Breece Hall is dealing with the quad injury that knocked him out late
+          last week and did not practice Wednesday. His status matters substantially
+          to Charles' ceiling.
+
+          Even without a healthy Breece, Charles can absolutely win this if Hurts,
+          Henry and Amon-Ra hit together.
+
+          But Josh has been the more reliable offense through three weeks.
+
+          The undefeated run continues.
+        `,
+        pick: "Moore Oil Coming"
+      },
+
+      6: {
+        headline: "GAME OF THE WEEK: Somebody's 0 Has to Go",
+        preview: `
+          This is why we have Power Rankings.
+
+          Ryan is 3-0.
+
+          JQ is 3-0.
+
+          Ryan just took over the No. 1 spot.
+
+          Campus Legends is ranked third.
+
+          And Sleeper currently favors JQ.
+
+          Perfect.
+
+          Naberhood Sex Offender has been the model of consistency:
+
+          128.80.
+
+          133.98.
+
+          123.28.
+
+          Ryan even left 52.96 points on the bench last week and still won by
+          more than 30.
+
+          Jonathan Taylor projects for 21.58. Brock Purdy sits at 20.06. Parker
+          Washington, Ashton Jeanty and Tetairoa McMillan all give Ryan additional
+          ways to score without requiring one player to go nuclear.
+
+          Campus is arguably even scarier right now.
+
+          JQ's weekly scoring has gone:
+
+          101.46.
+
+          119.88.
+
+          142.04.
+
+          Patrick Mahomes, Garrett Wilson and Christian McCaffrey are all projected
+          above 18, while Jeremiyah Love has emerged as another legitimate weapon.
+
+          Sleeper currently has Campus Legends at 133.49 and Naberhood at 127.86.
+
+          That is the smallest projected margin of the week.
+
+          It is also the highest projected total.
+
+          There is a perfectly reasonable argument to simply trust the projection
+          and take JQ.
+
+          I am not doing it.
+
+          We just put Ryan at No. 1 in the Power Rankings.
+
+          The crown comes with responsibilities.
+
+          Defend it.
+        `,
+        pick: "Naberhood Sex Offender"
+      }
+    }
   }
 
 };
