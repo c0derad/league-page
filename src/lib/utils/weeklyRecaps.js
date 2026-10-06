@@ -973,5 +973,544 @@ export const weeklyRecaps = {
         `
       }
     }
+  },
+    4: {
+    intro: `
+      Week 4 is officially in the books.
+
+      And the league has a king.
+
+      Ryan entered the week 3-0, was elevated to No. 1 in the Czar Power Rankings,
+      and was immediately handed a matchup against the other 3-0 team everyone
+      was beginning to take seriously.
+
+      His response was 160.32 points.
+
+      Naberhood Sex Offender takes High Man, beats Campus Legends by 71.32,
+      and emerges from Week 4 as the only undefeated team left in the league.
+
+      Four games.
+
+      Four wins.
+
+      The crown has been defended.
+
+      Elsewhere, the Trade Bowl delivered exactly what was promised.
+
+      Jansen and Chaney entered 0-3, completed a blockbuster trade with each other,
+      and then immediately combined for 299.10 fantasy points.
+
+      #FreeTony finally got its first win.
+
+      The Oilers somehow scored 141.22 and fell to 0-4.
+
+      Vigo also finally got off the mat, using an absurd Monday Night Football
+      performance from Brian Robinson to hand The Car Bombs their first loss
+      in franchise history.
+
+      The Czar benched Drake Maye.
+
+      Maye apparently received the message.
+
+      Worth it.
+
+      T2 took Low Man again.
+
+      Trevor quietly improved to 3-1.
+
+      Charles handed Moore Oil Coming its first loss.
+
+      JV survived Rhodes x Pags by 2.58 in the closest game of the week.
+
+      Rhodes x Pags also left 57.6 points on the bench, because apparently having
+      two managers does not guarantee that either one of them will start the
+      correct players.
+
+      Naberhood Sex Offender takes High Man at 160.32.
+
+      Big frydown takes Low Man at 87.
+
+      Ryan delivered the biggest ass beating of the season so far.
+
+      JV survived the closest game.
+
+      The Czar went 4-2 on Week 4 picks and now sits at 14-10 on the season.
+
+      Four weeks down.
+
+      Ryan remains undefeated.
+
+      Everybody else has blood on them.
+    `,
+
+    matchups: {
+      1: {
+        headline: "JV Survives the Parolees by 2.58",
+        recap: `
+          This was supposed to be the projected ass beating of the week.
+
+          Sleeper had PeterPanthers favored by more than 17.
+
+          Instead, Rhodes x Pags came within 2.58 points of pulling the upset.
+
+          Final score:
+
+          PeterPanthers 110.76.
+
+          Rhodes x Pags 108.18.
+
+          JV survives.
+
+          Barely.
+
+          Bryce Young ended up being the difference for PeterPanthers.
+
+          He completed 29 of 41 passes for 329 yards and two touchdowns and finished
+          with 21.46 fantasy points.
+
+          Chris Olave added eight catches for 116 yards and 19.6.
+
+          Jake Bates somehow contributed another 18 from the kicker spot.
+
+          That was enough.
+
+          Rhodes x Pags got the better individual explosions.
+
+          Bijan Robinson ran for 145 yards and two touchdowns and scored 27.7.
+
+          Quinshon Judkins added 21.6 with 96 total yards and a touchdown.
+
+          Brock Bowers caught six passes for 86 yards and a score for 20.6.
+
+          Three players over 20.
+
+          Loss.
+
+          And now we address the actual crime.
+
+          Rhodes x Pags left 57.6 points on the bench.
+
+          Most in the league.
+
+          Two managers.
+
+          Fifty-seven point six bench points.
+
+          A 2.58-point loss.
+
+          There are some equations even the Czar cannot make more insulting.
+
+          JV improves to 3-1.
+
+          Rhodes x Pags falls to 1-3.
+
+          The parolees nearly pulled it off.
+
+          Instead, they have been returned to supervised release.
+        `
+      },
+
+      2: {
+        headline: "Vigo Finally Wins and the Car Bombs Finally Misfire",
+        recap: `
+          The Car Bombs' undefeated franchise history lasted exactly one week.
+
+          Honestly, it was a good run.
+
+          The Czar entered Week 4 coming off High Man and drew the only 0-3 team
+          in the league averaging fewer points every week.
+
+          Naturally, Vigo scored 127.48.
+
+          The Car Bombs scored 111.74.
+
+          Retardinals wins by 15.74.
+
+          Javonte Williams did everything he could to prevent the upset.
+
+          Nineteen carries.
+
+          Sixty-two rushing yards.
+
+          Three touchdowns.
+
+          Five catches.
+
+          31.3 fantasy points.
+
+          Tyler Shough added 15.94.
+
+          Drake London gave the Czar another 14.6.
+
+          It was not enough.
+
+          Vigo got 23.08 from C.J. Stroud and 19.1 from Chase Brown.
+
+          But this game was decided on Monday night.
+
+          Brian Robinson entered the evening and proceeded to score three rushing
+          touchdowns against New Orleans.
+
+          Twenty-five point seven fantasy points.
+
+          An absolutely absurd closing act from a player Vigo had only recently added.
+
+          Retardinals went from staring at 0-4 to suddenly handing the reigning
+          High Man a loss on national television.
+
+          And yes.
+
+          The Czar benched Drake "Drake Maye" Maye after his 5.76-point disaster
+          the previous week.
+
+          Maye apparently took that personally.
+
+          Good.
+
+          This was not a mistake.
+
+          This was leadership.
+
+          Sometimes a young quarterback needs to understand that actions have consequences.
+
+          The Car Bombs lost the battle.
+
+          The quarterback development program remains on schedule.
+
+          WORTH IT.
+
+          Vigo improves to 1-3.
+
+          The Car Bombs fall to 1-3.
+
+          The Czar picked himself.
+
+          Obviously.
+
+          The Czar was wrong.
+
+          Less obviously.
+        `
+      },
+
+      3: {
+        headline: "THE TRADE BOWL DELIVERED",
+        recap: `
+          Two 0-3 teams entered.
+
+          One of them had to leave with a win.
+
+          And apparently both decided the appropriate response was to score like
+          championship contenders.
+
+          #FreeTony beat The Oilers 157.88 to 141.22.
+
+          Read Chaney's score again.
+
+          141.22.
+
+          Third-highest score in the entire league.
+
+          Loss.
+
+          The Oilers are now 0-4.
+
+          Fantasy football is a deeply stupid game.
+
+          And the Trade Bowl could not have produced a better immediate referendum
+          on the deal these teams just completed.
+
+          Chaney received CeeDee Lamb and Omarion Hampton.
+
+          CeeDee responded by catching 17 passes for 189 yards and a touchdown.
+
+          Forty-one point three fantasy points.
+
+          Nico Collins returned and immediately added 30.8 with 118 yards and
+          two touchdowns.
+
+          Joe Burrow threw for 428 yards and scored 25.72.
+
+          Chaney received 97.82 points from those three players alone.
+
+          He lost.
+
+          Because Jansen's new toys were even more disrespectful.
+
+          Kyren Williams:
+
+          36.7.
+
+          Puka Nacua:
+
+          27.7.
+
+          That is 64.4 fantasy points from the two players Jansen acquired from Chaney.
+
+          In their first game.
+
+          Against Chaney.
+
+          Zay Flowers then added 25.8 because apparently the revenge narrative
+          required additional violence.
+
+          #FreeTony finished with 157.88, the second-highest score of Week 4.
+
+          Jansen finally gets his first win and moves to 1-3.
+
+          Chaney falls to 0-4 despite finally getting the offensive explosion he
+          has been waiting a month to see.
+
+          We are not declaring a long-term winner of the trade after one game.
+
+          We are absolutely declaring a Week 4 winner.
+
+          J-Bone won the Trade Bowl.
+
+          Convincingly.
+        `
+      },
+
+      4: {
+        headline: "T2 Has Now Taken Low Man Twice in Four Weeks",
+        recap: `
+          Week 1 continues to become less believable.
+
+          Big frydown opened the season with 145.50.
+
+          Since then:
+
+          81.66.
+
+          92.54.
+
+          87.
+
+          T2 takes Week 4 Low Man.
+
+          Again.
+
+          That means four weeks into the season, the man who went 1-13 last year
+          has already claimed Low Man twice.
+
+          Nature is healing.
+
+          Dak Prescott led Big frydown with 18.1.
+
+          Aaron Jones added 16.8.
+
+          Tucker Kraft scored 16.5.
+
+          Nobody reached 20.
+
+          Nobody rescued the lineup.
+
+          And after trading Justin Jefferson during the week, T2's newly reworked
+          roster immediately produced its second-worst score of the season.
+
+          Trevor did not need anything spectacular to win.
+
+          Chuba Hubbard handled that problem himself.
+
+          Twenty carries.
+
+          122 rushing yards.
+
+          Two touchdowns.
+
+          25.9 fantasy points.
+
+          Sam LaPorta added 22.4.
+
+          James Cook chipped in 16.3.
+
+          Show Me Your TDs finished at 109.08.
+
+          Not a monster score.
+
+          It did not need to be.
+
+          Trevor wins by 22.08 and quietly improves to 3-1.
+
+          T2 falls to 1-3.
+
+          Last season's 1-13 record was beginning to feel like ancient history
+          after Week 1.
+
+          Four weeks in, it has begun appearing in the rearview mirror again.
+
+          Low Man means press conference.
+
+          Low Man means beer.
+
+          Welcome back, T2.
+        `
+      },
+
+      5: {
+        headline: "Charles Ends Josh's Undefeated Run",
+        recap: `
+          And then there was one.
+
+          Moore Oil Coming entered Week 4 at 3-0.
+
+          Charles entered at 2-1.
+
+          The Czar picked Josh.
+
+          Charles objected.
+
+          Final score:
+
+          Charles 123.02.
+
+          Moore Oil Coming 116.52.
+
+          Charles wins by 6.5.
+
+          Tee Higgins was the difference.
+
+          Eleven catches.
+
+          157 yards.
+
+          26.7 fantasy points.
+
+          Rhamondre Stevenson added 18.4.
+
+          Derrick Henry added 15.9.
+
+          Charles did not need a 40-point explosion from The Sun God or a nuclear
+          Jalen Hurts game.
+
+          The lineup simply produced enough everywhere.
+
+          Josh certainly had chances.
+
+          Kenneth Walker ran for 177 yards and two touchdowns and scored 30.9.
+
+          Josh Allen added 19.52.
+
+          Cam Little somehow kicked his way to another 14.
+
+          But the remaining lineup could not finish the job.
+
+          Moore Oil Coming also left 49.6 points on the bench, second only to the
+          Rhodes x Pags managerial symposium.
+
+          Through three weeks, Josh looked nearly bulletproof.
+
+          Week 4 provided the first hole.
+
+          Charles improves to 3-1.
+
+          Josh falls to 3-1.
+
+          And the league enters Week 5 with exactly one undefeated team remaining.
+
+          Unfortunately for everyone else, we still need to discuss him.
+        `
+      },
+
+      6: {
+        headline: "Ryan Was Crowned No. 1 and Responded With a Public Execution",
+        recap: `
+          This was supposed to be the Game of the Week.
+
+          Two undefeated teams.
+
+          Ryan at 3-0.
+
+          JQ at 3-0.
+
+          Naberhood Sex Offender had just been elevated to No. 1 in the Czar
+          Power Rankings.
+
+          Campus Legends was ranked third and actually entered the matchup with
+          the higher projection.
+
+          We wanted a heavyweight fight.
+
+          Ryan gave us a homicide.
+
+          Naberhood Sex Offender 160.32.
+
+          Campus Legends 89.
+
+          Final margin:
+
+          71.32.
+
+          High Man.
+
+          Biggest ass beating of the week.
+
+          Biggest ass beating of the season so far.
+
+          And the only remaining undefeated record in TouchDown Syndrome.
+
+          Tetairoa McMillan was completely absurd.
+
+          Fourteen catches on 16 targets.
+
+          192 receiving yards.
+
+          Two touchdowns.
+
+          45.2 fantasy points.
+
+          Malik Nabers added six catches for 112 yards and a touchdown.
+
+          23.2.
+
+          Jonathan Taylor ran for 95 yards and two more touchdowns.
+
+          22.7.
+
+          Three players combined for 91.1 fantasy points.
+
+          That alone would have beaten JQ's entire team.
+
+          Campus Legends finished with 89.
+
+          The leading scorer was Will Reichard.
+
+          The kicker.
+
+          Nineteen points.
+
+          Patrick Mahomes scored 17.
+
+          Christian McCaffrey scored 16.
+
+          And that was essentially the list of good news.
+
+          Just to make the afternoon even more offensive, JQ also left 53.6 points
+          on his bench.
+
+          It would not have mattered.
+
+          He could have managed the lineup perfectly and still spent Sunday trapped
+          underneath the Ryan avalanche.
+
+          Ryan also had 41.18 points sitting on his own bench.
+
+          This was not one lucky lineup hitting its ceiling.
+
+          This roster is deep.
+
+          This roster is 4-0.
+
+          And after being placed at No. 1, Ryan responded by producing the highest
+          score of the week and the largest victory of the season.
+
+          There will be no debate this week.
+
+          The throne belongs to Naberhood Sex Offender.
+
+          Everyone else is currently playing for second.
+        `
+      }
+    }
   }
 };
