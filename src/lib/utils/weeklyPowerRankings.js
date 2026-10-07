@@ -1750,5 +1750,949 @@ export const weeklyPowerRankings = {
                 `
             }
         ]
+    },
+        5: {
+        title: "Week 5 Czar Power Rankings",
+
+        intro: `
+            Four weeks in, we finally have enough evidence to stop treating every Sunday
+            like a complete rewrite of the league.
+
+            Week 4 was loud.
+
+            Ryan scored 160.32 and beat JQ by 71.32.
+
+            Jansen scored 157.88 and finally got his first win.
+
+            Chaney scored 141.22 and somehow did not.
+
+            Vigo finally won.
+
+            T2 took Low Man again.
+
+            Charles handed Josh his first loss.
+
+            And The Car Bombs discovered that apparently even a successful corporate
+            rebrand cannot defeat three Brian Robinson touchdowns on Monday night.
+
+            But these rankings are not a Week 4 leaderboard.
+
+            Four weeks matter more than one.
+
+            So JQ is not being launched into the basement because of one disaster.
+
+            Jansen is not jumping six spots because of one explosion.
+
+            Chaney is not suddenly a contender because the offense finally woke up.
+
+            And JV is not being punished heavily for surviving an ugly week after spending
+            the first month scoring more points than everybody else.
+
+            The goal is still the same:
+
+            Who looks strongest right now based on the entire body of work?
+
+            Record matters.
+
+            Scoring matters.
+
+            Roster construction matters.
+
+            Current health and Week 5 projection matter.
+
+            But one Sunday does not erase the previous three.
+
+            Movement is measured against last week's rankings.
+
+            Welcome to Week 5.
+        `,
+
+        rankings: [
+            {
+                rank: 1,
+                previousRank: 1,
+                movement: 0,
+                rosterID: 8,
+                team: "Naberhood Sex Offender",
+                record: "4-0",
+                week1Score: 128.80,
+                week2Score: 133.98,
+                week3Score: 123.28,
+                week4Score: 160.32,
+                week5Projection: 121.72,
+                headline: "The Crown Was Not Ceremonial",
+                commentary: `
+                    There is no debate at No. 1.
+
+                    Last week Ryan was given the throne.
+
+                    Then he was immediately scheduled against the other undefeated team in
+                    the league.
+
+                    His response:
+
+                    160.32.
+
+                    High Man.
+
+                    A 71.32-point win.
+
+                    And the only 4-0 record left in TouchDown Syndrome.
+
+                    Naberhood Sex Offender has now scored:
+
+                    128.80.
+
+                    133.98.
+
+                    123.28.
+
+                    160.32.
+
+                    That is not one lucky week.
+
+                    That is four straight strong performances followed by complete violence.
+
+                    Tetairoa McMillan provided the explosion this time, scoring 45.2.
+
+                    Malik Nabers added 23.2.
+
+                    Jonathan Taylor added 22.7.
+
+                    Brock Purdy scored 19.62.
+
+                    Ashton Jeanty scored 18.6.
+
+                    Five starters over 18 points.
+
+                    And Ryan still left another 41.18 on the bench.
+
+                    That is the part that makes this roster difficult to dismiss.
+
+                    The ceiling is obvious.
+
+                    The depth keeps showing up too.
+
+                    Sleeper currently projects 121.72 for Week 5 against Moore Oil Coming.
+
+                    Four games.
+
+                    Four wins.
+
+                    The crown stays exactly where it is.
+                `,
+                transactions: `
+                    No meaningful roster changes.
+
+                    After scoring 160.32 and winning by 71.32, Ryan once again chose not to
+                    interfere with a functioning machine.
+                `
+            },
+
+            {
+                rank: 2,
+                previousRank: 2,
+                movement: 0,
+                rosterID: 2,
+                team: "PeterPanthers",
+                record: "3-1",
+                week1Score: 172.16,
+                week2Score: 137.34,
+                week3Score: 142.04,
+                week4Score: 110.76,
+                week5Projection: 125.45,
+                headline: "Ugly Win, Elite Body of Work",
+                commentary: `
+                    JV stays No. 2.
+
+                    Week 4 was easily PeterPanthers' worst performance of the season.
+
+                    110.76.
+
+                    Rhodes x Pags came within 2.58 points of stealing the game.
+
+                    JV survived anyway.
+
+                    And we are not going to pretend the previous three weeks disappeared.
+
+                    PeterPanthers has now scored:
+
+                    172.16.
+
+                    137.34.
+
+                    142.04.
+
+                    110.76.
+
+                    That is still the strongest four-week scoring résumé in the league.
+
+                    Bryce Young stepped in last week and scored 21.46.
+
+                    Chris Olave added 19.6.
+
+                    Jake Bates somehow supplied another 18 from the kicker spot.
+
+                    Gibbs had a quieter week by his standards and JV still found a way out.
+
+                    More importantly, the Week 5 outlook remains strong.
+
+                    Gibbs projects for 25.76.
+
+                    Trey McBride is above 18.
+
+                    Jayden Daniels is currently back in the projected lineup.
+
+                    Olave remains one of the strongest receivers on the roster.
+
+                    Sleeper has PeterPanthers at 125.45 against Vigo.
+
+                    Ryan has earned No. 1.
+
+                    JV has done absolutely nothing to fall lower than No. 2.
+                `,
+                transactions: `
+                    No changes.
+
+                    JV survived the scare and left the roster alone.
+                `
+            },
+
+            {
+                rank: 3,
+                previousRank: 4,
+                movement: 1,
+                rosterID: 10,
+                team: "Moore Oil Coming",
+                record: "3-1",
+                week1Score: 147.16,
+                week2Score: 141.02,
+                week3Score: 109.42,
+                week4Score: 116.52,
+                week5Projection: 99.39,
+                headline: "One Loss Does Not Undo September",
+                commentary: `
+                    Josh finally lost.
+
+                    That matters.
+
+                    It does not erase the first month.
+
+                    Moore Oil Coming opened the season with 147.16 and 141.02.
+
+                    Week 3 fell to 109.42.
+
+                    Week 4 was 116.52.
+
+                    The trajectory has cooled considerably, but this remains a 3-1 team with
+                    one of the most dangerous top ends in the league.
+
+                    Kenneth Walker scored 30.9 last week.
+
+                    Josh Allen added 19.52.
+
+                    JSN had a relatively quiet 12.6 and remains one of the most dangerous
+                    receivers on the board.
+
+                    Allen and JSN alone enter Week 5 projected above 22.
+
+                    The concern is everything underneath them.
+
+                    Sleeper currently has Moore Oil Coming at only 99.39 against Ryan.
+
+                    That is ugly.
+
+                    It is also one Week 5 projection, not four weeks of evidence.
+
+                    Josh drops nowhere because of one loss.
+
+                    Instead, he moves up one because the team previously ahead of him just
+                    had a much larger problem.
+
+                    The first four weeks still say contender.
+                `,
+                transactions: `
+                    Added Jake Ferguson and dropped Indianapolis D/ST.
+
+                    Ferguson gives Josh another usable tight end option while the core remains
+                    unchanged.
+                `
+            },
+
+            {
+                rank: 4,
+                previousRank: 8,
+                movement: 4,
+                rosterID: 9,
+                team: "Charles",
+                record: "3-1",
+                week1Score: 151.02,
+                week2Score: 122.76,
+                week3Score: 122.82,
+                week4Score: 123.02,
+                week5Projection: 107.61,
+                headline: "The Ranking Finally Catches Up",
+                commentary: `
+                    A four-spot jump looks aggressive.
+
+                    The scoring history says it is overdue.
+
+                    Charles has scored:
+
+                    151.02.
+
+                    122.76.
+
+                    122.82.
+
+                    123.02.
+
+                    That is not one hot week.
+
+                    That is four weeks of evidence.
+
+                    Last week's ranking punished Charles heavily for the uncertainty around
+                    the roster entering Week 4.
+
+                    Then he responded by beating previously undefeated Moore Oil Coming.
+
+                    Tee Higgins caught 11 passes for 157 yards and scored 26.7.
+
+                    Rhamondre Stevenson added 18.4.
+
+                    Derrick Henry scored 15.9.
+
+                    The Sun God added 15.5.
+
+                    Jalen Hurts gave him another 13.52.
+
+                    Nobody needed to score 40.
+
+                    The lineup simply produced everywhere.
+
+                    Amon-Ra, Hurts, Henry and Higgins remain one of the best four-player cores
+                    in the league.
+
+                    Sleeper only projects 107.61 for Week 5, so there are still short-term
+                    questions.
+
+                    But power rankings are supposed to evaluate the entire résumé.
+
+                    Charles has been good every single week.
+
+                    No. 4 is where the evidence says he belongs.
+                `,
+                transactions: `
+                    Added Kirk Cousins, Roman Wilson and Dominic Zvada.
+
+                    Dropped Mike Gesicki and Chris Boswell.
+
+                    Mostly depth and specialist work. The core remains intact.
+                `
+            },
+
+            {
+                rank: 5,
+                previousRank: 3,
+                movement: -2,
+                rosterID: 11,
+                team: "Campus Legends",
+                record: "3-1",
+                week1Score: 101.46,
+                week2Score: 119.88,
+                week3Score: 142.04,
+                week4Score: 89.00,
+                week5Projection: 72.01,
+                headline: "Embarrassed, Not Exposed",
+                commentary: `
+                    There is no defending Week 4.
+
+                    Campus Legends scored 89.
+
+                    Ryan scored 160.32.
+
+                    Final margin:
+
+                    71.32.
+
+                    Will Reichard was JQ's leading scorer.
+
+                    The kicker.
+
+                    That is generally not ideal.
+
+                    Patrick Mahomes scored 17.
+
+                    Christian McCaffrey scored 16.
+
+                    Then the lineup largely stopped helping.
+
+                    JQ also left 53.6 points on the bench.
+
+                    So yes.
+
+                    Campus falls.
+
+                    But only two spots.
+
+                    Before the massacre, the weekly scoring progression was:
+
+                    101.46.
+
+                    119.88.
+
+                    142.04.
+
+                    The roster still contains Mahomes, CMC, Garrett Wilson, George Pickens,
+                    DK Metcalf, Travis Kelce, Jeremiyah Love and Tyler Warren.
+
+                    That is why we are not taking one 89-point disaster and suddenly deciding
+                    Campus Legends is a bottom-half roster.
+
+                    The current Week 5 projection of 72.01 is obviously concerning and reflects
+                    an ugly current availability picture.
+
+                    It does not mean this roster suddenly contains 72 points worth of talent.
+
+                    JQ got annihilated.
+
+                    He did not get erased.
+
+                    No. 5.
+                `,
+                transactions: `
+                    Added KC Concepcion and dropped Dontayvion Wicks.
+
+                    A minor receiver depth move after a major Week 4 embarrassment.
+                `
+            },
+
+            {
+                rank: 6,
+                previousRank: 5,
+                movement: -1,
+                rosterID: 4,
+                team: "Show Me Your TDs",
+                record: "3-1",
+                week1Score: 124.40,
+                week2Score: 132.86,
+                week3Score: 127.28,
+                week4Score: 109.08,
+                week5Projection: 112.31,
+                headline: "Boringly Good Is Still Good",
+                commentary: `
+                    Trevor drops one spot despite winning.
+
+                    That sounds harsher than it is.
+
+                    Show Me Your TDs has now scored:
+
+                    124.40.
+
+                    132.86.
+
+                    127.28.
+
+                    109.08.
+
+                    Week 4 was the first real dip.
+
+                    Trevor still won by more than 22 because T2 presented almost no resistance.
+
+                    Chuba Hubbard carried the offense with 25.9.
+
+                    Sam LaPorta added 22.4.
+
+                    James Cook scored 16.3.
+
+                    Trevor Lawrence added 13.08.
+
+                    Nothing about the roster suddenly looks broken.
+
+                    James Cook, Chuba, Christian Watson, DeVonta Smith, LaPorta, Egbuka,
+                    Luther Burden and Trevor Lawrence still make this one of the deeper
+                    balanced groups in the league.
+
+                    Sleeper currently projects 112.31 against Campus Legends.
+
+                    Trevor falls one because Charles' four-week résumé finally forced the issue.
+
+                    There is nothing dramatic happening here.
+
+                    Show Me Your TDs remains exactly what it has been all season:
+
+                    Good.
+                `,
+                transactions: `
+                    No changes.
+
+                    Trevor remains committed to the roster that has produced a 3-1 start.
+                `
+            },
+
+            {
+                rank: 7,
+                previousRank: 6,
+                movement: -1,
+                rosterID: 6,
+                team: "#FreeTony",
+                record: "1-3",
+                week1Score: 136.56,
+                week2Score: 118.50,
+                week3Score: 98.34,
+                week4Score: 157.88,
+                week5Projection: 125.00,
+                headline: "The Record Finally Got Less Stupid",
+                commentary: `
+                    Jansen finally won.
+
+                    And apparently three weeks of frustration had been building toward
+                    something violent.
+
+                    #FreeTony scored 157.88.
+
+                    Second-highest total of Week 4.
+
+                    Kyren Williams scored 36.7.
+
+                    Puka Nacua scored 27.7.
+
+                    Zay Flowers scored 25.8.
+
+                    Lamar added 18.88.
+
+                    Jaylen Warren added 15.6.
+
+                    The two players acquired from Chaney combined for 64.4 fantasy points
+                    in their first game.
+
+                    Against Chaney.
+
+                    Extremely tasteful.
+
+                    But we are not moving Jansen into the top three based on one explosion.
+
+                    The full résumé remains:
+
+                    136.56.
+
+                    118.50.
+
+                    98.34.
+
+                    157.88.
+
+                    That is an excellent scoring profile attached to a 1-3 record.
+
+                    Which is why Jansen remains ahead of several teams with the same record.
+
+                    Sleeper also projects #FreeTony for 125 in Week 5, with Puka, Kyren,
+                    Zay and Warren all carrying strong numbers.
+
+                    This roster looks substantially better than 1-3.
+
+                    Now J-Bone needs to prove Week 4 was the beginning of the correction.
+                `,
+                transactions: `
+                    Added Aaron Rodgers and Matt Gay.
+
+                    Dropped Kalif Raymond and Harrison Butker.
+
+                    Rodgers provides quarterback insurance while the post-trade core stays intact.
+                `
+            },
+
+            {
+                rank: 8,
+                previousRank: 7,
+                movement: -1,
+                rosterID: 5,
+                team: "Rhodes x Pags",
+                record: "1-3",
+                week1Score: 77.30,
+                week2Score: 136.08,
+                week3Score: 147.80,
+                week4Score: 108.18,
+                week5Projection: 107.96,
+                headline: "Two Managers, Fifty-Seven Bench Points",
+                commentary: `
+                    Rhodes x Pags came within 2.58 points of beating JV.
+
+                    That sounds encouraging.
+
+                    Then you notice the bench.
+
+                    57.6 points.
+
+                    Most in the league.
+
+                    Two managers.
+
+                    Fifty-seven point six points left sitting there.
+
+                    That is an incredible use of human resources.
+
+                    Bijan Robinson scored 27.7.
+
+                    Quinshon Judkins added 21.6.
+
+                    Brock Bowers scored 20.6.
+
+                    The top-end talent remains obvious.
+
+                    The larger four-week picture remains impossible to stabilize.
+
+                    77.30.
+
+                    136.08.
+
+                    147.80.
+
+                    108.18.
+
+                    Two weeks looked like a contender.
+
+                    Two did not.
+
+                    Stafford, Bijan, Davante, Bowers and Judkins give this team enough talent
+                    to beat almost anyone when the lineup hits.
+
+                    Sleeper currently projects 107.96 against #FreeTony.
+
+                    At 1-3, potential is no longer enough to climb.
+
+                    Rhodes x Pags remains dangerous.
+
+                    Rhodes x Pags also remains Rhodes x Pags.
+                `,
+                transactions: `
+                    No changes.
+
+                    Perhaps the more urgent transaction would involve moving some of the 57.6
+                    bench points into the starting lineup.
+                `
+            },
+
+            {
+                rank: 9,
+                previousRank: 9,
+                movement: 0,
+                rosterID: 1,
+                team: "The Car Bombs",
+                record: "1-3",
+                week1Score: 91.62,
+                week2Score: 89.32,
+                week3Score: 154.56,
+                week4Score: 111.74,
+                week5Projection: 124.49,
+                headline: "No Promotion, No Panic",
+                commentary: `
+                    The Car Bombs stay exactly where they were.
+
+                    That is the correct punishment.
+
+                    Week 1:
+
+                    91.62.
+
+                    Week 2:
+
+                    89.32.
+
+                    Then the rebrand produced 154.56 and High Man.
+
+                    Week 4 settled back to 111.74.
+
+                    So we still do not know exactly what this franchise is.
+
+                    Javonte Williams certainly did his part against Vigo.
+
+                    Three rushing touchdowns.
+
+                    Five catches.
+
+                    31.3 fantasy points.
+
+                    The problem was that nobody else came close to matching him.
+
+                    Tyler Shough scored 15.94.
+
+                    Drake London added 14.6.
+
+                    Then Monday night arrived and Brian Robinson personally destroyed
+                    the undefeated history of The Car Bombs.
+
+                    There is also the Drake Maye situation.
+
+                    After scoring 5.76 in Week 3, Maye was benched.
+
+                    He has now served his disciplinary sentence and returns to the projected
+                    starting lineup carrying a 19.31 projection.
+
+                    Sometimes young quarterbacks need consequences.
+
+                    Worth it.
+
+                    Sleeper currently projects The Car Bombs for 124.49 against T2.
+
+                    That is one of the strongest numbers on the Week 5 board.
+
+                    But after four weeks, one good projection is not enough for a promotion.
+
+                    Prove Week 3 was the beginning of something.
+
+                    Then we can talk.
+                `,
+                transactions: `
+                    Added Cincinnati D/ST and Spencer Shrader.
+
+                    Dropped Buffalo D/ST and Tyler Loop.
+
+                    Mostly streaming work around a roster that still needs its core players
+                    to establish some consistency.
+                `
+            },
+
+            {
+                rank: 10,
+                previousRank: 10,
+                movement: 0,
+                rosterID: 3,
+                team: "The Oilers",
+                record: "0-4",
+                week1Score: 129.46,
+                week2Score: 83.58,
+                week3Score: 83.18,
+                week4Score: 141.22,
+                week5Projection: 109.74,
+                headline: "141 Points Does Not Erase 0-4",
+                commentary: `
+                    Chaney finally got the performance we have been waiting for.
+
+                    141.22.
+
+                    CeeDee Lamb scored 41.3.
+
+                    Nico Collins scored 30.8.
+
+                    Joe Burrow scored 25.72.
+
+                    Those three players combined for 97.82.
+
+                    The Oilers lost.
+
+                    Chaney managed to score the third-most points in the league and still
+                    leave Week 4 at 0-4.
+
+                    Fantasy football is extremely stupid.
+
+                    There are legitimate reasons for optimism.
+
+                    The rebuilt roster now contains CeeDee, Nico, Burrow, Hampton, Kamara,
+                    Montgomery and Kincaid.
+
+                    Rome Odunze, Tyreek Hill and Emanuel Wilson have also been added since
+                    the previous snapshot.
+
+                    This is clearly not the same roster that scored 83.58 and 83.18 in
+                    consecutive weeks.
+
+                    But that is exactly why Chaney stays No. 10.
+
+                    We are not overcorrecting.
+
+                    One 141-point performance is evidence.
+
+                    It is not absolution.
+
+                    Sleeper projects 109.74 against Charles.
+
+                    Another good week and The Oilers can start climbing quickly.
+
+                    For now:
+
+                    0-4 remains 0-4.
+                `,
+                transactions: `
+                    Added Tyreek Hill, Rome Odunze and Emanuel Wilson.
+
+                    Dropped Marvin Harrison, Rashod Bateman and Denver D/ST.
+
+                    Chaney continues aggressively reshaping the roster after the disastrous
+                    middle two weeks.
+                `
+            },
+
+            {
+                rank: 11,
+                previousRank: 12,
+                movement: 1,
+                rosterID: 7,
+                team: "Retardinals",
+                record: "1-3",
+                week1Score: 99.76,
+                week2Score: 89.92,
+                week3Score: 84.28,
+                week4Score: 127.48,
+                week5Projection: 96.45,
+                headline: "Vigo Has Escaped the Basement",
+                commentary: `
+                    Congratulations, Vigo.
+
+                    You are no longer last.
+
+                    Retardinals finally won.
+
+                    More importantly, Vigo finally scored actual fantasy points.
+
+                    After opening:
+
+                    99.76.
+
+                    89.92.
+
+                    84.28.
+
+                    Retardinals jumped to 127.48 in Week 4.
+
+                    Brian Robinson provided the Monday-night miracle with three rushing
+                    touchdowns and 25.7 fantasy points.
+
+                    C.J. Stroud added 23.08.
+
+                    Chase Brown scored 19.1.
+
+                    Jameson Williams added 16.2.
+
+                    Jaylen Waddle scored 14.5.
+
+                    That is the first time all season Vigo received something resembling
+                    functional production throughout the lineup.
+
+                    It earns movement.
+
+                    One spot.
+
+                    We are not pretending the first three weeks never happened.
+
+                    Justin Jefferson remains the major ceiling piece, and T.J. Hockenson
+                    has now been added to the roster.
+
+                    Sleeper still projects only 96.45 against JV.
+
+                    That keeps Vigo firmly in the bottom tier.
+
+                    But after four weeks of excavation, Retardinals has finally climbed out
+                    of the basement.
+
+                    Enjoy the sunlight.
+                `,
+                transactions: `
+                    Added Malik Washington and T.J. Hockenson.
+
+                    Dropped Tyreek Hill and Dalton Schultz.
+
+                    Vigo continues reshaping the receiving and tight end depth around the
+                    newly acquired Justin Jefferson.
+                `
+            },
+
+            {
+                rank: 12,
+                previousRank: 11,
+                movement: -1,
+                rosterID: 12,
+                team: "Big frydown",
+                record: "1-3",
+                week1Score: 145.50,
+                week2Score: 81.66,
+                week3Score: 92.54,
+                week4Score: 87.00,
+                week5Projection: 91.01,
+                headline: "Four Weeks Is No Longer a Small Sample",
+                commentary: `
+                    Week 1:
+
+                    145.50.
+
+                    We were impressed.
+
+                    Week 2:
+
+                    81.66.
+
+                    Low Man.
+
+                    Week 3:
+
+                    92.54.
+
+                    Week 4:
+
+                    87.
+
+                    Low Man again.
+
+                    The investigation is over.
+
+                    Three straight games below 100 is not one bad week.
+
+                    It is a pattern.
+
+                    Dak Prescott led the lineup last week with 18.1.
+
+                    Aaron Jones added 16.8.
+
+                    Tucker Kraft scored 16.5.
+
+                    Nobody reached 20.
+
+                    Nobody came close to rescuing the lineup.
+
+                    The roster still contains names that should be better than this.
+
+                    Dak.
+
+                    Saquon.
+
+                    Bucky.
+
+                    Aaron Jones.
+
+                    Deebo.
+
+                    Ladd.
+
+                    Mike Evans.
+
+                    But power rankings are not awarded for recognizable names.
+
+                    They are awarded for evidence.
+
+                    And after scoring 145.50 in Week 1, T2 has averaged under 88 points
+                    over the next three games.
+
+                    Sleeper now projects only 91.01 against The Car Bombs.
+
+                    Lowest ranking.
+
+                    Another Low Man.
+
+                    Another press conference.
+
+                    Welcome back to the basement.
+                `,
+                transactions: `
+                    No changes.
+
+                    Three consecutive games below 100 have apparently still not triggered
+                    roster surgery.
+
+                    Confidence or surrender.
+
+                    Week 5 may tell us which.
+                `
+            }
+        ]
     }
 };
