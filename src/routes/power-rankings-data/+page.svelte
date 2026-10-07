@@ -1,4 +1,4 @@
-<!-- Week 4 power rankings data -->
+<!-- Week 5 power rankings data -->
 <script>
     export let data;
 
@@ -87,9 +87,17 @@
                 Number(rosterID)
         );
 
-    const getWeek4Opponent = (rosterID) => {
+    const getWeek5Matchup = (rosterID) =>
+        data.week5Matchups?.find(
+            (item) =>
+                Number(item.roster_id) ===
+                Number(rosterID)
+        );
+
+
+    const getWeek5Opponent = (rosterID) => {
         const team =
-            getWeek4Matchup(
+            getWeek5Matchup(
                 rosterID
             );
 
@@ -98,7 +106,7 @@
         }
 
         const opponent =
-            data.week4Matchups?.find(
+            data.week5Matchups?.find(
                 (item) =>
                     item.matchup_id ===
                         team.matchup_id &&
@@ -207,11 +215,11 @@
             );
     };
 
-    const getWeek3TopPerformers = (
+    const getWeek4TopPerformers = (
         rosterID
     ) => {
         const matchup =
-            getWeek3Matchup(
+            getWeek4Matchup(
                 rosterID
             );
 
@@ -252,11 +260,11 @@
             );
     };
 
-    const getWeek3BenchPoints = (
+    const getWeek4BenchPoints = (
         rosterID
     ) => {
         const matchup =
-            getWeek3Matchup(
+            getWeek4Matchup(
                 rosterID
             );
 
@@ -300,7 +308,7 @@
         roster
     ) => {
         const previous =
-            data.week3Snapshot
+            data.week4Snapshot
                 ?.rosters?.[
                     roster.roster_id
                 ];
@@ -370,7 +378,7 @@
         };
     };
 
-    const getRecordThroughWeek3 = (
+    const getRecordThroughWeek4 = (
         rosterID
     ) => {
         let wins = 0;
@@ -380,7 +388,8 @@
         const weeks = [
             data.week1Matchups || [],
             data.week2Matchups || [],
-            data.week3Matchups || []
+            data.week3Matchups || [],
+            data.week4Matchups || []
         ];
 
         for (
@@ -767,9 +776,9 @@
         };
     };
 
-    const completedWeek4Transactions =
+    const completedWeek5Transactions =
         (
-            data.week4Transactions ||
+            data.week5Transactions ||
             []
         )
             .filter(
@@ -824,9 +833,14 @@
                         getWeek3Matchup(
                             roster.roster_id
                         );
+                    
+                    const week4 =
+                        getWeek4Matchup(
+                            roster.roster_id
+                        );
 
                     const opponent =
-                        getWeek4Opponent(
+                        getWeek5Opponent(
                             roster.roster_id
                         );
 
@@ -842,7 +856,7 @@
                             ),
 
                         record:
-                            getRecordThroughWeek3(
+                            getRecordThroughWeek4(
                                 roster.roster_id
                             ),
 
@@ -864,34 +878,40 @@
                                 0
                             ),
 
-                        week3BenchPoints:
-                            getWeek3BenchPoints(
+                        week4Score:
+                            round(
+                                week4?.points ||
+                                0
+                            ),
+
+                        week4BenchPoints:
+                            getWeek4BenchPoints(
                                 roster.roster_id
                             ),
 
-                        week4MatchupID:
-                            getWeek4Matchup(
+                        week5MatchupID:
+                            getWeek5Matchup(
                                 roster.roster_id
                             )?.matchup_id ?? null,
                         
-                        week4Opponent:
+                        week5Opponent:
                             opponent?.name ||
                             null,
                         
-                        week4Projection:
+                        week5Projection:
                             getProjectedPoints(
                                 roster,
-                                4
+                                5
                             ),
 
-                        week4TopProjected:
+                        week5TopProjected:
                             getTopProjectedStarters(
                                 roster,
-                                4
+                                5
                             ),
 
-                        week3TopPerformers:
-                            getWeek3TopPerformers(
+                        week4TopPerformers:
+                            getWeek4TopPerformers(
                                 roster.roster_id
                             ),
 
@@ -927,17 +947,17 @@
                 .toISOString(),
 
         week:
-            4,
+            5,
 
         teamCount:
             powerData.length,
 
         transactionCount:
-            completedWeek4Transactions
+            completedWeek5Transactions
                 .length,
 
         transactions:
-            completedWeek4Transactions,
+            completedWeek5Transactions,
 
         teams:
             powerData
