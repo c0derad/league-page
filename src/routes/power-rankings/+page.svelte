@@ -70,13 +70,11 @@
                 on:change={changeWeek}
             >
                 {#each data.availableWeeks as week}
-
                     <option
                         value={week}
                     >
                         Week {week}
                     </option>
-
                 {/each}
             </select>
 
@@ -154,17 +152,17 @@
 
                         <div class="metrics">
 
-                            {#each team.scoreHistory as score}
+                            {#each team.scoreHistory as item}
 
                                 <div class="metric">
 
                                     <span class="metricLabel">
-                                        WEEK {score.week}
+                                        WEEK {item.week}
                                     </span>
 
                                     <span class="metricValue">
                                         {formatScore(
-                                            score.score
+                                            item.score
                                         )}
                                     </span>
 
