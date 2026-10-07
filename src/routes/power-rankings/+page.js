@@ -8,15 +8,6 @@ const getScoreHistory = (
 ) => {
     const scores = [];
 
-    /*
-     * A Week 5 ranking is based on completed
-     * Weeks 1-4.
-     *
-     * A Week 6 ranking is based on completed
-     * Weeks 1-5.
-     *
-     * etc.
-     */
     for (
         let week = 1;
         week < rankingWeek;
@@ -54,10 +45,10 @@ const getAverageScore = (
         scoreHistory.reduce(
             (
                 sum,
-                week
+                item
             ) =>
                 sum +
-                week.score,
+                item.score,
             0
         );
 
@@ -131,7 +122,6 @@ export function load({
 
     return {
         week,
-
         availableWeeks,
 
         rankingData: {
