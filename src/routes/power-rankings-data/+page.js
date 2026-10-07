@@ -19,8 +19,7 @@ export async function load({ fetch }) {
         week2Matchups,
         week3Matchups,
         week4Matchups,
-        week5Matchups,        
-        week3Transactions,
+        week5Matchups,
         week4Transactions,
         week5Transactions
     ] = await Promise.all([
@@ -47,19 +46,14 @@ export async function load({ fetch }) {
         fetch(
             `https://api.sleeper.app/v1/league/${leagueID}/matchups/5`
         ).then((r) => r.json()),
-        
-        fetch(
-            `https://api.sleeper.app/v1/league/${leagueID}/transactions/3`
-        ).then((r) => r.json()),
 
         fetch(
             `https://api.sleeper.app/v1/league/${leagueID}/transactions/4`
         ).then((r) => r.json()),
 
-                fetch(
+        fetch(
             `https://api.sleeper.app/v1/league/${leagueID}/transactions/5`
         ).then((r) => r.json())
-
     ]);
 
     const rawRosters =
@@ -89,32 +83,33 @@ export async function load({ fetch }) {
             ? rawManagers
             : Object.values(rawManagers);
 
-    const transactions3 =
-        Array.isArray(week3Transactions)
-            ? week3Transactions
-            : [];
-
     const transactions4 =
-        Array.isArray(week4Transactions)
+        Array.isArray(
+            week4Transactions
+        )
             ? week4Transactions
             : [];
 
     const transactions5 =
-    Array.isArray(week5Transactions)
-        ? week5Transactions
-        : [];
+        Array.isArray(
+            week5Transactions
+        )
+            ? week5Transactions
+            : [];
+
     /*
-        We intentionally combine Sleeper transaction legs 3 and 4.
+        Week 5 rankings compare the live roster against
+        the Week 4 roster snapshot.
 
-        The Week 3 roster snapshot was taken before all of the post-snapshot
-        roster movement occurred, and Sleeper can classify transactions
-        completed later in the NFL week under transaction leg 3.
+        Sleeper can classify post-snapshot roster movement
+        under either transaction leg 4 or transaction leg 5.
 
-        The Svelte export will show transaction.leg for every item, so we can
-        distinguish which Sleeper week each transaction belongs to.
+        We therefore pull both legs for the Week 5 rankings.
+        The Svelte export preserves transaction.leg as
+        transaction.week so we can still see where Sleeper
+        classified each move.
     */
     const rankingTransactions = [
-        ...transactions3,
         ...transactions4,
         ...transactions5
     ];
@@ -128,30 +123,31 @@ export async function load({ fetch }) {
         week2Matchups,
         week3Matchups,
         week4Matchups,
-        week5Matchups
+        week5Matchups,
 
         /*
-            Keep this property name because the current +page.svelte already
-            reads data.week4Transactions.
+            Keep this property name aligned with
+            the Week 5 +page.svelte.
 
-            It now contains the transaction window relevant to the Week 4
-            rankings: Sleeper transaction legs 3 + 4.
+            It contains transaction legs 4 + 5.
         */
         week5Transactions:
             rankingTransactions,
 
         week1Snapshot:
-            rosterHistory?.["1"] || null,
+            rosterHistory?.["1"] ||
+            null,
 
         week2Snapshot:
-            rosterHistory?.["2"] || null,
+            rosterHistory?.["2"] ||
+            null,
 
         week3Snapshot:
-            rosterHistory?.["3"] || null
+            rosterHistory?.["3"] ||
+            null,
 
         week4Snapshot:
-            rosterHistory?.["4"] || null
-
-
-};
+            rosterHistory?.["4"] ||
+            null
+    };
 }
