@@ -21,10 +21,20 @@
         }
 
         if (movement < 0) {
-            return `▼ ${Math.abs(movement)}`;
+            return `▼ ${Math.abs(
+                movement
+            )}`;
         }
 
         return '—';
+    };
+
+    const formatScore = (
+        score
+    ) => {
+        return Number(
+            score
+        ).toFixed(2);
     };
 </script>
 
@@ -60,11 +70,13 @@
                 on:change={changeWeek}
             >
                 {#each data.availableWeeks as week}
+
                     <option
                         value={week}
                     >
                         Week {week}
                     </option>
+
                 {/each}
             </select>
 
@@ -129,86 +141,64 @@
                         </div>
 
                         {#if team.status}
+
                             <div class="status">
                                 {team.status}
                             </div>
+
                         {/if}
 
                     </div>
 
-                    <div class="metrics">
+                    {#if team.scoreHistory.length > 0}
 
-                        {#if team.week1Score !== undefined}
-                            <div class="metric">
-                                <span class="metricLabel">
-                                    WEEK 1
-                                </span>
+                        <div class="metrics">
 
-                                <span class="metricValue">
-                                    {team.week1Score}
-                                </span>
-                            </div>
-                        {/if}
+                            {#each team.scoreHistory as score}
 
-                        {#if team.week2Score !== undefined}
-                            <div class="metric">
-                                <span class="metricLabel">
-                                    WEEK 2
-                                </span>
+                                <div class="metric">
 
-                                <span class="metricValue">
-                                    {team.week2Score}
-                                </span>
-                            </div>
-                        {/if}
+                                    <span class="metricLabel">
+                                        WEEK {score.week}
+                                    </span>
 
-                        {#if team.week3Score !== undefined}
-                            <div class="metric">
-                                <span class="metricLabel">
-                                    WEEK 3
-                                </span>
+                                    <span class="metricValue">
+                                        {formatScore(
+                                            score.score
+                                        )}
+                                    </span>
 
-                                <span class="metricValue">
-                                    {team.week3Score}
-                                </span>
-                            </div>
-                        {/if}
+                                </div>
 
-                        {#if team.week4Projection !== undefined}
-                            <div class="metric">
-                                <span class="metricLabel">
-                                    WEEK 4 PROJ.
-                                </span>
+                            {/each}
 
-                                <span class="metricValue">
-                                    {team.week4Projection}
-                                </span>
-                            </div>
+                            {#if team.avgScore !== null}
 
-                        {:else if team.week3Projection !== undefined}
-                            <div class="metric">
-                                <span class="metricLabel">
-                                    WEEK 3 PROJ.
-                                </span>
+                                <div
+                                    class="metric averageMetric"
+                                >
 
-                                <span class="metricValue">
-                                    {team.week3Projection}
-                                </span>
-                            </div>
+                                    <span
+                                        class="metricLabel averageLabel"
+                                    >
+                                        AVG
+                                    </span>
 
-                        {:else if team.week2Projection !== undefined}
-                            <div class="metric">
-                                <span class="metricLabel">
-                                    WEEK 2 PROJ.
-                                </span>
+                                    <span
+                                        class="metricValue averageValue"
+                                    >
+                                        {formatScore(
+                                            team.avgScore
+                                        )}
+                                    </span>
 
-                                <span class="metricValue">
-                                    {team.week2Projection}
-                                </span>
-                            </div>
-                        {/if}
+                                </div>
 
-                    </div>
+                            {/if}
+
+                        </div>
+
+                    {/if}
 
                     <h3>
                         {team.headline}
@@ -220,7 +210,9 @@
 
                     <div class="transactions">
 
-                        <span class="transactionsLabel">
+                        <span
+                            class="transactionsLabel"
+                        >
                             TRANSACTIONS
                         </span>
 
@@ -393,6 +385,7 @@
     }
 
     .content {
+        min-width: 0;
         padding: 1.5em;
     }
 
@@ -429,16 +422,25 @@
         display: grid;
         grid-template-columns:
             repeat(
-                4,
-                minmax(0, max-content)
+                auto-fit,
+                minmax(
+                    90px,
+                    1fr
+                )
             );
-        gap: 2.3em;
-        margin: 1.1em 0 1.3em;
+        gap: 0;
+        margin: 1.2em 0 1.5em;
+        border-top:
+            1px solid var(--ccc);
+        border-bottom:
+            1px solid var(--ccc);
     }
 
     .metric {
         display: flex;
         flex-direction: column;
+        min-width: 0;
+        padding: 0.8em 1em 0.8em 0;
     }
 
     .metricLabel {
@@ -447,11 +449,28 @@
         font-weight: 800;
         letter-spacing: 0.08em;
         color: #888;
+        white-space: nowrap;
     }
 
     .metricValue {
-        font-size: 1.1em;
+        font-size: 1.05em;
         font-weight: 800;
+        white-space: nowrap;
+    }
+
+    .averageMetric {
+        padding-left: 1em;
+        border-left:
+            1px solid var(--ccc);
+    }
+
+    .averageLabel {
+        font-weight: 900;
+    }
+
+    .averageValue {
+        font-size: 1.12em;
+        font-weight: 900;
     }
 
     h3 {
@@ -528,9 +547,21 @@
             grid-template-columns:
                 repeat(
                     2,
-                    minmax(0, 1fr)
+                    minmax(
+                        0,
+                        1fr
+                    )
                 );
-            gap: 1em 1.5em;
+        }
+
+        .metric {
+            padding:
+                0.7em 0;
+        }
+
+        .averageMetric {
+            padding-left: 0;
+            border-left: 0;
         }
     }
 </style>
