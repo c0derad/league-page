@@ -19,8 +19,10 @@ export async function load({ fetch }) {
         week2Matchups,
         week3Matchups,
         week4Matchups,
+        week5Matchups,        
         week3Transactions,
-        week4Transactions
+        week4Transactions,
+        week5Transactions
     ] = await Promise.all([
         getLeagueRosters(),
         getLeagueTeamManagers(),
@@ -43,12 +45,21 @@ export async function load({ fetch }) {
         ).then((r) => r.json()),
 
         fetch(
+            `https://api.sleeper.app/v1/league/${leagueID}/matchups/5`
+        ).then((r) => r.json()),
+        
+        fetch(
             `https://api.sleeper.app/v1/league/${leagueID}/transactions/3`
         ).then((r) => r.json()),
 
         fetch(
             `https://api.sleeper.app/v1/league/${leagueID}/transactions/4`
+        ).then((r) => r.json()),
+
+                fetch(
+            `https://api.sleeper.app/v1/league/${leagueID}/transactions/5`
         ).then((r) => r.json())
+
     ]);
 
     const rawRosters =
@@ -88,6 +99,10 @@ export async function load({ fetch }) {
             ? week4Transactions
             : [];
 
+    const transactions5 =
+    Array.isArray(week5Transactions)
+        ? week5Transactions
+        : [];
     /*
         We intentionally combine Sleeper transaction legs 3 and 4.
 
@@ -100,7 +115,8 @@ export async function load({ fetch }) {
     */
     const rankingTransactions = [
         ...transactions3,
-        ...transactions4
+        ...transactions4,
+        ...transactions5
     ];
 
     return {
@@ -112,6 +128,7 @@ export async function load({ fetch }) {
         week2Matchups,
         week3Matchups,
         week4Matchups,
+        week5Matchups
 
         /*
             Keep this property name because the current +page.svelte already
@@ -120,7 +137,7 @@ export async function load({ fetch }) {
             It now contains the transaction window relevant to the Week 4
             rankings: Sleeper transaction legs 3 + 4.
         */
-        week4Transactions:
+        week5Transactions:
             rankingTransactions,
 
         week1Snapshot:
@@ -131,5 +148,10 @@ export async function load({ fetch }) {
 
         week3Snapshot:
             rosterHistory?.["3"] || null
-    };
+
+        week4Snapshot:
+            rosterHistory?.["4"] || null
+
+
+};
 }
