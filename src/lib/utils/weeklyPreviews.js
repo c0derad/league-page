@@ -1058,6 +1058,370 @@ export const weeklyPreviews = {
         pick: "Naberhood Sex Offender"
       }
     }
+  },
+  5: {
+  intro: `
+    Four weeks are in the books.
+
+    We have one undefeated team left.
+
+    We have one winless team coming off a 141-point performance.
+
+    Jansen finally stopped getting kicked in the balls by the schedule.
+
+    Vigo finally won.
+
+    T2 is back in the basement.
+
+    And Week 5 has given us something even better:
+
+    an actual pick'em.
+
+    Chaney enters 0-4 against a Charles team that has scored at least 122 points
+    every week, and Sleeper currently separates them by roughly two tenths of a point.
+
+    At the top, Ryan is 4-0 and fresh off 160.32. Josh gets the next shot at ending
+    the league's last undefeated season.
+
+    At the bottom, Vigo's reward for finally escaping last place is a date with JV.
+
+    Four weeks gave us the résumé.
+
+    Week 5 starts telling us which direction everybody is actually going.
+
+    The Czar has spoken.
+  `,
+
+  matchups: {
+
+    1: {
+      headline: "Vigo Escaped the Basement. JV Is Trying to Put Him Back.",
+      preview: `
+        Vigo finally won.
+
+        His reward is PeterPanthers.
+
+        JV enters projected at 125.29.
+
+        Vigo enters at 96.44.
+
+        That is the largest projected margin of Week 5.
+
+        To Vigo's credit, Week 4 was legitimately encouraging. C.J. Stroud scored
+        23.08. Brian Robinson scored 25.7. Chase Brown, Jameson Williams and Jaylen
+        Waddle all produced.
+
+        Retardinals finally looked like a functional fantasy football team.
+
+        The problem is JV has spent four weeks looking like one of the best teams
+        in the league.
+
+        Gibbs carries a 25.76 projection. Trey McBride is above 18. Jayden Daniels
+        is back in the projected lineup. Chris Olave gives JV another high-volume
+        option.
+
+        And last week was PeterPanthers' worst performance.
+
+        They scored 110.76.
+
+        Vigo had not reached 100 until last Sunday.
+
+        That comparison is unfortunate.
+
+        Vigo does have enough volatility to make this interesting if Stroud stays hot
+        and the Jefferson-A.J. Brown side of this roster finally detonates.
+
+        But almost 29 projected points is a lot.
+
+        Vigo escaped the basement.
+
+        JV is trying to escort him directly back toward it.
+      `,
+      pick: "PeterPanthers"
+    },
+
+    2: {
+      headline: "Two Managers vs. One Extremely Pissed-Off J-Bone",
+      preview: `
+        Jansen finally got a win.
+
+        Apparently three weeks of losing had created some emotional energy.
+
+        #FreeTony responded with 157.88.
+
+        Kyren Williams scored 36.7.
+
+        Puka scored 27.7.
+
+        Zay Flowers scored 25.8.
+
+        Now Jansen enters Week 5 projected for 123.54 against Rhodes x Pags at 107.83.
+
+        The Rams stack is the obvious problem for the co-managers.
+
+        Puka projects for 20.65.
+
+        Kyren projects for 18.69.
+
+        Aaron Rodgers currently occupies the projected quarterback spot while Lamar
+        remains on the roster, meaning Jansen does not need quarterback heroics if the
+        rest of this lineup keeps producing.
+
+        Rhodes x Pags still have Bijan.
+
+        That matters.
+
+        He projects for 24.34 and remains the single player in this matchup most capable
+        of breaking the projection model by himself.
+
+        Stafford, Davante and Bowers give them enough secondary firepower to make this
+        competitive.
+
+        The problem remains roster execution.
+
+        Rhodes x Pags left 57.6 points on the bench last week.
+
+        Two managers.
+
+        Fifty-seven point six bench points.
+
+        Jansen currently has the hotter roster and the better lineup.
+
+        Give me J-Bone.
+      `,
+      pick: "#FreeTony"
+    },
+
+    3: {
+      headline: "The Czar Has Been Gifted a Wellness Check",
+      preview: `
+        The Car Bombs are projected for 117.68.
+
+        Big frydown is projected for 91.02.
+
+        T2 has now scored:
+
+        81.66.
+
+        92.54.
+
+        87.
+
+        Three straight games under 100.
+
+        Two Low Man finishes.
+
+        Week 1 is beginning to look increasingly fictional.
+
+        Dak is still the best projected player on T2's side at 19.54. Bucky Irving
+        and Aaron Jones give him some usable RB production, and Tucker Kraft has
+        quietly been one of the more reliable pieces.
+
+        But somebody on this roster eventually has to break a matchup open.
+
+        The Car Bombs at least have several plausible candidates.
+
+        Drake "Drake Maye" Maye is back in the projected starting lineup at 19.27.
+
+        Javonte Williams enters at 18.51 after scoring three touchdowns last week.
+
+        Drake London projects for 17.24.
+
+        Cam Skattebo and Matthew Golden give the lineup additional depth underneath them.
+
+        The projection gap is 26.66.
+
+        I recognize that publicly trusting my own team has historically been dangerous.
+
+        I also recognize that this is T2.
+
+        If the regime cannot handle this assignment, there will be consequences.
+      `,
+      pick: "The Car Bombs"
+    },
+
+    4: {
+      headline: "0-4 vs. 3-1. Sleeper Does Not Care.",
+      preview: `
+        Game of the Week.
+
+        The Oilers:
+
+        109.55.
+
+        Charles:
+
+        109.34.
+
+        The projected margin is 0.21.
+
+        Essentially nothing.
+
+        Which is absurd when you look at the records.
+
+        Charles is 3-1 and has scored 151.02, 122.76, 122.82 and 123.02.
+
+        Chaney is 0-4.
+
+        Chaney also just scored 141.22.
+
+        That is why this matchup is interesting.
+
+        CeeDee scored 41.3 last week.
+
+        Nico Collins scored 30.8.
+
+        Joe Burrow scored 25.72.
+
+        Those three combined for 97.82 points and somehow Chaney still left the week
+        without a win.
+
+        Now all three sit near the top of his projected lineup again.
+
+        Charles answers with the exact opposite profile.
+
+        Amon-Ra projects for 20.95.
+
+        Derrick Henry is at 17.94.
+
+        Rhamondre and Higgins sit above 13.
+
+        And the current projected lineup has Kirk Cousins at quarterback while Jalen
+        Hurts remains on the roster.
+
+        Charles has not needed a 40-point eruption from anybody.
+
+        He has just been good every week.
+
+        Chaney probably has the more obvious nuclear ceiling.
+
+        Charles has the considerably stronger four-week floor.
+
+        Sleeper sees twenty-one hundredths of a point between them.
+
+        That means I get to ignore Sleeper entirely.
+
+        Give me Charles until Chaney proves that scoring 141 and losing was the beginning
+        of a turnaround rather than simply the funniest possible continuation of 0-4.
+      `,
+      pick: "Charles"
+    },
+
+    5: {
+      headline: "JQ Found a Quarterback. Trevor Lost the Free Square.",
+      preview: `
+        This matchup looked significantly uglier yesterday.
+
+        JQ responded by adding Jacoby Brissett.
+
+        Campus Legends now projects for 107.85 instead of looking like a roster being
+        operated during a federal shutdown.
+
+        Brissett immediately carries an 18.06 projection.
+
+        Christian McCaffrey is right behind him at 18.05.
+
+        Garrett Wilson, George Pickens and DK Metcalf give JQ enough receiving depth
+        that this is no longer remotely an automatic win.
+
+        Trevor still enters favored at 114.63.
+
+        Trevor Lawrence projects for 18.01.
+
+        James Cook and Christian Watson are both above 15.
+
+        Ollie Gordon and Sam LaPorta round out a balanced group.
+
+        The biggest difference is that Trevor has been remarkably stable all year.
+
+        124.40.
+
+        132.86.
+
+        127.28.
+
+        109.08.
+
+        No catastrophic week.
+
+        JQ, meanwhile, just scored 89 and left 53.6 points on the bench.
+
+        The emergency Brissett acquisition makes this a real matchup again.
+
+        It does not make me ready to trust JQ's lineup decisions.
+
+        The Bear gets the pick.
+      `,
+      pick: "Show Me Your TDs"
+    },
+
+    6: {
+      headline: "The Last Undefeated Team Gets the Week's Biggest Test",
+      preview: `
+        Projected shootout.
+
+        Ryan: 121.58.
+
+        Josh: 111.58.
+
+        Combined total:
+
+        233.16.
+
+        This is also No. 1 against No. 3 in the current power rankings.
+
+        Ryan is 4-0.
+
+        Josh is 3-1.
+
+        And this is the matchup most likely to actually tell us something about the
+        top of the league.
+
+        Josh's projection has strengthened considerably.
+
+        JSN sits at 22.68.
+
+        Josh Allen sits at 22.05.
+
+        That is almost 45 projected points from two players who are both capable of
+        substantially exceeding those numbers.
+
+        Carnell Tate now adds another 11.86 to the projected lineup, and Josh still
+        has Kenneth Walker sitting at the center of the roster after his 30.9-point
+        Week 4.
+
+        Ryan's advantage is different.
+
+        Jonathan Taylor projects for 18.94.
+
+        Purdy is at 17.17.
+
+        Michael Wilson, Jeanty and Nabers all sit between roughly 14 and 16.
+
+        There is no obvious weak link.
+
+        And Tetairoa McMillan just scored 45.2 last week.
+
+        That has been the story of Ryan's season.
+
+        Different player.
+
+        Same result.
+
+        Josh has the two most obvious nukes in the matchup.
+
+        Ryan has fewer places where the lineup can collapse.
+
+        Ten projected points is not enough for me to call this comfortable.
+
+        But until somebody actually beats Ryan, I am not volunteering to be the idiot
+        who predicts it.
+
+        The last undefeated team survives.
+      `,
+      pick: "Naberhood Sex Offender"
+    }
   }
+}
 
 };
