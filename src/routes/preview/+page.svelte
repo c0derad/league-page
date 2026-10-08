@@ -4,7 +4,13 @@
         round
     } from '$lib/utils/helperFunctions/universalFunctions';
 
-    import { weeklyPreviews } from '$lib/utils/weeklyPreviews';
+    import {
+        weeklyPreviews
+    } from '$lib/utils/weeklyPreviews';
+
+    import {
+        weeklyPowerRankings
+    } from '$lib/utils/weeklyPowerRankings';
 
     export let data;
 
@@ -12,44 +18,75 @@
     let previewData = null;
 
     const availableWeeks =
-        Object.keys(weeklyPreviews)
+        Object.keys(
+            weeklyPreviews
+        )
             .map(Number)
-            .sort((a, b) => a - b);
-    
+            .sort(
+                (a, b) =>
+                    a - b
+            );
+
     const latestPublishedWeek =
         availableWeeks[
             availableWeeks.length - 1
         ] || 1;
-    
-    const changeWeek = (event) => {
+
+    const changeWeek = (
+        event
+    ) => {
         const week =
             Number(
                 event.currentTarget.value
             );
-    
+
         window.location.href =
             `/preview?week=${week}`;
     };
 
-
-    const getProjection = (starters, players, week) => {
+    const getProjection = (
+        starters,
+        players,
+        week
+    ) => {
         let total = 0;
 
-        for (const starter of starters || []) {
-            if (!starter || starter == 0) continue;
+        for (
+            const starter of starters || []
+        ) {
+            if (
+                !starter ||
+                starter == 0
+            ) {
+                continue;
+            }
 
-            const player = players[starter];
-            if (!player) continue;
+            const player =
+                players[
+                    starter
+                ];
+
+            if (!player) {
+                continue;
+            }
 
             const projection =
                 player.wi?.[week]?.p
-                    ? Number(player.wi[week].p)
+                    ? Number(
+                        player.wi[
+                            week
+                        ].p
+                    )
                     : 0;
 
             total += projection;
         }
 
-        return Number(round(total));
+        return Number(
+            round(
+                total
+            )
+        );
     };
 
     const getTopProjectedPlayers = (
@@ -58,37 +95,76 @@
         week,
         count = 3
     ) => {
-        return (starters || [])
-            .map((playerID) => {
-                if (!playerID || playerID == 0) return null;
+        return (
+            starters || []
+        )
+            .map(
+                (playerID) => {
+                    if (
+                        !playerID ||
+                        playerID == 0
+                    ) {
+                        return null;
+                    }
 
-                const player = players[playerID];
-                if (!player) return null;
+                    const player =
+                        players[
+                            playerID
+                        ];
 
-                const projection =
-                    player.wi?.[week]?.p
-                        ? Number(player.wi[week].p)
-                        : 0;
+                    if (!player) {
+                        return null;
+                    }
 
-                const name =
-                    `${player.fn || ''} ${player.ln || ''}`.trim() ||
-                    `Player ${playerID}`;
+                    const projection =
+                        player.wi?.[
+                            week
+                        ]?.p
+                            ? Number(
+                                player.wi[
+                                    week
+                                ].p
+                            )
+                            : 0;
 
-                return {
-                    playerID,
-                    name,
-                    position: player.pos || '',
-                    nflTeam: player.t || '',
-                    projection: Number(round(projection))
-                };
-            })
+                    const name =
+                        `${player.fn || ''} ${player.ln || ''}`.trim() ||
+                        `Player ${playerID}`;
+
+                    return {
+                        playerID,
+                        name,
+                        position:
+                            player.pos || '',
+                        nflTeam:
+                            player.t || '',
+                        projection:
+                            Number(
+                                round(
+                                    projection
+                                )
+                            )
+                    };
+                }
+            )
             .filter(Boolean)
-            .sort((a, b) => b.projection - a.projection)
-            .slice(0, count);
+            .sort(
+                (a, b) =>
+                    b.projection -
+                    a.projection
+            )
+            .slice(
+                0,
+                count
+            );
     };
 
-    const getTeamAvatar = (team) => {
-        if (!team) return null;
+    const getTeamAvatar = (
+        team
+    ) => {
+        if (!team) {
+            return null;
+        }
 
         const avatar =
             team.avatar ||
@@ -97,11 +173,17 @@
             team.manager?.avatar ||
             null;
 
-        if (!avatar) return null;
+        if (!avatar) {
+            return null;
+        }
 
         if (
-            avatar.startsWith('http://') ||
-            avatar.startsWith('https://')
+            avatar.startsWith(
+                'http://'
+            ) ||
+            avatar.startsWith(
+                'https://'
+            )
         ) {
             return avatar;
         }
@@ -109,16 +191,45 @@
         return `https://sleepercdn.com/avatars/thumbs/${avatar}`;
     };
 
+    const getRecordMap = (
+        week
+    ) => {
+        const rankingData =
+            weeklyPowerRankings[
+                week
+            ];
+
+        if (
+            !rankingData?.rankings
+        ) {
+            return {};
+        }
+
+        return Object.fromEntries(
+            rankingData.rankings.map(
+                (team) => [
+                    Number(
+                        team.rosterID
+                    ),
+                    team.record
+                ]
+            )
+        );
+    };
+
     const buildPreview = (
         matchupsData,
         leagueTeamManagers,
         playersData
     ) => {
-        const players = playersData.players;
+        const players =
+            playersData.players;
 
         const queryWeek =
-            Number(data.queryWeek);
-        
+            Number(
+                data.queryWeek
+            );
+
         const requestedWeek =
             availableWeeks.includes(
                 queryWeek
@@ -127,17 +238,31 @@
                 : latestPublishedWeek;
 
         const editorial =
-            weeklyPreviews[requestedWeek] || null;
+            weeklyPreviews[
+                requestedWeek
+            ] || null;
+
+        const recordMap =
+            getRecordMap(
+                requestedWeek
+            );
 
         const matchupWeek =
             matchupsData.matchupWeeks.find(
-                (m) => Number(m.week) === requestedWeek
+                (m) =>
+                    Number(
+                        m.week
+                    ) ===
+                    requestedWeek
             );
 
         if (!matchupWeek) {
             return {
-                week: requestedWeek,
-                intro: editorial?.intro || null,
+                week:
+                    requestedWeek,
+                intro:
+                    editorial?.intro ||
+                    null,
                 games: [],
                 gameOfWeek: null,
                 shootout: null,
@@ -147,14 +272,27 @@
 
         const games = [];
 
-        for (const matchupID in matchupWeek.matchups) {
+        for (
+            const matchupID
+            in matchupWeek.matchups
+        ) {
             const teams =
-                matchupWeek.matchups[matchupID];
+                matchupWeek.matchups[
+                    matchupID
+                ];
 
-            if (!teams || teams.length < 2) continue;
+            if (
+                !teams ||
+                teams.length < 2
+            ) {
+                continue;
+            }
 
-            const home = teams[0];
-            const away = teams[1];
+            const home =
+                teams[0];
+
+            const away =
+                teams[1];
 
             const homeTeam =
                 getTeamFromTeamManagers(
@@ -191,20 +329,28 @@
                 );
 
             const total =
-                Number(homeProjection) +
-                Number(awayProjection);
+                Number(
+                    homeProjection
+                ) +
+                Number(
+                    awayProjection
+                );
 
             const favorite =
-                homeProjection > awayProjection
+                homeProjection >
+                awayProjection
                     ? homeTeam
-                    : awayProjection > homeProjection
+                    : awayProjection >
+                      homeProjection
                     ? awayTeam
                     : null;
 
             const underdog =
-                homeProjection > awayProjection
+                homeProjection >
+                awayProjection
                     ? awayTeam
-                    : awayProjection > homeProjection
+                    : awayProjection >
+                      homeProjection
                     ? homeTeam
                     : null;
 
@@ -223,22 +369,65 @@
                 );
 
             const commentary =
-                editorial?.matchups?.[matchupID] || null;
+                editorial
+                    ?.matchups
+                    ?.[
+                        matchupID
+                    ] || null;
 
             games.push({
                 matchupID,
+
                 home,
                 away,
+
                 homeTeam,
                 awayTeam,
+
+                homeRecord:
+                    recordMap[
+                        Number(
+                            home.roster_id
+                        )
+                    ] || null,
+
+                awayRecord:
+                    recordMap[
+                        Number(
+                            away.roster_id
+                        )
+                    ] || null,
+
                 homeProjection,
                 awayProjection,
+
                 homeTopPlayers,
                 awayTopPlayers,
-                homeAvatar: getTeamAvatar(homeTeam),
-                awayAvatar: getTeamAvatar(awayTeam),
-                margin: Number(round(margin)),
-                total: Number(round(total)),
+
+                homeAvatar:
+                    getTeamAvatar(
+                        homeTeam
+                    ),
+
+                awayAvatar:
+                    getTeamAvatar(
+                        awayTeam
+                    ),
+
+                margin:
+                    Number(
+                        round(
+                            margin
+                        )
+                    ),
+
+                total:
+                    Number(
+                        round(
+                            total
+                        )
+                    ),
+
                 favorite,
                 underdog,
                 commentary
@@ -247,26 +436,43 @@
 
         const sortedByMargin =
             [...games].sort(
-                (a, b) => a.margin - b.margin
+                (a, b) =>
+                    a.margin -
+                    b.margin
             );
 
         const sortedByTotal =
             [...games].sort(
-                (a, b) => b.total - a.total
+                (a, b) =>
+                    b.total -
+                    a.total
             );
 
         return {
-            week: requestedWeek,
-            intro: editorial?.intro || null,
+            week:
+                requestedWeek,
+
+            intro:
+                editorial?.intro ||
+                null,
+
             games,
+
             gameOfWeek:
-                sortedByMargin[0] || null,
+                sortedByMargin[
+                    0
+                ] || null,
+
             blowout:
                 sortedByMargin[
-                    sortedByMargin.length - 1
+                    sortedByMargin.length -
+                    1
                 ] || null,
+
             shootout:
-                sortedByTotal[0] || null
+                sortedByTotal[
+                    0
+                ] || null
         };
     };
 
@@ -280,11 +486,12 @@
             leagueTeamManagers,
             playersData
         ]) => {
-            previewData = buildPreview(
-                matchupsData,
-                leagueTeamManagers,
-                playersData
-            );
+            previewData =
+                buildPreview(
+                    matchupsData,
+                    leagueTeamManagers,
+                    playersData
+                );
 
             loading = false;
         }
@@ -296,6 +503,391 @@
         Weekly Preview | TouchDown Syndrome
     </title>
 </svelte:head>
+
+<div class="page">
+
+    {#if loading}
+
+        <div class="loading">
+            Building weekly preview...
+        </div>
+
+    {:else if previewData}
+
+        <h1 class="title">
+            Week {previewData.week} Preview
+        </h1>
+
+        <div class="subtitle">
+            The official word from the Roster Czar
+        </div>
+
+        <div class="weekSelector">
+
+            <label
+                for="week-select"
+            >
+                WEEK
+            </label>
+
+            <select
+                id="week-select"
+                value={previewData.week}
+                on:change={changeWeek}
+            >
+                {#each availableWeeks as week}
+
+                    <option
+                        value={week}
+                    >
+                        Week {week}
+                    </option>
+
+                {/each}
+            </select>
+
+        </div>
+
+        {#if previewData.intro}
+
+            <div class="intro">
+                {previewData.intro}
+            </div>
+
+        {/if}
+
+        {#if previewData.games.length > 0}
+
+            <div class="featureGrid">
+
+                {#if previewData.gameOfWeek}
+
+                    <div class="feature">
+
+                        <div class="featureLabel">
+                            GAME OF THE WEEK
+                        </div>
+
+                        <div class="featureTeams">
+                            {previewData.gameOfWeek.homeTeam.name}
+                            vs
+                            {previewData.gameOfWeek.awayTeam.name}
+                        </div>
+
+                        <div class="featureStat">
+                            Projected margin:
+                            {previewData.gameOfWeek.margin}
+                        </div>
+
+                    </div>
+
+                {/if}
+
+                {#if previewData.shootout}
+
+                    <div class="feature">
+
+                        <div class="featureLabel">
+                            PROJECTED SHOOTOUT
+                        </div>
+
+                        <div class="featureTeams">
+                            {previewData.shootout.homeTeam.name}
+                            vs
+                            {previewData.shootout.awayTeam.name}
+                        </div>
+
+                        <div class="featureStat">
+                            Projected total:
+                            {previewData.shootout.total}
+                        </div>
+
+                    </div>
+
+                {/if}
+
+                {#if previewData.blowout}
+
+                    <div class="feature">
+
+                        <div class="featureLabel">
+                            ASS BEATING OF THE WEEK
+                        </div>
+
+                        <div class="featureTeams">
+                            {previewData.blowout.favorite?.name}
+                            over
+                            {previewData.blowout.underdog?.name}
+                        </div>
+
+                        <div class="featureStat">
+                            Projected margin:
+                            {previewData.blowout.margin}
+                        </div>
+
+                    </div>
+
+                {/if}
+
+            </div>
+
+            {#each previewData.games as game}
+
+                <div class="game">
+
+                    <div class="matchupHeader">
+
+                        <div class="team">
+
+                            <div class="teamIdentity">
+
+                                {#if game.homeAvatar}
+
+                                    <img
+                                        class="teamAvatar"
+                                        src={game.homeAvatar}
+                                        alt={game.homeTeam.name}
+                                    />
+
+                                {/if}
+
+                                <div>
+
+                                    <div class="teamName">
+                                        {game.homeTeam.name}
+                                    </div>
+
+                                    {#if game.homeRecord}
+                                        <div class="teamRecord">
+                                            {game.homeRecord}
+                                        </div>
+                                    {/if}
+
+                                </div>
+
+                            </div>
+
+                            <div class="projection">
+                                {game.homeProjection}
+                            </div>
+
+                        </div>
+
+                        <div class="vs">
+                            VS
+                        </div>
+
+                        <div class="team">
+
+                            <div class="teamIdentity">
+
+                                {#if game.awayAvatar}
+
+                                    <img
+                                        class="teamAvatar"
+                                        src={game.awayAvatar}
+                                        alt={game.awayTeam.name}
+                                    />
+
+                                {/if}
+
+                                <div>
+
+                                    <div class="teamName">
+                                        {game.awayTeam.name}
+                                    </div>
+
+                                    {#if game.awayRecord}
+                                        <div class="teamRecord">
+                                            {game.awayRecord}
+                                        </div>
+                                    {/if}
+
+                                </div>
+
+                            </div>
+
+                            <div class="projection">
+                                {game.awayProjection}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="line">
+
+                        {#if game.favorite}
+
+                            Projected Line:
+                            {game.favorite.name}
+                            -{game.margin}
+
+                            &nbsp; | &nbsp;
+
+                        {/if}
+
+                        Projected Total:
+                        {game.total}
+
+                    </div>
+
+                    <div class="keyPlayers">
+
+                        <div class="playerSide">
+
+                            <div class="playerSideTitle">
+                                {game.homeTeam.name}
+                                — KEY PLAYERS
+                            </div>
+
+                            {#each game.homeTopPlayers as player}
+
+                                <div class="playerRow">
+
+                                    <div>
+
+                                        <span class="playerName">
+                                            {player.name}
+                                        </span>
+
+                                        <span class="playerMeta">
+
+                                            {player.position}
+
+                                            {#if player.nflTeam}
+                                                · {player.nflTeam}
+                                            {/if}
+
+                                        </span>
+
+                                    </div>
+
+                                    <div class="playerProjection">
+                                        {player.projection}
+                                    </div>
+
+                                </div>
+
+                            {/each}
+
+                        </div>
+
+                        <div class="playerSide">
+
+                            <div class="playerSideTitle">
+                                {game.awayTeam.name}
+                                — KEY PLAYERS
+                            </div>
+
+                            {#each game.awayTopPlayers as player}
+
+                                <div class="playerRow">
+
+                                    <div>
+
+                                        <span class="playerName">
+                                            {player.name}
+                                        </span>
+
+                                        <span class="playerMeta">
+
+                                            {player.position}
+
+                                            {#if player.nflTeam}
+                                                · {player.nflTeam}
+                                            {/if}
+
+                                        </span>
+
+                                    </div>
+
+                                    <div class="playerProjection">
+                                        {player.projection}
+                                    </div>
+
+                                </div>
+
+                            {/each}
+
+                        </div>
+
+                    </div>
+
+                    <div class="previewCopy">
+
+                        <div class="czarTitle">
+                            THE CZAR'S READ
+                        </div>
+
+                        {#if game.commentary}
+
+                            {#if game.commentary.headline}
+
+                                <h3 class="commentaryHeadline">
+                                    {game.commentary.headline}
+                                </h3>
+
+                            {/if}
+
+                            {#if game.commentary.preview}
+
+                                <p class="commentaryText">
+                                    {game.commentary.preview}
+                                </p>
+
+                            {/if}
+
+                            {#if game.commentary.pick}
+
+                                <div class="pickCard">
+
+                                    <div class="pickEyebrow">
+                                        THE CZAR HAS SPOKEN
+                                    </div>
+
+                                    <div class="pickMain">
+
+                                        <span class="pickLabel">
+                                            CZAR'S PICK
+                                        </span>
+
+                                        <span class="pickTeam">
+                                            {game.commentary.pick}
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            {/if}
+
+                        {:else}
+
+                            <div class="placeholder">
+                                No Czar commentary yet.
+                            </div>
+
+                        {/if}
+
+                    </div>
+
+                </div>
+
+            {/each}
+
+        {:else}
+
+            <div class="noGames">
+                No matchups found for Week
+                {previewData.week}.
+            </div>
+
+        {/if}
+
+    {/if}
+
+</div>
 
 <style>
     .page {
@@ -325,14 +917,14 @@
         gap: 0.7em;
         margin: 0 auto 2.5em;
     }
-    
+
     .weekSelector label {
         font-size: 0.72em;
         font-weight: 700;
         letter-spacing: 0.08em;
         color: #888;
     }
-    
+
     .weekSelector select {
         padding: 0.55em 0.8em;
         border: 1px solid var(--ccc);
@@ -343,12 +935,12 @@
         font-weight: 600;
         cursor: pointer;
     }
-    
+
     .weekSelector select option {
         background: var(--fff);
         color: var(--000);
     }
-    
+
     .weekSelector select:focus {
         outline: 2px solid var(--ccc);
         outline-offset: 2px;
@@ -360,12 +952,19 @@
         line-height: 1.65em;
         text-align: center;
         color: var(--g555);
+        white-space: pre-line;
     }
 
     .featureGrid {
         display: grid;
         grid-template-columns:
-            repeat(3, minmax(0, 1fr));
+            repeat(
+                3,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
         gap: 1em;
         margin-bottom: 3em;
     }
@@ -376,7 +975,8 @@
         padding: 1.25em;
         text-align: center;
         background: var(--fff);
-        box-shadow: 0 0 6px 0 var(--bbb);
+        box-shadow:
+            0 0 6px 0 var(--bbb);
     }
 
     .featureLabel {
@@ -403,7 +1003,8 @@
         border-radius: 1em;
         margin: 1.5em 0;
         overflow: hidden;
-        box-shadow: 0 0 6px 0 var(--bbb);
+        box-shadow:
+            0 0 6px 0 var(--bbb);
         background: var(--fff);
     }
 
@@ -441,6 +1042,13 @@
         line-height: 1.2em;
     }
 
+    .teamRecord {
+        margin-top: 0.2em;
+        font-size: 0.76em;
+        font-weight: 700;
+        color: #888;
+    }
+
     .projection {
         font-size: 2em;
         font-weight: 700;
@@ -462,11 +1070,14 @@
 
     .keyPlayers {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
         gap: 1em;
         padding: 1.2em 1.5em;
-        border-top: 1px solid var(--ccc);
-        border-bottom: 1px solid var(--ccc);
+        border-top:
+            1px solid var(--ccc);
+        border-bottom:
+            1px solid var(--ccc);
     }
 
     .playerSide {
@@ -483,7 +1094,8 @@
 
     .playerRow {
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns:
+            1fr auto;
         gap: 0.75em;
         align-items: center;
         padding: 0.35em 0;
@@ -520,7 +1132,8 @@
     }
 
     .commentaryHeadline {
-        margin: 0 0 0.75em;
+        margin:
+            0 0 0.75em;
         font-size: 1.25em;
     }
 
@@ -528,15 +1141,44 @@
         margin: 0;
         line-height: 1.65em;
         color: var(--g555);
+        white-space: pre-line;
     }
 
-    .pick {
-        margin-top: 1.25em;
-        font-size: 0.95em;
+    .pickCard {
+        margin-top: 1.5em;
+        padding: 0.9em 1em;
+        border:
+            1px solid var(--ccc);
+        border-left:
+            4px solid var(--000);
+        border-radius: 0.6em;
+        background: var(--eee);
+    }
+
+    .pickEyebrow {
+        margin-bottom: 0.4em;
+        font-size: 0.62em;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        color: #888;
+    }
+
+    .pickMain {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6em;
+        flex-wrap: wrap;
     }
 
     .pickLabel {
-        font-weight: 700;
+        font-size: 0.72em;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+    }
+
+    .pickTeam {
+        font-size: 1.15em;
+        font-weight: 900;
     }
 
     .placeholder {
@@ -551,9 +1193,12 @@
         color: #888;
     }
 
-    @media (max-width: 700px) {
+    @media (
+        max-width: 700px
+    ) {
         .featureGrid {
-            grid-template-columns: 1fr;
+            grid-template-columns:
+                1fr;
         }
 
         .matchupHeader {
@@ -565,7 +1210,8 @@
         }
 
         .vs {
-            padding: 0 0.4em;
+            padding:
+                0 0.4em;
         }
 
         .title {
@@ -577,7 +1223,8 @@
         }
 
         .keyPlayers {
-            grid-template-columns: 1fr;
+            grid-template-columns:
+                1fr;
         }
 
         .teamIdentity {
@@ -590,292 +1237,3 @@
         }
     }
 </style>
-
-<div class="page">
-
-    {#if loading}
-        <div class="loading">
-            Building weekly preview...
-        </div>
-
-    {:else if previewData}
-
-        <h1 class="title">
-            Week {previewData.week} Preview
-        </h1>
-
-        <div class="subtitle">
-            The official word from the Roster Czar
-        </div>
-
-        <div class="weekSelector">
-        
-            <label for="week-select">
-                WEEK
-            </label>
-        
-            <select
-                id="week-select"
-                value={previewData.week}
-                on:change={changeWeek}
-            >
-                {#each availableWeeks as week}
-                    <option value={week}>
-                        Week {week}
-                    </option>
-                {/each}
-            </select>
-        
-        </div>
-
-        {#if previewData.intro}
-            <div class="intro">
-                {previewData.intro}
-            </div>
-        {/if}
-
-        {#if previewData.games.length > 0}
-
-            <div class="featureGrid">
-
-                {#if previewData.gameOfWeek}
-                    <div class="feature">
-                        <div class="featureLabel">
-                            GAME OF THE WEEK
-                        </div>
-
-                        <div class="featureTeams">
-                            {previewData.gameOfWeek.homeTeam.name}
-                            vs
-                            {previewData.gameOfWeek.awayTeam.name}
-                        </div>
-
-                        <div class="featureStat">
-                            Projected margin:
-                            {previewData.gameOfWeek.margin}
-                        </div>
-                    </div>
-                {/if}
-
-                {#if previewData.shootout}
-                    <div class="feature">
-                        <div class="featureLabel">
-                            PROJECTED SHOOTOUT
-                        </div>
-
-                        <div class="featureTeams">
-                            {previewData.shootout.homeTeam.name}
-                            vs
-                            {previewData.shootout.awayTeam.name}
-                        </div>
-
-                        <div class="featureStat">
-                            Projected total:
-                            {previewData.shootout.total}
-                        </div>
-                    </div>
-                {/if}
-
-                {#if previewData.blowout}
-                    <div class="feature">
-                        <div class="featureLabel">
-                            ASS BEATING OF THE WEEK
-                        </div>
-
-                        <div class="featureTeams">
-                            {previewData.blowout.favorite?.name}
-                            over
-                            {previewData.blowout.underdog?.name}
-                        </div>
-
-                        <div class="featureStat">
-                            Projected margin:
-                            {previewData.blowout.margin}
-                        </div>
-                    </div>
-                {/if}
-
-            </div>
-
-            {#each previewData.games as game}
-
-                <div class="game">
-
-                    <div class="matchupHeader">
-
-                        <div class="team">
-
-                            <div class="teamIdentity">
-                                {#if game.homeAvatar}
-                                    <img
-                                        class="teamAvatar"
-                                        src={game.homeAvatar}
-                                        alt={game.homeTeam.name}
-                                    />
-                                {/if}
-
-                                <div class="teamName">
-                                    {game.homeTeam.name}
-                                </div>
-                            </div>
-
-                            <div class="projection">
-                                {game.homeProjection}
-                            </div>
-
-                        </div>
-
-                        <div class="vs">
-                            VS
-                        </div>
-
-                        <div class="team">
-
-                            <div class="teamIdentity">
-                                {#if game.awayAvatar}
-                                    <img
-                                        class="teamAvatar"
-                                        src={game.awayAvatar}
-                                        alt={game.awayTeam.name}
-                                    />
-                                {/if}
-
-                                <div class="teamName">
-                                    {game.awayTeam.name}
-                                </div>
-                            </div>
-
-                            <div class="projection">
-                                {game.awayProjection}
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="line">
-                        {#if game.favorite}
-                            Projected Line:
-                            {game.favorite.name}
-                            -{game.margin}
-                            &nbsp; | &nbsp;
-                        {/if}
-
-                        Projected Total:
-                        {game.total}
-                    </div>
-
-                    <div class="keyPlayers">
-
-                        <div class="playerSide">
-                            <div class="playerSideTitle">
-                                {game.homeTeam.name} — KEY PLAYERS
-                            </div>
-
-                            {#each game.homeTopPlayers as player}
-                                <div class="playerRow">
-                                    <div>
-                                        <span class="playerName">
-                                            {player.name}
-                                        </span>
-
-                                        <span class="playerMeta">
-                                            {player.position}
-                                            {#if player.nflTeam}
-                                                · {player.nflTeam}
-                                            {/if}
-                                        </span>
-                                    </div>
-
-                                    <div class="playerProjection">
-                                        {player.projection}
-                                    </div>
-                                </div>
-                            {/each}
-                        </div>
-
-                        <div class="playerSide">
-                            <div class="playerSideTitle">
-                                {game.awayTeam.name} — KEY PLAYERS
-                            </div>
-
-                            {#each game.awayTopPlayers as player}
-                                <div class="playerRow">
-                                    <div>
-                                        <span class="playerName">
-                                            {player.name}
-                                        </span>
-
-                                        <span class="playerMeta">
-                                            {player.position}
-                                            {#if player.nflTeam}
-                                                · {player.nflTeam}
-                                            {/if}
-                                        </span>
-                                    </div>
-
-                                    <div class="playerProjection">
-                                        {player.projection}
-                                    </div>
-                                </div>
-                            {/each}
-                        </div>
-
-                    </div>
-
-                    <div class="previewCopy">
-
-                        <div class="czarTitle">
-                            THE CZAR'S READ
-                        </div>
-
-                        {#if game.commentary}
-
-                            {#if game.commentary.headline}
-                                <h3 class="commentaryHeadline">
-                                    {game.commentary.headline}
-                                </h3>
-                            {/if}
-
-                            {#if game.commentary.preview}
-                                <p class="commentaryText">
-                                    {game.commentary.preview}
-                                </p>
-                            {/if}
-
-                            {#if game.commentary.pick}
-                                <div class="pick">
-                                    <span class="pickLabel">
-                                        CZAR PICK:
-                                    </span>
-
-                                    {game.commentary.pick}
-                                </div>
-                            {/if}
-
-                        {:else}
-
-                            <div class="placeholder">
-                                No Czar commentary yet.
-                            </div>
-
-                        {/if}
-
-                    </div>
-
-                </div>
-
-            {/each}
-
-        {:else}
-
-            <div class="noGames">
-                No matchups found for Week
-                {previewData.week}.
-            </div>
-
-        {/if}
-
-    {/if}
-
-</div>
