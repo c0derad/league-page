@@ -1096,50 +1096,62 @@ export const weeklyPreviews = {
 
     1: {
       headline: "Vigo Escaped the Basement. JV Is Trying to Put Him Back.",
-      preview: `
-        Vigo finally won.
-
-        His reward is PeterPanthers.
-
-        JV enters projected at 125.29.
-
-        Vigo enters at 96.44.
-
-        That is the largest projected margin of Week 5.
-
-        To Vigo's credit, Week 4 was legitimately encouraging. C.J. Stroud scored
-        23.08. Brian Robinson scored 25.7. Chase Brown, Jameson Williams and Jaylen
-        Waddle all produced.
-
-        Retardinals finally looked like a functional fantasy football team.
-
-        The problem is JV has spent four weeks looking like one of the best teams
-        in the league.
-
-        Gibbs carries a 25.76 projection. Trey McBride is above 18. Jayden Daniels
-        is back in the projected lineup. Chris Olave gives JV another high-volume
-        option.
-
-        And last week was PeterPanthers' worst performance.
-
-        They scored 110.76.
-
-        Vigo had not reached 100 until last Sunday.
-
-        That comparison is unfortunate.
-
-        Vigo does have enough volatility to make this interesting if Stroud stays hot
-        and the Jefferson-A.J. Brown side of this roster finally detonates.
-
-        But almost 29 projected points is a lot.
-
-        Vigo escaped the basement.
-
-        JV is trying to escort him directly back toward it.
-      `,
-      pick: "PeterPanthers"
-    },
-
+        preview: `
+          Vigo finally won.
+      
+          His reward is PeterPanthers.
+      
+          JV enters projected at 125.29.
+      
+          Vigo enters at 96.44.
+      
+          That is the largest projected margin of Week 5.
+      
+          To Vigo's credit, Week 4 was legitimately encouraging. C.J. Stroud scored
+          23.08. Brian Robinson scored 25.7. Chase Brown, Jameson Williams and Jaylen
+          Waddle all produced.
+      
+          Retardinals finally looked like a functional fantasy football team.
+      
+          The problem is JV has spent four weeks looking like one of the best teams
+          in the league.
+      
+          Gibbs carries a 25.76 projection. Trey McBride is above 18. Jayden Daniels
+          is back in the projected lineup. Chris Olave gives JV another high-volume
+          option.
+      
+          And last week was PeterPanthers' worst performance.
+      
+          They scored 110.76.
+      
+          Vigo had not reached 100 until last Sunday.
+      
+          That comparison is unfortunate.
+      
+          Vigo does have enough volatility to make this interesting if Stroud stays hot
+          and the Jefferson-A.J. Brown side of this roster finally detonates.
+      
+          He also appears to understand the assignment.
+      
+          Vigo's official message to the league ahead of Week 5:
+      
+          "Need to pull another miracle. And fuck JV."
+      
+          Concise.
+      
+          Focused.
+      
+          Correct target.
+      
+          But almost 29 projected points is still a lot.
+      
+          Vigo escaped the basement.
+      
+          JV is trying to escort him directly back toward it.
+        `,
+        pick: "PeterPanthers"
+      },
+    
     2: {
       headline: "Two Managers vs. One Extremely Pissed-Off J-Bone",
       preview: `
