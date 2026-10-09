@@ -854,5 +854,475 @@ export const weeklyBestBets = {
                 `
             }
         ]
-    }
+    },
+        6: {
+        year: 2026,
+        ncaaWeek: 6,
+    
+        title: "Week 6 Best Bets",
+    
+        record: {
+            weeks: [
+                {
+                    label: "Week 3",
+                    overall: "8 - 2",
+                    wins: 8,
+                    losses: 2
+                },
+                {
+                    label: "Week 4",
+                    overall: "7 - 3",
+                    wins: 7,
+                    losses: 3
+                },
+                {
+                    label: "Week 5",
+                    overall: "5 - 5",
+                    wins: 5,
+                    losses: 5
+                }
+            ],
+    
+            overall: {
+                label: "Overall",
+                overall: "20 - 10",
+                wins: 20,
+                losses: 10
+            }
+        },
+    
+        intro: `
+            Week 6.
+    
+            The official card enters at 20-10.
+    
+            Week 3: 8-2.
+    
+            Week 4: 7-3.
+    
+            Week 5: 5-5.
+    
+            Regression has arrived, but the account remains comfortably solvent.
+    
+            Ten more model plays are on the board.
+    
+            Ranked road dogs.
+    
+            Thirty-point favorites.
+    
+            North Dakota State walking into Las Vegas as the favorite against an FBS team.
+    
+            An SEC home favorite.
+    
+            And Penn State asking us to respect the White Out despite USC arriving
+            with the better record.
+    
+            Then there is Alabama.
+    
+            The model makes Alabama roughly a nine-point favorite.
+    
+            The Czar has elected to disregard the concept of responsible portfolio
+            construction.
+    
+            Four additional Alabama positions have therefore been authorized.
+    
+            These are not model plays.
+    
+            These are emotional investments.
+    
+            The official model card remains ten bets.
+    
+            The Alabama ladder exists separately and will be judged accordingly.
+    
+            The lines are locked.
+    
+            The Czar has spoken.
+        `,
+    
+        bets: [
+            {
+                rank: 1,
+    
+                team: "Iowa",
+                teamSlug: "iowa",
+    
+                pick: "Iowa +2.5",
+    
+                commentary: `
+                    We begin with the uncomfortable kind of bet.
+    
+                    Iowa is walking into Seattle as a short underdog.
+    
+                    The obvious concern is quarterback.
+    
+                    Iowa does not need to win a shootout for this bet to work.
+    
+                    The Hawkeyes can defend, play special teams and turn games into the
+                    kind of ugly possession-by-possession fistfight where 2.5 points matter.
+    
+                    Washington absolutely has the home-field edge.
+    
+                    I just don't think these teams are far enough apart for Iowa to be
+                    getting points.
+    
+                    Hold your nose.
+    
+                    Take the Hawkeyes.
+                `
+            },
+    
+            {
+                rank: 2,
+    
+                team: "Ohio State",
+                teamSlug: "ohio-state",
+    
+                pick: "Ohio State -32.5",
+    
+                commentary: `
+                    Thirty-two and a half is disgusting.
+    
+                    That does not automatically make it wrong.
+    
+                    Ohio State has a massive talent advantage and enough offensive ceiling
+                    to turn this into a very long afternoon quickly.
+    
+                    The number is enormous.
+    
+                    The mismatch may be larger.
+    
+                    We need five touchdowns.
+    
+                    Fine.
+    
+                    Violence.
+                `
+            },
+    
+            {
+                rank: 3,
+    
+                team: "North Dakota State",
+                teamSlug: "north-dakota-state",
+    
+                pick: "North Dakota State -3",
+    
+                commentary: `
+                    Yes.
+    
+                    North Dakota State is going to Las Vegas.
+    
+                    Yes.
+    
+                    North Dakota State is favored.
+    
+                    That should tell you something.
+    
+                    This is not an FCS charity spot.
+    
+                    At -3, the assignment is simple.
+    
+                    Win the football game by more than a field goal.
+    
+                    I trust the better defense.
+    
+                    Bison.
+                `
+            },
+    
+            {
+                rank: 4,
+    
+                team: "Missouri",
+                teamSlug: "missouri",
+    
+                pick: "Missouri -3.5",
+    
+                commentary: `
+                    SEC game.
+    
+                    Hook involved.
+    
+                    Immediate discomfort.
+    
+                    Good.
+    
+                    Missouri gets this one at home, and the model still wants the Tigers
+                    laying 3.5.
+    
+                    Three would obviously be prettier.
+    
+                    We do not have three.
+    
+                    I'm not going to talk the computer out of its own bet.
+    
+                    Mizzou by more than a field goal.
+                `
+            },
+    
+            {
+                rank: 5,
+    
+                team: "North Texas",
+                teamSlug: "north-texas",
+    
+                pick: "North Texas -28.5",
+    
+                commentary: `
+                    Another gigantic number.
+    
+                    Another favorite.
+    
+                    At some point, backing Charlotte requires believing the size of the
+                    spread itself creates value.
+    
+                    The model disagrees.
+    
+                    North Texas has enough offense to turn this into a runaway if Charlotte
+                    cannot create stops early.
+    
+                    That half-point matters.
+    
+                    We need 29.
+    
+                    So be it.
+                `
+            },
+    
+            {
+                rank: 6,
+    
+                team: "Arizona",
+                teamSlug: "arizona",
+    
+                pick: "Arizona -3",
+    
+                commentary: `
+                    Morgantown is not a comfortable place to lay points.
+    
+                    Neither is a long road trip.
+    
+                    But at -3, we are not asking Arizona to dominate.
+    
+                    We are asking them to win the football game.
+    
+                    The matchup favors Arizona through the air, and the Wildcats should be
+                    able to create enough offense to separate late.
+    
+                    Arizona by four works.
+    
+                    Arizona by exactly three gives us our money back.
+    
+                    I'll take it.
+                `
+            },
+    
+            {
+                rank: 7,
+    
+                team: "Minnesota",
+                teamSlug: "minnesota",
+    
+                pick: "Minnesota -2.5",
+    
+                commentary: `
+                    This feels like a classic trap spot.
+    
+                    Minnesota is laying less than a field goal on the road.
+    
+                    I understand why people will want Purdue.
+    
+                    I still prefer Minnesota.
+    
+                    The Gophers do not need to dominate.
+    
+                    They need to leave with a three-point win.
+    
+                    Fleckball may make this significantly more stressful than necessary.
+    
+                    Minnesota -2.5.
+                `
+            },
+    
+            {
+                rank: 8,
+    
+                team: "Tulsa",
+                teamSlug: "tulsa",
+    
+                pick: "Tulsa +1.5",
+    
+                commentary: `
+                    Navy being favored here appears to be asking us to respect the uniform
+                    more than the current teams.
+    
+                    Tulsa does not need to dominate anything.
+    
+                    The Golden Hurricane just need to survive the option, avoid giving Navy
+                    cheap possessions and turn this into a normal football game.
+    
+                    If that happens, I think the wrong team may be favored.
+    
+                    Give me Tulsa and the 1.5.
+                `
+            },
+    
+            {
+                rank: 9,
+    
+                team: "Virginia Tech",
+                teamSlug: "virginia-tech",
+    
+                pick: "Virginia Tech -10",
+    
+                commentary: `
+                    Cross-country road favorite.
+    
+                    Double-digit spread.
+    
+                    There are easier bets to love.
+    
+                    Virginia Tech still gets the better team.
+    
+                    The number asks the Hokies to create real separation rather than merely
+                    escape Berkeley.
+    
+                    I'm comfortable with it.
+    
+                    Wake up.
+    
+                    Handle business.
+    
+                    Hokies -10.
+                `
+            },
+    
+            {
+                rank: 10,
+    
+                team: "USC",
+                teamSlug: "southern-california",
+    
+                pick: "USC +1.5",
+    
+                commentary: `
+                    White Out.
+    
+                    Beaver Stadium.
+    
+                    Primetime.
+    
+                    Normally this is exactly where everyone talks themselves into Penn State.
+    
+                    I'm going the other way.
+    
+                    USC has been the better team to this point.
+    
+                    Penn State absolutely can win this game.
+    
+                    The environment is going to be ridiculous.
+    
+                    But environment is doing a lot of work in this line.
+    
+                    And we're getting points.
+    
+                    The White Out can scream all it wants.
+    
+                    Give me the Trojans +1.5.
+                `
+            }
+        ],
+    
+        bonusBets: {
+            title: "BONUS BETS — EMOTIONAL GAMBLING",
+    
+            disclaimer: `
+                MODEL LINE: ALABAMA -9
+    
+                The following wagers are not being endorsed by the model.
+    
+                They are being endorsed by the portion of the Czar's brain that becomes
+                completely unusable whenever Alabama plays Georgia.
+    
+                These bets should not be cited in future discussions regarding model accuracy.
+    
+                They will, however, absolutely be celebrated if they hit.
+            `,
+    
+            bets: [
+                {
+                    rank: "B1",
+                    team: "Alabama",
+                    teamSlug: "alabama",
+                    pick: "Alabama -1.5",
+    
+                    commentary: `
+                        The coward's emotional position.
+    
+                        If Alabama wins the football game by a field goal, we cash.
+    
+                        I am comfortable beginning the ladder here.
+                    `
+                },
+    
+                {
+                    rank: "B2",
+                    team: "Alabama",
+                    teamSlug: "alabama",
+                    pick: "Alabama -3.5",
+    
+                    commentary: `
+                        Slightly more conviction.
+    
+                        Alabama by four.
+    
+                        That is all we are asking.
+    
+                        The model likes Alabama by roughly nine.
+    
+                        Emotion agrees.
+                    `
+                },
+    
+                {
+                    rank: "B3",
+                    team: "Alabama",
+                    teamSlug: "alabama",
+                    pick: "Alabama -7.5",
+    
+                    commentary: `
+                        Now we have entered the part of the ladder where this stops being
+                        remotely responsible.
+    
+                        The model number says Alabama by nine.
+    
+                        So naturally the Czar has decided eight will also do.
+    
+                        Roll Tide.
+                    `
+                },
+    
+                {
+                    rank: "B4",
+                    team: "Alabama",
+                    teamSlug: "alabama",
+                    pick: "Alabama -10.5",
+    
+                    commentary: `
+                        This is no longer analysis.
+    
+                        This is a declaration of faith.
+    
+                        The model says Alabama by nine.
+    
+                        This bet says the model is a coward.
+    
+                        If this one cashes, the Czar will be completely intolerable.
+    
+                        Alabama -10.5.
+                    `
+                }
+            ]
+        }
+}
 };
