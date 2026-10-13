@@ -663,15 +663,38 @@
                     ?.[matchupID] ||
                 null;
 
-            const previewPick =
+            const previewMatchup =
                 preview
                     ?.matchups
-                    ?.[matchupID]
+                    ?.[matchupID] ||
+                null;
+
+            const previewPick =
+                previewMatchup
                     ?.pick ||
                 null;
 
+            const previewPickRosterID =
+                previewMatchup
+                    ?.pickRosterID ??
+                null;
+
+            const winnerRosterID =
+                Number(
+                    teamAPoints >=
+                    teamBPoints
+                        ? teamA.roster_id
+                        : teamB.roster_id
+                );
+
             const pickCorrect =
-                previewPick
+                previewPickRosterID !==
+                null
+                    ? Number(
+                        previewPickRosterID
+                    ) ===
+                      winnerRosterID
+                    : previewPick
                     ? previewPick.trim() ===
                       winner?.name?.trim()
                     : null;
@@ -1360,7 +1383,6 @@
                 </div>
             
             </div>
-
 
         </div>
 
