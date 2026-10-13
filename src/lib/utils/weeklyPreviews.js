@@ -28,7 +28,8 @@ export const weeklyPreviews = {
           games where JV is still staring at Sleeper on Sunday night wondering why Trevor
           hasn't gone away yet — Don't rule out a week 1 upset by THE BEAR.
         `,
-        pick: "PeterPanthers"
+        pick: "PeterPanthers",
+        pickRosterID: 2
       },
 
       2: {
@@ -45,7 +46,8 @@ export const weeklyPreviews = {
           close, I trust Allen's legs and chaos factor more than I trust a projection
           model pretending it knows where every touchdown is going.
         `,
-        pick: "ConsiderMeOiled"
+        pick: "ConsiderMeOiled",
+        pickRosterID: 3
       },
 
       3: {
@@ -61,7 +63,8 @@ export const weeklyPreviews = {
           Ryan absolutely has a path here, especially if Taylor owns the red zone,
           but I refuse to begin the season by picking against my own regime.
         `,
-        pick: "Critical Chase Theory"
+        pick: "Critical Chase Theory",
+        pickRosterID: 1
       },
 
       4: {
@@ -80,7 +83,8 @@ export const weeklyPreviews = {
           Sleeper sees a near double-digit gap. That feels harsh, but not insane.
           Rhodes and Pags need Bijan to go full superhero mode.
         `,
-        pick: "Campus Legends"
+        pick: "Campus Legends",
+        pickRosterID: 11
       },
 
       5: {
@@ -99,7 +103,8 @@ export const weeklyPreviews = {
 
           Sleeper likes Charles. I’m flipping it. Give me the volatility.
         `,
-        pick: "Retardinals"
+        pick: "Retardinals",
+        pickRosterID: 7
       },
 
       6: {
@@ -119,7 +124,8 @@ export const weeklyPreviews = {
           Sleeper likes J-Bone by five. I think this is much closer than that. T2 has
           enough actual superstar talent to steal it.
         `,
-        pick: "Big frydown"
+        pick: "Big frydown",
+        pickRosterID: 12
       }
     }
   },
@@ -147,34 +153,35 @@ export const weeklyPreviews = {
     `,
 
     matchups: {
-        1: {
-          headline: "JV Gets His First Real Test",
-          preview: `
-            JV enters Week 2 undefeated and sitting at No. 1 in the power rankings after
-            absolutely detonating in the opener.
-        
-            Gibbs is still the biggest individual weapon in this matchup, Daniels adds rushing
-            upside at quarterback, and Olave and McBride give PeterPanthers two high-volume
-            options who can score without needing touchdowns. Swift just scored three times in
-            Week 1, although asking for that again would be ambitious.
-        
-            There may also be some self-preservation involved here. JV has made it very clear
-            that beer bubbles hurt his tummy, and avoiding Low Man is a fairly effective way to
-            avoid having to drink one on camera.
-        
-            Chaney has the more balanced counterattack. Puka and Nico can both dominate targets,
-            Kyren and Montgomery provide dependable touchdown opportunities, and Burrow gives
-            The Oilers considerably more ceiling than his Week 1 score showed. There really
-            isn't an obvious weak point in Chaney's starting lineup.
-        
-            Sleeper has these teams separated by barely two points, and that feels right.
-            JV's Week 1 deserves respect. I'm just not ready to assume 172-point JV is the
-            permanent version.
-        
-            Give me the deeper lineup in the Game of the Week.
-          `,
-          pick: "The Oilers"
-        },
+      1: {
+        headline: "JV Gets His First Real Test",
+        preview: `
+          JV enters Week 2 undefeated and sitting at No. 1 in the power rankings after
+          absolutely detonating in the opener.
+      
+          Gibbs is still the biggest individual weapon in this matchup, Daniels adds rushing
+          upside at quarterback, and Olave and McBride give PeterPanthers two high-volume
+          options who can score without needing touchdowns. Swift just scored three times in
+          Week 1, although asking for that again would be ambitious.
+      
+          There may also be some self-preservation involved here. JV has made it very clear
+          that beer bubbles hurt his tummy, and avoiding Low Man is a fairly effective way to
+          avoid having to drink one on camera.
+      
+          Chaney has the more balanced counterattack. Puka and Nico can both dominate targets,
+          Kyren and Montgomery provide dependable touchdown opportunities, and Burrow gives
+          The Oilers considerably more ceiling than his Week 1 score showed. There really
+          isn't an obvious weak point in Chaney's starting lineup.
+      
+          Sleeper has these teams separated by barely two points, and that feels right.
+          JV's Week 1 deserves respect. I'm just not ready to assume 172-point JV is the
+          permanent version.
+      
+          Give me the deeper lineup in the Game of the Week.
+        `,
+        pick: "The Oilers",
+        pickRosterID: 3
+      },
 
       2: {
         headline: "The Czar Begins the Reputation Repair Tour",
@@ -204,7 +211,8 @@ export const weeklyPreviews = {
           For the second consecutive week, the commissioner has conducted a thorough,
           independent review and found no reason to pick against himself.
         `,
-        pick: "Critical Chase Theory"
+        pick: "Critical Chase Theory",
+        pickRosterID: 1
       },
 
       3: {
@@ -235,7 +243,8 @@ export const weeklyPreviews = {
       
           The Czar is not.
         `,
-        pick: "Moore Oil Coming"
+        pick: "Moore Oil Coming",
+        pickRosterID: 10
       },
 
       4: {
@@ -273,7 +282,8 @@ export const weeklyPreviews = {
           Vigo can absolutely make this ugly if Caleb goes nuclear again, but Ryan has more
           ways to survive if one player disappoints.
         `,
-        pick: "Naberhood Sex Offender"
+        pick: "Naberhood Sex Offender",
+        pickRosterID: 8
       },
 
       5: {
@@ -303,7 +313,8 @@ export const weeklyPreviews = {
 
           Give me #FreeTony.
         `,
-        pick: "#FreeTony"
+        pick: "#FreeTony",
+        pickRosterID: 6
       },
 
       6: {
@@ -334,10 +345,12 @@ export const weeklyPreviews = {
 
           Prove it again.
         `,
-        pick: "Charles"
+        pick: "Charles",
+        pickRosterID: 9
       }
     }
   },
+
   3: {
     intro: `
       Week 3 is here.
@@ -416,7 +429,8 @@ export const weeklyPreviews = {
 
           Critical Chase Theory gets off the mat in Week 3.
         `,
-        pick: "Critical Chase Theory"
+        pick: "Critical Chase Theory",
+        pickRosterID: 1
       },
 
       2: {
@@ -459,7 +473,8 @@ export const weeklyPreviews = {
 
           Barely.
         `,
-        pick: "The Oilers"
+        pick: "The Oilers",
+        pickRosterID: 3
       },
 
       3: {
@@ -506,7 +521,8 @@ export const weeklyPreviews = {
           Which means this is exactly the sort of game where fantasy football traditionally
           decides to ruin someone's Sunday.
         `,
-        pick: "Show Me Your TDs"
+        pick: "Show Me Your TDs",
+        pickRosterID: 4
       },
 
       4: {
@@ -556,7 +572,8 @@ export const weeklyPreviews = {
 
           Give me #FreeTony to finally get paid for scoring points.
         `,
-        pick: "#FreeTony"
+        pick: "#FreeTony",
+        pickRosterID: 6
       },
 
       5: {
@@ -605,7 +622,8 @@ export const weeklyPreviews = {
 
           I trust Ryan more right now.
         `,
-        pick: "Naberhood Sex Offender"
+        pick: "Naberhood Sex Offender",
+        pickRosterID: 8
       },
 
       6: {
@@ -664,11 +682,13 @@ export const weeklyPreviews = {
 
           Give me Charles in the Game of the Week.
         `,
-        pick: "Charles"
+        pick: "Charles",
+        pickRosterID: 9
       }
     }
   },
-    4: {
+
+  4: {
     intro: `
       Week 4 is here, and apparently the league spent the last 72 hours treating
       the trade button like cocaine.
@@ -739,7 +759,8 @@ export const weeklyPreviews = {
 
           PeterPanthers survives.
         `,
-        pick: "PeterPanthers"
+        pick: "PeterPanthers",
+        pickRosterID: 2
       },
 
       2: {
@@ -787,107 +808,109 @@ export const weeklyPreviews = {
 
           The Car Bombs move to 2-2.
         `,
-        pick: "The Car Bombs"
+        pick: "The Car Bombs",
+        pickRosterID: 1
       },
 
-          3: {
-      headline: "THE TRADE BOWL: Somebody Has to Win",
-      preview: `
-        This is tremendous scheduling.
+      3: {
+        headline: "THE TRADE BOWL: Somebody Has to Win",
+        preview: `
+          This is tremendous scheduling.
 
-        The Oilers are 0-3.
+          The Oilers are 0-3.
 
-        #FreeTony is 0-3.
+          #FreeTony is 0-3.
 
-        Chaney and Jansen just completed the biggest roster swap of the week.
+          Chaney and Jansen just completed the biggest roster swap of the week.
 
-        And now they immediately play each other.
+          And now they immediately play each other.
 
-        One of these teams is probably leaving Week 4 with its first win.
+          One of these teams is probably leaving Week 4 with its first win.
 
-        The other is staring directly at 0-4.
+          The other is staring directly at 0-4.
 
-        Jansen's side of the blockbuster:
+          Jansen's side of the blockbuster:
 
-        Puka Nacua.
+          Puka Nacua.
 
-        Kyren Williams.
+          Kyren Williams.
 
-        Chaney's side:
+          Chaney's side:
 
-        CeeDee Lamb.
+          CeeDee Lamb.
 
-        Omarion Hampton.
+          Omarion Hampton.
 
-        No waiting period.
+          No waiting period.
 
-        No time to emotionally process the transaction.
+          No time to emotionally process the transaction.
 
-        We grade the trade immediately.
+          We grade the trade immediately.
 
-        The funny part is that these two teams arrived at 0-3 in completely
-        different ways.
+          The funny part is that these two teams arrived at 0-3 in completely
+          different ways.
 
-        Chaney opened with a respectable 129.46, then the entire operation
-        collapsed.
+          Chaney opened with a respectable 129.46, then the entire operation
+          collapsed.
 
-        83.58.
+          83.58.
 
-        83.18.
+          83.18.
 
-        Low Man.
+          Low Man.
 
-        The Oilers needed a roster shock, and Chaney finally delivered one.
+          The Oilers needed a roster shock, and Chaney finally delivered one.
 
-        The new-look lineup now gives him CeeDee alongside Nico Collins, Joe
-        Burrow, David Montgomery, Alvin Kamara, Hampton and Dalton Kincaid.
+          The new-look lineup now gives him CeeDee alongside Nico Collins, Joe
+          Burrow, David Montgomery, Alvin Kamara, Hampton and Dalton Kincaid.
 
-        Nico is also working his way back from the hamstring injury and returned
-        to practice in a limited capacity Wednesday.
+          Nico is also working his way back from the hamstring injury and returned
+          to practice in a limited capacity Wednesday.
 
-        Jansen's 0-3 has been considerably more cruel.
+          Jansen's 0-3 has been considerably more cruel.
 
-        #FreeTony opened with 136.56.
+          #FreeTony opened with 136.56.
 
-        Then 118.50.
+          Then 118.50.
 
-        Then 98.34.
+          Then 98.34.
 
-        He has spent most of September looking better than his record while
-        somehow continuing to collect losses.
+          He has spent most of September looking better than his record while
+          somehow continuing to collect losses.
 
-        Then De'Von Achane went down for the season and J-Bone responded by
-        rebuilding the roster in about 24 hours.
+          Then De'Von Achane went down for the season and J-Bone responded by
+          rebuilding the roster in about 24 hours.
 
-        Lamar Jackson remains the centerpiece.
+          Lamar Jackson remains the centerpiece.
 
-        Zay Flowers gives him another weekly ceiling play.
+          Zay Flowers gives him another weekly ceiling play.
 
-        Jaylen Warren is projected for 18.57.
+          Jaylen Warren is projected for 18.57.
 
-        And the newly acquired Rams combination of Puka and Kyren gets its first
-        audition against the manager who just traded them away.
+          And the newly acquired Rams combination of Puka and Kyren gets its first
+          audition against the manager who just traded them away.
 
-        Better yet, Sean McVay now expects Puka to return after missing the last
-        two games.
+          Better yet, Sean McVay now expects Puka to return after missing the last
+          two games.
 
-        Sleeper currently projects #FreeTony for 128.02 and The Oilers for 114.26.
+          Sleeper currently projects #FreeTony for 128.02 and The Oilers for 114.26.
 
-        This is not just the Trade Bowl.
+          This is not just the Trade Bowl.
 
-        This is two desperate 0-3 teams attempting to prove that the moves they
-        just made actually fixed something.
+          This is two desperate 0-3 teams attempting to prove that the moves they
+          just made actually fixed something.
 
-        Somebody gets validation.
+          Somebody gets validation.
 
-        Somebody gets 0-4.
+          Somebody gets 0-4.
 
-        I think Jansen finally gets off the mat.
+          I think Jansen finally gets off the mat.
 
-        J-Bone gets his first win.
-      `,
-      pick: "#FreeTony"
-    },
+          J-Bone gets his first win.
+        `,
+        pick: "#FreeTony",
+        pickRosterID: 6
+      },
 
       4: {
         headline: "Trevor Gets a Chance to Bury the T2 Renaissance",
@@ -934,7 +957,8 @@ export const weeklyPreviews = {
 
           Give me The Bear.
         `,
-        pick: "Show Me Your TDs"
+        pick: "Show Me Your TDs",
+        pickRosterID: 4
       },
 
       5: {
@@ -990,7 +1014,8 @@ export const weeklyPreviews = {
 
           The undefeated run continues.
         `,
-        pick: "Moore Oil Coming"
+        pick: "Moore Oil Coming",
+        pickRosterID: 10
       },
 
       6: {
@@ -1055,47 +1080,48 @@ export const weeklyPreviews = {
 
           Defend it.
         `,
-        pick: "Naberhood Sex Offender"
+        pick: "Naberhood Sex Offender",
+        pickRosterID: 8
       }
     }
   },
+
   5: {
-  intro: `
-    Four weeks are in the books.
+    intro: `
+      Four weeks are in the books.
 
-    We have one undefeated team left.
+      We have one undefeated team left.
 
-    We have one winless team coming off a 141-point performance.
+      We have one winless team coming off a 141-point performance.
 
-    Jansen finally stopped getting kicked in the balls by the schedule.
+      Jansen finally stopped getting kicked in the balls by the schedule.
 
-    Vigo finally won.
+      Vigo finally won.
 
-    T2 is back in the basement.
+      T2 is back in the basement.
 
-    And Week 5 has given us something even better:
+      And Week 5 has given us something even better:
 
-    an actual pick'em.
+      an actual pick'em.
 
-    Chaney enters 0-4 against a Charles team that has scored at least 122 points
-    every week, and Sleeper currently separates them by roughly two tenths of a point.
+      Chaney enters 0-4 against a Charles team that has scored at least 122 points
+      every week, and Sleeper currently separates them by roughly two tenths of a point.
 
-    At the top, Ryan is 4-0 and fresh off 160.32. Josh gets the next shot at ending
-    the league's last undefeated season.
+      At the top, Ryan is 4-0 and fresh off 160.32. Josh gets the next shot at ending
+      the league's last undefeated season.
 
-    At the bottom, Vigo's reward for finally escaping last place is a date with JV.
+      At the bottom, Vigo's reward for finally escaping last place is a date with JV.
 
-    Four weeks gave us the résumé.
+      Four weeks gave us the résumé.
 
-    Week 5 starts telling us which direction everybody is actually going.
+      Week 5 starts telling us which direction everybody is actually going.
 
-    The Czar has spoken.
-  `,
+      The Czar has spoken.
+    `,
 
-  matchups: {
-
-    1: {
-      headline: "Vigo Escaped the Basement. JV Is Trying to Put Him Back.",
+    matchups: {
+      1: {
+        headline: "Vigo Escaped the Basement. JV Is Trying to Put Him Back.",
         preview: `
           Vigo finally won.
       
@@ -1149,291 +1175,296 @@ export const weeklyPreviews = {
       
           JV is trying to escort him directly back toward it.
         `,
-        pick: "PeterPanthers"
+        pick: "PeterPanthers",
+        pickRosterID: 2
       },
     
-    2: {
-      headline: "Two Managers vs. One Extremely Pissed-Off J-Bone",
-      preview: `
-        Jansen finally got a win.
+      2: {
+        headline: "Two Managers vs. One Extremely Pissed-Off J-Bone",
+        preview: `
+          Jansen finally got a win.
 
-        Apparently three weeks of losing had created some emotional energy.
+          Apparently three weeks of losing had created some emotional energy.
 
-        #FreeTony responded with 157.88.
+          #FreeTony responded with 157.88.
 
-        Kyren Williams scored 36.7.
+          Kyren Williams scored 36.7.
 
-        Puka scored 27.7.
+          Puka scored 27.7.
 
-        Zay Flowers scored 25.8.
+          Zay Flowers scored 25.8.
 
-        Now Jansen enters Week 5 projected for 123.54 against Rhodes x Pags at 107.83.
+          Now Jansen enters Week 5 projected for 123.54 against Rhodes x Pags at 107.83.
 
-        The Rams stack is the obvious problem for the co-managers.
+          The Rams stack is the obvious problem for the co-managers.
 
-        Puka projects for 20.65.
+          Puka projects for 20.65.
 
-        Kyren projects for 18.69.
+          Kyren projects for 18.69.
 
-        Aaron Rodgers currently occupies the projected quarterback spot while Lamar
-        remains on the roster, meaning Jansen does not need quarterback heroics if the
-        rest of this lineup keeps producing.
+          Aaron Rodgers currently occupies the projected quarterback spot while Lamar
+          remains on the roster, meaning Jansen does not need quarterback heroics if the
+          rest of this lineup keeps producing.
 
-        Rhodes x Pags still have Bijan.
+          Rhodes x Pags still have Bijan.
 
-        That matters.
+          That matters.
 
-        He projects for 24.34 and remains the single player in this matchup most capable
-        of breaking the projection model by himself.
+          He projects for 24.34 and remains the single player in this matchup most capable
+          of breaking the projection model by himself.
 
-        Stafford, Davante and Bowers give them enough secondary firepower to make this
-        competitive.
+          Stafford, Davante and Bowers give them enough secondary firepower to make this
+          competitive.
 
-        The problem remains roster execution.
+          The problem remains roster execution.
 
-        Rhodes x Pags left 57.6 points on the bench last week.
+          Rhodes x Pags left 57.6 points on the bench last week.
 
-        Two managers.
+          Two managers.
 
-        Fifty-seven point six bench points.
+          Fifty-seven point six bench points.
 
-        Jansen currently has the hotter roster and the better lineup.
+          Jansen currently has the hotter roster and the better lineup.
 
-        Give me J-Bone.
-      `,
-      pick: "#FreeTony"
-    },
+          Give me J-Bone.
+        `,
+        pick: "#FreeTony",
+        pickRosterID: 6
+      },
 
-    3: {
-      headline: "The Czar Has Been Gifted a Wellness Check",
-      preview: `
-        The Car Bombs are projected for 117.68.
+      3: {
+        headline: "The Czar Has Been Gifted a Wellness Check",
+        preview: `
+          The Car Bombs are projected for 117.68.
 
-        Big frydown is projected for 91.02.
+          Big frydown is projected for 91.02.
 
-        T2 has now scored:
+          T2 has now scored:
 
-        81.66.
+          81.66.
 
-        92.54.
+          92.54.
 
-        87.
+          87.
 
-        Three straight games under 100.
+          Three straight games under 100.
 
-        Two Low Man finishes.
+          Two Low Man finishes.
 
-        Week 1 is beginning to look increasingly fictional.
+          Week 1 is beginning to look increasingly fictional.
 
-        Dak is still the best projected player on T2's side at 19.54. Bucky Irving
-        and Aaron Jones give him some usable RB production, and Tucker Kraft has
-        quietly been one of the more reliable pieces.
+          Dak is still the best projected player on T2's side at 19.54. Bucky Irving
+          and Aaron Jones give him some usable RB production, and Tucker Kraft has
+          quietly been one of the more reliable pieces.
 
-        But somebody on this roster eventually has to break a matchup open.
+          But somebody on this roster eventually has to break a matchup open.
 
-        The Car Bombs at least have several plausible candidates.
+          The Car Bombs at least have several plausible candidates.
 
-        Drake "Drake Maye" Maye is back in the projected starting lineup at 19.27.
+          Drake "Drake Maye" Maye is back in the projected starting lineup at 19.27.
 
-        Javonte Williams enters at 18.51 after scoring three touchdowns last week.
+          Javonte Williams enters at 18.51 after scoring three touchdowns last week.
 
-        Drake London projects for 17.24.
+          Drake London projects for 17.24.
 
-        Cam Skattebo and Matthew Golden give the lineup additional depth underneath them.
+          Cam Skattebo and Matthew Golden give the lineup additional depth underneath them.
 
-        The projection gap is 26.66.
+          The projection gap is 26.66.
 
-        I recognize that publicly trusting my own team has historically been dangerous.
+          I recognize that publicly trusting my own team has historically been dangerous.
 
-        I also recognize that this is T2.
+          I also recognize that this is T2.
 
-        If the regime cannot handle this assignment, there will be consequences.
-      `,
-      pick: "The Car Bombs"
-    },
+          If the regime cannot handle this assignment, there will be consequences.
+        `,
+        pick: "The Car Bombs",
+        pickRosterID: 1
+      },
 
-    4: {
-      headline: "0-4 vs. 3-1. Sleeper Does Not Care.",
-      preview: `
-        Game of the Week.
+      4: {
+        headline: "0-4 vs. 3-1. Sleeper Does Not Care.",
+        preview: `
+          Game of the Week.
 
-        The Oilers:
+          The Oilers:
 
-        109.55.
+          109.55.
 
-        Charles:
+          Charles:
 
-        109.34.
+          109.34.
 
-        The projected margin is 0.21.
+          The projected margin is 0.21.
 
-        Essentially nothing.
+          Essentially nothing.
 
-        Which is absurd when you look at the records.
+          Which is absurd when you look at the records.
 
-        Charles is 3-1 and has scored 151.02, 122.76, 122.82 and 123.02.
+          Charles is 3-1 and has scored 151.02, 122.76, 122.82 and 123.02.
 
-        Chaney is 0-4.
+          Chaney is 0-4.
 
-        Chaney also just scored 141.22.
+          Chaney also just scored 141.22.
 
-        That is why this matchup is interesting.
+          That is why this matchup is interesting.
 
-        CeeDee scored 41.3 last week.
+          CeeDee scored 41.3 last week.
 
-        Nico Collins scored 30.8.
+          Nico Collins scored 30.8.
 
-        Joe Burrow scored 25.72.
+          Joe Burrow scored 25.72.
 
-        Those three combined for 97.82 points and somehow Chaney still left the week
-        without a win.
+          Those three combined for 97.82 points and somehow Chaney still left the week
+          without a win.
 
-        Now all three sit near the top of his projected lineup again.
+          Now all three sit near the top of his projected lineup again.
 
-        Charles answers with the exact opposite profile.
+          Charles answers with the exact opposite profile.
 
-        Amon-Ra projects for 20.95.
+          Amon-Ra projects for 20.95.
 
-        Derrick Henry is at 17.94.
+          Derrick Henry is at 17.94.
 
-        Rhamondre and Higgins sit above 13.
+          Rhamondre and Higgins sit above 13.
 
-        And the current projected lineup has Kirk Cousins at quarterback while Jalen
-        Hurts remains on the roster.
+          And the current projected lineup has Kirk Cousins at quarterback while Jalen
+          Hurts remains on the roster.
 
-        Charles has not needed a 40-point eruption from anybody.
+          Charles has not needed a 40-point eruption from anybody.
 
-        He has just been good every week.
+          He has just been good every week.
 
-        Chaney probably has the more obvious nuclear ceiling.
+          Chaney probably has the more obvious nuclear ceiling.
 
-        Charles has the considerably stronger four-week floor.
+          Charles has the considerably stronger four-week floor.
 
-        Sleeper sees twenty-one hundredths of a point between them.
+          Sleeper sees twenty-one hundredths of a point between them.
 
-        That means I get to ignore Sleeper entirely.
+          That means I get to ignore Sleeper entirely.
 
-        Give me Charles until Chaney proves that scoring 141 and losing was the beginning
-        of a turnaround rather than simply the funniest possible continuation of 0-4.
-      `,
-      pick: "Charles"
-    },
+          Give me Charles until Chaney proves that scoring 141 and losing was the beginning
+          of a turnaround rather than simply the funniest possible continuation of 0-4.
+        `,
+        pick: "Charles",
+        pickRosterID: 9
+      },
 
-    5: {
-      headline: "JQ Found a Quarterback. Trevor Lost the Free Square.",
-      preview: `
-        This matchup looked significantly uglier yesterday.
+      5: {
+        headline: "JQ Found a Quarterback. Trevor Lost the Free Square.",
+        preview: `
+          This matchup looked significantly uglier yesterday.
 
-        JQ responded by adding Jacoby Brissett.
+          JQ responded by adding Jacoby Brissett.
 
-        Campus Legends now projects for 107.85 instead of looking like a roster being
-        operated during a federal shutdown.
+          Campus Legends now projects for 107.85 instead of looking like a roster being
+          operated during a federal shutdown.
 
-        Brissett immediately carries an 18.06 projection.
+          Brissett immediately carries an 18.06 projection.
 
-        Christian McCaffrey is right behind him at 18.05.
+          Christian McCaffrey is right behind him at 18.05.
 
-        Garrett Wilson, George Pickens and DK Metcalf give JQ enough receiving depth
-        that this is no longer remotely an automatic win.
+          Garrett Wilson, George Pickens and DK Metcalf give JQ enough receiving depth
+          that this is no longer remotely an automatic win.
 
-        Trevor still enters favored at 114.63.
+          Trevor still enters favored at 114.63.
 
-        Trevor Lawrence projects for 18.01.
+          Trevor Lawrence projects for 18.01.
 
-        James Cook and Christian Watson are both above 15.
+          James Cook and Christian Watson are both above 15.
 
-        Ollie Gordon and Sam LaPorta round out a balanced group.
+          Ollie Gordon and Sam LaPorta round out a balanced group.
 
-        The biggest difference is that Trevor has been remarkably stable all year.
+          The biggest difference is that Trevor has been remarkably stable all year.
 
-        124.40.
+          124.40.
 
-        132.86.
+          132.86.
 
-        127.28.
+          127.28.
 
-        109.08.
+          109.08.
 
-        No catastrophic week.
+          No catastrophic week.
 
-        JQ, meanwhile, just scored 89 and left 53.6 points on the bench.
+          JQ, meanwhile, just scored 89 and left 53.6 points on the bench.
 
-        The emergency Brissett acquisition makes this a real matchup again.
+          The emergency Brissett acquisition makes this a real matchup again.
 
-        It does not make me ready to trust JQ's lineup decisions.
+          It does not make me ready to trust JQ's lineup decisions.
 
-        The Bear gets the pick.
-      `,
-      pick: "Show Me Your TDs"
-    },
+          The Bear gets the pick.
+        `,
+        pick: "Show Me Your TDs",
+        pickRosterID: 4
+      },
 
-    6: {
-      headline: "The Last Undefeated Team Gets the Week's Biggest Test",
-      preview: `
-        Projected shootout.
+      6: {
+        headline: "The Last Undefeated Team Gets the Week's Biggest Test",
+        preview: `
+          Projected shootout.
 
-        Ryan: 121.58.
+          Ryan: 121.58.
 
-        Josh: 111.58.
+          Josh: 111.58.
 
-        Combined total:
+          Combined total:
 
-        233.16.
+          233.16.
 
-        This is also No. 1 against No. 3 in the current power rankings.
+          This is also No. 1 against No. 3 in the current power rankings.
 
-        Ryan is 4-0.
+          Ryan is 4-0.
 
-        Josh is 3-1.
+          Josh is 3-1.
 
-        And this is the matchup most likely to actually tell us something about the
-        top of the league.
+          And this is the matchup most likely to actually tell us something about the
+          top of the league.
 
-        Josh's projection has strengthened considerably.
+          Josh's projection has strengthened considerably.
 
-        JSN sits at 22.68.
+          JSN sits at 22.68.
 
-        Josh Allen sits at 22.05.
+          Josh Allen sits at 22.05.
 
-        That is almost 45 projected points from two players who are both capable of
-        substantially exceeding those numbers.
+          That is almost 45 projected points from two players who are both capable of
+          substantially exceeding those numbers.
 
-        Carnell Tate now adds another 11.86 to the projected lineup, and Josh still
-        has Kenneth Walker sitting at the center of the roster after his 30.9-point
-        Week 4.
+          Carnell Tate now adds another 11.86 to the projected lineup, and Josh still
+          has Kenneth Walker sitting at the center of the roster after his 30.9-point
+          Week 4.
 
-        Ryan's advantage is different.
+          Ryan's advantage is different.
 
-        Jonathan Taylor projects for 18.94.
+          Jonathan Taylor projects for 18.94.
 
-        Purdy is at 17.17.
+          Purdy is at 17.17.
 
-        Michael Wilson, Jeanty and Nabers all sit between roughly 14 and 16.
+          Michael Wilson, Jeanty and Nabers all sit between roughly 14 and 16.
 
-        There is no obvious weak link.
+          There is no obvious weak link.
 
-        And Tetairoa McMillan just scored 45.2 last week.
+          And Tetairoa McMillan just scored 45.2 last week.
 
-        That has been the story of Ryan's season.
+          That has been the story of Ryan's season.
 
-        Different player.
+          Different player.
 
-        Same result.
+          Same result.
 
-        Josh has the two most obvious nukes in the matchup.
+          Josh has the two most obvious nukes in the matchup.
 
-        Ryan has fewer places where the lineup can collapse.
+          Ryan has fewer places where the lineup can collapse.
 
-        Ten projected points is not enough for me to call this comfortable.
+          Ten projected points is not enough for me to call this comfortable.
 
-        But until somebody actually beats Ryan, I am not volunteering to be the idiot
-        who predicts it.
+          But until somebody actually beats Ryan, I am not volunteering to be the idiot
+          who predicts it.
 
-        The last undefeated team survives.
-      `,
-      pick: "Naberhood Sex Offender"
+          The last undefeated team survives.
+        `,
+        pick: "Naberhood Sex Offender",
+        pickRosterID: 8
+      }
     }
   }
-}
-
 };
