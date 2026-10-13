@@ -1512,5 +1512,624 @@ export const weeklyRecaps = {
         `
       }
     }
-  }
+  },
+  5: {
+    intro: `
+        Week 5 is officially in the books.
+
+        And apparently Jansen changing #FreeTony to Nigasaki unlocked a level of
+        violence previously unavailable to the league.
+
+        199.70.
+
+        High Man.
+
+        Highest score of the season.
+
+        An 85.08-point public execution of Rhodes x Pags.
+
+        Puka Nacua scored 37.7.
+
+        Jaylen Warren scored 36.8.
+
+        Isaiah Likely scored 32.4.
+
+        Those three players combined for 106.9 points.
+
+        Rhodes x Pags scored 114.62 as an entire team.
+
+        Elsewhere, Vigo entered his matchup against JV with a simple message:
+
+        "Need to pull another miracle. And fuck JV."
+
+        The miracle was unavailable.
+
+        PeterPanthers scored 156.86 and beat Retardinals by 66.32.
+
+        The Car Bombs continued their increasingly confusing rehabilitation campaign,
+        putting up 156.16 behind 39.46 from Drake Maye while somehow also leaving a
+        league-high 33.64 points on the bench.
+
+        T2 scored 139.64.
+
+        In most weeks, that's an excellent performance.
+
+        This week he happened to stand next to an explosive device.
+
+        Chaney had a fairly productive weekend.
+
+        He got married on Sunday.
+
+        The Oilers finally won.
+
+        And he is now headed to France.
+
+        After starting 0-4, The Oilers beat Charles 107.90 to 89.72.
+
+        Marriage has apparently succeeded where four weeks of roster management could not.
+
+        Charles, meanwhile, entered the week having scored at least 122 points in
+        every game this season.
+
+        He responded with 89.72.
+
+        Low Man.
+
+        Trevor moved to 4-1 after beating JQ in the closest game of the week.
+
+        Ryan moved to 5-0.
+
+        Josh fell to 3-2.
+
+        JQ fell to 3-2.
+
+        Nigasaki takes High Man at 199.70.
+
+        Charles takes Low Man at 89.72.
+
+        Nigasaki delivered the biggest ass beating of the week.
+
+        Show Me Your TDs survived the closest game, beating Campus Legends by 11.06.
+
+        The Car Bombs left the most points on the bench at 33.64.
+
+        And the Czar went 5-1 on the Week 5 picks.
+
+        PeterPanthers.
+
+        Correct.
+
+        #FreeTony, now operating under the name Nigasaki.
+
+        Correct.
+
+        The Car Bombs.
+
+        Correct.
+
+        Charles.
+
+        Wrong.
+
+        Show Me Your TDs.
+
+        Correct.
+
+        Naberhood Sex Offender.
+
+        Correct.
+
+        Five and one.
+
+        Five weeks down.
+
+        Ryan is still undefeated.
+
+        JV is still terrifying.
+
+        Jansen has apparently become a Japanese real-estate conglomerate.
+
+        Chaney is married, finally has a win, and has left the country.
+
+        And the Czar has produced his best prediction week of the season.
+
+        Judgment has been rendered.
+    `,
+
+    matchups: {
+
+        1: {
+            headline: "The Miracle Was Denied",
+            recap: `
+                Vigo made his intentions known before the week even started.
+
+                His official statement:
+
+                "Need to pull another miracle. And fuck JV."
+
+                Strong message.
+
+                Poor outcome.
+
+                PeterPanthers beat Retardinals 156.86 to 90.54.
+
+                Final margin:
+
+                66.32.
+
+                This was not a game.
+
+                Jahmyr Gibbs ran 25 times for 151 yards and two touchdowns, then added
+                five catches for another 56 yards.
+
+                37.7 fantasy points.
+
+                Jayden Daniels threw for only 199 yards.
+
+                Apparently passing was optional.
+
+                He rushed nine times for 103 yards and two touchdowns and finished
+                with 32.26.
+
+                Trey McBride added nine catches for 66 yards and a touchdown.
+
+                21.6.
+
+                Gibbs.
+
+                Daniels.
+
+                McBride.
+
+                91.56 points from three players.
+
+                Vigo actually had some respectable performances.
+
+                C.J. Stroud scored 20.94.
+
+                Justin Jefferson scored 18.8.
+
+                Jameson Williams caught two touchdowns and scored 18.7.
+
+                Unfortunately, respectable individual performances become less useful
+                when the opposing roster is committing war crimes.
+
+                There is also one final insult.
+
+                PeterPanthers left zero points on the bench.
+
+                Zero.
+
+                For one week, the lineup was functionally perfect.
+
+                Vigo asked for another miracle.
+
+                Instead, he got the largest PeterPanthers score since Week 1.
+
+                JV moves to 4-1.
+
+                Vigo falls to 1-4.
+
+                And "fuck JV" has officially been entered into league history as
+                famous last words.
+
+                Czar pick: PeterPanthers.
+
+                Correct.
+            `
+        },
+
+        2: {
+            headline: "Nigasaki Has Achieved Nuclear Capability",
+            recap: `
+                We need to discuss what happened here.
+
+                Nigasaki:
+
+                199.70.
+
+                Rhodes x Pags:
+
+                114.62.
+
+                Final margin:
+
+                85.08.
+
+                High Man.
+
+                Biggest ass beating.
+
+                Highest score anyone has posted this season.
+
+                This was obscene.
+
+                Puka Nacua caught 17 passes.
+
+                Seventeen.
+
+                He finished with 138 receiving yards, a touchdown and 37.7 fantasy points.
+
+                Jaylen Warren produced 188 total yards, caught all six of his targets,
+                scored twice and finished with 36.8.
+
+                Isaiah Likely caught 11 passes for 94 yards and two touchdowns.
+
+                32.4.
+
+                Those three players alone scored:
+
+                106.9.
+
+                Rhodes x Pags scored 114.62 as an entire team.
+
+                Matthew Stafford actually played well.
+
+                383 passing yards.
+
+                Three touchdowns.
+
+                27.32 fantasy points.
+
+                Brock Bowers had 110 yards and a touchdown for 23.
+
+                Davante Adams caught two touchdowns and scored 22.1.
+
+                Those are legitimate fantasy performances.
+
+                They just happened inside a building that had already been demolished.
+
+                Last week Jansen finally got his first win with 157.88.
+
+                This week #FreeTony became Nigasaki and scored 199.70.
+
+                At this point we must acknowledge the possibility that the branding
+                strategy pioneered by The Car Bombs has escaped containment.
+
+                Nigasaki moves to 2-3.
+
+                Rhodes x Pags falls to 1-4.
+
+                Two managers were present.
+
+                Neither could stop this.
+
+                And despite the scoreboard attempting to steal credit from the regime,
+                the Czar correctly picked this roster when it was still operating under
+                the name #FreeTony.
+
+                Rebranding does not invalidate a wager.
+
+                Czar pick: #FreeTony / Nigasaki.
+
+                Correct.
+            `
+        },
+
+        3: {
+            headline: "THE CAR BOMBS HAVE DETONATED AGAIN",
+            recap: `
+                We may officially have a football team.
+
+                The Car Bombs beat Big frydown 156.16 to 139.64.
+
+                And unlike some of the Czar's previous victories, this one required
+                actual points.
+
+                A lot of them.
+
+                Drake Maye was benched after his Week 3 disaster.
+
+                He apparently took that personally.
+
+                Maye completed 26 of 34 passes for 374 yards and four touchdowns.
+
+                Then he ran for 25 yards and another touchdown.
+
+                39.46 fantasy points.
+
+                That is an approximately 34-point improvement from the performance
+                that got him sent to the bench two weeks ago.
+
+                Rehabilitation appears to be working.
+
+                Spencer Shrader somehow scored 21 points from the kicker position.
+
+                Matthew Golden caught six passes for 123 yards and scored 20.3.
+
+                Big frydown deserves some credit here.
+
+                T2 scored 139.64.
+
+                Bucky Irving ran for 165 yards, scored twice and finished with 31.5.
+
+                Mike Evans had 113 yards and a touchdown for 26.3.
+
+                Aaron Jones added 18.7.
+
+                In most weeks, 139.64 wins.
+
+                This week T2 ran directly into a functioning explosive device.
+
+                And somehow, despite scoring 156.16, The Car Bombs also left the most
+                points on the bench in the entire league.
+
+                33.64.
+
+                We will call that depth rather than managerial malpractice because
+                the Czar controls the publication.
+
+                The Car Bombs move to 2-3.
+
+                Big frydown falls to 1-4.
+
+                The rebrand is now 2-1.
+
+                The investigation into Weeks 1 and 2 remains open.
+
+                Czar pick: The Car Bombs.
+
+                Correct.
+            `
+        },
+
+        4: {
+            headline: "Chaney Gets Married, Wins a Fantasy Game, Leaves the Country",
+            recap: `
+                There are fantasy football weeks.
+
+                And then there are life events.
+
+                Chaney got married on Sunday.
+
+                The Oilers finally won a football game.
+
+                And as this recap is being written, the newlywed is currently headed
+                to France.
+
+                Pretty efficient weekend.
+
+                Chaney entered Week 5 at 0-4.
+
+                Charles entered at 3-1 and had scored:
+
+                151.02.
+
+                122.76.
+
+                122.82.
+
+                123.02.
+
+                Four consecutive weeks above 122.
+
+                Then Charles scored:
+
+                89.72.
+
+                Low Man.
+
+                Apparently all The Oilers needed was holy matrimony.
+
+                Joe Burrow threw four touchdowns and scored 24.6.
+
+                Jason Myers somehow supplied 23 points from the kicker position.
+
+                San Francisco's defense added another 20.
+
+                Those three spots accounted for 67.6 of The Oilers' 107.90.
+
+                Charles got 21 from Derrick Henry.
+
+                Rhamondre Stevenson added 17.5.
+
+                Kirk Cousins scored 13.72.
+
+                And after that, the lineup mostly stopped participating.
+
+                Final:
+
+                The Oilers 107.90.
+
+                Charles 89.72.
+
+                Chaney gets married.
+
+                Chaney gets his first win.
+
+                Charles gets Low Man.
+
+                And the Czar gets his only incorrect prediction of Week 5 after
+                confidently taking Charles in what Sleeper had projected as essentially
+                a coin flip.
+
+                The Oilers improve to 1-4.
+
+                Charles falls to 3-2.
+
+                The 0-5 jokes have officially been cancelled.
+
+                Chaney, meanwhile, responded to his first fantasy victory by immediately
+                leaving the United States.
+
+                France awaits.
+
+                The league can deal with this when he gets back.
+
+                Czar pick: Charles.
+
+                Wrong.
+            `
+        },
+
+        5: {
+            headline: "The Bear Survives the Shootout",
+            recap: `
+                This was the closest game of Week 5.
+
+                Which says considerably more about the rest of the week than it does
+                about this margin.
+
+                Show Me Your TDs beat Campus Legends:
+
+                150.94 to 139.88.
+
+                Final margin:
+
+                11.06.
+
+                Trevor needed a huge performance from Christian Watson.
+
+                He got it.
+
+                Six catches.
+
+                143 yards.
+
+                Two touchdowns.
+
+                32.3 fantasy points.
+
+                James Cook ran 25 times for 111 yards and two touchdowns.
+
+                22.8.
+
+                Trevor Lawrence threw for 331 yards and two scores, then added another
+                25 yards on the ground.
+
+                22.74.
+
+                Campus Legends fought back.
+
+                George Pickens caught nine passes for 130 yards and a touchdown.
+
+                28 points.
+
+                Emergency quarterback Jacoby Brissett threw three touchdowns and
+                scored 26.28.
+
+                Garrett Wilson added seven catches for 104 yards and a touchdown.
+
+                23.4.
+
+                JQ scored 139.88 while dealing with the Kansas City bye.
+
+                That is legitimately a good performance.
+
+                It was also not enough.
+
+                Trevor moves to 4-1.
+
+                JQ falls to 3-2.
+
+                Show Me Your TDs has now scored:
+
+                124.40.
+
+                132.86.
+
+                127.28.
+
+                109.08.
+
+                150.94.
+
+                There has not been a complete collapse yet.
+
+                That consistency is becoming difficult to ignore.
+
+                The Bear continues quietly accumulating wins while everyone else spends
+                the season screaming at each other.
+
+                Czar pick: Show Me Your TDs.
+
+                Correct.
+            `
+        },
+
+        6: {
+            headline: "Ryan Is Still Undefeated",
+            recap: `
+                Five games.
+
+                Five wins.
+
+                At some point the analysis becomes fairly straightforward.
+
+                Naberhood Sex Offender beat Moore Oil Coming:
+
+                130.02 to 107.30.
+
+                Ryan did not need another 160-point explosion.
+
+                He did not need Tetairoa McMillan to score 45 again.
+
+                He simply got strong performances across the lineup and handled business.
+
+                Parker Washington led the way with six catches for 124 yards and
+                two touchdowns.
+
+                30.4.
+
+                Malik Nabers caught 11 passes for 121 yards and a touchdown.
+
+                29.1.
+
+                Jared Goff threw three touchdowns and ran for another.
+
+                28.94.
+
+                Those three players combined for 88.44.
+
+                Josh Allen did everything he could to keep Moore Oil Coming alive.
+
+                Allen threw for 210 yards and rushed for 121 more.
+
+                31.5 fantasy points.
+
+                JSN added 118 total yards and a touchdown for 22.8.
+
+                Denver's defense scored 15.
+
+                But after Allen and JSN, Josh simply did not get enough.
+
+                Ryan's depth won again.
+
+                That has been the story all season.
+
+                Week 1:
+
+                Win.
+
+                Week 2:
+
+                Win.
+
+                Week 3:
+
+                Win.
+
+                Week 4:
+
+                Win.
+
+                Week 5:
+
+                Win.
+
+                Ryan improves to 5-0.
+
+                Josh falls to 3-2.
+
+                The Czar correctly refused to predict the upset.
+
+                Until somebody actually beats Ryan, the crown stays exactly where it is.
+
+                Czar pick: Naberhood Sex Offender.
+
+                Correct.
+            `
+        }
+    }
+}
 };
