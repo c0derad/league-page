@@ -2694,5 +2694,986 @@ export const weeklyPowerRankings = {
                 `
             }
         ]
+    },
+        6: {
+        title: "Week 6 Czar Power Rankings",
+    
+        intro: `
+            Five weeks are in the books.
+    
+            We are officially beyond the point where one bad Sunday can explain everything.
+    
+            Ryan is 5-0.
+    
+            JV responded to his first mediocre performance by dropping 156.86.
+    
+            Jansen changed #FreeTony to Nigasaki and apparently acquired nuclear weapons
+            in the process.
+    
+            157.88.
+    
+            Then 199.70.
+    
+            Trevor quietly reached 4-1 while scoring 150.94.
+    
+            The Car Bombs have now cleared 154 points twice in three weeks.
+    
+            JQ scored 139.88 and lost.
+    
+            T2 scored 139.64 and lost.
+    
+            Charles followed four consecutive weeks above 122 by scoring 89.72 and taking
+            Low Man.
+    
+            Chaney got married, finally won a fantasy game, and immediately left for France.
+    
+            And Vigo's pregame declaration of:
+    
+            "Need to pull another miracle. And fuck JV."
+    
+            was followed by a 66-point loss to JV.
+    
+            We now have enough evidence to separate records from actual roster strength.
+    
+            That distinction matters this week.
+    
+            Nigasaki is only 2-3.
+    
+            Nigasaki is also averaging 142.20 points per game and has scored 357.58 points
+            over the last two weeks.
+    
+            That roster is no longer being ranked like a 2-3 team.
+    
+            The opposite is happening to Josh and Charles.
+    
+            Both are 3-2.
+    
+            Both remain dangerous.
+    
+            Both have now provided enough recent evidence to fall behind teams that are
+            actually scoring more points right now.
+    
+            These are not the standings.
+    
+            Record matters.
+    
+            Total scoring matters.
+    
+            Recent scoring matters.
+    
+            Roster construction matters.
+    
+            Injuries matter.
+    
+            And five weeks of evidence now matters considerably more than preseason reputation.
+    
+            Movement is measured against the Week 5 rankings.
+    
+            Welcome to Week 6.
+        `,
+    
+        rankings: [
+            {
+                rank: 1,
+                previousRank: 1,
+                movement: 0,
+                rosterID: 8,
+                team: "Naberhood Sex Offender",
+                record: "5-0",
+                week1Score: 128.80,
+                week2Score: 133.98,
+                week3Score: 123.28,
+                week4Score: 160.32,
+                week5Score: 130.02,
+                headline: "Five Games. Five Wins.",
+                commentary: `
+                    Ryan stays No. 1.
+    
+                    There is no reason to make this complicated.
+    
+                    Five games.
+    
+                    Five wins.
+    
+                    Week 5 was not another 160-point massacre.
+    
+                    It did not need to be.
+    
+                    Naberhood Sex Offender beat Moore Oil Coming 130.02 to 107.30 and
+                    remained the only undefeated team in the league.
+    
+                    More importantly, the weekly scoring résumé now reads:
+    
+                    128.80.
+    
+                    133.98.
+    
+                    123.28.
+    
+                    160.32.
+    
+                    130.02.
+    
+                    Ryan has not scored below 123.
+    
+                    Not once.
+    
+                    Parker Washington scored 30.4 in Week 5.
+    
+                    Malik Nabers scored 29.1.
+    
+                    Jared Goff scored 28.94.
+    
+                    Before that it was Tet McMillan.
+    
+                    Before that it was Purdy and Kittle.
+    
+                    The identity of the player doing the damage changes.
+    
+                    The score does not.
+    
+                    That is why Ryan stays above JV even though PeterPanthers owns the
+                    higher season scoring average.
+    
+                    JV may have the more explosive total résumé.
+    
+                    Ryan has been the most reliable team in the league and has yet to lose.
+    
+                    Until somebody changes that:
+    
+                    No. 1 remains occupied.
+                `,
+                transactions: `
+                    Swapped Harrison Mevis for Tyler Loop at kicker.
+    
+                    Otherwise, no meaningful roster surgery.
+    
+                    Five-and-zero teams generally do not require emergency reconstruction.
+                `
+            },
+    
+            {
+                rank: 2,
+                previousRank: 2,
+                movement: 0,
+                rosterID: 2,
+                team: "PeterPanthers",
+                record: "4-1",
+                week1Score: 172.16,
+                week2Score: 137.34,
+                week3Score: 142.04,
+                week4Score: 110.76,
+                week5Score: 156.86,
+                headline: "JV Has Returned to Being Extremely Annoying",
+                commentary: `
+                    Apparently Week 4 was merely a brief interruption.
+    
+                    PeterPanthers responded to 110.76 by scoring 156.86 and beating Vigo
+                    by 66.32.
+    
+                    Jahmyr Gibbs:
+    
+                    37.7.
+    
+                    Jayden Daniels:
+    
+                    32.26.
+    
+                    Trey McBride:
+    
+                    21.6.
+    
+                    Those three players combined for 91.56.
+    
+                    JV also left zero points on the bench.
+    
+                    Zero.
+    
+                    For one week, the lineup was essentially perfect.
+    
+                    The five-week scoring résumé is now:
+    
+                    172.16.
+    
+                    137.34.
+    
+                    142.04.
+    
+                    110.76.
+    
+                    156.86.
+    
+                    Average:
+    
+                    143.83.
+    
+                    Highest in the league.
+    
+                    Ryan remains No. 1 because 5-0 with five straight scores above 123
+                    still carries weight.
+    
+                    But there is now essentially a two-team top tier.
+    
+                    And unfortunately one of those teams continues to be managed by JV.
+    
+                    No. 2.
+                `,
+                transactions: `
+                    No meaningful changes.
+    
+                    JV remains committed to the revolutionary roster-management strategy of
+                    having good players and occasionally putting all of them in the correct spots.
+                `
+            },
+    
+            {
+                rank: 3,
+                previousRank: 7,
+                movement: 4,
+                rosterID: 6,
+                team: "Nigasaki",
+                record: "2-3",
+                week1Score: 136.56,
+                week2Score: 118.50,
+                week3Score: 98.34,
+                week4Score: 157.88,
+                week5Score: 199.70,
+                headline: "The Record Is Now Completely Irrelevant",
+                commentary: `
+                    We are done ranking Jansen like a 2-3 team.
+    
+                    Nigasaki scored:
+    
+                    199.70.
+    
+                    Two hundred points minus thirty cents.
+    
+                    Puka Nacua scored 37.7.
+    
+                    Jaylen Warren scored 36.8.
+    
+                    Isaiah Likely scored 32.4.
+    
+                    Those three players alone produced 106.9.
+    
+                    Rhodes x Pags scored 114.62 as an entire team.
+    
+                    And this was not an isolated explosion.
+    
+                    Week 4:
+    
+                    157.88.
+    
+                    Week 5:
+    
+                    199.70.
+    
+                    That is 357.58 points in two weeks.
+    
+                    The full season average is now 142.20.
+    
+                    Only JV is higher.
+    
+                    Yes, the record is still 2-3.
+    
+                    That is what happens when you begin the season losing games while scoring
+                    136.56 and 118.50.
+    
+                    The roster currently has Puka, Kyren, Jaylen Warren, Zay Flowers,
+                    Josh Jacobs, Isaiah Likely and Lamar Jackson.
+    
+                    Lamar's ankle situation needs monitoring.
+    
+                    The important part is that Jansen just scored 199.70 without needing
+                    his quarterback situation to carry the team.
+    
+                    This is no longer a cute correction to an unlucky start.
+    
+                    This is one of the best teams in the league.
+    
+                    No. 3.
+    
+                    And the name change appears to have worked considerably better than expected.
+                `,
+                transactions: `
+                    Added Kimani Vidal and dropped Emmett Johnson.
+    
+                    The more important transaction may have been changing the team name from
+                    #FreeTony to Nigasaki.
+    
+                    The early returns on the rebrand are 199.70 points.
+                `
+            },
+    
+            {
+                rank: 4,
+                previousRank: 6,
+                movement: 2,
+                rosterID: 4,
+                team: "Show Me Your TDs",
+                record: "4-1",
+                week1Score: 124.40,
+                week2Score: 132.86,
+                week3Score: 127.28,
+                week4Score: 109.08,
+                week5Score: 150.94,
+                headline: "Boringly Good Has Become Actually Good",
+                commentary: `
+                    Trevor is 4-1.
+    
+                    At some point we have to stop qualifying it.
+    
+                    Show Me Your TDs scored 150.94 in Week 5 and beat a Campus Legends team
+                    that also played extremely well.
+    
+                    Christian Watson exploded for 32.3.
+    
+                    James Cook scored 22.8.
+    
+                    Trevor Lawrence scored 22.74.
+    
+                    The season now reads:
+    
+                    124.40.
+    
+                    132.86.
+    
+                    127.28.
+    
+                    109.08.
+    
+                    150.94.
+    
+                    Average:
+    
+                    128.91.
+    
+                    Four wins.
+    
+                    One loss.
+    
+                    No score below 109.
+    
+                    Trevor does not have the absurd top-end scoring résumé of JV or Nigasaki.
+    
+                    He does have one of the cleanest combinations of record and consistency
+                    in the entire league.
+    
+                    Last week No. 6 felt appropriate.
+    
+                    After 150.94, it no longer does.
+    
+                    Trevor jumps to No. 4.
+                `,
+                transactions: `
+                    Added Pat Freiermuth and Blake Grupe.
+    
+                    Dropped Darren Waller and Evan McPherson.
+    
+                    Mostly maintenance around a roster that is now 4-1 and coming off its
+                    best score of the season.
+                `
+            },
+    
+            {
+                rank: 5,
+                previousRank: 5,
+                movement: 0,
+                rosterID: 11,
+                team: "Campus Legends",
+                record: "3-2",
+                week1Score: 101.46,
+                week2Score: 119.88,
+                week3Score: 142.04,
+                week4Score: 89.00,
+                week5Score: 139.88,
+                headline: "Losing With 140 Is Not a Demotion",
+                commentary: `
+                    JQ stays No. 5.
+    
+                    Campus Legends lost again.
+    
+                    Context matters.
+    
+                    Week 4 was awful.
+    
+                    89 points.
+    
+                    Week 5 was not.
+    
+                    JQ scored 139.88 and lost by only 11.06 because Trevor happened to
+                    score 150.94.
+    
+                    George Pickens scored 28.
+    
+                    Emergency quarterback Jacoby Brissett scored 26.28.
+    
+                    Garrett Wilson scored 23.4.
+    
+                    And Campus did that while dealing with the Kansas City bye.
+    
+                    Patrick Mahomes and Travis Kelce now return to a roster that already contains
+                    Christian McCaffrey, Garrett Wilson, Pickens, DK Metcalf, Jeremiyah Love
+                    and Tyler Warren.
+    
+                    That matters.
+    
+                    The record is 3-2.
+    
+                    The season average is only 118.45 because Week 4 was such a disaster.
+    
+                    But 139.88 was exactly the rebound JQ needed.
+    
+                    He lost the matchup.
+    
+                    He did not lose ground in the rankings.
+                `,
+                transactions: `
+                    Jacoby Brissett completed his emergency one-week assignment and was released.
+    
+                    Trey Smack was added afterward.
+    
+                    The important Week 6 development is simply getting the Kansas City pieces
+                    back into the lineup.
+                `
+            },
+    
+            {
+                rank: 6,
+                previousRank: 9,
+                movement: 3,
+                rosterID: 1,
+                team: "The Car Bombs",
+                record: "2-3",
+                week1Score: 91.62,
+                week2Score: 89.32,
+                week3Score: 154.56,
+                week4Score: 111.74,
+                week5Score: 156.16,
+                headline: "The Rehabilitation Campaign Is Working",
+                commentary: `
+                    We finally have enough evidence to admit something uncomfortable.
+    
+                    The Car Bombs may actually be good.
+    
+                    Week 1:
+    
+                    91.62.
+    
+                    Week 2:
+    
+                    89.32.
+    
+                    Then the rebrand.
+    
+                    Week 3:
+    
+                    154.56.
+    
+                    Week 4:
+    
+                    111.74.
+    
+                    Week 5:
+    
+                    156.16.
+    
+                    Over the last three weeks, The Car Bombs are averaging 140.82.
+    
+                    That is not a typo.
+    
+                    Drake Maye returned from disciplinary exile and scored 39.46.
+    
+                    Four passing touchdowns.
+    
+                    One rushing touchdown.
+    
+                    Spencer Shrader added 21 because apparently the kicker department is
+                    now also involved in the operation.
+    
+                    Matthew Golden scored 20.3.
+    
+                    And despite scoring 156.16, The Car Bombs still left a league-high
+                    33.64 points on the bench.
+    
+                    We will continue calling that depth rather than managerial malpractice
+                    because this publication operates under executive authority.
+    
+                    The season average is still only 120.68 because Weeks 1 and 2 happened.
+    
+                    They cannot be erased.
+    
+                    They can, however, become less relevant.
+    
+                    Two 150-point performances in three weeks gets the regime promoted.
+    
+                    No. 6.
+                `,
+                transactions: `
+                    Added Kansas City D/ST and dropped Cincinnati D/ST.
+    
+                    Spencer Shrader also replaced Tyler Loop.
+    
+                    Mostly streaming moves.
+    
+                    The important change has been the existing offense finally producing
+                    like it was supposed to.
+                `
+            },
+    
+            {
+                rank: 7,
+                previousRank: 3,
+                movement: -4,
+                rosterID: 10,
+                team: "Moore Oil Coming",
+                record: "3-2",
+                week1Score: 147.16,
+                week2Score: 141.02,
+                week3Score: 109.42,
+                week4Score: 116.52,
+                week5Score: 107.30,
+                headline: "The September Résumé Is Losing Interest",
+                commentary: `
+                    Josh falls four spots.
+    
+                    This is not because Moore Oil Coming suddenly became bad.
+    
+                    It is because the trend has become impossible to ignore.
+    
+                    147.16.
+    
+                    141.02.
+    
+                    109.42.
+    
+                    116.52.
+    
+                    107.30.
+    
+                    The first two weeks looked like a championship favorite.
+    
+                    The last three average 111.08.
+    
+                    Josh Allen continues to be ridiculous.
+    
+                    He scored 31.5 in Week 5.
+    
+                    JSN added 22.8.
+    
+                    Denver's defense scored 15.
+    
+                    And Josh still finished at 107.30.
+    
+                    That is the concern.
+    
+                    Allen and JSN remain one of the most dangerous two-player combinations
+                    in the league.
+    
+                    Kenneth Walker gives the roster another legitimate weekly ceiling.
+    
+                    The production beneath them has become much less dependable.
+    
+                    A 3-2 record and 124.28 season average still deserve respect.
+    
+                    But two straight losses and three straight mediocre team scores require
+                    a correction.
+    
+                    No. 7.
+                `,
+                transactions: `
+                    Added Keon Coleman and Will Shipley, with Denver D/ST also joining the roster.
+    
+                    Xavier Worthy was dropped.
+    
+                    The roster continues searching for more dependable production underneath
+                    Allen, JSN and Kenneth Walker.
+                `
+            },
+    
+            {
+                rank: 8,
+                previousRank: 4,
+                movement: -4,
+                rosterID: 9,
+                team: "Charles",
+                record: "3-2",
+                week1Score: 151.02,
+                week2Score: 122.76,
+                week3Score: 122.82,
+                week4Score: 123.02,
+                week5Score: 89.72,
+                headline: "Four Weeks of Evidence Meet One Catastrophe",
+                commentary: `
+                    Charles finally had the week we kept waiting for.
+    
+                    Unfortunately, it was the bad version.
+    
+                    The first four weeks:
+    
+                    151.02.
+    
+                    122.76.
+    
+                    122.82.
+    
+                    123.02.
+    
+                    Then:
+    
+                    89.72.
+    
+                    Low Man.
+    
+                    Derrick Henry scored 21.
+    
+                    Rhamondre Stevenson scored 17.5.
+    
+                    Kirk Cousins scored 13.72.
+    
+                    Nobody else produced enough to prevent the entire offense from collapsing.
+    
+                    Charles falls four spots.
+    
+                    But this is not a panic ranking.
+    
+                    Four consecutive strong weeks still matter.
+    
+                    Jalen Hurts.
+    
+                    Amon-Ra St. Brown.
+    
+                    Derrick Henry.
+    
+                    Tee Higgins.
+    
+                    Breece Hall.
+    
+                    That remains an excellent core when healthy.
+    
+                    Hall's quad situation remains worth monitoring after he missed Week 5.
+    
+                    Charles is 3-2 and still averaging 121.87 despite the Low Man disaster.
+    
+                    One bad week does not erase September.
+    
+                    It does remove the benefit of the doubt that kept Charles in the top four.
+    
+                    No. 8.
+                `,
+                transactions: `
+                    No major post-Week-5 reconstruction.
+    
+                    Charles is largely betting that 89.72 was the outlier rather than the beginning
+                    of a larger problem.
+                `
+            },
+    
+            {
+                rank: 9,
+                previousRank: 8,
+                movement: -1,
+                rosterID: 5,
+                team: "Rhodes x Pags",
+                record: "1-4",
+                week1Score: 77.30,
+                week2Score: 136.08,
+                week3Score: 147.80,
+                week4Score: 108.18,
+                week5Score: 114.62,
+                headline: "Wrong Place, Wrong Time, Wrong Opponent",
+                commentary: `
+                    Rhodes x Pags scored 114.62.
+    
+                    That is not particularly good.
+    
+                    It is also not normally the type of score that gets remembered as an
+                    historic disaster.
+    
+                    Then Nigasaki scored 199.70.
+    
+                    Final margin:
+    
+                    85.08.
+    
+                    The largest ass beating of Week 5.
+    
+                    Stafford scored 27.32.
+    
+                    Brock Bowers scored 23.
+    
+                    Davante Adams scored 22.1.
+    
+                    The top end actually played well.
+    
+                    It simply did not matter.
+    
+                    The larger résumé remains extremely inconsistent:
+    
+                    77.30.
+    
+                    136.08.
+    
+                    147.80.
+    
+                    108.18.
+    
+                    114.62.
+    
+                    Bijan, Stafford, Bowers, Davante and Judkins still make this a dangerous roster.
+    
+                    But the record is now 1-4.
+    
+                    And after the back-to-back 136 and 147 point performances briefly suggested
+                    Week 1 was the outlier, the last two weeks have pulled the team back toward
+                    the middle.
+    
+                    Rhodes x Pags drops one.
+    
+                    No. 9.
+                `,
+                transactions: `
+                    New England D/ST replaced Green Bay D/ST.
+    
+                    Otherwise, the two-man front office remains committed to the existing roster.
+                `
+            },
+    
+            {
+                rank: 10,
+                previousRank: 10,
+                movement: 0,
+                rosterID: 3,
+                team: "The Oilers",
+                record: "1-4",
+                week1Score: 129.46,
+                week2Score: 83.58,
+                week3Score: 83.18,
+                week4Score: 141.22,
+                week5Score: 107.90,
+                headline: "Marriage Has Fixed the Win Column",
+                commentary: `
+                    Chaney finally won.
+    
+                    That alone deserves recognition.
+    
+                    The Oilers beat Charles 107.90 to 89.72 and escaped 0-5.
+    
+                    Joe Burrow scored 24.6.
+    
+                    Jason Myers scored 23.
+    
+                    San Francisco's defense scored 20.
+    
+                    That is 67.6 points from quarterback, kicker and defense.
+    
+                    Which is simultaneously helpful and slightly concerning.
+    
+                    The rebuilt roster still has legitimate upside.
+    
+                    CeeDee Lamb.
+    
+                    Nico Collins.
+    
+                    Burrow.
+    
+                    Omarion Hampton.
+    
+                    David Montgomery.
+    
+                    Dalton Kincaid.
+    
+                    CeeDee's quad issue now needs to be monitored after he left Week 5,
+                    which prevents us from getting too aggressive with the promotion.
+    
+                    There is also the broader résumé:
+    
+                    129.46.
+    
+                    83.58.
+    
+                    83.18.
+    
+                    141.22.
+    
+                    107.90.
+    
+                    One win does not erase that volatility.
+    
+                    So Chaney stays No. 10.
+    
+                    But the jokes have changed.
+    
+                    He is married.
+    
+                    He has a win.
+    
+                    He is currently headed to France.
+    
+                    Frankly, things could be worse.
+                `,
+                transactions: `
+                    Jordan Love, Rome Odunze, Emanuel Wilson and MarShawn Lloyd are among
+                    the recent additions as Chaney continues rebuilding the depth chart.
+    
+                    The honeymoon roster remains very much under construction.
+                `
+            },
+    
+            {
+                rank: 11,
+                previousRank: 12,
+                movement: 1,
+                rosterID: 12,
+                team: "Big frydown",
+                record: "1-4",
+                week1Score: 145.50,
+                week2Score: 81.66,
+                week3Score: 92.54,
+                week4Score: 87.00,
+                week5Score: 139.64,
+                headline: "T2 Has Reopened the Investigation",
+                commentary: `
+                    Fine.
+    
+                    The investigation is open again.
+    
+                    After three straight games under 100, Big frydown scored 139.64.
+    
+                    Bucky Irving scored 31.5.
+    
+                    Mike Evans scored 26.3.
+    
+                    Aaron Jones scored 18.7.
+    
+                    That is what this roster was supposed to look like.
+    
+                    Dak.
+    
+                    Saquon.
+    
+                    Bucky.
+    
+                    Aaron Jones.
+    
+                    Deebo.
+    
+                    Ladd.
+    
+                    Evans.
+    
+                    There has always been recognizable talent here.
+    
+                    The problem was that it spent three consecutive weeks doing almost nothing.
+    
+                    Week 1:
+    
+                    145.50.
+    
+                    Weeks 2 through 4:
+    
+                    81.66.
+    
+                    92.54.
+    
+                    87.00.
+    
+                    Week 5:
+    
+                    139.64.
+    
+                    One rebound does not undo three disasters.
+    
+                    But it does enough to get T2 out of last place.
+    
+                    Congratulations.
+    
+                    No. 11.
+                `,
+                transactions: `
+                    No changes.
+    
+                    T2 responded to three consecutive games below 100 by changing absolutely nothing.
+    
+                    Then scored 139.64.
+    
+                    Annoyingly, this means the strategy receives temporary validation.
+                `
+            },
+    
+            {
+                rank: 12,
+                previousRank: 11,
+                movement: -1,
+                rosterID: 7,
+                team: "Retardinals",
+                record: "1-4",
+                week1Score: 99.76,
+                week2Score: 89.92,
+                week3Score: 84.28,
+                week4Score: 127.48,
+                week5Score: 90.54,
+                headline: "The Miracle Department Was Closed",
+                commentary: `
+                    Vigo escaped the basement for exactly one week.
+    
+                    Then he played JV.
+    
+                    Before kickoff, Vigo issued his official statement:
+    
+                    "Need to pull another miracle. And fuck JV."
+    
+                    PeterPanthers responded with 156.86.
+    
+                    Retardinals scored 90.54.
+    
+                    The miracle department was apparently closed.
+    
+                    C.J. Stroud scored 20.94.
+    
+                    Justin Jefferson scored 18.8.
+    
+                    Jameson Williams scored 18.7.
+    
+                    And the rest of the lineup provided nowhere near enough help.
+    
+                    The five-week scoring history is now:
+    
+                    99.76.
+    
+                    89.92.
+    
+                    84.28.
+    
+                    127.48.
+    
+                    90.54.
+    
+                    Average:
+    
+                    98.40.
+    
+                    Lowest in the league.
+    
+                    Justin Jefferson, A.J. Brown, Waddle, Chase Brown, Etienne and Jameson
+                    Williams give this roster names that should produce more than this.
+    
+                    They simply have not.
+    
+                    T2 finally woke up.
+    
+                    Vigo did not.
+    
+                    Welcome back to the basement.
+                `,
+                transactions: `
+                    Added Woody Marks while continuing to reshape the bottom of the roster.
+    
+                    At this point, minor waiver moves are not the issue.
+    
+                    The established players need to score actual fantasy points.
+                `
+            }
+        ]
     }
 };
