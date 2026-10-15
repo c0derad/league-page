@@ -8,53 +8,158 @@ import {
     leagueID
 } from '$lib/utils/leagueInfo';
 
-import rosterHistory from '$lib/data/rosterHistory.json';
+export async function load({
+    fetch,
+    url
+}) {
+    const queryWeek =
+        Number(
+            url.searchParams.get(
+                'week'
+            )
+        );
 
-export async function load({ fetch }) {
+    /*
+        Defaulting to Week 6 right now.
+
+        Going forward, just use:
+        /power-rankings-data?week=7
+        /power-rankings-data?week=8
+        etc.
+    */
+    const week =
+        Number.isInteger(
+            queryWeek
+        ) &&
+        queryWeek >= 1 &&
+        queryWeek <= 18
+            ? queryWeek
+            : 6;
+
+    const previousWeek =
+        Math.max(
+            0,
+            week - 1
+        );
+
+    /*
+        Pull every matchup week through
+        the requested week.
+
+        We need the old weeks to calculate
+        the team's record entering the
+        requested week.
+    */
+    const matchupWeeks =
+        Array.from(
+            {
+                length: week
+            },
+            (
+                _,
+                index
+            ) =>
+                index + 1
+        );
+
+    /*
+        Sleeper can classify transactions
+        under either the previous leg or
+        current leg.
+
+        Pull both so we don't miss moves
+        made between fantasy weeks.
+    */
+    const transactionWeeks =
+        [
+            previousWeek,
+            week
+        ]
+            .filter(
+                (value) =>
+                    value >= 1
+            )
+            .filter(
+                (
+                    value,
+                    index,
+                    array
+                ) =>
+                    array.indexOf(
+                        value
+                    ) === index
+            );
+
     const [
         rosterData,
         managerData,
         playersData,
-        week1Matchups,
-        week2Matchups,
-        week3Matchups,
-        week4Matchups,
-        week5Matchups,
-        week4Transactions,
-        week5Transactions
-    ] = await Promise.all([
-        getLeagueRosters(),
-        getLeagueTeamManagers(),
-        loadPlayers(fetch),
+        matchupResults,
+        transactionResults
+    ] =
+        await Promise.all([
+            getLeagueRosters(),
 
-        fetch(
-            `https://api.sleeper.app/v1/league/${leagueID}/matchups/1`
-        ).then((r) => r.json()),
+            getLeagueTeamManagers(),
 
-        fetch(
-            `https://api.sleeper.app/v1/league/${leagueID}/matchups/2`
-        ).then((r) => r.json()),
+            loadPlayers(fetch),
 
-        fetch(
-            `https://api.sleeper.app/v1/league/${leagueID}/matchups/3`
-        ).then((r) => r.json()),
+            Promise.all(
+                matchupWeeks.map(
+                    async (
+                        matchupWeek
+                    ) => {
+                        const response =
+                            await fetch(
+                                `https://api.sleeper.app/v1/league/${leagueID}/matchups/${matchupWeek}`
+                            );
 
-        fetch(
-            `https://api.sleeper.app/v1/league/${leagueID}/matchups/4`
-        ).then((r) => r.json()),
+                        const matchups =
+                            await response.json();
 
-        fetch(
-            `https://api.sleeper.app/v1/league/${leagueID}/matchups/5`
-        ).then((r) => r.json()),
+                        return {
+                            week:
+                                matchupWeek,
 
-        fetch(
-            `https://api.sleeper.app/v1/league/${leagueID}/transactions/4`
-        ).then((r) => r.json()),
+                            matchups:
+                                Array.isArray(
+                                    matchups
+                                )
+                                    ? matchups
+                                    : []
+                        };
+                    }
+                )
+            ),
 
-        fetch(
-            `https://api.sleeper.app/v1/league/${leagueID}/transactions/5`
-        ).then((r) => r.json())
-    ]);
+            Promise.all(
+                transactionWeeks.map(
+                    async (
+                        transactionWeek
+                    ) => {
+                        const response =
+                            await fetch(
+                                `https://api.sleeper.app/v1/league/${leagueID}/transactions/${transactionWeek}`
+                            );
+
+                        const transactions =
+                            await response.json();
+
+                        return {
+                            week:
+                                transactionWeek,
+
+                            transactions:
+                                Array.isArray(
+                                    transactions
+                                )
+                                    ? transactions
+                                    : []
+                        };
+                    }
+                )
+            )
+        ]);
 
     const rawRosters =
         rosterData?.rosters ??
@@ -62,9 +167,13 @@ export async function load({ fetch }) {
         [];
 
     const currentRosters =
-        Array.isArray(rawRosters)
+        Array.isArray(
+            rawRosters
+        )
             ? rawRosters
-            : Object.values(rawRosters);
+            : Object.values(
+                rawRosters
+            );
 
     const players =
         playersData?.players ??
@@ -72,82 +181,85 @@ export async function load({ fetch }) {
         {};
 
     const rawManagers =
-        managerData?.teamManagers ??
-        managerData?.leagueTeamManagers ??
-        managerData?.managers ??
+        managerData
+            ?.teamManagers ??
+        managerData
+            ?.leagueTeamManagers ??
+        managerData
+            ?.managers ??
         managerData ??
         [];
 
     const teamManagers =
-        Array.isArray(rawManagers)
+        Array.isArray(
+            rawManagers
+        )
             ? rawManagers
-            : Object.values(rawManagers);
+            : Object.values(
+                rawManagers
+            );
 
-    const transactions4 =
-        Array.isArray(
-            week4Transactions
-        )
-            ? week4Transactions
-            : [];
+    const matchupsByWeek =
+        {};
 
-    const transactions5 =
-        Array.isArray(
-            week5Transactions
-        )
-            ? week5Transactions
-            : [];
+    for (
+        const result
+        of matchupResults
+    ) {
+        matchupsByWeek[
+            result.week
+        ] =
+            result.matchups;
+    }
 
     /*
-        Week 5 rankings compare the live roster against
-        the Week 4 roster snapshot.
+        Flatten both transaction legs.
 
-        Sleeper can classify post-snapshot roster movement
-        under either transaction leg 4 or transaction leg 5.
-
-        We therefore pull both legs for the Week 5 rankings.
-        The Svelte export preserves transaction.leg as
-        transaction.week so we can still see where Sleeper
-        classified each move.
+        De-dupe by Sleeper transaction ID
+        because occasionally the same move
+        can appear in overlapping pulls.
     */
-    const rankingTransactions = [
-        ...transactions4,
-        ...transactions5
-    ];
+    const transactionMap =
+        new Map();
+
+    for (
+        const result
+        of transactionResults
+    ) {
+        for (
+            const transaction
+            of result.transactions
+        ) {
+            const transactionID =
+                transaction
+                    ?.transaction_id;
+
+            if (!transactionID) {
+                continue;
+            }
+
+            transactionMap.set(
+                transactionID,
+                transaction
+            );
+        }
+    }
+
+    const transactions =
+        [
+            ...transactionMap.values()
+        ];
 
     return {
+        week,
+        previousWeek,
+
         currentRosters,
         teamManagers,
         players,
 
-        week1Matchups,
-        week2Matchups,
-        week3Matchups,
-        week4Matchups,
-        week5Matchups,
+        matchupsByWeek,
 
-        /*
-            Keep this property name aligned with
-            the Week 5 +page.svelte.
-
-            It contains transaction legs 4 + 5.
-        */
-        week5Transactions:
-            rankingTransactions,
-
-        week1Snapshot:
-            rosterHistory?.["1"] ||
-            null,
-
-        week2Snapshot:
-            rosterHistory?.["2"] ||
-            null,
-
-        week3Snapshot:
-            rosterHistory?.["3"] ||
-            null,
-
-        week4Snapshot:
-            rosterHistory?.["4"] ||
-            null
+        transactions
     };
 }
