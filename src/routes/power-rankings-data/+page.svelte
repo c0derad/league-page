@@ -1,14 +1,33 @@
-<!-- Week 5 power rankings data -->
 <script>
     export let data;
 
+    const WEEK =
+        Number(
+            data.week
+        );
+
+    const PREVIOUS_WEEK =
+        Number(
+            data.previousWeek
+        );
+
+    /*
+        Fallback only.
+
+        Live Sleeper team names are preferred
+        whenever available.
+
+        Keeping roster IDs as the permanent
+        identity means future team-name changes
+        do not break anything.
+    */
     const TEAM_NAMES = {
         1: 'The Car Bombs',
         2: 'PeterPanthers',
         3: 'The Oilers',
         4: 'Show Me Your TDs',
         5: 'Rhodes x Pags',
-        6: '#FreeTony',
+        6: 'Nigasaki',
         7: 'Retardinals',
         8: 'Naberhood Sex Offender',
         9: 'Charles',
@@ -17,18 +36,30 @@
         12: 'Big frydown'
     };
 
-    const round = (value) =>
+    const round = (
+        value
+    ) =>
         Math.round(
-            Number(value || 0) * 100
+            Number(
+                value || 0
+            ) * 100
         ) / 100;
+
+    const getPlayer = (
+        playerID
+    ) =>
+        data.players?.[
+            playerID
+        ] ||
+        null;
 
     const getPlayerName = (
         playerID
     ) => {
         const player =
-            data.players?.[
+            getPlayer(
                 playerID
-            ];
+            );
 
         if (!player) {
             return String(
@@ -37,10 +68,12 @@
         }
 
         const first =
-            player.fn || '';
+            player.fn ||
+            '';
 
         const last =
-            player.ln || '';
+            player.ln ||
+            '';
 
         return (
             `${first} ${last}`.trim() ||
@@ -54,7 +87,9 @@
         const manager =
             data.teamManagers
                 ?.find?.(
-                    (team) =>
+                    (
+                        team
+                    ) =>
                         Number(
                             team.roster_id
                         ) ===
@@ -67,15 +102,22 @@
             manager
                 ?.metadata
                 ?.team_name ||
-            manager?.team_name ||
+
+            manager
+                ?.team_name ||
+
             TEAM_NAMES[
                 Number(
                     rosterID
                 )
             ] ||
-            manager?.name ||
+
+            manager
+                ?.name ||
+
             manager
                 ?.display_name ||
+
             `Roster ${rosterID}`
         );
     };
@@ -83,10 +125,18 @@
     const getMatchupsForWeek = (
         week
     ) => {
+        if (
+            !week ||
+            week < 1
+        ) {
+            return [];
+        }
+
         return (
-            data[
-                `week${week}Matchups`
-            ] ||
+            data
+                .matchupsByWeek?.[
+                    week
+                ] ||
             []
         );
     };
@@ -100,14 +150,17 @@
                 week
             )
                 .find(
-                    (item) =>
+                    (
+                        item
+                    ) =>
                         Number(
                             item.roster_id
                         ) ===
                         Number(
                             rosterID
                         )
-                )
+                ) ||
+            null
         );
     };
 
@@ -130,9 +183,16 @@
                 week
             )
                 .find(
-                    (item) =>
-                        item.matchup_id ===
-                            team.matchup_id &&
+                    (
+                        item
+                    ) =>
+                        Number(
+                            item.matchup_id
+                        ) ===
+                            Number(
+                                team.matchup_id
+                            ) &&
+
                         Number(
                             item.roster_id
                         ) !==
@@ -160,6 +220,20 @@
         };
     };
 
+    const getPlayerProjection = (
+        playerID,
+        week
+    ) => {
+        return Number(
+            getPlayer(
+                playerID
+            )?.wi?.[
+                week
+            ]?.p ||
+            0
+        );
+    };
+
     const getProjectedPoints = (
         roster,
         week
@@ -173,87 +247,111 @@
                     (
                         total,
                         playerID
-                    ) => {
-                        const projection =
-                            data.players?.[
-                                playerID
-                            ]?.wi?.[
-                                week
-                            ]?.p ||
-                            0;
-
-                        return (
-                            total +
-                            Number(
-                                projection
-                            )
-                        );
-                    },
+                    ) =>
+                        total +
+                        getPlayerProjection(
+                            playerID,
+                            week
+                        ),
                     0
                 )
         );
     };
 
-    const getTopProjectedStarters =
-        (
-            roster,
-            week
-        ) => {
-            return (
-                roster.starters ||
-                []
+    const mapProjectedStarter = (
+        playerID,
+        week
+    ) => {
+        const player =
+            getPlayer(
+                playerID
+            );
+
+        return {
+            playerID,
+
+            name:
+                getPlayerName(
+                    playerID
+                ),
+
+            position:
+                player?.pos ||
+                null,
+
+            nflTeam:
+                player?.t ||
+                null,
+
+            projection:
+                round(
+                    getPlayerProjection(
+                        playerID,
+                        week
+                    )
+                ),
+
+            injuryStatus:
+                player
+                    ?.injury_status ||
+                null,
+
+            status:
+                player
+                    ?.status ||
+                null
+        };
+    };
+
+    const getProjectedStarters = (
+        roster,
+        week
+    ) => {
+        return (
+            roster.starters ||
+            []
+        )
+            .filter(
+                (
+                    playerID
+                ) =>
+                    playerID &&
+                    playerID !== '0'
             )
-                .map(
-                    (
-                        playerID
-                    ) => {
-                        const player =
-                            data.players?.[
-                                playerID
-                            ];
+            .map(
+                (
+                    playerID
+                ) =>
+                    mapProjectedStarter(
+                        playerID,
+                        week
+                    )
+            )
+            .sort(
+                (
+                    a,
+                    b
+                ) =>
+                    b.projection -
+                    a.projection
+            );
+    };
 
-                        return {
-                            playerID,
-
-                            name:
-                                getPlayerName(
-                                    playerID
-                                ),
-
-                            position:
-                                player
-                                    ?.pos ||
-                                null,
-
-                            nflTeam:
-                                player
-                                    ?.t ||
-                                null,
-
-                            projection:
-                                round(
-                                    player
-                                        ?.wi?.[
-                                            week
-                                        ]?.p ||
-                                    0
-                                )
-                        };
-                    }
-                )
-                .sort(
-                    (
-                        a,
-                        b
-                    ) =>
-                        b.projection -
-                        a.projection
-                )
+    const getTopProjectedStarters = (
+        roster,
+        week
+    ) => {
+        return (
+            getProjectedStarters(
+                roster,
+                week
+            )
                 .slice(
                     0,
                     5
-                );
-        };
+                )
+        );
+    };
 
     const getTopPerformers = (
         week,
@@ -273,26 +371,50 @@
             matchup.starters ||
             []
         )
+            .filter(
+                (
+                    playerID
+                ) =>
+                    playerID &&
+                    playerID !== '0'
+            )
             .map(
                 (
                     playerID
-                ) => ({
-                    playerID,
-
-                    name:
-                        getPlayerName(
+                ) => {
+                    const player =
+                        getPlayer(
                             playerID
-                        ),
+                        );
 
-                    points:
-                        round(
-                            matchup
-                                .players_points?.[
-                                    playerID
-                                ] ||
-                            0
-                        )
-                })
+                    return {
+                        playerID,
+
+                        name:
+                            getPlayerName(
+                                playerID
+                            ),
+
+                        position:
+                            player
+                                ?.pos ||
+                            null,
+
+                        nflTeam:
+                            player
+                                ?.t ||
+                            null,
+
+                        points:
+                            round(
+                                matchup
+                                    .players_points?.[
+                                        playerID
+                                    ] ||
+                                0
+                            )
+                    };
+                }
             )
             .sort(
                 (
@@ -337,10 +459,11 @@
                     (
                         playerID
                     ) =>
-                        !starters
-                            .has(
-                                playerID
-                            )
+                        playerID &&
+                        playerID !== '0' &&
+                        !starters.has(
+                            playerID
+                        )
                 )
                 .reduce(
                     (
@@ -360,135 +483,47 @@
         );
     };
 
-    const getRosterChanges = (
-        roster
-    ) => {
-        const previous =
-            data.week4Snapshot
-                ?.rosters?.[
-                    roster.roster_id
-                ];
-
-        if (!previous) {
-            return {
-                added: [],
-                dropped: []
-            };
-        }
-
-        const oldPlayers =
-            new Set(
-                previous.players ||
-                []
-            );
-
-        const currentPlayers =
-            new Set(
-                roster.players ||
-                []
-            );
-
-        const added =
-            [
-                ...currentPlayers
-            ]
-                .filter(
-                    (id) =>
-                        !oldPlayers
-                            .has(
-                                id
-                            )
-                )
-                .map(
-                    (id) => ({
-                        playerID:
-                            id,
-
-                        name:
-                            getPlayerName(
-                                id
-                            )
-                    })
-                );
-
-        const dropped =
-            [
-                ...oldPlayers
-            ]
-                .filter(
-                    (id) =>
-                        !currentPlayers
-                            .has(
-                                id
-                            )
-                )
-                .map(
-                    (id) => ({
-                        playerID:
-                            id,
-
-                        name:
-                            getPlayerName(
-                                id
-                            )
-                    })
-                );
-
-        return {
-            added,
-            dropped
-        };
-    };
-
-    const getRecordThroughWeek4 = (
-        rosterID
+    const getRecordThroughWeek = (
+        rosterID,
+        throughWeek
     ) => {
         let wins = 0;
         let losses = 0;
         let ties = 0;
 
         for (
-            const week
-            of [
-                1,
-                2,
-                3,
-                4
-            ]
+            let week = 1;
+            week <=
+                throughWeek;
+            week++
         ) {
-            const weekMatchups =
-                getMatchupsForWeek(
-                    week
-                );
-
             const team =
-                weekMatchups
-                    .find(
-                        (item) =>
-                            Number(
-                                item
-                                    .roster_id
-                            ) ===
-                            Number(
-                                rosterID
-                            )
-                    );
+                getMatchup(
+                    week,
+                    rosterID
+                );
 
             if (!team) {
                 continue;
             }
 
             const opponent =
-                weekMatchups
+                getMatchupsForWeek(
+                    week
+                )
                     .find(
-                        (item) =>
+                        (
                             item
-                                .matchup_id ===
-                                team
-                                    .matchup_id &&
+                        ) =>
                             Number(
-                                item
-                                    .roster_id
+                                item.matchup_id
+                            ) ===
+                                Number(
+                                    team.matchup_id
+                                ) &&
+
+                            Number(
+                                item.roster_id
                             ) !==
                                 Number(
                                     rosterID
@@ -527,8 +562,7 @@
         }
 
         if (
-            ties >
-            0
+            ties > 0
         ) {
             return (
                 `${wins}-${losses}-${ties}`
@@ -543,35 +577,34 @@
     const normalizePlayerMap = (
         playerMap
     ) => {
-        return (
-            Object.entries(
+        return Object
+            .entries(
                 playerMap ||
                 {}
             )
-                .map(
-                    ([
-                        playerID,
-                        rosterID
-                    ]) => ({
-                        playerID,
+            .map(
+                ([
+                    playerID,
+                    rosterID
+                ]) => ({
+                    playerID,
 
-                        name:
-                            getPlayerName(
-                                playerID
-                            ),
+                    name:
+                        getPlayerName(
+                            playerID
+                        ),
 
-                        rosterID:
-                            Number(
-                                rosterID
-                            ),
+                    rosterID:
+                        Number(
+                            rosterID
+                        ),
 
-                        team:
-                            getTeamName(
-                                rosterID
-                            )
-                    })
-                )
-        );
+                    team:
+                        getTeamName(
+                            rosterID
+                        )
+                })
+            );
     };
 
     const getTradePlayerMoves = (
@@ -585,18 +618,17 @@
             transaction.drops ||
             {};
 
-        const playerIDs =
-            [
-                ...new Set([
-                    ...Object.keys(
-                        adds
-                    ),
+        const playerIDs = [
+            ...new Set([
+                ...Object.keys(
+                    adds
+                ),
 
-                    ...Object.keys(
-                        drops
-                    )
-                ])
-            ];
+                ...Object.keys(
+                    drops
+                )
+            ])
+        ];
 
         return playerIDs
             .map(
@@ -672,7 +704,9 @@
             []
         )
             .map(
-                (item) => ({
+                (
+                    item
+                ) => ({
                     senderRosterID:
                         Number(
                             item.sender
@@ -710,7 +744,9 @@
             []
         )
             .map(
-                (pick) => ({
+                (
+                    pick
+                ) => ({
                     season:
                         pick.season,
 
@@ -769,7 +805,9 @@
                 []
             )
                 .map(
-                    (id) =>
+                    (
+                        id
+                    ) =>
                         Number(
                             id
                         )
@@ -871,10 +909,9 @@
         };
     };
 
-    const completedWeek5Transactions =
+    const completedTransactions =
         (
-            data
-                .week5Transactions ||
+            data.transactions ||
             []
         )
             .filter(
@@ -914,6 +951,155 @@
                 }
             );
 
+    /*
+        Instead of relying on an old
+        rosterHistory snapshot, derive the
+        recent changes directly from Sleeper's
+        completed transactions.
+
+        This makes the route reusable every week.
+    */
+    const getRosterChanges = (
+        rosterID
+    ) => {
+        const addedMap =
+            new Map();
+
+        const droppedMap =
+            new Map();
+
+        for (
+            const transaction
+            of completedTransactions
+        ) {
+            for (
+                const add
+                of transaction.adds
+            ) {
+                if (
+                    Number(
+                        add.rosterID
+                    ) ===
+                    Number(
+                        rosterID
+                    )
+                ) {
+                    addedMap.set(
+                        add.playerID,
+                        {
+                            playerID:
+                                add.playerID,
+
+                            name:
+                                add.name
+                        }
+                    );
+                }
+            }
+
+            for (
+                const drop
+                of transaction.drops
+            ) {
+                if (
+                    Number(
+                        drop.rosterID
+                    ) ===
+                    Number(
+                        rosterID
+                    )
+                ) {
+                    droppedMap.set(
+                        drop.playerID,
+                        {
+                            playerID:
+                                drop.playerID,
+
+                            name:
+                                drop.name
+                        }
+                    );
+                }
+            }
+        }
+
+        return {
+            added:
+                [
+                    ...addedMap
+                        .values()
+                ],
+
+            dropped:
+                [
+                    ...droppedMap
+                        .values()
+                ]
+        };
+    };
+
+    const getTeamTransactions = (
+        rosterID
+    ) => {
+        return completedTransactions
+            .filter(
+                (
+                    transaction
+                ) =>
+                    transaction
+                        .rosterIDs
+                        .includes(
+                            Number(
+                                rosterID
+                            )
+                        )
+            );
+    };
+
+    const mapCurrentRosterPlayer = (
+        playerID
+    ) => {
+        const player =
+            getPlayer(
+                playerID
+            );
+
+        return {
+            playerID,
+
+            name:
+                getPlayerName(
+                    playerID
+                ),
+
+            position:
+                player?.pos ||
+                null,
+
+            nflTeam:
+                player?.t ||
+                null,
+
+            injuryStatus:
+                player
+                    ?.injury_status ||
+                null,
+
+            status:
+                player
+                    ?.status ||
+                null,
+
+            weekProjection:
+                round(
+                    getPlayerProjection(
+                        playerID,
+                        WEEK
+                    )
+                )
+        };
+    };
+
     const powerData =
         (
             data
@@ -930,41 +1116,73 @@
                                 .roster_id
                         );
 
-                    const week1 =
-                        getMatchup(
-                            1,
-                            rosterID
-                        );
+                    const previousMatchup =
+                        PREVIOUS_WEEK >= 1
+                            ? getMatchup(
+                                PREVIOUS_WEEK,
+                                rosterID
+                            )
+                            : null;
 
-                    const week2 =
+                    const currentMatchup =
                         getMatchup(
-                            2,
-                            rosterID
-                        );
-
-                    const week3 =
-                        getMatchup(
-                            3,
-                            rosterID
-                        );
-
-                    const week4 =
-                        getMatchup(
-                            4,
-                            rosterID
-                        );
-
-                    const week5 =
-                        getMatchup(
-                            5,
+                            WEEK,
                             rosterID
                         );
 
                     const opponent =
                         getOpponent(
-                            5,
+                            WEEK,
                             rosterID
                         );
+
+                    const previousScoreKey =
+                        `week${PREVIOUS_WEEK}Score`;
+
+                    const previousBenchKey =
+                        `week${PREVIOUS_WEEK}BenchPoints`;
+
+                    const currentMatchupIDKey =
+                        `week${WEEK}MatchupID`;
+
+                    const currentOpponentKey =
+                        `week${WEEK}Opponent`;
+
+                    const currentProjectionKey =
+                        `week${WEEK}Projection`;
+
+                    const currentTopProjectedKey =
+                        `week${WEEK}TopProjected`;
+
+                    const currentProjectedStartersKey =
+                        `week${WEEK}ProjectedStarters`;
+
+                    const previousTopPerformersKey =
+                        `week${PREVIOUS_WEEK}TopPerformers`;
+
+                    const weekScores = {};
+
+                    for (
+                        let week = 1;
+                        week <=
+                            PREVIOUS_WEEK;
+                        week++
+                    ) {
+                        const matchup =
+                            getMatchup(
+                                week,
+                                rosterID
+                            );
+
+                        weekScores[
+                            `week${week}Score`
+                        ] =
+                            round(
+                                matchup
+                                    ?.points ||
+                                0
+                            );
+                    }
 
                     return {
                         rosterID,
@@ -975,97 +1193,269 @@
                             ),
 
                         record:
-                            getRecordThroughWeek4(
-                                rosterID
+                            getRecordThroughWeek(
+                                rosterID,
+                                PREVIOUS_WEEK
                             ),
 
-                        week1Score:
+                        ...weekScores,
+
+                        [previousScoreKey]:
                             round(
-                                week1
+                                previousMatchup
                                     ?.points ||
                                 0
                             ),
 
-                        week2Score:
-                            round(
-                                week2
-                                    ?.points ||
-                                0
-                            ),
-
-                        week3Score:
-                            round(
-                                week3
-                                    ?.points ||
-                                0
-                            ),
-
-                        week4Score:
-                            round(
-                                week4
-                                    ?.points ||
-                                0
-                            ),
-
-                        week4BenchPoints:
+                        [previousBenchKey]:
                             getBenchPoints(
-                                4,
+                                PREVIOUS_WEEK,
                                 rosterID
                             ),
 
-                        week5MatchupID:
-                            week5
+                        [currentMatchupIDKey]:
+                            currentMatchup
                                 ?.matchup_id ??
                             null,
 
-                        week5Opponent:
+                        [currentOpponentKey]:
                             opponent
                                 ?.name ||
                             null,
 
-                        week5Projection:
+                        [currentProjectionKey]:
                             getProjectedPoints(
                                 roster,
-                                5
+                                WEEK
                             ),
 
-                        week5TopProjected:
+                        [currentTopProjectedKey]:
                             getTopProjectedStarters(
                                 roster,
-                                5
+                                WEEK
                             ),
 
-                        week4TopPerformers:
-                            getTopPerformers(
-                                4,
-                                rosterID
+                        [currentProjectedStartersKey]:
+                            getProjectedStarters(
+                                roster,
+                                WEEK
                             ),
+
+                        [previousTopPerformersKey]:
+                            PREVIOUS_WEEK >= 1
+                                ? getTopPerformers(
+                                    PREVIOUS_WEEK,
+                                    rosterID
+                                )
+                                : [],
 
                         rosterChanges:
                             getRosterChanges(
-                                roster
+                                rosterID
+                            ),
+
+                        recentTransactions:
+                            getTeamTransactions(
+                                rosterID
                             ),
 
                         currentRoster:
                             (
-                                roster
-                                    .players ||
+                                roster.players ||
                                 []
                             )
                                 .map(
+                                    mapCurrentRosterPlayer
+                                )
+                                .sort(
                                     (
-                                        playerID
-                                    ) => ({
-                                        playerID,
-
-                                        name:
-                                            getPlayerName(
-                                                playerID
-                                            )
-                                    })
+                                        a,
+                                        b
+                                    ) =>
+                                        b.weekProjection -
+                                        a.weekProjection
                                 )
                     };
                 }
+            )
+            .sort(
+                (
+                    a,
+                    b
+                ) =>
+                    a.rosterID -
+                    b.rosterID
+            );
+
+    const getPowerTeam = (
+        rosterID
+    ) =>
+        powerData.find(
+            (
+                team
+            ) =>
+                Number(
+                    team.rosterID
+                ) ===
+                Number(
+                    rosterID
+                )
+        );
+
+    /*
+        Also create six clean matchup objects.
+
+        This saves us from having to reconstruct
+        the Week 6 slate manually after you paste
+        the JSON into ChatGPT.
+    */
+    const matchupGroups =
+        {};
+
+    for (
+        const matchup
+        of getMatchupsForWeek(
+            WEEK
+        )
+    ) {
+        if (
+            matchup.matchup_id ===
+                null ||
+            matchup.matchup_id ===
+                undefined
+        ) {
+            continue;
+        }
+
+        const matchupID =
+            Number(
+                matchup.matchup_id
+            );
+
+        if (
+            !matchupGroups[
+                matchupID
+            ]
+        ) {
+            matchupGroups[
+                matchupID
+            ] = [];
+        }
+
+        matchupGroups[
+            matchupID
+        ].push(
+            matchup
+        );
+    }
+
+    const matchupSummaries =
+        Object
+            .entries(
+                matchupGroups
+            )
+            .map(
+                ([
+                    matchupID,
+                    matchups
+                ]) => {
+                    const teams =
+                        matchups
+                            .map(
+                                (
+                                    matchup
+                                ) => {
+                                    const team =
+                                        getPowerTeam(
+                                            matchup
+                                                .roster_id
+                                        );
+
+                                    return {
+                                        rosterID:
+                                            Number(
+                                                matchup
+                                                    .roster_id
+                                            ),
+
+                                        team:
+                                            team
+                                                ?.team ||
+                                            getTeamName(
+                                                matchup
+                                                    .roster_id
+                                            ),
+
+                                        record:
+                                            team
+                                                ?.record ||
+                                            null,
+
+                                        projection:
+                                            team?.[
+                                                `week${WEEK}Projection`
+                                            ] ??
+                                            0
+                                    };
+                                }
+                            );
+
+                    return {
+                        matchupID:
+                            Number(
+                                matchupID
+                            ),
+
+                        teams,
+
+                        projectedTotal:
+                            round(
+                                teams.reduce(
+                                    (
+                                        total,
+                                        team
+                                    ) =>
+                                        total +
+                                        Number(
+                                            team
+                                                .projection ||
+                                            0
+                                        ),
+                                    0
+                                )
+                            ),
+
+                        projectedMargin:
+                            teams.length === 2
+                                ? round(
+                                    Math.abs(
+                                        Number(
+                                            teams[
+                                                0
+                                            ]
+                                                .projection ||
+                                            0
+                                        ) -
+                                        Number(
+                                            teams[
+                                                1
+                                            ]
+                                                .projection ||
+                                            0
+                                        )
+                                    )
+                                )
+                                : null
+                    };
+                }
+            )
+            .sort(
+                (
+                    a,
+                    b
+                ) =>
+                    a.matchupID -
+                    b.matchupID
             );
 
     const output = {
@@ -1074,17 +1464,23 @@
                 .toISOString(),
 
         week:
-            5,
+            WEEK,
+
+        previousWeek:
+            PREVIOUS_WEEK,
 
         teamCount:
             powerData.length,
 
         transactionCount:
-            completedWeek5Transactions
+            completedTransactions
                 .length,
 
         transactions:
-            completedWeek5Transactions,
+            completedTransactions,
+
+        matchups:
+            matchupSummaries,
 
         teams:
             powerData
@@ -1093,7 +1489,7 @@
 
 <svelte:head>
     <title>
-        Power Rankings Data
+        Week {WEEK} Preview Data
     </title>
 </svelte:head>
 
@@ -1105,11 +1501,22 @@
     "
 >
     <h1>
-        Power Rankings Data
+        Week {WEEK} Preview Data
     </h1>
 
     <p>
-        Temporary internal data export.
+        Dynamic Sleeper data export for Week {WEEK}.
+    </p>
+
+    <p
+        style="
+            color: #888;
+            font-size: 0.85em;
+        "
+    >
+        Includes Week {PREVIOUS_WEEK} results,
+        Week {WEEK} projections,
+        records, rosters, injuries and recent transactions.
     </p>
 
     <pre
