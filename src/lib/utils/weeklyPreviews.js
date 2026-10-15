@@ -1466,5 +1466,622 @@ export const weeklyPreviews = {
         pickRosterID: 8
       }
     }
+  },
+    6: {
+    intro: `
+      Week 6 is here.
+
+      And apparently the NFL schedule itself has decided to become a league participant.
+
+      Cincinnati.
+
+      Detroit.
+
+      Miami.
+
+      Minnesota.
+
+      All on bye.
+
+      That removes Ja'Marr Chase, Jahmyr Gibbs, Amon-Ra St. Brown, Justin Jefferson,
+      Tee Higgins, Jameson Williams, Chase Brown, Aaron Jones and several other useful
+      pieces from fantasy lineups across the league.
+
+      In other words:
+
+      some of you are about to learn whether you actually have roster depth.
+
+      Ryan remains the league's final undefeated team at 5-0.
+
+      JV is 4-1 and coming off 156.86.
+
+      Trevor is also 4-1 and just scored 150.94.
+
+      Jansen has apparently transformed Nigasaki into a thermonuclear device after
+      scoring 157.88 and then 199.70.
+
+      The Car Bombs have scored 154.56 and 156.16 in two of the last three weeks.
+
+      Josh and Charles are both attempting to stop two-game slides from becoming
+      actual problems.
+
+      T2 finally resurfaced with 139.64.
+
+      Vigo has been rewarded for a 90-point performance by having approximately half
+      of his recognizable roster placed on bye.
+
+      And Chaney got married, won his first fantasy game, flew to France, and now gets
+      to manage a roster against the league's only undefeated team from another continent.
+
+      The Czar went 5-1 last week.
+
+      Judgment resumes now.
+    `,
+
+    matchups: {
+
+      1: {
+        headline: "JV vs. Nigasaki: The League's Hottest Team Gets a Real Test",
+        preview: `
+          This might be the most interesting matchup of Week 6.
+
+          PeterPanthers:
+
+          4-1.
+
+          Nigasaki:
+
+          2-3.
+
+          Those records do not tell the story.
+
+          Jansen has scored:
+
+          157.88.
+
+          Then 199.70.
+
+          That is 357.58 fantasy points in two weeks.
+
+          Nigasaki enters Thursday projected for 121.23.
+
+          JV sits at 104.79.
+
+          There is a very obvious reason for that gap.
+
+          Jahmyr Gibbs is on bye.
+
+          Detroit taking the week off removes the player who just scored 37.7 for JV
+          and has repeatedly been the most terrifying piece of PeterPanthers.
+
+          Jake Bates is also currently sitting in JV's kicker spot with a zero because
+          Detroit is off.
+
+          JV still has plenty.
+
+          Chris Olave projects for 18.40.
+
+          Trey McBride for 17.51.
+
+          Jayden Daniels for 16.29.
+
+          D'Andre Swift for 15.04.
+
+          The problem is Jansen's ceiling is substantially higher right now.
+
+          Puka Nacua projects for 22.79.
+
+          Zay Flowers for 20.78.
+
+          Kyren Williams for 14.94.
+
+          Jaylen Warren for 11.98.
+
+          Then there is Lamar Jackson.
+
+          Lamar currently carries a 22.89 projection, but his ankle remains the major
+          variable. He still had not practiced as of Thursday.
+
+          There is at least a realistic possibility he returns Sunday.
+
+          And unlike a normal 2-3 roster, Jansen can survive some uncertainty.
+
+          Aaron Rodgers is sitting behind him.
+
+          Josh Downs is currently on the bench with nearly 12 projected points.
+
+          Josh Jacobs is still sitting on the roster.
+
+          Nigasaki has actual depth.
+
+          JV has spent most of the season bludgeoning people.
+
+          This week he loses his biggest weapon at exactly the wrong time.
+
+          Give me the hottest roster in the league.
+
+          Nigasaki makes it three straight.
+        `,
+        pick: "Nigasaki",
+        pickRosterID: 6
+      },
+
+      2: {
+        headline: "PROJECTED ASS BEATING: Vigo Has Encountered the Bye Week",
+        preview: `
+          This is extraordinary.
+
+          Retardinals currently projects for:
+
+          67.15.
+
+          Big frydown:
+
+          111.37.
+
+          Projected margin:
+
+          44.22.
+
+          Forty-four point two two.
+
+          Somehow T2 has become the side of a matchup that Sleeper believes is going
+          to commit an act of violence.
+
+          Vigo's problem is not difficult to diagnose.
+
+          Minnesota is on bye.
+
+          Justin Jefferson disappears.
+
+          Detroit is on bye.
+
+          Jameson Williams disappears.
+
+          Cincinnati is on bye.
+
+          Chase Brown disappears.
+
+          A.J. Brown is eligible to return from injured reserve and has returned to
+          practice, but he was still limited this week and is not currently contributing
+          to the projection.
+
+          Vigo's current projected starters include:
+
+          Germie Bernard at 2.70.
+
+          Brian Robinson at 4.97.
+
+          Woody Marks at 5.47.
+
+          This is no longer a fantasy lineup.
+
+          This is a distress signal.
+
+          Caleb Williams at least projects for 18.97 and Jaylen Waddle for 10.89.
+
+          Vigo has also spent the last 48 hours frantically cycling through the waiver wire.
+
+          T.J. Hockenson.
+
+          Gone.
+
+          Tyler Higbee.
+
+          Added.
+
+          Then gone.
+
+          Brenton Strange.
+
+          Back.
+
+          C.J. Stroud.
+
+          Gone.
+
+          Baltimore defense.
+
+          Added.
+
+          Tyler Bass.
+
+          Added.
+
+          There has been activity.
+
+          Whether any of it constitutes help remains under investigation.
+
+          T2 enters from a much healthier position after scoring 139.64 last week.
+
+          Dak projects for 21.57.
+
+          Mike Evans for 15.68.
+
+          Ladd McConkey for 13.50.
+
+          Bucky Irving for 12.65.
+
+          Tucker Kraft for 11.54.
+
+          Saquon Barkley is worth watching after missing practice with the hamstring issue.
+
+          Even with that concern, the gap here is enormous.
+
+          Last week Vigo requested another miracle against JV.
+
+          It did not arrive.
+
+          Apparently he needs another one immediately.
+
+          Give me T2.
+
+          If Big frydown loses this game, congressional hearings should begin Monday.
+        `,
+        pick: "Big frydown",
+        pickRosterID: 12
+      },
+
+      3: {
+        headline: "Charles Has Entered Bye Week Hell",
+        preview: `
+          Charles spent the first four weeks being one of the most stable teams in the league.
+
+          Then he scored 89.72.
+
+          Low Man.
+
+          Now Cincinnati and Detroit are both on bye.
+
+          Excellent timing.
+
+          Amon-Ra St. Brown:
+
+          unavailable.
+
+          Tee Higgins:
+
+          unavailable.
+
+          Charles' current lineup projection is 104.51.
+
+          Rhodes x Pags sits at 116.18.
+
+          Charles does have ways to improve that number.
+
+          Jalen Hurts is currently sitting outside the projected starting lineup despite
+          carrying an 18.55 projection.
+
+          Breece Hall is also on the roster at 14.31, although the quad remains a real
+          concern after he missed practice again Thursday.
+
+          Charles also went shopping.
+
+          Wan'Dale Robinson was added.
+
+          Xavier Worthy was added after Josh inexplicably released him.
+
+          So the roster is attempting to patch the holes.
+
+          Rhodes x Pags has far fewer problems.
+
+          Bijan projects for 23.08.
+
+          Stafford for 20.22.
+
+          Brock Bowers for 15.77.
+
+          Davante Adams for 13.81.
+
+          Rashee Rice is also sitting on the roster with a 13.81 projection and is not
+          even currently part of the projected starting group.
+
+          There is enough depth here for Rhodes and Pags to survive a normal game script.
+
+          The records say Charles is 3-2 and Rhodes x Pags is 1-4.
+
+          The Week 6 lineups say something very different.
+
+          Charles needs Hurts back into the lineup, Breece healthy, and somebody from the
+          replacement receiver group to hit.
+
+          Rhodes x Pags mostly needs to avoid doing anything stupid.
+
+          With two managers, surely one of them can accomplish that.
+
+          Give me Rhodes x Pags.
+        `,
+        pick: "Rhodes x Pags",
+        pickRosterID: 5
+      },
+
+      4: {
+        headline: "No. 5 vs. No. 6: The Rebrand Gets Another Credibility Test",
+        preview: `
+          The Car Bombs:
+
+          2-3.
+
+          Campus Legends:
+
+          3-2.
+
+          Current projection:
+
+          The Car Bombs 118.61.
+
+          Campus Legends 114.79.
+
+          This is almost a coin flip.
+
+          And unlike several games this week, neither projection is being completely
+          destroyed by bye-week carnage.
+
+          The Car Bombs have become a substantially different operation.
+
+          Week 3:
+
+          154.56.
+
+          Week 4:
+
+          111.74.
+
+          Week 5:
+
+          156.16.
+
+          That is a 140.82 average over the last three weeks.
+
+          Drake "Drake Maye" Maye just scored 39.46 and now carries a 23.88 projection.
+
+          He appeared on the injury report with the right shoulder but practiced fully,
+          so there is currently no reason for institutional panic.
+
+          Javonte Williams projects for 17.61.
+
+          Drake London for 16.74.
+
+          Matthew Golden for 13.27.
+
+          Cam Skattebo for 11.92.
+
+          And this roster scored 156.16 last week while leaving 33.64 points on the bench.
+
+          Ja'Marr Chase being on bye certainly hurts.
+
+          The fact that The Car Bombs still project near 119 without him is the more
+          interesting part.
+
+          JQ is not exactly arriving unarmed.
+
+          Christian McCaffrey projects for 22.02.
+
+          Mahomes for 18.
+
+          Jeremiyah Love for 15.24.
+
+          Garrett Wilson for 15.16.
+
+          George Pickens for 15.03.
+
+          Jalen Coker is sitting on the roster at 13.94.
+
+          Travis Kelce is also available at tight end.
+
+          Campus Legends scored 139.88 last week and lost.
+
+          The Car Bombs scored 156.16 and won.
+
+          This is No. 5 against No. 6 in the Czar's Power Rankings.
+
+          JQ has the better record.
+
+          The Czar has the hotter three-week scoring profile.
+
+          There has been extensive independent review.
+
+          The administration finds no evidence requiring it to pick against itself.
+
+          The Car Bombs move back to .500.
+        `,
+        pick: "The Car Bombs",
+        pickRosterID: 1
+      },
+
+      5: {
+        headline: "PROJECTED SHOOTOUT: Chaney's Honeymoon Meets the Undefeated Team",
+        preview: `
+          The league's projected shootout is also projected to be extremely one-sided.
+
+          The Oilers:
+
+          105.89.
+
+          Naberhood Sex Offender:
+
+          133.85.
+
+          Projected total:
+
+          239.74.
+
+          Ryan is doing most of the work there.
+
+          Chaney finally won last week.
+
+          Then he got married.
+
+          Then he left for France.
+
+          Now his first assignment as a married international fantasy manager is the
+          only undefeated roster in the league.
+
+          The Oilers have at least been active.
+
+          Jordan Love was added and immediately projects for 19.54.
+
+          MarShawn Lloyd was added.
+
+          Alvin Kamara and Tyreek Hill were removed.
+
+          CeeDee Lamb projects for 19.03 and, importantly, practiced fully this week
+          after the quad issue.
+
+          Nico Collins projects for 16.52, although he has been limited in practice.
+
+          David Montgomery remains another potential starting option but missed practice
+          Thursday.
+
+          There is enough here for Chaney to make this respectable.
+
+          Ryan simply has more.
+
+          Brock Purdy:
+
+          26.06.
+
+          Jonathan Taylor:
+
+          19.65.
+
+          Parker Washington:
+
+          17.20.
+
+          Ashton Jeanty:
+
+          16.68.
+
+          George Kittle:
+
+          14.28.
+
+          TreVeyon Henderson, Michael Wilson, Tet McMillan and Malik Nabers are all
+          sitting behind that group with legitimate projected production.
+
+          Ryan has scored at least 123 points in every single game this year.
+
+          Five weeks.
+
+          Five wins.
+
+          Chaney finally got off zero.
+
+          Asking him to immediately follow that by ending the league's final undefeated
+          season while managing the roster from France feels excessive.
+
+          Give me Ryan.
+
+          Six and zero until proven otherwise.
+        `,
+        pick: "Naberhood Sex Offender",
+        pickRosterID: 8
+      },
+
+      6: {
+        headline: "GAME OF THE WEEK: Trevor vs. Josh Is Basically a Pick'em",
+        preview: `
+          Here we go.
+
+          Show Me Your TDs:
+
+          4-1.
+
+          Moore Oil Coming:
+
+          3-2.
+
+          Current projection:
+
+          Trevor 109.35.
+
+          Josh 110.58.
+
+          Margin:
+
+          1.23.
+
+          Smallest on the board.
+
+          Trevor enters with the better recent résumé.
+
+          Show Me Your TDs just scored 150.94.
+
+          Christian Watson scored 32.3.
+
+          James Cook scored 22.8.
+
+          Trevor Lawrence scored 22.74.
+
+          And Trevor has now scored:
+
+          124.40.
+
+          132.86.
+
+          127.28.
+
+          109.08.
+
+          150.94.
+
+          There has not been a true disaster.
+
+          Josh has moved in the opposite direction.
+
+          Moore Oil Coming opened with 147.16 and 141.02.
+
+          The last three:
+
+          109.42.
+
+          116.52.
+
+          107.30.
+
+          That is a legitimate decline.
+
+          But there is one reason I do not trust the current 110.58 projection.
+
+          Josh has not finished setting his lineup.
+
+          Kenneth Walker is currently outside the projected starters despite carrying
+          a 17.32 projection.
+
+          DJ Moore is also sitting outside the group at 13.74.
+
+          With Zach Charbonnet already ruled out Thursday night, Walker becomes an even
+          more important piece of this matchup.
+
+          Josh Allen projects for 25.54.
+
+          JSN for 19.71.
+
+          Walker gives Josh another potential ceiling piece.
+
+          Trevor has his own lineup questions.
+
+          DeVonta Smith carries a usable projection but missed practice Thursday.
+
+          Blake Grupe is currently sitting in the kicker slot with a zero.
+
+          This matchup is going to look different once both managers finish setting
+          their teams.
+
+          Trevor has been more consistent.
+
+          Josh has the better high-end path if the lineup gets cleaned up.
+
+          I am betting on Allen, JSN and Walker reversing the recent slide.
+
+          Moore Oil Coming wins the Game of the Week.
+
+          Barely.
+        `,
+        pick: "Moore Oil Coming",
+        pickRosterID: 10
+      }
+    }
   }
 };
