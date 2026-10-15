@@ -1469,685 +1469,396 @@ export const weeklyPreviews = {
   },
   6: {
     intro: `
-      Week 6 is here.
-
-      And this week the NFL schedule has decided to participate directly in league affairs.
-
-      Cincinnati.
-
-      Detroit.
-
-      Miami.
-
-      Minnesota.
-
-      All on bye.
-
-      Which means several managers are about to discover the difference between
-      "having a good starting lineup" and "having an actual fantasy football team."
-
-      Ryan remains the league's final undefeated manager at 5-0.
-
-      JV is 4-1 and just dropped 156.86.
-
-      Trevor is also 4-1 after scoring 150.94.
-
-      Jansen has followed 157.88 with 199.70 and has apparently turned Nigasaki into
-      a weapon of mass destruction.
-
-      The Car Bombs have now scored 154.56 and 156.16 in two of the last three weeks.
-
+      Week 6 is here, and for the first time this season the NFL schedule itself
+      appears determined to interfere with league business.
+  
+      Cincinnati, Detroit, Miami and Minnesota are all on bye. That takes Ja'Marr
+      Chase, Jahmyr Gibbs, Amon-Ra St. Brown, Justin Jefferson, Tee Higgins,
+      Jameson Williams, Chase Brown and several other actual fantasy starters off
+      the board at the same time.
+  
+      Which means this is the week we find out who built a roster and who merely
+      drafted nine people they liked.
+  
+      Ryan remains the league's final undefeated manager at 5-0. JV and Trevor
+      are both 4-1. Nigasaki has followed 157.88 with 199.70 and is currently
+      operating less like a fantasy team and more like a controlled weapons test.
+      The Car Bombs have scored 154.56 and 156.16 in two of the last three weeks.
       Josh and Charles are both trying to stop recent slides before they become
-      actual trends.
-
-      T2 finally resurfaced with 139.64.
-
-      Chaney got married, finally won a fantasy matchup, and immediately fled to France.
-
-      And Vigo has responded to last week's 66-point loss by doing what all great
-      organizations do during a crisis:
-
-      changing the team name.
-
+      something worth discussing seriously.
+  
+      T2 finally resurfaced with 139.64. Chaney got married, finally won a fantasy
+      game, and immediately left the country for France.
+  
+      And Vigo responded to getting beaten by 66 points after publicly declaring
+      "Need to pull another miracle. And fuck JV." by changing the team name.
+  
       Retardinals is dead.
-
+  
       Madison beers Box has arrived.
-
-      No explanation has been provided.
-
-      None has been requested.
-
-      The Czar went 5-1 last week.
-
-      Six more judgments follow.
-
+  
+      More on that shortly.
+  
+      The Czar went 5-1 last week, his best performance of the season. Five weeks
+      of evidence are now on the books, the bye weeks are finally causing actual
+      roster problems, and several teams we thought we understood are beginning
+      to look very different.
+  
+      Six games.
+  
+      Six judgments.
+  
       Week 6 begins now.
     `,
-
+  
     matchups: {
-
+  
       1: {
-        headline: "JV's Bye Week Has Arrived at the Worst Possible Time",
+        headline: "JV Picked the Worst Possible Week to Draw Nigasaki",
         preview: `
-          PeterPanthers is 4-1.
-
-          Nigasaki is 2-3.
-
-          Ignore the records for a moment.
-
-          Jansen has scored 357.58 points over the last two weeks.
-
-          157.88.
-
-          Then 199.70.
-
-          The man changed the team name and apparently unlocked technology that
-          should probably be regulated by the federal government.
-
-          Now he gets JV.
-
-          Normally this would be one of the hardest teams in the league to pick against.
-
-          Unfortunately for JV, Detroit is on bye.
-
-          Jahmyr Gibbs disappears.
-
-          That is a substantial problem.
-
-          Gibbs just scored 37.7 last week and has repeatedly been the player most
-          capable of turning a normal PeterPanthers Sunday into a public execution.
-
-          JV is not helpless without him.
-
-          Chris Olave remains one of the safest volume receivers in the league.
-
-          Trey McBride gives him an advantage at tight end almost every week.
-
-          Jayden Daniels can generate fantasy points even when the passing offense
-          is not doing much.
-
-          D'Andre Swift has also been useful all season.
-
-          This is still a very good roster.
-
-          Jansen simply enters with more firepower available right now.
-
-          Puka Nacua just scored 37.7.
-
-          Jaylen Warren scored 36.8.
-
-          Isaiah Likely scored 32.4.
-
-          Kyren Williams added another 19.6.
-
-          And that was with Aaron Rodgers starting at quarterback.
-
-          Lamar Jackson's availability remains the biggest variable in the matchup.
-
-          If Lamar plays, Jansen's ceiling gets even more absurd.
-
-          If he does not, Rodgers already demonstrated last week that Nigasaki does
-          not require quarterback heroics to score points.
-
-          There is also depth behind the starters.
-
-          Josh Downs.
-
-          Josh Jacobs.
-
-          Jordan Mason.
-
-          Kimani Vidal.
-
-          This is not a normal 2-3 team.
-
-          JV has been excellent.
-
-          But he loses his biggest weapon at exactly the same moment Jansen has become
-          the hottest team in the league.
-
-          Bad timing.
-
+          PeterPanthers is 4-1. Nigasaki is 2-3. Under normal circumstances that
+          would make this feel like a relatively straightforward matchup.
+  
+          These are not normal circumstances.
+  
+          Jansen has scored 357.58 points over the last two weeks. Nigasaki followed
+          a 157.88 breakout with 199.70, the highest score we have seen this season,
+          and suddenly the 2-3 record looks less like evidence of mediocrity and more
+          like evidence that Jansen spent September getting repeatedly kicked in the
+          balls by the schedule.
+  
+          JV remains one of the best teams in the league, but Week 6 removes Jahmyr
+          Gibbs from the equation. That is a major problem. Gibbs just scored 37.7
+          last week and has been the player most capable of turning an ordinary
+          PeterPanthers performance into a massacre.
+  
+          JV still has plenty of weapons. Chris Olave gives him reliable volume,
+          Trey McBride remains one of the best advantages available at tight end,
+          Jayden Daniels can manufacture fantasy production in several different ways,
+          and D'Andre Swift has quietly become a useful weekly piece. This is still
+          a very good roster even without Gibbs.
+  
+          Jansen simply has more available firepower right now.
+  
+          Puka Nacua scored 37.7 last week. Jaylen Warren scored 36.8. Isaiah Likely
+          scored 32.4. Kyren Williams added 19.6. And all of that happened with Aaron
+          Rodgers starting at quarterback.
+  
+          Lamar Jackson remains the major swing factor. If Lamar is available, the
+          ceiling gets even higher. If he is not, Jansen already demonstrated that
+          Nigasaki does not require elite quarterback production to put up an absurd
+          number.
+  
+          The depth is also real. Josh Downs, Josh Jacobs, Jordan Mason and Kimani
+          Vidal give Jansen options if the lineup needs to move around before Sunday.
+          This no longer looks like a team hoping one superstar carries the week.
+  
+          JV has spent most of this season beating people with superior firepower.
+          This week he loses his most explosive player at exactly the moment his
+          opponent has become the hottest team in the league.
+  
+          That is enough for me.
+  
           Give me Nigasaki.
-
+  
           Jansen gets his third straight win.
         `,
         pick: "Nigasaki",
         pickRosterID: 6
       },
-
+  
       2: {
-        headline: "New Name. Same Emergency.",
+        headline: "Vigo Has Turned to the Woman Who Destroyed Justin Herbert",
         preview: `
-          We need to begin with the most important transaction of Week 6.
-
-          Vigo has changed the team name.
-
-          Retardinals is gone.
-
-          The organization will now be known as:
-
-          Madison beers Box.
-
-          Capitalization preserved exactly as submitted.
-
-          What does it mean?
-
-          Nobody knows.
-
-          Why "beers"?
-
-          Why "Box"?
-
-          Who is Madison?
-
-          These are questions for another department.
-
-          What we do know is that this rebrand comes immediately after Vigo publicly
-          declared:
-
-          "Need to pull another miracle. And fuck JV."
-
-          JV then beat him by 66.32.
-
-          There are two traditional responses to that situation.
-
-          Improve the roster.
-
-          Or change the sign on the building.
-
-          Vigo chose branding.
-
-          To his credit, the football operation has also been extremely active.
-
-          T.J. Hockenson arrived.
-
-          Then disappeared.
-
-          Tyler Higbee arrived.
-
-          Then disappeared.
-
-          Brenton Strange left.
-
-          Then returned.
-
-          C.J. Stroud was released.
-
-          Baltimore's defense was added.
-
-          Tyler Bass was added.
-
-          Woody Marks was added.
-
-          Vigo has been touching buttons.
-
-          The roster is certainly different.
-
-          Whether it is better remains unclear.
-
-          The bye week is also brutal.
-
-          Justin Jefferson is unavailable.
-
-          Jameson Williams is unavailable.
-
-          Chase Brown is unavailable.
-
-          That removes three players who would normally be central to this lineup.
-
-          Caleb Williams becomes extremely important.
-
-          Woody Marks has also moved into a much larger role in the Week 6 equation.
-
-          And A.J. Brown's potential return would give Madison beers Box something
-          it desperately needs:
-
-          a legitimate ceiling outcome.
-
-          Across the field, T2 is coming off his first competent performance since Week 1.
-
-          Big frydown scored 139.64.
-
-          Bucky Irving went for 31.5.
-
-          Mike Evans scored 26.3.
-
-          Aaron Jones added 18.7.
-
-          For one week, the roster everyone recognized on paper actually appeared
-          on the scoreboard.
-
-          There are still questions around the lineup.
-
-          That is why this matchup is considerably closer than it looked earlier
-          in the week.
-
-          But T2 currently has the more functional roster.
-
-          Madison beers Box may be undefeated as a franchise.
-
-          Unfortunately, Retardinals' record transferred with the assets.
-
+          Retardinals is dead.
+  
+          After five weeks, a 1-4 record, and last week's 66-point loss to JV immediately
+          following the declaration "Need to pull another miracle. And fuck JV," Vigo
+          has decided the organization needed a new identity.
+  
+          The roster will now compete under the name Madison beers Box.
+  
+          For anyone somehow unfamiliar with the source material, Madison Beer is a
+          famous pop star and, according to longstanding and completely peer-reviewed
+          Touchdown Syndrome doctrine, the woman responsible for ruining Justin Herbert
+          as a football player.
+  
+          Whether that accusation would survive even thirty seconds of independent
+          scrutiny is irrelevant.
+  
+          We have seen enough.
+  
+          The obvious question is why Vigo would choose the alleged destroyer of
+          quarterbacks as the spiritual figurehead for a team currently relying on
+          Caleb Williams. Perhaps this is psychological warfare. Perhaps Vigo knows
+          something the rest of us do not. Perhaps he simply liked the name.
+  
+          The football side of the organization has been almost as chaotic as the
+          branding department. Vigo has spent the week cycling through tight ends,
+          changing defenses, dropping C.J. Stroud, adding Woody Marks and generally
+          treating the waiver wire like somebody handed him unrestricted access to a
+          control panel.
+  
+          Some of that activity was necessary because the bye week has absolutely
+          butchered this roster. Justin Jefferson is unavailable. Jameson Williams is
+          unavailable. Chase Brown is unavailable. Three players who would normally
+          make up a meaningful portion of Vigo's weekly scoring have simply vanished.
+  
+          There are at least signs of life. Caleb Williams gives him a legitimate
+          quarterback ceiling, Woody Marks has become much more relevant to the lineup,
+          and an A.J. Brown return would immediately make the receiving group look less
+          like something assembled during an evacuation.
+  
+          Across the field, T2 is coming off his first legitimately good performance
+          since Week 1. Big frydown scored 139.64 behind 31.5 from Bucky Irving, 26.3
+          from Mike Evans and 18.7 from Aaron Jones. For one week, the roster everyone
+          recognized on draft night finally appeared on the scoreboard.
+  
+          This matchup is considerably closer than it looked in the first Week 6 data
+          pull, and Vigo's lineup has improved enough that we can no longer call this
+          an automatic execution.
+  
+          I still trust T2 more.
+  
+          Madison Beer may have already claimed Justin Herbert.
+  
+          She does not get Dak Prescott too.
+  
           Give me Big frydown.
-
-          The rebrand begins 0-1.
+  
+          Madison beers Box begins its existence 0-1.
         `,
         pick: "Big frydown",
         pickRosterID: 12
       },
-
+  
       3: {
-        headline: "Charles Picked a Terrible Week to Have a Depth Problem",
+        headline: "Charles Picked a Terrible Week to Discover a Depth Problem",
         preview: `
-          Charles spent the first month of the season being one of the most dependable
-          teams in the league.
-
-          151.02.
-
-          122.76.
-
-          122.82.
-
-          123.02.
-
+          Charles spent the first four weeks of the season being one of the most
+          dependable teams in the league. He opened with 151.02 and then produced
+          122.76, 122.82 and 123.02.
+  
           Then Week 5 happened.
-
+  
           89.72.
-
+  
           Low Man.
-
-          Now Cincinnati and Detroit are both on bye.
-
-          Which is excellent news if your roster does not contain:
-
-          Amon-Ra St. Brown.
-
-          Tee Higgins.
-
-          Charles' roster contains both.
-
-          The good news is that Charles has not simply accepted his fate.
-
-          Wan'Dale Robinson was added.
-
-          Xavier Worthy was added after Josh released him.
-
-          Derrick Henry remains available.
-
-          Rhamondre Stevenson remains available.
-
-          Harold Fannin has been useful.
-
-          And Jalen Hurts still gives Charles the sort of quarterback ceiling that
-          can erase a lot of problems elsewhere in the lineup.
-
-          Breece Hall's health remains another major swing piece.
-
-          If Charles gets Hall back and gets the lineup configured correctly,
-          this becomes much more competitive.
-
-          Rhodes x Pags does not have nearly as much reconstruction to do.
-
-          Bijan Robinson remains the centerpiece.
-
-          Matthew Stafford is playing good football.
-
-          Brock Bowers continues to provide a massive positional advantage.
-
-          Davante Adams remains capable of turning red-zone targets into an entire
-          fantasy week.
-
-          Rashee Rice gives the co-managers another legitimate starting option.
-
-          Courtland Sutton.
-
-          Quinshon Judkins.
-
-          Romeo Doubs.
-
-          There are choices here.
-
-          Which is always dangerous when two managers are involved.
-
-          Rhodes x Pags is 1-4.
-
-          Charles is 3-2.
-
-          If this were standings rankings, the pick would be easy.
-
-          It is not.
-
-          Week 6 favors the roster with fewer holes.
-
-          For once, that roster belongs to Rhodes and Pags.
-
+  
+          If Charles wanted an easy opportunity to prove that was merely one bad week,
+          the schedule has declined to cooperate. Cincinnati and Detroit are both on
+          bye, removing Amon-Ra St. Brown and Tee Higgins from the lineup at the same
+          time.
+  
+          Charles has at least been active in response. Wan'Dale Robinson was added,
+          and Xavier Worthy arrived after Josh released him. Jalen Hurts still gives
+          this team elite quarterback upside, Derrick Henry remains capable of carrying
+          a week by himself, and Rhamondre Stevenson continues to provide a usable floor.
+  
+          Breece Hall is another major variable. If he is available and Charles gets
+          the lineup configured correctly, this matchup becomes much more competitive
+          than the current board suggests.
+  
+          Rhodes x Pags simply has fewer structural problems.
+  
+          Bijan Robinson remains the centerpiece. Matthew Stafford has been productive.
+          Brock Bowers provides one of the best positional advantages in the league,
+          Davante Adams remains a touchdown threat every week, and Rashee Rice gives
+          the co-managed roster another legitimate starting option.
+  
+          Courtland Sutton, Quinshon Judkins and Romeo Doubs provide additional depth,
+          which means Rhodes and Pags actually have choices this week.
+  
+          Historically, giving two people more choices has not always improved the
+          decision-making process.
+  
+          But the advantage is obvious.
+  
+          Charles is 3-2. Rhodes x Pags is 1-4. If we were simply copying the standings,
+          this pick would be easy.
+  
+          We are not.
+  
+          Week 6 favors the roster that can better survive missing important players,
+          and right now that is Rhodes x Pags.
+  
           Two managers.
-
+  
           One lineup.
-
-          Surely they can figure this out.
-
+  
+          Surely they can manage that.
+  
           Give me Rhodes x Pags.
         `,
         pick: "Rhodes x Pags",
         pickRosterID: 5
       },
-
+  
       4: {
         headline: "The Car Bombs' Credibility Tour Continues",
         preview: `
-          We are now several weeks removed from the original disaster.
-
-          The Car Bombs opened the year:
-
-          91.62.
-
+          There was a time, roughly three weeks ago, when the responsible thing to do
+          was make fun of The Car Bombs.
+  
+          The season opened with 91.62.
+  
           Then 89.32.
-
-          Since the rebrand:
-
-          154.56.
-
-          111.74.
-
-          156.16.
-
-          That is a fundamentally different football team.
-
-          Week 5 may have been the strongest evidence yet.
-
-          Drake "Drake Maye" Maye scored 39.46.
-
-          Matthew Golden scored 20.3.
-
-          Drake London scored 18.8.
-
-          Ja'Marr Chase scored 19.7.
-
-          And somehow The Car Bombs still left a league-high 33.64 points on the bench.
-
-          We continue to describe this as depth.
-
-          All complaints should be directed to the publisher.
-
-          Week 6 does remove Ja'Marr Chase because Cincinnati is on bye.
-
-          That obviously matters.
-
-          What matters more is that the rest of the lineup is finally producing enough
-          that the roster does not collapse without him.
-
-          Maye has become the centerpiece.
-
-          Javonte Williams has been consistently useful.
-
-          London is playing like the receiver this roster needed him to be.
-
-          Golden has emerged as a legitimate weekly option.
-
-          Cam Skattebo keeps providing usable production.
-
-          Juwan Johnson has quietly stabilized tight end.
-
-          This is no longer Ja'Marr Chase and eight hostages.
-
-          JQ presents a legitimate test.
-
-          Campus Legends scored 139.88 last week and lost anyway.
-
-          Christian McCaffrey remains the obvious problem.
-
-          Patrick Mahomes is still Patrick Mahomes.
-
-          Garrett Wilson and George Pickens give JQ two strong receiving options.
-
-          Jeremiyah Love continues to be useful.
-
-          And Campus has enough depth that Travis Kelce does not even need to be the
-          focal point at tight end.
-
-          JQ is 3-2.
-
-          The Czar is 2-3.
-
-          JQ has the better record.
-
-          The Car Bombs have the better recent scoring trend.
-
-          There has been a thorough and completely independent internal investigation
-          into which side should receive the official endorsement.
-
-          The investigation was conducted by The Czar.
-
-          It has concluded that The Czar should win.
-
+  
+          The team changed its name, the government reorganized, and things have
+          looked considerably different ever since.
+  
+          The last three weeks have produced 154.56, 111.74 and 156.16. That is a
+          140.82 average over the span and enough evidence that we can no longer
+          pretend the first two weeks represent the current version of this roster.
+  
+          Week 5 was particularly encouraging. Drake "Drake Maye" Maye scored 39.46.
+          Matthew Golden scored 20.3. Ja'Marr Chase scored 19.7. Drake London scored
+          18.8. The Car Bombs finished at 156.16 while somehow leaving another 33.64
+          points on the bench.
+  
+          The official position of this publication remains that this represents
+          tremendous roster depth.
+  
+          There will be no further questions.
+  
+          Week 6 is a legitimate test because Ja'Marr Chase is unavailable. The
+          difference now is that the roster no longer appears dependent on Ja'Marr
+          carrying the entire offense. Maye has become a real weekly advantage, Javonte
+          Williams has been reliable, London is producing, Golden has emerged as a
+          legitimate starter and Cam Skattebo continues to give the lineup another
+          useful scoring source.
+  
+          JQ is not exactly arriving unarmed.
+  
+          Campus Legends scored 139.88 last week and lost anyway. Christian McCaffrey
+          remains the obvious centerpiece, Patrick Mahomes gives JQ elite quarterback
+          upside, and Garrett Wilson and George Pickens provide a strong receiving pair.
+          Jeremiyah Love has also become increasingly important, and the roster still
+          has enough depth that Travis Kelce does not need to be the entire offense.
+  
+          Campus is 3-2.
+  
+          The Car Bombs are 2-3.
+  
+          JQ has the better record. The Czar has the better recent scoring trend.
+  
+          There has been extensive independent review of this matchup by league
+          authorities. After a complete examination of all available evidence, those
+          authorities have found no reason for The Czar to pick against himself.
+  
           The Car Bombs get back to .500.
         `,
         pick: "The Car Bombs",
         pickRosterID: 1
       },
-
+  
       5: {
         headline: "Chaney's Honeymoon Has a Ryan Problem",
         preview: `
-          Chaney had a tremendous Week 5.
-
-          He got married.
-
-          The Oilers finally won.
-
-          Then he got on a plane to France.
-
-          And now, somewhere across the Atlantic, Chaney gets to open Sleeper and
-          discover that his next opponent is 5-0.
-
+          Chaney had a productive Week 5.
+  
+          He got married. The Oilers finally won. Then he got on a plane and left for
+          France.
+  
+          His reward for that excellent weekend is opening Sleeper from another continent
+          and discovering that his next opponent is the only undefeated manager in the
+          league.
+  
           Welcome to married life.
-
-          To Chaney's credit, the roster has continued changing.
-
-          Jordan Love was added and immediately gives The Oilers another quarterback option.
-
-          MarShawn Lloyd was added.
-
-          Alvin Kamara was dropped.
-
-          Tyreek Hill was dropped.
-
-          This is not a manager simply accepting 1-4.
-
-          There is an actual attempt to rebuild the lineup.
-
-          And the top of the roster is still dangerous.
-
-          CeeDee Lamb.
-
-          Nico Collins.
-
-          David Montgomery.
-
-          Dalton Kincaid.
-
-          Omarion Hampton.
-
-          Rome Odunze.
-
-          Chris Godwin.
-
-          If enough of those players hit simultaneously, Chaney absolutely has a path.
-
-          The problem is the opponent.
-
-          Ryan has spent five weeks making fantasy football look annoyingly simple.
-
-          128.80.
-
-          133.98.
-
-          123.28.
-
-          160.32.
-
-          130.02.
-
-          Five weeks.
-
-          Five scores above 123.
-
-          Five wins.
-
-          Different players keep doing the damage.
-
-          Last week it was Parker Washington.
-
-          Malik Nabers.
-
-          Jared Goff.
-
-          Other weeks it has been Jonathan Taylor.
-
-          Tet McMillan.
-
-          Brock Purdy.
-
-          Ashton Jeanty.
-
-          Ryan does not need one specific player to save him.
-
-          That is why the undefeated streak has survived.
-
-          Jonathan Taylor remains an elite centerpiece.
-
-          Purdy provides the quarterback floor.
-
-          Jeanty gives the roster another high-end back.
-
-          George Kittle creates an advantage at tight end.
-
-          Parker Washington has become a real weekly weapon.
-
-          And Ryan still has additional playable options sitting behind them.
-
+  
+          To Chaney's credit, The Oilers have continued making moves. Jordan Love was
+          added and immediately gives the roster another quarterback option. MarShawn
+          Lloyd was added. Alvin Kamara and Tyreek Hill were removed. This does not look
+          like a manager content to accept 1-4 and move on.
+  
+          The top of the roster remains dangerous. CeeDee Lamb, Nico Collins, David
+          Montgomery, Dalton Kincaid, Omarion Hampton, Rome Odunze and Chris Godwin give
+          Chaney enough legitimate players that an upset is not impossible.
+  
+          The problem is that Ryan has spent five weeks making fantasy football look
+          remarkably simple.
+  
+          Naberhood Sex Offender has scored 128.80, 133.98, 123.28, 160.32 and 130.02.
+          Ryan has not scored below 123 all season and has not lost a game.
+  
+          More importantly, there has not been one single player responsible for all
+          of it. Different weeks have belonged to Jonathan Taylor, Tet McMillan, Brock
+          Purdy, Malik Nabers, Parker Washington and Ashton Jeanty. When one piece is
+          ordinary, another one seems to go off.
+  
+          That is what makes Ryan difficult to pick against.
+  
+          Jonathan Taylor remains one of the best running backs in fantasy. Purdy gives
+          the lineup a strong quarterback floor, Jeanty adds another high-end running
+          back, George Kittle creates an advantage at tight end, and the receiver group
+          has enough depth that Ryan does not need one specific player to hit.
+  
           Chaney finally escaped 0-4.
-
-          Asking him to immediately celebrate his marriage by ending the league's
-          only undefeated season from France feels unreasonable.
-
-          Ryan stays perfect.
-
-          Give me Naberhood Sex Offender.
+  
+          Asking him to celebrate his marriage by immediately ending the league's final
+          undefeated season while managing from France feels excessive.
+  
+          Give me Ryan.
+  
+          Six and zero until proven otherwise.
         `,
         pick: "Naberhood Sex Offender",
         pickRosterID: 8
       },
-
+  
       6: {
-        headline: "Trevor vs. Josh: There Is Basically Nothing Between Them",
+        headline: "Trevor vs. Josh: There Is Almost Nothing Between Them",
         preview: `
           This is the matchup I want to watch.
-
-          Trevor is 4-1.
-
-          Josh is 3-2.
-
-          And Sleeper currently sees essentially nothing between them.
-
-          That feels right.
-
-          Trevor has quietly built one of the strongest résumés in the league.
-
-          124.40.
-
-          132.86.
-
-          127.28.
-
-          109.08.
-
-          150.94.
-
-          Five weeks.
-
-          No catastrophic score.
-
-          No complete lineup collapse.
-
-          Week 5 was the ceiling game.
-
-          Christian Watson scored 32.3.
-
-          James Cook scored 22.8.
-
-          Trevor Lawrence scored 22.74.
-
-          Sam LaPorta scored 19.8.
-
-          Houston's defense added 16.
-
-          Trevor does not necessarily have the most frightening roster in the league.
-
-          He has simply been extremely difficult to kill.
-
-          Josh has followed the opposite trajectory.
-
-          Moore Oil Coming opened:
-
-          147.16.
-
-          141.02.
-
-          At that point Josh looked like a championship favorite.
-
-          Since then:
-
-          109.42.
-
-          116.52.
-
-          107.30.
-
-          Not disastrous.
-
-          Also not remotely the same offense.
-
-          The reason I am not abandoning Josh is the top end.
-
-          Josh Allen remains Josh Allen.
-
-          JSN has become one of the most dangerous receivers in fantasy.
-
-          Kenneth Walker gives the roster another legitimate ceiling player.
-
-          DJ Moore remains available.
-
-          Carnell Tate has emerged as a usable piece.
-
-          Bhayshul Tuten gives Josh another option at running back.
-
-          The roster has also been active.
-
-          Keon Coleman was added.
-
-          Denver's defense was added.
-
-          Will Shipley was added.
-
-          Josh is trying to find enough production underneath Allen and JSN to stop
-          the slide.
-
-          Trevor has the consistency advantage.
-
-          Josh has the more explosive quarterback-receiver core.
-
-          There is almost nothing separating them.
-
-          Which means I am ignoring the tiny edge on the computer and making an actual pick.
-
-          Give me Josh Allen and JSN.
-
-          Moore Oil Coming wins a close one.
-
-          Trevor finally gets punished for being annoyingly competent every week.
+  
+          Trevor enters 4-1. Josh enters 3-2. The live projection has essentially
+          nothing separating them, which feels appropriate because these teams arrive
+          in Week 6 from completely different directions.
+  
+          Show Me Your TDs has quietly assembled one of the cleanest résumés in the
+          league. Trevor has scored 124.40, 132.86, 127.28, 109.08 and 150.94. There
+          has not been a collapse. There has not been an 80-point disaster. He has
+          simply put a competitive team on the field every week and won four times.
+  
+          Week 5 showed the ceiling. Christian Watson scored 32.3. James Cook scored
+          22.8. Trevor Lawrence scored 22.74. Sam LaPorta added 19.8 and Houston's
+          defense chipped in another 16.
+  
+          Trevor does not necessarily have the scariest roster in Touchdown Syndrome.
+  
+          He may have the least annoying roster to manage.
+  
+          Josh has experienced the opposite trajectory. Moore Oil Coming opened the
+          season with 147.16 and 141.02 and looked like an immediate championship
+          contender. The last three weeks have been 109.42, 116.52 and 107.30.
+  
+          That is not a collapse, but it is a clear decline.
+  
+          The reason I am not abandoning Josh is the top end of the roster.
+  
+          Josh Allen remains the best chaos generator in fantasy football. JSN has
+          developed into one of the strongest receivers in the league. Kenneth Walker
+          gives Josh another legitimate ceiling piece, and DJ Moore remains available
+          if the lineup needs another source of volume.
+  
+          Bhayshul Tuten, Carnell Tate and Colston Loveland give Josh additional options,
+          while the recent addition of Keon Coleman at least gives the roster another
+          place to search for production underneath the stars.
+  
+          Trevor has been more consistent.
+  
+          Josh has the more explosive quarterback-receiver combination.
+  
+          In a matchup this close, I would rather bet on the players who can singlehandedly
+          break the projection.
+  
+          That means Allen.
+  
+          That means JSN.
+  
+          Give me Moore Oil Coming.
+  
+          Barely.
         `,
         pick: "Moore Oil Coming",
         pickRosterID: 10
