@@ -1323,7 +1323,9 @@ export const weeklyBestBets = {
                     `
                 }
             ]
-        },
+        }
+    },
+
     7: {
     year: 2026,
     ncaaWeek: 7,
