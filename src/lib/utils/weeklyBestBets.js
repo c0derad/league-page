@@ -1323,6 +1323,406 @@ export const weeklyBestBets = {
                     `
                 }
             ]
+        },
+    7: {
+    year: 2026,
+    ncaaWeek: 7,
+
+    title: "Week 7 Best Bets",
+
+    intro: `
+        Week 5: 5-5.
+
+        Week 6: 5-5.
+
+        Twenty bets. Ten wins. Ten losses.
+
+        Two straight weeks of doing an extraordinary amount of work to arrive
+        exactly where we started.
+
+        Enough.
+
+        The model has been rerun. The card has changed. We are no longer trying
+        to force our way out of mediocrity with vibes and increasingly elaborate
+        explanations.
+
+        These are the ten plays.
+
+        There are favorites.
+
+        There are underdogs.
+
+        There are respectable football teams.
+
+        There is Northern Illinois.
+
+        And yes, Alabama made the model's card without requiring direct intervention
+        from The Czar.
+
+        Institutional harmony.
+
+        Back-to-back 5-5 weeks are over.
+
+        We are due.
+    `,
+
+    bets: [
+        {
+            rank: 1,
+
+            team: "Houston",
+            teamSlug: "houston",
+
+            pick: "Houston -4.5",
+
+            commentary: `
+                The No. 1 play on the board.
+
+                No need to get cute with it.
+
+                Oklahoma State is dangerous enough offensively that this is not some
+                automatic home-favorite spot, but Houston only has to create a little
+                separation to cover this number.
+
+                That is the key.
+
+                We are not laying ten.
+
+                We are not asking Houston to turn a ranked matchup into a humiliation.
+
+                We need five.
+
+                At home, with the model making this its strongest edge of the week,
+                that is enough for me.
+
+                Start the card with the Cougars.
+            `
+        },
+
+        {
+            rank: 2,
+
+            team: "Penn State",
+            teamSlug: "penn-state",
+
+            pick: "Penn State +6.5",
+
+            commentary: `
+                This is exactly the kind of game where I want nearly a touchdown.
+
+                Michigan should be favored at home. Fine.
+
+                But when a matchup profiles as the sort of ugly Big Ten game where
+                neither offense is particularly interested in making life easy, six
+                and a half points become extremely valuable.
+
+                Penn State does not need to fix every problem it has had this season.
+
+                It does not even need to win.
+
+                Keep the game in the trenches, avoid giving Michigan short fields and
+                make the Wolverines finish drives.
+
+                If this gets dragged into the fourth quarter as a one-score game,
+                we are sitting exactly where we want to be.
+
+                Give me the points.
+            `
+        },
+
+        {
+            rank: 3,
+
+            team: "Northern Illinois",
+            teamSlug: "northern-illinois",
+
+            pick: "Northern Illinois +7.5",
+
+            commentary: `
+                Here it is.
+
+                The disgusting one.
+
+                Every Best Bets card needs at least one play that makes you stare at
+                the model and ask whether something has gone horribly wrong.
+
+                Northern Illinois +7.5 has accepted that responsibility.
+
+                Wyoming at home is never particularly pleasant. Laramie, altitude,
+                physical football — none of this screams comfortable road bet.
+
+                Which is precisely why we're getting more than a touchdown.
+
+                NIU does not need to suddenly become good.
+
+                It needs to make Wyoming work for points and avoid letting a slow game
+                turn into a two-score margin.
+
+                Seven and a half gives us the hook.
+
+                The model wants the ugly dog.
+
+                Hold your nose.
+            `
+        },
+
+        {
+            rank: 4,
+
+            team: "Arkansas",
+            teamSlug: "arkansas",
+
+            pick: "Arkansas +6",
+
+            commentary: `
+                Another dog where the number matters more than the résumé.
+
+                Vanderbilt deserves to be favored at home. Arkansas has given us plenty
+                of reasons not to trust it.
+
+                I still do not love laying six with Vanderbilt in an SEC game where
+                both teams have enough flaws to keep things uncomfortable.
+
+                Arkansas does not need a complete turnaround here. It needs to run the
+                ball effectively enough to stay out of obvious passing situations and
+                prevent Vanderbilt from controlling the game from start to finish.
+
+                If the Razorbacks are still within one possession entering the fourth
+                quarter, the six points have done their job.
+
+                This is not an endorsement of Arkansas football.
+
+                It is an endorsement of Arkansas +6.
+
+                Important distinction.
+            `
+        },
+
+        {
+            rank: 5,
+
+            team: "Alabama",
+            teamSlug: "alabama",
+
+            pick: "Alabama -7.5",
+
+            commentary: `
+                For once, no executive override was required.
+
+                Alabama is here because the model put Alabama here.
+
+                I cannot overstate how healthy this development is for the relationship
+                between the analytics department and senior management.
+
+                Tennessee is good enough to make this uncomfortable. It's a rivalry
+                game, it's in Knoxville, and laying more than a touchdown in the Third
+                Saturday in October is not something I am going to pretend is free money.
+
+                But the basic handicap is straightforward.
+
+                Alabama has the better overall roster, the defensive advantage and
+                enough ways to create points that Tennessee cannot afford to spend long
+                stretches losing early downs.
+
+                If Alabama forces the Vols to chase the game, that extra half-point over
+                seven becomes substantially less frightening.
+
+                Normally this is where I explain that I refuse to bet against Alabama
+                regardless of what the computer says.
+
+                The computer has chosen correctly.
+
+                Alabama -7.5.
+
+                Roll Damn Tide.
+            `
+        },
+
+        {
+            rank: 6,
+
+            team: "North Carolina",
+            teamSlug: "north-carolina",
+
+            pick: "North Carolina +3",
+
+            commentary: `
+                Rivalry dog.
+
+                Full field goal.
+
+                That gets my attention immediately.
+
+                Duke may be the better team, but this is not a matchup where I see enough
+                separation to automatically lay three in a game both programs care about
+                considerably more than a normal Saturday.
+
+                North Carolina's path is simple: make Duke sustain drives, generate
+                enough offense to keep the defense off the field and avoid the turnover
+                that turns a close game into a two-score problem.
+
+                I do not need UNC to control this game.
+
+                I need the Victory Bell to still be legitimately contested in the
+                fourth quarter.
+
+                At +3, that is enough.
+
+                Give me Carolina.
+            `
+        },
+
+        {
+            rank: 7,
+
+            team: "Missouri",
+            teamSlug: "missouri",
+
+            pick: "Missouri +5.5",
+
+            commentary: `
+                This might be my favorite conventional dog on the card.
+
+                Ole Miss at home deserves respect, particularly in a game that can
+                become a track meet very quickly.
+
+                But Missouri is too competent on both sides of the ball for me to be
+                comfortable giving Ole Miss nearly six points.
+
+                The Tigers do not need to shut the Rebels down. That is probably not a
+                realistic assignment anyway.
+
+                They need to run the football, stay ahead of the chains and make Ole
+                Miss play four quarters rather than letting the game turn into a series
+                of explosives.
+
+                Five and a half gives us room for Ole Miss to win without beating us.
+
+                That's the kind of SEC road dog I want.
+
+                Missouri hangs around.
+            `
+        },
+
+        {
+            rank: 8,
+
+            team: "New Mexico",
+            teamSlug: "new-mexico",
+
+            pick: "New Mexico -14.5",
+
+            commentary: `
+                Now we switch sides.
+
+                No points.
+
+                We are laying a pile of them.
+
+                Hawaii at night is normally the exact spot where I start inventing
+                reasons not to trust a favorite. Long travel, weird kickoff, island
+                voodoo — the classics are all available.
+
+                The model does not care.
+
+                New Mexico has the defensive profile to make this miserable for Hawaii,
+                and if the Lobos establish control early, the Rainbow Warriors have to
+                find enough offense to stay within two touchdowns.
+
+                That is the part I do not trust.
+
+                The half-point matters. We have to clear fourteen rather than settle
+                for it.
+
+                Fine.
+
+                If we're going to lay a number this large, I want the team capable of
+                suffocating the opponent rather than needing 45 points to get there.
+
+                Give me New Mexico.
+
+                Late-night violence.
+            `
+        },
+
+        {
+            rank: 9,
+
+            team: "Nevada",
+            teamSlug: "nevada",
+
+            pick: "Nevada +15.5",
+
+            commentary: `
+                Another one for the sickos.
+
+                North Dakota State in Fargo is a terrible place to go looking for
+                happiness.
+
+                Fortunately, we are not asking Nevada to find happiness.
+
+                We are asking Nevada to lose by fifteen or fewer.
+
+                NDSU has earned the respect behind this number, but once a spread gets
+                this large in a game that can become physical and relatively low-possession,
+                the back door stays open for a long time.
+
+                Nevada needs to avoid the catastrophic first half.
+
+                Stay within range.
+
+                Force NDSU to keep earning possessions.
+
+                And if the Bison eventually get control, make them keep scoring rather
+                than simply draining the game away.
+
+                This may look terrible for significant stretches.
+
+                That is why they gave us 15.5.
+
+                Take every one of them.
+            `
+        },
+
+        {
+            rank: 10,
+
+            team: "Utah",
+            teamSlug: "utah",
+
+            pick: "Utah -15.5",
+
+            commentary: `
+                Finish with the team I trust most to simply impose itself.
+
+                Utah's formula is not complicated.
+
+                Be more physical.
+
+                Run the football.
+
+                Stay efficient.
+
+                Make the other team earn every drive.
+
+                Colorado has enough talent to produce explosives, and Boulder is not
+                the ideal place to casually lay more than two touchdowns.
+
+                But this is a matchup where the longer it goes, the more I expect Utah's
+                advantages up front to matter.
+
+                If Colorado cannot stay on schedule, Utah has a path to turn a reasonably
+                competitive first half into a very uncomfortable second one.
+
+                Fifteen and a half is a real number.
+
+                The model still wants it.
+
+                So do I.
+
+                Utah closes the card.
+            `
         }
+    ]
 }
 };
