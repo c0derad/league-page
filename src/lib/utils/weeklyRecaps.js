@@ -2131,5 +2131,396 @@ export const weeklyRecaps = {
             `
         }
     }
-}
+},
+    6: {
+    intro: `
+      Week 6 is officially in the books, and the league has become significantly
+      more complicated.
+  
+      Ryan is 6-0.
+  
+      At this point, there is no qualification left to attach to that sentence.
+      Naberhood Sex Offender has scored at least 123 points in every game this
+      season, and this week Ryan turned Chaney into the largest ass beating on
+      the board.
+  
+      Behind him, we now have four teams sitting at 4-2.
+  
+      JV.
+  
+      Trevor.
+  
+      Josh.
+  
+      Charles.
+  
+      And somehow all four arrived there in completely different ways.
+  
+      Josh had spent three weeks looking progressively less terrifying and responded
+      by dropping 157.80, taking High Man, and beating Trevor by more than 30.
+  
+      Jansen's 0-3 start is officially ancient history. Nigasaki beat JV and has now
+      won three straight after opening the season without a victory.
+  
+      The Car Bombs survived Christian McCaffrey, won by 3.32, climbed back to .500,
+      and did so while leaving 49.96 points on the bench.
+  
+      Most in the league.
+  
+      Excellent management.
+  
+      Vigo changed the name to Madison beers Box and immediately won.
+  
+      Apparently Madison Beer may have destroyed Justin Herbert, but she has saved
+      Vigo's fantasy season.
+  
+      Then there was the game between the teams formerly known as Rhodes x Pags
+      and Charles.
+  
+      JVentureSexOffender scored 73.68.
+  
+      CousinLover scored 73.82.
+  
+      Charles won by 0.14 points while producing the second-lowest score in the
+      entire league.
+  
+      Rhodes and Pags took Low Man and lost the closest game of the week at the
+      exact same time.
+  
+      That is almost impossible levels of efficiency.
+  
+      At the bottom, JVentureSexOffender, The Oilers and Big frydown are all now 1-5.
+  
+      At the top, Ryan still has a zero in the loss column.
+  
+      And The Czar went 4-2 on the Week 6 picks, improving to 23-13 on the season.
+  
+      Judgment has been rendered.
+    `,
+  
+    matchups: {
+      1: {
+        headline: "The 0-3 Nigasaki Team Is Officially Dead",
+        recap: `
+          We said the records did not tell the story.
+  
+          Apparently they really did not.
+  
+          Nigasaki entered Week 6 at 2-3 after scoring 157.88 and then 199.70.
+          JV entered 4-1 but had to navigate the week without Jahmyr Gibbs.
+  
+          That was enough to swing The Czar toward Jansen.
+  
+          Final score:
+  
+          Nigasaki 121.52.
+  
+          PeterPanthers 114.54.
+  
+          Correct.
+  
+          It was not another 200-point nuclear event from Jansen. In fact, after the
+          previous two weeks, 121.52 almost looks responsible.
+  
+          Isaiah Likely did most of the damage with 23.9 points on six catches for
+          99 yards and a touchdown. Aaron Rodgers added 17.02, while Puka Nacua
+          contributed 14 on a relatively quiet six-catch afternoon.
+  
+          JV actually got a solid performance from the lineup he had available.
+          D'Andre Swift scored 23 behind two rushing touchdowns, Bryce Young added
+          19.84, and Stefon Diggs scored 16.4.
+  
+          It just wasn't enough.
+  
+          More importantly, Jansen has now scored 479.10 points over the last three
+          weeks.
+  
+          Nigasaki started 0-3.
+  
+          Nigasaki is now 3-3.
+  
+          That distinction matters.
+  
+          JV falls to 4-2 and gets Big frydown next. Jansen gets CousinLover and a
+          chance to move above .500 for the first time all season.
+  
+          The hottest team in the league remains hot.
+        `
+      },
+  
+      2: {
+        headline: "Madison Beer Has Saved Vigo's Season",
+        recap: `
+          The rebrand worked.
+  
+          That is now an established fact.
+  
+          Vigo entered Week 6 at 1-4, changed the franchise name from Retardinals
+          to Madison beers Box, and immediately beat T2 by 20.38.
+  
+          Fantasy football continues to provide overwhelming evidence that branding
+          is more important than roster construction.
+  
+          Germie Bernard was the unlikely hero, catching 11 passes for 87 yards and
+          a touchdown on his way to 25.7 points. Tyler Bass somehow became the
+          second-best player in the lineup with 17, while Caleb Williams added 16.5.
+  
+          Nothing about 102.80 screams championship contender.
+  
+          It did not need to.
+  
+          T2 scored 82.42.
+  
+          One week after Big frydown appeared to resurrect itself with 139.64,
+          the entire operation collapsed again. J.K. Dobbins led the team with
+          13.6. Dak Prescott scored 13.02. Mike Evans added 12.4.
+  
+          Those were the three best players in the lineup.
+  
+          You can stop looking for the problem.
+  
+          The Czar picked T2 on the theory that last week's breakout represented
+          something real.
+  
+          It did not.
+  
+          The Madison beers Box era is officially 1-0.
+  
+          Madison Beer may have already claimed Justin Herbert.
+  
+          She does not appear finished.
+  
+          Vigo moves to 2-4.
+  
+          T2 falls to 1-5.
+  
+          The rebrand survives another week.
+        `
+      },
+  
+      3: {
+        headline: "Seventy-Three Points Was Somehow Almost Enough",
+        recap: `
+          This is one of the ugliest fantasy football games I have ever seen.
+  
+          JVentureSexOffender:
+  
+          73.68.
+  
+          CousinLover:
+  
+          73.82.
+  
+          Margin:
+  
+          0.14.
+  
+          Rhodes and Pags managed to score the fewest points in the entire league
+          and lose by fourteen hundredths of a point.
+  
+          Low Man.
+  
+          Closest game.
+  
+          Same performance.
+  
+          Incredible.
+  
+          The funniest part is that Kirk Cousins was, naturally, the leading scorer
+          for CousinLover. He threw for 313 yards and two touchdowns and finished
+          with 19.52.
+  
+          Sometimes the script writes itself.
+  
+          Xavier Worthy added 14.3 and Jakobi Meyers scored 13.3. That was apparently
+          enough offense for Charles to escape.
+  
+          On the other side, Matthew Stafford led JVentureSexOffender with 16.88.
+          Romeo Doubs scored 11.2 and Brock Bowers added 11.
+  
+          Nobody reached 17.
+  
+          Across two entire fantasy rosters.
+  
+          Yet one of these teams had to be declared the winner.
+  
+          Congratulations to CousinLover, which moves to 4-2 despite failing to
+          score 74 points.
+  
+          Rhodes x Pags were the Czar's pick before adopting their new identity.
+  
+          That pick was wrong.
+  
+          JVentureSexOffender falls to 1-5 and takes Low Man in its first appearance
+          under the new branding.
+  
+          Unlike Vigo, apparently not every rebrand works immediately.
+        `
+      },
+  
+      4: {
+        headline: "The Czar Wins Despite Trying to Bench Himself",
+        recap: `
+          The Car Bombs are .500.
+  
+          It required considerably more stress than necessary.
+  
+          Drake Maye led the way with 23.8 after throwing three touchdowns.
+          Matthew Golden continued his breakout with six catches for 104 yards,
+          a touchdown and 22.4 points. Kansas City's defense added another 16.
+  
+          The Car Bombs finished at 114.60.
+  
+          JQ finished at 111.28.
+  
+          Three-point win.
+  
+          Simple enough.
+  
+          Except The Car Bombs also left 49.96 points on the bench.
+  
+          Most in the league.
+  
+          Christian McCaffrey did everything possible to punish that decision-making.
+          CMC scored 30.7 after producing 117 total yards, two rushing touchdowns and
+          nine catches. DK Metcalf added 20.3, while George Pickens scored 13.3.
+  
+          Campus Legends very nearly stole this one.
+  
+          Fortunately for the administration, nearly does not count.
+  
+          After opening the season 0-2 with scores of 91.62 and 89.32, The Car Bombs
+          have now gone 3-1 over the last four weeks.
+  
+          The rebrand remains undefeated against the allegation that it fixed the team.
+  
+          The Czar also correctly picked himself.
+  
+          Naturally.
+  
+          There will, however, be an internal investigation into the 49.96 bench points.
+  
+          The investigation will be conducted by The Czar.
+  
+          No disciplinary action is expected.
+        `
+      },
+  
+      5: {
+        headline: "Ryan Is 6-0. We Can Stop Looking for the Catch.",
+        recap: `
+          There is no longer a clever qualification necessary.
+  
+          Ryan is 6-0.
+  
+          Naberhood Sex Offender beat The Oilers 132.66 to 84.04, producing the
+          largest margin of Week 6 at 48.62 points.
+  
+          Malik Nabers led the way with 12 catches for 165 yards and 28.5 fantasy
+          points. Jonathan Taylor added 21.1, and George Kittle scored 17.9.
+  
+          Nothing particularly strange happened.
+  
+          Ryan's good players were good.
+  
+          Again.
+  
+          That has essentially been the story for six consecutive weeks.
+  
+          Naberhood's weekly scores are now:
+  
+          128.80.
+  
+          133.98.
+  
+          123.28.
+  
+          160.32.
+  
+          130.02.
+  
+          132.66.
+  
+          Six weeks without falling below 123.
+  
+          Six wins.
+  
+          Across the field, Chaney got 21.24 from Jordan Love and 16 from CeeDee
+          Lamb. Nico Collins was the only other Oiler to reach double digits among
+          the top performers, finishing at 10.9.
+  
+          Final score: 132.66 to 84.04.
+  
+          France was apparently more hospitable to Chaney than Ryan was.
+  
+          The Oilers fall to 1-5, and the one-week post-wedding winning streak is
+          officially over.
+  
+          The Czar correctly took Ryan.
+  
+          Again.
+  
+          At some point somebody has to beat Naberhood Sex Offender.
+  
+          Week 6 provided absolutely no evidence regarding who that might be.
+        `
+      },
+  
+      6: {
+        headline: "Josh Heard the Offense Was Declining",
+        recap: `
+          This was supposed to be the Game of the Week.
+  
+          Sleeper had Trevor and Josh separated by essentially nothing.
+  
+          Moore Oil Coming apparently took that personally.
+  
+          Josh scored 157.80, took High Man, and beat Show Me Your TDs by 30.56.
+  
+          Kenneth Walker III led the assault with 27.9 after rushing for 128 yards
+          and two touchdowns. JSN caught 12 passes for 134 yards and scored 25.4.
+          Bhayshul Tuten added another 24.7 behind two receiving touchdowns.
+  
+          Those three alone combined for exactly 78 fantasy points.
+  
+          Trevor was not bad.
+  
+          That is what makes this result worse.
+  
+          Trevor Lawrence threw four touchdowns and scored 28.34. James Cook added
+          24.3. DeVonta Smith scored 20.5.
+  
+          Show Me Your TDs finished at 127.24.
+  
+          That is a perfectly good fantasy score.
+  
+          Josh beat it by more than 30.
+  
+          After opening the season with 147.16 and 141.02, Moore Oil Coming had
+          spent the previous three weeks sliding backward with 109.42, 116.52 and
+          107.30.
+  
+          There were legitimate questions about whether September had been a mirage.
+  
+          High Man is a fairly direct answer.
+  
+          Josh moves to 4-2.
+  
+          Trevor also moves to 4-2.
+  
+          The Czar correctly backed Moore Oil Coming despite Sleeper giving Trevor
+          the microscopic projection edge.
+  
+          Next week Josh gets The Car Bombs.
+  
+          Wonderful.
+  
+          The Czar's reward for finally reaching .500 is the highest-scoring team
+          from Week 6.
+  
+          Looking forward to it.
+        `
+      }
+    }
+  }
 };
