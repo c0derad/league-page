@@ -3675,5 +3675,820 @@ export const weeklyPowerRankings = {
                 `
             }
         ]
-    }
+    },
+        7: {
+        title: "Week 7 Czar Power Rankings",
+    
+        intro: `
+            Six weeks are in the books.
+    
+            Ryan is 6-0.
+    
+            At some point we have to stop searching for the hidden flaw and acknowledge
+            that Naberhood Sex Offender has simply been the best team in the league.
+    
+            Jansen has created a different problem.
+    
+            Nigasaki started 0-3.
+    
+            Nigasaki is now 3-3.
+    
+            The last three weeks have produced 157.88, 199.70 and 121.52, including a
+            head-to-head win over the team that occupied No. 2 last week.
+    
+            That requires movement.
+    
+            Josh also reminded everybody why Moore Oil Coming spent September near the
+            top of these rankings. After three increasingly ordinary weeks, he responded
+            with 157.80 and High Man.
+    
+            Trevor scored 127.24 and lost.
+    
+            The Car Bombs finally reached .500, although the administration would prefer
+            nobody investigate the 49.96 points left on the bench.
+    
+            Charles changed the team name to CousinLover and somehow won a fantasy game
+            with 73.82 points.
+    
+            Vigo changed the team name to Madison beers Box and immediately won.
+    
+            Rhodes and Pags changed the team name to JVentureSexOffender and immediately
+            took Low Man.
+    
+            Branding continues to produce mixed results.
+    
+            One important note before anybody starts yelling about the projections:
+            Week 7 is a major bye-week distortion. Buffalo, Jacksonville, Los Angeles
+            Chargers and Washington are all off, so several current lineup projections
+            are not useful measures of actual roster strength.
+    
+            These are still power rankings.
+    
+            Record matters.
+    
+            Season-long scoring matters.
+    
+            Recent scoring matters.
+    
+            Roster construction matters.
+    
+            Current health matters.
+    
+            One ugly bye week does not suddenly make a good roster bad.
+    
+            Movement is measured against the Week 6 rankings.
+    
+            Welcome to Week 7.
+        `,
+    
+        rankings: [
+            {
+                rank: 1,
+                previousRank: 1,
+                movement: 0,
+                rosterID: 8,
+                team: "Naberhood Sex Offender",
+                record: "6-0",
+                week1Score: 128.80,
+                week2Score: 133.98,
+                week3Score: 123.28,
+                week4Score: 160.32,
+                week5Score: 130.02,
+                week6Score: 132.66,
+                week7Projection: 110.83,
+    
+                headline: "Six Games. Six Wins. Enough With the Qualifications.",
+    
+                commentary: `
+                    There is still no debate at No. 1.
+    
+                    Ryan has now scored 128.80, 133.98, 123.28, 160.32, 130.02 and
+                    132.66.
+    
+                    Six weeks.
+    
+                    Six scores above 123.
+    
+                    Six wins.
+    
+                    Last week produced another completely ordinary Ryan performance,
+                    which at this point means 132.66 points and a 48.62-point demolition
+                    of Chaney.
+    
+                    Malik Nabers scored 28.5. Jonathan Taylor added 21.1. George Kittle
+                    scored 17.9. Brock Purdy and Ashton Jeanty both gave him useful
+                    production behind them.
+    
+                    Nobody had to score 40.
+    
+                    Nobody had to rescue the lineup.
+    
+                    The roster simply worked again.
+    
+                    That consistency is why Ryan stays ahead of Jansen despite Nigasaki's
+                    ridiculous recent scoring. Jansen has the hotter ceiling. Ryan has
+                    provided six consecutive weeks of evidence.
+    
+                    There is also still depth behind the starters. TreVeyon Henderson,
+                    Michael Wilson and Jared Goff remain legitimate options, and Ryan
+                    added Tyrone Tracy without needing to perform any major surgery.
+    
+                    Rhodes and Pags are next.
+    
+                    Or JVentureSexOffender.
+    
+                    Whatever we're calling them now.
+    
+                    Until somebody actually beats Ryan, the throne is not available.
+                `,
+    
+                transactions: `
+                    Added Tyrone Tracy and dropped Kenyon Sadiq.
+    
+                    Minor depth maintenance from a manager with no reason to panic.
+                `
+            },
+    
+            {
+                rank: 2,
+                previousRank: 3,
+                movement: 1,
+                rosterID: 6,
+                team: "Nigasaki",
+                record: "3-3",
+                week1Score: 136.56,
+                week2Score: 118.50,
+                week3Score: 98.34,
+                week4Score: 157.88,
+                week5Score: 199.70,
+                week6Score: 121.52,
+                week7Projection: 116.82,
+    
+                headline: "The 0-3 Record Has Been Completely Erased",
+    
+                commentary: `
+                    Jansen moves to No. 2.
+    
+                    This is no longer controversial.
+    
+                    Nigasaki started the season 0-3 despite scoring reasonably well. Since
+                    then, Jansen has scored 157.88, 199.70 and 121.52 while winning three
+                    straight.
+    
+                    That is a 159.70 average over the last three weeks.
+    
+                    More importantly, Week 6 provided the result we needed to settle the
+                    argument between Jansen and JV.
+    
+                    They played each other.
+    
+                    Jansen won.
+    
+                    Nigasaki did not need another 200-point performance to do it. Isaiah
+                    Likely led the team with 23.9, Aaron Rodgers provided 17.02, and Puka
+                    Nacua and Zay Flowers did enough underneath them.
+    
+                    Lamar Jackson remains the major upside variable. Jansen has produced
+                    this entire winning streak without needing Lamar at full strength, and
+                    Baltimore still considers him day-to-day entering Week 7.
+    
+                    If Lamar returns, the roster gets even more dangerous.
+    
+                    If he does not, we have already seen that Nigasaki can survive it.
+    
+                    Puka, Zay, Kyren Williams, Jaylen Warren and Likely give Jansen enough
+                    weekly scoring sources that this no longer feels dependent on one
+                    quarterback.
+    
+                    Three weeks ago Jansen was 0-3.
+    
+                    Today he is No. 2.
+    
+                    That is what happens when the scoreboard starts matching the roster.
+                `,
+    
+                transactions: `
+                    Added Tank Dell and dropped Kimani Vidal.
+    
+                    Jansen continues adding upside to a roster that already has more ceiling
+                    than most of the league.
+                `
+            },
+    
+            {
+                rank: 3,
+                previousRank: 2,
+                movement: -1,
+                rosterID: 2,
+                team: "PeterPanthers",
+                record: "4-2",
+                week1Score: 172.16,
+                week2Score: 137.34,
+                week3Score: 142.04,
+                week4Score: 110.76,
+                week5Score: 156.86,
+                week6Score: 114.54,
+                week7Projection: 121.04,
+    
+                headline: "Losing to Jansen Is Not a Collapse",
+    
+                commentary: `
+                    JV falls one spot.
+    
+                    That is punishment for losing to the team directly beneath him last
+                    week, not a declaration that PeterPanthers suddenly has problems.
+    
+                    JV is still the highest-scoring team in the league on a full-season
+                    average.
+    
+                    The six-week résumé is excellent: 172.16, 137.34, 142.04, 110.76,
+                    156.86 and 114.54.
+    
+                    Week 6 came without Jahmyr Gibbs, and JV still scored 114.54. D'Andre
+                    Swift produced 23, Bryce Young scored 19.84 and Stefon Diggs added
+                    16.4.
+    
+                    Gibbs returns this week, immediately restoring the most explosive
+                    player on the roster.
+    
+                    Chris Olave and Trey McBride remain excellent weekly pieces, while
+                    Swift has been productive enough that this team no longer needs every
+                    point to come from Gibbs.
+    
+                    Washington's bye removes several depth options this week and makes the
+                    current lineup look thinner than the roster actually is. That should
+                    not be confused with a long-term weakness.
+    
+                    Jansen earned the right to pass JV.
+    
+                    JV did not earn the right to fall any further.
+    
+                    Big frydown provides an immediate rebound opportunity.
+                `,
+    
+                transactions: `
+                    Added Omar Cooper after briefly adding Nick Folk; Brian Thomas was
+                    released.
+    
+                    Mostly bye-week housekeeping rather than meaningful roster surgery.
+                `
+            },
+    
+            {
+                rank: 4,
+                previousRank: 7,
+                movement: 3,
+                rosterID: 10,
+                team: "Moore Oil Coming",
+                record: "4-2",
+                week1Score: 147.16,
+                week2Score: 141.02,
+                week3Score: 109.42,
+                week4Score: 116.52,
+                week5Score: 107.30,
+                week6Score: 157.80,
+                week7Projection: 65.14,
+    
+                headline: "Josh Found the Nuclear Button Again",
+    
+                commentary: `
+                    Josh makes the largest meaningful jump near the top of the board.
+    
+                    Weeks 3 through 5 had created a legitimate question.
+    
+                    109.42.
+    
+                    116.52.
+    
+                    107.30.
+    
+                    The offense that opened with 147.16 and 141.02 appeared to be slowly
+                    disappearing.
+    
+                    Then Josh scored 157.80.
+    
+                    High Man.
+    
+                    Kenneth Walker scored 27.9. JSN scored 25.4. Bhayshul Tuten scored
+                    24.7. Carnell Tate scored 19 and Colston Loveland added 18.5.
+    
+                    That is exactly the kind of multi-player eruption that made this roster
+                    look like a contender in September.
+    
+                    Ignore the 65-point Week 7 projection.
+    
+                    Josh Allen is on bye.
+    
+                    Tuten is on bye.
+    
+                    Several other pieces are unavailable because Buffalo, Jacksonville,
+                    Washington and the Chargers are all off this week.
+    
+                    That makes Week 7 inconvenient.
+    
+                    It does not make Moore Oil Coming bad.
+    
+                    The larger question was whether Josh still had championship-level
+                    weekly ceiling.
+    
+                    Week 6 answered it.
+    
+                    Yes.
+                `,
+    
+                transactions: `
+                    Added Dameon Pierce; dropped Keon Coleman and Will Shipley.
+    
+                    Minor depth churn. The important pieces remain intact.
+                `
+            },
+    
+            {
+                rank: 5,
+                previousRank: 4,
+                movement: -1,
+                rosterID: 4,
+                team: "Show Me Your TDs",
+                record: "4-2",
+                week1Score: 124.40,
+                week2Score: 132.86,
+                week3Score: 127.28,
+                week4Score: 109.08,
+                week5Score: 150.94,
+                week6Score: 127.24,
+                week7Projection: 87.21,
+    
+                headline: "Losing With 127 Is Not a Real Problem",
+    
+                commentary: `
+                    Trevor falls one spot because Josh forced his way past him.
+    
+                    That is about Josh.
+    
+                    Not Trevor.
+    
+                    Show Me Your TDs scored 127.24 last week. Trevor Lawrence produced
+                    28.34, James Cook scored 24.3 and DeVonta Smith added 20.5.
+    
+                    That performance wins plenty of fantasy games.
+    
+                    Josh simply scored 157.80.
+    
+                    Trevor's larger résumé remains one of the cleanest in the league.
+                    Through six weeks he has scored 124.40, 132.86, 127.28, 109.08,
+                    150.94 and 127.24.
+    
+                    There is still no catastrophic week.
+    
+                    No 80.
+    
+                    No 90.
+    
+                    The lowest score is 109.08.
+    
+                    Buffalo and Jacksonville being on bye makes the Week 7 projection
+                    look terrible because James Cook and Trevor Lawrence are unavailable.
+                    That is a scheduling problem, not a reason to suddenly rank this roster
+                    below teams it has outperformed for six weeks.
+    
+                    Trevor remains boringly good.
+    
+                    In fantasy football, boringly good is useful.
+                `,
+    
+                transactions: `
+                    Added Kyler Murray and Evan McPherson; dropped Devaughn Vele and
+                    Blake Grupe.
+    
+                    Kyler gives Trevor another quarterback option beyond the Week 7 bye.
+                `
+            },
+    
+            {
+                rank: 6,
+                previousRank: 6,
+                movement: 0,
+                rosterID: 1,
+                team: "The Car Bombs",
+                record: "3-3",
+                week1Score: 91.62,
+                week2Score: 89.32,
+                week3Score: 154.56,
+                week4Score: 111.74,
+                week5Score: 156.16,
+                week6Score: 114.60,
+                week7Projection: 120.47,
+    
+                headline: "The Rehabilitation Campaign Has Reached .500",
+    
+                commentary: `
+                    The Car Bombs stay at No. 6.
+    
+                    Which feels considerably better now that the record has finally caught
+                    up with the argument.
+    
+                    The Czar started 0-2.
+    
+                    Since then: 3-1.
+    
+                    The last four scores are 154.56, 111.74, 156.16 and 114.60, an average
+                    of 134.26.
+    
+                    Week 6 was not particularly explosive, but Drake Maye scored 23.8,
+                    Matthew Golden added 22.4 and Kansas City's defense produced 16.
+                    That was enough to survive Christian McCaffrey and beat JQ by 3.32.
+    
+                    There was, admittedly, one administrative issue.
+    
+                    The Car Bombs left 49.96 points on the bench.
+    
+                    Most in the league.
+    
+                    The official position of the organization remains that this demonstrates
+                    tremendous roster depth and absolutely nothing else.
+    
+                    Maye, Ja'Marr Chase, Drake London, Javonte Williams, Cam Skattebo and
+                    Golden now form a lineup with legitimate weekly balance.
+    
+                    The first two weeks still count.
+    
+                    They simply look less relevant with every passing Sunday.
+    
+                    Josh is next.
+    
+                    Excellent timing.
+                `,
+    
+                transactions: `
+                    Added the Jets defense and dropped Kansas City.
+    
+                    Standard defensive streaming.
+    
+                    No need for major surgery while the offense keeps producing.
+                `
+            },
+    
+            {
+                rank: 7,
+                previousRank: 5,
+                movement: -2,
+                rosterID: 11,
+                team: "Campus Legends",
+                record: "3-3",
+                week1Score: 101.46,
+                week2Score: 119.88,
+                week3Score: 142.04,
+                week4Score: 89.00,
+                week5Score: 139.88,
+                week6Score: 111.28,
+                week7Projection: 93.28,
+    
+                headline: "A Good Roster Is Running Out of Free Passes",
+    
+                commentary: `
+                    JQ falls two spots.
+    
+                    Campus Legends is still better than the 3-3 record looks in places.
+                    Christian McCaffrey just scored 30.7. DK Metcalf added 20.3. George
+                    Pickens remains productive, and the roster still contains Patrick
+                    Mahomes, Garrett Wilson, Travis Kelce and Jeremiyah Love.
+    
+                    There is real talent here.
+    
+                    The problem is that the results are beginning to alternate between
+                    excellent and mediocre.
+    
+                    142.04.
+    
+                    89.00.
+    
+                    139.88.
+    
+                    111.28.
+    
+                    That volatility matters now that we have six weeks of evidence.
+    
+                    JQ nearly beat The Car Bombs despite Mahomes scoring only 11.48, so
+                    there is no reason to panic. But a roster this talented should not
+                    spend the middle of the season relying on moral victories.
+    
+                    Campus gets Madison beers Box this week.
+    
+                    That is the kind of matchup a team ranked seventh needs to win.
+                `,
+    
+                transactions: `
+                    Added Tyler Allgeier and Minnesota D/ST; dropped Trey Smack.
+    
+                    Depth and streaming moves. The core roster remains unchanged.
+                `
+            },
+    
+            {
+                rank: 8,
+                previousRank: 8,
+                movement: 0,
+                rosterID: 9,
+                team: "CousinLover",
+                record: "4-2",
+                week1Score: 151.02,
+                week2Score: 122.76,
+                week3Score: 122.82,
+                week4Score: 123.02,
+                week5Score: 89.72,
+                week6Score: 73.82,
+                week7Projection: 120.30,
+    
+                headline: "Four Wins Cannot Completely Hide 163.54 Points",
+    
+                commentary: `
+                    Charles is 4-2.
+    
+                    Charles has also scored 89.72 and 73.82 in consecutive weeks.
+    
+                    Both statements matter.
+    
+                    CousinLover won last week by 0.14 points despite producing the
+                    second-lowest score in the entire league. Kirk Cousins led the lineup
+                    with 19.52, Xavier Worthy scored 14.3, and that was basically enough
+                    to escape.
+    
+                    A win is a win.
+    
+                    It is not evidence that the offense is healthy.
+    
+                    The positive news is that Week 6 was heavily affected by the Detroit
+                    and Cincinnati byes. Amon-Ra St. Brown and Tee Higgins return now,
+                    immediately restoring two of the most important pieces in the lineup.
+    
+                    Derrick Henry, Breece Hall, Rhamondre Stevenson and Harold Fannin
+                    still give Charles enough talent to rebound quickly.
+    
+                    The Jalen Hurts era also appears to be over. Hurts was placed on
+                    injured reserve because of a blood clot and is expected to miss the
+                    remainder of the season, so dropping him was necessity rather than
+                    roster malpractice.
+    
+                    Charles stays eighth because the roster is still good enough to recover.
+    
+                    Another 70-point performance would change that very quickly.
+                `,
+    
+                transactions: `
+                    Added T.J. Hockenson, Xavier Worthy and Tre Tucker; Jalen Hurts was
+                    among the players dropped.
+    
+                    The quarterback change was forced by Hurts' long-term absence. The
+                    rest is Charles trying to reinforce a roster that has scored below
+                    90 in consecutive weeks.
+                `
+            },
+    
+            {
+                rank: 9,
+                previousRank: 12,
+                movement: 3,
+                rosterID: 7,
+                team: "Madison beers Box",
+                record: "2-4",
+                week1Score: 99.76,
+                week2Score: 89.92,
+                week3Score: 84.28,
+                week4Score: 127.48,
+                week5Score: 90.54,
+                week6Score: 102.80,
+                week7Projection: 80.16,
+    
+                headline: "The Madison Beer Era Is Undefeated",
+    
+                commentary: `
+                    Vigo climbs out of the basement.
+    
+                    Retardinals died.
+    
+                    Madison beers Box was born.
+    
+                    Madison beers Box is 1-0.
+    
+                    There are peer-reviewed institutions with less convincing evidence
+                    supporting their conclusions.
+    
+                    Week 6 was not spectacular. Vigo scored 102.80. Germie Bernard led
+                    the lineup with 25.7, Tyler Bass somehow contributed 17 and Caleb
+                    Williams added 16.5.
+    
+                    But after weeks of losing, Vigo finally beat somebody.
+    
+                    More importantly, the roster gets substantially healthier from a
+                    scheduling perspective this week. Justin Jefferson, Chase Brown and
+                    Jameson Williams all return from bye.
+    
+                    A.J. Brown remains the health variable, but the rest of the receiver
+                    room finally looks recognizable again.
+    
+                    Vigo has also been absurdly active on waivers, cycling through tight
+                    ends, kickers and defenses as though transaction volume itself earns
+                    standings points.
+    
+                    Apparently some of it worked.
+    
+                    Madison Beer allegedly destroyed Justin Herbert.
+    
+                    She may be rebuilding Vigo.
+                `,
+    
+                transactions: `
+                    Continued extensive roster churn: Michael Mayer and Harrison Butker
+                    are among the latest additions after earlier moves involving Germie
+                    Bernard, Baltimore D/ST, Brenton Strange and Tyler Bass.
+    
+                    Vigo remains the league's most active restructuring department.
+                `
+            },
+    
+            {
+                rank: 10,
+                previousRank: 9,
+                movement: -1,
+                rosterID: 5,
+                team: "JVentureSexOffender",
+                record: "1-5",
+                week1Score: 77.30,
+                week2Score: 136.08,
+                week3Score: 147.80,
+                week4Score: 108.18,
+                week5Score: 114.62,
+                week6Score: 73.68,
+                week7Projection: 103.92,
+    
+                headline: "The New Name Immediately Took Low Man",
+    
+                commentary: `
+                    Rhodes and Pags have rebranded.
+    
+                    The results have not.
+    
+                    JVentureSexOffender debuted with 73.68 points.
+    
+                    Low Man.
+    
+                    That alone would have been bad enough, except Charles scored 73.82
+                    and beat them by 0.14.
+    
+                    Rhodes and Pags therefore managed to combine Low Man with the closest
+                    loss of the week.
+    
+                    Efficient.
+    
+                    The reason they only fall one spot is that this roster remains better
+                    than its record.
+    
+                    Bijan Robinson, Matthew Stafford, Brock Bowers, Davante Adams, Rashee
+                    Rice, Courtland Sutton and Quinshon Judkins should not produce a
+                    one-win team.
+    
+                    Yet here we are.
+    
+                    Weeks 2 and 3 showed the ceiling with 136.08 and 147.80. The problem
+                    is that those performances are getting increasingly difficult to use
+                    as evidence for the present.
+    
+                    Ryan is next.
+    
+                    That is not an ideal environment for organizational healing.
+                `,
+    
+                transactions: `
+                    Added Jaleel McLaughlin.
+    
+                    One small depth move following Low Man.
+    
+                    Two managers apparently concluded no larger response was required.
+                `
+            },
+    
+            {
+                rank: 11,
+                previousRank: 11,
+                movement: 0,
+                rosterID: 12,
+                team: "Big frydown",
+                record: "1-5",
+                week1Score: 145.50,
+                week2Score: 81.66,
+                week3Score: 92.54,
+                week4Score: 87.00,
+                week5Score: 139.64,
+                week6Score: 82.42,
+                week7Projection: 90.93,
+    
+                headline: "T2's Resurrection Lasted Exactly One Week",
+    
+                commentary: `
+                    Week 5 gave us hope.
+    
+                    T2 scored 139.64.
+    
+                    Bucky Irving, Mike Evans and Aaron Jones finally made Big frydown
+                    look like the roster we thought existed on draft day.
+    
+                    Week 6 gave us the correction.
+    
+                    82.42.
+    
+                    J.K. Dobbins led the team with 13.6. Dak Prescott scored 13.02.
+                    Mike Evans added 12.4.
+    
+                    Nobody reached 14 points.
+    
+                    That is a difficult way to win fantasy football games.
+    
+                    The frustrating part is that the roster still looks respectable on
+                    paper. Saquon Barkley, Bucky, Dak, Evans, Ladd McConkey, Dobbins and
+                    Dallas Goedert should be capable of more than this.
+    
+                    They simply have not produced it consistently.
+    
+                    Big frydown has now scored below 93 in four of six weeks.
+    
+                    That is no longer noise.
+    
+                    PeterPanthers is next.
+    
+                    Good luck.
+                `,
+    
+                transactions: `
+                    Added Indianapolis D/ST.
+    
+                    That was the only meaningful move after an 82-point performance.
+                `
+            },
+    
+            {
+                rank: 12,
+                previousRank: 10,
+                movement: -2,
+                rosterID: 3,
+                team: "The Oilers",
+                record: "1-5",
+                week1Score: 129.46,
+                week2Score: 83.58,
+                week3Score: 83.18,
+                week4Score: 141.22,
+                week5Score: 107.90,
+                week6Score: 84.04,
+                week7Projection: 96.47,
+    
+                headline: "The Wedding Bump Has Officially Expired",
+    
+                commentary: `
+                    Chaney is back in the basement.
+    
+                    The Week 4 explosion gave The Oilers hope.
+    
+                    The Week 5 win gave them an actual result.
+    
+                    Then Ryan arrived.
+    
+                    84.04.
+    
+                    A 48.62-point loss.
+    
+                    Biggest Ass Beating of the week.
+    
+                    Jordan Love scored 21.24 and CeeDee Lamb added 16. Nico Collins was
+                    the only other major contributor to clear ten.
+    
+                    That was essentially the offense.
+    
+                    The frustrating part is that there are still good players here.
+                    CeeDee, Nico, David Montgomery, Joe Burrow, Rome Odunze and Dalton
+                    Kincaid should produce a functional fantasy lineup when everyone is
+                    available.
+    
+                    But six weeks into the season, The Oilers have scored below 108 points
+                    four times.
+    
+                    At some point the roster has to be judged by what it actually does.
+    
+                    Chaney has continued trying to fix it, adding Jordan Love and cycling
+                    through depth pieces.
+    
+                    The honeymoon is over.
+    
+                    The Oilers are 1-5.
+    
+                    The basement is occupied.
+                `,
+    
+                transactions: `
+                    Added Jordan Love and Tyler Higbee during the latest round of moves;
+                    Alvin Kamara and Tyreek Hill were among the players moved out.
+    
+                    Chaney is still actively searching for a combination that works.
+                `
+            }
+        ]
+    },
 };
