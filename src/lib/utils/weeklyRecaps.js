@@ -2522,5 +2522,249 @@ export const weeklyRecaps = {
         `
       }
     }
+  },
+  7: {
+  intro: `
+    Week 7 is in the books, and the biggest takeaway is that the league continues
+    to become more difficult to explain.
+
+    Ryan is now 7-0.
+
+    JV is 5-2.
+
+    Josh is 5-2.
+
+    Trevor is 5-2.
+
+    Jansen is back above .500 after starting 0-3.
+
+    And somehow one of the closest games of the week featured 79.52 points on one
+    side and 81.4 on the other, which means several of you should be ashamed.
+
+    Josh took High Man with 153.92 and delivered the largest beatdown of the week,
+    beating The Car Bombs by 32.48. That is what we in the industry refer to as
+    "a rough fucking draw."
+
+    Vigo's Madison beers Box took Low Man at 79.52, yet still came within 1.88
+    points of winning because Campus Legends apparently decided to take the scenic
+    route to victory.
+
+    CousinLover left a league-high 49.6 points on the bench and then lost to
+    Nigasaki by 4.7, which feels like the sort of thing that should trigger a
+    formal review.
+
+    Ryan stayed undefeated, but for once it wasn't some overwhelming destruction.
+    JVentureSexOffender actually made Naberhood Sex Offender sweat a little.
+
+    The Czar's official pick record remains unchanged because no Week 7 verdicts
+    were formally logged.
+
+    An administrative masterclass.
+
+    Judgment has been rendered.
+  `,
+
+  matchups: {
+    1: {
+      headline: "JV Handles Business and T2 Returns to the Basement",
+      recap: `
+        PeterPanthers keeps moving.
+
+        JV put up 140.02 and beat Big frydown by 32.04, moving to 5-2 and
+        continuing to look like one of the most stable teams in the league.
+
+        Trey McBride led the way with 27.1 after catching 10 balls for 111 yards
+        and a touchdown. Omar Cooper Jr. chipped in 22.5 on just five catches,
+        and D'Andre Swift added 19 with another productive day on the ground.
+
+        It was not some monstrous nuclear outing.
+
+        It was just another good, professional PeterPanthers week.
+
+        Across the field, T2 finished at 107.98, which is not disastrous, but also
+        never really threatened to win this game. Dak Prescott scored 23.28, Bucky
+        Irving added 24, and Saquon Barkley contributed 15.1, but the rest of the
+        lineup never supplied enough support to make things interesting.
+
+        Big frydown is now 1-6.
+
+        JV is 5-2.
+
+        One of those teams feels like a playoff lock.
+
+        The other feels like it is running out of ways to describe the same problem.
+      `
+    },
+
+    2: {
+      headline: "Jansen Wins Again, Charles Wastes Fifty Bench Points",
+      recap: `
+        Nigasaki is officially one of the best stories in the league.
+
+        After starting 0-3, Jansen is now 4-3 and has won four straight, this time
+        beating CousinLover 120.9 to 116.2.
+
+        The stars did exactly what they were supposed to do. Zay Flowers exploded
+        for 27.7, Puka Nacua added 21.8, and Braelon Allen chipped in 19.4 in a
+        lineup that once again found enough production across the board to survive.
+
+        Charles actually put together a respectable score. Tee Higgins went for
+        26.8, Amon-Ra St. Brown added 24.2, and Kirk Cousins threw for 295 yards
+        and two touchdowns on his way to 20.4.
+
+        Under normal circumstances, 116.2 is a fine weekly number.
+
+        These were not normal circumstances.
+
+        Because Charles also left 49.6 points on the bench.
+
+        Most in the league.
+
+        Nigasaki left 48.52 on the bench too, which means this matchup was also
+        quietly a festival of avoidable suffering.
+
+        Jansen keeps stacking wins and now gets the league's top team next week.
+
+        Charles falls to 4-3 and has to live with the fact that a perfectly winnable
+        game disappeared into the reserve section.
+      `
+    },
+
+    3: {
+      headline: "Madison beers Box Takes Low Man and Somehow Almost Wins",
+      recap: `
+        This was terrible football.
+
+        Madison beers Box scored 79.52.
+
+        Campus Legends scored 81.4.
+
+        Campus won by 1.88.
+
+        That somehow qualified as the closest game of the week.
+
+        Vigo also took Low Man in the process, which is an impressively efficient
+        combination of failure and misfortune.
+
+        Caleb Williams was the only real bright spot for Madison beers Box, throwing
+        for 308 yards and two scores on his way to 22.12. After that, the supporting
+        cast mostly vanished. Chase Brown scored 9.8, Woody Marks scored 9.1, and
+        nobody else did enough to deserve individual mention.
+
+        Campus did not exactly earn style points either. Christian McCaffrey carried
+        the offense with 22, while Will Reichard and the Minnesota defense somehow
+        ended up as the next-best contributors with 12 and 10.
+
+        When your kicker and defense are your second- and third-best weapons, the
+        game film is probably not something you show the children.
+
+        Still, a win is a win.
+
+        Campus moves to 4-3.
+
+        Vigo falls to 2-5, and the Madison Beer era remains famous but unstable.
+      `
+    },
+
+    4: {
+      headline: "Ryan Finally Looks Human and Still Wins Anyway",
+      recap: `
+        For the first time in a while, Ryan had to actually work for one.
+
+        Naberhood Sex Offender beat JVentureSexOffender 115.12 to 109.2, moving to
+        7-0 and preserving the league's last unbeaten record.
+
+        The score was lower than Ryan's usual standard, but the result was the same.
+        Ashton Jeanty led the team with 21.6, Jonathan Taylor added 19, and Malik
+        Nabers chipped in 18.1. It was not the usual 130-plus procession of death,
+        but it was enough.
+
+        Rhodes and Pags actually made this competitive. Quinshon Judkins did his
+        part with 23.4, Matthew Stafford threw three touchdowns for 18.5, and Bijan
+        Robinson added 17.2. For a 1-6 team, this was one of the more respectable
+        performances we have seen in a while.
+
+        The problem is that respectable does not count in the standings.
+
+        JVentureSexOffender is now 1-6.
+
+        Ryan is 7-0.
+
+        That is the entire story.
+
+        Even on a relatively ordinary week, the best team in the league still found
+        a way to leave with a win.
+      `
+    },
+
+    5: {
+      headline: "Josh Nukes the Czar",
+      recap: `
+        This was the ass beating of the week.
+
+        Moore Oil Coming put up 153.92, took High Man, and beat The Car Bombs by
+        32.48 in a game that stopped being competitive relatively quickly.
+
+        Tony Pollard was the star of the show, rushing for 129 yards and three
+        touchdowns while adding 36.5 fantasy points. JSN continued his takeover
+        season with 31.3, and Colston Loveland added 19.9 to complete the core of
+        the destruction.
+
+        Josh had zero bench points.
+
+        Perfect deployment.
+
+        Tyrannical efficiency.
+
+        The Car Bombs actually scored 121.44, which would be good enough to win a
+        lot of matchups. Drake Maye was excellent again with 28.44, Javonte Williams
+        bulldozed his way to 21.5, and Drake London added 19.6.
+
+        It did not matter.
+
+        This is the frustrating part of fantasy football: sometimes you put up 121
+        and still get sent home in a body bag.
+
+        Josh moves to 5-2 and reminds the league that his ceiling remains one of the
+        highest in the entire operation.
+
+        The Car Bombs fall to 3-4.
+
+        The Czar would like it noted that the offense was not the problem.
+      `
+    },
+
+    6: {
+      headline: "Trevor Wins the Mid-Off and Chaney Keeps Losing",
+      recap: `
+        Somebody had to win this game.
+
+        Trevor did.
+
+        Show Me Your TDs beat The Oilers 106.1 to 96.98, a result that was not
+        especially dramatic, but was never all that surprising either.
+
+        Luther Burden III led Trevor's side with 23.7, Makai Lemon added 19.7,
+        and Ollie Gordon II chipped in 17.3. It was not a huge offensive week,
+        but it was more than enough against a Chaney team that once again failed
+        to generate a complete lineup.
+
+        The Oilers got strong efforts from Joe Burrow at 28.88, CeeDee Lamb at
+        24.4, and Emanuel Wilson at 18.5. The issue, as has often been the case,
+        was what happened after that.
+
+        Once the top-end production ended, there was not enough underneath it to
+        finish the job.
+
+        Chaney drops to 1-6.
+
+        Trevor improves to 5-2.
+
+        Show Me Your TDs continues to do what it has done all year: avoid disaster,
+        stay functional, and quietly remain near the top of the standings while
+        other teams take turns detonating themselves.
+      `
+    }
   }
+}
 };
