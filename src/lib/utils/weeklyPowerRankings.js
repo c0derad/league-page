@@ -4491,4 +4491,838 @@ export const weeklyPowerRankings = {
             }
         ]
     },
+    8: {
+    title: "Week 8 Czar Power Rankings",
+
+    intro: `
+        Seven weeks are in the books.
+
+        Ryan is 7-0.
+
+        At this point, Naberhood Sex Offender has earned the right to remain No. 1
+        until somebody physically removes him from the throne.
+
+        Conveniently, the team with the best opportunity to do that is directly
+        behind him.
+
+        Jansen started 0-3.
+
+        Jansen is now 4-3.
+
+        Nigasaki has won four straight, has averaged 150.00 points over the last
+        four weeks, and now appears to be getting Lamar Jackson back.
+
+        Ryan versus Jansen is not merely the best matchup of Week 8.
+
+        It is No. 1 versus No. 2.
+
+        Josh has created another problem for the rankings department. Moore Oil Coming
+        followed 157.80 with 153.92, took High Man again, and dismantled The Car Bombs
+        while leaving exactly zero points on the bench.
+
+        That earns movement.
+
+        JV scored 140.02 and is somehow being demoted.
+
+        Welcome to the top four.
+
+        Trevor continues to quietly win games.
+
+        The Car Bombs scored 121.44 and lost by 32.48, which is an excellent reminder
+        that fantasy football is a stupid activity.
+
+        Charles finally rediscovered offense.
+
+        JQ scored 81.40 and somehow won.
+
+        Rhodes and Pags gave Ryan an actual game.
+
+        T2 showed signs of life and then voluntarily dropped Ladd McConkey.
+
+        Chaney immediately picked him up.
+
+        And then we arrive at Vigo.
+
+        Madison beers Box scored 79.52.
+
+        Low Man.
+
+        The roster is now locked.
+
+        And Caleb Williams is currently unavailable.
+
+        The current roster contains no other quarterback.
+
+        The Sleeper projection may still say 114.
+
+        The Czar does not.
+
+        Records matter.
+
+        Full-season scoring matters.
+
+        Recent scoring matters more than it did a month ago.
+
+        Roster construction matters.
+
+        Roster availability matters.
+
+        And apparently being legally permitted by the commissioner to modify your
+        roster now matters too.
+
+        Movement is measured against the Week 7 rankings.
+
+        Welcome to Week 8.
+    `,
+
+    rankings: [
+        {
+            rank: 1,
+            previousRank: 1,
+            movement: 0,
+            rosterID: 8,
+            team: "Naberhood Sex Offender",
+            record: "7-0",
+            week1Score: 128.80,
+            week2Score: 133.98,
+            week3Score: 123.28,
+            week4Score: 160.32,
+            week5Score: 130.02,
+            week6Score: 132.66,
+            week7Score: 115.12,
+            week8Projection: 126.24,
+
+            headline: "7-0 Has Earned the Benefit of Every Doubt",
+
+            commentary: `
+                Ryan finally looked somewhat mortal in Week 7.
+
+                He scored 115.12, his lowest total of the season, and Rhodes and Pags
+                actually kept the game within one possession. Ryan won anyway.
+
+                That matters. Naberhood Sex Offender has now survived seven completely
+                different fantasy environments and exited every one of them undefeated.
+                The weekly scores are 128.80, 133.98, 123.28, 160.32, 130.02, 132.66
+                and 115.12. There is still no bad week on the résumé.
+
+                More importantly, Ryan attacked the waiver wire like a manager who
+                understands exactly what his position allows him to do. Trevor Lawrence
+                replaced Jared Goff, Mark Andrews was added for nothing, and the roster
+                now has enough depth to absorb a Week 8 schedule that removes several
+                familiar pieces from consideration.
+
+                Jonathan Taylor, Ashton Jeanty, Tetairoa McMillan, Michael Wilson and
+                Trevor Lawrence still produce a 126.24 projection before we even start
+                talking about the long-term roster.
+
+                Nigasaki is coming.
+
+                Ryan knows it.
+
+                But you do not remove a 7-0 team from No. 1 because somebody underneath
+                him looks scary.
+
+                You remove him when somebody beats him.
+
+                Jansen gets that opportunity this week.
+            `,
+
+            transactions: `
+                Added Trevor Lawrence and Mark Andrews after previously adding Tyrone Tracy.
+                Jared Goff and Kenyon Sadiq were moved out.
+
+                The rich have apparently discovered waivers.
+            `
+        },
+
+        {
+            rank: 2,
+            previousRank: 2,
+            movement: 0,
+            rosterID: 6,
+            team: "Nigasaki",
+            record: "4-3",
+            week1Score: 136.56,
+            week2Score: 118.50,
+            week3Score: 98.34,
+            week4Score: 157.88,
+            week5Score: 199.70,
+            week6Score: 121.52,
+            week7Score: 120.90,
+            week8Projection: 128.72,
+
+            headline: "The Hottest Team in the League Gets Lamar Back",
+
+            commentary: `
+                There is a very reasonable argument that Nigasaki is already the best
+                fantasy roster in this league.
+
+                Jansen opened 0-3.
+
+                Since then: 157.88, 199.70, 121.52 and 120.90.
+
+                Four games.
+
+                Four wins.
+
+                150.00 points per game.
+
+                Week 7 was another controlled performance rather than an explosion.
+                Zay Flowers scored 27.7, Puka Nacua scored 21.8, Braelon Allen added
+                19.4, Kyren Williams scored 18.1 and Jaylen Warren added 16.7.
+
+                Five different players scored at least 16.
+
+                That is exactly why this roster has become so difficult to deal with.
+
+                And now Lamar Jackson is expected back.
+
+                Jansen has spent the entire winning streak finding ways to survive the
+                quarterback position. If Lamar actually returns to the top of this lineup,
+                Nigasaki's ceiling becomes even more ridiculous.
+
+                Puka and Zay provide elite wide receiver upside. Kyren, Josh Jacobs and
+                Warren provide multiple usable backs. Harold Fannin has now been added
+                to the tight end room after Charles released him.
+
+                Sleeper currently makes Nigasaki the highest projected team in the league
+                at 128.72.
+
+                The opponent is Ryan.
+
+                If Jansen wins, there will be a new No. 1 next week.
+
+                No committee meeting required.
+            `,
+
+            transactions: `
+                Added Harold Fannin after briefly cycling through Mason Taylor and
+                Tanner McKee.
+
+                Charles dropped Fannin.
+
+                Jansen said thank you.
+            `
+        },
+
+        {
+            rank: 3,
+            previousRank: 4,
+            movement: 1,
+            rosterID: 10,
+            team: "Moore Oil Coming",
+            record: "5-2",
+            week1Score: 147.16,
+            week2Score: 141.02,
+            week3Score: 109.42,
+            week4Score: 116.52,
+            week5Score: 107.30,
+            week6Score: 157.80,
+            week7Score: 153.92,
+            week8Projection: 124.36,
+
+            headline: "Two Straight Nuclear Weeks Change the Board",
+
+            commentary: `
+                Josh passes JV.
+
+                PeterPanthers did absolutely nothing wrong.
+
+                Moore Oil Coming simply forced the issue.
+
+                Josh followed his 157.80 High Man performance in Week 6 with 153.92
+                in Week 7. Tony Pollard scored 36.5. JSN scored 31.3. Colston Loveland
+                added 19.9. Hunter Henry scored 14.1.
+
+                The bench contributed zero points.
+
+                Literally zero.
+
+                Josh put every available point that mattered into the lineup and then
+                beat The Car Bombs by 32.48.
+
+                The September version of Moore Oil Coming appeared dangerous because
+                Josh opened with 147.16 and 141.02. The middle of the season briefly
+                called that evaluation into question.
+
+                The last two weeks have answered it.
+
+                Josh Allen returns from bye. JSN has become one of the most reliable
+                receivers in fantasy. Kenneth Walker, Bhayshul Tuten, Pollard and Carnell
+                Tate give this team enough options that it no longer feels dependent on
+                one specific game script.
+
+                Week 8 projection: 124.36.
+
+                Opponent: a locked Madison beers Box.
+
+                Life is good.
+            `,
+
+            transactions: `
+                Added Hunter Henry and briefly used C.J. Stroud as the Week 7 quarterback.
+                Stroud was subsequently dropped for Tampa Bay's defense.
+
+                Josh is no longer searching for an identity.
+
+                He is optimizing around one that works.
+            `
+        },
+
+        {
+            rank: 4,
+            previousRank: 3,
+            movement: -1,
+            rosterID: 2,
+            team: "PeterPanthers",
+            record: "5-2",
+            week1Score: 172.16,
+            week2Score: 137.34,
+            week3Score: 142.04,
+            week4Score: 110.76,
+            week5Score: 156.86,
+            week6Score: 114.54,
+            week7Score: 140.02,
+            week8Projection: 104.06,
+
+            headline: "140 Points and Somehow a Demotion",
+
+            commentary: `
+                JV scored 140.02.
+
+                JV won by 32.
+
+                JV falls one spot.
+
+                This is not punishment. It is congestion.
+
+                PeterPanthers still owns the best full-season scoring average in the
+                league at 139.10 points per game. Trey McBride just scored 27.1, Omar
+                Cooper immediately rewarded the waiver pickup with 22.5, D'Andre Swift
+                added 19 and Jahmyr Gibbs scored 17.3.
+
+                There is nothing wrong here.
+
+                The reason JV moves from third to fourth is that Josh has scored more
+                than 153 points in consecutive weeks, while Jansen has won four straight
+                with a 150-point four-week average.
+
+                Somebody had to move.
+
+                Week 8 is also a little awkward. The current projection sits at 104.06,
+                and Jayden Daniels carries less certainty than usual. Fortunately, Bryce
+                Young remains on the roster, so JV is not dependent on one quarterback
+                outcome.
+
+                McBride and Gibbs remain elite weekly anchors. Swift continues to produce.
+                Chris Olave, Terry McLaurin, Stefon Diggs and Jordan Addison give JV
+                enough receiving depth to survive normal attrition.
+
+                Fourth is not an indictment.
+
+                Fourth is what happens when the top of the league becomes absurd.
+            `,
+
+            transactions: `
+                Omar Cooper was the important addition and immediately produced 22.5
+                points in Week 7.
+
+                JV also added Jonah Coleman after a brief Jakobi Meyers transaction.
+
+                The Cooper pickup already paid for itself.
+            `
+        },
+
+        {
+            rank: 5,
+            previousRank: 5,
+            movement: 0,
+            rosterID: 4,
+            team: "Show Me Your TDs",
+            record: "5-2",
+            week1Score: 124.40,
+            week2Score: 132.86,
+            week3Score: 127.28,
+            week4Score: 109.08,
+            week5Score: 150.94,
+            week6Score: 127.24,
+            week7Score: 106.10,
+            week8Projection: 105.42,
+
+            headline: "Five Wins and Still Boringly Competent",
+
+            commentary: `
+                Trevor remains exactly where he was.
+
+                Show Me Your TDs scored only 106.10 in Week 7, but Chaney scored 96.98,
+                so Trevor did what good fantasy teams are supposed to do when the ceiling
+                is unavailable.
+
+                He won anyway.
+
+                The season-long consistency remains impressive. Through seven weeks,
+                Trevor has only one score below 106 and is averaging 125.41 points per
+                game. The last three weeks are 150.94, 127.24 and 106.10.
+
+                That is not enough to crack the ridiculous top four.
+
+                It is comfortably enough to remain fifth.
+
+                Trevor has also been unusually aggressive at quarterback. Trevor Lawrence
+                was released, Kyler Murray came and went, and Jordan Love is now the latest
+                occupant of the position.
+
+                The rest of the roster is considerably more stable. James Cook, Chuba
+                Hubbard, DeVonta Smith, Christian Watson, Luther Burden, Emeka Egbuka and
+                Sam LaPorta give Trevor a deep collection of playable options.
+
+                This team may not generate as many headlines as the teams above it.
+
+                It keeps generating wins.
+            `,
+
+            transactions: `
+                Added Makai Lemon, Cincinnati D/ST and Jordan Love.
+
+                Dropped Trevor Lawrence, Pat Freiermuth and Kyler Murray.
+
+                Trevor continues treating the quarterback position like speed dating.
+            `
+        },
+
+        {
+            rank: 6,
+            previousRank: 6,
+            movement: 0,
+            rosterID: 1,
+            team: "The Car Bombs",
+            record: "3-4",
+            week1Score: 91.62,
+            week2Score: 89.32,
+            week3Score: 154.56,
+            week4Score: 111.74,
+            week5Score: 156.16,
+            week6Score: 114.60,
+            week7Score: 121.44,
+            week8Projection: 120.18,
+
+            headline: "The Offense Was Fine. Unfortunately Josh Existed.",
+
+            commentary: `
+                The Car Bombs stay sixth after losing by 32.48.
+
+                That sounds contradictory until you look at the score.
+
+                The Czar produced 121.44 points. Drake Maye scored 28.44, Javonte
+                Williams added 21.5, Drake London scored 19.6, Cam Skattebo produced
+                19.1 and Ja'Marr Chase added 17.2.
+
+                That is a good fantasy week.
+
+                Josh scored 153.92.
+
+                There is not much strategic analysis required beyond that.
+
+                More importantly, the post-0-2 sample continues to support the ranking.
+                Since Week 3, The Car Bombs have scored 154.56, 111.74, 156.16, 114.60
+                and 121.44. That is 131.70 points per game across five weeks.
+
+                The record is only 3-4.
+
+                The current team is better than 3-4.
+
+                Maye has become one of the league's safest quarterbacks. Chase and London
+                supply legitimate WR1 upside, while Javonte, Skattebo and the rest of the
+                flex group give the lineup multiple paths to a useful week.
+
+                Chaney is next.
+
+                Sleeper currently projects The Car Bombs at 120.18 against 92.34 for
+                The Oilers.
+
+                Please do not make this difficult.
+            `,
+
+            transactions: `
+                Swapped the Jets defense for Washington.
+
+                The administration has determined that no additional panic is required.
+            `
+        },
+
+        {
+            rank: 7,
+            previousRank: 8,
+            movement: 1,
+            rosterID: 9,
+            team: "CousinLover",
+            record: "4-3",
+            week1Score: 151.02,
+            week2Score: 122.76,
+            week3Score: 122.82,
+            week4Score: 123.02,
+            week5Score: 89.72,
+            week6Score: 73.82,
+            week7Score: 116.20,
+            week8Projection: 113.44,
+
+            headline: "The Offense Has Reappeared",
+
+            commentary: `
+                Charles lost in Week 7.
+
+                Charles also moves up.
+
+                That is because 116.20 looked considerably more like the roster we saw
+                during the first month than the team that scored 89.72 and 73.82 in
+                Weeks 5 and 6.
+
+                Tee Higgins scored 26.8. Amon-Ra St. Brown scored 24.2. Kirk Cousins
+                produced 20.4. T.J. Hockenson added 13.5.
+
+                There was one problem.
+
+                Charles left 49.60 points on the bench.
+
+                Most in the league.
+
+                Again, the roster appears more talented than its recent results. Derrick
+                Henry, Amon-Ra, Higgins, Rhamondre Stevenson, Hockenson and Xavier Worthy
+                are enough to build a good lineup around.
+
+                Breece Hall's health remains a concern, but Charles no longer needs the
+                entire offense to run through him.
+
+                Sleeper projects CousinLover for 113.44 against JV this week.
+
+                That is a real test.
+
+                The offense has returned.
+
+                Now Charles has to correctly deploy it.
+            `,
+
+            transactions: `
+                Added Tyler Bass after previously cycling through Kendre Miller and
+                Zonovan Knight.
+
+                More notable: Charles dropped Harold Fannin.
+
+                Jansen now owns Harold Fannin.
+
+                We will revisit this if necessary.
+            `
+        },
+
+        {
+            rank: 8,
+            previousRank: 7,
+            movement: -1,
+            rosterID: 11,
+            team: "Campus Legends",
+            record: "4-3",
+            week1Score: 101.46,
+            week2Score: 119.88,
+            week3Score: 142.04,
+            week4Score: 89.00,
+            week5Score: 139.88,
+            week6Score: 111.28,
+            week7Score: 81.40,
+            week8Projection: 102.71,
+
+            headline: "Winning With 81 Points Still Counts. Unfortunately.",
+
+            commentary: `
+                JQ won.
+
+                JQ also scored 81.40.
+
+                Both facts will appear in the historical record.
+
+                Christian McCaffrey produced 22 points. After that, the second-best
+                player in the lineup was kicker Will Reichard with 12. Minnesota's
+                defense scored 10.
+
+                That is not a functioning offense.
+
+                Campus Legends has now scored 89.00 and 81.40 in two of the last four
+                weeks. The high-end outcomes remain visible — 142.04 in Week 3 and
+                139.88 in Week 5 — but the floor has become impossible to ignore.
+
+                The roster still deserves respect. Patrick Mahomes, CMC, Garrett Wilson,
+                George Pickens, DK Metcalf, Travis Kelce and Jeremiyah Love provide more
+                talent than an 81-point performance suggests.
+
+                CMC being unavailable this week makes the immediate lineup thinner,
+                although JQ gets Big frydown and should still have enough to survive.
+
+                Charles showed signs of life.
+
+                JQ showed signs of cardiac arrest.
+
+                They switch places.
+            `,
+
+            transactions: `
+                Added Jordan Mason and dropped Tyler Allgeier.
+
+                Useful depth, particularly with Christian McCaffrey unavailable this week.
+            `
+        },
+
+        {
+            rank: 9,
+            previousRank: 10,
+            movement: 1,
+            rosterID: 5,
+            team: "JVentureSexOffender",
+            record: "1-6",
+            week1Score: 77.30,
+            week2Score: 136.08,
+            week3Score: 147.80,
+            week4Score: 108.18,
+            week5Score: 114.62,
+            week6Score: 73.68,
+            week7Score: 109.20,
+            week8Projection: 106.83,
+
+            headline: "The Record Is Hideous. The Roster Still Isn't.",
+
+            commentary: `
+                Rhodes and Pags finally move up.
+
+                Not because 109.20 is especially impressive.
+
+                Because they gave the undefeated No. 1 team an actual game and because
+                the teams beneath them have become increasingly difficult to defend.
+
+                Quinshon Judkins scored 23.4, Matthew Stafford added 18.5 and Bijan
+                Robinson produced 17.2. Rhodes and Pags lost by 5.92 to Ryan.
+
+                That is considerably different from the 73.68-point disaster in Week 6.
+
+                The underlying roster remains strange for a 1-6 team. Bijan, Brock Bowers,
+                Stafford, Rashee Rice, Davante Adams, Courtland Sutton and Judkins provide
+                enough recognizable talent that the record still feels worse than the team.
+
+                At some point, however, potential has to become actual victories.
+
+                Week 8 gives JVentureSexOffender an opportunity against Trevor. Sleeper
+                currently has the matchup essentially even, with Rhodes and Pags projected
+                at 106.83 and Show Me Your TDs at 105.42.
+
+                If there is ever going to be a late-season resurrection, this is where
+                it has to start.
+            `,
+
+            transactions: `
+                Added Wan'Dale Robinson and dropped Jaleel McLaughlin.
+
+                Quiet roster maintenance from an organization that could probably use
+                something louder.
+            `
+        },
+
+        {
+            rank: 10,
+            previousRank: 11,
+            movement: 1,
+            rosterID: 12,
+            team: "Big frydown",
+            record: "1-6",
+            week1Score: 145.50,
+            week2Score: 81.66,
+            week3Score: 92.54,
+            week4Score: 87.00,
+            week5Score: 139.64,
+            week6Score: 82.42,
+            week7Score: 107.98,
+            week8Projection: 86.99,
+
+            headline: "107.98 Is Progress. Dropping Ladd Is Not.",
+
+            commentary: `
+                T2 moves up because 107.98 is technically one of the better Big frydown
+                performances of the season.
+
+                Bucky Irving scored 24. Dak Prescott scored 23.28. Saquon Barkley added
+                15.1. Tucker Kraft produced 14.8.
+
+                This looked like an actual fantasy lineup again.
+
+                The problem is that T2 remains 1-6 and continues making decisions that
+                invite additional questions.
+
+                Ladd McConkey was dropped.
+
+                Chaney claimed him.
+
+                T2 therefore took a roster that already lacked dependable wide receiver
+                production and voluntarily removed a receiver now projected for 14.09
+                points this week.
+
+                Interesting.
+
+                The remaining core still contains Dak, Saquon, Bucky, Aaron Jones,
+                J.K. Dobbins, Dallas Goedert and Tucker Kraft. There is enough here to
+                occasionally produce another 130-point week.
+
+                There has not been enough consistency to expect one.
+
+                Big frydown moves up because Vigo fell through the floor and Chaney
+                remains Chaney.
+
+                Please do not mistake that for a parade.
+            `,
+
+            transactions: `
+                Added Malik Washington and Darius Cooper.
+
+                Dropped Ladd McConkey.
+
+                Chaney immediately claimed Ladd McConkey.
+
+                The waiver wire has receipts.
+            `
+        },
+
+        {
+            rank: 11,
+            previousRank: 12,
+            movement: 1,
+            rosterID: 3,
+            team: "The Oilers",
+            record: "1-6",
+            week1Score: 129.46,
+            week2Score: 83.58,
+            week3Score: 83.18,
+            week4Score: 141.22,
+            week5Score: 107.90,
+            week6Score: 84.04,
+            week7Score: 96.98,
+            week8Projection: 92.34,
+
+            headline: "Chaney Receives a Gift From T2",
+
+            commentary: `
+                The Oilers move up one spot without winning a game.
+
+                That is what happens when the team below you scores 79 points and then
+                gets its roster locked.
+
+                Chaney did at least produce some legitimate Week 7 offense. Joe Burrow
+                scored 28.88. CeeDee Lamb scored 24.4. Emanuel Wilson added 18.5.
+
+                The problem was everything else.
+
+                The Oilers finished at 96.98 and fell to 1-6.
+
+                There is, however, one material improvement this week.
+
+                T2 dropped Ladd McConkey.
+
+                Chaney claimed Ladd McConkey.
+
+                Ladd now joins Burrow, CeeDee, Nico Collins, Rome Odunze, Dalton Kincaid,
+                Omarion Hampton, David Montgomery and Chris Godwin on a roster that still
+                looks considerably better by name than it does on Sunday afternoons.
+
+                Houston being unavailable this week hurts the immediate projection because
+                Nico and Montgomery cannot contribute, so the 92.34 number is not especially
+                flattering.
+
+                The longer-term roster improved.
+
+                The standings did not.
+
+                Chaney still has substantial work to do.
+            `,
+
+            transactions: `
+                Claimed Ladd McConkey after T2 released him and added Seth McGowan.
+
+                Tyler Higbee and Roschon Johnson were dropped.
+
+                This is one of Chaney's better weeks of roster management.
+
+                The bar was accessible.
+            `
+        },
+
+        {
+            rank: 12,
+            previousRank: 9,
+            movement: -3,
+            rosterID: 7,
+            team: "Madison beers Box",
+            record: "2-5",
+            week1Score: 99.76,
+            week2Score: 89.92,
+            week3Score: 84.28,
+            week4Score: 127.48,
+            week5Score: 90.54,
+            week6Score: 102.80,
+            week7Score: 79.52,
+            week8Projection: 114.33,
+
+            headline: "LOCKED. LOW MAN. NO QUARTERBACK.",
+
+            commentary: `
+                We have arrived.
+
+                Vigo falls from No. 9 to No. 12.
+
+                Madison beers Box scored 79.52 in Week 7 and took Low Man. Caleb Williams
+                was the only player on the roster to clear ten points by any meaningful
+                margin, finishing with 22.12.
+
+                The bench contained 49.50 points.
+
+                Vigo lost by 1.88.
+
+                That alone would justify movement.
+
+                There is now a larger problem.
+
+                The roster is LOCKED.
+
+                And Caleb Williams is currently unavailable with a hamstring injury.
+
+                The current Madison beers Box roster contains no second quarterback.
+
+                That makes Sleeper's 114.33 Week 8 projection misleading. Approximately
+                17 of those projected points currently belong to a quarterback Vigo cannot
+                use, and the normal solution — go acquire somebody else — is not available.
+
+                Justin Jefferson, A.J. Brown, Chase Brown, Jaylen Waddle and Jameson
+                Williams still give this roster real positional talent. In a vacuum,
+                Madison beers Box is not the least talented team in the league.
+
+                Power rankings do not occur in a vacuum.
+
+                Vigo is 2-5.
+
+                He just took Low Man.
+
+                His roster is locked.
+
+                His quarterback is out.
+
+                Madison Beer may have ruined Justin Herbert.
+
+                She is now overseeing an organization without an available quarterback.
+
+                Welcome to No. 12.
+            `,
+
+            transactions: `
+                Jacksonville D/ST replaced Tennessee before the roster lock took effect.
+
+                Further roster reconstruction is currently unavailable.
+
+                The waiver wire is closed for business.
+            `
+        }
+    ]
+},
 };
