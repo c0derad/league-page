@@ -1864,5 +1864,408 @@ export const weeklyPreviews = {
         pickRosterID: 10
       }
     }
+  },
+  8: {
+  intro: `
+    Seven weeks are gone.
+
+    Ryan is 7-0.
+
+    Jansen has won four straight.
+
+    Josh has scored 311.72 points over the last two weeks.
+
+    JV just scored 140.02 and somehow enters Week 8 with legitimate roster problems.
+
+    Trevor is 5-2 and continues quietly winning games while everyone else generates
+    substantially more drama.
+
+    The Car Bombs scored 121.44 last week and lost by 32.48 because Josh apparently
+    decided normal fantasy scoring no longer applied to him.
+
+    Campus Legends won with 81.40.
+
+    Vigo scored 79.52, took Low Man, lost by 1.88 and now enters Week 8 with his
+    roster locked.
+
+    CousinLover left 49.60 points on the bench and lost by 4.70.
+
+    Rhodes and Pags are 1-6 despite continuing to field a roster that looks nothing
+    like a 1-6 roster.
+
+    Chaney is also 1-6.
+
+    T2 is also 1-6.
+
+    Things are going well.
+
+    The Czar did not formally submit Week 7 picks, meaning the official record remains
+    23-13 through Week 6.
+
+    Administrative load management.
+
+    We return this week with six judgments, including the matchup we have been waiting
+    for all season.
+
+    No. 1 against No. 2.
+
+    7-0 against the hottest team in the league.
+
+    Ryan against Jansen.
+
+    The throne may actually be available.
+
+    Welcome to Week 8.
+  `,
+
+  matchups: {
+
+    1: {
+      headline: "JV's Depth Is Finally Getting Audited",
+      preview: `
+        On paper, this should be an easy decision.
+
+        PeterPanthers is 5-2. CousinLover is 4-3. JV just scored 140.02, while Charles
+        spent Weeks 5 and 6 producing 89.72 and 73.82 before finally recovering with
+        116.20 last week.
+
+        The problem is that Week 8 is specifically designed to test everything underneath
+        JV's stars.
+
+        Chris Olave is on bye. Terry McLaurin is gone for the season. Stefon Diggs did
+        not practice Wednesday, although his status remains unsettled. Jayden Daniels,
+        at least, was a full participant and appears considerably more stable than he
+        did earlier in the season.
+
+        That leaves Jahmyr Gibbs and Trey McBride carrying an enormous amount of the
+        weekly ceiling.
+
+        Those are excellent players to rely on. McBride just scored 27.1. Gibbs remains
+        one of the most dangerous backs in fantasy. D'Andre Swift has also been remarkably
+        useful, and Omar Cooper rewarded JV's waiver pickup with 22.5 immediately.
+
+        But the usual PeterPanthers depth advantage is not quite as obvious this week.
+
+        Charles has the opposite setup.
+
+        CousinLover finally got Amon-Ra St. Brown and Tee Higgins rolling at the same
+        time last week. Higgins scored 26.8. Amon-Ra scored 24.2. Kirk Cousins added
+        20.4. Derrick Henry and Rhamondre Stevenson give Charles a strong running back
+        foundation, and Breece Hall remains another option if needed.
+
+        Sleeper currently gives CousinLover a meaningful projection advantage.
+
+        Normally I would trust JV's seven-week body of work over one week of Charles
+        looking competent again.
+
+        This particular week is different.
+
+        Too many of JV's normal paths to points are compromised, while Charles enters
+        with most of the core lineup available.
+
+        I don't love picking against PeterPanthers.
+
+        I do like the matchup.
+
+        Give me CousinLover.
+      `,
+      pick: "CousinLover",
+      pickRosterID: 9
+    },
+
+    2: {
+      headline: "The Team That Won With 81 Points Gets Another Chance",
+      preview: `
+        Campus Legends won last week.
+
+        We are legally required to acknowledge that before discussing anything else.
+
+        JQ scored 81.40.
+
+        Vigo scored 79.52.
+
+        Somebody had to receive a victory in the standings.
+
+        Week 8 should at least resemble fantasy football slightly more closely, although
+        JQ loses Christian McCaffrey to San Francisco's bye. That removes the player who
+        accounted for 22 of Campus's 81.4 points last week and creates an obvious hole
+        at the top of the lineup.
+
+        Fortunately, this roster contains considerably more talent than last week's score
+        suggests. Patrick Mahomes, Garrett Wilson, George Pickens, DK Metcalf, Travis
+        Kelce and Jeremiyah Love are still available, and JQ added Jordan Mason as
+        another potential running back option.
+
+        T2 also has legitimate names.
+
+        Dak Prescott. Saquon Barkley. Bucky Irving. Aaron Jones. Tucker Kraft.
+
+        The issue remains the same one we have discussed for most of the season:
+        Big frydown does not get enough of them producing at once.
+
+        T2 scored 107.98 last week, which actually represented progress. Bucky scored
+        24, Dak scored 23.28, Saquon added 15.1 and Tucker Kraft finished at 14.8.
+
+        That is a respectable core.
+
+        The supporting cast remains extremely thin, and the Week 8 schedule does not
+        help. Mike Evans and Deebo Samuel are attached to San Francisco's bye, and
+        the current lineup projection sits below 90.
+
+        Campus is hardly entering at full strength.
+
+        But JQ has more functional ways to fill the missing points.
+
+        This feels less like picking Campus and more like declining to trust T2.
+
+        Seven weeks have earned that distinction.
+
+        Give me Campus Legends.
+      `,
+      pick: "Campus Legends",
+      pickRosterID: 11
+    },
+
+    3: {
+      headline: "No. 1 vs. No. 2: The Throne Is Actually on the Line",
+      preview: `
+        This is the game.
+
+        Ryan is 7-0.
+
+        Jansen started 0-3 and has won four straight.
+
+        Naberhood Sex Offender has occupied the top spot in these rankings because
+        Ryan has done everything required to keep it. Seven weeks. Seven wins. Not one
+        score below 115.
+
+        There is no fraud conversation.
+
+        There is no lucky-record conversation.
+
+        Ryan has simply been excellent.
+
+        Jansen has somehow been even more terrifying recently.
+
+        Nigasaki's last four scores are 157.88, 199.70, 121.52 and 120.90.
+
+        That is exactly 150 points per game.
+
+        And now Lamar Jackson appears ready to return. Lamar was a full participant
+        Wednesday, giving Jansen back the quarterback ceiling that has largely been
+        missing throughout this entire four-game winning streak.
+
+        That is the frightening part.
+
+        Jansen built this run around Puka Nacua, Zay Flowers, Kyren Williams, Jaylen
+        Warren, Josh Jacobs and an increasingly deep collection of flex options while
+        receiving very little from the player originally expected to be his largest
+        positional advantage.
+
+        Sleeper currently projects Nigasaki slightly ahead.
+
+        Ryan is not exactly helpless.
+
+        Jonathan Taylor and Ashton Jeanty remain one of the strongest running back
+        combinations in the league. Tetairoa McMillan and Michael Wilson give him
+        receiver production, and Ryan used the waiver wire aggressively this week,
+        grabbing Trevor Lawrence and Mark Andrews.
+
+        Those moves matter because the bye week takes Malik Nabers, George Kittle,
+        Brock Purdy and Tyrone Tracy out of consideration.
+
+        Ryan saw the problem and built around it.
+
+        This is the closest thing we have had to a heavyweight title fight.
+
+        The undefeated No. 1 team against the team averaging 150 over its last four.
+
+        I have spent seven weeks saying somebody needs to actually beat Ryan before
+        we remove him from the throne.
+
+        I think this is the week.
+
+        Give me Nigasaki.
+
+        Jansen ends the undefeated season.
+      `,
+      pick: "Nigasaki",
+      pickRosterID: 6
+    },
+
+    4: {
+      headline: "Vigo's Locked Roster Meets a Team Scoring 156 Per Week",
+      preview: `
+        There are better weeks to lose access to roster management.
+
+        Madison beers Box enters Week 8 at 2-5 after scoring 79.52 and taking Low Man.
+
+        The roster is also locked.
+
+        Which means whatever happens between now and kickoff, Vigo does not have the
+        luxury of solving it on the waiver wire.
+
+        The actual starting talent remains considerably better than last week's score.
+        Justin Jefferson, A.J. Brown, Chase Brown, Jaylen Waddle and Jameson Williams
+        give Vigo enough receiving and flex firepower to produce a legitimate upset if
+        the lineup finally hits together.
+
+        A.J. Brown was limited Wednesday, so that is another situation Vigo simply has
+        to hope resolves itself favorably.
+
+        The opponent is not ideal.
+
+        Josh has scored 157.80 and 153.92 in consecutive weeks.
+
+        Moore Oil Coming has rediscovered the version of itself that looked like one
+        of the league's championship favorites in September, except this version may
+        actually be better.
+
+        Josh Allen returns from bye. JSN is playing like an elite fantasy receiver.
+        Kenneth Walker remains a strong weekly back. Bhayshul Tuten is available again.
+        Tony Pollard just scored 36.5.
+
+        Colston Loveland scored 19.9 last week.
+
+        Even more absurdly, Josh's bench scored zero.
+
+        There was no hidden better lineup.
+
+        He simply deployed the roster correctly and scored 153.92.
+
+        Sleeper already has Josh comfortably ahead, and the roster lock removes the
+        primary mechanism Vigo would normally use to close that gap if something changes
+        before Sunday.
+
+        Madison Beer has produced one win since taking over the organization.
+
+        She is about to encounter significantly stronger opposition.
+
+        Give me Moore Oil Coming.
+      `,
+      pick: "Moore Oil Coming",
+      pickRosterID: 10
+    },
+
+    5: {
+      headline: "The Standings Say Blowout. Sleeper Says Coin Flip.",
+      preview: `
+        This might be the strangest matchup on the board.
+
+        Trevor is 5-2.
+
+        Rhodes and Pags are 1-6.
+
+        Sleeper currently projects JVentureSexOffender ahead by roughly one point.
+
+        That is not a typo.
+
+        Rhodes and Pags remain the league's most convincing argument that record and
+        roster quality are not the same thing. Bijan Robinson, Brock Bowers, Matthew
+        Stafford, Rashee Rice, Davante Adams, Courtland Sutton and Quinshon Judkins
+        should not be the core of a one-win fantasy team.
+
+        Yet somehow they are.
+
+        Last week was at least respectable. Judkins scored 23.4, Stafford scored 18.5
+        and Bijan added 17.2 as Rhodes and Pags came within 5.92 points of handing Ryan
+        his first loss.
+
+        This team is capable of beating Trevor.
+
+        The question is whether seven weeks of evidence allow us to trust it.
+
+        Show Me Your TDs continues to be almost offensively competent.
+
+        Trevor is 5-2 because the roster rarely completely fails. James Cook, Chuba
+        Hubbard, Christian Watson, Luther Burden, DeVonta Smith, Emeka Egbuka and Sam
+        LaPorta provide enough depth that one bad individual performance usually does
+        not kill the entire week.
+
+        Jordan Love is now the quarterback after Trevor continued his season-long
+        tradition of treating the position like a rental car.
+
+        DeVonta Smith did not practice Wednesday, so that is worth monitoring. But unlike
+        several teams dealing with availability issues, Trevor has enough receiver depth
+        to change direction if necessary.
+
+        On pure roster talent, this is close.
+
+        On demonstrated reliability, it is not.
+
+        I have spent enough weeks predicting the Rhodes and Pags breakthrough.
+
+        Make them prove it.
+
+        Give me Show Me Your TDs.
+      `,
+      pick: "Show Me Your TDs",
+      pickRosterID: 4
+    },
+
+    6: {
+      headline: "The Czar Is Favored by 28. Surely Nothing Can Go Wrong.",
+      preview: `
+        Ah.
+
+        Finally.
+
+        A relaxing fantasy football matchup.
+
+        Sleeper currently projects The Car Bombs at 120.18 and The Oilers at 92.34.
+
+        A 27.84-point advantage.
+
+        There is absolutely no historical precedent for a sentence like that causing
+        immediate disaster.
+
+        The Car Bombs enter 3-4 after scoring 121.44 last week. Normally that would be
+        a perfectly respectable performance. Josh scored 153.92 and converted it into
+        the largest ass beating of Week 7.
+
+        The offense was not the problem.
+
+        Drake Maye scored 28.44. Javonte Williams scored 21.5. Drake London added 19.6.
+        Cam Skattebo scored 19.1. Ja'Marr Chase added 17.2.
+
+        That is exactly the kind of distribution I want entering Week 8.
+
+        Skattebo is unavailable because the Giants are on bye, but the lineup still
+        has Maye, Chase, London, Javonte, Matthew Golden and Kyle Pitts. The current
+        projection remains one of the strongest on the board.
+
+        Chaney does have enough top-end talent to make this uncomfortable.
+
+        Joe Burrow scored 28.88 last week. CeeDee Lamb scored 24.4. And The Oilers
+        just claimed Ladd McConkey after T2 inexplicably released him.
+
+        Ladd immediately makes the roster better.
+
+        Houston's bye makes the week considerably worse.
+
+        Nico Collins and David Montgomery are unavailable, eliminating two players
+        Chaney would normally expect to use. The 49ers defense is also on bye, and
+        the current Oilers lineup starts running out of useful options very quickly
+        after Burrow, CeeDee, Dalton Kincaid and Omarion Hampton.
+
+        The Oilers are 1-6 for a reason.
+
+        The Car Bombs are also trying to get back to .500 for the second time in three
+        weeks.
+
+        A loss here would create an intolerable amount of content for the rest of you.
+
+        I refuse to participate in that.
+
+        The Czar takes himself.
+
+        Comfortably.
+
+        Please.
+      `,
+      pick: "The Car Bombs",
+      pickRosterID: 1
+    }
   }
+}
 };
