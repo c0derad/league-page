@@ -2766,5 +2766,390 @@ export const weeklyRecaps = {
       `
     }
   }
+},
+  8: {
+  intro: `
+    Week 8 is officially in the books.
+
+    Ryan is no longer undefeated.
+
+    After seven straight wins, Naberhood Sex Offender finally ran into the team
+    that had been charging toward the throne for the last month.
+
+    Jansen won.
+
+    Nigasaki started this season 0-3.
+
+    Nigasaki is now 5-3.
+
+    Five straight wins.
+
+    Ryan falls to 7-1, and for the first time all season there is a legitimate
+    argument about who the best team in this league actually is.
+
+    Josh created a separate problem.
+
+    Moore Oil Coming scored 157.46 and took High Man.
+
+    Again.
+
+    Josh's last three scores are 157.80, 153.92 and 157.46.
+
+    That is 469.18 points over three weeks.
+
+    An average of 156.39.
+
+    Completely normal.
+
+    JV and Charles produced the best game on the board, combining for 280.06
+    points before PeterPanthers escaped by 1.90.
+
+    T2 finally won another game and did so by watching Campus Legends collapse
+    to 79.14 and take Low Man.
+
+    Vigo's locked roster actually produced a respectable 114.48.
+
+    Josh beat it by 42.98 anyway.
+
+    Trevor moved to 6-2 while Rhodes and Pags fell to 1-7.
+
+    And then there was The Czar.
+
+    Sleeper projected The Car Bombs to beat Chaney by nearly twenty points.
+
+    The Oilers won by 1.52.
+
+    The easiest matchup on the board became the closest loss of the week.
+
+    Excellent.
+
+    The Czar went 3-3 on Week 8 picks and now sits at 26-16 on the season.
+
+    Judgment has been rendered.
+  `,
+
+  matchups: {
+    1: {
+      headline: "Charles Scores 139 and Still Gets Sent Home",
+      recap: `
+        This was the best fantasy game of Week 8.
+
+        PeterPanthers scored 140.98.
+
+        CousinLover scored 139.08.
+
+        JV won by 1.90.
+
+        Charles had every reason to believe this should have been enough.
+
+        Tee Higgins went completely insane, catching 10 passes for 155 yards and
+        two touchdowns on his way to 37.5 points. Kirk Cousins added 28.18 with
+        three passing touchdowns and another score on the ground. Tyler Bass
+        somehow contributed another 16.
+
+        Charles scored 139 points.
+
+        And lost.
+
+        JV simply had answers everywhere.
+
+        D'Andre Swift scored 27.9 behind three rushing touchdowns. Jahmyr Gibbs
+        ran for 153 yards and added 24.8. Pittsburgh's defense scored 21.
+
+        That gave PeterPanthers enough to survive despite CousinLover producing
+        one of the strongest losing scores we have seen all season.
+
+        The Czar took Charles because JV entered the week with legitimate depth
+        concerns.
+
+        Wrong.
+
+        JV moves to 6-2 and continues to prove that even when the roster gets
+        uncomfortable, the top-end talent can carry it.
+
+        Charles falls back to 4-4.
+
+        There are significantly worse ways to lose than scoring 139.
+
+        That probably does not make it feel better.
+      `
+    },
+
+    2: {
+      headline: "Campus Legends Has Been Referred to the Authorities",
+      recap: `
+        Last week Campus Legends scored 81.40 and somehow won.
+
+        This week JQ decided to see how far that strategy could be pushed.
+
+        Answer:
+
+        Not this far.
+
+        Campus scored 79.14.
+
+        Low Man.
+
+        Patrick Mahomes produced 25.44, Garrett Wilson added 14.3 and Travis Kelce
+        scored 11.7.
+
+        After that, the lineup effectively ceased operations.
+
+        T2 did not need anything spectacular to capitalize, but Big frydown actually
+        put together a respectable 116.90.
+
+        Bucky Irving led the way with 21 points after rushing for 170 yards.
+        Dak Prescott added 19.8 and Tucker Kraft scored 17.3.
+
+        Final margin:
+
+        37.76.
+
+        The Czar backed Campus on the theory that JQ had too much roster quality
+        to produce another disaster.
+
+        That theory lasted approximately one week too long.
+
+        Campus falls to 4-4.
+
+        Big frydown improves to 2-6.
+
+        T2 is still very much in the lower reaches of the league standings, but
+        there is something extremely satisfying about watching a 1-6 team beat
+        somebody by nearly forty.
+
+        Especially when the other team deserves it.
+      `
+    },
+
+    3: {
+      headline: "THE STREAK IS OVER",
+      recap: `
+        There it is.
+
+        Seven games.
+
+        Seven Ryan wins.
+
+        Then Jansen arrived.
+
+        Nigasaki beat Naberhood Sex Offender 122.80 to 97.00 and ended the league's
+        final undefeated season.
+
+        This was not some fluky one-point escape either.
+
+        Jansen beat Ryan by 25.80.
+
+        Puka Nacua led the way with 25 points. Harold Fannin Jr., picked up after
+        Charles released him, immediately rewarded the move with 23.4. Braelon Allen
+        added 23.3 after rushing for 147 yards.
+
+        Jansen also left 39.48 points on the bench.
+
+        Most in the league.
+
+        So somehow the team that just knocked off 7-0 Ryan still had considerably
+        more available.
+
+        Naberhood never really got going. Michael Wilson scored 26.8 and Trevor
+        Lawrence added 19.4, but the usual depth behind Ryan's top performers simply
+        did not materialize.
+
+        Ryan scored 97.
+
+        His first score below 115 all season.
+
+        His first loss.
+
+        The Czar called this one.
+
+        Nigasaki started 0-3.
+
+        Since then:
+
+        Five games.
+
+        Five wins.
+
+        Jansen is now 5-3 and has officially completed the journey from early-season
+        disaster to legitimate championship threat.
+
+        Ryan remains 7-1.
+
+        He is still one of the best teams in the league.
+
+        But the throne is no longer uncontested.
+      `
+    },
+
+    4: {
+      headline: "Josh Has Apparently Removed the Salary Cap",
+      recap: `
+        We need to discuss what Josh is doing.
+
+        Week 6:
+
+        157.80.
+
+        Week 7:
+
+        153.92.
+
+        Week 8:
+
+        157.46.
+
+        Moore Oil Coming has scored 469.18 points over the last three weeks.
+
+        That is an average of 156.39.
+
+        Josh took High Man again and delivered the largest ass beating of Week 8,
+        beating Madison beers Box 157.46 to 114.48.
+
+        Bhayshul Tuten led the attack with 29.9. Tony Pollard scored 28.7. Josh
+        Allen added 27.56.
+
+        Three players.
+
+        86.16 points.
+
+        Vigo's locked roster actually performed much better than expected.
+
+        Jacksonville's defense scored 20, Jameson Williams added 17 and Chase Brown
+        scored 16.1. A total of 114.48 would have been competitive in several other
+        matchups.
+
+        Not this one.
+
+        Madison Beer could not save him.
+
+        The Czar took Josh, which was approximately the least courageous judgment
+        rendered all week.
+
+        Moore Oil Coming moves to 6-2.
+
+        Vigo falls to 2-6.
+
+        At this point Josh is not merely hot.
+
+        He is committing acts of statistical violence.
+      `
+    },
+
+    5: {
+      headline: "Trevor Keeps Winning and Nobody Is Allowed to Be Surprised Anymore",
+      recap: `
+        Show Me Your TDs is 6-2.
+
+        We should probably stop treating that as background information.
+
+        Trevor beat JVentureSexOffender 126.82 to 115.28 and once again produced
+        exactly the kind of balanced lineup that has defined his season.
+
+        Chuba Hubbard led the team with 24.9. Jordan Love scored 22.52. Luther
+        Burden added 18.6.
+
+        No forty-point explosion.
+
+        No miracle.
+
+        Just enough good players doing enough good things.
+
+        Rhodes and Pags were competitive again.
+
+        Brock Bowers scored 28.2, Rashee Rice added 18.3 and Wan'Dale Robinson
+        contributed 15.7.
+
+        But "competitive again" is beginning to sound like the official slogan
+        of a 1-7 football team.
+
+        The roster continues to look better than the record.
+
+        The record continues to not care.
+
+        The Czar took Trevor because seven weeks of evidence had earned more trust
+        than the theoretical upside on the other side.
+
+        Correct.
+
+        Show Me Your TDs moves to 6-2 and remains quietly attached to the league's
+        top tier.
+
+        JVentureSexOffender falls to 1-7.
+
+        At some point the underlying talent has to produce wins.
+
+        We have now reached Week 8.
+
+        "At some point" is running out of runway.
+      `
+    },
+
+    6: {
+      headline: "The Czar Has Been Humiliated by Chaney",
+      recap: `
+        I would like to withdraw several statements from the Week 8 preview.
+
+        Specifically the ones involving words like "comfortably."
+
+        The Car Bombs were projected to beat The Oilers by nearly twenty points.
+
+        Final score:
+
+        The Oilers 116.08.
+
+        The Car Bombs 114.56.
+
+        Chaney wins by 1.52.
+
+        Closest game of the week.
+
+        Excellent.
+
+        The Car Bombs did not even play badly.
+
+        Ja'Marr Chase scored 31.1. Drake Maye added 22.46. Matthew Golden scored
+        20.9.
+
+        Three starters combined for 74.46 points.
+
+        Somehow that was not enough.
+
+        Joe Burrow decided this was the week to throw for 462 yards and five
+        touchdowns, add another score on the ground and finish with 42.48 fantasy
+        points.
+
+        Dalton Kincaid added 18.6.
+
+        Tampa Bay's defense scored 18.
+
+        Chaney entered Week 8 at 1-6.
+
+        Naturally, that was the week the offense finally worked.
+
+        The Czar picked himself.
+
+        Wrong.
+
+        The Oilers improve to 2-6.
+
+        The Car Bombs fall to 3-5.
+
+        This is particularly irritating because The Car Bombs left only 9.7 points
+        on the bench.
+
+        There is no management excuse.
+
+        There is no "wrong lineup" excuse.
+
+        Joe Burrow simply chose violence.
+
+        The official position of the administration is that this result will not
+        be discussed further.
+
+        Unfortunately, I suspect the league may have other plans.
+      `
+    }
+  }
 }
 };
