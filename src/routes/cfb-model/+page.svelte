@@ -56,9 +56,14 @@
     const pastKickoff = (value) =>
         Boolean(value) && new Date(value).getTime() <= Date.now();
 
+    const changeYear = (event) => {
+        const season = Number(event.currentTarget.value);
+        window.location.href = '/cfb-model?season=' + season;
+    };
+
     const changeWeek = (event) => {
-        const [season, week] = event.currentTarget.value.split('-');
-        window.location.href = '/cfb-model?season=' + season + '&week=' + week;
+        const week = Number(event.currentTarget.value);
+        window.location.href = '/cfb-model?season=' + board.season + '&week=' + week;
     };
 </script>
 
@@ -85,20 +90,28 @@
     {:else}
         <div class="boardMeta">
             <div>
-                <div class="eyebrow">MODEL SNAPSHOT</div>
+                <div class="eyebrow">HISTORICAL MODEL ARCHIVE</div>
                 <h2>Week {board.week} <span>· {board.season}</span></h2>
-                <p>{board.snapshotLabel || 'Snapshot time not provided'}</p>
+                <p>Source: {board.sourceFile}. Scores and ATS results appear where available; results are not a record of placed bets.</p>
             </div>
-            <label class="weekPicker">
-                View week
-                <select on:change={changeWeek} value={String(board.season) + '-' + String(board.week)}>
-                    {#each data.weeks as item}
-                        <option value={String(item.season) + '-' + String(item.week)}>
-                            {item.season} · Week {item.week}
-                        </option>
-                    {/each}
-                </select>
-            </label>
+            <div class="slicers">
+                <label class="weekPicker">
+                    Year
+                    <select aria-label="Select season" on:change={changeYear} value={String(board.season)}>
+                        {#each data.availableYears as item}
+                            <option value={item.season}>{item.season}</option>
+                        {/each}
+                    </select>
+                </label>
+                <label class="weekPicker">
+                    Week
+                    <select aria-label="Select week" on:change={changeWeek} value={String(board.week)}>
+                        {#each data.availableWeeks as week}
+                            <option value={week}>Week {week}</option>
+                        {/each}
+                    </select>
+                </label>
+            </div>
         </div>
 
         <div class="overview">
@@ -110,8 +123,9 @@
 
         <aside class="disclaimer">
             <strong>Model signals, not official wagers.</strong>
-            {board.referenceLineNotice}
+            {data.referenceLineNotice}
             Confidence tiers describe rule alignment, not calibrated probabilities of covering.
+            Historical weeks retain their original season/week labels; some earlier Week 1 rows include postseason dates in the source.
             Games that have kicked off are historical views only.
         </aside>
 
@@ -169,6 +183,15 @@
                                 </div>
                             </div>
 
+                            {#if game.actualAway != null && game.actualHome != null}
+                                <div class="actualBox">
+                                    <div class="actualTitle">FINAL: {game.away} {game.actualAway} — {game.home} {game.actualHome}</div>
+                                    <span class="resultLabel" class:win={game.v3Result === 'WIN'} class:loss={game.v3Result === 'LOSS'}>
+                                        V3 {game.v3Result || 'UNGRADED'}
+                                    </span>
+                                </div>
+                            {/if}
+
                             <div class="pickStrip">
                                 <div>
                                     <small>V3 MODEL SIDE</small>
@@ -202,6 +225,10 @@
                                 {#if game.strategyTags && game.strategyTags.length}
                                     <p class="tagsDetail">Strategy tags: {game.strategyTags.join(' · ')}</p>
                                 {/if}
+                                <div class="detailsRow"><span>Source type</span><strong>{game.sourceType || 'Unknown'}</strong></div>
+                                {#if game.closingHomeMargin != null}
+                                    <div class="detailsRow"><span>Closing home margin</span><strong>{formatNumber(game.closingHomeMargin)} pts</strong></div>
+                                {/if}
                                 <p class="tagsDetail">Model reference lines can differ from bookable odds. A model BET signal is not an official published Czar selection.</p>
                             </details>
                         </article>
@@ -225,6 +252,7 @@
     .boardMeta h2 { margin: .15rem 0; font-size: 1.6rem; }
     .boardMeta h2 span { font-weight: 400; opacity: .6; }
     .boardMeta p { font-size: .8rem; opacity: .7; margin: .3rem 0 0; max-width: 650px; }
+    .slicers { display: flex; gap: .7rem; align-items: end; flex-wrap: wrap; }
     .weekPicker { display: flex; flex-direction: column; gap: .35rem; font-size: .75rem; font-weight: 700; flex-shrink: 0; }
     select, input { padding: .7rem .85rem; font: inherit; border: 1px solid var(--ccc); border-radius: .55rem; background: var(--fff); color: var(--000); }
     .overview { display: grid; grid-template-columns: repeat(4,1fr); gap: .8rem; margin-bottom: 1rem; }
@@ -260,6 +288,11 @@
     .scoreTeams div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
     .scoreTeams span { font-size: .84rem; font-weight: 700; }
     .scoreTeams strong { font-size: 1.35rem; }
+    .actualBox { margin-top: .7rem; padding: .7rem .8rem; border: 1px solid var(--ccc); border-radius: .6rem; display: flex; align-items: center; justify-content: space-between; gap: .6rem; }
+    .actualTitle { font-size: .78rem; font-weight: 750; }
+    .resultLabel { white-space: nowrap; font-size: .64rem; font-weight: 800; padding: .25rem .45rem; border-radius: .3rem; border: 1px solid var(--ccc); }
+    .resultLabel.win { color: #16794a; border-color: #16794a; }
+    .resultLabel.loss { color: #a53b3b; border-color: #a53b3b; }
     .pickStrip { display: flex; justify-content: space-between; align-items: center; gap: .75rem; margin: 1rem 0; }
     .pickStrip strong { display: block; font-size: 1.12rem; margin-top: .2rem; }
     .tier { text-align: right; }
@@ -280,6 +313,9 @@
         .gameGrid { grid-template-columns: 1fr; }
         .overview { grid-template-columns: repeat(2,1fr); }
         .boardMeta { align-items: start; flex-direction: column; }
+        .slicers { width: 100%; }
+        .slicers .weekPicker { flex: 1; min-width: 110px; }
+        .slicers select { width: 100%; }
         .toolbar, .controls { width: 100%; }
         .controls > label, .controls input, .controls select { flex: 1; min-width: 0; width: 100%; }
     }
