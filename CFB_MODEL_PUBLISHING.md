@@ -45,6 +45,19 @@ Review the generated JSON files and `static/cfb-model-data/index.json`; commit a
 - BET/WATCH/PASS model screening tiers, sortable/searchable responsive game board.
 - Pre-kickoff vs. past-kickoff status, Central Time display.
 
+## Performance summaries
+
+The Model Performance section shows **Week**, **selected Season**, and **Lifetime** W–L–P cards, plus week-by-week and year-by-year records. A strategy selector updates all three scopes together:
+
+- **V3 production (default)**: v3_production is true.
+- **Dashboard BET tier**: the site\'s current A/B rule, applied retrospectively; not your actual published picks.
+- **V3/raw 0.75–1.00**: V3 edge 0.75 to <1.00 with raw pick agreement.
+- **All V3 model sides**: every game with a V3 pick.
+
+For every scope, only `v3_result` values WIN, LOSS and PUSH are graded. The dashboard counts other entries as ungraded and **excludes** them from win rate and W–L–P. Win rate = wins / (wins + losses), ignoring pushes. No invented odds or return-on-investment figures are shown.
+
+The lifetime denominator covers all available seasons **2022–2026**, but the data is not uniform: 2022 starts at Week 9; 2023–2025 use reconstructed historical grades, whereas 2026 has graded games mixed with current live predictions. The dashboard shows these limitations and **does not equate model results with actual placed wagers**.
+
 ## Rating rules (v1, not win probabilities)
 
 - **Tier A / BET**: V3 production, whole/half-point reference spread, V3/raw agreement in the 0.75–1.00 band, and calibrated agreement.
