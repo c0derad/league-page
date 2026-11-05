@@ -1,25 +1,23 @@
 #!/usr/bin/env python3
-"""Publish one frozen CFB model CSV to the fantasy site's static JSON board.
+"""Export model_history_all.csv or current_week_2026_wN.csv into season JSON archives.
 
-No third-party Python packages are required.
-Run this from the league-page repository (see CFB_MODEL_PUBLISHING.md).
-Do not publish API tokens or private model inputs.
+No dependencies beyond Python 3. Source model predictions are not recalculated.
 """
 import argparse
 import csv
 import json
 import math
 import re
+from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-
-SCORE_RE = re.compile(r"^(.*?)\s+(\d+(?:\.\d+)?)\s+@\s+(.*?)\s+(\d+(?:\.\d+)?)$")
-SPREAD_RE = re.compile(r"([+-]\d+(?:\.\d+)?)$")
-REFERENCE_NOTICE = (
-    "Spreads are model reference lines, NOT verified currently available sportsbook odds. "
-    "BET indicates a model filter, not a placed wager. "
-    "Quarter-point lines are WATCH pending price verification."
+SPREAD = re.compile(r"([+-]\d+(?:\.\d+)?)$")
+SCORE = re.compile(r"^(.*?)\s+(\d+(?:\.\d+)?)\s+@\s+(.*?)\s+(\d+(?:\.\d+)?)$")
+NOTICE = (
+    "Model lines are reference spreads, not verified current sportsbook prices. "
+    "BET/WATCH/PASS indicates a model screening rule, not an official published wager "
+    "or a calibrated cover probability. Verify quarter-point reference lines."
 )
 
 
@@ -31,59 +29,59 @@ def number(value):
         return None
 
 
-def yes(value):
-    return str(value).strip().lower() in {"1", "true", "yes"}
+def flag(value):
+    return str(value or "").strip().lower() in ("true", "yes", "1")
 
 
-def pick_team(pick):
-    return re.sub(r"\s+[+-]\d+(?:\.\d+)?\s*$", "", pick or "").strip()
+def picked_team(value):
+    return re.sub(r"\s+[+-]\d+(?:\.\d+)?\s*$", "", value or "").strip()
 
 
-def pick_spread(pick):
-    match = SPREAD_RE.search(pick or "")
-    return float(match.group(1)) if match else None
+def picked_spread(value):
+    m = SPREAD.search(value or "")
+    return float(m.group(1)) if m else None
 
 
-def kickoff_utc(value):
-    if not value:
-        return None
+def timestamp(value):
     try:
-        timestamp = datetime.fromisoformat(value.strip().replace(" ", "T"))
-        if timestamp.tzinfo is None:
-            raise ValueError("Kickoff is missing a timezone")
-        return timestamp.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
-    except ValueError:
+        t = datetime.fromisoformat(str(value).strip().replace(" ", "T").replace("Z", "+00:00"))
+        if t.tzinfo is None:
+            raise ValueError("Missing timezone")
+        return t.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+    except (ValueError, TypeError):
         return None
 
 
-def game_from_row(row):
-    matchup = row.get("matchup", "").strip()
-    parts = matchup.split(" @ ")
-    if len(parts) != 2:
-        raise ValueError(f"Cannot parse matchup: {matchup!r}")
+def key(game):
+    return (game["season"], game["week"], re.sub(r"[^a-z0-9]+", "", game["matchup"].lower()))
 
-    raw = row.get("raw_pick", "")
-    cal = row.get("cal_pick", "")
-    v3 = row.get("v3_pick", "")
-    raw_agree = pick_team(raw) == pick_team(v3) and bool(v3)
-    cal_agree = pick_team(cal) == pick_team(v3) and bool(v3)
+
+def convert(row):
+    season, week = int(row["season"]), int(row["week"])
+    matchup = row["matchup"].strip()
+    teams = matchup.split(" @ ")
+    if len(teams) != 2:
+        raise ValueError(f"Unexpected matchup: {matchup}")
+    score = SCORE.match(row.get("projected_score") or "")
+
+    raw, cal, v3 = (row.get(c) or "").strip() for c in ("raw_pick", "cal_pick", "v3_pick")
+    raw_agree = bool(raw and v3) and picked_team(raw) == picked_team(v3)
+    cal_agree = bool(cal and v3) and picked_team(cal) == picked_team(v3)
+    prod = flag(row.get("v3_production"))
     edge = number(row.get("v3_edge"))
-    spread = pick_spread(v3)
-    standard_line = spread is not None and abs(spread * 2 - round(spread * 2)) < 1e-8
-    production = yes(row.get("v3_production"))
-    sweet = edge is not None and .75 <= edge < 1 and raw_agree
+    selected_line = picked_spread(v3)
+    standard = selected_line is not None and abs(selected_line * 2 - round(selected_line * 2)) < 1e-8
+    sweet = raw_agree and edge is not None and .75 <= edge < 1
+    h3, s1 = flag(row.get("H3")), flag(row.get("S1"))
 
-    if production and standard_line and (raw_agree or cal_agree):
-        status = "BET"
-        tier = "A" if sweet and raw_agree and cal_agree else "B"
-    elif production or sweet or (
-        edge is not None and edge >= .5 and (raw_agree or cal_agree)
-    ) or yes(row.get("H3")) or yes(row.get("S1")):
+    if prod and standard and (raw_agree or cal_agree):
+        status, tier = "BET", ("A" if sweet and cal_agree else "B")
+    elif prod or sweet or h3 or s1 or (edge is not None and edge >= .5 and (raw_agree or cal_agree)):
         status, tier = "WATCH", "C"
     else:
         status, tier = "PASS", "D"
 
-    reason = "V3 production qualifier" if production else "Not a V3 production qualifier"
+    reason = "V3 production qualifier" if prod else "Not V3 production"
     if sweet:
         reason += "; V3/raw 0.75–1.00 filter"
     if raw_agree and cal_agree:
@@ -94,105 +92,101 @@ def game_from_row(row):
         reason += "; calibrated agrees"
     else:
         reason += "; fundamentals oppose"
-    if not standard_line:
-        reason += "; quarter-point reference line — verify an available price"
+    if not standard:
+        reason += "; nonstandard reference spread—verify bookable line"
 
-    projected_score = SCORE_RE.match(row.get("projected_score", "").strip())
-    slug = re.sub(r"[^a-z0-9]+", "-", matchup.lower()).strip("-")
+    game_id = str(row.get("game_id") or "").strip()
+    if game_id.endswith(".0") and game_id[:-2].isdigit():
+        game_id = game_id[:-2]
+    if not game_id:
+        game_id = re.sub(r"[^a-z0-9]+", "-", matchup.lower()).strip("-")
+    v3_result = (row.get("v3_result") or "").strip()
+    if v3_result not in ("WIN", "LOSS", "PUSH"):
+        v3_result = None
 
-    return {
-        "id": f"{row['season']}-w{row['week']}-{slug}",
-        "matchup": matchup,
-        "away": parts[0],
-        "home": parts[1],
-        "kickoffUtc": kickoff_utc(row.get("start_date")),
-        "projectedAway": float(projected_score.group(2)) if projected_score else None,
-        "projectedHome": float(projected_score.group(4)) if projected_score else None,
-        "projectedTotal": number(row.get("projected_total")),
-        "v3Pick": v3,
-        "v3Edge": edge,
-        "v3Production": production,
-        "rawPick": raw,
-        "rawEdge": number(row.get("raw_edge")),
-        "calPick": cal,
-        "calEdge": number(row.get("cal_edge")),
-        "rawAgree": raw_agree,
-        "calAgree": cal_agree,
-        "H3": yes(row.get("H3")),
-        "S1": yes(row.get("S1")),
-        "v6Qualified": yes(row.get("V6_QUALIFIED")),
-        "strategyTags": [
-            item for item in row.get("robust_strategy_tags", "").split(";") if item
-        ],
-        "status": status,
-        "tier": tier,
-        "reason": reason,
-        "referenceLineOnly": not standard_line
-    }
+    projected_away = number(row.get("projected_away_points"))
+    projected_home = number(row.get("projected_home_points"))
+    if projected_away is None and score:
+        projected_away = float(score.group(2))
+    if projected_home is None and score:
+        projected_home = float(score.group(4))
+
+    return dict(
+        id=f"{season}-{week}-{game_id}", season=season, week=week,
+        matchup=matchup, away=row.get("away_team") or teams[0],
+        home=row.get("home_team") or teams[1],
+        kickoffUtc=timestamp(row.get("start_date")),
+        sourceType=row.get("source_type") or "CURRENT_LIVE",
+        projectedAway=projected_away, projectedHome=projected_home,
+        projectedTotal=number(row.get("projected_total")),
+        v3Pick=v3, v3Edge=edge, v3Production=prod,
+        rawPick=raw, rawEdge=number(row.get("raw_edge")),
+        calPick=cal, calEdge=number(row.get("cal_edge")),
+        rawAgree=raw_agree, calAgree=cal_agree,
+        H3=h3, S1=s1, v6Qualified=flag(row.get("V6_QUALIFIED")),
+        strategyTags=[x for x in (row.get("robust_strategy_tags") or "").split(";") if x],
+        status=status, tier=tier, reason=reason, referenceLineOnly=not standard,
+        actualAway=number(row.get("actual_away_points")),
+        actualHome=number(row.get("actual_home_points")),
+        v3Result=v3_result, closingHomeMargin=number(row.get("closing_home_margin"))
+    )
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Export consolidated CFB model CSV for league-page.")
-    parser.add_argument("--input", required=True, type=Path, help="current_week_2026_wN.csv")
-    parser.add_argument("--output-dir", type=Path, default=Path("static/cfb-model"))
-    parser.add_argument(
-        "--snapshot-label",
-        default="Model snapshot time not provided. Verify current prices before betting.",
-        help="Human-readable date/time when original model predictions were frozen"
-    )
-    args = parser.parse_args()
+    p = argparse.ArgumentParser()
+    p.add_argument("--input", type=Path, required=True)
+    p.add_argument("--output-dir", type=Path, default=Path("static/cfb-model"))
+    p.add_argument("--replace-history", action="store_true",
+                   help="Replace the full archive instead of incrementally updating games")
+    args = p.parse_args()
+    with args.input.open(newline="", encoding="utf-8-sig") as f:
+        incoming = [convert(row) for row in csv.DictReader(f)]
+    if not incoming:
+        raise SystemExit("CSV is empty")
 
-    with args.input.open(encoding="utf-8-sig", newline="") as handle:
-        rows = list(csv.DictReader(handle))
-    if not rows:
-        raise SystemExit("Input CSV is empty.")
+    archive = defaultdict(dict)
+    if not args.replace_history:
+        index = args.output_dir / "index.json"
+        if index.exists():
+            manifest = json.loads(index.read_text(encoding="utf-8"))
+            for year in manifest.get("years", []):
+                year_file = args.output_dir / year["file"]
+                if year_file.exists():
+                    content = json.loads(year_file.read_text(encoding="utf-8"))
+                    for game in content.get("games", []):
+                        archive[int(year["season"])][key(game)] = game
 
-    season, week = int(rows[0]["season"]), int(rows[0]["week"])
-    for row in rows:
-        if int(row["season"]) != season or int(row["week"]) != week:
-            raise SystemExit("Input contains multiple seasons or weeks; refusing to publish.")
-
-    games = [game_from_row(row) for row in rows]
-    if len({game["id"] for game in games}) != len(games):
-        raise SystemExit("Duplicate matchup identifiers; inspect input before publishing.")
+    for game in incoming:
+        k = key(game)
+        previous = archive[game["season"]].get(k)
+        # Never erase a known final score by replacing it with an ungraded live snapshot.
+        if previous and previous.get("actualHome") is not None and game["actualHome"] is None:
+            continue
+        if previous:
+            game["id"] = previous["id"]
+        archive[game["season"]][k] = game
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    filename = f"{season}-w{week}.json"
-    payload = {
-        "schemaVersion": 1,
-        "season": season,
-        "week": week,
-        "sourceFile": args.input.name,
-        "snapshotLabel": args.snapshot_label,
-        "referenceLineNotice": REFERENCE_NOTICE,
-        "games": games
-    }
+    years = []
+    for year in sorted(archive):
+        games = sorted(archive[year].values(),
+                       key=lambda x: (x["week"], x.get("kickoffUtc") or "", x["id"]))
+        filename = f"{year}.json"
+        (args.output_dir / filename).write_text(
+            json.dumps(dict(schemaVersion=2, season=year, source="consolidated model history", games=games),
+                       ensure_ascii=False, separators=(",", ":")) + "\n",
+            encoding="utf-8"
+        )
+        weeks = sorted({g["week"] for g in games})
+        years.append(dict(season=year, file=filename, weeks=weeks, gameCount=len(games)))
+        print(f"{year}: {len(games)} games, available weeks: {weeks}")
 
-    (args.output_dir / filename).write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    index = dict(schemaVersion=2, sourceFile=args.input.name,
+                 referenceLineNotice=NOTICE, years=years)
+    (args.output_dir / "index.json").write_text(
+        json.dumps(index, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
-
-    index_path = args.output_dir / "index.json"
-    if index_path.exists():
-        manifest = json.loads(index_path.read_text(encoding="utf-8"))
-    else:
-        manifest = {"schemaVersion": 1, "weeks": []}
-
-    entries = [
-        item for item in manifest.get("weeks", [])
-        if not (int(item["season"]) == season and int(item["week"]) == week)
-    ]
-    entries.append({"season": season, "week": week, "file": filename})
-    manifest["weeks"] = sorted(entries, key=lambda item: (item["season"], item["week"]))
-    index_path.write_text(
-        json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
-
-    counts = {name: sum(game["status"] == name for game in games) for name in ("BET", "WATCH", "PASS")}
-    print(f"Published {len(games)} games for {season} Week {week}: {counts}")
-    print(f"Snapshot: {args.snapshot_label}")
-    print(f"Files: {args.output_dir / filename}; {index_path}")
-    print("Commit the JSON files and push to publish via Vercel.")
+    print("Export complete. Commit the updated JSON archive files and manifest.")
 
 
 if __name__ == "__main__":
