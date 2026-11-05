@@ -13,6 +13,12 @@ export const tabs = [
     dest: '/best-bets',
     key: 'best_bets'
     },
+    {
+        icon: 'analytics',
+        label: 'CFB Model',
+        dest: '/cfb-model',
+        key: 'cfb_model'
+    },
     
     {
         icon: 'sports',
