@@ -1,5 +1,5 @@
 export async function load({ fetch, url }) {
-    const response = await fetch('/cfb-model/index.json');
+    const response = await fetch('/cfb-model-data/index.json');
     if (!response.ok) {
         throw new Error('The CFB model year/week index is unavailable.');
     }
@@ -30,7 +30,7 @@ export async function load({ fetch, url }) {
         ? requestedWeek
         : availableWeeks[availableWeeks.length - 1];
 
-    const yearResponse = await fetch('/cfb-model/' + year.file);
+    const yearResponse = await fetch('/cfb-model-data/' + year.file);
     if (!yearResponse.ok) {
         throw new Error('CFB model archive unavailable for ' + year.season + '.');
     }
