@@ -1,45 +1,57 @@
-# Czar's CFB Model Board
+# The Czar's CFB Model — Season Archive
 
-The model dashboard lives at `/cfb-model`. It is **separate from** `/best-bets`, which remains the official published Czar card and record.
+The dashboard lives at `/cfb-model` and is separate from the existing official published `/best-bets` card.
 
-## How to publish a new model week
+## Data source
 
-1. In the `CFB_Model` project, run the existing live model and consolidated board scripts. Verify that the CSV contains the **actual pregame snapshot** you want publicly displayed.
-2. From a clone of this `league-page` repository, run the exporter with Python 3 (no external Python dependencies):
+The initial database is the supplied `model_history_all.csv`:
 
-   ```powershell
-   python scripts/export_cfb_model_board.py --input "C:\Users\ConradBailey\Downloads\CFB_Model\outputs\consolidated_spread_model\current_week_2026_w11.csv" --snapshot-label "2026-11-12 14:00 CST"
-   ```
+- **3,214 games, seasons 2022–2026**
+- All available weeks are included in the **Year** and **Week** slicers
+- The 2026 source has Weeks 1–4 and 6–10; there is no 2026 Week 5 in this export
+- Historical weeks show pregame projections, recorded V3 selections and results, and final scores when supplied
+- The source has **some postseason-dated games under historical Week 1**; the site preserves the file's labels rather than silently changing them
+- In 2026 Week 10, five games have final scores and the others are still ungraded in this snapshot
 
-3. Review `static/cfb-model/2026-w11.json` and `static/cfb-model/index.json`, then commit and push these two generated JSON files. Vercel deploys the updated board in the normal site deployment process.
+Each year is a static JSON file in `static/cfb-model/YYYY.json`. The `index.json` manifest controls which years/weeks appear. A visitor loads only one year's archive and the selected week's games.
 
-The exporter **does not access the model API** or retrieve live lines; it packages the CSV you supply. It replaces the JSON for that week when rerun, so retain the original frozen predictions separately and distinguish refreshed snapshots from the original pregame release.
+## Export or refresh from VS Code
 
-## Dashboard
+Clone or pull the latest `league-page` repository, then run these commands from its root directory. Python 3 is the only requirement.
 
-- Game, away/home projected points, and model selected spread.
-- Predicted V3 closing-line movement plus raw and calibrated model edges.
-- S1, H3, V6 and production indicators; expanded rationale and strategy tags.
-- BET/WATCH/PASS filter, search, kickoff sort, week selector and responsive layout.
-- Kickoff shown in America/Chicago. Past kickoff is flagged as historical.
+**Rebuild all history using a full model history CSV:**
 
-## Deterministic decision tiers (v1)
+```powershell
+python scripts/export_cfb_model_board.py --input "C:\Users\ConradBailey\Downloads\CFB_Model\outputs\week10_review\consolidated\model_history_all.csv" --replace-history
+```
 
-These **are not calibrated cover probabilities** and they do not automatically publish an official best bet.
+Use the actual full-history CSV path on your computer; that example path may differ from yours. This writes all year JSON files and the year/week index.
 
-- **A / BET:** Production V3; model reference spread is a whole/half-point; V3 edge is 0.75 to <1.00; raw and calibrated models both agree with V3.
-- **B / BET:** Production V3; whole/half-point model reference spread; either raw or calibrated model agrees with V3.
-- **C / WATCH:** Nonstandard quarter-point reference spread with production, V3/raw 0.75–1.00 agreement, H3, S1, or a V3 edge >=0.50 plus raw/cal agreement.
-- **D / PASS:** Everything else.
+**Incrementally publish a new weekly board without deleting older seasons:**
 
-**Important:** A quarter-point reference such as `+2.25` is *not* equivalent to a verified market price. Production-qualified quarter-point references are marked WATCH until someone verifies an actual bookable spread. Grades, official public records, model probabilities, and automatic bets are **not** implied by the dashboard classifications. Model tags are correlated and should not be counted as independent confirmations.
+```powershell
+python scripts/export_cfb_model_board.py --input "C:\Users\ConradBailey\Downloads\CFB_Model\outputs\consolidated_spread_model\current_week_2026_w11.csv"
+```
 
-## Current initial snapshot
+The exporter merges weekly games by year/week/matchup; missing `game_id` columns are supported. It retains an existing graded game's final score rather than erasing it with an ungraded refresh.
 
-The included `2026-w10.json` is generated from the archived Week 10 CSV provided during development, which contained 62 games. It is a historical/model-data demonstration and is **not** represented as a real-time November 5 snapshot. To publish the latest V3 refresh, use the exporter with your newest CSV.
+Review the generated JSON files and `static/cfb-model/index.json`; commit and push the changes to your GitHub repository. Vercel then follows your normal deployment workflow. There is no automatic live refresh or live odds integration yet.
 
-## Maintenance
+## Dashboard functionality
 
-Keep `static/cfb-model/index.json` in sync with new week JSON files (the exporter does this automatically). Retain `schemaVersion: 1` until updating the page loader and exporter together.
+- Separate **Year** and **Week** selectors.
+- Model projected score and, when provided, actual final score and V3 ATS result.
+- V3 selected spread and predicted CLV, raw and calibrated edges, H3/S1/V6 signals.
+- BET/WATCH/PASS model screening tiers, sortable/searchable responsive game board.
+- Pre-kickoff vs. past-kickoff status, Central Time display.
 
-No API keys or proprietary model implementation files should be committed to this public repository.
+## Rating rules (v1, not win probabilities)
+
+- **Tier A / BET**: V3 production, whole/half-point reference spread, V3/raw agreement in the 0.75–1.00 band, and calibrated agreement.
+- **Tier B / BET**: V3 production, whole/half-point reference spread and agreement from raw or calibrated.
+- **Tier C / WATCH**: other production qualifiers or partial alignment; includes nonstandard quarter-point reference spreads requiring line verification.
+- **Tier D / PASS**: no listed qualification.
+
+A `BET` label is a *model-screening signal*, not an official published selection or an actual wager. The source's V3 ATS results are model-side grades, not returns on your personal card. Historical simulations can involve post hoc reconstructions, and these confidence tiers are not calibrated probabilities.
+
+No model implementation files, API secrets, private credentials, or book account information are included in the public site.
