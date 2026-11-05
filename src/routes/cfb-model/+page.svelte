@@ -4,6 +4,17 @@
     let search = '';
     let statusFilter = 'ALL';
     let order = 'priority';
+    let performanceView = 'production';
+
+    $: stats = (data.performance || []).find(
+        (item) => item.id === performanceView
+    ) || (data.performance || [])[0];
+
+    const recordLabel = (record) =>
+        record ? [record.wins, record.losses, record.pushes].join('–') : '—';
+
+    const winPct = (record) =>
+        record && record.winPct != null ? record.winPct.toFixed(1) + '%' : '—';
 
     const tierRank = { A: 0, B: 1, C: 2, D: 3 };
 
@@ -128,6 +139,120 @@
             Historical weeks retain their original season/week labels; some earlier Week 1 rows include postseason dates in the source.
             Games that have kicked off are historical views only.
         </aside>
+
+        {#if stats}
+            <section class="performance" aria-label="Weekly, seasonal and lifetime V3 results">
+                <div class="performanceTitleRow">
+                    <div>
+                        <div class="eyebrow">TRACK RECORD</div>
+                        <h2>Model Performance</h2>
+                        <p>Win–loss–push records at the model's archived selected spreads.</p>
+                    </div>
+                    <label class="performancePicker">
+                        Strategy
+                        <select aria-label="Choose performance strategy" bind:value={performanceView}>
+                            {#each data.performance as strategy}
+                                <option value={strategy.id}>{strategy.label}</option>
+                            {/each}
+                        </select>
+                    </label>
+                </div>
+
+                <div class="performanceCards">
+                    <div class="performanceCard">
+                        <div class="recordLabel">WEEK {board.week} · {board.season}</div>
+                        <div class="performanceRecord">{recordLabel(stats.currentWeek)}</div>
+                        <div class="performanceDetail">
+                            {winPct(stats.currentWeek)} win rate
+                            · {stats.currentWeek.graded} graded
+                            {#if stats.currentWeek.ungraded > 0}
+                                · {stats.currentWeek.ungraded} ungraded
+                            {/if}
+                        </div>
+                    </div>
+                    <div class="performanceCard">
+                        <div class="recordLabel">{board.season} SEASON</div>
+                        <div class="performanceRecord">{recordLabel(stats.currentSeason)}</div>
+                        <div class="performanceDetail">
+                            {winPct(stats.currentSeason)} win rate
+                            · {stats.currentSeason.graded} graded
+                            {#if stats.currentSeason.ungraded > 0}
+                                · {stats.currentSeason.ungraded} ungraded
+                            {/if}
+                        </div>
+                    </div>
+                    <div class="performanceCard">
+                        <div class="recordLabel">LIFETIME · ARCHIVED</div>
+                        <div class="performanceRecord">{recordLabel(stats.lifetime)}</div>
+                        <div class="performanceDetail">
+                            {winPct(stats.lifetime)} win rate
+                            · {stats.lifetime.graded} graded
+                            {#if stats.lifetime.ungraded > 0}
+                                · {stats.lifetime.ungraded} ungraded
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="performanceTables">
+                    <div class="performanceTableWrap">
+                        <h3>{board.season} · By Week</h3>
+                        <table class="performanceTable">
+                            <thead>
+                                <tr><th>Week</th><th>W–L–P</th><th>Win %</th><th>Ungraded</th></tr>
+                            </thead>
+                            <tbody>
+                                {#each stats.weeks as row}
+                                    <tr class:highlightRecord={row.week === board.week}>
+                                        <td><a href={`/cfb-model?season=${board.season}&week=${row.week}`}>Week {row.week}</a></td>
+                                        <td>{recordLabel(row)}</td>
+                                        <td>{winPct(row)}</td>
+                                        <td>{row.ungraded || '—'}</td>
+                                    </tr>
+                                {/each}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="performanceTableWrap">
+                        <h3>By Season</h3>
+                        <table class="performanceTable">
+                            <thead>
+                                <tr><th>Year</th><th>W–L–P</th><th>Win %</th><th>Ungraded</th></tr>
+                            </thead>
+                            <tbody>
+                                {#each stats.seasons as row}
+                                    <tr class:highlightRecord={row.season === board.season}>
+                                        <td><a href={`/cfb-model?season=${row.season}`}>{row.season}</a></td>
+                                        <td>{recordLabel(row)}</td>
+                                        <td>{winPct(row)}</td>
+                                        <td>{row.ungraded || '—'}</td>
+                                    </tr>
+                                {/each}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Lifetime</th>
+                                    <th>{recordLabel(stats.lifetime)}</th>
+                                    <th>{winPct(stats.lifetime)}</th>
+                                    <th>{stats.lifetime.ungraded || '—'}</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <p class="performanceNote">
+                    <strong>{stats.label}:</strong> {stats.note}
+                    Only WIN, LOSS and PUSH grades count in the record;
+                    ungraded games are excluded until results are available.
+                    Win rate = wins / (wins + losses), excluding pushes.
+                    Historic 2022 covers only Weeks 9–15 in this file.
+                    2023–2025 use reconstructed historical grades,
+                    while 2026 includes graded and live records.
+                    These results are not the official published betting record.
+                </p>
+            </section>
+        {/if}
 
         <section aria-label="CFB model game board">
             <div class="toolbar">
@@ -263,6 +388,27 @@
     .watchMetric { border-left: 4px solid #bc8a2e; }
     .disclaimer { font-size: .8rem; line-height: 1.6; border: 1px solid var(--ccc); border-radius: .65rem; padding: .9rem 1rem; margin: 1rem 0 2rem; }
     .disclaimer strong { margin-right: .3rem; }
+    .performance { margin: 2.1rem 0 2.6rem; }
+    .performanceTitleRow { display: flex; justify-content: space-between; align-items: end; gap: 1.25rem; margin-bottom: 1rem; }
+    .performanceTitleRow h2 { font-size: 1.65rem; margin: .3rem 0; }
+    .performanceTitleRow p { margin: .25rem 0 0; font-size: .83rem; opacity: .7; }
+    .performancePicker { display: flex; flex-direction: column; gap: .35rem; font-size: .74rem; font-weight: 800; min-width: 220px; }
+    .performanceCards { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem; }
+    .performanceCard { border: 1px solid var(--ccc); border-radius: .85rem; padding: 1.05rem; }
+    .recordLabel { font-size: .7rem; letter-spacing: .06em; font-weight: 850; opacity: .65; }
+    .performanceRecord { font-size: clamp(1.4rem,3vw,2rem); line-height: 1.3; font-weight: 850; margin: .3rem 0; font-variant-numeric: tabular-nums; }
+    .performanceDetail { font-size: .74rem; opacity: .72; line-height: 1.45; }
+    .performanceTables { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    .performanceTableWrap { border: 1px solid var(--ccc); border-radius: .8rem; padding: 1rem; min-width: 0; overflow-x: auto; }
+    .performanceTableWrap h3 { font-size: 1rem; margin: .15rem 0 1rem; }
+    .performanceTable { width: 100%; border-collapse: collapse; text-align: right; font-size: .79rem; font-variant-numeric: tabular-nums; }
+    .performanceTable th, .performanceTable td { padding: .55rem .4rem; border-bottom: 1px solid var(--ccc); white-space: nowrap; }
+    .performanceTable th:first-child, .performanceTable td:first-child { text-align: left; }
+    .performanceTable th { font-size: .67rem; letter-spacing: .03em; opacity: .75; }
+    .performanceTable a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .performanceTable .highlightRecord { font-weight: 800; }
+    .performanceTable tfoot { font-weight: 850; }
+    .performanceNote { font-size: .75rem; line-height: 1.65; opacity: .75; margin: 1rem 0 0; }
     .toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .9rem; }
     .statusTabs { display: flex; gap: .35rem; flex-wrap: wrap; }
     .statusTabs button { background: var(--fff); color: var(--000); border: 1px solid var(--ccc); cursor: pointer; border-radius: .6rem; padding: .7rem .95rem; font-weight: 750; }
@@ -310,6 +456,9 @@
     .empty { padding: 4rem 1rem; text-align: center; border: 1px dashed var(--ccc); border-radius: .8rem; }
     .srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     @media (max-width: 770px) {
+        .performanceTitleRow { align-items: stretch; flex-direction: column; }
+        .performancePicker { width: 100%; }
+        .performanceTables { grid-template-columns: 1fr; }
         .gameGrid { grid-template-columns: 1fr; }
         .overview { grid-template-columns: repeat(2,1fr); }
         .boardMeta { align-items: start; flex-direction: column; }
@@ -318,6 +467,9 @@
         .slicers select { width: 100%; }
         .toolbar, .controls { width: 100%; }
         .controls > label, .controls input, .controls select { flex: 1; min-width: 0; width: 100%; }
+    }
+    @media (max-width: 540px) {
+        .performanceCards { grid-template-columns: 1fr; }
     }
     @media (max-width: 380px) {
         .edgeGrid { grid-template-columns: 1fr 1fr; }
