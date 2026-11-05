@@ -13,6 +13,87 @@ const archives = {
     2026: archive2026
 };
 
+const strategies = [
+    {
+        id: 'production',
+        label: 'V3 production',
+        note: 'Archived production-qualified V3 selections.',
+        qualifies: (game) => game.v3Production === true
+    },
+    {
+        id: 'bet',
+        label: 'Dashboard BET tier',
+        note: 'Current dashboard A/B screening rules, applied retrospectively.',
+        qualifies: (game) => game.status === 'BET'
+    },
+    {
+        id: 'sweet',
+        label: 'V3/raw 0.75–1.00',
+        note: 'V3 predicted CLV 0.75–1.00, with raw direction agreement.',
+        qualifies: (game) => game.v3Edge >= 0.75 &&
+            game.v3Edge < 1 && game.rawAgree === true
+    },
+    {
+        id: 'all',
+        label: 'All V3 model sides',
+        note: 'Every game with a V3 pick, including non-production signals.',
+        qualifies: (game) => Boolean(game.v3Pick)
+    }
+];
+
+const sumResults = (games) => {
+    const result = {
+        wins: 0,
+        losses: 0,
+        pushes: 0,
+        ungraded: 0,
+        total: games.length
+    };
+
+    for (const game of games) {
+        if (game.v3Result === 'WIN') result.wins += 1;
+        else if (game.v3Result === 'LOSS') result.losses += 1;
+        else if (game.v3Result === 'PUSH') result.pushes += 1;
+        else result.ungraded += 1;
+    }
+
+    result.graded = result.wins + result.losses + result.pushes;
+    result.winPct = (result.wins + result.losses) > 0
+        ? Math.round(1000 * result.wins / (result.wins + result.losses)) / 10
+        : null;
+
+    return result;
+};
+
+const allGames = Object.values(archives).flatMap((archive) => archive.games);
+
+const performanceFor = (year, week, availableYears, availableWeeks) =>
+    strategies.map((strategy) => {
+        const selectedGames = allGames.filter(strategy.qualifies);
+        const inYear = selectedGames.filter((game) => game.season === year);
+
+        return {
+            id: strategy.id,
+            label: strategy.label,
+            note: strategy.note,
+            lifetime: sumResults(selectedGames),
+            currentSeason: sumResults(inYear),
+            currentWeek: sumResults(inYear.filter((game) => game.week === week)),
+            seasons: availableYears.map((item) => ({
+                season: item.season,
+                ...sumResults(selectedGames.filter(
+                    (game) => game.season === item.season
+                ))
+            })),
+            weeks: availableWeeks.map((availableWeek) => ({
+                week: availableWeek,
+                ...sumResults(inYear.filter(
+                    (game) => game.week === availableWeek
+                ))
+            }))
+        };
+    });
+
 export function load({ url }) {
     const availableYears = (manifest.years || [])
         .slice()
@@ -25,7 +106,8 @@ export function load({ url }) {
             availableWeeks: [],
             selectedSeason: null,
             selectedWeek: null,
-            referenceLineNotice: manifest.referenceLineNotice || ''
+            referenceLineNotice: manifest.referenceLineNotice || '',
+            performance: []
         };
     }
 
@@ -58,6 +140,12 @@ export function load({ url }) {
         availableWeeks,
         selectedSeason: selectedYear.season,
         selectedWeek,
-        referenceLineNotice: manifest.referenceLineNotice || ''
+        referenceLineNotice: manifest.referenceLineNotice || '',
+        performance: performanceFor(
+            selectedYear.season,
+            selectedWeek,
+            availableYears,
+            availableWeeks
+        )
     };
 }
