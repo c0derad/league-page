@@ -54,7 +54,18 @@ The Model Performance section shows **Week**, **selected Season**, and **Lifetim
 - **V3/raw 0.75–1.00**: V3 edge 0.75 to <1.00 with raw pick agreement.
 - **All V3 model sides**: every game with a V3 pick.
 
-For every scope, only `v3_result` values WIN, LOSS and PUSH are graded. The dashboard counts other entries as ungraded and **excludes** them from win rate and W–L–P. Win rate = wins / (wins + losses), ignoring pushes. No invented odds or return-on-investment figures are shown.
+For every scope, only `v3_result` values WIN, LOSS and PUSH are graded. Other entries are ungraded and **excluded** from W–L–P and ROI. Win rate = wins / (wins + losses), ignoring pushes.
+
+**Hypothetical ROI and net units** are calculated in the server-side results aggregator and displayed on the three record cards, in weekly/season breakdown tables, and in the lifetime footer. The fixed default assumption is **American odds -110, 1 unit risked on every graded model pick**:
+
+- Win: `+100/110 = +0.9090909 units`.
+- Loss: `-1 unit`.
+- Push: `0 units` (stake refunded); still counts as 1 unit risked in the ROI denominator.
+- Net units: `wins * (100 / 110) - losses`.
+- Total staked units: `wins + losses + pushes`.
+- ROI: `100 * net_units / total_staked_units` (display `—` when no games have been graded).
+
+**This is an illustrative flat-stake backtest at assumed odds.** It is not actual sportsbook pricing, verified executable betting history, realized closing-line value, or the Czar's personally published/purchased betting record. Individual odds, bookability, and limits are not in the consolidated archive.
 
 The lifetime denominator covers all available seasons **2022–2026**, but the data is not uniform: 2022 starts at Week 9; 2023–2025 use reconstructed historical grades, whereas 2026 has graded games mixed with current live predictions. The dashboard shows these limitations and **does not equate model results with actual placed wagers**.
 
