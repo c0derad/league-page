@@ -62,6 +62,16 @@
     const percent = (value) =>
         value?.winPct == null ? '—' : number(value.winPct) + '%';
 
+    const roi = (value) =>
+        value?.roiPct == null
+            ? '—'
+            : (value.roiPct > 0 ? '+' : '') + number(value.roiPct, 1) + '%';
+
+    const units = (value) =>
+        value?.netUnits == null
+            ? '—'
+            : (value.netUnits > 0 ? '+' : '') + number(value.netUnits, 2) + 'u';
+
     const gradedCaption = (value) => {
         if (!value) return 'No results';
         const n = value.graded || 0;
@@ -194,6 +204,16 @@
                             <span class="scopeTag">W{board.week}</span>
                         </div>
                         <div class="recordMain">{record(stats.currentWeek)}</div>
+                        <div class="returnStrip">
+                            <div class="returnItem">
+                                <span>ROI · -110</span>
+                                <strong class:positiveReturn={stats.currentWeek.roiPct > 0} class:negativeReturn={stats.currentWeek.roiPct < 0}>{roi(stats.currentWeek)}</strong>
+                            </div>
+                            <div class="returnItem">
+                                <span>Net units</span>
+                                <strong class:positiveReturn={stats.currentWeek.netUnits > 0} class:negativeReturn={stats.currentWeek.netUnits < 0}>{units(stats.currentWeek)}</strong>
+                            </div>
+                        </div>
                         <div class="recordBottom">
                             <strong>{percent(stats.currentWeek)} <span>win rate</span></strong>
                             <span>{gradedCaption(stats.currentWeek)}</span>
@@ -205,6 +225,16 @@
                             <span class="scopeTag">YTD</span>
                         </div>
                         <div class="recordMain">{record(stats.currentSeason)}</div>
+                        <div class="returnStrip">
+                            <div class="returnItem">
+                                <span>ROI · -110</span>
+                                <strong class:positiveReturn={stats.currentSeason.roiPct > 0} class:negativeReturn={stats.currentSeason.roiPct < 0}>{roi(stats.currentSeason)}</strong>
+                            </div>
+                            <div class="returnItem">
+                                <span>Net units</span>
+                                <strong class:positiveReturn={stats.currentSeason.netUnits > 0} class:negativeReturn={stats.currentSeason.netUnits < 0}>{units(stats.currentSeason)}</strong>
+                            </div>
+                        </div>
                         <div class="recordBottom">
                             <strong>{percent(stats.currentSeason)} <span>win rate</span></strong>
                             <span>{gradedCaption(stats.currentSeason)}</span>
@@ -216,6 +246,16 @@
                             <span class="scopeTag">ALL YEARS</span>
                         </div>
                         <div class="recordMain">{record(stats.lifetime)}</div>
+                        <div class="returnStrip">
+                            <div class="returnItem">
+                                <span>ROI · -110</span>
+                                <strong class:positiveReturn={stats.lifetime.roiPct > 0} class:negativeReturn={stats.lifetime.roiPct < 0}>{roi(stats.lifetime)}</strong>
+                            </div>
+                            <div class="returnItem">
+                                <span>Net units</span>
+                                <strong class:positiveReturn={stats.lifetime.netUnits > 0} class:negativeReturn={stats.lifetime.netUnits < 0}>{units(stats.lifetime)}</strong>
+                            </div>
+                        </div>
                         <div class="recordBottom">
                             <strong>{percent(stats.lifetime)} <span>win rate</span></strong>
                             <span>{gradedCaption(stats.lifetime)}</span>
@@ -227,6 +267,12 @@
                     <p><strong>{stats.label}</strong> · {stats.note}</p>
                     <a href="#history">Weekly &amp; season breakdown <span aria-hidden="true">↓</span></a>
                 </div>
+                <p class="returnMethod">
+                    <strong>Illustrative ROI:</strong> 1 unit risked per graded selection at -110.
+                    Win = +0.91u; loss = -1u; push = 0u.
+                    ROI = net units ÷ total graded stakes, including refunded pushes.
+                    Ungraded games do not count.
+                </p>
             </section>
         {/if}
 
@@ -392,13 +438,15 @@
                         <div class="tableScroller">
                             <table>
                                 <thead>
-                                    <tr><th>Week</th><th>Record</th><th>Win rate</th><th>Pending</th></tr>
+                                    <tr><th>Week</th><th>Record</th><th>ROI</th><th>Units</th><th>Win %</th><th>Pending</th></tr>
                                 </thead>
                                 <tbody>
                                     {#each stats.weeks as item}
                                         <tr class:activeRow={item.week === board.week}>
                                             <td><a href={'/cfb-model?season=' + board.season + '&week=' + item.week}>Week {item.week}</a></td>
                                             <td><strong>{record(item)}</strong></td>
+                                            <td class:positiveReturn={item.roiPct > 0} class:negativeReturn={item.roiPct < 0}><strong>{roi(item)}</strong></td>
+                                            <td class:positiveReturn={item.netUnits > 0} class:negativeReturn={item.netUnits < 0}>{units(item)}</td>
                                             <td>{percent(item)}</td>
                                             <td>{item.ungraded || '—'}</td>
                                         </tr>
@@ -413,13 +461,15 @@
                         <div class="tableScroller">
                             <table>
                                 <thead>
-                                    <tr><th>Year</th><th>Record</th><th>Win rate</th><th>Pending</th></tr>
+                                    <tr><th>Year</th><th>Record</th><th>ROI</th><th>Units</th><th>Win %</th><th>Pending</th></tr>
                                 </thead>
                                 <tbody>
                                     {#each stats.seasons as item}
                                         <tr class:activeRow={item.season === board.season}>
                                             <td><a href={'/cfb-model?season=' + item.season}>{item.season}</a></td>
                                             <td><strong>{record(item)}</strong></td>
+                                            <td class:positiveReturn={item.roiPct > 0} class:negativeReturn={item.roiPct < 0}><strong>{roi(item)}</strong></td>
+                                            <td class:positiveReturn={item.netUnits > 0} class:negativeReturn={item.netUnits < 0}>{units(item)}</td>
                                             <td>{percent(item)}</td>
                                             <td>{item.ungraded || '—'}</td>
                                         </tr>
@@ -429,6 +479,8 @@
                                     <tr>
                                         <th>Lifetime</th>
                                         <td><strong>{record(stats.lifetime)}</strong></td>
+                                        <td class:positiveReturn={stats.lifetime.roiPct > 0} class:negativeReturn={stats.lifetime.roiPct < 0}>{roi(stats.lifetime)}</td>
+                                        <td class:positiveReturn={stats.lifetime.netUnits > 0} class:negativeReturn={stats.lifetime.netUnits < 0}>{units(stats.lifetime)}</td>
                                         <td>{percent(stats.lifetime)}</td>
                                         <td>{stats.lifetime.ungraded || '—'}</td>
                                     </tr>
@@ -442,7 +494,7 @@
 
         <section class="methodNote" aria-label="Model notes and data limitations">
             <div class="eyebrow">ABOUT THESE NUMBERS</div>
-            <p><strong>Model results ≠ actual bets.</strong> W–L–P uses recorded V3 model-side outcomes. Win rate excludes pushes; ungraded games are excluded from W–L–P. Historical 2023–2025 grades are reconstructed, not verified pregame bets, and 2022 covers only Weeks 9–15.</p>
+            <p><strong>Model results ≠ actual bets.</strong> W–L–P uses recorded V3 model-side outcomes. Win rate excludes pushes; ungraded games are excluded from W–L–P and ROI. Net units and ROI are hypothetical flat-stake returns at assumed -110 odds; neither actual betting prices nor historical bookability is verified. Historical 2023–2025 grades are reconstructed, not verified pregame bets, and 2022 covers only Weeks 9–15.</p>
             <p>BET/WATCH/PASS tiers summarize model qualifications, <strong>not calibrated probabilities</strong>. The archive uses its original week labels, including some postseason-dated games grouped into historical Week 1. Data source: {board.sourceFile}.</p>
             <a href="/best-bets">See the separately maintained official Best Bets record →</a>
         </section>
@@ -480,7 +532,14 @@
     .lifetimeCard { border-top: 3px solid var(--accent); padding-top: calc(1.2rem - 2px); }
     .recordTop { display: flex; align-items: center; justify-content: space-between; gap: .5rem; font-size: .83rem; font-weight: 800; }
     .scopeTag { border: 1px solid var(--subtleBorder); border-radius: .35rem; font-size: .6rem; letter-spacing: .07em; padding: .22rem .4rem; opacity: .65; }
-    .recordMain { font-size: clamp(1.7rem, 3.5vw, 2.65rem); letter-spacing: -.035em; font-weight: 850; font-variant-numeric: tabular-nums; margin: 1.15rem 0 .75rem; white-space: nowrap; }
+    .recordMain { font-size: clamp(1.7rem, 3.5vw, 2.65rem); letter-spacing: -.035em; font-weight: 850; font-variant-numeric: tabular-nums; margin: 1rem 0 .65rem; white-space: nowrap; }
+    .returnStrip { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-bottom: .85rem; }
+    .returnItem { display: flex; flex-direction: column; gap: .2rem; }
+    .returnItem > span { font-size: .63rem; font-weight: 750; opacity: .65; }
+    .returnItem strong { font-size: clamp(1rem, 1.8vw, 1.25rem); font-weight: 850; font-variant-numeric: tabular-nums; }
+    .positiveReturn { color: #26865b; }
+    .negativeReturn { color: #bd5757; }
+    .returnMethod { font-size: .71rem; opacity: .7; line-height: 1.6; margin: .5rem 0 0; }
     .recordBottom { display: flex; justify-content: space-between; align-items: center; gap: .7rem; font-size: .7rem; border-top: 1px solid var(--subtleBorder); padding-top: .8rem; }
     .recordBottom strong { white-space: nowrap; }
     .recordBottom strong span { font-weight: 500; opacity: .65; }
