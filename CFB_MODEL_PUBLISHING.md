@@ -50,7 +50,8 @@ Review the generated JSON files and `static/cfb-model-data/index.json`; commit a
 The Model Performance section shows **Week**, **selected Season**, and **Lifetime** W–L–P cards, plus week-by-week and year-by-year records. A strategy selector updates all three scopes together:
 
 - **V3 production (default)**: v3_production is true.
-- **Dashboard BET tier**: the site\'s current A/B rule, applied retrospectively; not your actual published picks.
+- **Dashboard BET tier**: the site's current A/B rule, applied retrospectively; not your actual published picks.
+- **BET + WATCH combined**: union of status = BET and status = WATCH (A/B/C tiers), counting each distinct game exactly once and excluding PASS. This is available both in the performance strategy selector and as a game-board filter.
 - **V3/raw 0.75–1.00**: V3 edge 0.75 to <1.00 with raw pick agreement.
 - **All V3 model sides**: every game with a V3 pick.
 
