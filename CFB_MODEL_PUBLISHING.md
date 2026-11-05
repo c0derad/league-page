@@ -13,7 +13,7 @@ The initial database is the supplied `model_history_all.csv`:
 - The source has **some postseason-dated games under historical Week 1**; the site preserves the file's labels rather than silently changing them
 - In 2026 Week 10, five games have final scores and the others are still ungraded in this snapshot
 
-Each year is a static JSON file in `static/cfb-model/YYYY.json`. The `index.json` manifest controls which years/weeks appear. A visitor loads only one year's archive and the selected week's games.
+Each year is a static JSON file in `static/cfb-model-data/YYYY.json`. The `index.json` manifest controls which years/weeks appear. A visitor loads only one year's archive and the selected week's games.
 
 ## Export or refresh from VS Code
 
@@ -35,7 +35,7 @@ python scripts/export_cfb_model_board.py --input "C:\Users\ConradBailey\Download
 
 The exporter merges weekly games by year/week/matchup; missing `game_id` columns are supported. It retains an existing graded game's final score rather than erasing it with an ungraded refresh.
 
-Review the generated JSON files and `static/cfb-model/index.json`; commit and push the changes to your GitHub repository. Vercel then follows your normal deployment workflow. There is no automatic live refresh or live odds integration yet.
+Review the generated JSON files and `static/cfb-model-data/index.json`; commit and push the changes to your GitHub repository. Vercel then follows your normal deployment workflow. There is no automatic live refresh or live odds integration yet.
 
 ## Dashboard functionality
 
