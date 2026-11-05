@@ -47,6 +47,18 @@ const strategies = [
     }
 ];
 
+const signalValues = new Set(['ALL', 'BET', 'WATCH', 'BET_WATCH', 'PASS']);
+const gradeValues = new Set(['A', 'B', 'C', 'D']);
+
+const matchesSignal = (game, signal) =>
+    signal === 'ALL' ||
+    (signal === 'BET_WATCH'
+        ? game.status === 'BET' || game.status === 'WATCH'
+        : game.status === signal);
+
+const matchesGrade = (game, grades) =>
+    grades.length === 0 || grades.includes(game.tier);
+
 const sumResults = (games) => {
     const result = {
         wins: 0,
@@ -85,9 +97,13 @@ const sumResults = (games) => {
 
 const allGames = Object.values(archives).flatMap((archive) => archive.games);
 
-const performanceFor = (year, week, availableYears, availableWeeks) =>
+const performanceFor = (year, week, availableYears, availableWeeks, signal, grades) =>
     strategies.map((strategy) => {
-        const selectedGames = allGames.filter(strategy.qualifies);
+        const selectedGames = allGames.filter((game) =>
+            strategy.qualifies(game) &&
+            matchesSignal(game, signal) &&
+            matchesGrade(game, grades)
+        );
         const inYear = selectedGames.filter((game) => game.season === year);
 
         return {
@@ -113,6 +129,19 @@ const performanceFor = (year, week, availableYears, availableWeeks) =>
     });
 
 export function load({ url }) {
+    const requestedSignal = url.searchParams.get('signal') || 'ALL';
+    const selectedSignal = signalValues.has(requestedSignal) ? requestedSignal : 'ALL';
+    const selectedGrades = [...new Set(
+        (url.searchParams.get('grades') || '')
+            .split(',')
+            .filter((grade) => gradeValues.has(grade))
+    )].sort();
+
+    const requestedStrategy = url.searchParams.get('strategy') || 'production';
+    const selectedStrategy = strategies.some((strategy) => strategy.id === requestedStrategy)
+        ? requestedStrategy
+        : 'production';
+
     const availableYears = (manifest.years || [])
         .slice()
         .sort((a, b) => a.season - b.season);
@@ -125,7 +154,10 @@ export function load({ url }) {
             selectedSeason: null,
             selectedWeek: null,
             referenceLineNotice: manifest.referenceLineNotice || '',
-            performance: []
+            performance: [],
+            selectedSignal,
+            selectedGrades,
+            selectedStrategy
         };
     }
 
@@ -159,11 +191,16 @@ export function load({ url }) {
         selectedSeason: selectedYear.season,
         selectedWeek,
         referenceLineNotice: manifest.referenceLineNotice || '',
+        selectedSignal,
+        selectedGrades,
+        selectedStrategy,
         performance: performanceFor(
             selectedYear.season,
             selectedWeek,
             availableYears,
-            availableWeeks
+            availableWeeks,
+            selectedSignal,
+            selectedGrades
         )
     };
 }
