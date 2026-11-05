@@ -135,7 +135,7 @@ def convert(row):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", type=Path, required=True)
-    p.add_argument("--output-dir", type=Path, default=Path("static/cfb-model"))
+    p.add_argument("--output-dir", type=Path, default=Path("static/cfb-model-data"))
     p.add_argument("--replace-history", action="store_true",
                    help="Replace the full archive instead of incrementally updating games")
     args = p.parse_args()
