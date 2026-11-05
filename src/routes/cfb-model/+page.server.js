@@ -27,6 +27,12 @@ const strategies = [
         qualifies: (game) => game.status === 'BET'
     },
     {
+        id: 'bet_watch',
+        label: 'BET + WATCH combined',
+        note: 'All A/B BET and C WATCH signals counted once each; PASS excluded. Current dashboard tiers applied retrospectively.',
+        qualifies: (game) => game.status === 'BET' || game.status === 'WATCH'
+    },
+    {
         id: 'sweet',
         label: 'V3/raw 0.75–1.00',
         note: 'V3 predicted CLV 0.75–1.00, with raw direction agreement.',
