@@ -64,7 +64,7 @@ def convert(row):
         raise ValueError(f"Unexpected matchup: {matchup}")
     score = SCORE.match(row.get("projected_score") or "")
 
-    raw, cal, v3 = (row.get(c) or "").strip() for c in ("raw_pick", "cal_pick", "v3_pick")
+    raw, cal, v3 = [(row.get(c) or "").strip() for c in ("raw_pick", "cal_pick", "v3_pick")]
     raw_agree = bool(raw and v3) and picked_team(raw) == picked_team(v3)
     cal_agree = bool(cal and v3) and picked_team(cal) == picked_team(v3)
     prod = flag(row.get("v3_production"))
