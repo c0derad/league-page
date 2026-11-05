@@ -62,6 +62,18 @@ const sumResults = (games) => {
         ? Math.round(1000 * result.wins / (result.wins + result.losses)) / 10
         : null;
 
+    // Hypothetical flat 1-unit risk on every graded V3 pick at -110.
+    // Each win earns 100/110 units, losses cost 1 unit, pushes return the stake.
+    // Pushes still count as staked/returned capital in the ROI denominator.
+    // Ungraded games never contribute to stakes or profit.
+    result.stakeUnits = result.graded;
+    result.netUnits = result.graded > 0
+        ? result.wins * (100 / 110) - result.losses
+        : null;
+    result.roiPct = result.graded > 0
+        ? (result.netUnits / result.stakeUnits) * 100
+        : null;
+
     return result;
 };
 
