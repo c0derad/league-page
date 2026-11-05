@@ -19,6 +19,7 @@
         ALL: games.length,
         BET: games.filter((game) => game.status === 'BET').length,
         WATCH: games.filter((game) => game.status === 'WATCH').length,
+        BET_WATCH: games.filter((game) => game.status === 'BET' || game.status === 'WATCH').length,
         PASS: games.filter((game) => game.status === 'PASS').length
     };
 
@@ -26,7 +27,10 @@
     $: weekIndex = board ? weeks.indexOf(board.week) : -1;
 
     $: filtered = games
-        .filter((game) => statusFilter === 'ALL' || game.status === statusFilter)
+        .filter((game) => statusFilter === 'ALL' ||
+            (statusFilter === 'BET_WATCH'
+                ? game.status === 'BET' || game.status === 'WATCH'
+                : game.status === statusFilter))
         .filter((game) => {
             const term = search.toLowerCase().trim();
             return !term || [game.matchup, game.v3Pick, game.rawPick, game.calPick]
@@ -290,14 +294,14 @@
             </div>
 
             <div class="filterTabs" aria-label="Filter games by model signal">
-                {#each ['ALL', 'BET', 'WATCH', 'PASS'] as filter}
+                {#each ['ALL', 'BET', 'BET_WATCH', 'WATCH', 'PASS'] as filter}
                     <button
                         type="button"
                         class:tabActive={statusFilter === filter}
                         aria-pressed={statusFilter === filter}
                         on:click={() => statusFilter = filter}
                     >
-                        <span>{filter === 'ALL' ? 'All games' : filter === 'BET' ? 'Bet signals' : filter === 'WATCH' ? 'Watchlist' : 'Pass'}</span>
+                        <span>{filter === 'ALL' ? 'All games' : filter === 'BET' ? 'Bet signals' : filter === 'BET_WATCH' ? 'BET + WATCH' : filter === 'WATCH' ? 'Watchlist' : 'Pass'}</span>
                         <span class="tabCount">{counts[filter]}</span>
                     </button>
                 {/each}
@@ -322,7 +326,7 @@
 
             <div class="boardLegend">
                 <span>{filtered.length} of {games.length} games</span>
-                <span><b>BET</b> = model qualifier, not a placed wager</span>
+                <span><b>BET + WATCH</b> displays both signal groups without including PASS.</span>
             </div>
 
             <div class="gameList">
@@ -495,7 +499,7 @@
         <section class="methodNote" aria-label="Model notes and data limitations">
             <div class="eyebrow">ABOUT THESE NUMBERS</div>
             <p><strong>Model results ≠ actual bets.</strong> W–L–P uses recorded V3 model-side outcomes. Win rate excludes pushes; ungraded games are excluded from W–L–P and ROI. Net units and ROI are hypothetical flat-stake returns at assumed -110 odds; neither actual betting prices nor historical bookability is verified. Historical 2023–2025 grades are reconstructed, not verified pregame bets, and 2022 covers only Weeks 9–15.</p>
-            <p>BET/WATCH/PASS tiers summarize model qualifications, <strong>not calibrated probabilities</strong>. The archive uses its original week labels, including some postseason-dated games grouped into historical Week 1. Data source: {board.sourceFile}.</p>
+            <p>BET/WATCH/PASS tiers summarize model qualifications, <strong>not calibrated probabilities</strong>. The combined BET + WATCH record includes each matching game once and excludes PASS. The archive uses its original week labels, including some postseason-dated games grouped into historical Week 1. Data source: {board.sourceFile}.</p>
             <a href="/best-bets">See the separately maintained official Best Bets record →</a>
         </section>
     {/if}
