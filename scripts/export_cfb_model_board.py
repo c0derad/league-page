@@ -132,6 +132,52 @@ def convert(row):
     )
 
 
+
+def build_summary(archive, source_name):
+    """Preaggregate strategy/grade/signal/season/week counts at publish time.
+
+    The browser can recombine arbitrary Signal and Grade selections instantly
+    from this compact table, with no requests and without shipping 3,214 games.
+    """
+    counts = {}
+    total_games = 0
+    for games in archive.values():
+        for game in games.values():
+            total_games += 1
+            strategies = ["all"]
+            if game["v3Production"]:
+                strategies.append("production")
+            edge = game.get("v3Edge")
+            if edge is not None and .75 <= edge < 1 and game["rawAgree"]:
+                strategies.append("sweet")
+
+            result = game.get("v3Result")
+            kind = {"WIN": "wins", "LOSS": "losses", "PUSH": "pushes"}.get(
+                result, "ungraded"
+            )
+            for strategy in strategies:
+                group = (
+                    game["season"], game["week"], game["status"],
+                    game["tier"], strategy
+                )
+                if group not in counts:
+                    counts[group] = dict(
+                        season=game["season"], week=game["week"],
+                        status=game["status"], tier=game["tier"],
+                        strategy=strategy,
+                        wins=0, losses=0, pushes=0, ungraded=0
+                    )
+                counts[group][kind] += 1
+
+    rows = sorted(
+        counts.values(),
+        key=lambda row: (
+            row["season"], row["week"], row["tier"], row["strategy"]
+        )
+    )
+    return dict(schemaVersion=1, sourceFile=source_name,
+                gameCount=total_games, rows=rows)
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--input", type=Path, required=True)
@@ -186,7 +232,14 @@ def main():
     (args.output_dir / "index.json").write_text(
         json.dumps(index, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
-    print("Export complete. Commit the updated JSON archive files and manifest.")
+    summary = build_summary(archive, args.input.name)
+    (args.output_dir / "summary.json").write_text(
+        json.dumps(summary, ensure_ascii=False, separators=(",", ":")) + "\n",
+        encoding="utf-8"
+    )
+    print(f"Summary index: {len(summary['rows'])} aggregated groups "
+          f"for {summary['gameCount']} games.")
+    print("Export complete. Commit the updated archive, index and summary JSON files.")
 
 
 if __name__ == "__main__":
