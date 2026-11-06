@@ -1,20 +1,75 @@
 <script>
-    import { goto } from '$app/navigation';
+    import { goto, replaceState } from '$app/navigation';
 
     export let data;
 
     let search = '';
     let order = 'priority';
+    let statusFilter = data.selectedSignal || 'ALL';
+    let selectedGrades = [...(data.selectedGrades || [])];
+    let performanceView = data.selectedStrategy || 'all';
+    let visibleLimit = 20;
+
     const gradeOptions = ['A', 'B', 'C', 'D'];
+    const strategyOptions = [
+        {id: 'all', label: 'All V3 model sides', note: 'All archived V3 model-side outcomes matching the Signal and Grade filters.'},
+        {id: 'production', label: 'V3 production only', note: 'Production-qualified V3 games matching the Signal and Grade filters.'},
+        {id: 'sweet', label: 'V3/raw 0.75–1.00 only', note: 'V3/raw agreement in the 0.75–1.00 band, within the Signal and Grade filters.'}
+    ];
 
     const tierOrder = { A: 0, B: 1, C: 2, D: 3 };
 
     $: board = data.board;
     $: games = board?.games || [];
-    $: strategies = data.performance || [];
-    $: statusFilter = data.selectedSignal || 'ALL';
-    $: selectedGrades = data.selectedGrades || [];
-    $: stats = strategies.find((item) => item.id === data.selectedStrategy) || strategies[0];
+    $: activeStrategy = strategyOptions.find((item) => item.id === performanceView) || strategyOptions[0];
+
+    const sumRows = (rows) => {
+        const result = {wins: 0, losses: 0, pushes: 0, ungraded: 0, total: 0};
+        for (const row of rows) {
+            result.wins += row.wins;
+            result.losses += row.losses;
+            result.pushes += row.pushes;
+            result.ungraded += row.ungraded;
+        }
+        result.graded = result.wins + result.losses + result.pushes;
+        result.total = result.graded + result.ungraded;
+        result.winPct = result.wins + result.losses
+            ? Math.round(1000 * result.wins / (result.wins + result.losses)) / 10
+            : null;
+        result.stakeUnits = result.graded;
+        result.netUnits = result.graded
+            ? result.wins * 100 / 110 - result.losses
+            : null;
+        result.roiPct = result.graded
+            ? 100 * result.netUnits / result.graded
+            : null;
+        return result;
+    };
+
+    // Recalculate just a compact ~43 KB summary in the browser. Changes to
+    // signal, grades and strategy make zero HTTP requests.
+    $: summaryMatches = (data.summaryRows || []).filter((row) =>
+        row.strategy === performanceView &&
+        signalMatches(row, statusFilter) &&
+        (!selectedGrades.length || selectedGrades.includes(row.tier))
+    );
+    $: stats = board ? {
+        ...activeStrategy,
+        currentWeek: sumRows(summaryMatches.filter((row) =>
+            row.season === board.season && row.week === board.week)),
+        currentSeason: sumRows(summaryMatches.filter((row) =>
+            row.season === board.season)),
+        lifetime: sumRows(summaryMatches),
+        weeks: (data.availableWeeks || []).map((week) => ({
+            week,
+            ...sumRows(summaryMatches.filter((row) =>
+                row.season === board.season && row.week === week))
+        })),
+        seasons: (data.availableYears || []).map((item) => ({
+            season: item.season,
+            ...sumRows(summaryMatches.filter((row) => row.season === item.season))
+        }))
+    } : null;
 
     const signalMatches = (game, selectedSignal) =>
         selectedSignal === 'ALL' ||
@@ -64,6 +119,7 @@
                 (b.v3Edge ?? -999) - (a.v3Edge ?? -999) ||
                 String(a.kickoffUtc || '').localeCompare(String(b.kickoffUtc || ''));
         });
+    $: shownGames = filtered.slice(0, visibleLimit);
 
     const number = (value, decimals = 1) =>
         value == null || !Number.isFinite(Number(value))
@@ -115,7 +171,7 @@
         week,
         signal = statusFilter,
         grades = selectedGrades,
-        strategy = data.selectedStrategy || 'all'
+        strategy = performanceView
     ) => {
         const params = new URLSearchParams();
         params.set('season', String(season));
@@ -126,13 +182,18 @@
         return '/cfb-model?' + params.toString();
     };
 
-    const navigate = (
-        season,
-        week,
-        signal = statusFilter,
-        grades = selectedGrades,
-        strategy = data.selectedStrategy || 'all'
-    ) => goto(archiveHref(season, week, signal, grades, strategy), { noScroll: true });
+    // Year/week navigation retrieves only that season. All filtering stays
+    // client-side and updates the shareable URL without reloading the page.
+    const navigate = (season, week) => {
+        visibleLimit = 20;
+        goto(archiveHref(season, week), { noScroll: true });
+    };
+
+    const syncFilterUrl = () => {
+        if (board) {
+            replaceState(archiveHref(board.season, board.week), {});
+        }
+    };
 
     const switchYear = (event) =>
         navigate(Number(event.currentTarget.value), null);
@@ -145,24 +206,37 @@
         if (board && target != null) navigate(board.season, target);
     };
 
-    const switchSignal = (signal) =>
-        navigate(board.season, board.week, signal);
-
-    const toggleGrade = (grade) => {
-        const next = selectedGrades.includes(grade)
-            ? selectedGrades.filter((item) => item !== grade)
-            : [...selectedGrades, grade];
-        navigate(board.season, board.week, statusFilter, next);
+    const switchSignal = (signal) => {
+        statusFilter = signal;
+        visibleLimit = 20;
+        syncFilterUrl();
     };
 
-    const clearGrades = () => navigate(board.season, board.week, statusFilter, []);
+    const toggleGrade = (grade) => {
+        selectedGrades = selectedGrades.includes(grade)
+            ? selectedGrades.filter((item) => item !== grade)
+            : [...selectedGrades, grade].sort();
+        visibleLimit = 20;
+        syncFilterUrl();
+    };
 
-    const switchPerformanceStrategy = (event) =>
-        navigate(board.season, board.week, statusFilter, selectedGrades, event.currentTarget.value);
+    const clearGrades = () => {
+        selectedGrades = [];
+        visibleLimit = 20;
+        syncFilterUrl();
+    };
+
+    const switchPerformanceStrategy = (event) => {
+        performanceView = event.currentTarget.value;
+        syncFilterUrl();
+    };
 
     const clearBoardFilters = () => {
         search = '';
-        navigate(board.season, board.week, 'ALL', []);
+        statusFilter = 'ALL';
+        selectedGrades = [];
+        visibleLimit = 20;
+        syncFilterUrl();
     };
 </script>
 
@@ -299,8 +373,8 @@
                     </div>
                     <label class="selectWrap strategySelect">
                         <span>Additional model strategy (optional)</span>
-                        <select value={data.selectedStrategy} on:change={switchPerformanceStrategy} aria-label="Performance strategy">
-                            {#each strategies as strategy}
+                        <select value={performanceView} on:change={switchPerformanceStrategy} aria-label="Performance strategy">
+                            {#each strategyOptions as strategy}
                                 <option value={strategy.id}>{strategy.label}</option>
                             {/each}
                         </select>
@@ -391,7 +465,7 @@
                 <div>
                     <div class="eyebrow">EXPLORE THE SLATE</div>
                     <h2 id="games-title">Week {board.week} game board</h2>
-                    <p>Choose a signal to filter the board. Select any matchup to see the reasoning.</p>
+                    <p>Filter instantly by signal or grade. Expand any matchup for the model's reasoning.</p>
                 </div>
                 <div class="gameTotal">
                     <strong>{games.length}</strong>
@@ -437,7 +511,7 @@
                         <button type="button" on:click={clearBoardFilters}>Clear filters</button>
                     </div>
                 {:else}
-                    {#each filtered as game (game.id)}
+                    {#each shownGames as game (game.id)}
                         <details class="gameItem">
                             <summary>
                                 <div class="matchupCol">
@@ -514,6 +588,13 @@
                     {/each}
                 {/if}
             </div>
+            {#if shownGames.length < filtered.length}
+                <div class="loadMore">
+                    <button type="button" on:click={() => visibleLimit += 20}>
+                        Show 20 more games ({filtered.length - shownGames.length} remaining)
+                    </button>
+                </div>
+            {/if}
             <p class="underBoard">Projected score lists the away team first, then the home team. Spreads are archived model reference lines, not verified live sportsbook odds. A BET label is a screening decision, not an official Czar pick.</p>
         </section>
 
@@ -713,6 +794,9 @@
     .finalScore > strong { font-size: .8rem; }
     .tagGroup { display: flex; flex-wrap: wrap; gap: .3rem; }
     .tagGroup span { font-size: .59rem; border: 1px solid var(--subtleBorder); border-radius: .3rem; padding: .22rem .35rem; opacity: .7; overflow-wrap: anywhere; }
+    .loadMore { padding: 1rem; display: flex; justify-content: center; border-top: 1px solid var(--subtleBorder); }
+    .loadMore button { border: 1px solid var(--accent); border-radius: .5rem; background: var(--surface); color: var(--000); padding: .75rem 1.1rem; font: inherit; font-size: .82rem; font-weight: 800; cursor: pointer; }
+    .loadMore button:hover { background: var(--surfaceMuted); }
     .underBoard { margin: .85rem 0 0; font-size: .71rem; line-height: 1.55; opacity: .67; }
     .historyGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .9rem; }
     .historyPanel { border: 1px solid var(--subtleBorder); border-radius: .85rem; padding: 1rem 1.1rem; min-width: 0; }
