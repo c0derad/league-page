@@ -15,35 +15,23 @@ const archives = {
 
 const strategies = [
     {
+        id: 'all',
+        label: 'All V3 model sides',
+        note: 'No additional model-strategy restriction. Results are filtered only by the signal and grade selections above.',
+        qualifies: (game) => Boolean(game.v3Pick)
+    },
+    {
         id: 'production',
-        label: 'V3 production',
-        note: 'Archived production-qualified V3 selections.',
+        label: 'V3 production only',
+        note: 'Restrict the selected signals and grades to archived V3 production picks.',
         qualifies: (game) => game.v3Production === true
     },
     {
-        id: 'bet',
-        label: 'Dashboard BET tier',
-        note: 'Current dashboard A/B screening rules, applied retrospectively.',
-        qualifies: (game) => game.status === 'BET'
-    },
-    {
-        id: 'bet_watch',
-        label: 'BET + WATCH combined',
-        note: 'All A/B BET and C WATCH signals counted once each; PASS excluded. Current dashboard tiers applied retrospectively.',
-        qualifies: (game) => game.status === 'BET' || game.status === 'WATCH'
-    },
-    {
         id: 'sweet',
-        label: 'V3/raw 0.75–1.00',
-        note: 'V3 predicted CLV 0.75–1.00, with raw direction agreement.',
+        label: 'V3/raw 0.75–1.00 only',
+        note: 'Restrict the selected signals and grades to V3/raw agreement in the 0.75–1.00 predicted CLV band.',
         qualifies: (game) => game.v3Edge >= 0.75 &&
             game.v3Edge < 1 && game.rawAgree === true
-    },
-    {
-        id: 'all',
-        label: 'All V3 model sides',
-        note: 'Every game with a V3 pick, including non-production signals.',
-        qualifies: (game) => Boolean(game.v3Pick)
     }
 ];
 
@@ -137,10 +125,10 @@ export function load({ url }) {
             .filter((grade) => gradeValues.has(grade))
     )].sort();
 
-    const requestedStrategy = url.searchParams.get('strategy') || 'production';
+    const requestedStrategy = url.searchParams.get('strategy') || 'all';
     const selectedStrategy = strategies.some((strategy) => strategy.id === requestedStrategy)
         ? requestedStrategy
-        : 'production';
+        : 'all';
 
     const availableYears = (manifest.years || [])
         .slice()
