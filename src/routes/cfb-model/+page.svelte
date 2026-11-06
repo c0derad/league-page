@@ -4,33 +4,44 @@
     export let data;
 
     let search = '';
-    let statusFilter = 'ALL';
     let order = 'priority';
-    let performanceView = 'production';
+    const gradeOptions = ['A', 'B', 'C', 'D'];
 
     const tierOrder = { A: 0, B: 1, C: 2, D: 3 };
 
     $: board = data.board;
     $: games = board?.games || [];
     $: strategies = data.performance || [];
-    $: stats = strategies.find((item) => item.id === performanceView) || strategies[0];
+    $: statusFilter = data.selectedSignal || 'ALL';
+    $: selectedGrades = data.selectedGrades || [];
+    $: stats = strategies.find((item) => item.id === data.selectedStrategy) || strategies[0];
 
-    $: counts = {
-        ALL: games.length,
-        BET: games.filter((game) => game.status === 'BET').length,
-        WATCH: games.filter((game) => game.status === 'WATCH').length,
-        BET_WATCH: games.filter((game) => game.status === 'BET' || game.status === 'WATCH').length,
-        PASS: games.filter((game) => game.status === 'PASS').length
-    };
+    const signalMatches = (game, selectedSignal) =>
+        selectedSignal === 'ALL' ||
+        (selectedSignal === 'BET_WATCH'
+            ? game.status === 'BET' || game.status === 'WATCH'
+            : game.status === selectedSignal);
+
+    $: counts = Object.fromEntries(
+        ['ALL', 'BET', 'WATCH', 'BET_WATCH', 'PASS'].map((signal) => [
+            signal,
+            games.filter((game) => signalMatches(game, signal) &&
+                (selectedGrades.length === 0 || selectedGrades.includes(game.tier))).length
+        ])
+    );
+    $: gradeCounts = Object.fromEntries(
+        gradeOptions.map((grade) => [
+            grade,
+            games.filter((game) => signalMatches(game, statusFilter) && game.tier === grade).length
+        ])
+    );
 
     $: weeks = data.availableWeeks || [];
     $: weekIndex = board ? weeks.indexOf(board.week) : -1;
 
     $: filtered = games
-        .filter((game) => statusFilter === 'ALL' ||
-            (statusFilter === 'BET_WATCH'
-                ? game.status === 'BET' || game.status === 'WATCH'
-                : game.status === statusFilter))
+        .filter((game) => signalMatches(game, statusFilter))
+        .filter((game) => selectedGrades.length === 0 || selectedGrades.includes(game.tier))
         .filter((game) => {
             const term = search.toLowerCase().trim();
             return !term || [game.matchup, game.v3Pick, game.rawPick, game.calPick]
@@ -99,12 +110,29 @@
     const started = (value) =>
         Boolean(value) && new Date(value).getTime() <= Date.now();
 
-    const navigate = (season, week) => {
+    const archiveHref = (
+        season,
+        week,
+        signal = statusFilter,
+        grades = selectedGrades,
+        strategy = data.selectedStrategy || 'production'
+    ) => {
         const params = new URLSearchParams();
         params.set('season', String(season));
         if (week != null) params.set('week', String(week));
-        goto('/cfb-model?' + params.toString(), { noScroll: true });
+        if (signal !== 'ALL') params.set('signal', signal);
+        if (grades.length) params.set('grades', [...grades].sort().join(','));
+        if (strategy !== 'production') params.set('strategy', strategy);
+        return '/cfb-model?' + params.toString();
     };
+
+    const navigate = (
+        season,
+        week,
+        signal = statusFilter,
+        grades = selectedGrades,
+        strategy = data.selectedStrategy || 'production'
+    ) => goto(archiveHref(season, week, signal, grades, strategy), { noScroll: true });
 
     const switchYear = (event) =>
         navigate(Number(event.currentTarget.value), null);
@@ -115,6 +143,26 @@
     const moveWeek = (delta) => {
         const target = weeks[weekIndex + delta];
         if (board && target != null) navigate(board.season, target);
+    };
+
+    const switchSignal = (signal) =>
+        navigate(board.season, board.week, signal);
+
+    const toggleGrade = (grade) => {
+        const next = selectedGrades.includes(grade)
+            ? selectedGrades.filter((item) => item !== grade)
+            : [...selectedGrades, grade];
+        navigate(board.season, board.week, statusFilter, next);
+    };
+
+    const clearGrades = () => navigate(board.season, board.week, statusFilter, []);
+
+    const switchPerformanceStrategy = (event) =>
+        navigate(board.season, board.week, statusFilter, selectedGrades, event.currentTarget.value);
+
+    const clearBoardFilters = () => {
+        search = '';
+        navigate(board.season, board.week, 'ALL', []);
     };
 </script>
 
@@ -183,17 +231,75 @@
             </div>
         </section>
 
+        <section class="globalFilters" aria-label="Model filters">
+            <div class="filterHead">
+                <div>
+                    <div class="eyebrow">FILTER YOUR MODEL BOARD</div>
+                    <p>Signal and grade are independent. Both refine the record and game list below.</p>
+                </div>
+                {#if statusFilter !== 'ALL' || selectedGrades.length}
+                    <button class="resetFilters" type="button" on:click={clearBoardFilters}>Reset filters</button>
+                {/if}
+            </div>
+
+            <div class="filterGroup">
+                <div class="filterRowTitle">
+                    <strong>Signal</strong>
+                    <span>Choose one</span>
+                </div>
+                <div class="filterTabs" role="group" aria-label="Select model signal">
+                    {#each ['ALL', 'BET', 'WATCH', 'BET_WATCH', 'PASS'] as filter}
+                        <button
+                            type="button"
+                            class:tabActive={statusFilter === filter}
+                            aria-pressed={statusFilter === filter}
+                            on:click={() => switchSignal(filter)}
+                        >
+                            <span>{filter === 'ALL' ? 'All signals' : filter === 'BET' ? 'BET' : filter === 'BET_WATCH' ? 'BET + WATCH' : filter === 'WATCH' ? 'WATCH' : 'PASS'}</span>
+                            <span class="tabCount">{counts[filter]}</span>
+                        </button>
+                    {/each}
+                </div>
+            </div>
+
+            <div class="filterGroup">
+                <div class="filterRowTitle">
+                    <strong>Grade</strong>
+                    <span>Multi-select any combination · {selectedGrades.length ? selectedGrades.join(' + ') : 'All grades'}</span>
+                </div>
+                <div class="gradeControls" role="group" aria-label="Select one or more model grades">
+                    {#each gradeOptions as grade}
+                        <button
+                            class="gradeButton"
+                            class:gradeActive={selectedGrades.includes(grade)}
+                            type="button"
+                            aria-pressed={selectedGrades.includes(grade)}
+                            aria-label={'Include grade ' + grade}
+                            on:click={() => toggleGrade(grade)}
+                        >
+                            <span>Grade {grade}</span>
+                            <span class="gradeCount">{gradeCounts[grade]}</span>
+                        </button>
+                    {/each}
+                    {#if selectedGrades.length}
+                        <button class="clearGrade" type="button" on:click={clearGrades}>All grades</button>
+                    {/if}
+                </div>
+                <p class="filterHelp">Choose A + C, A + B + C, or any other mix. Selected grades are combined; only games matching the chosen signal are included.</p>
+            </div>
+        </section>
+
         {#if stats}
             <section id="performance" class="performance" aria-labelledby="performance-title">
                 <div class="sectionHeading">
                     <div>
                         <div class="eyebrow">HOW THE MODEL HAS PERFORMED</div>
                         <h2 id="performance-title">Track record</h2>
-                        <p>Against-the-spread results from the model archive.</p>
+                        <p>Against-the-spread results for the selected signal and grades, with the additional model-strategy filter below.</p>
                     </div>
                     <label class="selectWrap strategySelect">
                         <span>Show results for</span>
-                        <select bind:value={performanceView} aria-label="Performance strategy">
+                        <select value={data.selectedStrategy} on:change={switchPerformanceStrategy} aria-label="Performance strategy">
                             {#each strategies as strategy}
                                 <option value={strategy.id}>{strategy.label}</option>
                             {/each}
@@ -293,20 +399,6 @@
                 </div>
             </div>
 
-            <div class="filterTabs" aria-label="Filter games by model signal">
-                {#each ['ALL', 'BET', 'BET_WATCH', 'WATCH', 'PASS'] as filter}
-                    <button
-                        type="button"
-                        class:tabActive={statusFilter === filter}
-                        aria-pressed={statusFilter === filter}
-                        on:click={() => statusFilter = filter}
-                    >
-                        <span>{filter === 'ALL' ? 'All games' : filter === 'BET' ? 'Bet signals' : filter === 'BET_WATCH' ? 'BET + WATCH' : filter === 'WATCH' ? 'Watchlist' : 'Pass'}</span>
-                        <span class="tabCount">{counts[filter]}</span>
-                    </button>
-                {/each}
-            </div>
-
             <div class="boardTools">
                 <label class="searchField">
                     <span class="srOnly">Search a team or pick</span>
@@ -326,7 +418,7 @@
 
             <div class="boardLegend">
                 <span>{filtered.length} of {games.length} games</span>
-                <span><b>BET + WATCH</b> displays both signal groups without including PASS.</span>
+                <span>Signal: {statusFilter === 'BET_WATCH' ? 'BET + WATCH' : statusFilter === 'ALL' ? 'All' : statusFilter} · Grades: {selectedGrades.length ? selectedGrades.join(' + ') : 'All'}</span>
             </div>
 
             <div class="gameList">
@@ -342,7 +434,7 @@
                     <div class="emptyState">
                         <strong>No games match these filters.</strong>
                         <p>Try another signal or search term.</p>
-                        <button type="button" on:click={() => {search = ''; statusFilter = 'ALL';}}>Clear filters</button>
+                        <button type="button" on:click={clearBoardFilters}>Clear filters</button>
                     </div>
                 {:else}
                     {#each filtered as game (game.id)}
@@ -447,7 +539,7 @@
                                 <tbody>
                                     {#each stats.weeks as item}
                                         <tr class:activeRow={item.week === board.week}>
-                                            <td><a href={'/cfb-model?season=' + board.season + '&week=' + item.week}>Week {item.week}</a></td>
+                                            <td><a href={archiveHref(board.season, item.week)}>Week {item.week}</a></td>
                                             <td><strong>{record(item)}</strong></td>
                                             <td class:positiveReturn={item.roiPct > 0} class:negativeReturn={item.roiPct < 0}><strong>{roi(item)}</strong></td>
                                             <td class:positiveReturn={item.netUnits > 0} class:negativeReturn={item.netUnits < 0}>{units(item)}</td>
@@ -470,7 +562,7 @@
                                 <tbody>
                                     {#each stats.seasons as item}
                                         <tr class:activeRow={item.season === board.season}>
-                                            <td><a href={'/cfb-model?season=' + item.season}>{item.season}</a></td>
+                                            <td><a href={archiveHref(item.season, null)}>{item.season}</a></td>
                                             <td><strong>{record(item)}</strong></td>
                                             <td class:positiveReturn={item.roiPct > 0} class:negativeReturn={item.roiPct < 0}><strong>{roi(item)}</strong></td>
                                             <td class:positiveReturn={item.netUnits > 0} class:negativeReturn={item.netUnits < 0}>{units(item)}</td>
@@ -498,6 +590,7 @@
 
         <section class="methodNote" aria-label="Model notes and data limitations">
             <div class="eyebrow">ABOUT THESE NUMBERS</div>
+            <p><strong>Record filters:</strong> signal and selected grades are applied together, alongside the chosen performance strategy. Changing grade selections affects both the game board and the records; grades may be combined freely.</p>
             <p><strong>Model results ≠ actual bets.</strong> W–L–P uses recorded V3 model-side outcomes. Win rate excludes pushes; ungraded games are excluded from W–L–P and ROI. Net units and ROI are hypothetical flat-stake returns at assumed -110 odds; neither actual betting prices nor historical bookability is verified. Historical 2023–2025 grades are reconstructed, not verified pregame bets, and 2022 covers only Weeks 9–15.</p>
             <p>BET/WATCH/PASS tiers summarize model qualifications, <strong>not calibrated probabilities</strong>. The combined BET + WATCH record includes each matching game once and excludes PASS. The archive uses its original week labels, including some postseason-dated games grouped into historical Week 1. Data source: {board.sourceFile}.</p>
             <a href="/best-bets">See the separately maintained official Best Bets record →</a>
@@ -556,11 +649,26 @@
     .gameTotal { display: flex; align-items: baseline; gap: .4rem; white-space: nowrap; }
     .gameTotal strong { font-size: 2.1rem; letter-spacing: -.03em; }
     .gameTotal span { opacity: .65; font-size: .73rem; }
-    .filterTabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .globalFilters { margin-top: 1rem; padding: 1.1rem 1.25rem; border: 1px solid var(--subtleBorder); border-radius: .85rem; background: var(--surface); }
+    .filterHead { display: flex; align-items: start; justify-content: space-between; gap: 1rem; }
+    .filterHead p { margin: .25rem 0 .9rem; font-size: .77rem; opacity: .72; }
+    .resetFilters { background: transparent; color: var(--accent); border: 0; padding: .25rem; cursor: pointer; font: inherit; font-size: .76rem; font-weight: 800; white-space: nowrap; }
+    .filterGroup + .filterGroup { margin-top: 1.05rem; padding-top: .85rem; border-top: 1px solid var(--subtleBorder); }
+    .filterRowTitle { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; margin-bottom: .55rem; }
+    .filterRowTitle strong { font-size: .83rem; }
+    .filterRowTitle > span { font-size: .68rem; opacity: .67; }
+    .filterTabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 0; }
     .filterTabs button { padding: .7rem .9rem; background: var(--surface); color: var(--000); border: 1px solid var(--subtleBorder); border-radius: .55rem; display: flex; align-items: center; gap: .55rem; font-size: .8rem; font-weight: 800; cursor: pointer; }
     .filterTabs button:hover { border-color: var(--accent); }
     .filterTabs button.tabActive { border-color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
     .tabCount { border-radius: .4rem; padding: .1rem .38rem; background: var(--surfaceMuted); font-size: .73rem; font-variant-numeric: tabular-nums; }
+    .gradeControls { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; }
+    .gradeButton { display: inline-flex; gap: .65rem; justify-content: space-between; align-items: center; border: 1px solid var(--subtleBorder); border-radius: .5rem; background: var(--surface); color: var(--000); padding: .65rem .85rem; cursor: pointer; font-size: .77rem; font-weight: 800; }
+    .gradeButton:hover { border-color: var(--accent); }
+    .gradeButton.gradeActive { border-color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
+    .gradeCount { background: var(--surfaceMuted); border-radius: .35rem; padding: .08rem .3rem; font-size: .69rem; font-variant-numeric: tabular-nums; }
+    .clearGrade { border: 0; color: var(--accent); background: transparent; font: inherit; font-size: .74rem; font-weight: 800; padding: .5rem; cursor: pointer; }
+    .filterHelp { font-size: .69rem; line-height: 1.5; opacity: .65; margin: .55rem 0 0; }
     .boardTools { display: flex; align-items: center; justify-content: space-between; gap: .65rem; margin-bottom: .7rem; }
     .searchField { position: relative; flex: 1; max-width: 500px; }
     .searchField input { width: 100%; box-sizing: border-box; padding: .75rem 1rem .75rem 2.1rem; font-size: .85rem; }
@@ -664,8 +772,11 @@
         .recordGrid { grid-template-columns: 1fr; }
         .lifetimeCard { grid-column: auto; }
         .recordMain { margin: .5rem 0; font-size: 1.9rem; }
+        .globalFilters { padding: 1rem; }
         .filterTabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .filterTabs button { justify-content: space-between; }
+        .filterTabs button, .gradeButton { justify-content: space-between; }
+        .gradeControls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .clearGrade { grid-column: 1 / -1; text-align: left; }
         .boardTools { flex-direction: column; }
         .searchField, .sortField, .sortField select { width: 100%; box-sizing: border-box; }
         .boardLegend { flex-direction: column; align-items: start; }
