@@ -45,15 +45,17 @@ Review the generated JSON files and `static/cfb-model-data/index.json`; commit a
 - BET/WATCH/PASS model screening tiers, sortable/searchable responsive game board.
 - Pre-kickoff vs. past-kickoff status, Central Time display.
 
-## Performance summaries
+## Performance summaries and screening controls
 
-The Model Performance section shows **Week**, **selected Season**, and **Lifetime** W–L–P cards, plus week-by-week and year-by-year records. A strategy selector updates all three scopes together:
+The filters directly beneath the year/week navigator are **independent and composable**:
 
-- **V3 production (default)**: v3_production is true.
-- **Dashboard BET tier**: the site's current A/B rule, applied retrospectively; not your actual published picks.
-- **BET + WATCH combined**: union of status = BET and status = WATCH (A/B/C tiers), counting each distinct game exactly once and excluding PASS. This is available both in the performance strategy selector and as a game-board filter.
-- **V3/raw 0.75–1.00**: V3 edge 0.75 to <1.00 with raw pick agreement.
-- **All V3 model sides**: every game with a V3 pick.
+- **Signal** (choose one): ALL, BET, WATCH, BET + WATCH, PASS. BET + WATCH is the union of those two statuses, with each game counted once.
+- **Grade** (choose any combination): toggle A, B, C, and/or D independently. A + C and A + B + C are selected interactively—there are no prebuilt combinations. No grade selected means all grades.
+- **Optional model strategy** (under Track Record): All V3 model sides (default); V3 production only; V3/raw 0.75–1.00 only. This is a further restriction, not another signal control.
+
+The Signal and Grade filters apply **both** to the visible game board and to the performance scorecards, year table, and week table. The model-strategy restriction applies to the performance figures only. Model history and performance scopes are recomputed from the same archived games; selections are carried in shareable URL query parameters. Count labels for each signal incorporate active grade selections, while the grade counts show matches for the selected signal before the grade constraint.
+
+The Model Performance section shows **Week**, **selected Season**, and **Lifetime** W–L–P cards, plus weekly and season-by-season records.
 
 For every scope, only `v3_result` values WIN, LOSS and PUSH are graded. Other entries are ungraded and **excluded** from W–L–P and ROI. Win rate = wins / (wins + losses), ignoring pushes.
 
