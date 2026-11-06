@@ -115,14 +115,14 @@
         week,
         signal = statusFilter,
         grades = selectedGrades,
-        strategy = data.selectedStrategy || 'production'
+        strategy = data.selectedStrategy || 'all'
     ) => {
         const params = new URLSearchParams();
         params.set('season', String(season));
         if (week != null) params.set('week', String(week));
         if (signal !== 'ALL') params.set('signal', signal);
         if (grades.length) params.set('grades', [...grades].sort().join(','));
-        if (strategy !== 'production') params.set('strategy', strategy);
+        if (strategy !== 'all') params.set('strategy', strategy);
         return '/cfb-model?' + params.toString();
     };
 
@@ -131,7 +131,7 @@
         week,
         signal = statusFilter,
         grades = selectedGrades,
-        strategy = data.selectedStrategy || 'production'
+        strategy = data.selectedStrategy || 'all'
     ) => goto(archiveHref(season, week, signal, grades, strategy), { noScroll: true });
 
     const switchYear = (event) =>
@@ -295,10 +295,10 @@
                     <div>
                         <div class="eyebrow">HOW THE MODEL HAS PERFORMED</div>
                         <h2 id="performance-title">Track record</h2>
-                        <p>Against-the-spread results for the selected signal and grades, with the additional model-strategy filter below.</p>
+                        <p>Against-the-spread results for your chosen signal and grades. Optionally narrow these to a specific model strategy.</p>
                     </div>
                     <label class="selectWrap strategySelect">
-                        <span>Show results for</span>
+                        <span>Additional model strategy (optional)</span>
                         <select value={data.selectedStrategy} on:change={switchPerformanceStrategy} aria-label="Performance strategy">
                             {#each strategies as strategy}
                                 <option value={strategy.id}>{strategy.label}</option>
