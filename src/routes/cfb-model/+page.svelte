@@ -37,7 +37,7 @@
     const tierOrder = { A: 0, B: 1, C: 2, D: 3 };
     const watchImprovementSteps = [3, 5, 7];
     const pickParts = (pick) => {
-        const match = String(pick || '').trim().match(/^(.*?)\\s+([+-]\\d+(?:\\.\\d+)?)$/);
+        const match = String(pick || '').trim().match(/^(.*?)\s+([+-]\d+(?:\.\d+)?)$/);
         return match ? {team: match[1], spread: Number(match[2])} : null;
     };
     const spreadLabel = (points) => {
