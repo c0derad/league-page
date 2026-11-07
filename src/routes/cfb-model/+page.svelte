@@ -10,6 +10,8 @@
     let selectedGrades = [...(data.selectedGrades || [])];
     let performanceView = data.selectedStrategy || 'all';
     let visibleLimit = 20;
+    // User-entered sportsbook quotes are session-only; no odds feed is connected.
+    let watchLiveLines = {};
 
     const gradeOptions = ['A', 'B', 'C', 'D'];
     const resultOptions = [
@@ -33,6 +35,29 @@
     ];
 
     const tierOrder = { A: 0, B: 1, C: 2, D: 3 };
+    const watchImprovementSteps = [3, 5, 7];
+    const pickParts = (pick) => {
+        const match = String(pick || '').trim().match(/^(.*?)\\s+([+-]\\d+(?:\\.\\d+)?)$/);
+        return match ? {team: match[1], spread: Number(match[2])} : null;
+    };
+    const spreadLabel = (points) => {
+        const rounded = Math.round((points + Number.EPSILON) * 100) / 100;
+        return (rounded > 0 ? '+' : '') + String(rounded);
+    };
+    const targetLine = (game, improvement) => {
+        const pick = pickParts(game.v3Pick);
+        return pick ? pick.team + ' ' + spreadLabel(pick.spread + improvement) : '—';
+    };
+    const lineImprovement = (game) => {
+        const pick = pickParts(game.v3Pick);
+        const quoted = watchLiveLines[game.id];
+        if (!pick || quoted == null || String(quoted).trim() === '') return null;
+        const live = Number(quoted);
+        return Number.isFinite(live) ? live - pick.spread : null;
+    };
+    const setWatchLine = (id, value) => {
+        watchLiveLines = {...watchLiveLines, [id]: value};
+    };
 
     $: board = data.board;
     $: games = board?.games || [];
@@ -600,6 +625,35 @@
                             </summary>
 
                             <div class="gameDetails">
+                                {#if game.status === 'WATCH' && pickParts(game.v3Pick)}
+                                    <div class="watchLines">
+                                        <div class="watchLinesHeading">
+                                            <strong>WATCH · line improvement targets</strong>
+                                            <span>V3 reference: {game.v3Pick}</span>
+                                        </div>
+                                        <div class="watchTargets">
+                                            {#each watchImprovementSteps as improvement}
+                                                <div class="watchTarget" class:targetReached={lineImprovement(game) != null && lineImprovement(game) >= improvement}>
+                                                    <span>+{improvement} pts better</span>
+                                                    <strong>{targetLine(game, improvement)}</strong>
+                                                </div>
+                                            {/each}
+                                        </div>
+                                        <label class="watchQuote">
+                                            <span>Sportsbook line for {pickParts(game.v3Pick).team} (optional)</span>
+                                            <input type="number" step="0.5" placeholder="Enter signed spread" value={watchLiveLines[game.id] ?? ''} on:input={(event) => setWatchLine(game.id, event.currentTarget.value)} />
+                                        </label>
+                                        {#if lineImprovement(game) != null}
+                                            <div class="watchComparison">
+                                                {#if lineImprovement(game) >= 7}
+                                                    Meets +3, +5 and +7 improvement targets
+                                                {:else if lineImprovement(game) >= 5}
+                                                    Meets +3 and +5 improvement targets
+                                                {:else if lineImprovement(game) >= 3}
+                                                    Meets +3 improvement target
+                                                {:else}
+                                                    Below +3 improvement target
+                                                {/if}
                                 <div class="detailPrimary">
                                     <h3>Why {game.status.toLowerCase()}?</h3>
                                     <p>{game.reason}.</p>
@@ -621,6 +675,13 @@
                                         </div>
                                     {/if}
                                 </div>
+
+                                                · {spreadLabel(lineImprovement(game))} pts vs reference
+                                            </div>
+                                        {/if}
+                                        <p class="watchDisclaimer">Targets are hypothetical spreads, not live sportsbook quotes. Enter a verified line to compare it against the V3 reference. Better means more points on the selected side, regardless of favorite or underdog. Entries are not saved or included in graded results or ROI.</p>
+                                    </div>
+                                {/if}
                                 <div class="detailStats">
                                     <div><span>Raw model pick</span><strong>{game.rawPick || '—'}</strong></div>
                                     <div><span>Raw model edge</span><strong>{number(game.rawEdge, 2)} pts</strong></div>
@@ -836,6 +897,18 @@
     .detailStats > div { border-bottom: 1px solid var(--subtleBorder); padding-bottom: .6rem; min-width: 0; }
     .detailStats span { display: block; font-size: .65rem; opacity: .66; margin-bottom: .3rem; }
     .detailStats strong { font-size: .77rem; font-weight: 800; overflow-wrap: anywhere; }
+    .watchLines { grid-column: 1 / -1; border: 1px solid var(--subtleBorder); background: var(--surfaceMuted); padding: 1rem; border-radius: .65rem; }
+    .watchLinesHeading { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; flex-wrap: wrap; font-size: .82rem; margin-bottom: .65rem; }
+    .watchLinesHeading span { opacity: .7; font-size: .7rem; }
+    .watchTargets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+    .watchTarget { display: flex; flex-direction: column; gap: .3rem; background: var(--surface); border: 1px solid var(--subtleBorder); padding: .65rem; border-radius: .45rem; }
+    .watchTarget span { font-size: .66rem; opacity: .75; }
+    .watchTarget strong { font-size: .88rem; font-variant-numeric: tabular-nums; }
+    .watchTarget.targetReached { border-color: #26865b; }
+    .watchQuote { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-top: .7rem; font-size: .73rem; }
+    .watchQuote input { padding: .45rem .65rem; width: 150px; }
+    .watchComparison { font-size: .75rem; font-weight: 800; margin-top: .65rem; }
+    .watchDisclaimer { font-size: .67rem !important; line-height: 1.5; opacity: .7; margin: .7rem 0 0 !important; }
     .lineNotice { padding: .65rem .8rem; border-left: 3px solid #ce9a3b; font-size: .75rem; line-height: 1.5; margin-bottom: .9rem; }
     .finalScore { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: .6rem; row-gap: .3rem; margin-bottom: .85rem; }
     .finalScore > span { font-size: .62rem; opacity: .65; }
@@ -889,6 +962,7 @@
         .searchField { max-width: none; }
         .historyGrid { grid-template-columns: 1fr; }
         .gameColumnHead { display: none; }
+        .watchTargets { grid-template-columns: 1fr; }
         .gameItem > summary { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "match rating" "score pick" "edge edge"; align-items: start; gap: .55rem .9rem; }
         .matchupCol { grid-area: match; }
         .scoreCol { grid-area: score; }
