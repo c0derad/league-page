@@ -625,27 +625,6 @@
                             </summary>
 
                             <div class="gameDetails">
-                                <div class="detailPrimary">
-                                    <h3>Why {game.status.toLowerCase()}?</h3>
-                                    <p>{game.reason}.</p>
-                                    {#if game.referenceLineOnly}
-                                        <div class="lineNotice">This is a quarter-point or otherwise nonstandard model reference. Verify a real sportsbook price before considering it.</div>
-                                    {/if}
-                                    {#if game.actualAway != null && game.actualHome != null}
-                                        <div class="finalScore">
-                                            <span>FINAL SCORE</span>
-                                            <strong>{game.away} {number(game.actualAway, 0)} · {game.home} {number(game.actualHome, 0)}</strong>
-                                            <span>V3 result: {game.v3Result || 'ungraded'}</span>
-                                        </div>
-                                    {/if}
-                                    {#if game.strategyTags && game.strategyTags.length}
-                                        <div class="tagGroup">
-                                            {#each game.strategyTags as tag}
-                                                <span>{tag.replaceAll('_', ' ')}</span>
-                                            {/each}
-                                        </div>
-                                    {/if}
-                                </div>
                                 {#if game.status === 'WATCH' && pickParts(game.v3Pick)}
                                     <div class="watchLines">
                                         <div class="watchLinesHeading">
@@ -675,6 +654,28 @@
                                                 {:else}
                                                     Below +3 improvement target
                                                 {/if}
+                                <div class="detailPrimary">
+                                    <h3>Why {game.status.toLowerCase()}?</h3>
+                                    <p>{game.reason}.</p>
+                                    {#if game.referenceLineOnly}
+                                        <div class="lineNotice">This is a quarter-point or otherwise nonstandard model reference. Verify a real sportsbook price before considering it.</div>
+                                    {/if}
+                                    {#if game.actualAway != null && game.actualHome != null}
+                                        <div class="finalScore">
+                                            <span>FINAL SCORE</span>
+                                            <strong>{game.away} {number(game.actualAway, 0)} · {game.home} {number(game.actualHome, 0)}</strong>
+                                            <span>V3 result: {game.v3Result || 'ungraded'}</span>
+                                        </div>
+                                    {/if}
+                                    {#if game.strategyTags && game.strategyTags.length}
+                                        <div class="tagGroup">
+                                            {#each game.strategyTags as tag}
+                                                <span>{tag.replaceAll('_', ' ')}</span>
+                                            {/each}
+                                        </div>
+                                    {/if}
+                                </div>
+
                                                 · {spreadLabel(lineImprovement(game))} pts vs reference
                                             </div>
                                         {/if}
