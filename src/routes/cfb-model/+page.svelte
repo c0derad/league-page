@@ -528,7 +528,7 @@
                 <div>
                     <div class="eyebrow">EXPLORE THE SLATE</div>
                     <h2 id="games-title">Week {board.week} game board</h2>
-                    <p>Filter instantly by signal, confidence grade, or graded result. Sort by kickoff time and expand any matchup for the model's reasoning.</p>
+                    <p>Filter instantly by signal, confidence grade, or graded result. WATCH rows show +3 / +5 / +7 spread targets without expanding. Select a matchup to compare a sportsbook line.</p>
                 </div>
                 <div class="gameTotal">
                     <strong>{games.length}</strong>
@@ -607,6 +607,13 @@
                                 </div>
                                 <div class="pickCol">
                                     <strong>{game.v3Pick || 'No pick'}</strong>
+                                    {#if game.status === 'WATCH' && pickParts(game.v3Pick)}
+                                        <div class="watchInline" aria-label="WATCH spread improvement targets">
+                                            {#each watchImprovementSteps as improvement}
+                                                <span>+{improvement}: <strong>{spreadLabel(pickParts(game.v3Pick).spread + improvement)}</strong></span>
+                                            {/each}
+                                        </div>
+                                    {/if}
                                     {#if game.v3Result && game.actualAway != null && game.actualHome != null}
                                         <small class:resultWin={game.v3Result === 'WIN'} class:resultLoss={game.v3Result === 'LOSS'}>V3 {game.v3Result}</small>
                                     {:else}
@@ -704,6 +711,7 @@
                 </div>
             {/if}
             <p class="filterHelp">The result filter shows recorded V3 model-side outcomes (WIN, LOSS, PUSH). Ungraded includes games without a recorded result, even if kickoff has passed. It changes the visible game board, not the historical ROI calculation.</p>
+            <p class="filterHelp">WATCH +3 / +5 / +7 values are hypothetical point improvements over the V3 reference, not live sportsbook lines. Open the matchup to enter and compare a current book quote.</p>
             <p class="underBoard">Projected score lists the away team first, then the home team. Spreads are archived model reference lines, not verified live sportsbook odds. A BET label is a screening decision, not an official Czar pick.</p>
         </section>
 
@@ -880,6 +888,9 @@
     .scoreCol strong { font-size: 1.02rem; }
     .scoreCol strong span { opacity: .4; }
     .pickCol strong { overflow-wrap: anywhere; }
+    .watchInline { display: flex; flex-wrap: wrap; gap: .25rem .38rem; margin-top: .4rem; }
+    .watchInline span { display: inline-flex; align-items: baseline; gap: .16rem; font-size: .64rem; font-variant-numeric: tabular-nums; border: 1px solid var(--subtleBorder); background: var(--surfaceMuted); border-radius: .26rem; padding: .17rem .3rem; white-space: nowrap; }
+    .watchInline strong { font-size: inherit; display: inline; }
     .scoreCol small, .pickCol small, .edgeCol small, .ratingCol small { display: block; margin-top: .25rem; font-size: .62rem; opacity: .64; line-height: 1.35; }
     .pickCol .resultWin { color: #2a9469; opacity: 1; font-weight: 800; }
     .pickCol .resultLoss { color: #c26767; opacity: 1; font-weight: 800; }
