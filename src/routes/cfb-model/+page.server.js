@@ -14,6 +14,8 @@ const archiveLoaders = {
 const validSignals = new Set(['ALL', 'BET', 'WATCH', 'BET_WATCH', 'PASS']);
 const validGrades = new Set(['A', 'B', 'C', 'D']);
 const validStrategies = new Set(['all', 'production', 'sweet']);
+const validResults = new Set(['ALL', 'GRADED', 'UNGRADED', 'WIN', 'LOSS', 'PUSH']);
+const validSorts = new Set(['priority', 'kickoff', 'kickoff_desc', 'edge', 'matchup']);
 
 export async function load({ url }) {
     const years = manifest.years || [];
@@ -25,7 +27,9 @@ export async function load({ url }) {
             summaryRows: [],
             selectedSignal: 'ALL',
             selectedGrades: [],
-            selectedStrategy: 'all'
+            selectedStrategy: 'all',
+            selectedResult: 'ALL',
+            selectedSort: 'priority'
         };
     }
 
@@ -69,6 +73,12 @@ export async function load({ url }) {
         )].sort(),
         selectedStrategy: validStrategies.has(requestedStrategy)
             ? requestedStrategy
-            : 'all'
+            : 'all',
+        selectedResult: validResults.has(url.searchParams.get('result'))
+            ? url.searchParams.get('result')
+            : 'ALL',
+        selectedSort: validSorts.has(url.searchParams.get('sort'))
+            ? url.searchParams.get('sort')
+            : 'priority'
     };
 }
