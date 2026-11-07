@@ -4,13 +4,28 @@
     export let data;
 
     let search = '';
-    let order = 'priority';
+    let order = data.selectedSort || 'priority';
+    let resultFilter = data.selectedResult || 'ALL';
     let statusFilter = data.selectedSignal || 'ALL';
     let selectedGrades = [...(data.selectedGrades || [])];
     let performanceView = data.selectedStrategy || 'all';
     let visibleLimit = 20;
 
     const gradeOptions = ['A', 'B', 'C', 'D'];
+    const resultOptions = [
+        {id: 'ALL', label: 'All results'},
+        {id: 'GRADED', label: 'Graded'},
+        {id: 'UNGRADED', label: 'Ungraded'},
+        {id: 'WIN', label: 'Wins'},
+        {id: 'LOSS', label: 'Losses'},
+        {id: 'PUSH', label: 'Pushes'}
+    ];
+    const gradedResults = new Set(['WIN', 'LOSS', 'PUSH']);
+    const resultMatches = (game, selected) => {
+        const graded = gradedResults.has(game.v3Result);
+        return selected === 'ALL' || (selected === 'GRADED' && graded) ||
+            (selected === 'UNGRADED' && !graded) || game.v3Result === selected;
+    };
     const strategyOptions = [
         {id: 'all', label: 'All V3 model sides', note: 'All archived V3 model-side outcomes matching the Signal and Grade filters.'},
         {id: 'production', label: 'V3 production only', note: 'Production-qualified V3 games matching the Signal and Grade filters.'},
@@ -97,6 +112,7 @@
     $: filtered = games
         .filter((game) => signalMatches(game, statusFilter))
         .filter((game) => selectedGrades.length === 0 || selectedGrades.includes(game.tier))
+        .filter((game) => resultMatches(game, resultFilter))
         .filter((game) => {
             const term = search.toLowerCase().trim();
             return !term || [game.matchup, game.v3Pick, game.rawPick, game.calPick]
@@ -104,8 +120,14 @@
         })
         .slice()
         .sort((a, b) => {
-            if (order === 'kickoff') {
-                return String(a.kickoffUtc || '').localeCompare(String(b.kickoffUtc || ''));
+            if (order === 'kickoff' || order === 'kickoff_desc') {
+                // Null/TBD kickoffs stay last regardless of direction.
+                if (!a.kickoffUtc || !b.kickoffUtc) {
+                    return a.kickoffUtc ? -1 : b.kickoffUtc ? 1 : 0;
+                }
+                const comparison = String(a.kickoffUtc).localeCompare(String(b.kickoffUtc));
+                return order === 'kickoff_desc' ? -comparison : comparison ||
+                    String(a.matchup).localeCompare(String(b.matchup));
             }
             if (order === 'edge') {
                 return (b.v3Edge ?? -999) - (a.v3Edge ?? -999);
@@ -179,6 +201,8 @@
         if (signal !== 'ALL') params.set('signal', signal);
         if (grades.length) params.set('grades', [...grades].sort().join(','));
         if (strategy !== 'all') params.set('strategy', strategy);
+        if (resultFilter !== 'ALL') params.set('result', resultFilter);
+        if (order !== 'priority') params.set('sort', order);
         return '/cfb-model?' + params.toString();
     };
 
@@ -231,10 +255,24 @@
         syncFilterUrl();
     };
 
+    const switchResult = (event) => {
+        resultFilter = event.currentTarget.value;
+        visibleLimit = 20;
+        syncFilterUrl();
+    };
+
+    const switchSort = (event) => {
+        order = event.currentTarget.value;
+        visibleLimit = 20;
+        syncFilterUrl();
+    };
+
     const clearBoardFilters = () => {
         search = '';
         statusFilter = 'ALL';
         selectedGrades = [];
+        resultFilter = 'ALL';
+        order = 'priority';
         visibleLimit = 20;
         syncFilterUrl();
     };
@@ -465,7 +503,7 @@
                 <div>
                     <div class="eyebrow">EXPLORE THE SLATE</div>
                     <h2 id="games-title">Week {board.week} game board</h2>
-                    <p>Filter instantly by signal or grade. Expand any matchup for the model's reasoning.</p>
+                    <p>Filter instantly by signal, confidence grade, or graded result. Sort by kickoff time and expand any matchup for the model's reasoning.</p>
                 </div>
                 <div class="gameTotal">
                     <strong>{games.length}</strong>
@@ -480,11 +518,20 @@
                     <input type="search" placeholder="Search a team or pick..." bind:value={search} />
                 </label>
                 <label class="sortField">
+                    <span class="srOnly">Result status</span>
+                    <select aria-label="Filter by graded result" value={resultFilter} on:change={switchResult}>
+                        {#each resultOptions as result}
+                            <option value={result.id}>{result.label}</option>
+                        {/each}
+                    </select>
+                </label>
+                <label class="sortField">
                     <span class="srOnly">Sort games</span>
-                    <select aria-label="Sort matchups" bind:value={order}>
+                    <select aria-label="Sort matchups" value={order} on:change={switchSort}>
                         <option value="priority">Highest-rated first</option>
+                        <option value="kickoff">Kickoff: earliest first</option>
+                        <option value="kickoff_desc">Kickoff: latest first</option>
                         <option value="edge">Largest V3 edge</option>
-                        <option value="kickoff">Kickoff time</option>
                         <option value="matchup">Alphabetical</option>
                     </select>
                 </label>
@@ -492,7 +539,7 @@
 
             <div class="boardLegend">
                 <span>{filtered.length} of {games.length} games</span>
-                <span>Signal: {statusFilter === 'BET_WATCH' ? 'BET + WATCH' : statusFilter === 'ALL' ? 'All' : statusFilter} · Grades: {selectedGrades.length ? selectedGrades.join(' + ') : 'All'}</span>
+                <span>Signal: {statusFilter === 'BET_WATCH' ? 'BET + WATCH' : statusFilter === 'ALL' ? 'All' : statusFilter} · Grades: {selectedGrades.length ? selectedGrades.join(' + ') : 'All'} · Result: {resultOptions.find((item) => item.id === resultFilter)?.label || 'All results'}</span>
             </div>
 
             <div class="gameList">
@@ -507,7 +554,7 @@
                 {#if filtered.length === 0}
                     <div class="emptyState">
                         <strong>No games match these filters.</strong>
-                        <p>Try another signal or search term.</p>
+                        <p>Try another signal, grade, graded-result status, or search term.</p>
                         <button type="button" on:click={clearBoardFilters}>Clear filters</button>
                     </div>
                 {:else}
@@ -595,6 +642,7 @@
                     </button>
                 </div>
             {/if}
+            <p class="filterHelp">The result filter shows recorded V3 model-side outcomes (WIN, LOSS, PUSH). Ungraded includes games without a recorded result, even if kickoff has passed. It changes the visible game board, not the historical ROI calculation.</p>
             <p class="underBoard">Projected score lists the away team first, then the home team. Spreads are archived model reference lines, not verified live sportsbook odds. A BET label is a screening decision, not an official Czar pick.</p>
         </section>
 
