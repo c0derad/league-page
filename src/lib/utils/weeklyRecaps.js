@@ -3151,5 +3151,429 @@ export const weeklyRecaps = {
       `
     }
   }
+},
+  9: {
+  intro: `
+    Week 9 is officially in the books.
+
+    And after a brief interruption last week, we return to our regularly scheduled programming.
+
+    The Car Bombs have detonated again.
+
+    167.66.
+
+    High Man.
+
+    Biggest ass beating of the week.
+
+    Rhodes and Pags happened to be standing nearby.
+
+    Unfortunate.
+
+    Matthew Golden scored 32.4.
+
+    Ja'Marr Chase scored 31.5.
+
+    Javonte Williams added 22.4.
+
+    And somehow The Car Bombs also left 40.8 points on the bench.
+
+    Depth.
+
+    Please use the preferred terminology.
+
+    Elsewhere, Ryan responded to his first loss of the season by immediately winning again,
+    moving Naberhood Sex Offender to 8-1.
+
+    Charles helped by leaving 49.1 points on the bench.
+
+    Most in the league.
+
+    Trevor produced the other nuclear performance of the week, hanging 157.08 on Nigasaki
+    and ending Jansen's five-game winning streak with absolutely no regard for narrative.
+
+    Josh finally failed to score 150.
+
+    Moore Oil Coming scored only 124.56.
+
+    Tragic.
+
+    He won by 27.46 anyway and moved to 7-2.
+
+    JV also moved to 7-2 after handling Campus Legends.
+
+    Chaney has now won consecutive games after starting 1-6, beating Madison beers Box
+    by 45.58 behind monster performances from Joe Burrow and CeeDee Lamb.
+
+    Vigo responded by scoring 75.36.
+
+    Low Man.
+
+    The Madison Beer administration is experiencing turbulence.
+
+    At the bottom, Rhodes and Pags are now 1-8.
+
+    At the top, Ryan is 8-1, while JV, Trevor and Josh all sit at 7-2.
+
+    And The Car Bombs are 4-5 after producing the highest score in the entire league.
+
+    We are choosing to focus on the second half of that sentence.
+
+    No Week 9 Czar picks were formally logged, so the official prediction record remains
+    26-16 on the season.
+
+    Administrative load management has returned.
+
+    Judgment has been rendered.
+  `,
+
+  matchups: {
+    1: {
+      headline: "JV Handles Business While Campus Continues to Concern Medical Professionals",
+      recap: `
+        PeterPanthers did not need anything spectacular here.
+
+        JV scored 116.16.
+
+        Campus Legends scored 101.88.
+
+        Final margin:
+
+        14.28.
+
+        It was a fairly ordinary PeterPanthers victory, which at this point is almost
+        more concerning than the explosions.
+
+        San Francisco's defense led JV with 19 points. Chris Olave added 16.8 and Jake
+        Bates kicked his way to another 15.
+
+        Nobody scored 25.
+
+        Nobody needed to.
+
+        Campus actually got respectable performances from Christian McCaffrey, KC
+        Concepcion and Travis Kelce.
+
+        CMC scored 22.7 after finding the end zone twice. Concepcion added 18.8 and
+        Kelce scored 17.3.
+
+        That should normally form the basis of a competitive lineup.
+
+        It did not.
+
+        JQ finished at 101.88 and has now followed his 79.14-point Week 8 disaster with
+        another week barely above 100.
+
+        Two weeks ago Campus was 4-3.
+
+        Campus is now 4-5.
+
+        JV, meanwhile, moves to 7-2.
+
+        PeterPanthers did not dominate.
+
+        PeterPanthers did not need to dominate.
+
+        Good teams occasionally get to win boring games.
+
+        JV has apparently reached that stage of the season.
+      `
+    },
+
+    2: {
+      headline: "Ryan Lost Once and Apparently Hated the Experience",
+      recap: `
+        Last week Jansen ended Ryan's undefeated season.
+
+        There was briefly a question about how Naberhood Sex Offender would respond.
+
+        We now have the answer.
+
+        Ryan beat CousinLover 127.28 to 116.82 and moved immediately to 8-1.
+
+        Brock Purdy led the way with 26.28, throwing two touchdowns and adding another
+        on the ground. Jonah Coleman scored 18.8 and the Rams defense contributed 16.
+
+        It was not Ryan's most violent performance of the season.
+
+        It was exactly what the best teams do after a loss.
+
+        They win the next one.
+
+        Charles actually produced a respectable 116.82.
+
+        Tee Higgins scored 20.2. Amon-Ra St. Brown added 16.6. Kirk Cousins survived
+        three interceptions by finding the end zone with both his arm and his legs.
+
+        The real problem was elsewhere.
+
+        CousinLover left 49.1 points on the bench.
+
+        Most in the league.
+
+        Charles lost by 10.46.
+
+        This therefore qualifies as one of those losses where looking too closely at
+        the bench becomes psychologically unhealthy.
+
+        CousinLover falls to 4-5.
+
+        Ryan moves to 8-1.
+
+        The undefeated season is gone.
+
+        The dominant season very much is not.
+      `
+    },
+
+    3: {
+      headline: "Josh Finally Scores a Normal Number and Wins Anyway",
+      recap: `
+        We should begin by congratulating Josh on his restraint.
+
+        Moore Oil Coming scored 124.56.
+
+        After three straight weeks of 157.80, 153.92 and 157.46, this represents a
+        dramatic return to human behavior.
+
+        Naturally, Josh still won by 27.46.
+
+        Kenneth Walker III handled most of the violence himself, rushing for 102 yards
+        and a touchdown while adding four catches for 41 yards and two more scores.
+
+        36.3 fantasy points.
+
+        Cam Little added 17 from the kicker spot, while Josh Allen finished with a
+        relatively pedestrian 13.86.
+
+        That is probably the most irritating part.
+
+        Josh Allen did not even have a Josh Allen game.
+
+        Moore Oil Coming still won comfortably.
+
+        T2 received another excellent performance from Bucky Irving, who scored 28.5
+        behind 125 total yards and two touchdowns. Dak Prescott added 19.5 and Ka'imi
+        Fairbairn contributed 17.
+
+        Big frydown still finished at 97.10.
+
+        The supporting cast simply did not show up.
+
+        Josh moves to 7-2.
+
+        T2 falls to 2-7.
+
+        Moore Oil Coming's three-week nuclear streak may technically be over.
+
+        The winning streak is not.
+
+        That seems more important.
+      `
+    },
+
+    4: {
+      headline: "Trevor Just Ended Jansen's Revenge Tour With a Flamethrower",
+      recap: `
+        Jansen entered Week 9 as the hottest team in the league.
+
+        Five straight wins.
+
+        A victory over previously undefeated Ryan.
+
+        A legitimate argument for the No. 1 spot in the Power Rankings.
+
+        Trevor responded by scoring 157.08.
+
+        Show Me Your TDs beat Nigasaki by 55.38.
+
+        Jordan Love was absurd.
+
+        372 passing yards.
+
+        Three passing touchdowns.
+
+        Another touchdown on the ground.
+
+        36.18 fantasy points.
+
+        Christian Watson then caught seven passes for 171 yards and a touchdown for
+        another 30.1.
+
+        Luther Burden added 20.7.
+
+        Those three players combined for 86.98.
+
+        Jansen got a monster game from Puka Nacua.
+
+        Fourteen catches.
+
+        150 receiving yards.
+
+        A touchdown.
+
+        35 fantasy points.
+
+        Normally that is the kind of performance that carries a lineup.
+
+        This week it merely kept the final margin from becoming even more obscene.
+
+        Isaiah Likely added 16.3 and Harold Fannin scored 12.2, but Nigasaki finished
+        at only 101.70.
+
+        Five straight wins.
+
+        Then Trevor arrived.
+
+        Show Me Your TDs moves to 7-2.
+
+        Nigasaki falls to 5-4.
+
+        Trevor has spent most of this season winning quietly.
+
+        There was nothing quiet about this.
+      `
+    },
+
+    5: {
+      headline: "Chaney Has Apparently Decided to Start Playing Fantasy Football",
+      recap: `
+        Something has happened to The Oilers.
+
+        Chaney started the season 0-4.
+
+        Then 1-4.
+
+        Then 1-6.
+
+        Now he has won two straight.
+
+        The Oilers beat Madison beers Box 120.94 to 75.36.
+
+        Final margin:
+
+        45.58.
+
+        CeeDee Lamb was ridiculous, catching 10 passes for 195 yards and a touchdown
+        on his way to 33.5.
+
+        Joe Burrow followed with 29.54 after throwing three touchdowns and adding
+        another score on the ground.
+
+        Nico Collins chipped in 15.5.
+
+        CeeDee and Burrow alone combined for 63.04.
+
+        Vigo's entire team scored 75.36.
+
+        Caleb Williams led Madison beers Box with 16.76 despite throwing four
+        interceptions. Jacksonville's defense scored 11. Chase Brown added 10.5.
+
+        That was essentially the offense.
+
+        Vigo takes Low Man.
+
+        Again.
+
+        The roster left only 3.1 points on the bench, so there is not even a lineup
+        management defense available here.
+
+        This was simply bad.
+
+        Chaney improves to 3-6.
+
+        Vigo falls to 2-7.
+
+        One of these teams appears to be slowly climbing out of the basement.
+
+        The other has begun furnishing it.
+      `
+    },
+
+    6: {
+      headline: "BACK TO OUR REGULARLY SCHEDULED PROGRAMMING",
+      recap: `
+        The Car Bombs have detonated.
+
+        Again.
+
+        After losing to Chaney by 1.52 last week in a matchup the administration had
+        described as "comfortable," a response was required.
+
+        Rhodes and Pags were selected as the response.
+
+        Final score:
+
+        The Car Bombs 167.66.
+
+        JVentureSexOffender 108.42.
+
+        Final margin:
+
+        59.24.
+
+        High Man.
+
+        Biggest ass beating of the week.
+
+        Matthew Golden caught all 10 of his targets for 164 yards and a touchdown.
+
+        32.4.
+
+        Ja'Marr Chase caught 10 more passes for 155 yards and another touchdown.
+
+        31.5.
+
+        Javonte Williams rushed for 101 yards, found the end zone and added four catches.
+
+        22.4.
+
+        Three players combined for 86.3 points.
+
+        Rhodes and Pags actually got good performances from their stars.
+
+        Bijan Robinson scored 26.7.
+
+        Brock Bowers scored 22.3.
+
+        Courtland Sutton added 15.5.
+
+        It did not remotely matter.
+
+        The rest of the roster simply watched the explosion from a safe distance.
+
+        JVentureSexOffender falls to 1-8.
+
+        The Car Bombs improve to 4-5.
+
+        And because apparently the score itself was not enough evidence of roster depth,
+        The Car Bombs also left 40.8 points on the bench.
+
+        Second-most in the league.
+
+        We will not be using the phrase "managerial malpractice."
+
+        We scored 167.
+
+        The Czar controls the publication.
+
+        This is called depth.
+
+        After nine weeks, The Car Bombs have now produced individual scores of:
+
+        154.56.
+
+        156.16.
+
+        167.66.
+
+        The record remains irritating.
+
+        The ceiling does not.
+
+        Back to our regularly scheduled programming.
+      `
+    }
+  }
 }
 };
