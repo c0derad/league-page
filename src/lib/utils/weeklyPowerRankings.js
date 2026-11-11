@@ -5325,4 +5325,1021 @@ export const weeklyPowerRankings = {
         }
     ]
 },
+10: {
+  title: "Week 10 Czar Power Rankings",
+
+  intro: `
+    Nine weeks are in the books.
+
+    We finally have something resembling separation.
+
+    Ryan is 8-1.
+
+    Josh, JV and Trevor are all 7-2.
+
+    Then things get significantly less orderly.
+
+    Jansen went from 0-3 to five straight wins, beat Ryan, briefly looked like the
+    hottest team in the league, and then immediately got beaten by 55 points.
+
+    The Car Bombs responded to a 1.52-point loss by scoring 167.66, taking High Man
+    and delivering the largest ass beating of Week 9.
+
+    Chaney has apparently remembered how fantasy football works and has now won
+    consecutive games after spending most of the season underground.
+
+    Charles continues alternating between looking dangerous and personally sabotaging
+    himself with his bench.
+
+    Campus Legends has scored 79.14 and 101.88 in consecutive weeks and is now facing
+    questions previously reserved for federal investigations.
+
+    Rhodes and Pags are 1-8 despite maintaining a roster that still looks considerably
+    better than 1-8.
+
+    T2 remains T2.
+
+    Vigo just scored 75.36.
+
+    These are not standings.
+
+    Record matters. Full-season scoring matters. Recent scoring matters. Roster quality
+    matters. Week 10 availability and projection matter.
+
+    And occasionally dropping 167 points forces the publication to reconsider things.
+
+    Because no Week 9 Power Rankings were formally published, movement is measured
+    against the Week 8 board.
+
+    Welcome to Week 10.
+  `,
+
+  rankings: [
+    {
+      rank: 1,
+      previousRank: 1,
+      movement: 0,
+      rosterID: 8,
+      team: "Naberhood Sex Offender",
+      record: "8-1",
+
+      week1Score: 128.80,
+      week2Score: 133.98,
+      week3Score: 123.28,
+      week4Score: 160.32,
+      week5Score: 130.02,
+      week6Score: 132.66,
+      week7Score: 115.12,
+      week8Score: 97.00,
+      week9Score: 127.28,
+
+      week10Projection: 134.98,
+
+      headline: "The Throne Survived Its First Loss",
+
+      commentary: `
+        Ryan stays No. 1.
+
+        It really is that simple.
+
+        Naberhood Sex Offender lost for the first time in Week 8, and there was a
+        legitimate opportunity for the league to find out whether that loss exposed
+        something.
+
+        Ryan responded by winning immediately.
+
+        127.28.
+
+        8-1.
+
+        The only team in the league with fewer than two losses.
+
+        Brock Purdy scored 26.28 last week, Jonah Coleman added 18.8 and the Rams
+        defense supplied another 16.
+
+        It was not some overwhelming 160-point explosion.
+
+        It did not need to be.
+
+        More importantly, the Week 10 roster again looks disgusting.
+
+        Purdy.
+
+        Jonathan Taylor.
+
+        Parker Washington.
+
+        George Kittle.
+
+        Malik Nabers.
+
+        Tetairoa McMillan.
+
+        Ashton Jeanty.
+
+        Sleeper currently projects 134.98, the highest total on the entire Week 10 board.
+
+        Ryan also gets JV this week.
+
+        No. 1 against one of the three 7-2 teams directly behind him.
+
+        Another chance to defend the throne.
+
+        Until somebody produces a résumé better than 8-1, Ryan stays exactly where
+        he is.
+      `,
+
+      transactions: `
+        Ryan has continued aggressively working the waiver wire.
+
+        Added Jordyn Tyson and Audric Estime while previously adding Kyle Monangai
+        and Eddy Pineiro.
+
+        Mark Andrews and Michael Wilson were moved out.
+
+        The roster remains deep enough that Ryan continues treating the bottom of the
+        bench like an active research department.
+      `
+    },
+
+    {
+      rank: 2,
+      previousRank: 3,
+      movement: 1,
+      rosterID: 10,
+      team: "Moore Oil Coming",
+      record: "7-2",
+
+      week1Score: 147.16,
+      week2Score: 141.02,
+      week3Score: 109.42,
+      week4Score: 116.52,
+      week5Score: 107.30,
+      week6Score: 157.80,
+      week7Score: 153.92,
+      week8Score: 157.46,
+      week9Score: 124.56,
+
+      week10Projection: 118.19,
+
+      headline: "The Most Terrifying Offense in the League",
+
+      commentary: `
+        Josh moves to No. 2.
+
+        Weeks 6 through 8:
+
+        157.80.
+
+        153.92.
+
+        157.46.
+
+        Then Josh finally came back to earth last week.
+
+        124.56.
+
+        He won by 27.46 anyway.
+
+        Moore Oil Coming is now 7-2 and has averaged 145.31 points over its last
+        three games.
+
+        That is absurd.
+
+        Josh Allen and JSN remain one of the best quarterback-receiver foundations
+        in the league, Kenneth Walker just scored 36.3, and Bhayshul Tuten has added
+        another legitimate weekly ceiling piece.
+
+        The full-season average is approximately 135 points.
+
+        Only JV is slightly higher.
+
+        Unlike JV, however, Josh has recently been setting entire sections of the
+        standings on fire.
+
+        Week 10 brings Campus Legends.
+
+        Sleeper currently has Josh ahead by almost 19.
+
+        That seems polite.
+
+        Ryan still owns the best record.
+
+        Josh currently owns the strongest argument for best offense.
+      `,
+
+      transactions: `
+        Josh briefly cycled Woody Marks and Hunter Henry before ultimately bringing
+        Henry back.
+
+        Nothing dramatic.
+
+        When the roster has spent a month scoring like this, major surgery would be
+        managerial malpractice.
+      `
+    },
+
+    {
+      rank: 3,
+      previousRank: 4,
+      movement: 1,
+      rosterID: 2,
+      team: "PeterPanthers",
+      record: "7-2",
+
+      week1Score: 172.16,
+      week2Score: 137.34,
+      week3Score: 142.04,
+      week4Score: 110.76,
+      week5Score: 156.86,
+      week6Score: 114.54,
+      week7Score: 140.02,
+      week8Score: 140.98,
+      week9Score: 116.16,
+
+      week10Projection: 103.27,
+
+      headline: "Seven Wins and Still Somehow Easy to Forget About",
+
+      commentary: `
+        JV quietly moves back into the top three.
+
+        PeterPanthers is 7-2.
+
+        Full-season scoring average:
+
+        136.76.
+
+        Highest in the league.
+
+        JV has now produced five different weeks above 137 points and has only failed
+        to reach 110 once.
+
+        Week 9 was not particularly impressive.
+
+        San Francisco's defense was JV's leading scorer with 19, Chris Olave added
+        16.8 and Jake Bates somehow finished third at 15.
+
+        PeterPanthers still won.
+
+        That matters.
+
+        Good teams occasionally survive mediocre weeks because the floor underneath
+        them remains functional.
+
+        The concern is Week 10.
+
+        Sleeper currently projects JV at only 103.27 against Ryan's 134.98.
+
+        D'Andre Swift is sitting at zero in the current projection snapshot, and the
+        usable lineup is thinner than normal.
+
+        But Power Rankings are not a one-week projection contest.
+
+        JV has nine weeks of evidence.
+
+        Seven wins.
+
+        The league's highest scoring average.
+
+        And now a direct shot at Ryan.
+
+        If PeterPanthers wins this week, the No. 1 conversation becomes extremely
+        uncomfortable.
+      `,
+
+      transactions: `
+        No meaningful Week 9 transaction activity.
+
+        JV appears comfortable letting Gibbs, McBride, Olave, Daniels and the existing
+        core carry the operation.
+
+        Seven wins suggest that is defensible.
+      `
+    },
+
+    {
+      rank: 4,
+      previousRank: 5,
+      movement: 1,
+      rosterID: 4,
+      team: "Show Me Your TDs",
+      record: "7-2",
+
+      week1Score: 124.40,
+      week2Score: 132.86,
+      week3Score: 127.28,
+      week4Score: 109.08,
+      week5Score: 150.94,
+      week6Score: 127.24,
+      week7Score: 106.10,
+      week8Score: 126.82,
+      week9Score: 157.08,
+
+      week10Projection: 94.54,
+
+      headline: "Quietly Winning Has Become Loudly Winning",
+
+      commentary: `
+        Trevor has spent most of the season occupying the least dramatic section of
+        these rankings.
+
+        Good roster.
+
+        Good scores.
+
+        Wins games.
+
+        Minimal chaos.
+
+        Week 9 ended that.
+
+        Show Me Your TDs scored 157.08 and destroyed the hottest team in the league
+        by 55.38.
+
+        Jordan Love scored 36.18.
+
+        Christian Watson scored 30.1.
+
+        Luther Burden added 20.7.
+
+        Trevor is now 7-2 and averaging 129.09 points for the season.
+
+        More importantly, the supposed boring consistency now has a legitimate ceiling
+        attached to it.
+
+        The only reason Trevor is fourth instead of higher is the quality of the three
+        résumés above him.
+
+        Week 10 does create a problem.
+
+        Sleeper currently projects only 94.54 against CousinLover.
+
+        Several normal starters are carrying zeroes in the current snapshot, including
+        Luther Burden, Emeka Egbuka and DeVonta Smith.
+
+        That projection deserves monitoring.
+
+        It does not erase nine weeks of evidence.
+
+        Trevor belongs in the top four.
+      `,
+
+      transactions: `
+        Added Caleb Douglas and dropped Makai Lemon.
+
+        A modest depth adjustment from a manager whose roster has required remarkably
+        little emergency intervention this season.
+      `
+    },
+
+    {
+      rank: 5,
+      previousRank: 6,
+      movement: 1,
+      rosterID: 1,
+      team: "The Car Bombs",
+      record: "4-5",
+
+      week1Score: 91.62,
+      week2Score: 89.32,
+      week3Score: 154.56,
+      week4Score: 111.74,
+      week5Score: 156.16,
+      week6Score: 114.60,
+      week7Score: 121.44,
+      week8Score: 114.56,
+      week9Score: 167.66,
+
+      week10Projection: 122.83,
+
+      headline: "The Record Is Ugly. The Offense Is Not.",
+
+      commentary: `
+        Yes.
+
+        Fifth.
+
+        The Czar has reviewed the allegations of corruption and found them unsupported.
+
+        The Car Bombs are 4-5.
+
+        That is not a top-five record.
+
+        The offense currently looks like a top-five offense.
+
+        Week 9:
+
+        167.66.
+
+        High Man.
+
+        Matthew Golden scored 32.4.
+
+        Ja'Marr Chase scored 31.5.
+
+        Javonte Williams scored 22.4.
+
+        Drake Maye added 21.26.
+
+        The Car Bombs also left 40.8 on the bench.
+
+        Over the last five weeks, the offense is averaging 134.88.
+
+        Over the last three:
+
+        134.55.
+
+        Since the 0-2 opening disaster, this team has produced 154.56, 111.74, 156.16,
+        114.60, 121.44, 114.56 and 167.66.
+
+        The early-season corpse is increasingly irrelevant to evaluating what this team
+        is now.
+
+        Drake Maye, Chase, London, Javonte, Skattebo and Golden give the lineup multiple
+        legitimate ceiling outcomes.
+
+        Sleeper currently projects 122.83 against Jansen this week.
+
+        The Car Bombs are favored.
+
+        Now comes the important part.
+
+        At 4-5, Power Ranking respect is meaningless unless the wins follow.
+
+        The offense has earned fifth.
+
+        The standings have not.
+
+        Fix that.
+      `,
+
+      transactions: `
+        Added the New York Giants defense and dropped Washington.
+
+        Extremely boring.
+
+        Which is acceptable when the offense just scored 167.66.
+      `
+    },
+
+    {
+      rank: 6,
+      previousRank: 2,
+      movement: -4,
+      rosterID: 6,
+      team: "Nigasaki",
+      record: "5-4",
+
+      week1Score: 136.56,
+      week2Score: 118.50,
+      week3Score: 98.34,
+      week4Score: 157.88,
+      week5Score: 199.70,
+      week6Score: 121.52,
+      week7Score: 120.90,
+      week8Score: 122.80,
+      week9Score: 101.70,
+
+      week10Projection: 111.52,
+
+      headline: "The Revenge Tour Finally Hit a Guardrail",
+
+      commentary: `
+        This looks harsher than it is.
+
+        Jansen falls from second to sixth because the teams around him have become
+        substantially stronger, not because Nigasaki suddenly became bad.
+
+        The 0-3 start became five consecutive wins.
+
+        Jansen beat Ryan.
+
+        Nigasaki earned every bit of the climb.
+
+        Then Trevor dropped 157.08 on him.
+
+        Nigasaki scored 101.70.
+
+        Puka Nacua gave Jansen 35 and the rest of the lineup simply did not supply
+        enough.
+
+        Over the last three weeks, Nigasaki is averaging only 115.13.
+
+        That is a significant cooldown from the 150-point four-week stretch that
+        originally launched Jansen toward the top.
+
+        The roster is still excellent.
+
+        Puka.
+
+        Zay Flowers.
+
+        Kyren Williams.
+
+        Jaylen Warren.
+
+        Josh Jacobs.
+
+        Harold Fannin.
+
+        Isaiah Likely.
+
+        There is plenty here.
+
+        But this week's matchup is perfect.
+
+        Nigasaki versus The Car Bombs.
+
+        Fifth versus sixth.
+
+        Sleeper currently favors the Czar.
+
+        One of these two teams gets immediate validation.
+
+        The other gets another problem.
+      `,
+
+      transactions: `
+        No recent moves.
+
+        Jansen is betting on the roster that produced five consecutive wins to rebound.
+
+        Reasonable.
+      `
+    },
+
+    {
+      rank: 7,
+      previousRank: 7,
+      movement: 0,
+      rosterID: 9,
+      team: "CousinLover",
+      record: "4-5",
+
+      week1Score: 151.02,
+      week2Score: 122.76,
+      week3Score: 122.82,
+      week4Score: 123.02,
+      week5Score: 89.72,
+      week6Score: 73.82,
+      week7Score: 116.20,
+      week8Score: 139.08,
+      week9Score: 116.82,
+
+      week10Projection: 119.43,
+
+      headline: "Charles Would Be Dangerous If Charles Stopped Fighting Charles",
+
+      commentary: `
+        CousinLover remains seventh.
+
+        The roster is clearly better than 4-5.
+
+        The management remains under investigation.
+
+        Charles scored 116.82 last week and lost to Ryan by 10.46.
+
+        That is not embarrassing.
+
+        Leaving 49.1 points on the bench is.
+
+        Most in the league.
+
+        Again, the underlying pieces are strong.
+
+        Amon-Ra St. Brown.
+
+        Derrick Henry.
+
+        Breece Hall.
+
+        Tee Higgins.
+
+        Rhamondre Stevenson.
+
+        Charles has enough talent to beat almost anyone when the lineup cooperates.
+
+        He has also produced 73.82 this season.
+
+        Both realities matter.
+
+        The recent offense is improving: 116.20, 139.08 and 116.82 over the last three.
+
+        Week 10 gives Charles an excellent opportunity because Sleeper currently has
+        CousinLover projected almost 25 points ahead of Trevor.
+
+        If Charles actually starts the correct humans, this could get interesting.
+
+        That remains a meaningful condition.
+      `,
+
+      transactions: `
+        Dropped Zonovan Knight.
+
+        Otherwise quiet.
+
+        Charles may benefit more from optimizing the players already on the roster
+        than from acquiring additional ones.
+      `
+    },
+
+    {
+      rank: 8,
+      previousRank: 11,
+      movement: 3,
+      rosterID: 3,
+      team: "The Oilers",
+      record: "3-6",
+
+      week1Score: 129.46,
+      week2Score: 83.58,
+      week3Score: 83.18,
+      week4Score: 141.22,
+      week5Score: 107.90,
+      week6Score: 84.04,
+      week7Score: 97.98,
+      week8Score: 116.08,
+      week9Score: 120.94,
+
+      week10Projection: 96.86,
+
+      headline: "Chaney Has Rejoined Society",
+
+      commentary: `
+        The Oilers jump three spots.
+
+        Two weeks ago this would have sounded ridiculous.
+
+        Chaney is still only 3-6.
+
+        But the direction has changed.
+
+        116.08.
+
+        120.94.
+
+        Two straight wins.
+
+        Joe Burrow just scored 29.54.
+
+        CeeDee Lamb scored 33.5.
+
+        Nico Collins is back in the lineup.
+
+        Dalton Kincaid remains productive.
+
+        And Ladd McConkey continues to look like an absurd gift from T2.
+
+        The roster now resembles the team we expected Chaney to have months ago.
+
+        The problem is the hole he already dug.
+
+        The Oilers still average only 107.15 on the season.
+
+        Week 10 also carries a strangely low 96.86 projection because several depth
+        spots are currently giving Chaney almost nothing.
+
+        Fortunately, the opponent is T2.
+
+        Big frydown currently projects 71.37.
+
+        Chaney has gone from dead to vaguely alive.
+
+        In the lower half of these rankings, that qualifies as meaningful momentum.
+      `,
+
+      transactions: `
+        Added Green Bay D/ST and Corey Kiner.
+
+        Dropped Chicago D/ST and Seth McGowan after previously releasing Chris Godwin.
+
+        Chaney continues actively rebuilding the bottom of the roster while Burrow,
+        CeeDee and Nico carry the top.
+      `
+    },
+
+    {
+      rank: 9,
+      previousRank: 9,
+      movement: 0,
+      rosterID: 5,
+      team: "JVentureSexOffender",
+      record: "1-8",
+
+      week1Score: 77.30,
+      week2Score: 136.08,
+      week3Score: 147.80,
+      week4Score: 108.18,
+      week5Score: 114.62,
+      week6Score: 73.68,
+      week7Score: 109.20,
+      week8Score: 115.28,
+      week9Score: 108.42,
+
+      week10Projection: 105.40,
+
+      headline: "At Some Point the Record Wins the Argument",
+
+      commentary: `
+        Rhodes and Pags remain ninth.
+
+        The roster is still too talented for the record.
+
+        The record is now 1-8.
+
+        We have reached the stage where repeating both facts in the same paragraph
+        becomes unavoidable.
+
+        Bijan Robinson scored 26.7 last week.
+
+        Brock Bowers scored 22.3.
+
+        Courtland Sutton added 15.5.
+
+        The team scored 108.42 and was promptly annihilated by The Car Bombs.
+
+        Week 9 represented another perfectly respectable collection of individual
+        players attached to an entirely unsuccessful fantasy team.
+
+        There are still names here:
+
+        Bijan.
+
+        Bowers.
+
+        Rashee Rice.
+
+        Davante Adams.
+
+        Quinshon Judkins.
+
+        Wan'Dale Robinson.
+
+        This should not be 1-8.
+
+        It is.
+
+        Rhodes and Pags now get Vigo in what may be the league's most important
+        relegation match.
+
+        If you cannot win this one, the roster-quality defense is officially closed.
+      `,
+
+      transactions: `
+        C.J. Stroud added.
+
+        Matthew Stafford dropped.
+
+        A significant quarterback change for a 1-8 team.
+
+        At this point experimentation is not merely acceptable.
+
+        It is mandatory.
+      `
+    },
+
+    {
+      rank: 10,
+      previousRank: 8,
+      movement: -2,
+      rosterID: 11,
+      team: "Campus Legends",
+      record: "4-5",
+
+      week1Score: 101.46,
+      week2Score: 119.88,
+      week3Score: 142.04,
+      week4Score: 89.00,
+      week5Score: 139.88,
+      week6Score: 111.28,
+      week7Score: 81.40,
+      week8Score: 79.14,
+      week9Score: 101.88,
+
+      week10Projection: 99.47,
+
+      headline: "The Collapse Is No Longer a Small Sample",
+
+      commentary: `
+        JQ falls to tenth.
+
+        Campus Legends is 4-5.
+
+        Normally that record would keep a team comfortably above several teams below it.
+
+        The recent scoring does not allow that.
+
+        Last three weeks:
+
+        81.40.
+
+        79.14.
+
+        101.88.
+
+        Average:
+
+        87.47.
+
+        That is horrific.
+
+        Christian McCaffrey remains elite.
+
+        Mahomes remains Mahomes.
+
+        George Pickens, Travis Kelce and Tyler Warren give the roster recognizable
+        talent.
+
+        Yet somehow the completed product keeps producing scores that belong much
+        closer to the bottom of the league.
+
+        This is no longer one bad week.
+
+        It is a trend.
+
+        Campus does not fall below Rhodes because Rhodes is good.
+
+        Campus falls because the recent version of Campus has been worse.
+
+        Week 10 brings Josh.
+
+        Exactly what the doctor ordered.
+      `,
+
+      transactions: `
+        Added Devin Singletary after previously adding J.K. Dobbins and Kendre Miller.
+
+        Jordan Mason and Miller were moved out.
+
+        JQ is clearly searching for usable running back depth.
+
+        The search has not yet fixed the scoring.
+      `
+    },
+
+    {
+      rank: 11,
+      previousRank: 10,
+      movement: -1,
+      rosterID: 12,
+      team: "Big frydown",
+      record: "2-7",
+
+      week1Score: 145.50,
+      week2Score: 81.66,
+      week3Score: 92.54,
+      week4Score: 87.00,
+      week5Score: 139.64,
+      week6Score: 82.42,
+      week7Score: 107.98,
+      week8Score: 116.90,
+      week9Score: 97.10,
+
+      week10Projection: 71.37,
+
+      headline: "The Week 1 Investigation Has Been Closed for Months",
+
+      commentary: `
+        T2 falls to eleventh.
+
+        Big frydown is 2-7.
+
+        The season opened with 145.50.
+
+        We briefly investigated whether something had changed.
+
+        Nine weeks later, enough evidence has accumulated.
+
+        It had not.
+
+        Bucky Irving remains legitimately good and scored 28.5 last week.
+
+        Dak Prescott added 19.5.
+
+        Fairbairn scored 17.
+
+        Big frydown still finished below 100.
+
+        Again.
+
+        The roster has produced a few strong individual weeks, but there simply is
+        not enough reliable production underneath them.
+
+        The current Week 10 projection is 71.37.
+
+        Seventy-one.
+
+        That is not a fantasy projection.
+
+        That is a distress signal.
+
+        T2 gets Chaney this week.
+
+        If Big frydown wants to escape the bottom two, it would be useful to begin
+        scoring like a full roster again.
+      `,
+
+      transactions: `
+        Added New Orleans D/ST recently.
+
+        The more consequential transaction remains dropping Ladd McConkey and watching
+        Chaney pick him up.
+
+        Historical records will preserve that decision.
+      `
+    },
+
+    {
+      rank: 12,
+      previousRank: 12,
+      movement: 0,
+      rosterID: 7,
+      team: "Madison beers Box",
+      record: "2-7",
+
+      week1Score: 99.76,
+      week2Score: 89.92,
+      week3Score: 84.28,
+      week4Score: 127.48,
+      week5Score: 90.54,
+      week6Score: 102.80,
+      week7Score: 79.52,
+      week8Score: 114.48,
+      week9Score: 75.36,
+
+      week10Projection: 89.18,
+
+      headline: "Madison Beer Cannot Keep Getting Away With This",
+
+      commentary: `
+        Vigo stays last.
+
+        75.36.
+
+        Low Man.
+
+        Again.
+
+        The full-season scoring average is now approximately 96 points.
+
+        The last three weeks average 89.79.
+
+        There is simply no statistical argument for moving this team upward.
+
+        The strange part is that the roster still contains real players.
+
+        Justin Jefferson.
+
+        A.J. Brown.
+
+        Chase Brown.
+
+        Jameson Williams.
+
+        Jaylen Waddle.
+
+        Travis Etienne.
+
+        Yet the completed lineup continues generating scores that look like somebody
+        forgot to fill several positions.
+
+        Week 9 was particularly ugly because Vigo only left 3.1 points on the bench.
+
+        There was no magical alternate lineup.
+
+        The roster simply scored 75.
+
+        The recent waiver frenzy at least shows signs of life.
+
+        Tank Dell.
+
+        Darren Waller.
+
+        Keenan Allen.
+
+        Multiple changes in a matter of days.
+
+        Vigo now gets Rhodes and Pags.
+
+        No. 12 against No. 9.
+
+        The league's basement has scheduled its own summit.
+      `,
+
+      transactions: `
+        Vigo has become extremely active.
+
+        Added Tank Dell, Darren Waller and Keenan Allen after briefly adding and then
+        dropping Alvin Kamara.
+
+        Mike Gesicki and Germie Bernard were also moved out.
+
+        The roster is changing.
+
+        The ranking will change when the points do.
+      `
+    }
+  ]
+},
 };
