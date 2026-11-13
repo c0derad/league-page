@@ -14,10 +14,10 @@
         bet
     ) => ({
         ...bet,
-        opponent: 'Loading...',
-        opponentSlug: null,
-        matchupFound: false,
-        matchupSeparator: 'vs',
+        opponent: bet.opponent || 'Loading...',
+        opponentSlug: bet.opponentSlug || null,
+        matchupFound: Boolean(bet.opponent),
+        matchupSeparator: bet.matchupSeparator || 'vs',
         espnTeamLogo: null,
         espnOpponentLogo: null
     });
@@ -266,16 +266,16 @@
             ...bet,
 
             opponent:
-                'Opponent TBD',
+                bet.opponent || 'Opponent TBD',
 
             opponentSlug:
-                null,
+                bet.opponentSlug || null,
 
             matchupFound:
-                false,
+                Boolean(bet.opponent),
 
             matchupSeparator:
-                'vs',
+                bet.matchupSeparator || 'vs',
 
             espnTeamLogo:
                 null,
@@ -295,16 +295,16 @@
                 ...bet,
 
                 opponent:
-                    'Opponent TBD',
+                    bet.opponent || 'Opponent TBD',
 
                 opponentSlug:
-                    null,
+                    bet.opponentSlug || null,
 
                 matchupFound:
-                    false,
+                    Boolean(bet.opponent),
 
                 matchupSeparator:
-                    'vs',
+                    bet.matchupSeparator || 'vs',
 
                 espnTeamLogo:
                     null,
