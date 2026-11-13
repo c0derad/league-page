@@ -2266,6 +2266,7 @@ export const weeklyPreviews = {
       pick: "The Car Bombs",
       pickRosterID: 1
     }
+  }
   },
   10: {
     "intro": "Week 10. Four playoff contenders are sitting at 7-2 or better, Ryan is still running the league at 8-1, and the Czar has finally decided to play offense.\n\nThis is the week of uncomfortable matchups. Ryan gets a 7-2 PeterPanthers squad. The Car Bombs get a red-hot-then-not Nigasaki. Trevor has won seven games and is somehow a substantial underdog. At the other end of the standings, somebody in the Rhodes/Pags–Vigo game has to leave with a win.\n\nThe projections and records below reflect the Sleeper snapshot captured November 11, 2026, before the full Week 10 slate. These are the Czar's pregame judgments, not live lines or final results.\n\nSix games. Six verdicts. No appeals.",
