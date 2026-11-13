@@ -14,10 +14,10 @@
         bet
     ) => ({
         ...bet,
-        opponent: 'Loading...',
-        opponentSlug: null,
-        matchupFound: false,
-        matchupSeparator: 'vs',
+        opponent: bet.opponent || 'Loading...',
+        opponentSlug: bet.opponentSlug || null,
+        matchupFound: Boolean(bet.opponent),
+        matchupSeparator: bet.matchupSeparator || 'vs',
         espnTeamLogo: null,
         espnOpponentLogo: null
     });
@@ -266,16 +266,16 @@
             ...bet,
 
             opponent:
-                'Opponent TBD',
+                bet.opponent || 'Opponent TBD',
 
             opponentSlug:
-                null,
+                bet.opponentSlug || null,
 
             matchupFound:
-                false,
+                Boolean(bet.opponent),
 
             matchupSeparator:
-                'vs',
+                bet.matchupSeparator || 'vs',
 
             espnTeamLogo:
                 null,
@@ -295,16 +295,16 @@
                 ...bet,
 
                 opponent:
-                    'Opponent TBD',
+                    bet.opponent || 'Opponent TBD',
 
                 opponentSlug:
-                    null,
+                    bet.opponentSlug || null,
 
                 matchupFound:
-                    false,
+                    Boolean(bet.opponent),
 
                 matchupSeparator:
-                    'vs',
+                    bet.matchupSeparator || 'vs',
 
                 espnTeamLogo:
                     null,
@@ -573,7 +573,7 @@
     <div class="sectionHeader">
 
         <div class="sectionEyebrow">
-            OFFICIAL CARD
+            {data.bestBetsData.modelSnapshot ? 'V9 MODEL PRODUCTION CARD' : 'OFFICIAL CARD'}
         </div>
 
         <h2>
@@ -581,7 +581,11 @@
         </h2>
 
         <div class="sectionSubhead">
-            These plays count toward the official model record.
+            {#if data.bestBetsData.modelSnapshot}
+                These are V9 production-qualified selections from a fixed quote snapshot, not confirmed placed wagers. Check current sportsbook lines.
+            {:else}
+                These plays count toward the official model record.
+            {/if}
         </div>
 
     </div>
@@ -715,7 +719,7 @@
             <div class="bonusHeader">
 
                 <div class="bonusEyebrow">
-                    OFF-MODEL ACTION
+                    {data.bestBetsData.bonusBets?.modelWatchlist ? 'H3 RESEARCH · NOT PRODUCTION' : 'OFF-MODEL ACTION'}
                 </div>
 
                 <h2 class="bonusTitle">
@@ -752,7 +756,7 @@
                         >
 
                             <div class="rankLabel">
-                                BONUS
+                                {data.bestBetsData.bonusBets?.modelWatchlist ? 'WATCH' : 'BONUS'}
                             </div>
 
                             <div
@@ -846,7 +850,7 @@
                             >
 
                                 <div class="pickLabel">
-                                    EMOTIONAL PLAY
+                                    {data.bestBetsData.bonusBets?.modelWatchlist ? 'H3 CANDIDATE' : 'EMOTIONAL PLAY'}
                                 </div>
 
                                 <div class="pickValue">

@@ -44,12 +44,19 @@
         const rounded = Math.round((points + Number.EPSILON) * 100) / 100;
         return (rounded > 0 ? '+' : '') + String(rounded);
     };
+    const useV9 = (game) => Boolean(game.v3Live && game.v9);
+    const boardPick = (game) => useV9(game) && game.v9?.selectedTeam && game.v9?.frozenSelectedSpread != null
+        ? game.v9.selectedTeam + ' ' + spreadLabel(game.v9.frozenSelectedSpread)
+        : game.v3Pick;
+    const boardEdge = (game) => useV9(game) ? (game.v9.predictedEdge ?? game.v3Edge) : game.v3Edge;
+    const boardAwayScore = (game) => useV9(game) ? (game.v9.predictedAway ?? game.projectedAway) : game.projectedAway;
+    const boardHomeScore = (game) => useV9(game) ? (game.v9.predictedHome ?? game.projectedHome) : game.projectedHome;
     const targetLine = (game, improvement) => {
-        const pick = pickParts(game.v3Pick);
+        const pick = pickParts(boardPick(game));
         return pick ? pick.team + ' ' + spreadLabel(pick.spread + improvement) : '—';
     };
     const lineImprovement = (game) => {
-        const pick = pickParts(game.v3Pick);
+        const pick = pickParts(boardPick(game));
         const quoted = watchLiveLines[game.id];
         if (!pick || quoted == null || String(quoted).trim() === '') return null;
         const live = Number(quoted);
@@ -140,7 +147,7 @@
         .filter((game) => resultMatches(game, resultFilter))
         .filter((game) => {
             const term = search.toLowerCase().trim();
-            return !term || [game.matchup, game.v3Pick, game.rawPick, game.calPick]
+            return !term || [game.matchup, boardPick(game), game.v3Pick, game.rawPick, game.calPick]
                 .some((value) => String(value || '').toLowerCase().includes(term));
         })
         .slice()
@@ -155,7 +162,7 @@
                     String(a.matchup).localeCompare(String(b.matchup));
             }
             if (order === 'edge') {
-                return (b.v3Edge ?? -999) - (a.v3Edge ?? -999);
+                return (boardEdge(b) ?? -999) - (boardEdge(a) ?? -999);
             }
             if (order === 'matchup') {
                 return String(a.matchup).localeCompare(String(b.matchup));
@@ -163,7 +170,7 @@
             const tierDifference =
                 (tierOrder[a.tier] ?? 9) - (tierOrder[b.tier] ?? 9);
             return tierDifference ||
-                (b.v3Edge ?? -999) - (a.v3Edge ?? -999) ||
+                (boardEdge(b) ?? -999) - (boardEdge(a) ?? -999) ||
                 String(a.kickoffUtc || '').localeCompare(String(b.kickoffUtc || ''));
         });
     $: shownGames = filtered.slice(0, visibleLimit);
@@ -372,7 +379,7 @@
             <div class="filterHead">
                 <div>
                     <div class="eyebrow">FILTER YOUR MODEL BOARD</div>
-                    <p>Signal and grade are independent. Both refine the record and game list below.</p>
+                    <p>Signal and grade remain independent. Week 11 uses the V9 production screens, while older weeks retain V3 screening and graded outcomes remain V3.</p>
                 </div>
                 {#if statusFilter !== 'ALL' || selectedGrades.length}
                     <button class="resetFilters" type="button" on:click={clearBoardFilters}>Reset filters</button>
@@ -528,7 +535,7 @@
                 <div>
                     <div class="eyebrow">EXPLORE THE SLATE</div>
                     <h2 id="games-title">Week {board.week} game board</h2>
-                    <p>Filter instantly by signal, confidence grade, or graded result. WATCH rows show +3 / +5 / +7 spread targets without expanding. Select a matchup to compare a sportsbook line.</p>
+                    <p>Filter by signal, grade, result or kickoff. Week 11 shows the November 13 V9 production snapshot; earlier weeks retain the archived V3 screening.</p>
                 </div>
                 <div class="gameTotal">
                     <strong>{games.length}</strong>
@@ -556,7 +563,7 @@
                         <option value="priority">Highest-rated first</option>
                         <option value="kickoff">Kickoff: earliest first</option>
                         <option value="kickoff_desc">Kickoff: latest first</option>
-                        <option value="edge">Largest V3 edge</option>
+                        <option value="edge">Largest predicted CLV</option>
                         <option value="matchup">Alphabetical</option>
                     </select>
                 </label>
@@ -572,7 +579,7 @@
                     <span>GAME / KICKOFF</span>
                     <span>PROJECTED SCORE</span>
                     <span>MODEL PICK</span>
-                    <span>V3 EDGE</span>
+                    <span>MODEL CLV</span>
                     <span>RATING</span>
                 </div>
 
@@ -602,41 +609,45 @@
                                     </div>
                                 </div>
                                 <div class="scoreCol" aria-label="Projected score, away then home">
-                                    <strong>{number(game.projectedAway)} <span>–</span> {number(game.projectedHome)}</strong>
+                                    <strong>{number(boardAwayScore(game))} <span>–</span> {number(boardHomeScore(game))}</strong>
                                     <small>Away / Home</small>
                                 </div>
                                 <div class="pickCol">
-                                    <strong>{game.v3Pick || 'No pick'}</strong>
-                                    {#if game.status === 'WATCH' && pickParts(game.v3Pick)}
+                                    <strong>{boardPick(game) || 'No pick'}</strong>
+                                    {#if game.status === 'WATCH' && pickParts(boardPick(game))}
                                         <div class="watchInline" aria-label="WATCH spread improvement targets">
                                             {#each watchImprovementSteps as improvement}
-                                                <span>+{improvement}: <strong>{spreadLabel(pickParts(game.v3Pick).spread + improvement)}</strong></span>
+                                                <span>+{improvement}: <strong>{spreadLabel(pickParts(boardPick(game)).spread + improvement)}</strong></span>
                                             {/each}
                                         </div>
                                     {/if}
                                     {#if game.v3Result && game.actualAway != null && game.actualHome != null}
                                         <small class:resultWin={game.v3Result === 'WIN'} class:resultLoss={game.v3Result === 'LOSS'}>V3 {game.v3Result}</small>
                                     {:else}
-                                        <small>Model reference line</small>
+                                        {#if useV9(game)}
+                                            <small>{game.v9.bestBook || 'Snapshot'} · Nov 13 · V9</small>
+                                        {:else}
+                                            <small>Archived V3 reference</small>
+                                        {/if}
                                     {/if}
                                 </div>
                                 <div class="edgeCol">
-                                    <strong>{game.v3Edge == null ? '—' : (game.v3Edge >= 0 ? '+' : '') + number(game.v3Edge, 3)}</strong>
+                                    <strong>{boardEdge(game) == null ? '—' : (boardEdge(game) >= 0 ? '+' : '') + number(boardEdge(game), 3)}</strong>
                                     <small>points</small>
                                 </div>
                                 <div class="ratingCol">
                                     <span class="signal" class:isBet={game.status === 'BET'} class:isWatch={game.status === 'WATCH'} class:isPass={game.status === 'PASS'}>{game.status}</span>
-                                    <small>Tier {game.tier}</small>
+                                    <small>Tier {game.tier}{useV9(game) ? ' · V9' : ''}</small>
                                     <span class="expandArrow" aria-hidden="true">⌄</span>
                                 </div>
                             </summary>
 
                             <div class="gameDetails">
-                                {#if game.status === 'WATCH' && pickParts(game.v3Pick)}
+                                {#if game.status === 'WATCH' && pickParts(boardPick(game))}
                                     <div class="watchLines">
                                         <div class="watchLinesHeading">
                                             <strong>WATCH · line improvement targets</strong>
-                                            <span>V3 reference: {game.v3Pick}</span>
+                                            <span>Snapshot reference: {boardPick(game)}</span>
                                         </div>
                                         <div class="watchTargets">
                                             {#each watchImprovementSteps as improvement}
@@ -647,7 +658,7 @@
                                             {/each}
                                         </div>
                                         <label class="watchQuote">
-                                            <span>Sportsbook line for {pickParts(game.v3Pick).team} (optional)</span>
+                                            <span>Sportsbook line for {pickParts(boardPick(game)).team} (optional)</span>
                                             <input type="number" step="0.5" placeholder="Enter signed spread" value={watchLiveLines[game.id] ?? ''} on:input={(event) => setWatchLine(game.id, event.currentTarget.value)} />
                                         </label>
                                         {#if lineImprovement(game) != null}
@@ -661,11 +672,26 @@
                                                 {:else}
                                                     Below +3 improvement target
                                                 {/if}
+                                
+
+                                                · {spreadLabel(lineImprovement(game))} pts vs reference
+                                            </div>
+                                        {/if}
+                                        <p class="watchDisclaimer">Targets are hypothetical spreads, not live sportsbook quotes. Enter a verified line to compare it against the V3 reference. Better means more points on the selected side, regardless of favorite or underdog. Entries are not saved or included in graded results or ROI.</p>
+                                    </div>
+                                {/if}
                                 <div class="detailPrimary">
                                     <h3>Why {game.status.toLowerCase()}?</h3>
-                                    <p>{game.reason}.</p>
-                                    {#if game.referenceLineOnly}
-                                        <div class="lineNotice">This is a quarter-point or otherwise nonstandard model reference. Verify a real sportsbook price before considering it.</div>
+                                    <p>{game.reason}</p>
+                                    {#if useV9(game)}
+                                        <div class="lineNotice">
+                                            <strong>V9 snapshot:</strong> {boardPick(game)} · {game.v9.bestBook || 'Book not specified'} · {game.v9.snapshotUtc}.
+                                            Predicted CLV: {number(game.v9.predictedEdge, 3)} points.
+                                            {#if game.v9.h3CleanProspective} H3 clean-prospective flag.{/if}
+                                            <span>Archived V3 reference: {game.v3Pick}.</span>
+                                        </div>
+                                    {:else if game.referenceLineOnly}
+                                        <div class="lineNotice">This is a nonstandard V3 model reference. Verify a sportsbook quote before betting.</div>
                                     {/if}
                                     {#if game.actualAway != null && game.actualHome != null}
                                         <div class="finalScore">
@@ -682,21 +708,14 @@
                                         </div>
                                     {/if}
                                 </div>
-
-                                                · {spreadLabel(lineImprovement(game))} pts vs reference
-                                            </div>
-                                        {/if}
-                                        <p class="watchDisclaimer">Targets are hypothetical spreads, not live sportsbook quotes. Enter a verified line to compare it against the V3 reference. Better means more points on the selected side, regardless of favorite or underdog. Entries are not saved or included in graded results or ROI.</p>
-                                    </div>
-                                {/if}
                                 <div class="detailStats">
-                                    <div><span>Raw model pick</span><strong>{game.rawPick || '—'}</strong></div>
+                                    <div><span>Archived V3 raw pick</span><strong>{game.rawPick || '—'}</strong></div>
                                     <div><span>Raw model edge</span><strong>{number(game.rawEdge, 2)} pts</strong></div>
                                     <div><span>Calibrated pick</span><strong>{game.calPick || '—'}</strong></div>
                                     <div><span>Calibrated edge</span><strong>{number(game.calEdge, 2)} pts</strong></div>
-                                    <div><span>V3 production</span><strong>{game.v3Production ? 'Yes' : 'No'}</strong></div>
+                                    <div><span>Archived V3 production</span><strong>{game.v3Production ? 'Yes' : 'No'}</strong></div>
                                     <div><span>H3 / S1</span><strong>{game.H3 ? 'H3' : '—'} / {game.S1 ? 'S1' : '—'}</strong></div>
-                                    <div><span>Source</span><strong>{game.sourceType || 'Unknown'}</strong></div>
+                                    <div><span>Source</span><strong>{useV9(game) ? 'V9 Nov 13 snapshot' : game.sourceType || 'Unknown'}</strong></div>
                                 </div>
                             </div>
                         </details>
@@ -711,8 +730,8 @@
                 </div>
             {/if}
             <p class="filterHelp">The result filter shows recorded V3 model-side outcomes (WIN, LOSS, PUSH). Ungraded includes games without a recorded result, even if kickoff has passed. It changes the visible game board, not the historical ROI calculation.</p>
-            <p class="filterHelp">WATCH +3 / +5 / +7 values are hypothetical point improvements over the V3 reference, not live sportsbook lines. Open the matchup to enter and compare a current book quote.</p>
-            <p class="underBoard">Projected score lists the away team first, then the home team. Spreads are archived model reference lines, not verified live sportsbook odds. A BET label is a screening decision, not an official Czar pick.</p>
+            <p class="filterHelp">WATCH +3 / +5 / +7 targets are hypothetical improvements relative to the displayed line: the November 13 V9 snapshot for Week 11, and archived V3 for older weeks. Expand to compare your current sportsbook quote.</p>
+            <p class="underBoard">Projected score lists away first. Week 11 V9 book quotes come from the November 13 snapshot and may have moved. Predicted CLV is modeled line movement, not cover probability. BET is a model signal, not a confirmed placed wager. Historical grading and ROI remain V3.</p>
         </section>
 
         {#if stats}
