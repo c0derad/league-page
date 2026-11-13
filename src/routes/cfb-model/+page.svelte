@@ -44,12 +44,13 @@
         const rounded = Math.round((points + Number.EPSILON) * 100) / 100;
         return (rounded > 0 ? '+' : '') + String(rounded);
     };
-    const boardPick = (game) => game.v9?.selectedTeam && game.v9?.frozenSelectedSpread != null
+    const useV9 = (game) => Boolean(game.v3Live && game.v9);
+    const boardPick = (game) => useV9(game) && game.v9?.selectedTeam && game.v9?.frozenSelectedSpread != null
         ? game.v9.selectedTeam + ' ' + spreadLabel(game.v9.frozenSelectedSpread)
         : game.v3Pick;
-    const boardEdge = (game) => game.v9?.predictedEdge ?? game.v3Edge;
-    const boardAwayScore = (game) => game.v9?.predictedAway ?? game.projectedAway;
-    const boardHomeScore = (game) => game.v9?.predictedHome ?? game.projectedHome;
+    const boardEdge = (game) => useV9(game) ? (game.v9.predictedEdge ?? game.v3Edge) : game.v3Edge;
+    const boardAwayScore = (game) => useV9(game) ? (game.v9.predictedAway ?? game.projectedAway) : game.projectedAway;
+    const boardHomeScore = (game) => useV9(game) ? (game.v9.predictedHome ?? game.projectedHome) : game.projectedHome;
     const targetLine = (game, improvement) => {
         const pick = pickParts(boardPick(game));
         return pick ? pick.team + ' ' + spreadLabel(pick.spread + improvement) : '—';
@@ -623,7 +624,7 @@
                                     {#if game.v3Result && game.actualAway != null && game.actualHome != null}
                                         <small class:resultWin={game.v3Result === 'WIN'} class:resultLoss={game.v3Result === 'LOSS'}>V3 {game.v3Result}</small>
                                     {:else}
-                                        {#if game.v9}
+                                        {#if useV9(game)}
                                             <small>{game.v9.bestBook || 'Snapshot'} · Nov 13 · V9</small>
                                         {:else}
                                             <small>Archived V3 reference</small>
@@ -636,7 +637,7 @@
                                 </div>
                                 <div class="ratingCol">
                                     <span class="signal" class:isBet={game.status === 'BET'} class:isWatch={game.status === 'WATCH'} class:isPass={game.status === 'PASS'}>{game.status}</span>
-                                    <small>Tier {game.tier}{game.v9 ? ' · V9' : ''}</small>
+                                    <small>Tier {game.tier}{useV9(game) ? ' · V9' : ''}</small>
                                     <span class="expandArrow" aria-hidden="true">⌄</span>
                                 </div>
                             </summary>
@@ -682,7 +683,7 @@
                                 <div class="detailPrimary">
                                     <h3>Why {game.status.toLowerCase()}?</h3>
                                     <p>{game.reason}</p>
-                                    {#if game.v9}
+                                    {#if useV9(game)}
                                         <div class="lineNotice">
                                             <strong>V9 snapshot:</strong> {boardPick(game)} · {game.v9.bestBook || 'Book not specified'} · {game.v9.snapshotUtc}.
                                             Predicted CLV: {number(game.v9.predictedEdge, 3)} points.
@@ -714,7 +715,7 @@
                                     <div><span>Calibrated edge</span><strong>{number(game.calEdge, 2)} pts</strong></div>
                                     <div><span>Archived V3 production</span><strong>{game.v3Production ? 'Yes' : 'No'}</strong></div>
                                     <div><span>H3 / S1</span><strong>{game.H3 ? 'H3' : '—'} / {game.S1 ? 'S1' : '—'}</strong></div>
-                                    <div><span>Source</span><strong>{game.v9 ? 'V9 Nov 13 snapshot' : game.sourceType || 'Unknown'}</strong></div>
+                                    <div><span>Source</span><strong>{useV9(game) ? 'V9 Nov 13 snapshot' : game.sourceType || 'Unknown'}</strong></div>
                                 </div>
                             </div>
                         </details>
