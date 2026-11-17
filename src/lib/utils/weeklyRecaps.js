@@ -3575,5 +3575,522 @@ export const weeklyRecaps = {
       `
     }
   }
+},
+  10: {
+  intro: `
+    Week 10 is officially in the books.
+
+    And apparently the league read the Power Rankings and took them personally.
+
+    Campus Legends entered the week ranked tenth.
+
+    JQ responded by scoring 177.62.
+
+    High Man.
+
+    Christian McCaffrey scored 46.3.
+
+    George Pickens scored 43.5.
+
+    Patrick Mahomes scored 35.42.
+
+    Those three players combined for 125.22 points.
+
+    Josh scored 159.64.
+
+    And lost.
+
+    That is one of the more offensive sentences produced by this league all season.
+
+    Ryan handled JV and moved to 9-1.
+
+    Trevor survived Charles by 3.62 and moved to 8-2.
+
+    T2, whose Wednesday projection was approximately the fantasy equivalent of a distress flare,
+    scored 152.68 and beat Chaney by 48.22.
+
+    Biggest ass beating of the week.
+
+    Naturally.
+
+    The Car Bombs beat Jansen 119.92 to 111.42 and have finally returned to .500.
+
+    Five and five.
+
+    We will be accepting apologies in writing.
+
+    Vigo beat Rhodes and Pags in the basement summit.
+
+    Madison beers Box moves to 3-7.
+
+    JVentureSexOffender falls to 1-9.
+
+    The team with Bijan Robinson, Brock Bowers and Rashee Rice now has one win through ten weeks.
+
+    Remarkable institutional achievement.
+
+    Week 10 also produced one of the Czar's less distinguished forecasting performances.
+
+    The picks:
+
+    Ryan.
+
+    Josh.
+
+    Charles.
+
+    Chaney.
+
+    The Car Bombs.
+
+    Rhodes and Pags.
+
+    Two were correct.
+
+    Four were not.
+
+    The Czar goes 2-4 and moves to 28-20 on the season.
+
+    Independent review has determined that no further investigation is necessary.
+
+    Judgment has been rendered.
+  `,
+
+  matchups: {
+    1: {
+      headline: "Ryan Is 9-1. We Are Running Out of New Ways to Say This.",
+      recap: `
+        JV landed the first punch Thursday.
+
+        It did not matter.
+
+        Naberhood Sex Offender beat PeterPanthers 134.86 to 111.20 and moved to 9-1.
+
+        Nine wins.
+
+        One loss.
+
+        The throne remains occupied.
+
+        Brock Purdy led Ryan with 31.66 after throwing for 389 yards and three touchdowns.
+
+        Parker Washington added 28.2 on seven catches for 152 yards and a touchdown.
+
+        The Rams defense somehow contributed another 17.
+
+        JV certainly had opportunities.
+
+        Jahmyr Gibbs was ridiculous.
+
+        Twenty-two carries.
+
+        153 rushing yards.
+
+        Seven catches.
+
+        99 receiving yards.
+
+        Two touchdowns.
+
+        44.2 fantasy points.
+
+        Blake Corum added 20.9 and Stefon Diggs banked 20.3 on Thursday.
+
+        That is normally enough top-end production to win.
+
+        Ryan simply had more underneath it.
+
+        And that continues to be the defining characteristic of Naberhood Sex Offender.
+
+        One player can disappoint.
+
+        Another one appears.
+
+        Malik Nabers had already underwhelmed Thursday.
+
+        Ryan still scored nearly 135.
+
+        The Czar backed Ryan.
+
+        Correct.
+
+        PeterPanthers falls to 7-3.
+
+        Naberhood moves to 9-1.
+
+        JV still owns one of the league's best rosters.
+
+        Ryan still owns the league.
+      `
+    },
+
+    2: {
+      headline: "Campus Legends Has Filed a Formal Complaint Against the Power Rankings",
+      recap: `
+        Last week Campus Legends was ranked tenth.
+
+        The explanation was straightforward.
+
+        JQ's previous three scores:
+
+        81.40.
+
+        79.14.
+
+        101.88.
+
+        Then Week 10 happened.
+
+        177.62.
+
+        High Man.
+
+        Against Josh.
+
+        Of course.
+
+        Christian McCaffrey produced one of the most absurd fantasy lines of the season.
+
+        62 rushing yards.
+
+        161 receiving yards.
+
+        Three total touchdowns.
+
+        46.3 fantasy points.
+
+        George Pickens apparently found that insufficient and added 43.5 of his own,
+        catching 11 passes for 145 yards and three touchdowns.
+
+        Patrick Mahomes threw five touchdowns and scored 35.42.
+
+        CMC.
+
+        Pickens.
+
+        Mahomes.
+
+        125.22 points.
+
+        Three players.
+
+        Josh scored 159.64.
+
+        One hundred fifty-nine point six four.
+
+        And lost by 17.98.
+
+        JSN scored 31.1.
+
+        Tony Pollard scored 23.9.
+
+        Josh Allen added 23.34.
+
+        Moore Oil Coming did absolutely nothing wrong.
+
+        The bench scored zero.
+
+        Josh started the correct lineup.
+
+        Campus just dropped a nuclear weapon on him.
+
+        The Czar picked Moore Oil Coming.
+
+        Wrong.
+
+        Josh falls to 7-3.
+
+        Campus improves to 5-5.
+
+        JQ spent three weeks looking medically unwell and then produced the highest score
+        of the entire week.
+
+        Power Rankings committee meeting has been scheduled.
+      `
+    },
+
+    3: {
+      headline: "Trevor Survives the Bye-Week Apocalypse",
+      recap: `
+        The Week 10 preview identified this as the week Trevor might finally get punished.
+
+        Chicago bye.
+
+        Philadelphia bye.
+
+        Tampa Bay bye.
+
+        Multiple normal starters unavailable.
+
+        Sleeper had Charles comfortably ahead.
+
+        Trevor won anyway.
+
+        Show Me Your TDs beat CousinLover 117.60 to 113.98.
+
+        Final margin:
+
+        3.62.
+
+        Closest game of the week.
+
+        Chuba Hubbard carried the operation with 34.2 points, turning 27 carries and five
+        catches into 172 total yards and two touchdowns.
+
+        James Cook added 21.7.
+
+        Ollie Gordon contributed 15.5.
+
+        Trevor did not need the Week 9 version of Jordan Love.
+
+        He did not need Christian Watson to score 30.
+
+        He just needed enough.
+
+        Charles almost had it.
+
+        Amon-Ra St. Brown scored 25.8.
+
+        Derrick Henry scored 19.
+
+        Kirk Cousins added 16.38.
+
+        CousinLover finished 3.62 short.
+
+        And Charles left 31.02 points on the bench.
+
+        Again.
+
+        The Czar backed CousinLover because Trevor's roster had been gutted by the bye week.
+
+        Wrong.
+
+        Show Me Your TDs moves to 8-2.
+
+        CousinLover falls to 4-6.
+
+        At this point Trevor has survived enough different versions of adversity that
+        "quietly competent" probably undersells it.
+
+        He just keeps winning.
+      `
+    },
+
+    4: {
+      headline: "T2 Has Produced the Funniest Result of the Season",
+      recap: `
+        The Wednesday projection for Big frydown was 71.37.
+
+        Seventy-one point three seven.
+
+        The Week 10 preview described it as a distress signal.
+
+        T2 scored 152.68.
+
+        Naturally.
+
+        Big frydown beat The Oilers by 48.22.
+
+        Biggest ass beating of the week.
+
+        Dak Prescott threw five touchdowns and scored 35.42.
+
+        Emmett Johnson came from nowhere with 171 total yards, two receiving touchdowns
+        and 35.1 fantasy points.
+
+        Deebo Samuel added 25.9.
+
+        T2's bench scored zero.
+
+        There was no hidden alternate lineup.
+
+        There was no lucky bench mistake.
+
+        Big frydown simply assembled the correct starting lineup and scored 152.68.
+
+        Chaney actually got excellent production from his stars.
+
+        Joe Burrow scored 33.16.
+
+        Nico Collins scored 24.4.
+
+        CeeDee Lamb added 20.2.
+
+        Those three combined for 77.76.
+
+        The rest of The Oilers combined for 26.70.
+
+        That was the problem.
+
+        The Czar picked Chaney.
+
+        Wrong.
+
+        Very wrong.
+
+        The Oilers fall to 3-7.
+
+        Big frydown improves to 3-7.
+
+        T2 has now produced scores of 145.50, 139.64 and 152.68 this season.
+
+        He has also produced 81.66, 92.54, 87.00 and 82.42.
+
+        There is no team in this league more committed to refusing a coherent identity.
+      `
+    },
+
+    5: {
+      headline: "THE CAR BOMBS ARE BACK TO .500",
+      recap: `
+        Five and five.
+
+        We have returned.
+
+        The Car Bombs beat Nigasaki 119.92 to 111.42 and officially erased the 0-2 start.
+
+        It was not the 167-point detonation from last week.
+
+        It did not need to be.
+
+        Ja'Marr Chase led the way with 34.1 after catching 11 passes for 231 yards.
+
+        No touchdown required.
+
+        Cam Skattebo's Thursday performance held up beautifully at 27.2.
+
+        Drake London added 16.9.
+
+        Jansen had already received 27.7 from Isaiah Likely on Thursday, and Harold Fannin
+        followed with 16.1.
+
+        Aaron Rodgers contributed 15.62.
+
+        But the rest of Nigasaki never produced enough.
+
+        Final margin:
+
+        8.50.
+
+        The Czar picked The Car Bombs.
+
+        Correct.
+
+        Obviously.
+
+        The Car Bombs move to 5-5.
+
+        Nigasaki falls to 5-5.
+
+        That also settles the immediate argument created by the Week 10 Power Rankings,
+        where The Car Bombs were placed fifth and Jansen sixth.
+
+        Independent review complete.
+
+        Ranking validated.
+
+        Since starting 0-2, The Car Bombs have now scored:
+
+        154.56.
+
+        111.74.
+
+        156.16.
+
+        114.60.
+
+        121.44.
+
+        114.56.
+
+        167.66.
+
+        119.92.
+
+        The record finally resembles the team.
+
+        Next up:
+
+        Charles.
+
+        The march continues.
+      `
+    },
+
+    6: {
+      headline: "Rhodes and Pags Have Officially Run Out of Excuses",
+      recap: `
+        This was the game.
+
+        Rhodes and Pags were 1-8.
+
+        Vigo was 2-7.
+
+        JVentureSexOffender still had enough recognizable talent that we continued
+        describing the roster as "better than its record."
+
+        The Week 10 preview issued a simple condition:
+
+        Beat Vigo.
+
+        They did not.
+
+        Madison beers Box won 105.98 to 101.64.
+
+        Vigo did it behind a new quarterback.
+
+        Trevor Lawrence scored 27.78 after throwing for 352 yards and three touchdowns.
+
+        Chase Brown added 28.3.
+
+        Justin Jefferson scored 16.4.
+
+        That was enough.
+
+        Rhodes and Pags got 21.44 from newly acquired C.J. Stroud, 17.7 from Bijan Robinson
+        and 16.1 from Quinshon Judkins.
+
+        The completed product scored 101.64.
+
+        Low Man.
+
+        Brock Bowers.
+
+        Bijan Robinson.
+
+        Rashee Rice.
+
+        Davante Adams.
+
+        Quinshon Judkins.
+
+        One win.
+
+        Nine losses.
+
+        At some point roster quality stops being an explanation and becomes an indictment.
+
+        Vigo also left 31.5 points on the bench.
+
+        Most in the league.
+
+        He still won.
+
+        The Czar once again predicted the long-awaited Rhodes and Pags breakthrough.
+
+        Wrong.
+
+        The publication will no longer be participating in this exercise.
+
+        JVentureSexOffender falls to 1-9.
+
+        Madison beers Box improves to 3-7.
+
+        The roster-quality defense has officially been retired.
+
+        Judgment has been rendered.
+      `
+    }
+  }
 }
 };
