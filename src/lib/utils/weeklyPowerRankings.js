@@ -6343,76 +6343,80 @@ export const weeklyPowerRankings = {
   ]
 },
 
-12: {
-  title: "Week 12 Czar Power Rankings",
+11: {
+  title: "Week 11 Czar Power Rankings",
 
   intro: `
-    We have reached the point of the season where theoretical talent is becoming
-    considerably less interesting than what teams have actually done with it.
+    Ten weeks are officially in the books.
 
-    Ryan remains the standard. Naberhood Sex Offender is 9-1, has survived its first
-    loss, responded immediately and continues to own the best résumé in the league.
+    And Week 10 took several things we thought we understood about this league,
+    put them in a blender, and threw the blender down a flight of stairs.
 
-    Behind him, Josh has assembled the most violent offense in TouchDown Syndrome.
-    Moore Oil Coming scored 159.64 last time out and somehow lost because Campus Legends
-    decided to score 177.62.
+    Ryan is 9-1.
 
-    Trevor is 8-2 and has finally forced his way into the top three. There is nothing
-    quiet about it anymore. Show Me Your TDs has spent ten weeks winning games in almost
-    every possible way.
+    That part remains simple.
 
-    JV remains one of the strongest teams in the league, but PeterPanthers has cooled
-    enough recently for Trevor to pass him.
+    Josh scored 159.64 and lost.
 
-    Then we reach the chaos.
+    Campus Legends scored 177.62 after spending the previous three weeks looking like
+    an organization whose direct deposit had stopped clearing.
 
-    Campus Legends entered the previous rankings at No. 10 after three consecutive weeks
-    of offensive malpractice. JQ responded with the highest score of Week 10 and one of
-    the highest scores of the season.
+    Trevor survived one of the ugliest bye-week situations on the board and moved to 8-2.
 
-    177.62.
+    T2 entered Week 10 projected for approximately 71 points and responded by scoring
+    152.68 because Big frydown remains fundamentally opposed to statistical consistency.
 
-    Message received.
-
-    The Car Bombs finally climbed back to .500, validated the previous ranking by beating
-    Jansen head-to-head and appeared ready to continue the second-half surge.
+    The Car Bombs beat Jansen, returned to .500 and appeared to have completed the
+    rehabilitation from an 0-2 start.
 
     Then Drake Maye broke his ankle.
 
     Naturally.
 
-    The offense still has Ja'Marr Chase, Drake London, Javonte Williams, Cam Skattebo and
-    Matthew Golden, but losing the quarterback who helped stabilize the entire operation
-    matters. Tyler Shough now inherits the keys while the playoffs approach.
+    Jansen has now lost two straight after a five-game winning streak that included
+    handing previously undefeated Ryan his first loss.
 
-    Jansen's season has gone in the opposite direction. Nigasaki started 0-3, won five
-    straight, then at 5-3 handed previously undefeated Ryan his first loss.
+    Charles continues assembling perfectly respectable fantasy scores and converting
+    them into losses.
 
-    Since then, the momentum has stalled.
+    Chaney's brief resurrection was interrupted by T2 dropping a piano on his head.
 
-    Charles remains dangerous and continues finding innovative ways to lose games with
-    a roster that should probably have a better record.
-
-    T2 responded to a 71-point projection by scoring 152.68 because Big frydown refuses
-    to participate in normal statistical behavior.
-
-    Chaney's brief resurrection was interrupted by exactly that performance.
-
-    Vigo finally won another game.
+    Vigo won a football game and then immediately became one of the league's most active
+    general managers.
 
     Rhodes and Pags lost to Vigo.
 
-    That was the final appeal.
+    The roster-quality defense has been terminated.
 
-    JVentureSexOffender is now officially last.
+    Week 11 also brought actual trade activity.
 
-    These are not the standings. Record matters, scoring matters, recent form matters,
-    roster quality matters, injuries matter and what a team actually looks like entering
-    Week 12 matters.
+    Ryan sent Trevor Lawrence to Vigo for Jaylen Waddle.
 
-    Movement is measured against the last published Week 10 Power Rankings.
+    Vigo then sent Caleb Williams to Jansen for Josh Jacobs.
 
-    Welcome to Week 12.
+    Ryan has since already moved on from Waddle.
+
+    There has been more roster movement in the bottom half of the league this week than
+    we saw during some entire months of previous seasons.
+
+    These are not standings.
+
+    Record matters.
+
+    Full-season scoring matters.
+
+    Recent form matters.
+
+    Current roster quality matters.
+
+    Injuries matter.
+
+    And when your quarterback breaks his ankle immediately after you fight your way back
+    to .500, that unfortunately matters too.
+
+    Movement is measured against the Week 10 Czar Power Rankings.
+
+    Welcome to Week 11.
   `,
 
   rankings: [
@@ -6435,41 +6439,73 @@ export const weeklyPowerRankings = {
       week9Score: 127.28,
       week10Score: 134.86,
 
-      week12Projection: 115.18,
+      week11Projection: 121.33,
 
-      headline: "Nine Wins Still Ends the Argument",
+      headline: "Nine Wins. One Loss. End of Discussion.",
 
       commentary: `
-        Ryan remains No. 1 because there is still no responsible argument for removing
-        him.
+        Ryan remains No. 1.
 
-        Naberhood Sex Offender is 9-1. The lone loss came against Jansen, and Ryan
-        immediately responded by winning again. Last time out, PeterPanthers received
-        44.2 points from Jahmyr Gibbs and Ryan still beat JV by 23.66.
+        We can keep trying to manufacture drama around the throne, but the résumé
+        continues answering the question for us.
 
-        Brock Purdy scored 31.66. Parker Washington added 28.2. The Rams defense somehow
-        supplied another 17. That has been the defining feature of Ryan's season: when
-        one part of the roster disappears, something else replaces it.
+        Naberhood Sex Offender is 9-1.
 
-        Through the ten verified games, Naberhood has only scored below 115 once.
+        The only loss came against Jansen.
 
-        The current roster still has Jonathan Taylor, Ashton Jeanty, Malik Nabers,
-        Tetairoa McMillan, George Kittle, Purdy and enough depth behind them that a bad
-        game from one star rarely becomes a bad game from the team.
+        Ryan responded by immediately winning again.
 
-        Week 12 brings The Car Bombs.
+        Last week JV received 44.2 points from Jahmyr Gibbs, another 20.9 from Blake
+        Corum and 20.3 from Stefon Diggs.
 
-        Ryan has the better record, the healthier quarterback situation and the more
-        stable weekly floor.
+        Ryan still won by 23.66.
 
-        The throne remains occupied.
+        Brock Purdy scored 31.66.
+
+        Parker Washington scored 28.2.
+
+        The Rams defense added 17.
+
+        That is what has separated Ryan from everyone else.
+
+        There has almost always been another answer.
+
+        Through ten weeks, Naberhood averages 128.33 points and has only failed to reach
+        115 once.
+
+        Jonathan Taylor remains the centerpiece of the backfield. Malik Nabers,
+        Tetairoa McMillan, Parker Washington and George Kittle give Ryan multiple
+        receiving options, and Purdy continues providing competent quarterback production.
+
+        There was also some front-office activity.
+
+        Ryan traded Trevor Lawrence to Vigo for Jaylen Waddle.
+
+        Waddle has already been dropped.
+
+        So Ryan apparently converted Trevor Lawrence into approximately one week of
+        administrative paperwork.
+
+        Bold.
+
+        It does not change the ranking.
+
+        Week 11 gives Ryan Trevor.
+
+        No. 1 against the 8-2 team directly behind the elite tier.
+
+        The throne gets another defense.
       `,
 
       transactions: `
-        Ryan dropped Jaylen Waddle.
+        Traded Trevor Lawrence to Vigo for Jaylen Waddle.
 
-        On most rosters that would generate an emergency meeting. On this roster it
-        appears to have been treated as routine housekeeping.
+        Waddle has since been dropped.
+
+        Added Chicago D/ST while cycling Audric Estime through the roster.
+
+        The roster remains good enough that none of this has materially threatened
+        Ryan's position at No. 1.
       `
     },
 
@@ -6492,49 +6528,86 @@ export const weeklyPowerRankings = {
       week9Score: 124.56,
       week10Score: 159.64,
 
-      week12Projection: 115.04,
+      week11Projection: 128.74,
 
-      headline: "159.64 Was Apparently Not Enough",
+      headline: "Josh Scored 159.64 and Somehow Got Punished for It",
 
       commentary: `
-        Josh lost his last verified matchup.
+        Josh lost.
 
-        Josh remains No. 2.
+        Josh stays second.
 
-        Moore Oil Coming scored 159.64. The bench scored zero. Josh deployed the correct
-        lineup, received 31.1 from JSN, 23.9 from Tony Pollard and 23.34 from Josh Allen,
-        and did almost everything a fantasy team can reasonably be expected to do.
+        There is absolutely no reason to overthink this.
 
-        Campus scored 177.62.
+        Moore Oil Coming scored 159.64 last week.
 
-        Sometimes the building simply gets hit by a meteor.
+        One hundred fifty-nine point six four.
 
-        Through ten verified games, Moore Oil Coming is averaging 137.48 points. That is
-        the highest mark in the league.
+        The bench scored zero.
 
-        Since Week 6, Josh has scored 157.80, 153.92, 157.46, 124.56 and 159.64.
+        Josh essentially maximized the roster.
 
-        That is not a hot week.
+        JSN scored 31.1.
 
-        That is an offensive identity.
+        Tony Pollard scored 23.9.
 
-        Josh Allen and JSN provide elite weekly ceiling. Kenneth Walker has already
-        demonstrated he can carry a matchup himself. Bhayshul Tuten, DJ Moore, Colston
-        Loveland and the surrounding pieces give Josh enough secondary production that
-        the roster does not require one specific player to explode.
+        Josh Allen scored 23.34.
 
-        Ryan owns the better record.
+        Bhayshul Tuten added 20.3.
 
-        Josh owns the nastiest scoring profile.
+        DJ Moore added 19.4.
 
-        They remain one and two.
+        And Josh lost by 17.98 because Campus Legends temporarily became the 2007 Patriots.
+
+        That is not a power-ranking downgrade.
+
+        That is bad luck.
+
+        Moore Oil Coming now averages 137.48 through ten games, the highest scoring
+        average in the league.
+
+        The last five:
+
+        157.80.
+
+        153.92.
+
+        157.46.
+
+        124.56.
+
+        159.64.
+
+        Average:
+
+        150.68.
+
+        That is completely insane.
+
+        Week 11 somehow gives us the most perfectly projected matchup possible.
+
+        PeterPanthers:
+
+        128.80.
+
+        Moore Oil Coming:
+
+        128.74.
+
+        Six hundredths of a point separates them.
+
+        JV versus Josh.
+
+        No. 4 versus No. 2.
+
+        The scoreboard can settle this one.
       `,
 
       transactions: `
         No meaningful recent changes.
 
-        When the offense continues flirting with 160 points, restraint is probably the
-        correct personnel strategy.
+        Josh has wisely decided that an offense averaging more than 150 points over
+        five games does not require emergency reconstruction.
       `
     },
 
@@ -6557,47 +6630,65 @@ export const weeklyPowerRankings = {
       week9Score: 157.08,
       week10Score: 117.60,
 
-      week12Projection: 107.80,
+      week11Projection: 117.59,
 
-      headline: "We Can Stop Calling Trevor Quiet Now",
+      headline: "Eight Wins Is No Longer Quiet",
 
       commentary: `
-        Trevor finally moves into the top three.
+        Trevor moves into the top three.
 
-        Show Me Your TDs is 8-2. At some point describing that as "quietly good" becomes
-        an insult to what the team has actually accomplished.
+        We are officially retiring the phrase "quietly good."
 
-        Trevor survived one of the ugliest bye-week situations on the Week 10 board and
-        still beat Charles 117.60 to 113.98. Chuba Hubbard carried the lineup with 34.2,
-        James Cook added 21.7 and Trevor found enough everywhere else to survive.
+        Show Me Your TDs is 8-2.
 
-        That came immediately after Show Me Your TDs scored 157.08 and destroyed Jansen
-        by 55 points.
+        That is simply one of the best teams in the league.
 
-        Trevor has now demonstrated both the floor and the ceiling.
+        Trevor survived a Week 10 roster that had been shredded by the bye week and
+        still beat Charles 117.60 to 113.98.
 
-        James Cook and Chuba give the roster a stable running back foundation. Christian
-        Watson, DeVonta Smith, Luther Burden and Emeka Egbuka give Trevor multiple paths
-        at receiver. Sam LaPorta remains a useful tight end, while Jordan Love and Bo Nix
-        provide options at quarterback.
+        Chuba Hubbard scored 34.2.
 
-        This is no longer a cute run.
+        James Cook added 21.7.
 
-        Ten games have been played.
+        Ollie Gordon contributed 15.5.
 
-        Trevor has won eight.
+        It was not the 157-point explosion we saw the previous week against Jansen.
 
-        Week 12 brings JV directly, which gives us exactly the matchup we need between
-        the teams ranked third and fourth.
+        It did not need to be.
 
-        Win that and Trevor creates real separation from PeterPanthers.
+        That is exactly why Trevor climbs.
+
+        He has now shown he can win when everything hits and when half the normal lineup
+        is unavailable.
+
+        Through ten weeks, Trevor averages 127.94.
+
+        Over the last three, that rises to 133.83.
+
+        James Cook and Chuba form a strong weekly backfield. Luther Burden has developed
+        into a legitimate receiver. DeVonta Smith, Emeka Egbuka and Sam LaPorta add enough
+        secondary talent that the roster does not depend on one player.
+
+        Trevor also added Bo Nix, giving him another quarterback option with Jordan Love
+        currently carrying a zero in the Week 11 snapshot.
+
+        Now comes the real test.
+
+        Ryan.
+
+        9-1.
+
+        No. 1 in the rankings.
+
+        Trevor does not need anybody to call him quiet anymore.
+
+        Beat Ryan and we start discussing something much louder.
       `,
 
       transactions: `
-        No meaningful recent movement.
+        Added Bo Nix after briefly cycling Konata Mumpfield through the roster.
 
-        Trevor continues operating one of the least chaotic organizations in the league,
-        which remains deeply inconsiderate to this publication.
+        The quarterback addition gives Trevor useful flexibility entering the stretch run.
       `
     },
 
@@ -6620,50 +6711,78 @@ export const weeklyPowerRankings = {
       week9Score: 116.16,
       week10Score: 111.20,
 
-      week12Projection: 130.77,
+      week11Projection: 128.80,
 
-      headline: "The Roster Is Better Than the Recent Scores",
+      headline: "Still Elite. Slightly Less Terrifying.",
 
       commentary: `
-        JV drops one spot, but this is much more about Trevor moving up than JV falling
-        apart.
+        JV falls one spot.
 
-        PeterPanthers remains 7-3 and has averaged 134.21 points over the ten verified
-        games. That is still one of the best full-season scoring profiles in the league.
+        This is not punishment for being bad.
 
-        The concern is the recent direction.
+        PeterPanthers is not bad.
 
-        JV's last three verified scores are 140.98, 116.16 and 111.20. The floor has
-        remained respectable, but the roster has stopped producing the same overwhelming
-        weekly totals we saw earlier in the season.
+        JV remains 7-3 and is averaging 134.21 points through ten weeks, second only to
+        Josh.
 
-        The Ryan matchup was a perfect example.
+        The concern is the recent trend.
 
-        Jahmyr Gibbs scored 44.2. Blake Corum added 20.9. Stefon Diggs scored 20.3.
+        140.98.
 
-        PeterPanthers still finished at 111.20.
+        116.16.
 
-        If one player gives you forty-four fantasy points and the lineup still cannot
-        reach 120, there is something missing underneath the stars.
+        111.20.
 
-        The encouraging part is Week 12.
+        The offense has cooled.
 
-        Sleeper currently projects JV at 130.77, the highest total on the board. Gibbs,
-        Trey McBride, Chris Olave and D'Andre Swift all project as substantial pieces.
+        Last week Jahmyr Gibbs scored 44.2.
 
-        PeterPanthers now gets Trevor.
+        Forty-four.
 
-        Beat the No. 3 team and this ranking can reverse immediately.
+        Blake Corum added 20.9.
 
-        Lose, and the gap becomes much harder to dismiss.
+        Stefon Diggs scored 20.3.
+
+        Somehow PeterPanthers still finished at only 111.20.
+
+        That is the issue.
+
+        If your running back scores forty-four and the team still cannot reach 120,
+        something underneath the stars has gone missing.
+
+        Fortunately, the Week 11 outlook is much stronger.
+
+        Gibbs projects for 23.54.
+
+        D'Andre Swift for 19.38.
+
+        Chris Olave for 15.34.
+
+        Trey McBride for 13.51.
+
+        Jayden Daniels remains on the roster even though Bryce Young currently appears
+        in the projected lineup.
+
+        Sleeper gives JV 128.80.
+
+        Josh:
+
+        128.74.
+
+        It is essentially a dead heat.
+
+        Win and JV immediately reminds everyone why PeterPanthers spent so much of the
+        season near the top.
+
+        Lose and the recent decline becomes harder to dismiss.
       `,
 
       transactions: `
-        No significant recent activity.
+        Added Demarcus Robinson and Ryan Flournoy.
 
-        JV continues trusting the established core. Gibbs and McBride remain strong
-        enough anchors that this is still a championship-level roster when the secondary
-        pieces cooperate.
+        Dropped San Francisco D/ST and Jordan Addison.
+
+        Mostly depth maintenance around an established core.
       `
     },
 
@@ -6686,54 +6805,75 @@ export const weeklyPowerRankings = {
       week9Score: 101.88,
       week10Score: 177.62,
 
-      week12Projection: 109.15,
+      week11Projection: 115.26,
 
-      headline: "177.62 Buys a Considerable Amount of Forgiveness",
+      headline: "177.62 Has Consequences",
 
       commentary: `
         JQ jumps five spots.
 
-        That sounds dramatic because it is.
+        This is what happens when you score 177.62.
 
-        Campus Legends entered the previous rankings at No. 10 after scoring 81.40,
-        79.14 and 101.88 in consecutive weeks. The offense looked broken, the floor had
-        disappeared and the roster appeared to be actively arguing with its own talent.
+        Campus Legends entered Week 10 ranked tenth because the previous three scores
+        were 81.40, 79.14 and 101.88.
 
-        Then Campus scored 177.62.
+        That was not a slump.
 
-        Christian McCaffrey scored 46.3.
+        That looked like an electrical failure.
+
+        Then Christian McCaffrey scored 46.3.
 
         George Pickens scored 43.5.
 
         Patrick Mahomes scored 35.42.
 
-        Those three combined for 125.22 points by themselves.
+        Those three combined for 125.22 points.
 
-        Josh scored 159.64 and lost by almost eighteen.
+        Campus finished at 177.62 and beat Josh by almost eighteen despite Moore Oil
+        Coming scoring 159.64.
 
-        One nuclear performance does not erase an entire month of bad football, which
-        is why Campus does not immediately jump into the top four.
+        JQ did not just rebound.
 
-        It does remind us what the roster actually contains.
+        JQ produced High Man and one of the most dominant top-three-player performances
+        we have seen this season.
 
-        McCaffrey. Mahomes. Pickens. Garrett Wilson. Travis Kelce. Jeremiyah Love.
+        One week does not completely erase the previous month.
+
+        That is why Campus stops at five rather than jumping into the true contender tier.
+
+        But the roster has reminded us what it contains.
+
+        Mahomes.
+
+        CMC.
+
+        Pickens.
+
+        Garrett Wilson.
+
+        Kelce.
+
         Jalen Coker.
 
-        That is a legitimate amount of ceiling.
+        Tyler Warren.
 
-        Week 12's raw 109.15 projection also undersells the available roster because the
-        exported starting lineup does not include every useful option.
+        There is real ceiling here.
 
-        Campus is not fully rehabilitated.
+        Week 11 brings Chaney.
 
-        But after scoring 177.62, the institution has been granted parole.
+        The Oilers are actually projected slightly higher.
+
+        Excellent.
+
+        Now JQ gets an immediate opportunity to prove 177.62 was a resurrection rather
+        than one final involuntary muscle spasm.
       `,
 
       transactions: `
-        No major recent changes.
+        No meaningful recent changes.
 
-        After the highest score of the week, JQ has earned the right to stop touching
-        things for a moment.
+        After scoring 177.62, management has correctly decided not to begin randomly
+        dismantling the roster.
       `
     },
 
@@ -6756,66 +6896,81 @@ export const weeklyPowerRankings = {
       week9Score: 167.66,
       week10Score: 119.92,
 
-      week12Projection: 107.82,
+      week11Projection: 108.52,
 
-      headline: "Back to .500. Then Drake Maye's Ankle Exploded.",
+      headline: "Back to .500. Then Maye's Ankle Exploded.",
 
       commentary: `
-        The Car Bombs finally completed the recovery.
+        The Car Bombs finally completed the comeback.
 
-        After starting 0-2, The Czar climbed all the way back to 5-5 by beating Jansen
+        Five and five.
+
+        After starting 0-2, The Czar fought all the way back to .500 by beating Jansen
         119.92 to 111.42.
 
-        The offense had become legitimately dangerous.
+        Ja'Marr Chase scored 34.1.
 
-        Since Week 3, the verified scoring run is 154.56, 111.74, 156.16, 114.60, 121.44,
+        Cam Skattebo scored 27.2.
+
+        Drake London added 16.9.
+
+        That came immediately after the 167.66-point Week 9 detonation.
+
+        Over the last three verified games, The Car Bombs are averaging 134.05.
+
+        Since Week 3, this offense has produced 154.56, 111.74, 156.16, 114.60, 121.44,
         114.56, 167.66 and 119.92.
+
+        The rehabilitation is real.
 
         Then Drake Maye broke his ankle.
 
-        Of course he did.
+        Because apparently reaching .500 was getting too comfortable.
 
-        Maye had become one of the central pieces of the turnaround. Losing him does not
-        erase what the rest of the offense has become, but it materially changes both
-        the weekly floor and the ceiling.
+        Maye had become a major part of the turnaround and losing him materially changes
+        the quarterback ceiling entering the most important part of the season.
 
-        Tyler Shough is now the quarterback plan.
+        Tyler Shough is now the immediate replacement and carries a 16.09 projection.
 
-        Fortunately, this is not a roster that requires the quarterback to do everything.
+        Fortunately, The Car Bombs still have the skill-position talent to survive.
 
-        Ja'Marr Chase has scored 31.5 and 34.1 in his last two verified games. Drake
-        London remains a legitimate No. 1 receiver. Javonte Williams has supplied stable
-        running back production. Cam Skattebo has emerged as a major weapon, and Matthew
-        Golden has already demonstrated 30-point upside.
+        Chase projects for 21.73.
 
-        That is enough talent to remain dangerous.
+        Javonte Williams for 21.06.
 
-        It is not enough to pretend losing Maye is irrelevant.
+        Cam Skattebo for 16.66.
 
-        So The Car Bombs fall one spot.
+        The current Week 11 snapshot is also suppressing the total because Drake London,
+        Matthew Golden and Kyle Pitts all currently carry zeroes.
 
-        The current Sleeper projection is 107.82, although even that snapshot does not
-        perfectly represent the best available lineup. Shough is already being treated
-        as the Week 12 quarterback, while Drake London is absent from the projected
-        starters despite remaining on the roster.
+        So the 108.52 projection should not be treated as a pure evaluation of the roster.
 
-        The opponent is Ryan.
+        But the Maye injury is real.
 
-        Nine-and-one Ryan.
+        Campus just scored 177.
 
-        Excellent timing.
+        That is enough to move JQ ahead and drop The Car Bombs one spot.
 
-        Beat him and the Maye injury immediately becomes a much less enjoyable problem
-        for everyone else.
+        Week 11 opponent:
+
+        Charles.
+
+        Five and five versus four and six.
+
+        No quarterback.
+
+        No excuses.
+
+        Figure it out.
       `,
 
       transactions: `
-        Added Chig Okonkwo and dropped Juwan Johnson.
+        Added Baltimore D/ST and Chig Okonkwo while dropping the Giants defense and
+        Juwan Johnson.
 
-        That is not the transaction that matters.
+        The move that matters is not on the transaction ledger.
 
-        Drake Maye's broken ankle forces Tyler Shough into the quarterback job as the
-        fantasy playoffs approach.
+        Drake Maye's broken ankle has forced Tyler Shough into the quarterback plan.
       `
     },
 
@@ -6838,65 +6993,74 @@ export const weeklyPowerRankings = {
       week9Score: 101.70,
       week10Score: 111.42,
 
-      week12Projection: 106.00,
+      week11Projection: 104.62,
 
-      headline: "The Revenge Tour Has Become a Hangover",
+      headline: "The Revenge Tour Has Officially Stalled",
 
       commentary: `
-        Jansen falls another spot.
+        Jansen falls to seventh.
 
-        Nigasaki's season has already contained about four different seasons.
+        The season arc has become remarkable.
 
-        Jansen started 0-3, then won five consecutive games. At 5-3, Nigasaki handed
-        previously undefeated Ryan his first loss and looked like the hottest team in
-        TouchDown Syndrome.
+        Nigasaki started 0-3.
 
-        That was the peak.
+        Then Jansen won five consecutive games.
 
-        Since then, Nigasaki has scored 101.70 and 111.42 and lost both games.
+        At 5-3, he handed previously undefeated Ryan his first loss.
 
-        The recent scoring is particularly concerning because this is the same roster
-        that previously produced 157.88 and 199.70 in consecutive weeks. We know the
-        ceiling exists.
+        Nigasaki looked like the hottest team in the league.
 
-        It has simply disappeared recently.
+        Since then:
 
-        The roster remains loaded enough that seventh feels uncomfortable.
+        101.70.
 
-        Puka Nacua.
+        111.42.
 
-        Zay Flowers.
+        Two losses.
 
-        Kyren Williams.
+        Trevor beat Jansen by 55.
 
-        Jaylen Warren.
+        Then The Car Bombs beat him head-to-head.
 
-        Harold Fannin.
+        That is not enough to erase what Nigasaki did during the winning streak, but it
+        is enough to end the top-tier treatment.
 
-        Isaiah Likely.
+        Jansen is now averaging 111.97 over the last three games after previously
+        threatening 200.
 
-        Caleb Williams is also now sitting on the roster and gives Jansen another
-        quarterback option.
+        The roster also changed materially this week.
 
-        The raw 106-point Sleeper projection is misleading because the exported starting
-        lineup excludes both Puka and Caleb despite each carrying one of the roster's
-        strongest individual projections.
+        Josh Jacobs is gone.
 
-        So this is not a talent downgrade.
+        Caleb Williams is in.
 
-        It is a results downgrade.
+        Jansen effectively exchanged running back depth for a quarterback upgrade and
+        has already moved on from Jared Goff.
 
-        Nigasaki already proved it can become terrifying very quickly.
+        Long term, Puka Nacua, Zay Flowers, Kyren Williams, Jaylen Warren, Harold Fannin,
+        Isaiah Likely and Caleb still give this team substantial upside.
 
-        Jansen now needs to prove the first run was not the entire story.
+        Week 11 is less attractive.
+
+        Puka and Kyren currently carry zeroes in the Sleeper snapshot, leaving Nigasaki
+        projected for only 104.62.
+
+        Jansen gets Vigo.
+
+        A win stabilizes things.
+
+        A third consecutive loss turns this into an actual collapse.
       `,
 
       transactions: `
-        No major recent activity.
+        Traded Josh Jacobs to Vigo for Caleb Williams.
 
-        The necessary players are already on the roster.
+        Dropped Jared Goff.
 
-        Jansen's problem is getting them to produce together again.
+        Added Pat Bryant, Carolina D/ST and Chase McLaughlin.
+
+        The quarterback room has been reconstructed while the winning streak has been
+        replaced by a two-game losing streak.
       `
     },
 
@@ -6905,7 +7069,7 @@ export const weeklyPowerRankings = {
       previousRank: 7,
       movement: -1,
       rosterID: 9,
-      team: "CousinLover",
+      team: "Charles",
       record: "4-6",
 
       week1Score: 151.02,
@@ -6919,50 +7083,63 @@ export const weeklyPowerRankings = {
       week9Score: 116.82,
       week10Score: 113.98,
 
-      week12Projection: 110.57,
+      week11Projection: 113.86,
 
-      headline: "Good Enough to Scare You. Not Good Enough to Stop Losing.",
+      headline: "A Good Roster Continues Producing a Bad Record",
 
       commentary: `
-        Charles falls one spot mostly because Campus forced everyone underneath it down.
+        Charles falls one spot because Campus has forced the middle of the board downward.
 
-        CousinLover remains one of the more frustrating teams to evaluate because the
-        roster looks considerably better than 4-6.
+        The underlying evaluation has not changed much.
 
-        Amon-Ra St. Brown, Derrick Henry, Breece Hall, Tee Higgins and Rhamondre Stevenson
-        should be enough of a foundation to consistently produce competitive weeks.
+        This roster is better than 4-6.
 
-        And recently, Charles has.
+        Amon-Ra St. Brown projects for 18.97.
 
-        The last four verified scores are 116.20, 139.08, 116.82 and 113.98.
+        Tee Higgins for 18.72.
 
-        That is respectable fantasy football.
+        Derrick Henry remains Derrick Henry.
 
-        The problem is that respectable fantasy football keeps becoming respectable
-        losses.
+        Breece Hall is still a legitimate weekly weapon.
 
-        Trevor beat Charles by 3.62 last time out. CousinLover also left more than thirty
-        points on the bench.
+        Kirk Cousins and Jared Goff provide multiple quarterback options.
 
-        This is becoming a recurring feature rather than an isolated mistake.
+        The issue has been converting all of that talent into wins.
 
-        Charles has the talent to beat almost anybody in this league.
+        Charles' last four verified scores are 116.20, 139.08, 116.82 and 113.98.
 
-        He also has ten verified weeks demonstrating that talent alone does not solve
-        lineup decisions, inconsistency or bad timing.
+        That is perfectly respectable.
 
-        Week 12 brings Vigo.
+        The record over that span has not matched the scoring.
 
-        If CousinLover wants to remain remotely connected to the middle of the league,
-        this is not a game Charles can give away.
+        Last week was another example.
+
+        Charles lost to Trevor by 3.62 and left more than thirty points on the bench.
+
+        There are only so many times we can call that unfortunate before lineup
+        management becomes part of the evaluation.
+
+        Week 11 brings The Car Bombs.
+
+        Charles is currently favored 113.86 to 108.52.
+
+        The Czar has lost his quarterback.
+
+        Charles has an opportunity.
+
+        Whether Charles actually takes advantage of the opportunity remains a separate
+        question.
       `,
 
       transactions: `
-        Added Detroit D/ST and Xavier Hutchinson while dropping Woody Marks and Mike Gesicki.
+        Charles has been extremely active.
 
-        The fringe of the roster continues changing.
+        Added J.J. McCarthy, Jordan Mason, Justice Hill, Mike Gesicki, Woody Marks and
+        ultimately Jared Goff at various points before continuing to reshape the roster.
 
-        The more important challenge remains selecting the correct core.
+        More recently, added Detroit D/ST and Xavier Hutchinson.
+
+        The transaction log resembles an airport departures board.
       `
     },
 
@@ -6985,48 +7162,69 @@ export const weeklyPowerRankings = {
       week9Score: 97.10,
       week10Score: 152.68,
 
-      week12Projection: 97.00,
+      week11Projection: 102.17,
 
-      headline: "The Investigation Has Been Reopened",
+      headline: "T2 Has Forced the Investigation Back Open",
 
       commentary: `
-        T2 moves up two spots because we are legally obligated to acknowledge 152.68
-        fantasy points.
+        T2 climbs two spots.
 
-        Big frydown entered Week 10 projected for approximately 71.
+        We need to respect what just happened.
 
-        The preview described that projection as a distress signal.
+        Big frydown entered Week 10 with a projection of approximately 71 points.
 
-        T2 responded with 152.68.
+        Seventy-one.
 
-        Dak Prescott scored 35.42. Emmett Johnson scored 35.1. Deebo Samuel added 25.9.
+        T2 scored 152.68.
 
-        Big frydown beat Chaney by 48.22 and delivered the biggest ass beating of the week.
+        Dak Prescott scored 35.42.
 
-        This is why evaluating T2 requires a complete abandonment of conventional logic.
+        Emmett Johnson scored 35.1.
 
-        Big frydown has scored 145.50, 139.64 and 152.68 this season.
+        Deebo Samuel scored 25.9.
 
-        Big frydown has also scored 81.66, 92.54, 87.00 and 82.42.
+        Big frydown beat Chaney by 48.22.
 
-        Apparently both teams share one account.
+        Biggest ass beating of Week 10.
 
-        The current roster gets Saquon Barkley and Bucky Irving back into the available
-        player pool alongside Dak, Mike Evans, Dallas Goedert, Deebo and several usable
-        depth pieces.
+        T2's bench scored zero.
 
-        There is enough talent here to make ninth reasonable.
+        There was no secret alternate lineup.
 
-        There is enough historical evidence to make anything higher irresponsible.
+        He simply got almost everything right.
 
-        T2 remains a threat to either opponent depending entirely upon which version logs in.
+        The problem is that this team has spent the entire season alternating between
+        legitimate fantasy production and apparent abandonment.
+
+        T2 has now scored 145.50, 139.64 and 152.68.
+
+        He has also scored 81.66, 92.54, 87.00 and 82.42.
+
+        Big frydown is less a fantasy team and more a volatility product.
+
+        Saquon Barkley and Bucky Irving remain on the roster.
+
+        Dak is coming off a five-touchdown performance.
+
+        Mike Evans, Dallas Goedert and Deebo provide additional upside.
+
+        Emmett Johnson just introduced himself rather dramatically.
+
+        Week 11 brings Rhodes and Pags.
+
+        Sleeper favors T2 by 27.47.
+
+        That is exactly the kind of matchup Big frydown should win.
+
+        Which is precisely why everyone should remain nervous.
       `,
 
       transactions: `
-        No significant recent activity.
+        Added Emmett Johnson.
 
-        Scoring 152.68 has temporarily earned management the right to avoid pressing
-        additional buttons.
+        That move paid off immediately when Johnson scored 35.1 in Week 10.
+
+        For once, the T2 personnel department receives an unqualified positive review.
       `
     },
 
@@ -7049,54 +7247,67 @@ export const weeklyPowerRankings = {
       week9Score: 120.94,
       week10Score: 104.46,
 
-      week12Projection: 113.80,
+      week11Projection: 120.71,
 
-      headline: "The Stars Are Doing Their Jobs. Everyone Else Is Under Review.",
+      headline: "Chaney's Stars Are Doing Their Jobs",
 
       commentary: `
-        Chaney falls two spots.
+        The Oilers fall two spots after the two-game winning streak came to a violent end.
 
-        The Oilers briefly looked like they had escaped the basement conversation after
-        consecutive wins.
-
-        Then T2 scored 152.68 and drove directly through the building.
-
-        The frustrating part is that Chaney's stars actually played well.
+        The frustrating part for Chaney is that the important players actually showed up.
 
         Joe Burrow scored 33.16.
 
         Nico Collins scored 24.4.
 
-        CeeDee Lamb added 20.2.
+        CeeDee Lamb scored 20.2.
 
-        That is 77.76 points from three players.
+        Those three combined for 77.76.
 
-        The rest of The Oilers combined for almost nothing.
+        The Oilers still scored only 104.46.
 
-        That has been the structural problem for most of the season. The top-end talent
-        remains legitimate, but the weekly depth underneath it continues disappearing.
+        That is the entire story of this roster.
 
-        Week 12 at least gives Chaney another interesting opportunity.
+        The top is good.
 
-        Burrow, Nico, CeeDee, David Montgomery, Dalton Kincaid and Omarion Hampton form
-        a respectable current lineup.
+        The bottom keeps disappearing.
 
-        Sleeper projects 113.80 against Josh's 115.04.
+        Chaney is still only 3-7, but Week 11 provides a legitimate reason for optimism.
 
-        Essentially a coin flip.
+        Burrow projects for 26.04.
 
-        If Chaney beats Moore Oil Coming, The Oilers can force their way directly back
-        into the conversation.
+        CeeDee for 21.57.
 
-        Until then, the record and the inconsistency keep them tenth.
+        Nico for 16.06.
+
+        David Montgomery for 14.01.
+
+        Rome Odunze for 11.37.
+
+        Sleeper has The Oilers at 120.71, actually favored over Campus Legends immediately
+        after JQ scored 177.
+
+        Chaney has also added Alvin Kamara while continuing to churn the edges of the roster.
+
+        One particularly notable transaction:
+
+        Ladd McConkey is gone.
+
+        The player Chaney once acquired from T2 has now left the building.
+
+        There is still enough talent here to be dangerous.
+
+        At 3-7, being dangerous is no longer enough.
       `,
 
       transactions: `
-        No meaningful recent moves.
+        Added Alvin Kamara, Jason Sanders and Michael Mayer while continuing to rotate
+        depth pieces.
 
-        Chaney does not need another roster reconstruction.
+        Dropped Ladd McConkey.
 
-        He needs the secondary pieces to stop disappearing.
+        The Oilers remain one of the more active teams attempting to repair the lower
+        half of the lineup.
       `
     },
 
@@ -7105,7 +7316,7 @@ export const weeklyPowerRankings = {
       previousRank: 12,
       movement: 1,
       rosterID: 7,
-      team: "Madison beers Box",
+      team: "Retardinals",
       record: "3-7",
 
       week1Score: 99.76,
@@ -7119,49 +7330,65 @@ export const weeklyPowerRankings = {
       week9Score: 75.36,
       week10Score: 105.98,
 
-      week12Projection: 96.96,
+      week11Projection: 97.87,
 
-      headline: "Vigo Has Escaped Last Place",
+      headline: "Vigo Won and Immediately Opened the Trade Machine",
 
       commentary: `
-        Madison beers Box moves up one spot.
+        Vigo escapes last place.
 
-        Not because the scoring profile suddenly became good.
+        He earned that much directly.
 
-        Because Vigo beat the team now ranked beneath him.
+        Retardinals beat Rhodes and Pags 105.98 to 101.64.
 
-        Madison beers Box defeated Rhodes and Pags 105.98 to 101.64.
+        Trevor Lawrence scored 27.78.
 
-        Trevor Lawrence scored 27.78. Chase Brown added 28.3. Justin Jefferson supplied
-        another 16.4.
+        Chase Brown scored 28.3.
 
-        Vigo also left 31.5 points on the bench.
+        Justin Jefferson added 16.4.
 
-        Most in the league.
+        Vigo left 31.5 points on the bench and still won.
 
-        He won anyway.
+        Then the front office apparently decided sleep was unnecessary.
 
-        That victory matters because the opponent was the exact team competing with Vigo
-        for the bottom of the rankings.
+        Vigo traded Jaylen Waddle to Ryan and received Trevor Lawrence.
 
-        The larger statistical profile remains ugly.
+        Then Vigo traded Caleb Williams to Jansen and received Josh Jacobs.
 
-        Madison beers Box averages approximately 97 points through the verified games,
-        still the lowest figure in the league.
+        So the roster that entered Week 10 with quarterback uncertainty now has Trevor
+        Lawrence, while the running back room adds Josh Jacobs alongside Chase Brown,
+        Travis Etienne and Rico Dowdle.
 
-        Trevor Lawrence, Jefferson, A.J. Brown, Chase Brown and Jameson Williams at least
-        give Vigo enough legitimate talent to occasionally produce something functional.
+        Justin Jefferson and Jameson Williams remain at receiver.
 
-        One win does not fix the operation.
+        That is a materially different roster.
 
-        It does get you out of twelfth.
+        The Week 11 projection is still only 97.87, partly because several current pieces
+        are carrying zeroes in the snapshot.
+
+        This is not suddenly a good team.
+
+        Vigo is still 3-7 and averaging 97.01 points.
+
+        Lowest in the league.
+
+        But he won.
+
+        He improved the roster.
+
+        And the team below him is 1-9.
+
+        That is enough to escape the basement.
       `,
 
       transactions: `
-        Vigo briefly added Chad Ryland and immediately replaced him with Cairo Santos.
+        Traded Jaylen Waddle to Ryan for Trevor Lawrence.
 
-        The kicker department has undergone more organizational restructuring than
-        several Fortune 500 companies.
+        Traded Caleb Williams to Jansen for Josh Jacobs.
+
+        Added San Francisco D/ST and Tyler Higbee while continuing to rotate the kicker spot.
+
+        Vigo has become one of the most active managers in the league.
       `
     },
 
@@ -7170,7 +7397,7 @@ export const weeklyPowerRankings = {
       previousRank: 9,
       movement: -3,
       rosterID: 5,
-      team: "JVentureSexOffender",
+      team: "Rhodes x Pags",
       record: "1-9",
 
       week1Score: 77.30,
@@ -7184,56 +7411,85 @@ export const weeklyPowerRankings = {
       week9Score: 108.42,
       week10Score: 101.64,
 
-      week12Projection: 105.57,
+      week11Projection: 74.70,
 
-      headline: "The Roster Quality Defense Is Officially Dead",
+      headline: "The Roster Quality Defense Has Been Terminated",
 
       commentary: `
+        That's it.
+
         Rhodes and Pags are last.
 
-        No more caveats.
+        We spent most of the season explaining that this roster was too talented to be
+        this bad.
 
-        No more discussion about how good the roster looks on paper.
+        Bijan Robinson.
 
-        No more explaining that Bijan Robinson, Brock Bowers, Rashee Rice, Davante Adams,
-        Courtland Sutton and Quinshon Judkins should not be attached to a one-win team.
+        Brock Bowers.
 
-        They are.
+        Rashee Rice.
 
-        Week 10 was the final hearing.
+        Davante Adams.
 
-        JVentureSexOffender entered 1-8 and faced Vigo, the one team sitting beneath them
-        in the rankings.
+        Courtland Sutton.
 
-        The assignment was simple.
+        Quinshon Judkins.
 
-        Win.
+        Surely eventually the wins would arrive.
 
-        Rhodes and Pags lost 105.98 to 101.64.
+        They did not.
 
-        They also took Low Man.
+        Week 10 was the final appeal.
 
-        C.J. Stroud replaced Matthew Stafford and scored 21.44. Bijan added 17.7. Judkins
-        scored 16.1.
+        Vigo was 2-7.
 
-        The finished product still scored 101.64.
+        Rhodes and Pags were 1-8.
 
-        Ten verified games have now provided enough evidence.
+        Beat Vigo and we continue discussing bad luck.
 
-        The roster may continue looking better than the record.
+        Lose and the case closes.
 
-        The Power Rankings are no longer required to care.
+        Rhodes and Pags lost.
 
-        JVentureSexOffender is No. 12.
+        105.98 to 101.64.
+
+        Low Man.
+
+        C.J. Stroud scored 21.44.
+
+        Bijan added 17.7.
+
+        Judkins added 16.1.
+
+        The completed product still finished last in the league for the week.
+
+        Now the Week 11 projection is 74.70.
+
+        Bijan, Judkins, Wan'Dale Robinson and several other roster pieces currently carry
+        zeroes in the snapshot.
+
+        Whatever the reason, the result is one of the ugliest projected lineups we have
+        seen all season.
+
+        T2 is favored by 27.47.
+
+        One manager.
+
+        Two managers.
+
+        It apparently does not matter.
+
+        Rhodes and Pags are 1-9.
+
+        They are No. 12.
 
         The defense rests.
       `,
 
       transactions: `
-        No significant recent changes following the move from Matthew Stafford to
-        C.J. Stroud.
+        Added Buffalo D/ST and DeMario Douglas.
 
-        At 1-9, the problem has become substantially larger than one roster move.
+        There is no waiver claim capable of making 1-9 disappear.
       `
     }
   ]
