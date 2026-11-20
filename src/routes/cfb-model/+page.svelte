@@ -379,7 +379,7 @@
             <div class="filterHead">
                 <div>
                     <div class="eyebrow">FILTER YOUR MODEL BOARD</div>
-                    <p>Signal and grade remain independent. Week 11 uses the V9 production screens, while older weeks retain V3 screening and graded outcomes remain V3.</p>
+                    <p>Signal and grade remain independent. Weeks 11–12 use V9 production screens; earlier weeks retain V3 screening. The historical performance cards show recorded V3 model-side grades, not actual placed wagers.</p>
                 </div>
                 {#if statusFilter !== 'ALL' || selectedGrades.length}
                     <button class="resetFilters" type="button" on:click={clearBoardFilters}>Reset filters</button>
@@ -535,7 +535,7 @@
                 <div>
                     <div class="eyebrow">EXPLORE THE SLATE</div>
                     <h2 id="games-title">Week {board.week} game board</h2>
-                    <p>Filter by signal, grade, result or kickoff. Week 11 shows the November 13 V9 production snapshot; earlier weeks retain the archived V3 screening.</p>
+                    <p>Filter by signal, grade, result or kickoff. Week 12 uses the November 20 V9 production snapshot; Week 11 uses November 13. Both quote snapshots are frozen, not live odds.</p>
                 </div>
                 <div class="gameTotal">
                     <strong>{games.length}</strong>
@@ -569,6 +569,9 @@
                 </label>
             </div>
 
+            {#if board.season === 2026 && board.week === 12}
+                <p class="filterHelp">November 20 snapshot: {games.filter((game) => game.status === 'BET' && game.v9?.snapshotPregame).length} prospective BET signals; {games.filter((game) => game.v9 && !game.v9.snapshotPregame).length} already completed games included for archive context. The latter were not available as pregame selections at this snapshot.</p>
+            {/if}
             <div class="boardLegend">
                 <span>{filtered.length} of {games.length} games</span>
                 <span>Signal: {statusFilter === 'BET_WATCH' ? 'BET + WATCH' : statusFilter === 'ALL' ? 'All' : statusFilter} · Grades: {selectedGrades.length ? selectedGrades.join(' + ') : 'All'} · Result: {resultOptions.find((item) => item.id === resultFilter)?.label || 'All results'}</span>
@@ -625,7 +628,7 @@
                                         <small class:resultWin={game.v3Result === 'WIN'} class:resultLoss={game.v3Result === 'LOSS'}>V3 {game.v3Result}</small>
                                     {:else}
                                         {#if useV9(game)}
-                                            <small>{game.v9.bestBook || 'Snapshot'} · Nov 13 · V9</small>
+                                            <small>{game.v9.bestBook || 'Snapshot'} · {game.v9.snapshotUtc.slice(0, 10)} · V9{game.v9.snapshotPregame ? '' : ' · POST-KICKOFF'}</small>
                                         {:else}
                                             <small>Archived V3 reference</small>
                                         {/if}
@@ -689,6 +692,9 @@
                                             Predicted CLV: {number(game.v9.predictedEdge, 3)} points.
                                             {#if game.v9.h3CleanProspective} H3 clean-prospective flag.{/if}
                                             <span>Archived V3 reference: {game.v3Pick}.</span>
+                                            {#if !game.v9.snapshotPregame}
+                                                <strong>Post-kickoff snapshot: this line was captured after the game started and cannot be treated as a prospective wager or counted in the historical betting ROI.</strong>
+                                            {/if}
                                         </div>
                                     {:else if game.referenceLineOnly}
                                         <div class="lineNotice">This is a nonstandard V3 model reference. Verify a sportsbook quote before betting.</div>
@@ -713,7 +719,10 @@
                                     <div><span>Raw model edge</span><strong>{number(game.rawEdge, 2)} pts</strong></div>
                                     <div><span>Calibrated pick</span><strong>{game.calPick || '—'}</strong></div>
                                     <div><span>Calibrated edge</span><strong>{number(game.calEdge, 2)} pts</strong></div>
-                                    <div><span>Archived V3 production</span><strong>{game.v3Production ? 'Yes' : 'No'}</strong></div>
+                                    <div><span>Archived V3 production</span><strong>{game.v3Production == null ? 'Not supplied' : game.v3Production ? 'Yes' : 'No'}</strong></div>
+                                    {#if useV9(game)}
+                                        <div><span>V9 clean H3 prospect</span><strong>{game.v9.h3CleanProspective ? 'Yes' : 'No'}</strong></div>
+                                    {/if}
                                     <div><span>H3 / S1</span><strong>{game.H3 ? 'H3' : '—'} / {game.S1 ? 'S1' : '—'}</strong></div>
                                     <div><span>Source</span><strong>{useV9(game) ? 'V9 Nov 13 snapshot' : game.sourceType || 'Unknown'}</strong></div>
                                 </div>
@@ -730,8 +739,8 @@
                 </div>
             {/if}
             <p class="filterHelp">The result filter shows recorded V3 model-side outcomes (WIN, LOSS, PUSH). Ungraded includes games without a recorded result, even if kickoff has passed. It changes the visible game board, not the historical ROI calculation.</p>
-            <p class="filterHelp">WATCH +3 / +5 / +7 targets are hypothetical improvements relative to the displayed line: the November 13 V9 snapshot for Week 11, and archived V3 for older weeks. Expand to compare your current sportsbook quote.</p>
-            <p class="underBoard">Projected score lists away first. Week 11 V9 book quotes come from the November 13 snapshot and may have moved. Predicted CLV is modeled line movement, not cover probability. BET is a model signal, not a confirmed placed wager. Historical grading and ROI remain V3.</p>
+            <p class="filterHelp">WATCH +3 / +5 / +7 targets are hypothetical improvements over the displayed line: frozen V9 quotes for Weeks 11–12, archived V3 references for older weeks. Open a matchup to compare a current sportsbook quote.</p>
+            <p class="underBoard">Projected score lists away first. V9 book quotes are from timestamped exports and may have moved. Predicted CLV is modeled line movement, not cover probability. BET is a model-screening signal, not a confirmed placed wager. Post-kickoff snapshot picks are kept ungraded; historical V3 grades and ROI remain unchanged.</p>
         </section>
 
         {#if stats}
